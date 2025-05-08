@@ -117,10 +117,10 @@ export default function Home() {
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto  ">
           <div className='flex flex-col justify-start items-start gap-[55px] p-0 md:my-[140px] my-[40px]'>
-            <div className='h-[156.1px] self-stretch flex-grow-0 flex flex-col justify-between items-start p-0'>
-              <div className='w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]'>
+          <div className='min-h-[156.1px] w-full flex flex-col justify-between items-start p-0'>
+              <div className='w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]'>
               </div>
-              <span className='w-[570px] h-[69px] flex-grow-0 font-[PlusJakartaSans] text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'>
+              <span className='w-full max-w-[570px] h-[69px] flex-grow-0 font-[PlusJakartaSans] text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'>
                 Working with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery.
               </span>
             </div>
@@ -131,22 +131,37 @@ export default function Home() {
               height={554}
               className="object-contain w-[346px]"
             />
-            <div className='w-full flex md:flex-row flex-col items-start gap-[25px] p-0 justify-between'>
-              <div className='w-full flex-grow-0 flex flex-col justify-start items-start gap-[120px] px-[25px] py-[24px] rounded-[25px] bg-[#f3f8f8]'>
 
+            <div className='w-full flex md:flex-row flex-col md:items-start gap-[25px] p-0 justify-between items-center'>
+              <div className='min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#f3f8f8]'>
+                <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+                  We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
+                </span>
               </div>
 
-              <div className='w-full flex-grow-0 flex flex-col justify-start items-start gap-[120px] px-[25px] py-[24px] rounded-[25px] bg-[#c5d7d8]'>
-
+              <div className='min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#c5d7d8]'>
+              <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+                  We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
+                </span>
               </div>
 
-              <div className='w-full flex-grow-0 flex flex-col justify-start items-start gap-[120px] px-[25px] py-[24px] rounded-[25px] bg-[#163b31]'>
+              <div className='min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#163b31]'>
+              <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+                  We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
+                </span>
               </div>
 
-              <div className='w-full flex-grow-0 flex flex-col justify-start items-start gap-[120px] px-[25px] py-[24px] rounded-[25px] bg-[#f2fe65]'>
-
+              <div className='min-w-[281px]  w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#f2fe65]'>
+              <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+                  We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
+                </span>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
@@ -157,7 +172,7 @@ export default function Home() {
             <div className='w-[570px] h-[156.1px] flex-grow-0 flex flex-col justify-between items-start p-0'>
               <div className='w-[283.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#272626]'>
               </div>
-              <span className='w-[570px] h-[69px] flex-grow-0 font-[PlusJakartaSans] text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'> Working with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery</span>
+              <span className='w-[570px] h-[69px] flex-grow-0 font-[PlusJakartaSans] text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'> Woarking with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery</span>
             </div>
 
             <div className='w-[1198px] h-[566.9px] flex-grow-0'>
