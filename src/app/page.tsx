@@ -334,49 +334,51 @@ export default function Home() {
           </div>
         </div>
 
-      <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
-        <div className="w-[90%] md:w-[90%] max-w-[1200px] mx-auto my-[140px]">
-          <div className="w-full md:w-[1198px] flex-grow-0 flex flex-col justify-start items-start md:gap-[60px] gap-[10px] p-0">
-            <div className='min-h-[156.1px] w-full flex flex-col justify-between items-start  mt-[80px]'>
-              <div className='w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]'>
+        <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+          <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
+
+
+            <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
+              <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
+                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                  These are our Superpowers
+                </span>
               </div>
-              <span className='w-full max-w-[570px] flex-grow-0 text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'>
-                Workinsasg with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery.
+              <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
+                Working with us is easy. We follow a clear, no fuss process
+                that keeps things moving fast and smooth, from first chat to
+                final delivery.
               </span>
             </div>
-            <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto">
-              <div className="w-full md:w-[1198px] h-auto md:h-[783px] flex-grow-0 flex flex-col justify-start items-start md:gap-[60px] gap-[20px] p-0">
-                {/* <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start p-0">
-                  <div className="w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]"></div>
-                  <span className="w-full max-w-[570px] h-[69px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]">
-                    Worksasaing with us is easy. We follow a clear, no fuss process
-                    that keeps things moving fast and smooth, from first chat to
-                    final delivery.
-                  </span>
-                </div> */}
 
-                <div className="w-full h-auto md:h-[566.9px] flex flex-col gap-[10px] md:gap-[22.6px]">
-                  <div className="flex flex-row gap-[10px] md:gap-[22.6px]">
-                    <div className="w-[179.4px] md:w-[256.3px] h-[262.0px] md:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
-                    <div className="w-[213.7px] md:w-[448.2px] h-auto md:h-[374px] gap-[10px] md:gap-[22.6px] flex flex-col rounded-3xl">
-                      <div className="h-[88.9px] md:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
-                      <div className="h-auto md:h-[232px] rounded-3xl gap-[10px] md:gap-[22.6px] flex flex-row">
-                        <div className="h-[162.4px] md:h-[232px] w-[148.4px] md:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
-                        <div className="h-[162.4px] md:h-[232px] w-[148.4px] md:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
-                      </div>
-                    </div>
-                    <div className="w-[313.7px] md:w-[448.2px] h-[262.0px] md:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
-                  </div>
-                  <div className="flex flex-row gap-[10px] md:gap-[22.6px]">
-                    <div className="w-[411.4px] md:w-[587.7px] h-[119.0px] md:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
-                    <div className="w-[411.4px] md:w-[587.7px] h-[119.0px] md:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
+            <div className="w-full h-auto lg:h-[566.9px] flex flex-col gap-[10px] lg:gap-[22.6px]">
+              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
+
+                <div className="w-[179.4px] lg:w-[256.3px] h-[262.0px] lg:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
+
+
+                <div className="w-[213.7px] lg:w-[448.2px] h-auto lg:h-[374px] gap-[10px] lg:gap-[22.6px] flex flex-col rounded-3xl">
+                  <div className="h-[88.9px] lg:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
+                  <div className="h-auto lg:h-[232px] rounded-3xl gap-[10px] lg:gap-[22.6px] flex flex-row">
+                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
+                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
                   </div>
                 </div>
+
+                <div className="w-[313.7px] lg:w-[448.2px] h-[262.0px] lg:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
+
+              </div>
+
+
+              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
+                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
+                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
               </div>
             </div>
+
+
           </div>
         </div>
-      </div>
 
         <div className="w-full relative  overflow-hidden ">
           <div className=" w-[90%] max-w-[1200px] mx-auto ">
@@ -404,7 +406,7 @@ export default function Home() {
                     <span className="text-[36px] font-[600] mb-[15px]"> Over 150</span>
                     <span className="text-[16px] font-[600]">Satisfied clients<br></br>
                     worldwide</span>
-                    
+
                   </div>
                 </div>
 
@@ -415,8 +417,8 @@ export default function Home() {
 
                   <div className="w-full justify-start items-start flex flex-col mt-[31px]">
                     <span className="text-[36px] font-[600] mb-[15px]">400+</span>
-                    <span className="text-[16px] font-[600]"> Successfully <br></br> Finished 
-                      projects</span>                    
+                    <span className="text-[16px] font-[600]"> Successfully <br></br> Finished
+                      projects</span>
                   </div>
                 </div>
 
@@ -430,7 +432,7 @@ export default function Home() {
                     <span className="text-[36px] font-[600] mb-[15px]">2000+</span>
                     <span className="text-[16px] font-[600]"> Hours of saving the world from <br></br>
                     bad experiences.</span>
-                    
+
                   </div>
                 </div>
 
@@ -442,10 +444,10 @@ export default function Home() {
 
                   <div className="w-full justify-start items-start flex flex-col mt-[31px]">
                     <span className="text-[36px] font-[600] mb-[15px]">30+</span>
-                    <span className="text-[16px] font-[600]">Countries across 
+                    <span className="text-[16px] font-[600]">Countries across
                    <br></br>
                    the globe</span>
-                    
+
                   </div>
                 </div>
 
