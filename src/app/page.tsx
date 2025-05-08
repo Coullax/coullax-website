@@ -10,12 +10,18 @@ import {
   Laptop,
   Lightning,
   ShieldCheck,
+  Star,
   Users,
 } from "@phosphor-icons/react";
 import { ArrowRight } from "lucide-react";
 import { HandFist } from "@phosphor-icons/react/dist/ssr";
+import React, { useRef, MouseEvent } from "react";
 
 export default function Home() {
+  const cardRefs = useRef<HTMLDivElement[]>([]);
+  const glowRefs = useRef<HTMLDivElement[]>([]);
+  const contentRefs = useRef<HTMLDivElement[]>([]);
+
   const navigationList = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
@@ -75,6 +81,52 @@ export default function Home() {
     },
   ];
 
+  const handleMouseMove = (
+    e: MouseEvent<HTMLDivElement>,
+    index: number
+  ): void => {
+    const card = cardRefs.current[index];
+    const glow = glowRefs.current[index];
+    const content = contentRefs.current[index];
+
+    if (!card || !glow || !content) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const percentX = (x - centerX) / centerX;
+    const percentY = -((y - centerY) / centerY);
+
+    card.style.transform = `perspective(1000px) rotateY(${
+      percentX * 6
+    }deg) rotateX(${percentY * 6}deg)`;
+    content.style.transform = `translateZ(50px)`;
+    glow.style.opacity = "1";
+    glow.style.backgroundImage = `
+      radial-gradient(
+        circle at ${x}px ${y}px, 
+        #ffffff44,
+        #0000000f
+      )
+    `;
+  };
+
+  const handleMouseLeave = (index: number): void => {
+    const card = cardRefs.current[index];
+    const glow = glowRefs.current[index];
+    const content = contentRefs.current[index];
+
+    if (!card || !glow || !content) return;
+
+    card.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg)";
+    content.style.transform = "translateZ(0px)";
+    glow.style.opacity = "0";
+  };
+
   return (
     <div className=" w-full pt-[50px] bg-[#fffef1]">
       <div className=" w-full">
@@ -104,7 +156,7 @@ export default function Home() {
       </div>
 
       <div className="w-full relative overflow-hidden">
-        <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px] ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
           <div className="bg-[#1e201f] rounded-[25px] px-[80px] py-[57px]">
             <div className=" flex flex-row justify-start items-center gap-[20px] ">
               <Lightning
@@ -160,8 +212,26 @@ export default function Home() {
               </div>
 
               <div className="w-full flex flex-col md:flex-row justify-start items-center gap-[40px] my-[40px]">
-                <div className=" bg-[#549f99] flex flex-col justify-between rounded-[25px] min-h-[385px] w-full md:w-[50%] ">
-                  <div className=" w-full flex justify-between  px-[45px] py-[30px]">
+                <div
+                  ref={(el) => {
+                    if (el) cardRefs.current[1] = el;
+                  }}
+                  onMouseMove={(e) => handleMouseMove(e, 1)}
+                  onMouseLeave={() => handleMouseLeave(1)}
+                  className=" bg-[#549f99] min-h-[385px] relative flex flex-col justify-between rounded-[25px] w-full md:w-[50%] "
+                >
+                  <div
+                    ref={(el) => {
+                      if (el) glowRefs.current[1] = el;
+                    }}
+                    className=" w-full min-h-[385px] absolute rounded-[25px] top-0 left-0"
+                  ></div>
+                  <div
+                    ref={(el) => {
+                      if (el) contentRefs.current[1] = el;
+                    }}
+                    className=" w-full flex justify-between  px-[45px] py-[30px]"
+                  >
                     <Brain size={70} color="#ffffff" weight="regular" />
                     <div>
                       <ArrowLineUpRight size={35} color="#ffffff" />
@@ -179,8 +249,26 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-                <div className=" bg-[#605ec2] flex flex-col justify-between rounded-[25px] min-h-[385px] w-full md:w-[50%] ">
-                  <div className=" w-full flex justify-between  px-[45px] py-[30px]">
+                <div
+                  ref={(el) => {
+                    if (el) cardRefs.current[2] = el;
+                  }}
+                  onMouseMove={(e) => handleMouseMove(e, 2)}
+                  onMouseLeave={() => handleMouseLeave(2)}
+                  className=" bg-[#605ec2] flex flex-col justify-between rounded-[25px] min-h-[385px] w-full md:w-[50%] "
+                >
+                  <div
+                    ref={(el) => {
+                      if (el) glowRefs.current[2] = el;
+                    }}
+                    className=" w-full min-h-[385px] absolute rounded-[25px] top-0 left-0"
+                  ></div>
+                  <div
+                    ref={(el) => {
+                      if (el) contentRefs.current[2] = el;
+                    }}
+                    className=" w-full flex justify-between  px-[45px] py-[30px]"
+                  >
                     <div>
                       <CubeTransparent
                         size={76}
@@ -230,7 +318,7 @@ export default function Home() {
         </div>
         </div>
 
-        <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden my-[140px] py-[85px]">
+        <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden my-[40px] md:my-[140px] py-[85px]">
           <div className=" w-[90%] max-w-[1200px] mx-auto  ">
             <div className="flex flex-col justify-start items-start gap-[54px] p-0">
               <div className="w-full flex flex-col justify-between items-start">
@@ -255,16 +343,16 @@ export default function Home() {
                 className="object-contain w-[346px]"
               />
 
-              <div className="w-full flex md:flex-row flex-col md:items-start gap-[25px] p-0 justify-between items-center">
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
                 {processList.map((process, index) => (
                   <div
                     key={index}
-                    className={` min-h-[288px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
+                    className={` min-h-[230px]  md:min-h-[288px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
                   >
                     <span className="text-[36px] font-bold leading-[42px] -tracking-[1.8px] text-left">
                       {process.title}
                     </span>
-                    <span className="w-[170px] text-[16px] leading-[19px] text-left">
+                    <span className=" w-[250px] md:w-[170px] text-[16px] leading-[19px] text-left">
                       {process.description}
                     </span>
                   </div>
@@ -363,6 +451,7 @@ export default function Home() {
                     <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
                     <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
                   </div>
+                  <div className="w-[313.7px] md:w-[448.2px] h-[262.0px] md:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
                 </div>
 
                 <div className="w-[313.7px] lg:w-[448.2px] h-[262.0px] lg:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
@@ -456,35 +545,109 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full relative  overflow-hidden">
-          <div className=" w-[90%] max-w-[1200px] mx-auto ">
-            <div className="w-[1200px] h-[584.6px] flex-grow-0 flex flex-col justify-start items-center gap-[20px] my-[140px]">
-              <div className="h-[367.1px] self-stretch flex-grow-0 flex flex-col justify-start items-start gap-[45px] p-0">
-                <div className="w-[355.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#000]"></div>
-                <div className="w-[1200px] h-[280px] flex flex-col  md:flex-row justify-start items-stretch gap-[11px] p-[15px] rounded-[20px] ">
-                  <div className="w-[589px] h-[280px]  p-[15px] rounded-[20px] bg-[#f9f9f9]"></div>
-                  <div className="w-[589px] h-[280px]  p-[15px] rounded-[20px] bg-[#f9f9f9]"></div>
-                </div>
-              </div>
-
-              <div className="w-[1200px] h-[160.5px] flex-grow-0 flex flex-row justify-start items-start gap-[20px] my-[40px]">
-                <div className="w-[335px] h-[160.5px] flex-grow-0 flex flex-col justify-start items-stretch gap-[11px] p-[15px] rounded-[20px] bg-[#f3f8f8]"></div>
-                <div className="w-[335px] h-[160.5px] flex-grow-0 flex flex-col justify-start items-stretch gap-[11px] p-[15px] rounded-[20px] bg-[#f3f8f8]"></div>
-                <div className="w-[335px] h-[160.5px] flex-grow-0 flex flex-col justify-start items-stretch gap-[11px] p-[15px] rounded-[20px] bg-[#f3f8f8]"></div>
-                <div className="w-[335px] h-[160.5px] flex-grow-0 flex flex-col justify-start items-stretch gap-[11px] p-[15px] rounded-[20px] bg-[#f3f8f8]"></div>
-              </div>
-              <span className="w-[145px] h-[17px] flex-grow-0  text-[16px] font-medium [font-stretch:normal] not-italic leading-[1.04] tracking-[normal] text-center text-[#5f90ef]">
-                Read more reviews
+        <div className="w-full relativeoverflow-hidden">
+          <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
+            <div className=" flex flex-row mx-auto justify-center items-center rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
+              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                Check out what the folks are saying
               </span>
+            </div>
+            <div className="w-full flex flex-col md:flex-row justify-between items-center gap-[20px] mt-[45px]">
+              <div className=" bg-[#f3f1e4] p-[15px] w-full md:w-[50%] rounded-[20px]">
+                <Image
+                  src="/Homepage/jossieCotto.webp"
+                  alt="jossie Cotto"
+                  width={88}
+                  height={88}
+                  className=" mx-auto rounded-full"
+                />
+                <h1 className=" text-[22px] font-semibold text-center leading-[23px] mt-[19px]">
+                  Jossie Cotto
+                </h1>
+                <p className=" text-[16px] text-center leading-[17px] pt-[7px]">
+                  Film Director, Hollywood, California
+                </p>
+                <p className=" text-[16px] text-center font-medium leading-[19px] px-[105px] pt-[22px]">
+                  &quot;There might be people do something similar to what you
+                  want. But coullax works to the details. they always pay
+                  attention to all the stuff that matters to you as a
+                  client&quot;
+                </p>
+              </div>
+              <div className=" bg-[#f3f1e4] p-[15px] w-full md:w-[50%] rounded-[20px]">
+                <Image
+                  src="/Homepage/jossieCotto.webp"
+                  alt="jossie Cotto"
+                  width={88}
+                  height={88}
+                  className=" mx-auto rounded-full"
+                />
+                <h1 className=" text-[22px] font-semibold text-center leading-[23px] mt-[19px]">
+                  Jossie Cotto
+                </h1>
+                <p className=" text-[16px] text-center leading-[17px] pt-[7px]">
+                  Film Director, Hollywood, California
+                </p>
+                <p className=" text-[16px] text-center font-medium leading-[19px] px-[105px] pt-[22px]">
+                  &quot;There might be people do something similar to what you
+                  want. But coullax works to the details. they always pay
+                  attention to all the stuff that matters to you as a
+                  client&quot;
+                </p>
+              </div>
+            </div>
+            <div className=" my-[20px] flex flex-row justify-start items-center gap-[20px] overflow-x-scroll hide-scrollbar">
+              {Array.from({ length: 10 }).map((_, index) => (
+                <div
+                  key={index}
+                  className=" bg-[#f3f1e4] rounded-[20px] p-[15px] w-[335px] flex-shrink-0 inline-block"
+                >
+                  <div className=" flex flex-row justify-between items-center">
+                    <div className="flex flex-row justify-start items-center gap-[10px]">
+                      <Image
+                        src="/Homepage/jossieCotto.webp"
+                        alt="jossie Cotto"
+                        width={40}
+                        height={40}
+                        className="rounded-full"
+                      />
+                      <p className=" leading-[15px] text-[14px] font-semibold">
+                        alextima10
+                      </p>
+                    </div>
+                    <div className="flex flex-row justify-start items-center gap-[5px]">
+                      <p className=" leading-[15px] text-[14px] font-semibold">
+                        5
+                      </p>
+                      <Star size={15} color="#eaa134" weight="fill" />
+                    </div>
+                  </div>
+                  <p className=" pt-[11px] text-[14px] leading-[16px] font-plus-jakarta-sans">
+                    Best experience I&apos;ve had . Professional and smooth.
+                    Communication and understanding of my requests was
+                    impressive. Delivered a quality product.
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className=" w-full flex flex-col justify-center items-center">
+              <button className=" mx-auto text-[#5f90ef] cursor-pointer">
+                Read more reviews
+              </button>
             </div>
           </div>
         </div>
 
         <div className="w-full relative  overflow-hidden">
-          <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px]">
-            <div className='min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]'>
-              <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">Want to know more ?</h1>
-              <p className="text-[16px] font-normal leading-[1.04] text-black text-center">Hop on a quick 1-to-1 meeting for any questions or to kickstart your project with custom requirements.</p>
+          <div className=" w-[90%] max-w-[1200px] mx-auto mb-[140px]">
+            <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
+              <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">
+                Want to know more ?
+              </h1>
+              <p className="text-[16px] font-normal leading-[1.04] text-black text-center">
+                Hop on a quick 1-to-1 meeting for any questions or to kickstart
+                your project with custom requirements.
+              </p>
               <button className=" bg-[#6abb79] rounded-full flex justify-center p-[9px] mb-[7px]">
                 <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
                   <ArrowRight className=" h-[15px] aspect-square" />
