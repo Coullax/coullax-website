@@ -224,6 +224,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </div>
 
         <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden my-[140px] py-[85px]">
           <div className=" w-[90%] max-w-[1200px] mx-auto  ">
@@ -329,55 +330,106 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full relative overflow-hidden">
-          <div className="w-[95%] md:w-[90%] max-w-[1200px] my-[140px] mx-auto">
-            <div className="w-full md:w-[1198px] h-auto md:h-[783px] flex-grow-0 flex flex-col justify-start items-start md:gap-[60px] gap-[20px] p-0">
-              <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start p-0">
-                <div className="w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]"></div>
-                <span className="w-full max-w-[570px] h-[69px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]">
-                  Working with us is easy. We follow a clear, no fuss process
-                  that keeps things moving fast and smooth, from first chat to
-                  final delivery.
-                </span>
+      <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+        <div className="w-[90%] md:w-[90%] max-w-[1200px] mx-auto my-[140px]">
+          <div className="w-full md:w-[1198px] flex-grow-0 flex flex-col justify-start items-start md:gap-[60px] gap-[10px] p-0">
+            <div className='min-h-[156.1px] w-full flex flex-col justify-between items-start  mt-[80px]'>
+              <div className='w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]'>
               </div>
+              <span className='w-full max-w-[570px] flex-grow-0 text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'>
+                Workinsasg with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery.
+              </span>
+            </div>
+            <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto">
+              <div className="w-full md:w-[1198px] h-auto md:h-[783px] flex-grow-0 flex flex-col justify-start items-start md:gap-[60px] gap-[20px] p-0">
+                {/* <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start p-0">
+                  <div className="w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]"></div>
+                  <span className="w-full max-w-[570px] h-[69px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]">
+                    Worksasaing with us is easy. We follow a clear, no fuss process
+                    that keeps things moving fast and smooth, from first chat to
+                    final delivery.
+                  </span>
+                </div> */}
 
-              <div className="w-full h-auto md:h-[566.9px] flex flex-col gap-[10px] md:gap-[22.6px]">
-                <div className="flex flex-row gap-[10px] md:gap-[22.6px]">
-                  <div className="w-[179.4px] md:w-[256.3px] h-[262.0px] md:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
-                  <div className="w-[213.7px] md:w-[448.2px] h-auto md:h-[374px] gap-[10px] md:gap-[22.6px] flex flex-col rounded-3xl">
-                    <div className="h-[88.9px] md:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
-                    <div className="h-auto md:h-[232px] rounded-3xl gap-[10px] md:gap-[22.6px] flex flex-row">
-                      <div className="h-[162.4px] md:h-[232px] w-[148.4px] md:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
-                      <div className="h-[162.4px] md:h-[232px] w-[148.4px] md:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
+                <div className="w-full h-auto md:h-[566.9px] flex flex-col gap-[10px] md:gap-[22.6px]">
+                  <div className="flex flex-row gap-[10px] md:gap-[22.6px]">
+                    <div className="w-[179.4px] md:w-[256.3px] h-[262.0px] md:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
+                    <div className="w-[213.7px] md:w-[448.2px] h-auto md:h-[374px] gap-[10px] md:gap-[22.6px] flex flex-col rounded-3xl">
+                      <div className="h-[88.9px] md:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
+                      <div className="h-auto md:h-[232px] rounded-3xl gap-[10px] md:gap-[22.6px] flex flex-row">
+                        <div className="h-[162.4px] md:h-[232px] w-[148.4px] md:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
+                        <div className="h-[162.4px] md:h-[232px] w-[148.4px] md:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
+                      </div>
                     </div>
+                    <div className="w-[313.7px] md:w-[448.2px] h-[262.0px] md:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
                   </div>
-                  <div className="w-[313.7px] md:w-[448.2px] h-[262.0px] md:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
-                </div>
-                <div className="flex flex-row gap-[10px] md:gap-[22.6px]">
-                  <div className="w-[411.4px] md:w-[587.7px] h-[119.0px] md:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
-                  <div className="w-[411.4px] md:w-[587.7px] h-[119.0px] md:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
+                  <div className="flex flex-row gap-[10px] md:gap-[22.6px]">
+                    <div className="w-[411.4px] md:w-[587.7px] h-[119.0px] md:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
+                    <div className="w-[411.4px] md:w-[587.7px] h-[119.0px] md:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
         <div className="w-full relative  overflow-hidden ">
           <div className=" w-[90%] max-w-[1200px] mx-auto ">
-            <div className="w-[1200px] h-[457.1px] flex-grow-0 flex flex-col justify-start items-center gap-[45px] mt-[140px]">
+            <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px]">
               <div className="w-[284.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#000]"></div>
-              <span className="w-[706px] h-[115px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-center text-[#575757] py-[45px]">
+              <span className="flex-grow-0  ext-[20px] not-italic leading-[1.16]  text-[#575757] md:py-[45px] py-[10px]">
                 Our mission is to enhance efficiency, security, and transparency
                 across industries. Making the world a smarter, more connected,
                 and a safer placeTo achieve this, we believe in the power of
                 Artificial intelligence’s efficiency and Blockchain technology’s
                 security and transparency.
               </span>
-              <div className="w-[1200px] h-[210px] flex-grow-0 flex flex-row justify-center items-start gap-[25px] p-0">
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#f9f9f9]"></div>
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#f9f9f9]"></div>
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#f9f9f9]"></div>
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#f9f9f9]"></div>
+              <div className=" flex md:flex-row flex-col justify-center items-start gap-[25px] p-0">
+                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                  <div className="flex justify-end items-end w-full">
+                  <Image
+                    src="/Homepage/group.png"
+                    alt="image1"
+                    width={75}
+                    height={35}
+                    className="object-contain"
+                  />
+                  </div>
+                </div>
+                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                  <div className="flex justify-end items-end w-full">
+                  <Image
+                    src="/Homepage/group.png"
+                    alt="image1"
+                    width={75}
+                    height={35}
+                    className="object-contain"
+                  />
+                  </div>
+                </div>
+                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                  <div className="flex justify-end items-end w-full">
+                  <Image
+                    src="/Homepage/group.png"
+                    alt="image1"
+                    width={75}
+                    height={35}
+                    className="object-contain"
+                  />
+                  </div>
+                </div>
+                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                  <div className="flex justify-end items-end w-full">
+                  <Image
+                    src="/Homepage/group.png"
+                    alt="image1"
+                    width={75}
+                    height={35}
+                    className="object-contain"
+                  />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -502,6 +554,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
