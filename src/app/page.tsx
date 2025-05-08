@@ -270,7 +270,7 @@ export default function Home() {
         </div>
 
         <div className="w-full relative  overflow-hidden ">
-          <div className=" w-[90%] max-w-[1200px] mx-auto md:mb-[140px] mb-[40px]">
+          <div className=" w-[90%] max-w-[1200px] mx-auto">
             <div className=" flex flex-col md:justify-start items-center ">
               <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
                 <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
@@ -330,7 +330,7 @@ export default function Home() {
         </div>
 
         <div className="w-full relative overflow-hidden">
-          <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto">
+          <div className="w-[95%] md:w-[90%] max-w-[1200px] my-[140px] mx-auto">
             <div className="w-full md:w-[1198px] h-auto md:h-[783px] flex-grow-0 flex flex-col justify-start items-start md:gap-[60px] gap-[20px] p-0">
               <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start p-0">
                 <div className="w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]"></div>
