@@ -25,3 +25,17 @@ body {
   color: var(--foreground);
   font-family: var(--font-plus-jakarta-sans);
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Ensure smooth scrolling */
+.hide-scrollbar {
+  scroll-behavior: smooth;
+}
