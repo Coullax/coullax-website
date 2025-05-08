@@ -6,10 +6,14 @@ import {
   ArrowLineUpRight,
   Brain,
   CubeTransparent,
+  Globe,
+  Laptop,
   Lightning,
   ShieldCheck,
+  Users,
 } from "@phosphor-icons/react";
 import { ArrowRight } from "lucide-react";
+import { HandFist } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   const navigationList = [
@@ -377,59 +381,74 @@ export default function Home() {
         <div className="w-full relative  overflow-hidden ">
           <div className=" w-[90%] max-w-[1200px] mx-auto ">
             <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px]">
-              <div className="w-[284.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#000]"></div>
-              <span className="flex-grow-0  ext-[20px] not-italic leading-[1.16]  text-[#575757] md:py-[45px] py-[10px]">
+            <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
+                  <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                    Smooth Process, Solid Results
+                  </span>
+                </div>
+              <span className="flex-grow-0  not-italic leading-[1.16]  text-[#575757] text-[20px] max-w-[706px]">
                 Our mission is to enhance efficiency, security, and transparency
                 across industries. Making the world a smarter, more connected,
-                and a safer placeTo achieve this, we believe in the power of
+                and a safer place <br></br><br></br>
+                To achieve this, we believe in the power of
                 Artificial intelligence’s efficiency and Blockchain technology’s
                 security and transparency.
               </span>
-              <div className=" flex md:flex-row flex-col justify-center items-start gap-[25px] p-0">
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                  <div className="flex justify-end items-end w-full">
-                  <Image
-                    src="/Homepage/group.png"
-                    alt="image1"
-                    width={75}
-                    height={35}
-                    className="object-contain"
-                  />
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] p-0">
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                  <Users size={37} />
+                </div>
+
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                    <span className="text-[36px] font-[600] mb-[15px]"> Over 150</span>
+                    <span className="text-[16px] font-[600]">Satisfied clients<br></br>
+                    worldwide</span>
+                    
                   </div>
                 </div>
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                  <div className="flex justify-end items-end w-full">
-                  <Image
-                    src="/Homepage/group.png"
-                    alt="image1"
-                    width={75}
-                    height={35}
-                    className="object-contain"
-                  />
+
+                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                <Laptop size={37} />
+                </div>
+
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                    <span className="text-[36px] font-[600] mb-[15px]">400+</span>
+                    <span className="text-[16px] font-[600]"> Successfully <br></br> Finished 
+                      projects</span>                    
                   </div>
                 </div>
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                  <div className="flex justify-end items-end w-full">
-                  <Image
-                    src="/Homepage/group.png"
-                    alt="image1"
-                    width={75}
-                    height={35}
-                    className="object-contain"
-                  />
+
+
+                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                  <Globe size={37} />
+                </div>
+
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                    <span className="text-[36px] font-[600] mb-[15px]">2000+</span>
+                    <span className="text-[16px] font-[600]"> Hours of saving the world from <br></br>
+                    bad experiences.</span>
+                    
                   </div>
                 </div>
-                <div className="w-[280px] h-[210px] flex-grow-0 flex flex-col justify-start items-center gap-[15px] pt-[25px] px-[15px] pb-[15px] rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                  <div className="flex justify-end items-end w-full">
-                  <Image
-                    src="/Homepage/group.png"
-                    alt="image1"
-                    width={75}
-                    height={35}
-                    className="object-contain"
-                  />
+
+
+                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                  <HandFist  size={37} />
+                </div>
+
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                    <span className="text-[36px] font-[600] mb-[15px]">30+</span>
+                    <span className="text-[16px] font-[600]">Countries across 
+                   <br></br>
+                   the globe</span>
+                    
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
