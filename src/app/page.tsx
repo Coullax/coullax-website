@@ -31,8 +31,8 @@ export default function Home() {
 
           <div className="flex justify-center items-center">
             <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
-              {navigationList.map((navigation) => (
-                <Link href={navigation.href}>{navigation.name}</Link>
+              {navigationList.map((navigation,index) => (
+                <Link key={index} href={navigation.href}>{navigation.name}</Link>
               ))}
             </div>
           </div>
@@ -78,9 +78,9 @@ export default function Home() {
       <div className="w-full relative">
         <div className="w-[90%] max-w-[1200px] mx-auto">
           <div className="flex-grow-0 flex flex-col justify-start items-start">
-            <div className="w-full flex flex-col justify-between items-start p-4 md:p-0">
-              <div className=" flex flex-row justify-center items-center px-[22px] py-[10px] rounded-full bg-[#171717]">
-                <span className="w-full font-bold leading-[23PX] text-[20px] text-[#fff]">
+            <div className="w-full flex flex-col justify-between items-start md:p-0">
+              <div className=" flex flex-row justify-center items-center py-[10px] rounded-full bg-[#171717] px-[22px]">
+                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
                   This is where we ace the game
                 </span>
               </div>
@@ -123,15 +123,15 @@ export default function Home() {
                   Automation Solutions Websites & Software Mobile Apps
                 </div>
               </div>
-              <div className="w-full flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#e5e6ff] ">
-                <span className="self-stretch flex-grow-0  text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
+              <div className="w-full flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#dbdcfd]">
+                <span className=" self-stretch flex-grow-0  text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
                   Web & Software Development
                 </span>
-                <div className="self-stretch w-full max-w-[188px]flex-grow-0 flex flex-col justify-start items-stretch gap-[10.8px] p-0">
+                <div className="self-stretch w-full max-w-[188px] flex-grow-0 flex flex-col justify-start items-stretch gap-[10.8px] p-0">
                   Automation Solutions Websites & Software Mobile Apps
                 </div>
               </div>
-              <div className="w-full  flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#effdf8]">
+              <div className="w-full  flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#d6f2e8]">
                 <span className=" self-stretch flex-grow-0  text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
                   Web & Software Development
                 </span>
@@ -198,6 +198,70 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+
+      <div className="w-full relative  overflow-hidden ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto md:mb-[140px] mb-[40px]">
+          <div className=' flex flex-col md:justify-start items-center '>
+            <div className='w-[284.5px] h-[42.1px]  flex flex-row justify-center items-center rounded-[63.6px] bg-[#000]'>
+            </div>
+            <div className='w-full flex md:flex-row md:gap-[85px] gap-[35px] flex-col mt-[60px] py-[30px] justify-center items-center'>
+              <div className='w-[172px] h-[40px] flex items-center justify-center'>
+                <Image
+                  src="/Homepage/fiverr.png"
+                  alt="image1"
+                  width={75}
+                  height={35}
+                  className="object-contain"
+                />
+              </div>
+
+              <div className='w-[172px] h-[40px] flex items-center justify-center'>
+                <Image
+                  src="/Homepage/pornopoli.png"
+                  alt="image1"
+                  width={75}
+                  height={35}
+                  className="object-contain"
+                />
+              </div>
+              <div className='w-[172px] h-[40px] flex items-center justify-center'>
+                <Image
+                  src="/Homepage/vesa.png"
+                  alt="image1"
+                  width={75}
+                  height={35}
+                  className="object-contain"
+                />
+              </div>
+              <div className='w-[172px] h-[40px] flex items-center justify-center'>
+                <Image
+                  src="/Homepage/crypto.png"
+                  alt="image1"
+                  width={75}
+                  height={35}
+                  className="object-contain"
+                />
+              </div>
+              <div className='w-[172px] h-[40px] flex items-center justify-center'>
+                <Image
+                  src="/Homepage/asvoria.png"
+                  alt="image1"
+                  width={75}
+                  height={35}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
 
       <div className="w-full relative overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto  ">
@@ -303,7 +367,7 @@ export default function Home() {
 
 
 
-
+</div>
     </div>
   );
 }
