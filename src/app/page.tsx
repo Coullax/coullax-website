@@ -1,14 +1,24 @@
+"use client";
 
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
+import { CubeTransparent, Lightning, ShieldCheck } from "@phosphor-icons/react";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className=" w-full">
-      <div className=" w-full">
-        <div className="w-[90%] max-w-[1200px] flex items-center justify-between py-8 mx-auto md:px-[100px] px-4">
-          <div>
-            <div >
+  const navigationList = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+    { name: "Careers", href: "/careers" },
+  ];
 
+  return (
+    <div className=" w-full p-[50px] bg-[#fffef1]">
+      <div className=" w-full">
+        <div className="w-[90%] max-w-[1200px] flex items-center justify-between mx-auto">
+          <div>
+            <div>
               <Image
                 src="/logo.png"
                 alt="logo"
@@ -17,29 +27,48 @@ export default function Home() {
                 className="cursor-pointer"
               />
             </div>
-
-
           </div>
 
           <div className="flex justify-center items-center">
-            <div className="flex justify-center items-center gap-4 font-bold font-stretch-normal text-[20px]">
-              <h5>Home</h5>
-              <h5>Features</h5>
-              <h5>About</h5>
-
+            <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
+              {navigationList.map((navigation) => (
+                <Link href={navigation.href}>{navigation.name}</Link>
+              ))}
             </div>
-
-
           </div>
         </div>
       </div>
 
-      <div className="w-full relative  overflow-hidden">
-        <div className=" w-[90%] max-w-[1200px] mx-auto ">
-          <div className='min-h-[435px] bg-[#eff4f2] flex items-center justify-center md:my-[140px] my-[10px] rounded-[25px]'>
-            <h1 className='text-[45px] font-bold text-center text-black tracking-[-2.25px]'>Making Tech Work Smarter<br />
-              and Safer for Everyone
-            </h1>
+      <div className="w-full relative overflow-hidden">
+        <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px] ">
+          <div className="bg-[#1e201f] rounded-[25px] px-[80px] py-[57px]">
+            <div className=" flex flex-row justify-start items-center gap-[20px] ">
+              <Lightning size={32} weight="bold" className="text-white ml-[16px]" />
+              <ShieldCheck size={32} weight="bold" className="text-white" />
+              <CubeTransparent size={32} weight="bold" className="text-white" />
+            </div>
+            <div className=" mt-[30px]">
+              <span className="text-[20px] font-bold bg-[#414342] rounded-full text-[#c6c6c6] py-[10px] px-[22px]">
+                Efficiency. Security. Transparency.
+              </span>
+            </div>
+            <div className="mt-[30px]">
+              <p className=" text-[#fffef1] text-[45px] leading-[47px] font-bold -tracking-[2.25px]">
+                Making Tech Work Smarter
+                <br />
+                and Safer for Everyone
+              </p>
+            </div>
+            <div className="mt-[30px]">
+              <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] mb-[7px]">
+                <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
+                  <ArrowRight className=" h-[15px] aspect-square" />
+                </div>
+                <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
+                  Let&apos;s talk
+                </span>
+              </button>
+            </div>
           </div>
 
         </div>
@@ -48,15 +77,19 @@ export default function Home() {
 
       <div className="w-full relative">
         <div className="w-[90%] max-w-[1200px] mx-auto">
-          <div className="flex-grow-0 flex flex-col justify-start items-start p-0">
-            <div className="w-full max-w-[570px] min-h-[156px] flex flex-col justify-between items-start p-4 md:p-0">
-              <div className="w-full max-w-[308.5px] h-[42.1px] flex-shrink-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]">
-                <span className="w-full max-w-[264px] h-[23px] flex-shrink-0 text-[clamp(16px,5vw,20px)] not-italic leading-[1.16] tracking-[-1px] text-left text-[#fff] truncate">
+          <div className="flex-grow-0 flex flex-col justify-start items-start">
+            <div className="w-full flex flex-col justify-between items-start p-4 md:p-0">
+              <div className=" flex flex-row justify-center items-center px-[22px] py-[10px] rounded-full bg-[#171717]">
+                <span className="w-full font-bold leading-[23PX] text-[20px] text-[#fff]">
                   This is where we ace the game
                 </span>
               </div>
               <div className="mt-[45px] h-[69px] flex-shrink-0  text-[clamp(16px,5vw,20px)] font-medium not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]">
                 Working with us is easy We follow a clear no fuss process that keeps things moving fast and smooth, from first chat to final delivery.
+              <div className="mt-[45px] text-[#575757] font-medium text-[20px] leading-[23px]">
+                Working with us is easy We follow a clear no fuss process that<br/>
+                keeps things moving fast and smooth, from first chat to final<br/>
+                delivery.
               </div>
             </div>
 
