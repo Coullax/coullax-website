@@ -55,7 +55,7 @@ export default function Home() {
                   This is where we ace the game
                 </span>
               </div>
-              <div className="mt-[45px] h-[69px] flex-shrink-0 font-[PlusJakartaSans] text-[clamp(16px,5vw,20px)] font-medium not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]">
+              <div className="mt-[45px] h-[69px] flex-shrink-0  text-[clamp(16px,5vw,20px)] font-medium not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]">
                 Working with us is easy We follow a clear no fuss process that keeps things moving fast and smooth, from first chat to final delivery.
               </div>
             </div>
@@ -81,17 +81,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="w-full  flex flex-col md:flex-row justify-between items-center gap-[25px] p-0">
+            <div className="w-full  flex flex-col md:flex-row justify-between items-center gap-[25px] p-0 ">
               <div className="w-full flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#def7ff]">
-                <span className=" self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
+                <span className=" self-stretch flex-grow-0  text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
                   Web & Software Development
                 </span>
                 <div className="self-stretch w-full max-w-[188px] flex-grow-0 flex flex-col justify-start items-stretch gap-[10.8px] p-0">
                   Automation Solutions Websites & Software Mobile Apps
                 </div>
               </div>
-              <div className="w-full flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#e5e6ff]">
-                <span className="self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
+              <div className="w-full flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#e5e6ff] ">
+                <span className="self-stretch flex-grow-0  text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
                   Web & Software Development
                 </span>
                 <div className="self-stretch w-full max-w-[188px]flex-grow-0 flex flex-col justify-start items-stretch gap-[10.8px] p-0">
@@ -99,7 +99,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full  flex-grow-0 flex flex-col justify-start items-start gap-[20px] px-[25px] py-[24px] rounded-[25px] bg-[#effdf8]">
-                <span className=" self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
+                <span className=" self-stretch flex-grow-0  text-[20px] font-bold not-italic leading-[1.16] tracking-[-1px] text-left text-[#2a3b40]">
                   Web & Software Development
                 </span>
                 <div className="self-stretch w-full max-w-[188px]  flex-grow-0 flex flex-col justify-start items-stretch gap-[10.8px] p-0">
@@ -120,7 +120,7 @@ export default function Home() {
           <div className='min-h-[156.1px] w-full flex flex-col justify-between items-start p-0'>
               <div className='w-full max-w-[310.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#171717]'>
               </div>
-              <span className='w-full max-w-[570px] h-[69px] flex-grow-0 font-[PlusJakartaSans] text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'>
+              <span className='w-full max-w-[570px] h-[69px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'>
                 Working with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery.
               </span>
             </div>
@@ -134,29 +134,29 @@ export default function Home() {
 
             <div className='w-full flex md:flex-row flex-col md:items-start gap-[25px] p-0 justify-between items-center'>
               <div className='min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#f3f8f8]'>
-                <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
-                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+                <span className='h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
                   We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
                 </span>
               </div>
 
               <div className='min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#c5d7d8]'>
-              <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
-                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+              <span className='h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
                   We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
                 </span>
               </div>
 
               <div className='min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#163b31]'>
-              <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
-                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+              <span className='h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
                   We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
                 </span>
               </div>
 
               <div className='min-w-[281px]  w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#f2fe65]'>
-              <span className='h-[23px] self-stretch flex-grow-0 font-[PlusJakartaSans] text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
-                <span className='w-[166px] h-[95px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
+              <span className='h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]'>Kickoff</span>
+                <span className='w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]'>
                   We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.
                 </span>
               </div>
@@ -172,12 +172,25 @@ export default function Home() {
             <div className='w-[570px] h-[156.1px] flex-grow-0 flex flex-col justify-between items-start p-0'>
               <div className='w-[283.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#272626]'>
               </div>
-              <span className='w-[570px] h-[69px] flex-grow-0 font-[PlusJakartaSans] text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'> Woarking with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery</span>
+              <span className='w-[570px] h-[69px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]'> Woardsdking with us is easy. We follow a clear, no fuss process that keeps things moving fast and smooth, from first chat to final delivery</span>
             </div>
 
-            <div className='w-[1198px] h-[566.9px] flex-grow-0'>
-              <div className='w-[256.3px] h-[374.3px] flex flex-col justify-start items-start gap-[29.8px] mt-[0] mr-[22.6px] mb-[22.6px] ml-[0] px-[25px] py-[23.8px] rounded-[17.9px] bg-[#163b31]'></div>
-              <div className='w-[587.7px] h-[169.2px] flex flex-col justify-center items-center gap-[29.8px] mt-[23px] mr-[22.6px] mb-[0.4px] ml-[0] px-[25px] py-[23.8px] rounded-[17.9px] bg-[linear-gradient(112deg,_#7b7ee1_10%,_#43457b_60%)]'></div>
+            <div className='w-full h-[566.9px] flex flex-col gap-[22.6px]'>
+              <div className='flex md:flex-row gap-[22.6px]'>
+              <div className='w-[256.3px] h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl'></div>
+              <div className='w-[448.2px] h-[374px]  gap-[18.6px] flex flex-col rounded-3xl'>
+                <div className='h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]'></div>
+                <div className='h-[232px]  rounded-3xl gap-[22.6px] flex flex-row'>
+                  <div className='h-[232px] w-[212px] bg-[#d1ecb1] rounded-3xl'></div>
+                  <div className='h-[232px] w-[212px] bg-[#b1cfc4] rounded-3xl'></div>
+                </div>
+              </div>
+              <div className='w-[448.2px] h-[374.3px] bg-[#2f6665] rounded-3xl'></div>
+              </div>
+              <div className='flex md:flex-row flex-col gap-[22.6px]'>
+              <div className='w-[587.7px] h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]'></div>
+              <div className='w-[587.7px] h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]'></div>
+              </div>
             </div>
 
           </div>
@@ -193,7 +206,7 @@ export default function Home() {
           <div className='w-[1200px] h-[457.1px] flex-grow-0 flex flex-col justify-start items-center gap-[45px] mt-[140px]'>
             <div className='w-[284.5px] h-[42.1px] flex-grow-0 flex flex-row justify-center items-center gap-[6.4px] px-[22.3px] py-[9.5px] rounded-[63.6px] bg-[#000]'>
             </div>
-            <span className='w-[706px] h-[115px] flex-grow-0 font-[PlusJakartaSans] text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-center text-[#575757] py-[45px]'>
+            <span className='w-[706px] h-[115px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-center text-[#575757] py-[45px]'>
               Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer placeTo achieve this, we believe in the power of Artificial intelligence’s efficiency and Blockchain technology’s security and transparency.
             </span>
             <div className='w-[1200px] h-[210px] flex-grow-0 flex flex-row justify-center items-start gap-[25px] p-0'>
@@ -228,7 +241,7 @@ export default function Home() {
               <div className='w-[335px] h-[160.5px] flex-grow-0 flex flex-col justify-start items-stretch gap-[11px] p-[15px] rounded-[20px] bg-[#f3f8f8]'></div>
 
             </div>
-            <span className='w-[145px] h-[17px] flex-grow-0 font-[PlusJakartaSans] text-[16px] font-medium [font-stretch:normal] not-italic leading-[1.04] tracking-[normal] text-center text-[#5f90ef]'>
+            <span className='w-[145px] h-[17px] flex-grow-0  text-[16px] font-medium [font-stretch:normal] not-italic leading-[1.04] tracking-[normal] text-center text-[#5f90ef]'>
               Read more reviews
             </span>
 
