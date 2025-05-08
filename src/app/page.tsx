@@ -40,6 +40,37 @@ export default function Home() {
     },
   ];
 
+  const processList = [
+    {
+      title: "Kickoff",
+      backGround: "bg-[#ffffff]",
+      textColor: "text-[#2c4a40]",
+      description:
+        "We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.",
+    },
+    {
+      title: "Blueprint",
+      backGround: "bg-[#c5d7d8]",
+      textColor: "text-[#1d3633]",
+      description:
+        "We map out the plan. Clear timlelines, smart solutions, and a creative game plan you can vibe with.",
+    },
+    {
+      title: "Build",
+      backGround: "bg-[#163b31]",
+      textColor: "text-[#f2fe65]",
+      description:
+        "This is where the magic happens. Our team gets to work, blending tech and creativity.",
+    },
+    {
+      title: "Launch & Beyond",
+      backGround: "bg-[#e0ef29]",
+      textColor: "text-[#163b31]",
+      description:
+        'We don\'t just hit "go" and disappear. We launch, support, and grow with you, every step after.',
+    },
+  ];
+
   return (
     <div className=" w-full pt-[50px] bg-[#fffef1]">
       <div className=" w-full">
@@ -191,22 +222,23 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            {/* </div> */}
           </div>
         </div>
 
         <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden my-[140px] py-[85px]">
           <div className=" w-[90%] max-w-[1200px] mx-auto  ">
-            <div className="flex flex-col justify-start items-start gap-[55px] p-0">
-              <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start p-0">
+            <div className="flex flex-col justify-start items-start gap-[54px] p-0">
+              <div className="w-full flex flex-col justify-between items-start">
                 <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
                   <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
                     Smooth Process, Solid Results
                   </span>
                 </div>
-                <span className="w-full max-w-[570px] h-[69px] flex-grow-0  text-[20px] font-medium [font-stretch:normal] not-italic leading-[1.16] tracking-[normal] text-left text-[#575757]">
+                <span className="w-full mt-[45px] text-[20px] font-medium leading-[23px] text-left text-[#575757]">
                   Working with us is easy. We follow a clear, no fuss process
+                  <br />
                   that keeps things moving fast and smooth, from first chat to
+                  <br />
                   final delivery.
                 </span>
               </div>
@@ -214,50 +246,24 @@ export default function Home() {
                 src="/Homepage/Arrow.png"
                 alt="image1"
                 width={1200}
-                height={554}
+                height={10}
                 className="object-contain w-[346px]"
               />
 
               <div className="w-full flex md:flex-row flex-col md:items-start gap-[25px] p-0 justify-between items-center">
-                <div className="min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#f3f8f8]">
-                  <span className="h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]">
-                    Kickoff
-                  </span>
-                  <span className="w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]">
-                    We start with a friendly deep dive, getting to know your
-                    goals, ideas, and wildest visions.
-                  </span>
-                </div>
-
-                <div className="min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#c5d7d8]">
-                  <span className="h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]">
-                    Kickoff
-                  </span>
-                  <span className="w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]">
-                    We start with a friendly deep dive, getting to know your
-                    goals, ideas, and wildest visions.
-                  </span>
-                </div>
-
-                <div className="min-w-[281px] w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#163b31]">
-                  <span className="h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]">
-                    Kickoff
-                  </span>
-                  <span className="w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]">
-                    We start with a friendly deep dive, getting to know your
-                    goals, ideas, and wildest visions.
-                  </span>
-                </div>
-
-                <div className="min-w-[281px]  w-full flex flex-col justify-start items-start px-[25px] py-[24px] rounded-[25px] bg-[#f2fe65]">
-                  <span className="h-[23px] self-stretch flex-grow-0  text-[20px] font-bold [font-stretch:normal] not-italic leading-[1.16] tracking-[-1px] text-left text-[#2c4a40] mb-[120px]">
-                    Kickoff
-                  </span>
-                  <span className="w-[166px] h-[95px] flex-grow-0  text-[16px] font-normal [font-stretch:normal] not-italic leading-[1.19] tracking-[normal] text-left text-[#2c4a40]">
-                    We start with a friendly deep dive, getting to know your
-                    goals, ideas, and wildest visions.
-                  </span>
-                </div>
+                {processList.map((process, index) => (
+                  <div
+                    key={index}
+                    className={` min-h-[288px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
+                  >
+                    <span className="text-[36px] font-bold leading-[42px] -tracking-[1.8px] text-left">
+                      {process.title}
+                    </span>
+                    <span className="w-[170px] text-[16px] leading-[19px] text-left">
+                      {process.description}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -266,14 +272,18 @@ export default function Home() {
         <div className="w-full relative  overflow-hidden ">
           <div className=" w-[90%] max-w-[1200px] mx-auto md:mb-[140px] mb-[40px]">
             <div className=" flex flex-col md:justify-start items-center ">
-              <div className="w-[284.5px] h-[42.1px]  flex flex-row justify-center items-center rounded-[63.6px] bg-[#000]"></div>
+              <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
+                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                  Awesome peoplewho worked with us
+                </span>
+              </div>
               <div className="w-full flex md:flex-row md:gap-[85px] gap-[35px] flex-col mt-[60px] py-[30px] justify-center items-center">
                 <div className="w-[172px] h-[40px] flex items-center justify-center">
                   <Image
                     src="/Homepage/fiverr.png"
                     alt="image1"
-                    width={75}
-                    height={35}
+                    width={76}
+                    height={36}
                     className="object-contain"
                   />
                 </div>
@@ -282,8 +292,8 @@ export default function Home() {
                   <Image
                     src="/Homepage/pornopoli.png"
                     alt="image1"
-                    width={75}
-                    height={35}
+                    width={119}
+                    height={40}
                     className="object-contain"
                   />
                 </div>
@@ -291,8 +301,8 @@ export default function Home() {
                   <Image
                     src="/Homepage/vesa.png"
                     alt="image1"
-                    width={75}
-                    height={35}
+                    width={70}
+                    height={31}
                     className="object-contain"
                   />
                 </div>
@@ -300,8 +310,8 @@ export default function Home() {
                   <Image
                     src="/Homepage/crypto.png"
                     alt="image1"
-                    width={75}
-                    height={35}
+                    width={141}
+                    height={34}
                     className="object-contain"
                   />
                 </div>
@@ -309,8 +319,8 @@ export default function Home() {
                   <Image
                     src="/Homepage/asvoria.png"
                     alt="image1"
-                    width={75}
-                    height={35}
+                    width={133}
+                    height={19}
                     className="object-contain"
                   />
                 </div>
