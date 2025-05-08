@@ -409,7 +409,18 @@ export default function Home() {
 
         <div className="w-full relative  overflow-hidden">
           <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px]">
-            <div className="h-[186.1px] self-stretch flex-grow-0 flex flex-col justify-start items-center gap-[22px] p-[30px] rounded-[25px] bg-[#e5e6ff]"></div>
+            <div className='min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]'>
+              <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">Want to know more ?</h1>
+              <p className="text-[16px] font-normal leading-[1.04] text-black text-center">Hop on a quick 1-to-1 meeting for any questions or to kickstart your project with custom requirements.</p>
+              <button className=" bg-[#6abb79] rounded-full flex justify-center p-[9px] mb-[7px]">
+                <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
+                  <ArrowRight className=" h-[15px] aspect-square" />
+                </div>
+                <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
+                  Let&apos;s talk
+                </span>
+              </button>
+            </div>
           </div>
         </div>
 
