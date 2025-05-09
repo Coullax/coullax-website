@@ -23,7 +23,7 @@ export default function HeaderNavBar() {
                 <NavItems items={navigationList} />
                 <div className="flex items-center gap-4">
                     {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-                    <NavbarButton variant="primary">Book a call</NavbarButton>
+                    <NavbarButton >Book a call</NavbarButton>
                     {/* <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] ">
                         <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
                             <ArrowRight className=" h-[15px] aspect-square" />
@@ -60,13 +60,13 @@ export default function HeaderNavBar() {
                         </a>
                     ))}
                     <div className="flex w-full flex-col gap-4">
-                        <NavbarButton
+                        {/* <NavbarButton
                             onClick={() => setIsMobileMenuOpen(false)}
                             variant="primary"
                             className="w-full"
                         >
                             Login
-                        </NavbarButton>
+                        </NavbarButton> */}
                         <NavbarButton
                             onClick={() => setIsMobileMenuOpen(false)}
                             variant="primary"

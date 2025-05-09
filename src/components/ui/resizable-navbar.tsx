@@ -109,8 +109,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
                 minWidth: "800px",
             }}
             className={cn(
-                "relative z-[60] mx-auto hidden w-full max-w-[1200px] flex-row items-center justify-between self-start rounded-full bg-transparent px-[20px] py-2 lg:flex dark:bg-transparent",
-                visible && "bg-[#f3f1e4] dark:bg-[#e0f1eb]",
+                "relative z-[60] mx-auto hidden w-full max-w-[1200px] flex-row items-center justify-between self-start rounded-full bg-transparent px-[10px] py-2 lg:flex dark:bg-transparent",
+                visible && "bg-[#fff] dark:bg-transparent",
                 className,
             )}
         >
@@ -148,7 +148,7 @@ export const NavItems = ({ items, className, onItemClick , visible }: NavItemsPr
                     {hovered === idx && (
                         <motion.div
                             layoutId="hovered"
-                            className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                            className="absolute inset-0 h-full w-full rounded-full bg-[#f3f1e4] dark:bg-neutral-800"
                         />
                     )}
                     <span className="relative z-20">{item.name}</span>
@@ -246,7 +246,7 @@ export const NavbarLogo = () => {
     return (
         <a
             href="#"
-            className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+            className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black ml-[10px] "
         >
             <Image
                 src="/coullax-logo.png"
@@ -277,13 +277,13 @@ export const NavbarButton = ({
         | React.ComponentPropsWithoutRef<"button">
     )) => {
     const baseStyles =
-        "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+        "px-6 py-2 rounded-full bg-[#000] button bg-black text-white text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
     const variantStyles = {
         primary:
             "shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
         secondary: "bg-transparent shadow-none dark:text-white",
-        dark: "bg-black text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+        dark: "bg-white text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
         gradient:
             "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
     };
