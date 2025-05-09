@@ -18,7 +18,7 @@ export const Ripple = React.memo(function Ripple({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute h-[950px] sm:h-[850px] md:h-[800px] lg:h-[900px] inset-0 select-none [mask-image:linear-gradient(to_bottom,white,transparent)]",
+        "pointer-events-none absolute inset-0 select-none [mask-image:linear-gradient(to_bottom,white,transparent)]",
         className,
       )}
       {...props}

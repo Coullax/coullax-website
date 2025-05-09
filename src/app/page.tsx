@@ -324,7 +324,7 @@ export default function Home() {
               <Ripple />
             </div>
 
-            <div className=" flex flex-row justify-center lg:justify-start items-center gap-[20px] ">
+            <div className=" flex flex-row justify-center items-center gap-[20px] ">
               <Lightning
                 size={32}
                 weight="bold"
@@ -333,7 +333,7 @@ export default function Home() {
               <ShieldCheck size={32} weight="bold" className="text-white" />
               <CubeTransparent size={32} weight="bold" className="text-white" />
             </div>
-            <div className=" mt-[30px] bg-[#414342] mx-auto lg:mx-0 rounded-full py-[10px] px-[22px] w-fit">
+            <div className=" mt-[30px] bg-[#414342] mx-auto rounded-full py-[10px] px-[22px] w-fit">
               <AnimatedShinyText>
                 <span className=" lg:text-[20px] font-bold rounded-full ">
                   Efficiency. Security. Transparency.
@@ -341,14 +341,14 @@ export default function Home() {
               </AnimatedShinyText>
             </div>
             <div className="mt-[30px]">
-              <p className=" text-[#fffef1] text-center lg:text-left text-[30px] lg:text-[45px] leading-[36px] lg:leading-[47px] font-bold -tracking-[2.25px]">
+              <p className=" text-[#fffef1] text-center  text-[30px] lg:text-[45px] leading-[36px] lg:leading-[47px] font-bold -tracking-[2.25px]">
                 Making Tech Work Smarter
                 <br />
                 and Safer for Everyone
               </p>
             </div>
             <div className="mt-[30px]">
-              <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto lg:mx-0">
+              <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto">
                 <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
                   <ArrowRight className=" h-[15px] aspect-square" />
                 </div>
@@ -772,12 +772,12 @@ export default function Home() {
             />
 
             <div className=" overflow-y-hidden relative lg:w-[30%] lg:max-h-[350px] max-h-[140px]">
-              <div
+              {/* <div
                 className={`absolute w-5 h-full lg:w-full lg:h-5 right-0 top-0 bg-gradient-to-l lg:bg-gradient-to-b from-[#fffef1] to-transparent z-10 pointer-events-none`}
               />
               <div
                 className={`absolute w-5 h-full lg:w-full lg:h-5 left-0 lg:right-0 bottom-0 bg-gradient-to-r lg:bg-gradient-to-t from-[#fffef1] to-transparent z-10 pointer-events-none`}
-              />
+              /> */}
               <Marquee
                 pauseOnHover
                 vertical
@@ -808,12 +808,12 @@ export default function Home() {
               </Marquee>
             </div>
             <div className=" overflow-y-hidden relative lg:w-[30%] lg:max-h-[350px] max-h-[140px]">
-              <div
+              {/* <div
                 className={`absolute w-5 h-full lg:w-full lg:h-5 right-0 top-0 bg-gradient-to-l lg:bg-gradient-to-b from-[#fffef1] to-transparent z-10 pointer-events-none`}
               />
               <div
                 className={`absolute w-5 h-full lg:w-full lg:h-5 left-0 lg:right-0 bottom-0 bg-gradient-to-r lg:bg-gradient-to-t from-[#fffef1] to-transparent z-10 pointer-events-none`}
-              />
+              /> */}
               <Marquee
                 pauseOnHover
                 reverse
