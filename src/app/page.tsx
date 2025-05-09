@@ -234,6 +234,39 @@ export default function Home() {
     },
   ];
 
+  const brandLogo = [
+    {
+      image: "/Homepage/brandLogo/thehidden.png",
+      height: 65,
+      width: 267,
+    },
+    {
+      image: "/Homepage/brandLogo/pornopoli.png",
+      height: 65,
+      width: 263,
+    },
+    {
+      image: "/Homepage/brandLogo/baddays.png",
+      height: 65,
+      width: 173,
+    },
+    {
+      image: "/Homepage/brandLogo/asvoria.png",
+      height: 65,
+      width: 245,
+    },
+    {
+      image: "/Homepage/brandLogo/fiverr.png",
+      height: 65,
+      width: 214,
+    },
+    {
+      image: "/Homepage/brandLogo/skillcheckerlight.png",
+      height: 65,
+      width: 243,
+    },
+  ];
+
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
   const secondRow = reviewList2.slice(reviewList2.length / 2);
 
@@ -257,8 +290,9 @@ export default function Home() {
     const percentX = (x - centerX) / centerX;
     const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
-      }deg) rotateX(${percentY * 6}deg)`;
+    card.style.transform = `perspective(1000px) rotateY(${
+      percentX * 6
+    }deg) rotateX(${percentY * 6}deg)`;
     content.style.transform = `translateZ(50px)`;
     glow.style.opacity = "1";
     glow.style.backgroundImage = `
@@ -287,7 +321,6 @@ export default function Home() {
       <div className=" w-full">
         <div className="w-[90%] max-w-[1200px] mx-auto">
           <HeaderNavBar />
-
         </div>
       </div>
 
@@ -488,7 +521,18 @@ export default function Home() {
 
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto mt-[80px] mb-[140px]">
-          <VelocityScroll fontSize="text-4xl font-bold md:text-[50px] md:leading-[4.4rem]" defaultVelocity={0.2} className="text-[#c1c0b0] ">AI. Machine Learning.  Web3. Data science. Software . Research. Chatbot. Deep learning. Blockchain. DeFi. Smart contract. Cryptography. Decentralization. Cryptocurrency. Product design. User Experience. Development. User Interface. Brand Experience. Research and Development. Branding and Designing. AI. Machine Learning. Data science. Research.</VelocityScroll>
+          <VelocityScroll
+            fontSize="text-4xl font-bold md:text-[50px] md:leading-[4.4rem]"
+            defaultVelocity={0.2}
+            className="text-[#c1c0b0] "
+          >
+            AI. Machine Learning. Web3. Data science. Software . Research.
+            Chatbot. Deep learning. Blockchain. DeFi. Smart contract.
+            Cryptography. Decentralization. Cryptocurrency. Product design. User
+            Experience. Development. User Interface. Brand Experience. Research
+            and Development. Branding and Designing. AI. Machine Learning. Data
+            science. Research.
+          </VelocityScroll>
         </div>
       </div>
 
@@ -536,67 +580,86 @@ export default function Home() {
         </div>
       </div>
 
-
-
-
-
-        <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
-          <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
-
-
+      <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+        <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
           <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
-              <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
-                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                  These are our Superpowers
-                </span>
-              </div>
-              <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
-                Working with us is easy. We follow a clear, no fuss process
-                that keeps things moving fast and smooth, from first chat to
-                final delivery.
+            <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
+              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                These are our Superpowers
               </span>
             </div>
+            <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
+              Working with us is easy. We follow a clear, no fuss process that
+              keeps things moving fast and smooth, from first chat to final
+              delivery.
+            </span>
+          </div>
 
           <div className="w-full grid grid-cols-4 md:grid-cols-5 md:gap-[22px] gap-[10px]">
             <div className="order-1 md:order-1 md:col-span-1 col-span-2 bg-[#8eabb7] rounded-3xl px-[20px] py-[24px] flex flex-col">
               <span className="text-2xl font-[600]">Top notch quality</span>
-              <span className="text-[16px] mt-[30px]">Guaranteed quality outcomes every time.<br></br>If not, we offer a full <br></br>money-back guarantee as our commitment to excellence.</span>
+              <span className="text-[16px] mt-[30px]">
+                Guaranteed quality outcomes every time.<br></br>If not, we offer
+                a full <br></br>money-back guarantee as our commitment to
+                excellence.
+              </span>
             </div>
             <div className="order-3 md:order-2 md:col-span-2 col-span-4">
               <div className="grid grid-cols-2 md:grid-cols-4 md:gap-[18px] gap-[10px]">
                 <div className="col-span-2 md:col-span-4 bg-[#fff]  rounded-3xl px-[25px] py-[23px] flex flex-col">
-                <span className="text-2xl font-[600]">Project Supervision</span>
-                <span className="text-[16px] mt-[16px] font-normal">One-to-one meticulous care for every client from our project supervisors.</span>
+                  <span className="text-2xl font-[600]">
+                    Project Supervision
+                  </span>
+                  <span className="text-[16px] mt-[16px] font-normal">
+                    One-to-one meticulous care for every client from our project
+                    supervisors.
+                  </span>
                 </div>
                 <div className="col-span-1 md:col-span-2 bg-[#d1ecb1]  rounded-3xl py-[23px] px-[24px] flex flex-col">
-                <span className="text-2xl font-[600]">World class talent</span>
-                <span className="text-[16px] mt-[29px] font-normal text-left">Zero hassle <br></br>finding world <br></br>class top talent</span>
+                  <span className="text-2xl font-[600]">
+                    World class talent
+                  </span>
+                  <span className="text-[16px] mt-[29px] font-normal text-left">
+                    Zero hassle <br></br>finding world <br></br>class top talent
+                  </span>
                 </div>
                 <div className="col-span-1 md:col-span-2 bg-[#b1cfc4] rounded-3xl py-[23px] px-[24px] flex flex-col">
-                <span className="text-2xl font-[600] mt-[110px]">24x7 customer support</span>
+                  <span className="text-2xl font-[600] mt-[110px]">
+                    24x7 customer support
+                  </span>
                 </div>
               </div>
             </div>
             <div className="order-2 md:order-3 col-span-2 bg-[#2f6665]  rounded-3xl px-[25px] py-[23px] flex flex-col">
-            <span className="text-2xl font-[600] text-white">Cost Effective</span>
-            <span className="text-[16px] mt-[30px] text-white">We charge fractions for the services that typically cost fortunes.</span>
+              <span className="text-2xl font-[600] text-white">
+                Cost Effective
+              </span>
+              <span className="text-[16px] mt-[30px] text-white">
+                We charge fractions for the services that typically cost
+                fortunes.
+              </span>
             </div>
-
           </div>
 
           <div className="grid grid-cols-2 md:gap-[22px] gap-[10px] md:mt-[23px] mt-[10px]">
             <div className="col-span-1 bg-[#ffffff]  md:text-center text-left rounded-3xl px-[25px] py-[23px] flex flex-col">
-            <span className="text-2xl font-[600] mt-[50px] mb-[50px]">Detailed project updates on time</span>
+              <span className="text-2xl font-[600] mt-[50px] mb-[50px]">
+                Detailed project updates on time
+              </span>
             </div>
             <div className="col-span-1 bg-[#d1ecb1]  rounded-3xl  py-[23px] px-[40px] flex flex-col justify-center md:justify-start">
-            <span className="text-2xl font-[600] text-center md:text-left mt-[50px] mb-[50px] md:mt-[20px] md:mb-[0px] ">Team work</span>
-            <span className="text-[16px] mt-[30px] hidden md:block"> We assemble the team for you, covering all aspects, so you don&apos;t have to worry about gathering the team yourself.</span>
+              <span className="text-2xl font-[600] text-center md:text-left mt-[50px] mb-[50px] md:mt-[20px] md:mb-[0px] ">
+                Team work
+              </span>
+              <span className="text-[16px] mt-[30px] hidden md:block">
+                {" "}
+                We assemble the team for you, covering all aspects, so you
+                don&apos;t have to worry about gathering the team yourself.
+              </span>
             </div>
           </div>
-
-          </div>
         </div>
-
+      </div>
 
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto ">
@@ -621,139 +684,87 @@ export default function Home() {
                   <Users size={37} />
                 </div>
 
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">Over
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">
+                    Over
                     <NumberTicker
                       value={150}
                       className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white ml-1"
                     />
                   </span>
-                    <span className="text-[16px] font-[600]">Satisfied clients<br></br>
-                    worldwide</span>
-
-                  </div>
+                  <span className="text-[16px] font-[600]">
+                    Satisfied clients<br></br>
+                    worldwide
+                  </span>
                 </div>
+              </div>
 
-                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
                 <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                <Laptop size={37} />
+                  <Laptop size={37} />
                 </div>
 
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">                    <NumberTicker
-                    value={400}
-                    className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
-                  />+</span>
-                    <span className="text-[16px] font-[600]"> Successfully <br></br> Finished
-                      projects</span>
-                  </div>
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">
+                    {" "}
+                    <NumberTicker
+                      value={400}
+                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
+                    />
+                    +
+                  </span>
+                  <span className="text-[16px] font-[600]">
+                    {" "}
+                    Successfully <br></br> Finished projects
+                  </span>
                 </div>
+              </div>
 
-
-                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
                 <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
                   <Globe size={37} />
                 </div>
 
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                    <span className="text-[36px] font-[600] mb-[15px]">
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">
                     <NumberTicker
                       value={7500}
                       className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
                     />
-                      +</span>
-                    <span className="text-[16px] font-[600]"> Hours of saving the world from <br></br>
-                    bad experiences.</span>
-
-                  </div>
+                    +
+                  </span>
+                  <span className="text-[16px] font-[600]">
+                    {" "}
+                    Hours of saving the world from <br></br>
+                    bad experiences.
+                  </span>
                 </div>
+              </div>
 
-
-                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
                 <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <HandFist  size={37} />
+                  <HandFist size={37} />
                 </div>
 
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                    <span className="text-[36px] font-[600] mb-[15px]">
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">
                     <NumberTicker
                       value={30}
                       className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
                     />
-                      +</span>
-                    <span className="text-[16px] font-[600]">Countries across
-                   <br></br>
-                   the globe</span>
-
-                  </div>
+                    +
+                  </span>
+                  <span className="text-[16px] font-[600]">
+                    Countries across
+                    <br></br>
+                    the globe
+                  </span>
                 </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="w-full relative  overflow-hidden ">
-        <div className=" w-[90%] max-w-[1200px] mx-auto mt-[140px]">
-          <div className=" flex flex-col md:justify-start items-start ">
-            <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px]">
-              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                Awesome peoplewho worked with us
-              </span>
-            </div>
-            <div className="w-full flex md:flex-row md:gap-[85px] gap-[35px] flex-col mt-[120px] py-[30px] justify-center items-center">
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/fiverr.png"
-                  alt="image1"
-                  width={76}
-                  height={36}
-                  className="object-contain"
-                />
-              </div>
-
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/pornopoli.png"
-                  alt="image1"
-                  width={119}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/vesa.png"
-                  alt="image1"
-                  width={70}
-                  height={31}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/crypto.png"
-                  alt="image1"
-                  width={141}
-                  height={34}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/asvoria.png"
-                  alt="image1"
-                  width={133}
-                  height={19}
-                  className="object-contain"
-                />
               </div>
             </div>
           </div>
         </div>
       </div>
-
 
       <div className="w-full relativeoverflow-hidden">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
@@ -855,9 +866,90 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="w-full relative  overflow-hidden ">
+        <div className=" w-full">
+          {/* <div className=" flex flex-col md:justify-start items-start "> */}
+          <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px] w-fit mx-auto">
+            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+              Awesome peoplewho worked with us
+            </span>
+          </div>
+          <div className="w-full flex md:flex-row md:gap-[85px] mt-[80px] gap-[35px] flex-col justify-around items-center">
+            <Marquee pauseOnHover className="[--duration:20s]">
+              {brandLogo.map((logo: any, index: number) => (
+                <Image
+                  key={index}
+                  src={logo.image}
+                  alt={"image1${index}"}
+                  width={logo.width}
+                  height={logo.height}
+                  className="object-contain mr-[150px]"
+                />
+              ))}
+
+              {/* <div className="w-[172px] h-[40px] flex items-center justify-center">
+              <Image
+                  src="/Homepage/brandLogo/thehidden.png"
+                  alt="image1"
+                  width={267}
+                  height={65}
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              <Image
+                  src="/Homepage/brandLogo/pornopoli.png"
+                  alt="image1"
+                  width={263}
+                  height={65}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              <Image
+                  src="/Homepage/brandLogo/baddays.png"
+                  alt="image1"
+                  width={173}
+                  height={65}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              <Image
+                  src="/Homepage/brandLogo/asvoria.png"
+                  alt="image1"
+                  width={245}
+                  height={65}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              <Image
+                  src="/Homepage/brandLogo/fiverr.png"
+                  alt="image1"
+                  width={214}
+                  height={65}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              <Image
+                  src="/Homepage/brandLogo/skillcheckerlight.png"
+                  alt="image1"
+                  width={243}
+                  height={65}
+                  className="object-contain"
+                />
+              </div> */}
+            </Marquee>
+          </div>
+          {/* </div> */}
+        </div>
+      </div>
 
       <div className="w-full relative  overflow-hidden">
-        <div className=" w-[90%] max-w-[1200px] mx-auto mb-[140px]">
+        <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px]">
           <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
             <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">
               Want to know more ?
@@ -878,10 +970,14 @@ export default function Home() {
         </div>
       </div>
 
-
       <div className="w-full relative  overflow-hidden mb-[80px]">
-        <VelocityScroll fontSize="text-4xl font-bold md:text-7xl md:leading-[5.5rem]" defaultVelocity={0.5} className="text-[#eeeddf]">Efficiency. Security. Transparency.Efficiency. Security. Transparency.</VelocityScroll>
-
+        <VelocityScroll
+          fontSize="text-4xl font-bold md:text-7xl md:leading-[5.5rem]"
+          defaultVelocity={0.5}
+          className="text-[#eeeddf]"
+        >
+          Efficiency. Security. Transparency.Efficiency. Security. Transparency.
+        </VelocityScroll>
       </div>
 
       <div className="w-full relative  overflow-hidden bg-[#1e201f]">
