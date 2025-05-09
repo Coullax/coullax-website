@@ -45,7 +45,7 @@ export default function Home() {
       list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
     },
     {
-      title: "UI/UX",
+      title: "Research",
       textColor: "text-[#333a4d]",
       background: "bg-[#dbdcfd]",
       list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
