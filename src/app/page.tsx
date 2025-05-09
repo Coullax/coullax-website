@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import {
   ArrowLineUpRight,
   Brain,
@@ -660,49 +660,6 @@ export default function Home() {
         </div>
 
 
-        {/* <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
-          <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
-
-
-            <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
-              <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
-                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                  These are our Superpowers
-                </span>
-              </div>
-              <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
-                Working with us is easy. We follow a clear, no fuss process
-                that keeps things moving fast and smooth, from first chat to
-                final delivery.
-              </span>
-            </div>
-
-            <div className="w-full h-auto lg:h-[566.9px] flex flex-col gap-[10px] lg:gap-[22.6px]">
-              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
-
-                <div className="w-[179.4px] lg:w-[256.3px] h-[262.0px] lg:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
-
-
-                <div className="w-[213.7px] lg:w-[448.2px] h-auto lg:h-[374px] gap-[10px] lg:gap-[22.6px] flex flex-col rounded-3xl">
-                  <div className="h-[88.9px] lg:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
-                  <div className="h-auto lg:h-[232px] rounded-3xl gap-[10px] lg:gap-[22.6px] flex flex-row">
-                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
-                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
-                  </div>
-                </div>
-
-                <div className="w-[313.7px] lg:w-[448.2px] h-[262.0px] lg:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
-
-              </div>
-
-              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
-                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
-                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto ">
           <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px]">
@@ -763,7 +720,7 @@ export default function Home() {
                   <div className="w-full justify-start items-start flex flex-col mt-[31px]">
                     <span className="text-[36px] font-[600] mb-[15px]">
                     <NumberTicker
-                      value={2000}
+                      value={7500}
                       className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
                     />
                       +</span>
