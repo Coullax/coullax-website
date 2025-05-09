@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-// import Link from "next/link";
 import {
   ArrowLineUpRight,
   Brain,
@@ -10,14 +9,12 @@ import {
   Laptop,
   Lightning,
   ShieldCheck,
-  Star,
   Users,
 } from "@phosphor-icons/react";
-import { ArrowRight, Play, XIcon } from "lucide-react";
+import { ArrowRight, XIcon } from "lucide-react";
 import { HandFist } from "@phosphor-icons/react/dist/ssr";
 import { NumberTicker } from "../components/magicui/number-ticker";
 import React, { useRef, MouseEvent, useState } from "react";
-import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import ReviewCard from "@/components/review-card";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
@@ -539,65 +536,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full relative  overflow-hidden ">
-        <div className=" w-[90%] max-w-[1200px] mx-auto">
-          <div className=" flex flex-col md:justify-start items-center ">
-            <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
-              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                Awesome peoplewho worked with us
-              </span>
-            </div>
-            <div className="w-full flex md:flex-row md:gap-[85px] gap-[35px] flex-col mt-[60px] py-[30px] justify-center items-center">
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/fiverr.png"
-                  alt="image1"
-                  width={76}
-                  height={36}
-                  className="object-contain"
-                />
-              </div>
-
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/pornopoli.png"
-                  alt="image1"
-                  width={119}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/vesa.png"
-                  alt="image1"
-                  width={70}
-                  height={31}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/crypto.png"
-                  alt="image1"
-                  width={141}
-                  height={34}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-                <Image
-                  src="/Homepage/asvoria.png"
-                  alt="image1"
-                  width={133}
-                  height={19}
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
 
 
@@ -662,7 +600,7 @@ export default function Home() {
 
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto ">
-          <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px]">
+          <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px] py-[45px]">
             <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
               <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
                 Smooth Process, Solid Results
@@ -754,6 +692,68 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+
+        <div className="w-full relative  overflow-hidden ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto mt-[140px]">
+          <div className=" flex flex-col md:justify-start items-start ">
+            <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px]">
+              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                Awesome peoplewho worked with us
+              </span>
+            </div>
+            <div className="w-full flex md:flex-row md:gap-[85px] gap-[35px] flex-col mt-[120px] py-[30px] justify-center items-center">
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/fiverr.png"
+                  alt="image1"
+                  width={76}
+                  height={36}
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/pornopoli.png"
+                  alt="image1"
+                  width={119}
+                  height={40}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/vesa.png"
+                  alt="image1"
+                  width={70}
+                  height={31}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/crypto.png"
+                  alt="image1"
+                  width={141}
+                  height={34}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/asvoria.png"
+                  alt="image1"
+                  width={133}
+                  height={19}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div className="w-full relativeoverflow-hidden">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
