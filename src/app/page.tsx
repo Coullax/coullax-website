@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import {
   ArrowLineUpRight,
   Brain,
@@ -22,6 +22,8 @@ import { Marquee } from "@/components/magicui/marquee";
 import ReviewCard from "@/components/review-card";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import { AnimatePresence, motion } from "motion/react";
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import HeaderNavBar from "@/components/Header";
 
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -29,12 +31,12 @@ export default function Home() {
   const contentRefs = useRef<HTMLDivElement[]>([]);
   const [openReviewModal, setOpenReviewModal] = useState<boolean>(false);
 
-  const navigationList = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-    { name: "Careers", href: "/careers" },
-  ];
+  // const navigationList = [
+  //   { name: "Home", link: "/" },
+  //   { name: "About", link: "/about" },
+  //   { name: "Contact", link: "/contact" },
+  //   { name: "Careers", link: "/careers" },
+  // ];
 
   const servicesList = [
     {
@@ -256,9 +258,8 @@ export default function Home() {
     const percentX = (x - centerX) / centerX;
     const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${
-      percentX * 6
-    }deg) rotateX(${percentY * 6}deg)`;
+    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
+      }deg) rotateX(${percentY * 6}deg)`;
     content.style.transform = `translateZ(50px)`;
     glow.style.opacity = "1";
     glow.style.backgroundImage = `
@@ -285,6 +286,13 @@ export default function Home() {
   return (
     <div className=" w-full pt-[50px] bg-[#fffef1]">
       <div className=" w-full">
+        <div className="w-[90%] max-w-[1200px] mx-auto">
+          <HeaderNavBar />
+
+        </div>
+      </div>
+
+      {/* <div className=" w-full">
         <div className="w-[90%] max-w-[1200px] flex items-center justify-between mx-auto">
           <div>
             <div>
@@ -301,14 +309,14 @@ export default function Home() {
           <div className="flex justify-center items-center">
             <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
               {navigationList.map((navigation, index) => (
-                <Link key={index} href={navigation.href}>
+                <Link key={index} href={navigation.link}>
                   {navigation.name}
                 </Link>
               ))}
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="w-full relative overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
@@ -473,7 +481,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden my-[40px] md:my-[140px] py-[85px]">
+      <div className="w-full relative  overflow-hidden ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto mt-[80px] mb-[140px]">
+          <VelocityScroll fontSize="text-4xl font-bold md:text-[50px] md:leading-[4.4rem]" defaultVelocity={0.2} className="text-[#c1c0b0] ">AI. Machine Learning.  Web3. Data science. Software . Research. Chatbot. Deep learning. Blockchain. DeFi. Smart contract. Cryptography. Decentralization. Cryptocurrency. Product design. User Experience. Development. User Interface. Brand Experience. Research and Development. Branding and Designing. AI. Machine Learning. Data science. Research.</VelocityScroll>
+        </div>
+      </div>
+
+      <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
         <div className=" w-[90%] max-w-[1200px] mx-auto  ">
           <div className="flex flex-col justify-start items-start gap-[54px] p-0">
             <div className="w-full flex flex-col justify-between items-start">
@@ -855,6 +869,7 @@ export default function Home() {
         </div>
       </div>
 
+      
       <div className="w-full relative  overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto mb-[140px]">
           <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
@@ -875,6 +890,12 @@ export default function Home() {
             </button>
           </div>
         </div>
+      </div>
+
+
+      <div className="w-full relative  overflow-hidden mb-[80px]">
+        <VelocityScroll fontSize="text-4xl font-bold md:text-7xl md:leading-[5.5rem]" defaultVelocity={0.5} className="text-[#eeeddf]">Efficiency. Security. Transparency.Efficiency. Security. Transparency.</VelocityScroll>
+
       </div>
 
       <div className="w-full relative  overflow-hidden bg-[#1e201f]">
