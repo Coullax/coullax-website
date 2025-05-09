@@ -15,6 +15,7 @@ import {
 } from "@phosphor-icons/react";
 import { ArrowRight, Play, XIcon } from "lucide-react";
 import { HandFist } from "@phosphor-icons/react/dist/ssr";
+import { NumberTicker } from "../components/magicui/number-ticker";
 import React, { useRef, MouseEvent, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
@@ -576,44 +577,110 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
-        <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
+
+
+
+        <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+          <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
+
+
           <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
-            <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
-              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                These are our Superpowers
+              <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
+                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                  These are our Superpowers
+                </span>
+              </div>
+              <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
+                Working with us is easy. We follow a clear, no fuss process
+                that keeps things moving fast and smooth, from first chat to
+                final delivery.
               </span>
             </div>
-            <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
-              Working with us is easy. We follow a clear, no fuss process that
-              keeps things moving fast and smooth, from first chat to final
-              delivery.
-            </span>
+
+          <div className="w-full grid grid-cols-4 md:grid-cols-5 md:gap-[22px] gap-[10px]">
+            <div className="order-1 md:order-1 md:col-span-1 col-span-2 bg-[#8eabb7] rounded-3xl px-[20px] py-[24px] flex flex-col">
+              <span className="text-2xl font-[600]">Top notch quality</span>
+              <span className="text-[16px] mt-[30px]">Guaranteed quality outcomes every time.<br></br>If not, we offer a full <br></br>money-back guarantee as our commitment to excellence.</span>
+            </div>
+            <div className="order-3 md:order-2 md:col-span-2 col-span-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 md:gap-[18px] gap-[10px]">
+                <div className="col-span-2 md:col-span-4 bg-[#fff]  rounded-3xl px-[25px] py-[23px] flex flex-col">
+                <span className="text-2xl font-[600]">Project Supervision</span>
+                <span className="text-[16px] mt-[16px] font-normal">One-to-one meticulous care for every client from our project supervisors.</span>
+                </div>
+                <div className="col-span-1 md:col-span-2 bg-[#d1ecb1]  rounded-3xl py-[23px] px-[24px] flex flex-col">
+                <span className="text-2xl font-[600]">World class talent</span>
+                <span className="text-[16px] mt-[29px] font-normal text-left">Zero hassle <br></br>finding world <br></br>class top talent</span>
+                </div>
+                <div className="col-span-1 md:col-span-2 bg-[#b1cfc4] rounded-3xl py-[23px] px-[24px] flex flex-col">
+                <span className="text-2xl font-[600] mt-[110px]">24x7 customer support</span>
+                </div>
+              </div>
+            </div>
+            <div className="order-2 md:order-3 col-span-2 bg-[#2f6665]  rounded-3xl px-[25px] py-[23px] flex flex-col">
+            <span className="text-2xl font-[600] text-white">Cost Effective</span>
+            <span className="text-[16px] mt-[30px] text-white">We charge fractions for the services that typically cost fortunes.</span>
+            </div>
+
           </div>
 
-          <div className="w-full h-auto lg:h-[566.9px] flex flex-col gap-[10px] lg:gap-[22.6px]">
-            <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
-              <div className="w-[179.4px] lg:w-[256.3px] h-[262.0px] lg:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
-
-              <div className="w-[213.7px] lg:w-[448.2px] h-auto lg:h-[374px] gap-[10px] lg:gap-[22.6px] flex flex-col rounded-3xl">
-                <div className="h-[88.9px] lg:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
-                <div className="h-auto lg:h-[232px] rounded-3xl gap-[10px] lg:gap-[22.6px] flex flex-row">
-                  <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
-                  <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
-                </div>
-                <div className="w-[313.7px] md:w-[448.2px] h-[262.0px] md:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
-              </div>
-
-              <div className="w-[313.7px] lg:w-[448.2px] h-[262.0px] lg:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
+          <div className="grid grid-cols-2 md:gap-[22px] gap-[10px] md:mt-[23px] mt-[10px]">
+            <div className="col-span-1 bg-[#ffffff]  md:text-center text-left rounded-3xl px-[25px] py-[23px] flex flex-col">
+            <span className="text-2xl font-[600] mt-[50px] mb-[50px]">Detailed project updates on time</span>
             </div>
-
-            <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
-              <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
-              <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
+            <div className="col-span-1 bg-[#d1ecb1]  rounded-3xl  py-[23px] px-[40px] flex flex-col justify-center md:justify-start">
+            <span className="text-2xl font-[600] text-center md:text-left mt-[50px] mb-[50px] md:mt-[20px] md:mb-[0px] ">Team work</span>
+            <span className="text-[16px] mt-[30px] hidden md:block"> We assemble the team for you, covering all aspects, so you don&apos;t have to worry about gathering the team yourself.</span>
             </div>
+          </div>
+
           </div>
         </div>
-      </div>
+
+
+        {/* <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+          <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
+
+
+            <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
+              <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
+                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                  These are our Superpowers
+                </span>
+              </div>
+              <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
+                Working with us is easy. We follow a clear, no fuss process
+                that keeps things moving fast and smooth, from first chat to
+                final delivery.
+              </span>
+            </div>
+
+            <div className="w-full h-auto lg:h-[566.9px] flex flex-col gap-[10px] lg:gap-[22.6px]">
+              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
+
+                <div className="w-[179.4px] lg:w-[256.3px] h-[262.0px] lg:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
+
+
+                <div className="w-[213.7px] lg:w-[448.2px] h-auto lg:h-[374px] gap-[10px] lg:gap-[22.6px] flex flex-col rounded-3xl">
+                  <div className="h-[88.9px] lg:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
+                  <div className="h-auto lg:h-[232px] rounded-3xl gap-[10px] lg:gap-[22.6px] flex flex-row">
+                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
+                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
+                  </div>
+                </div>
+
+                <div className="w-[313.7px] lg:w-[448.2px] h-[262.0px] lg:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
+
+              </div>
+
+              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
+                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
+                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+
 
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto ">
@@ -638,67 +705,77 @@ export default function Home() {
                   <Users size={37} />
                 </div>
 
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">
-                    {" "}
-                    Over 150
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">Over
+                    <NumberTicker
+                      value={150}
+                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white ml-1"
+                    />
                   </span>
-                  <span className="text-[16px] font-[600]">
-                    Satisfied clients<br></br>
-                    worldwide
-                  </span>
-                </div>
-              </div>
+                    <span className="text-[16px] font-[600]">Satisfied clients<br></br>
+                    worldwide</span>
 
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
                 <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <Laptop size={37} />
+                <Laptop size={37} />
                 </div>
 
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">400+</span>
-                  <span className="text-[16px] font-[600]">
-                    {" "}
-                    Successfully <br></br> Finished projects
-                  </span>
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">                    <NumberTicker
+                    value={400}
+                    className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
+                  />+</span>
+                    <span className="text-[16px] font-[600]"> Successfully <br></br> Finished
+                      projects</span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+
+                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
                 <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
                   <Globe size={37} />
                 </div>
 
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">
-                    7500+
-                  </span>
-                  <span className="text-[16px] font-[600]">
-                    {" "}
-                    Hours of saving the world from <br></br>
-                    bad experiences.
-                  </span>
-                </div>
-              </div>
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                    <span className="text-[36px] font-[600] mb-[15px]">
+                    <NumberTicker
+                      value={2000}
+                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
+                    />
+                      +</span>
+                    <span className="text-[16px] font-[600]"> Hours of saving the world from <br></br>
+                    bad experiences.</span>
 
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                  </div>
+                </div>
+
+
+                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
                 <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <HandFist size={37} />
+                  <HandFist  size={37} />
                 </div>
 
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">30+</span>
-                  <span className="text-[16px] font-[600]">
-                    Countries across
-                    <br></br>
-                    the globe
-                  </span>
+                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                    <span className="text-[36px] font-[600] mb-[15px]">
+                    <NumberTicker
+                      value={30}
+                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
+                    />
+                      +</span>
+                    <span className="text-[16px] font-[600]">Countries across
+                   <br></br>
+                   the globe</span>
+
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
-      </div>
 
       <div className="w-full relativeoverflow-hidden">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
