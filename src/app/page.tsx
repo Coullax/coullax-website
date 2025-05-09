@@ -13,14 +13,20 @@ import {
   Star,
   Users,
 } from "@phosphor-icons/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, XIcon } from "lucide-react";
 import { HandFist } from "@phosphor-icons/react/dist/ssr";
-import React, { useRef, MouseEvent } from "react";
+import React, { useRef, MouseEvent, useState } from "react";
+import { cn } from "@/lib/utils";
+import { Marquee } from "@/components/magicui/marquee";
+import ReviewCard from "@/components/review-card";
+import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
   const glowRefs = useRef<HTMLDivElement[]>([]);
   const contentRefs = useRef<HTMLDivElement[]>([]);
+  const [openReviewModal, setOpenReviewModal] = useState<boolean>(false);
 
   const navigationList = [
     { name: "Home", href: "/" },
@@ -80,6 +86,154 @@ export default function Home() {
         'We don\'t just hit "go" and disappear. We launch, support, and grow with you, every step after.',
     },
   ];
+
+  const reviewList1 = [
+    {
+      name: "nikodejonghe",
+      profile: "/HomePage/review_profile/Mark.svg",
+      ratings: "5",
+      feedback: "Very good communication and quality of work!",
+    },
+    {
+      name: "cristianodev",
+      profile: "/HomePage/review_profile/Mark2.svg",
+      ratings: "5",
+      feedback:
+        "A nice designer, he got the concept right away and he was able to give me multiple revisions until we got the concept we were looking for.",
+    },
+    {
+      name: "jossiecotto",
+      profile: "/HomePage/review_profile/Mark4.svg",
+      ratings: "5",
+      feedback:
+        "The artist made sure I got to know the process. He approached to our communication in the best manner and was always taking my references in details. I will keep business with him because I feel confident working with people that have word, talent, high-end skills, and make it easy for first timers. I loved working with him for 4 days, everything was real easy and beautiful!",
+    },
+    {
+      name: "msgeorgiarose",
+      profile: "/HomePage/review_profile/Mark5.svg",
+      ratings: "5",
+      feedback:
+        "The output turned out great as coullax was willing to make necessary changes to meet our needs. Would work with them again.",
+    },
+    {
+      name: "jamin",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "Creating an AMAZING NFT Collection. Super prompt, great to work with...SUPERIOR results!!!",
+    },
+    {
+      name: "radamosch",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "Creating an AMAZING NFT Collection. Super prompt, great to work with...SUPERIOR results!!!",
+    },
+    {
+      name: "jaimeko",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "Incredible communication through a very easy process. Will be using again coullax is incredible! Will be able to fulfill all wants and needs!",
+    },
+    {
+      name: "ozziesinatra",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "Incredibly patient & understanding team of artists. I am beyond proud of them & the collection we conceived. Thank you.",
+    },
+    {
+      name: "zac",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "Coullax really went into detail and, although we had a lot of requests, fulfilled them all with great patience. Awesome designs!",
+    },
+    {
+      name: "joelcotterell",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "A real treat to work with. Coullax was patient with my requests and even went the extra mile. I cant recommend Coullax enough. I have fallen in love with the artwork",
+    },
+  ];
+
+  const reviewList2 = [
+    {
+      name: "alextima",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "Best experience I've had . Professional and smooth. Communication and understanding of my requests was impressive. Delivered a quality product.",
+    },
+    {
+      name: "joeyaji",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "The Coullax team is very talented, creative and communicative. We had a very large project project of 8000 nfts and the team worked incredibly hard and created a very beautiful collection that will go on to sell out. We will be using them again for our next project. \n" +
+        "I recommend them very highly. Thank you Coullax team! Excited to work together again in the future.",
+    },
+    {
+      name: "zac",
+      profile: "/HomePage/review_profile/Mark6.svg",
+      ratings: "5",
+      feedback:
+        "Coullax really went into detail and, although we had a lot of requests, fulfilled them all with great patience. Awesome designs!",
+    },
+    {
+      name: "efrencreates",
+      profile: "/HomePage/review_profile/Mark7.svg",
+      ratings: "5",
+      feedback: "very knowledgeable and professional, best I could find!",
+    },
+    {
+      name: "ryanmcgur",
+      profile: "/HomePage/review_profile/Mark9.svg",
+      ratings: "5",
+      feedback:
+        "Creating an AMAZING NFT Collection. Super prompt, great to work with...SUPERIOR results!!!",
+    },
+    {
+      name: "shiakch",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "He is the best seller i ve ever meet, trust me. He is very responsive, hard working, and effective. He finish the work within a short time frame with high quality work! Ask him show u around!",
+    },
+    {
+      name: "scottvole",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "Super good communication, was sendt pictures troughout the design to make sure i was happy with the design, altso super well done, exacly what i asked for:fire:",
+    },
+    {
+      name: "workflow",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "This seller was nothing but a charm throughout the whole procedure. I cant say enough how grateful I am for the work and patience that was put into the collection. 10/10 Thank you so much ! def coming back",
+    },
+    {
+      name: "mattnehls",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "really responsive and easy to work with. Couldnt have found a better artist for the job!",
+    },
+    {
+      name: "victor",
+      profile: "/HomePage/review_profile/Mark1.svg",
+      ratings: "5",
+      feedback:
+        "The seller has most definitely exceeded my expectations ! He is hands down experienced in his work. Polite, fast replies, careful listener. Would definitely recommend. Can’t wait for the full project. Thank you again !",
+    },
+  ];
+
+  const firstRow = reviewList1.slice(0, reviewList1.length / 2);
+  const secondRow = reviewList2.slice(reviewList2.length / 2);
 
   const handleMouseMove = (
     e: MouseEvent<HTMLDivElement>,
@@ -316,428 +470,451 @@ export default function Home() {
             </div>
           </div>
         </div>
-        </div>
+      </div>
 
-        <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden my-[40px] md:my-[140px] py-[85px]">
-          <div className=" w-[90%] max-w-[1200px] mx-auto  ">
-            <div className="flex flex-col justify-start items-start gap-[54px] p-0">
-              <div className="w-full flex flex-col justify-between items-start">
-                <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
-                  <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                    Smooth Process, Solid Results
-                  </span>
-                </div>
-                <span className="w-full mt-[45px] text-[20px] font-medium leading-[23px] text-left text-[#575757]">
-                  Working with us is easy. We follow a clear, no fuss process
-                  <br />
-                  that keeps things moving fast and smooth, from first chat to
-                  <br />
-                  final delivery.
-                </span>
-              </div>
-              <Image
-                src="/Homepage/Arrow.png"
-                alt="image1"
-                width={1200}
-                height={10}
-                className="object-contain w-[346px]"
-              />
-
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
-                {processList.map((process, index) => (
-                  <div
-                    key={index}
-                    className={` min-h-[230px]  md:min-h-[288px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
-                  >
-                    <span className="text-[36px] font-bold leading-[42px] -tracking-[1.8px] text-left">
-                      {process.title}
-                    </span>
-                    <span className=" w-[250px] md:w-[170px] text-[16px] leading-[19px] text-left">
-                      {process.description}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full relative  overflow-hidden ">
-          <div className=" w-[90%] max-w-[1200px] mx-auto">
-            <div className=" flex flex-col md:justify-start items-center ">
+      <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden my-[40px] md:my-[140px] py-[85px]">
+        <div className=" w-[90%] max-w-[1200px] mx-auto  ">
+          <div className="flex flex-col justify-start items-start gap-[54px] p-0">
+            <div className="w-full flex flex-col justify-between items-start">
               <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
                 <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                  Awesome peoplewho worked with us
+                  Smooth Process, Solid Results
                 </span>
               </div>
-              <div className="w-full flex md:flex-row md:gap-[85px] gap-[35px] flex-col mt-[60px] py-[30px] justify-center items-center">
-                <div className="w-[172px] h-[40px] flex items-center justify-center">
-                  <Image
-                    src="/Homepage/fiverr.png"
-                    alt="image1"
-                    width={76}
-                    height={36}
-                    className="object-contain"
-                  />
-                </div>
-
-                <div className="w-[172px] h-[40px] flex items-center justify-center">
-                  <Image
-                    src="/Homepage/pornopoli.png"
-                    alt="image1"
-                    width={119}
-                    height={40}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="w-[172px] h-[40px] flex items-center justify-center">
-                  <Image
-                    src="/Homepage/vesa.png"
-                    alt="image1"
-                    width={70}
-                    height={31}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="w-[172px] h-[40px] flex items-center justify-center">
-                  <Image
-                    src="/Homepage/crypto.png"
-                    alt="image1"
-                    width={141}
-                    height={34}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="w-[172px] h-[40px] flex items-center justify-center">
-                  <Image
-                    src="/Homepage/asvoria.png"
-                    alt="image1"
-                    width={133}
-                    height={19}
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
-          <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
-
-
-            <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
-              <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
-                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                  These are our Superpowers
-                </span>
-              </div>
-              <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
+              <span className="w-full mt-[45px] text-[20px] font-medium leading-[23px] text-left text-[#575757]">
                 Working with us is easy. We follow a clear, no fuss process
+                <br />
                 that keeps things moving fast and smooth, from first chat to
+                <br />
                 final delivery.
               </span>
             </div>
+            <Image
+              src="/Homepage/Arrow.png"
+              alt="image1"
+              width={1200}
+              height={10}
+              className="object-contain w-[346px]"
+            />
 
-            <div className="w-full h-auto lg:h-[566.9px] flex flex-col gap-[10px] lg:gap-[22.6px]">
-              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
-
-                <div className="w-[179.4px] lg:w-[256.3px] h-[262.0px] lg:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
-
-
-                <div className="w-[213.7px] lg:w-[448.2px] h-auto lg:h-[374px] gap-[10px] lg:gap-[22.6px] flex flex-col rounded-3xl">
-                  <div className="h-[88.9px] lg:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
-                  <div className="h-auto lg:h-[232px] rounded-3xl gap-[10px] lg:gap-[22.6px] flex flex-row">
-                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
-                    <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
-                  </div>
-                  <div className="w-[313.7px] md:w-[448.2px] h-[262.0px] md:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
-                </div>
-
-                <div className="w-[313.7px] lg:w-[448.2px] h-[262.0px] lg:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
-
-              </div>
-
-
-              <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
-                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
-                <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-        <div className="w-full relative  overflow-hidden ">
-          <div className=" w-[90%] max-w-[1200px] mx-auto ">
-            <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px]">
-            <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
-                  <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                    Smooth Process, Solid Results
-                  </span>
-                </div>
-              <span className="flex-grow-0  not-italic leading-[1.16]  text-[#575757] text-[20px] max-w-[706px]">
-                Our mission is to enhance efficiency, security, and transparency
-                across industries. Making the world a smarter, more connected,
-                and a safer place <br></br><br></br>
-                To achieve this, we believe in the power of
-                Artificial intelligence’s efficiency and Blockchain technology’s
-                security and transparency.
-              </span>
-              <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] p-0">
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <Users size={37} />
-                </div>
-
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                    <span className="text-[36px] font-[600] mb-[15px]"> Over 150</span>
-                    <span className="text-[16px] font-[600]">Satisfied clients<br></br>
-                    worldwide</span>
-
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                <Laptop size={37} />
-                </div>
-
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                    <span className="text-[36px] font-[600] mb-[15px]">400+</span>
-                    <span className="text-[16px] font-[600]"> Successfully <br></br> Finished
-                      projects</span>
-                  </div>
-                </div>
-
-
-                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <Globe size={37} />
-                </div>
-
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                    <span className="text-[36px] font-[600] mb-[15px]">2000+</span>
-                    <span className="text-[16px] font-[600]"> Hours of saving the world from <br></br>
-                    bad experiences.</span>
-
-                  </div>
-                </div>
-
-
-                <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <HandFist  size={37} />
-                </div>
-
-                  <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                    <span className="text-[36px] font-[600] mb-[15px]">30+</span>
-                    <span className="text-[16px] font-[600]">Countries across
-                   <br></br>
-                   the globe</span>
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full relativeoverflow-hidden">
-          <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
-            <div className=" flex flex-row mx-auto justify-center items-center rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
-              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                Check out what the folks are saying
-              </span>
-            </div>
-            <div className="w-full flex flex-col md:flex-row justify-between items-center gap-[20px] mt-[45px]">
-              <div className=" bg-[#f3f1e4] p-[15px] w-full md:w-[50%] rounded-[20px]">
-                <Image
-                  src="/Homepage/jossieCotto.webp"
-                  alt="jossie Cotto"
-                  width={88}
-                  height={88}
-                  className=" mx-auto rounded-full"
-                />
-                <h1 className=" text-[22px] font-semibold text-center leading-[23px] mt-[19px]">
-                  Jossie Cotto
-                </h1>
-                <p className=" text-[16px] text-center leading-[17px] pt-[7px]">
-                  Film Director, Hollywood, California
-                </p>
-                <p className=" text-[16px] text-center font-medium leading-[19px] px-[105px] pt-[22px]">
-                  &quot;There might be people do something similar to what you
-                  want. But coullax works to the details. they always pay
-                  attention to all the stuff that matters to you as a
-                  client&quot;
-                </p>
-              </div>
-              <div className=" bg-[#f3f1e4] p-[15px] w-full md:w-[50%] rounded-[20px]">
-                <Image
-                  src="/Homepage/jossieCotto.webp"
-                  alt="jossie Cotto"
-                  width={88}
-                  height={88}
-                  className=" mx-auto rounded-full"
-                />
-                <h1 className=" text-[22px] font-semibold text-center leading-[23px] mt-[19px]">
-                  Jossie Cotto
-                </h1>
-                <p className=" text-[16px] text-center leading-[17px] pt-[7px]">
-                  Film Director, Hollywood, California
-                </p>
-                <p className=" text-[16px] text-center font-medium leading-[19px] px-[105px] pt-[22px]">
-                  &quot;There might be people do something similar to what you
-                  want. But coullax works to the details. they always pay
-                  attention to all the stuff that matters to you as a
-                  client&quot;
-                </p>
-              </div>
-            </div>
-            <div className=" my-[20px] flex flex-row justify-start items-center gap-[20px] overflow-x-scroll hide-scrollbar">
-              {Array.from({ length: 10 }).map((_, index) => (
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
+              {processList.map((process, index) => (
                 <div
                   key={index}
-                  className=" bg-[#f3f1e4] rounded-[20px] p-[15px] w-[335px] flex-shrink-0 inline-block"
+                  className={` min-h-[230px]  md:min-h-[288px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
                 >
-                  <div className=" flex flex-row justify-between items-center">
-                    <div className="flex flex-row justify-start items-center gap-[10px]">
-                      <Image
-                        src="/Homepage/jossieCotto.webp"
-                        alt="jossie Cotto"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
-                      <p className=" leading-[15px] text-[14px] font-semibold">
-                        alextima10
-                      </p>
-                    </div>
-                    <div className="flex flex-row justify-start items-center gap-[5px]">
-                      <p className=" leading-[15px] text-[14px] font-semibold">
-                        5
-                      </p>
-                      <Star size={15} color="#eaa134" weight="fill" />
-                    </div>
-                  </div>
-                  <p className=" pt-[11px] text-[14px] leading-[16px] font-plus-jakarta-sans">
-                    Best experience I&apos;ve had . Professional and smooth.
-                    Communication and understanding of my requests was
-                    impressive. Delivered a quality product.
-                  </p>
+                  <span className="text-[36px] font-bold leading-[42px] -tracking-[1.8px] text-left">
+                    {process.title}
+                  </span>
+                  <span className=" w-[250px] md:w-[170px] text-[16px] leading-[19px] text-left">
+                    {process.description}
+                  </span>
                 </div>
               ))}
-            </div>
-            <div className=" w-full flex flex-col justify-center items-center">
-              <button className=" mx-auto text-[#5f90ef] cursor-pointer">
-                Read more reviews
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full relative  overflow-hidden">
-          <div className=" w-[90%] max-w-[1200px] mx-auto mb-[140px]">
-            <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
-              <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">
-                Want to know more ?
-              </h1>
-              <p className="text-[16px] font-normal leading-[1.04] text-black text-center">
-                Hop on a quick 1-to-1 meeting for any questions or to kickstart
-                your project with custom requirements.
-              </p>
-              <button className=" bg-[#6abb79] rounded-full flex justify-center p-[9px] mb-[7px]">
-                <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
-                  <ArrowRight className=" h-[15px] aspect-square" />
-                </div>
-                <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
-                  Let&apos;s talk
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full relative  overflow-hidden bg-[#1e201f]">
-          <div className=" w-[90%] max-w-[1200px] mx-auto mt-[65px] mb-[50px] ">
-            <div className=" text-white py-4 flex flex-col lg:flex-row justify-between items-center px-6 space-y-8 lg:space-y-0">
-              <div className="flex space-x-4 ">
-                <Image
-                  src="/logo-light.png"
-                  alt="logo"
-                  width={197}
-                  height={33}
-                  className="cursor-pointer"
-                />
-              </div>
-              <div className="flex space-x-6">
-                <a href="#" className="hover:text-gray-300 text-sm">
-                  Terms and Conditions
-                </a>
-                <a href="#" className="hover:text-gray-300 text-sm">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-gray-300 text-sm">
-                  About Coullax
-                </a>
-              </div>
-              <div className="flex space-x-4 text-white">
-                <a href="#" className="hover:text-gray-300 rounded-full">
-                  <Image
-                    src="/socialmedia-logo/ig.png"
-                    alt="logo"
-                    width={34}
-                    height={34}
-                    className="cursor-pointer"
-                  />
-                </a>
-                <a href="#" className="hover:text-gray-300 rounded-full">
-                  <Image
-                    src="/socialmedia-logo/fb.png"
-                    alt="logo"
-                    width={34}
-                    height={34}
-                    className="cursor-pointer"
-                  />
-                </a>
-                <a href="#" className="hover:text-gray-300 rounded-full">
-                  <Image
-                    src="/socialmedia-logo/x.png"
-                    alt="logo"
-                    width={34}
-                    height={34}
-                    className="cursor-pointer"
-                  />
-                </a>
-                <a href="#" className="hover:text-gray-300 rounded-full">
-                  <Image
-                    src="/socialmedia-logo/tiktok.png"
-                    alt="logo"
-                    width={34}
-                    height={34}
-                    className="cursor-pointer"
-                  />
-                </a>
-                <a href="#" className="hover:text-gray-300 rounded-full">
-                  <Image
-                    src="/socialmedia-logo/linkedin.png"
-                    alt="logo"
-                    width={34}
-                    height={34}
-                    className="cursor-pointer"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex justify-center items-center text-xs text-white font-normal leading-[1.16] tracking-[normal] text-center mt-[40px]">
-              &copy; 2024 Coullax All Rights Reserved
             </div>
           </div>
         </div>
       </div>
 
+      <div className="w-full relative  overflow-hidden ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto">
+          <div className=" flex flex-col md:justify-start items-center ">
+            <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
+              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                Awesome peoplewho worked with us
+              </span>
+            </div>
+            <div className="w-full flex md:flex-row md:gap-[85px] gap-[35px] flex-col mt-[60px] py-[30px] justify-center items-center">
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/fiverr.png"
+                  alt="image1"
+                  width={76}
+                  height={36}
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/pornopoli.png"
+                  alt="image1"
+                  width={119}
+                  height={40}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/vesa.png"
+                  alt="image1"
+                  width={70}
+                  height={31}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/crypto.png"
+                  alt="image1"
+                  width={141}
+                  height={34}
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[172px] h-[40px] flex items-center justify-center">
+                <Image
+                  src="/Homepage/asvoria.png"
+                  alt="image1"
+                  width={133}
+                  height={19}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+        <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
+          <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
+            <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
+              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                These are our Superpowers
+              </span>
+            </div>
+            <span className="w-full max-w-[570px]  flex-grow-0  text-[20px] font-medium leading-[1.16] tracking-[normal] text-left text-[#575757]">
+              Working with us is easy. We follow a clear, no fuss process that
+              keeps things moving fast and smooth, from first chat to final
+              delivery.
+            </span>
+          </div>
+
+          <div className="w-full h-auto lg:h-[566.9px] flex flex-col gap-[10px] lg:gap-[22.6px]">
+            <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
+              <div className="w-[179.4px] lg:w-[256.3px] h-[262.0px] lg:h-[374.3px] px-[25px] py-[23.8px] bg-[#8eabb7] rounded-3xl"></div>
+
+              <div className="w-[213.7px] lg:w-[448.2px] h-auto lg:h-[374px] gap-[10px] lg:gap-[22.6px] flex flex-col rounded-3xl">
+                <div className="h-[88.9px] lg:h-[127px] bg-[#ce6b6b] rounded-3xl gap-[18.6px]"></div>
+                <div className="h-auto lg:h-[232px] rounded-3xl gap-[10px] lg:gap-[22.6px] flex flex-row">
+                  <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#d1ecb1] rounded-3xl"></div>
+                  <div className="h-[162.4px] lg:h-[232px] w-[148.4px] lg:w-[212px] bg-[#b1cfc4] rounded-3xl"></div>
+                </div>
+                <div className="w-[313.7px] md:w-[448.2px] h-[262.0px] md:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
+              </div>
+
+              <div className="w-[313.7px] lg:w-[448.2px] h-[262.0px] lg:h-[374.3px] bg-[#2f6665] rounded-3xl"></div>
+            </div>
+
+            <div className="flex flex-row gap-[10px] lg:gap-[22.6px]">
+              <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#163b31]"></div>
+              <div className="w-[411.4px] lg:w-[587.7px] h-[119.0px] lg:h-[170px] px-[25px] py-[23.8px] rounded-3xl bg-[#d1ecb1]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full relative  overflow-hidden ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto ">
+          <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px]">
+            <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
+              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+                Smooth Process, Solid Results
+              </span>
+            </div>
+            <span className="flex-grow-0  not-italic leading-[1.16]  text-[#575757] text-[20px] max-w-[706px]">
+              Our mission is to enhance efficiency, security, and transparency
+              across industries. Making the world a smarter, more connected, and
+              a safer place <br></br>
+              <br></br>
+              To achieve this, we believe in the power of Artificial
+              intelligence’s efficiency and Blockchain technology’s security and
+              transparency.
+            </span>
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] p-0">
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                  <Users size={37} />
+                </div>
+
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">
+                    {" "}
+                    Over 150
+                  </span>
+                  <span className="text-[16px] font-[600]">
+                    Satisfied clients<br></br>
+                    worldwide
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                  <Laptop size={37} />
+                </div>
+
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">400+</span>
+                  <span className="text-[16px] font-[600]">
+                    {" "}
+                    Successfully <br></br> Finished projects
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                  <Globe size={37} />
+                </div>
+
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">
+                    7500+
+                  </span>
+                  <span className="text-[16px] font-[600]">
+                    {" "}
+                    Hours of saving the world from <br></br>
+                    bad experiences.
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
+                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
+                  <HandFist size={37} />
+                </div>
+
+                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
+                  <span className="text-[36px] font-[600] mb-[15px]">30+</span>
+                  <span className="text-[16px] font-[600]">
+                    Countries across
+                    <br></br>
+                    the globe
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full relativeoverflow-hidden">
+        <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
+          <div className=" flex rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
+            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+              Check out what the folks are saying
+            </span>
+          </div>
+          <div className="w-full flex flex-col lg:flex-row lg:gap-[30px] my-[45px]">
+            <HeroVideoDialog
+              className="block dark:hidden rounded-[20px] lg:w-[40%]"
+              animationStyle="from-center"
+              videoSrc="https://www.youtube.com/embed/xNcPXrL9Y_Q?si=esZ_b6fz7nm61zVv"
+              thumbnailSrc={"/HomePage/review_profile/Thumb.png"}
+              thumbnailAlt="Hero Video"
+            />
+
+            <div className=" overflow-y-hidden relative lg:w-[30%] lg:max-h-[350px] max-h-[140px]">
+              <div
+                className={`absolute w-5 h-full lg:w-full lg:h-5 right-0 top-0 bg-gradient-to-l lg:bg-gradient-to-b from-[#fffef1] to-transparent z-10 pointer-events-none`}
+              />
+              <div
+                className={`absolute w-5 h-full lg:w-full lg:h-5 left-0 lg:right-0 bottom-0 bg-gradient-to-r lg:bg-gradient-to-t from-[#fffef1] to-transparent z-10 pointer-events-none`}
+              />
+              <Marquee
+                pauseOnHover
+                vertical
+                className="[--duration:20s] hidden lg:block"
+              >
+                {firstRow.map((review: any, index: number) => (
+                  <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                ))}
+              </Marquee>
+              <Marquee
+                pauseOnHover
+                className="[--duration:20s] block lg:hidden"
+              >
+                {firstRow.map((review: any, index: number) => (
+                  <ReviewCard vertical review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal}/>
+                ))}
+              </Marquee>
+            </div>
+            <div className=" overflow-y-hidden relative lg:w-[30%] lg:max-h-[350px] max-h-[140px]">
+              <div
+                className={`absolute w-5 h-full lg:w-full lg:h-5 right-0 top-0 bg-gradient-to-l lg:bg-gradient-to-b from-[#fffef1] to-transparent z-10 pointer-events-none`}
+              />
+              <div
+                className={`absolute w-5 h-full lg:w-full lg:h-5 left-0 lg:right-0 bottom-0 bg-gradient-to-r lg:bg-gradient-to-t from-[#fffef1] to-transparent z-10 pointer-events-none`}
+              />
+              <Marquee
+                pauseOnHover
+                reverse
+                vertical
+                className="[--duration:40s] hidden lg:block"
+              >
+                {secondRow.map((review, index) => (
+                  <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                ))}
+              </Marquee>
+              <Marquee
+                pauseOnHover
+                reverse
+                className="[--duration:20s] block lg:hidden"
+              >
+                {firstRow.map((review: any, index: number) => (
+                  <ReviewCard vertical review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                ))}
+              </Marquee>
+            </div>
+          </div>
+          <button
+            onClick={() => setOpenReviewModal(true)}
+            className=" text-[#5f90ef] cursor-pointer p-0"
+          >
+            Read more reviews
+          </button>
+        </div>
+      </div>
+
+      <div className="w-full relative  overflow-hidden">
+        <div className=" w-[90%] max-w-[1200px] mx-auto mb-[140px]">
+          <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
+            <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">
+              Want to know more ?
+            </h1>
+            <p className="text-[16px] font-normal leading-[1.04] text-black text-center">
+              Hop on a quick 1-to-1 meeting for any questions or to kickstart
+              your project with custom requirements.
+            </p>
+            <button className=" bg-[#6abb79] rounded-full flex justify-center p-[9px] mb-[7px]">
+              <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
+                <ArrowRight className=" h-[15px] aspect-square" />
+              </div>
+              <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
+                Let&apos;s talk
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full relative  overflow-hidden bg-[#1e201f]">
+        <div className=" w-[90%] max-w-[1200px] mx-auto mt-[65px] mb-[50px] ">
+          <div className=" text-white py-4 flex flex-col lg:flex-row justify-between items-center px-6 space-y-8 lg:space-y-0">
+            <div className="flex space-x-4 ">
+              <Image
+                src="/logo-light.png"
+                alt="logo"
+                width={197}
+                height={33}
+                className="cursor-pointer"
+              />
+            </div>
+            <div className="flex space-x-6">
+              <a href="#" className="hover:text-gray-300 text-sm">
+                Terms and Conditions
+              </a>
+              <a href="#" className="hover:text-gray-300 text-sm">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-gray-300 text-sm">
+                About Coullax
+              </a>
+            </div>
+            <div className="flex space-x-4 text-white">
+              <a href="#" className="hover:text-gray-300 rounded-full">
+                <Image
+                  src="/socialmedia-logo/ig.png"
+                  alt="logo"
+                  width={34}
+                  height={34}
+                  className="cursor-pointer"
+                />
+              </a>
+              <a href="#" className="hover:text-gray-300 rounded-full">
+                <Image
+                  src="/socialmedia-logo/fb.png"
+                  alt="logo"
+                  width={34}
+                  height={34}
+                  className="cursor-pointer"
+                />
+              </a>
+              <a href="#" className="hover:text-gray-300 rounded-full">
+                <Image
+                  src="/socialmedia-logo/x.png"
+                  alt="logo"
+                  width={34}
+                  height={34}
+                  className="cursor-pointer"
+                />
+              </a>
+              <a href="#" className="hover:text-gray-300 rounded-full">
+                <Image
+                  src="/socialmedia-logo/tiktok.png"
+                  alt="logo"
+                  width={34}
+                  height={34}
+                  className="cursor-pointer"
+                />
+              </a>
+              <a href="#" className="hover:text-gray-300 rounded-full">
+                <Image
+                  src="/socialmedia-logo/linkedin.png"
+                  alt="logo"
+                  width={34}
+                  height={34}
+                  className="cursor-pointer"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div className="flex justify-center items-center text-xs text-white font-normal leading-[1.16] tracking-[normal] text-center mt-[40px]">
+            &copy; 2024 Coullax All Rights Reserved
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {openReviewModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={() => setOpenReviewModal(false)}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md"
+          >
+            <motion.div
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="relative mx-4 aspect-video w-full max-w-4xl md:mx-0"
+            >
+              <motion.button className="absolute -top-16 right-0 rounded-full bg-neutral-900/50 p-2 text-xl text-white ring-1 backdrop-blur-md dark:bg-neutral-100/50 dark:text-black">
+                <XIcon className="size-5" />
+              </motion.button>
+              <div className="relative isolate z-[1] size-full overflow-hidden p-[25px] rounded-2xl border-2 overflow-y-auto hide-scrollbar bg-[#fffef1] border-white">
+                <h1 className=" text-center text-xl font-semibold">
+                  Check out what the <br /> Folks are saying
+                </h1>
+                <div className=" flex flex-col lg:flex-row justify-between gap-[20px] mt-[20px]">
+                  <div className=" flex flex-col justify-start items-center gap-5 w-full lg:w-[50%]">
+                    {firstRow.map((review: any, index: number) => (
+                      <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                    ))}
+                  </div>
+                  <div className=" flex flex-col justify-start items-center gap-5 w-full lg:w-[50%]">
+                    {secondRow.map((review: any, index: number) => (
+                      <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
