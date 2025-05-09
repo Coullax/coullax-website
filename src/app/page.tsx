@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import {
   ArrowLineUpRight,
   Brain,
@@ -21,7 +21,9 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import ReviewCard from "@/components/review-card";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { AnimatePresence, motion } from "motion/react";
+import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import HeaderNavBar from "@/components/Header";
 
@@ -320,30 +322,36 @@ export default function Home() {
 
       <div className="w-full relative overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
-          <div className="bg-[#1e201f] rounded-[25px] px-[80px] py-[57px]">
-            <div className=" flex flex-row justify-start items-center gap-[20px] ">
+          <div className="bg-[#1e201f] relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] overflow-hidden ">
+            <div className=" absolute top-0 z-20 left-0 h-full w-full">
+              <Ripple />
+            </div>
+
+            <div className=" flex flex-row justify-center lg:justify-start items-center gap-[20px] ">
               <Lightning
                 size={32}
                 weight="bold"
-                className="text-white ml-[16px]"
+                className="text-white lg:ml-[16px]"
               />
               <ShieldCheck size={32} weight="bold" className="text-white" />
               <CubeTransparent size={32} weight="bold" className="text-white" />
             </div>
-            <div className=" mt-[30px]">
-              <span className="text-[20px] font-bold bg-[#414342] rounded-full text-[#c6c6c6] py-[10px] px-[22px]">
-                Efficiency. Security. Transparency.
-              </span>
+            <div className=" mt-[30px] bg-[#414342] mx-auto lg:mx-0 rounded-full py-[10px] px-[22px] w-fit">
+              <AnimatedShinyText>
+                <span className=" lg:text-[20px] font-bold rounded-full ">
+                  Efficiency. Security. Transparency.
+                </span>
+              </AnimatedShinyText>
             </div>
             <div className="mt-[30px]">
-              <p className=" text-[#fffef1] text-[45px] leading-[47px] font-bold -tracking-[2.25px]">
+              <p className=" text-[#fffef1] text-center lg:text-left text-[30px] lg:text-[45px] leading-[36px] lg:leading-[47px] font-bold -tracking-[2.25px]">
                 Making Tech Work Smarter
                 <br />
                 and Safer for Everyone
               </p>
             </div>
             <div className="mt-[30px]">
-              <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] mb-[7px]">
+              <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto lg:mx-0">
                 <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
                   <ArrowRight className=" h-[15px] aspect-square" />
                 </div>
@@ -695,7 +703,6 @@ export default function Home() {
           </div>
         </div> */}
 
-
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto ">
           <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px]">
@@ -820,7 +827,12 @@ export default function Home() {
                 className="[--duration:20s] hidden lg:block"
               >
                 {firstRow.map((review: any, index: number) => (
-                  <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                  <ReviewCard
+                    review={review}
+                    key={index}
+                    index={index}
+                    setOpenReviewModal={setOpenReviewModal}
+                  />
                 ))}
               </Marquee>
               <Marquee
@@ -828,7 +840,13 @@ export default function Home() {
                 className="[--duration:20s] block lg:hidden"
               >
                 {firstRow.map((review: any, index: number) => (
-                  <ReviewCard vertical review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal}/>
+                  <ReviewCard
+                    vertical
+                    review={review}
+                    key={index}
+                    index={index}
+                    setOpenReviewModal={setOpenReviewModal}
+                  />
                 ))}
               </Marquee>
             </div>
@@ -846,7 +864,12 @@ export default function Home() {
                 className="[--duration:40s] hidden lg:block"
               >
                 {secondRow.map((review, index) => (
-                  <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                  <ReviewCard
+                    review={review}
+                    key={index}
+                    index={index}
+                    setOpenReviewModal={setOpenReviewModal}
+                  />
                 ))}
               </Marquee>
               <Marquee
@@ -855,7 +878,13 @@ export default function Home() {
                 className="[--duration:20s] block lg:hidden"
               >
                 {firstRow.map((review: any, index: number) => (
-                  <ReviewCard vertical review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                  <ReviewCard
+                    vertical
+                    review={review}
+                    key={index}
+                    index={index}
+                    setOpenReviewModal={setOpenReviewModal}
+                  />
                 ))}
               </Marquee>
             </div>
@@ -869,7 +898,7 @@ export default function Home() {
         </div>
       </div>
 
-      
+
       <div className="w-full relative  overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto mb-[140px]">
           <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
@@ -999,12 +1028,22 @@ export default function Home() {
                 <div className=" flex flex-col lg:flex-row justify-between gap-[20px] mt-[20px]">
                   <div className=" flex flex-col justify-start items-center gap-5 w-full lg:w-[50%]">
                     {firstRow.map((review: any, index: number) => (
-                      <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                      <ReviewCard
+                        review={review}
+                        key={index}
+                        index={index}
+                        setOpenReviewModal={setOpenReviewModal}
+                      />
                     ))}
                   </div>
                   <div className=" flex flex-col justify-start items-center gap-5 w-full lg:w-[50%]">
                     {secondRow.map((review: any, index: number) => (
-                      <ReviewCard review={review} key={index} index={index} setOpenReviewModal={setOpenReviewModal} />
+                      <ReviewCard
+                        review={review}
+                        key={index}
+                        index={index}
+                        setOpenReviewModal={setOpenReviewModal}
+                      />
                     ))}
                   </div>
                 </div>
