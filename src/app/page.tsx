@@ -23,6 +23,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import HeaderNavBar from "@/components/Header";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -349,6 +350,8 @@ export default function Home() {
           </div>
         </div>
       </div> */}
+      <SmoothCursor />
+
 
       <div className="w-full relative overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
