@@ -31,7 +31,7 @@ import Footer from "@/components/Footer";
 // import Pornopoli from '../../public/HomePage/brandLogo/pornopoli.png'
 // import Baddays from '../../public/HomePage/brandLogo/baddays.png'
 // import Asvoria from '../../public/HomePage/brandLogo/asvoria.png'
-// import Fiverr from '../../public/HomePage/brandLogo/fiverr.png' 
+// import Fiverr from '../../public/HomePage/brandLogo/fiverr.png'
 
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -245,32 +245,32 @@ export default function Home() {
 
   const brandLogo = [
     {
-      image: '/HomePage/brandLogo/thehidden.png',
+      image: "/HomePage/brandLogo/thehidden.png",
       height: 65,
       width: 267,
     },
     {
-      image: '/HomePage/brandLogo/pornopoli.png',
+      image: "/HomePage/brandLogo/pornopoli.png",
       height: 65,
       width: 263,
     },
     {
-      image: '/HomePage/brandLogo/baddays.png',
+      image: "/HomePage/brandLogo/baddays.png",
       height: 65,
       width: 173,
     },
     {
-      image: '/HomePage/brandLogo/asvoria.png',
+      image: "/HomePage/brandLogo/asvoria.png",
       height: 65,
       width: 245,
     },
     {
-      image: '/HomePage/brandLogo/fiverr.png',
+      image: "/HomePage/brandLogo/fiverr.png",
       height: 65,
       width: 214,
     },
     {
-      image: '/HomePage/brandLogo/skillcheckerlight.png',
+      image: "/HomePage/brandLogo/skillcheckerlight.png",
       height: 65,
       width: 243,
     },
@@ -299,8 +299,9 @@ export default function Home() {
     const percentX = (x - centerX) / centerX;
     const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
-      }deg) rotateX(${percentY * 6}deg)`;
+    card.style.transform = `perspective(1000px) rotateY(${
+      percentX * 6
+    }deg) rotateX(${percentY * 6}deg)`;
     content.style.transform = `translateZ(50px)`;
     glow.style.opacity = "1";
     glow.style.backgroundImage = `
@@ -361,52 +362,60 @@ export default function Home() {
 
       <div className="w-full relative overflow-hidden ">
         <div className=" w-full min-h-[158px] bg-[#1e201f]">
-            <HeaderNavBar />
+          <HeaderNavBar />
         </div>
-        <div className=" w-full bg-[#1e201f] min-h-[850px]">
-          <div className=" bg-[#1e201f] z-10 relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] overflow-hidden ">
-            <div className=" absolute top-0 -z-10 left-0 h-full w-full">
+        <div className=" w-full bg-[#1e201f] min-h-[750px]">
+          <div className=" bg-[#1e201f] z-10 relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] h-full min-h-[750px] ">
+            <div className=" absolute top-0 -z-10 left-0 h-full w-full min-h-[750px] -translate-y-1/3">
               <Ripple />
             </div>
 
-            <div className=" flex flex-row justify-center items-center gap-[20px] ">
-              <Lightning
-                size={32}
-                weight="bold"
-                className="text-white lg:ml-[16px]"
-              />
-              <ShieldCheck size={32} weight="bold" className="text-white" />
-              <CubeTransparent size={32} weight="bold" className="text-white" />
-            </div>
-            <div className=" mt-[30px] bg-[#414342] mx-auto rounded-full py-[10px] px-[22px] w-fit">
-              <AnimatedShinyText>
-                <span className=" lg:text-[20px] font-bold rounded-full ">
-                  Efficiency. Security. Transparency.
-                </span>
-              </AnimatedShinyText>
-            </div>
-            <div className="mt-[30px]">
-              <p className=" text-[#fffef1] text-center  text-[30px] lg:text-[45px] leading-[36px] lg:leading-[47px] font-bold -tracking-[2.25px]">
-                Making Tech Work Smarter
-                <br />
-                and Safer for Everyone
-              </p>
-            </div>
-            <div className="mt-[30px] relative w-full">
-              <a
-                href="https://cal.com/coullax/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className=" !z-50 cursor-pointer bg-[#e3ffe6] hover:bg-[#c9ebcc] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto">
-                  <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
-                    <ArrowRight className=" h-[15px] aspect-square" />
-                  </div>
-                  <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
-                    Let&apos;s talk
+            <div className=" flex flex-col justify-center items-center h-full w-full">
+              <div className=" flex flex-row justify-center items-center gap-[20px] ">
+                <Lightning
+                  size={32}
+                  weight="bold"
+                  className="text-white lg:ml-[16px]"
+                />
+                <ShieldCheck size={32} weight="bold" className="text-white" />
+                <CubeTransparent
+                  size={32}
+                  weight="bold"
+                  className="text-white"
+                />
+              </div>
+              <div className=" mt-[46px] bg-[#414342] mx-auto rounded-full py-[10px] px-[22px] w-fit">
+                <AnimatedShinyText>
+                  <span className=" lg:text-[20px] font-bold rounded-full ">
+                    Efficiency. Security. Transparency.
                   </span>
-                </button>
-              </a>
+                </AnimatedShinyText>
+              </div>
+              <div className="mt-[46px]">
+                <p className=" text-[#fffef1] text-center  text-[30px] lg:text-[85px] leading-[36px] lg:leading-[88px] font-bold -tracking-[4.25px]">
+                  Making Tech Work{" "}
+                  <span className=" text-[#d1ecb1]" >Smarter</span>
+                  <br />
+                  and <span className=" text-[#b9b8ef]">Safer</span> for
+                  Everyone
+                </p>
+              </div>
+              <div className="mt-[46px] relative w-fit">
+                <a
+                  href="https://cal.com/coullax/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className=" !z-50 cursor-pointer bg-[#e3ffe6] hover:bg-[#c9ebcc] rounded-full flex justify-center px-[36px] py-[7px] mb-[7px] mx-auto">
+                    {/* <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
+                      <ArrowRight className=" h-[15px] aspect-square" />
+                    </div> */}
+                    <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
+                      Let&apos;s talk
+                    </span>
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -572,7 +581,7 @@ export default function Home() {
               </span>
             </div>
             <Image
-              src='/HomePage/Arrow.png'
+              src="/HomePage/Arrow.png"
               alt="image1"
               width={1200}
               height={10}
