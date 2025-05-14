@@ -777,7 +777,7 @@ export default function Home() {
       <div className="w-full relativeoverflow-hidden">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
           <div className=" flex rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
-            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
               Check out what the folks are saying
             </span>
           </div>
@@ -878,7 +878,7 @@ export default function Home() {
         <div className=" w-full">
           {/* <div className=" flex flex-col md:justify-start items-start "> */}
           <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px] w-fit mx-auto">
-            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
               Awesome peoplewho worked with us
             </span>
           </div>
