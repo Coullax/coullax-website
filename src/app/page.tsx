@@ -238,32 +238,32 @@ export default function Home() {
 
   const brandLogo = [
     {
-      image: "thehidden.png",
+      image: "thehidden",
       height: 65,
       width: 267,
     },
     {
-      image: "pornopoli.png",
+      image: "pornopoli",
       height: 65,
       width: 263,
     },
     {
-      image: "baddays.png",
+      image: "baddays",
       height: 65,
       width: 173,
     },
     {
-      image: "asvoria.png",
+      image: "asvoria",
       height: 65,
       width: 245,
     },
     {
-      image: "fiverr.png",
+      image: "fiverr",
       height: 65,
       width: 214,
     },
     {
-      image: "skillcheckerlight.png",
+      image: "skillcheckerlight",
       height: 65,
       width: 243,
     },
@@ -888,8 +888,8 @@ export default function Home() {
               {brandLogo.map((logo, index: number) => (
                 <Image
                   key={index}
-                  src={`/Homepage/brandLogo/${logo.image}`}
-                  alt={`image1${index}`}
+                  src={`/Homepage/brandLogo/${logo.image}.png`}
+                  alt={`image${index}`}
                   width={logo.width}
                   height={logo.height}
                   className="object-contain mr-[150px]"
