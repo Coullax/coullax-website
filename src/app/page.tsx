@@ -23,6 +23,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import HeaderNavBar from "@/components/Header";
+import Arrow from "@/assets/HomePage/Arrow.png";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function Home() {
@@ -562,7 +563,7 @@ export default function Home() {
               </span>
             </div>
             <Image
-              src={require("@/assets/HomePage/Arrow.png")}
+              src={Arrow}
               alt="image1"
               width={1200}
               height={10}
