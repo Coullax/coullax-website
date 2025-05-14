@@ -352,11 +352,10 @@ export default function Home() {
       </div> */}
       <SmoothCursor />
 
-
       <div className="w-full relative overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
-          <div className="bg-[#1e201f] relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] overflow-hidden ">
-            <div className=" absolute top-0 z-20 left-0 h-full w-full">
+          <div className=" bg-[#1e201f] z-10 relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] overflow-hidden ">
+            <div className=" absolute top-0 -z-10 left-0 h-full w-full">
               <Ripple />
             </div>
 
@@ -383,15 +382,21 @@ export default function Home() {
                 and Safer for Everyone
               </p>
             </div>
-            <div className="mt-[30px]">
-              <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto">
-                <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
-                  <ArrowRight className=" h-[15px] aspect-square" />
-                </div>
-                <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
-                  Let&apos;s talk
-                </span>
-              </button>
+            <div className="mt-[30px] relative w-full">
+              <a
+                href="https://cal.com/coullax/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className=" !z-50 bg-[#e3ffe6] hover:bg-[#c9ebcc] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto">
+                  <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
+                    <ArrowRight className=" h-[15px] aspect-square" />
+                  </div>
+                  <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
+                    Let&apos;s talk
+                  </span>
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -961,14 +966,20 @@ export default function Home() {
               Hop on a quick 1-to-1 meeting for any questions or to kickstart
               your project with custom requirements.
             </p>
-            <button className=" bg-[#6abb79] rounded-full flex justify-center p-[9px] mb-[7px]">
-              <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
-                <ArrowRight className=" h-[15px] aspect-square" />
-              </div>
-              <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
-                Let&apos;s talk
-              </span>
-            </button>
+            <a
+              href="https://cal.com/coullax/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className=" bg-[#6abb79] hover:bg-[#7dd98e] rounded-full flex justify-center p-[9px] mb-[7px]">
+                <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
+                  <ArrowRight className=" h-[15px] aspect-square" />
+                </div>
+                <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
+                  Let&apos;s talk
+                </span>
+              </button>
+            </a>
           </div>
         </div>
       </div>
