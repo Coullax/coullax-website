@@ -563,7 +563,7 @@ export default function Home() {
               </span>
             </div>
             <Image
-              src={Arrow}
+              src="/HomePage/Arrow.png"
               alt="image1"
               width={1200}
               height={10}
