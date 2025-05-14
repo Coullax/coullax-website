@@ -388,7 +388,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className=" !z-50 bg-[#e3ffe6] hover:bg-[#c9ebcc] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto">
+                <button className=" !z-50 cursor-pointer bg-[#e3ffe6] hover:bg-[#c9ebcc] rounded-full flex justify-center p-[9px] mb-[7px] mx-auto">
                   <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
                     <ArrowRight className=" h-[15px] aspect-square" />
                   </div>
@@ -971,7 +971,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className=" bg-[#6abb79] hover:bg-[#7dd98e] rounded-full flex justify-center p-[9px] mb-[7px]">
+              <button className=" bg-[#6abb79] cursor-pointer hover:bg-[#7dd98e] rounded-full flex justify-center p-[9px] mb-[7px]">
                 <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
                   <ArrowRight className=" h-[15px] aspect-square" />
                 </div>
