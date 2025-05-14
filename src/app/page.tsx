@@ -23,7 +23,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import HeaderNavBar from "@/components/Header";
-import Arrow from "@/assets/homePage/Arrow.png";
+import Arrow from "@/assets/HomePage/Arrow.png";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function Home() {
