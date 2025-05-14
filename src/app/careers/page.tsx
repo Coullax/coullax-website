@@ -96,12 +96,12 @@ export default function CareersPage() {
                             {processList.map((process, index) => (
                                 <div
                                     key={index}
-                                    className={` min-h-[230px]  md:min-h-[288px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
+                                    className={` min-h-[230px]  md:min-h-[160px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
                                 >
-                                    <span className="text-[36px] font-bold leading-[42px] -tracking-[1.8px] text-left">
+                                    <span className="text-[24px] font-bold leading-[28px] -tracking-[1.2px] text-left">
                                         {process.title}
                                     </span>
-                                    <span className=" w-[250px] md:w-[170px] text-[16px] leading-[19px] text-left">
+                                    <span className=" w-[250px] md:w-[166px] text-[16px] leading-[19px] text-left">
                                         {process.description}
                                     </span>
                                 </div>
@@ -116,7 +116,7 @@ export default function CareersPage() {
                 <VelocityScroll
                     fontSize="text-4xl font-bold md:text-7xl md:leading-[5.5rem]"
                     defaultVelocity={0.5}
-                    className="text-[#eeeddf]"
+                    className="text-[#f1f6f1]"
                 >
                     Efficiency. Security. Transparency.Efficiency. Security. Transparency.
                 </VelocityScroll>
