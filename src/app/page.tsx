@@ -320,7 +320,7 @@ export default function Home() {
   return (
     <div className=" w-full pt-[50px] bg-[#fffef1]">
       <div className=" w-full">
-        <div className="w-[90%] max-w-[1200px] mx-auto ">
+        <div className="w-[90%] max-w-[1200px] mx-auto">
           <HeaderNavBar />
         </div>
       </div>
@@ -562,7 +562,7 @@ export default function Home() {
               </span>
             </div>
             <Image
-              src="/Homepage/Arrow.png"
+              src={require("../../public/HomePage/Arrow.png")}
               alt="image1"
               width={1200}
               height={10}
