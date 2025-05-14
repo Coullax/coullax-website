@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import HeaderNavBar from '@/components/Header';
 import { VelocityScroll } from '@/components/magicui/scroll-based-velocity';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -58,8 +59,14 @@ export default function CareersPage() {
 
     return (
         <div className=" w-full pt-[50px] bg-[#fffef1]">
+            <div className=" w-full">
+                <div className="w-[90%] max-w-[1200px] mx-auto">
+                    <HeaderNavBar />
+                </div>
+            </div>
+
             <div className="w-full relative overflow-hidden">
-                <div className=" w-[90%] max-w-[1200px] mx-auto ">
+                <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
                     {/* <h1 className="text-4xl font-bold mb-6 text-black">Careers</h1> */}
                 </div>
             </div>
