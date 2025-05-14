@@ -353,7 +353,7 @@ export default function Home() {
       {/* <SmoothCursor /> */}
 
       <div className="w-full relative overflow-hidden">
-        <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto my-[60px] md:my-[140px] ">
           <div className=" bg-[#1e201f] z-10 relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] overflow-hidden ">
             <div className=" absolute top-0 -z-10 left-0 h-full w-full">
               <Ripple />
@@ -562,7 +562,7 @@ export default function Home() {
               </span>
             </div>
             <Image
-              src="/Homepage/Arrow.png"
+              src={require("../../public/HomePage/Arrow.png")}
               alt="image1"
               width={1200}
               height={10}
