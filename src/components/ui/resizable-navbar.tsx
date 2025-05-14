@@ -251,8 +251,8 @@ export const NavbarLogo = () => {
             <Image
                 src="/coullax-logo.png"
                 alt="logo"
-                width={158}
-                height={33}
+                width={120}
+                height={20}
                 className="cursor-pointer"
             />
         </a>
