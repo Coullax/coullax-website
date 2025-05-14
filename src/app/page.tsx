@@ -23,7 +23,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import HeaderNavBar from "@/components/Header";
-import Arrow from "@/assets/HomePage/Arrow.png";
+import Arrow from "@/assets/homePage/Arrow.png";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function Home() {
@@ -91,89 +91,89 @@ export default function Home() {
     },
   ];
 
-  const reviewList1 = [
+  const [reviewList1, setreviewList1] = useState([
     {
       name: "nikodejonghe",
-      profile: "/HomePage/review_profile/Mark.svg",
+      profile: "/homePage/review_profile/Mark.svg",
       ratings: "5",
       feedback: "Very good communication and quality of work!",
     },
     {
       name: "cristianodev",
-      profile: "/HomePage/review_profile/Mark2.svg",
+      profile: "/homePage/review_profile/Mark2.svg",
       ratings: "5",
       feedback:
         "A nice designer, he got the concept right away and he was able to give me multiple revisions until we got the concept we were looking for.",
     },
     {
       name: "jossiecotto",
-      profile: "/HomePage/review_profile/Mark4.svg",
+      profile: "/homePage/review_profile/Mark4.svg",
       ratings: "5",
       feedback:
         "The artist made sure I got to know the process. He approached to our communication in the best manner and was always taking my references in details. I will keep business with him because I feel confident working with people that have word, talent, high-end skills, and make it easy for first timers. I loved working with him for 4 days, everything was real easy and beautiful!",
     },
     {
       name: "msgeorgiarose",
-      profile: "/HomePage/review_profile/Mark5.svg",
+      profile: "/homePage/review_profile/Mark5.svg",
       ratings: "5",
       feedback:
         "The output turned out great as coullax was willing to make necessary changes to meet our needs. Would work with them again.",
     },
     {
       name: "jamin",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "Creating an AMAZING NFT Collection. Super prompt, great to work with...SUPERIOR results!!!",
     },
     {
       name: "radamosch",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "Creating an AMAZING NFT Collection. Super prompt, great to work with...SUPERIOR results!!!",
     },
     {
       name: "jaimeko",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "Incredible communication through a very easy process. Will be using again coullax is incredible! Will be able to fulfill all wants and needs!",
     },
     {
       name: "ozziesinatra",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "Incredibly patient & understanding team of artists. I am beyond proud of them & the collection we conceived. Thank you.",
     },
     {
       name: "zac",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "Coullax really went into detail and, although we had a lot of requests, fulfilled them all with great patience. Awesome designs!",
     },
     {
       name: "joelcotterell",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "A real treat to work with. Coullax was patient with my requests and even went the extra mile. I cant recommend Coullax enough. I have fallen in love with the artwork",
     },
-  ];
+  ]);
 
-  const reviewList2 = [
+  const [reviewList2, setReviewList2] = useState([
     {
       name: "alextima",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "Best experience I've had . Professional and smooth. Communication and understanding of my requests was impressive. Delivered a quality product.",
     },
     {
       name: "joeyaji",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "The Coullax team is very talented, creative and communicative. We had a very large project project of 8000 nfts and the team worked incredibly hard and created a very beautiful collection that will go on to sell out. We will be using them again for our next project. \n" +
@@ -181,93 +181,93 @@ export default function Home() {
     },
     {
       name: "zac",
-      profile: "/HomePage/review_profile/Mark6.svg",
+      profile: "/homePage/review_profile/Mark6.svg",
       ratings: "5",
       feedback:
         "Coullax really went into detail and, although we had a lot of requests, fulfilled them all with great patience. Awesome designs!",
     },
     {
       name: "efrencreates",
-      profile: "/HomePage/review_profile/Mark7.svg",
+      profile: "/homePage/review_profile/Mark7.svg",
       ratings: "5",
       feedback: "very knowledgeable and professional, best I could find!",
     },
     {
       name: "ryanmcgur",
-      profile: "/HomePage/review_profile/Mark9.svg",
+      profile: "/homePage/review_profile/Mark9.svg",
       ratings: "5",
       feedback:
         "Creating an AMAZING NFT Collection. Super prompt, great to work with...SUPERIOR results!!!",
     },
     {
       name: "shiakch",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "He is the best seller i ve ever meet, trust me. He is very responsive, hard working, and effective. He finish the work within a short time frame with high quality work! Ask him show u around!",
     },
     {
       name: "scottvole",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "Super good communication, was sendt pictures troughout the design to make sure i was happy with the design, altso super well done, exacly what i asked for:fire:",
     },
     {
       name: "workflow",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "This seller was nothing but a charm throughout the whole procedure. I cant say enough how grateful I am for the work and patience that was put into the collection. 10/10 Thank you so much ! def coming back",
     },
     {
       name: "mattnehls",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "really responsive and easy to work with. Couldnt have found a better artist for the job!",
     },
     {
       name: "victor",
-      profile: "/HomePage/review_profile/Mark1.svg",
+      profile: "/homePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
         "The seller has most definitely exceeded my expectations ! He is hands down experienced in his work. Polite, fast replies, careful listener. Would definitely recommend. Can’t wait for the full project. Thank you again !",
     },
-  ];
+  ]);
 
-  const brandLogo = [
+  const [brandLogo, setBrandLogo] = useState([
     {
-      image: "/Homepage/brandLogo/thehidden.png",
+      image: "/homepage/brandLogo/thehidden.png",
       height: 65,
       width: 267,
     },
     {
-      image: "/Homepage/brandLogo/pornopoli.png",
+      image: "/homepage/brandLogo/pornopoli.png",
       height: 65,
       width: 263,
     },
     {
-      image: "/Homepage/brandLogo/baddays.png",
+      image: "/homepage/brandLogo/baddays.png",
       height: 65,
       width: 173,
     },
     {
-      image: "/Homepage/brandLogo/asvoria.png",
+      image: "/homepage/brandLogo/asvoria.png",
       height: 65,
       width: 245,
     },
     {
-      image: "/Homepage/brandLogo/fiverr.png",
+      image: "/homepage/brandLogo/fiverr.png",
       height: 65,
       width: 214,
     },
     {
-      image: "/Homepage/brandLogo/skillcheckerlight.png",
+      image: "/homepage/brandLogo/skillcheckerlight.png",
       height: 65,
       width: 243,
     },
-  ];
+  ]);
 
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
   const secondRow = reviewList2.slice(reviewList2.length / 2);
@@ -787,7 +787,7 @@ export default function Home() {
               className="block dark:hidden rounded-[20px] lg:w-[40%]"
               animationStyle="from-center"
               videoSrc="https://www.youtube.com/embed/xNcPXrL9Y_Q?si=esZ_b6fz7nm61zVv"
-              thumbnailSrc={"/HomePage/review_profile/Thumb.png"}
+              thumbnailSrc={"/homePage/review_profile/Thumb.png"}
               thumbnailAlt="Hero Video"
             />
 
@@ -898,7 +898,7 @@ export default function Home() {
 
               {/* <div className="w-[172px] h-[40px] flex items-center justify-center">
               <Image
-                  src="/Homepage/brandLogo/thehidden.png"
+                  src="/homepage/brandLogo/thehidden.png"
                   alt="image1"
                   width={267}
                   height={65}
@@ -908,7 +908,7 @@ export default function Home() {
 
               <div className="w-[172px] h-[40px] flex items-center justify-center">
               <Image
-                  src="/Homepage/brandLogo/pornopoli.png"
+                  src="/homepage/brandLogo/pornopoli.png"
                   alt="image1"
                   width={263}
                   height={65}
@@ -917,7 +917,7 @@ export default function Home() {
               </div>
               <div className="w-[172px] h-[40px] flex items-center justify-center">
               <Image
-                  src="/Homepage/brandLogo/baddays.png"
+                  src="/homepage/brandLogo/baddays.png"
                   alt="image1"
                   width={173}
                   height={65}
@@ -926,7 +926,7 @@ export default function Home() {
               </div>
               <div className="w-[172px] h-[40px] flex items-center justify-center">
               <Image
-                  src="/Homepage/brandLogo/asvoria.png"
+                  src="/homepage/brandLogo/asvoria.png"
                   alt="image1"
                   width={245}
                   height={65}
@@ -935,7 +935,7 @@ export default function Home() {
               </div>
               <div className="w-[172px] h-[40px] flex items-center justify-center">
               <Image
-                  src="/Homepage/brandLogo/fiverr.png"
+                  src="/homepage/brandLogo/fiverr.png"
                   alt="image1"
                   width={214}
                   height={65}
@@ -944,7 +944,7 @@ export default function Home() {
               </div>
               <div className="w-[172px] h-[40px] flex items-center justify-center">
               <Image
-                  src="/Homepage/brandLogo/skillcheckerlight.png"
+                  src="/homepage/brandLogo/skillcheckerlight.png"
                   alt="image1"
                   width={243}
                   height={65}
