@@ -26,6 +26,8 @@ import HeaderNavBar from "@/components/Header";
 import Footer from "@/components/Footer";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
+import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
+
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
   const glowRefs = useRef<HTMLDivElement[]>([]);
@@ -263,7 +265,7 @@ export default function Home() {
       width: 214,
     },
     {
-      image: "skillcheckerlight",
+      image: Skillchecker,
       height: 65,
       width: 243,
     },
@@ -888,7 +890,7 @@ export default function Home() {
               {brandLogo.map((logo, index: number) => (
                 <Image
                   key={index}
-                  src={`/public/Homepage/brandLogo/${logo.image}.png`}
+                  src={logo.image}
                   alt={`image${index}`}
                   width={logo.width}
                   height={logo.height}
