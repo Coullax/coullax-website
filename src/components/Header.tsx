@@ -16,12 +16,12 @@ import {
 export default function HeaderNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navigationList = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Contact", link: "/contact" },
-    { name: "Careers", link: "/careers" },
-  ];
+    const navigationList = [
+        { name: "Home", link: "/" },
+        { name: "Service", link: "/services" },
+        { name: "Case studies", link: "/case-studies" },
+        { name: "Careers", link: "/careers" },
+    ];
 
   return (
     <Navbar>

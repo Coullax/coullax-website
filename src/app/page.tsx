@@ -23,7 +23,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import HeaderNavBar from "@/components/Header";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
+// import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -350,7 +350,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <SmoothCursor />
+      {/* <SmoothCursor /> */}
 
       <div className="w-full relative overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
@@ -802,7 +802,7 @@ export default function Home() {
                 vertical
                 className="[--duration:20s] hidden lg:block"
               >
-                {firstRow.map((review: any, index: number) => (
+                {firstRow.map((review, index: number) => (
                   <ReviewCard
                     review={review}
                     key={index}
@@ -815,7 +815,7 @@ export default function Home() {
                 pauseOnHover
                 className="[--duration:20s] block lg:hidden"
               >
-                {firstRow.map((review: any, index: number) => (
+                {firstRow.map((review, index: number) => (
                   <ReviewCard
                     vertical
                     review={review}
@@ -853,7 +853,7 @@ export default function Home() {
                 reverse
                 className="[--duration:20s] block lg:hidden"
               >
-                {firstRow.map((review: any, index: number) => (
+                {firstRow.map((review, index: number) => (
                   <ReviewCard
                     vertical
                     review={review}
@@ -884,7 +884,7 @@ export default function Home() {
           </div>
           <div className="w-full flex md:flex-row md:gap-[85px] mt-[80px] gap-[35px] flex-col justify-around items-center">
             <Marquee pauseOnHover className="[--duration:20s]">
-              {brandLogo.map((logo: any, index: number) => (
+              {brandLogo.map((logo, index: number) => (
                 <Image
                   key={index}
                   src={logo.image}
@@ -1094,7 +1094,7 @@ export default function Home() {
                 </h1>
                 <div className=" flex flex-col lg:flex-row justify-between gap-[20px] mt-[20px]">
                   <div className=" flex flex-col justify-start items-center gap-5 w-full lg:w-[50%]">
-                    {firstRow.map((review: any, index: number) => (
+                    {firstRow.map((review, index: number) => (
                       <ReviewCard
                         review={review}
                         key={index}
@@ -1104,7 +1104,7 @@ export default function Home() {
                     ))}
                   </div>
                   <div className=" flex flex-col justify-start items-center gap-5 w-full lg:w-[50%]">
-                    {secondRow.map((review: any, index: number) => (
+                    {secondRow.map((review, index: number) => (
                       <ReviewCard
                         review={review}
                         key={index}
