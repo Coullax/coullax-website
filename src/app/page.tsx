@@ -27,11 +27,11 @@ import Footer from "@/components/Footer";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 // import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
-import TheHidden from '../../public/HomePage/brandLogo/thehidden.png'
-import Pornopoli from '../../public/HomePage/brandLogo/pornopoli.png'
-import Baddays from '../../public/HomePage/brandLogo/baddays.png'
-import Asvoria from '../../public/HomePage/brandLogo/asvoria.png'
-import Fiverr from '../../public/HomePage/brandLogo/fiverr.png' 
+// import TheHidden from '../../public/HomePage/brandLogo/thehidden.png'
+// import Pornopoli from '../../public/HomePage/brandLogo/pornopoli.png'
+// import Baddays from '../../public/HomePage/brandLogo/baddays.png'
+// import Asvoria from '../../public/HomePage/brandLogo/asvoria.png'
+// import Fiverr from '../../public/HomePage/brandLogo/fiverr.png' 
 
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -245,27 +245,27 @@ export default function Home() {
 
   const brandLogo = [
     {
-      image: TheHidden,
+      image: '/HomePage/brandLogo/thehidden.png',
       height: 65,
       width: 267,
     },
     {
-      image: Pornopoli,
+      image: '/HomePage/brandLogo/pornopoli.png',
       height: 65,
       width: 263,
     },
     {
-      image: Baddays,
+      image: '/HomePage/brandLogo/baddays.png',
       height: 65,
       width: 173,
     },
     {
-      image: Asvoria,
+      image: '/HomePage/brandLogo/asvoria.png',
       height: 65,
       width: 245,
     },
     {
-      image: Fiverr,
+      image: '/HomePage/brandLogo/fiverr.png',
       height: 65,
       width: 214,
     },
