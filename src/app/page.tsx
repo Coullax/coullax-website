@@ -884,7 +884,7 @@ export default function Home() {
           </div>
           <div className="w-full flex md:flex-row md:gap-[85px] mt-[80px] gap-[35px] flex-col justify-around items-center">
             <Marquee pauseOnHover className="[--duration:20s]">
-              {brandLogo.map((logo, index: number) => (
+              {/* {brandLogo.map((logo, index: number) => (
                 <Image
                   key={index}
                   src={logo.image}
@@ -893,9 +893,9 @@ export default function Home() {
                   height={logo.height}
                   className="object-contain mr-[150px]"
                 />
-              ))}
+              ))} */}
 
-              {/* <div className="w-[172px] h-[40px] flex items-center justify-center">
+              {/* <div className="w-[172px] h-[40px] flex items-center justify-center"> */}
               <Image
                   src="/Homepage/brandLogo/thehidden.png"
                   alt="image1"
@@ -903,9 +903,9 @@ export default function Home() {
                   height={65}
                   className="object-contain"
                 />
-              </div>
+              {/* </div> */}
 
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              {/* <div className="w-[172px] h-[40px] flex items-center justify-center"> */}
               <Image
                   src="/Homepage/brandLogo/pornopoli.png"
                   alt="image1"
@@ -913,8 +913,8 @@ export default function Home() {
                   height={65}
                   className="object-contain"
                 />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              {/* </div> */}
+              {/* <div className="w-[172px] h-[40px] flex items-center justify-center"> */}
               <Image
                   src="/Homepage/brandLogo/baddays.png"
                   alt="image1"
@@ -922,8 +922,8 @@ export default function Home() {
                   height={65}
                   className="object-contain"
                 />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              {/* </div> */}
+              {/* <div className="w-[172px] h-[40px] flex items-center justify-center"> */}
               <Image
                   src="/Homepage/brandLogo/asvoria.png"
                   alt="image1"
@@ -931,8 +931,8 @@ export default function Home() {
                   height={65}
                   className="object-contain"
                 />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              {/* </div> */}
+              {/* <div className="w-[172px] h-[40px] flex items-center justify-center"> */}
               <Image
                   src="/Homepage/brandLogo/fiverr.png"
                   alt="image1"
@@ -940,8 +940,8 @@ export default function Home() {
                   height={65}
                   className="object-contain"
                 />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
+              {/* </div> */}
+              {/* <div className="w-[172px] h-[40px] flex items-center justify-center"> */}
               <Image
                   src="/Homepage/brandLogo/skillcheckerlight.png"
                   alt="image1"
@@ -949,7 +949,7 @@ export default function Home() {
                   height={65}
                   className="object-contain"
                 />
-              </div> */}
+              {/* </div> */}
             </Marquee>
           </div>
           {/* </div> */}
