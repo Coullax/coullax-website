@@ -888,7 +888,7 @@ export default function Home() {
                 <Image
                   key={index}
                   src={logo.image}
-                  alt={"image1${index}"}
+                  alt={`image1${index}`}
                   width={logo.width}
                   height={logo.height}
                   className="object-contain mr-[150px]"
