@@ -20,7 +20,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 // });
 
 export const metadata: Metadata = {
-  title: "Coullax | Blockchain, AI and Web Development Solutions",
+  title: "Coullax | Igniting Innovation through AI and Blockchain Mastery",
   description:
     "Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer place. To achieve this, we believe in the power of Artificial intelligence’s efficiency and Blockchain technology’s security and transparency.",
   keywords: ["Blockchain", "Web3", "Defi Development", "AI", "AI Solutions", "Web Development", "UI/UX Design", "Branding", "Coullax", "AI chatbot", "AI Assistant", "Blockchain Solutions",

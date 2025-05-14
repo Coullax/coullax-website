@@ -589,7 +589,7 @@ export default function Home() {
       </div>
 
       <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
-        <div className="w-[95%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
+        <div className="w-[90%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
           <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
             <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
               <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
@@ -777,7 +777,7 @@ export default function Home() {
       <div className="w-full relativeoverflow-hidden">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
           <div className=" flex rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
-            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
               Check out what the folks are saying
             </span>
           </div>
@@ -878,7 +878,7 @@ export default function Home() {
         <div className=" w-full">
           {/* <div className=" flex flex-col md:justify-start items-start "> */}
           <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px] w-fit mx-auto">
-            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+            <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
               Awesome peoplewho worked with us
             </span>
           </div>
