@@ -888,7 +888,7 @@ export default function Home() {
               {brandLogo.map((logo, index: number) => (
                 <Image
                   key={index}
-                  src={`/Homepage/brandLogo/${logo.image}.png`}
+                  src={`/public/Homepage/brandLogo/${logo.image}.png`}
                   alt={`image${index}`}
                   width={logo.width}
                   height={logo.height}
