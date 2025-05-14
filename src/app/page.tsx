@@ -26,7 +26,12 @@ import HeaderNavBar from "@/components/Header";
 import Footer from "@/components/Footer";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
-import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
+// import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
+import TheHidden from '../../public/HomePage/brandLogo/thehidden.png'
+import Pornopoli from '../../public/HomePage/brandLogo/pornopoli.png'
+import Baddays from '../../public/HomePage/brandLogo/baddays.png'
+import Asvoria from '../../public/HomePage/brandLogo/asvoria.png'
+import Fiverr from '../../public/HomePage/brandLogo/fiverr.png' 
 
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -240,32 +245,32 @@ export default function Home() {
 
   const brandLogo = [
     {
-      image: "thehidden",
+      image: TheHidden,
       height: 65,
       width: 267,
     },
     {
-      image: "pornopoli",
+      image: Pornopoli,
       height: 65,
       width: 263,
     },
     {
-      image: "baddays",
+      image: Baddays,
       height: 65,
       width: 173,
     },
     {
-      image: "asvoria",
+      image: Asvoria,
       height: 65,
       width: 245,
     },
     {
-      image: "fiverr",
+      image: Fiverr,
       height: 65,
       width: 214,
     },
     {
-      image: Skillchecker,
+      image: '/HomePage/brandLogo/skillcheckerlight.png',
       height: 65,
       width: 243,
     },
