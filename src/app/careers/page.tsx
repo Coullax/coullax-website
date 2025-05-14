@@ -5,13 +5,26 @@ import { Marquee } from "@/components/magicui/marquee";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { ArrowCircleRight } from "@phosphor-icons/react";
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import Image1 from "../../../public/careersPage/image1.png"
 import Image2 from "../../../public/careersPage/image2.png";
 
+interface ProcessList {
+    title: string;
+    backGround: string;
+    textColor: string;
+    description: string;
+}
+
+interface CarrouseImageItem {
+    image: StaticImageData;
+    width: number;
+    height: number;
+}   
+
 export default function CareersPage() {
-  const processList = [
+  const processList: ProcessList[] = [
     {
       title: "Your Resume",
       backGround: "bg-[#fff]",
@@ -38,7 +51,7 @@ export default function CareersPage() {
     },
   ];
 
-  const carrouseImageList = [
+  const carrouseImageList: CarrouseImageItem[] = [
     {
       image: Image1,
       width: 554,
@@ -82,7 +95,7 @@ export default function CareersPage() {
           </div>
           <div className=" mt-[24px] lg:mt-[32px]">
             <Marquee pauseOnHover className="[--duration:20s] p-0">
-              {carrouseImageList.map((image: any, index: number) => (
+              {carrouseImageList.map((image: CarrouseImageItem, index: number) => (
                 <Image
                   key={index}
                   src={image.image}
@@ -123,7 +136,7 @@ export default function CareersPage() {
                         />
 
                         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
-                            {processList.map((process, index) => (
+                            {processList.map((process: ProcessList, index: number) => (
                                 <div
                                     key={index}
                                     className={` min-h-[230px]  md:min-h-[160px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
