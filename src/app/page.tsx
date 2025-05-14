@@ -320,7 +320,7 @@ export default function Home() {
   return (
     <div className=" w-full pt-[50px] bg-[#fffef1]">
       <div className=" w-full">
-        <div className="w-[90%] max-w-[1200px] mx-auto">
+        <div className="w-[90%] max-w-[1200px] mx-auto ">
           <HeaderNavBar />
         </div>
       </div>
@@ -353,7 +353,7 @@ export default function Home() {
       {/* <SmoothCursor /> */}
 
       <div className="w-full relative overflow-hidden">
-        <div className=" w-[90%] max-w-[1200px] mx-auto my-[40px] md:my-[140px] ">
+        <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
           <div className=" bg-[#1e201f] z-10 relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] overflow-hidden ">
             <div className=" absolute top-0 -z-10 left-0 h-full w-full">
               <Ripple />
@@ -877,7 +877,7 @@ export default function Home() {
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-full">
           {/* <div className=" flex flex-col md:justify-start items-start "> */}
-          <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px] w-fit mx-auto">
+          <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px] w-[90%] sm:w-fit mx-auto">
             <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
               Awesome peoplewho worked with us
             </span>
