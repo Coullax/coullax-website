@@ -1,30 +1,33 @@
+"use client";
 import Footer from '@/components/Footer';
 import HeaderNavBar from '@/components/Header';
 import { VelocityScroll } from '@/components/magicui/scroll-based-velocity';
+import { ArrowCircleRight } from "@phosphor-icons/react";
+
 import { Metadata } from 'next';
 import Image from 'next/image';
 import React from 'react';
 
-export const metadata: Metadata = {
-    title: 'Careers | Coullax',
-    description: "Join Coullax and help shape the future of AI, Blockchain, and web technologies. We're building smart, secure, and scalable digital solutions with a passionate global team.",
-    keywords: [
-        "Coullax",
-        "Careers at Coullax",
-        "AI Jobs",
-        "Blockchain Careers",
-        "Tech Careers",
-        "Join Coullax",
-    ],
-    openGraph: {
-        title: "Careers at Coullax",
-        description: "Be part of a team that's reimagining technology with AI, Blockchain, and web innovation. Discover career opportunities at Coullax.",
-        url: "https://www.coullax.com/careers",
-        siteName: "Coullax",
-        locale: "en_US",
-        type: "website",
-    },
-};
+// export const metadata: Metadata = {
+//     title: 'Careers | Coullax',
+//     description: "Join Coullax and help shape the future of AI, Blockchain, and web technologies. We're building smart, secure, and scalable digital solutions with a passionate global team.",
+//     keywords: [
+//         "Coullax",
+//         "Careers at Coullax",
+//         "AI Jobs",
+//         "Blockchain Careers",
+//         "Tech Careers",
+//         "Join Coullax",
+//     ],
+//     openGraph: {
+//         title: "Careers at Coullax",
+//         description: "Be part of a team that's reimagining technology with AI, Blockchain, and web innovation. Discover career opportunities at Coullax.",
+//         url: "https://www.coullax.com/careers",
+//         siteName: "Coullax",
+//         locale: "en_US",
+//         type: "website",
+//     },
+// };
 export default function CareersPage() {
     const processList = [
         {
@@ -67,7 +70,21 @@ export default function CareersPage() {
 
             <div className="w-full relative overflow-hidden">
                 <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
-                    {/* <h1 className="text-4xl font-bold mb-6 text-black">Careers</h1> */}
+
+                    <div className='flex flex-row bg-[#6abb79] items-start gap-1.5 rounded-[100px] w-[190px] pl-[5px]'>
+                        <ArrowCircleRight size={32}/>
+                        <span className='text-[20px] text-left text-[#1e201f] font-[600]'>We are Hiring</span>
+                    </div>
+                    <h1 className="text-4xl mb-6 text-black my-[32px] text-[45px] font-bold text-left">Careers</h1>
+                    <div className="text-left text-[24px] font-[600] max-w-[760px]">
+                        Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer place.
+                        <br></br><br></br>
+                        To achieve this, we believe in the power of Artificial intelligence’s
+                         efficiency and Blockchain technology’s security and transparency
+                    </div>
+
+
+
                 </div>
             </div>
 
