@@ -299,9 +299,8 @@ export default function Home() {
     const percentX = (x - centerX) / centerX;
     const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${
-      percentX * 6
-    }deg) rotateX(${percentY * 6}deg)`;
+    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
+      }deg) rotateX(${percentY * 6}deg)`;
     content.style.transform = `translateZ(50px)`;
     glow.style.opacity = "1";
     glow.style.backgroundImage = `
@@ -326,12 +325,12 @@ export default function Home() {
   };
 
   return (
-    <div className=" w-full pt-[50px] bg-[#fffef1]">
-      <div className=" w-full">
+    <div className=" w-full bg-[#fffef1]">
+      {/* <div className=" w-full">
         <div className="w-[90%] max-w-[1200px] mx-auto">
           <HeaderNavBar />
         </div>
-      </div>
+      </div> */}
 
       {/* <div className=" w-full">
         <div className="w-[90%] max-w-[1200px] flex items-center justify-between mx-auto">
@@ -360,8 +359,11 @@ export default function Home() {
       </div> */}
       {/* <SmoothCursor /> */}
 
-      <div className="w-full relative overflow-hidden">
-        <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
+      <div className="w-full relative overflow-hidden ">
+        <div className=" w-full min-h-[158px] bg-[#1e201f]">
+            <HeaderNavBar />
+        </div>
+        <div className=" w-full bg-[#1e201f] min-h-[850px]">
           <div className=" bg-[#1e201f] z-10 relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] overflow-hidden ">
             <div className=" absolute top-0 -z-10 left-0 h-full w-full">
               <Ripple />
@@ -1002,8 +1004,8 @@ export default function Home() {
         </VelocityScroll>
       </div>
 
-      <Footer/>
-      
+      <Footer />
+
       <AnimatePresence>
         {openReviewModal && (
           <motion.div
