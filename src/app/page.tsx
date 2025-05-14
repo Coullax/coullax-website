@@ -562,7 +562,7 @@ export default function Home() {
               </span>
             </div>
             <Image
-              src={require("../../public/HomePage/Arrow.png")}
+              src={require("@/assets/HomePage/Arrow.png")}
               alt="image1"
               width={1200}
               height={10}
