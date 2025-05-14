@@ -40,7 +40,7 @@ export default function CareersPage() {
     ];
 
     return (
-        <div className=" w-full pt-[50px] bg-[#fffef1]">
+        <div className=" w-full pt-[50px] bg-[#fff]">
             <div className=" w-full">
                 <div className="w-[90%] max-w-[1200px] mx-auto">
                     <HeaderNavBar />
@@ -67,7 +67,7 @@ export default function CareersPage() {
                 </div>
             </div>
 
-            <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
+            <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
                 <div className=" w-[90%] max-w-[1200px] mx-auto  ">
                     <div className="flex flex-col justify-center items-center gap-[54px] p-0">
                         <div className="w-full flex flex-col justify-between items-center">
