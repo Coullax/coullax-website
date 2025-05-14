@@ -1,43 +1,55 @@
 "use client";
-import Footer from '@/components/Footer';
-import HeaderNavBar from '@/components/Header';
-import { VelocityScroll } from '@/components/magicui/scroll-based-velocity';
+import Footer from "@/components/Footer";
+import HeaderNavBar from "@/components/Header";
+import { Marquee } from "@/components/magicui/marquee";
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { ArrowCircleRight } from "@phosphor-icons/react";
 
 import Image from 'next/image';
 import React from 'react';
+import Image1 from "../../../public/careersPage/image1.png"
+import Image2 from "../../../public/careersPage/image2.png";
 
 export default function CareersPage() {
-    const processList = [
-        {
-            title: "Your Resume",
-            backGround: "bg-[#fff]",
-            textColor: "text-[#000]",
-            description:
-                "We carefully examine your resume",
-        },
-        {
-            title: "Assessment",
-            backGround: "bg-[#fff]",
-            textColor: "text-[#000]",
-            description:
-                "You face some technical assessments",
-        },
-        {
-            title: "Interview",
-            backGround: "bg-[#fff]",
-            textColor: "text-[#000]",
-            description:
-                "You face for our interviews",
-        },
-        {
-            title: "Join the family",
-            backGround: "bg-[#6abb79]",
-            textColor: "text-[#000]",
-            description:
-                'Congrats!',
-        },
-    ];
+  const processList = [
+    {
+      title: "Your Resume",
+      backGround: "bg-[#fff]",
+      textColor: "text-[#000]",
+      description: "We carefully examine your resume",
+    },
+    {
+      title: "Assessment",
+      backGround: "bg-[#fff]",
+      textColor: "text-[#000]",
+      description: "You face some technical assessments",
+    },
+    {
+      title: "Interview",
+      backGround: "bg-[#fff]",
+      textColor: "text-[#000]",
+      description: "You face for our interviews",
+    },
+    {
+      title: "Join the family",
+      backGround: "bg-[#6abb79]",
+      textColor: "text-[#000]",
+      description: "Congrats!",
+    },
+  ];
+
+  const carrouseImageList = [
+    {
+      image: Image1,
+      width: 554,
+      height: 318,
+    },
+    {
+      image: Image2,
+      width: 554,
+      height: 318,
+    }
+  ];
 
     return (
         <div className=" w-full pt-[50px] bg-[#fff]">
@@ -47,25 +59,43 @@ export default function CareersPage() {
                 </div>
             </div>
 
-            <div className="w-full relative overflow-hidden">
-                <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
-
-                    <div className='flex flex-row bg-[#6abb79] items-start gap-1.5 rounded-[100px] w-[190px] pl-[5px]'>
-                        <ArrowCircleRight size={32}/>
-                        <span className='text-[20px] text-left text-[#1e201f] font-[600]'>We are Hiring</span>
-                    </div>
-                    <h1 className="text-4xl mb-6 text-black my-[32px] text-[45px] font-bold text-left">Careers</h1>
-                    <div className="text-left text-[24px] font-[600] max-w-[760px]">
-                        Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer place.
-                        <br></br><br></br>
-                        To achieve this, we believe in the power of Artificial intelligence’s
-                         efficiency and Blockchain technology’s security and transparency
-                    </div>
-
-
-
-                </div>
-            </div>
+      <div className="w-full relative overflow-hidden">
+        <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
+          <div className="flex flex-row bg-[#6abb79] items-start gap-1.5 rounded-[100px] w-fit py-[5px] pl-[5px] pr-[14px]">
+            <ArrowCircleRight size={24} />
+            <span className="text-[20px] leading-[23px] -tracking-[1px] text-left text-[#1e201f] font-semibold">
+              We are Hiring
+            </span>
+          </div>
+          <h1 className=" text-black my-[24px] lg:my-[32px] leading-[47px] -tracking-[2.2px] text-[36px] lg:text-[45px] font-bold text-left">
+            Careers
+          </h1>
+          <div className="text-left text-[20px] lg:text-[24px] text-[#575757] font-medium leading-[28px] max-w-[760px]">
+            Our mission is to enhance efficiency, security, and transparency
+            across industries. Making the world a smarter, more connected, and a
+            safer place.
+            <br />
+            <br />
+            To achieve this, we believe in the power of Artificial
+            intelligence&apos;s efficiency and Blockchain technology&apos;s
+            security and transparency
+          </div>
+          <div className=" mt-[24px] lg:mt-[32px]">
+            <Marquee pauseOnHover className="[--duration:20s] p-0">
+              {carrouseImageList.map((image: any, index: number) => (
+                <Image
+                  key={index}
+                  src={image.image}
+                  alt={`image${index}`}
+                  width={image.width}
+                  height={image.height}
+                  className=" rounded-[15px] bg-[#d9d9d9] mr-[32px]"
+                />
+              ))}
+            </Marquee>
+          </div>
+        </div>
+      </div>
 
             <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
                 <div className=" w-[90%] max-w-[1200px] mx-auto  ">
@@ -122,8 +152,7 @@ export default function CareersPage() {
                 </VelocityScroll>
             </div>
 
-
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 }

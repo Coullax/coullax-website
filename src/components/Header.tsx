@@ -31,7 +31,7 @@ export default function HeaderNavBar() {
         <NavItems items={navigationList} />
         <div className="flex items-center gap-4">
           {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-          <NavbarButton href="https://cal.com/coullax/30min" target="_blank">
+          <NavbarButton href="https://cal.com/coullax/30min" target="_blank" className=" shadow-none">
             Book a call
           </NavbarButton>
           {/* <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] ">
