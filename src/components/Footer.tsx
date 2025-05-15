@@ -19,10 +19,10 @@ export default function Footer() {
                   />
                 </div>
                 <div className="flex space-x-6">
-                  <a href="#" className="hover:text-gray-300 text-sm">
+                  <a href="terms-conditions" className="hover:text-gray-300 text-sm">
                     Terms and Conditions
                   </a>
-                  <a href="#" className="hover:text-gray-300 text-sm">
+                  <a href="privacy-policy" className="hover:text-gray-300 text-sm">
                     Privacy Policy
                   </a>
                   <a href="#" className="hover:text-gray-300 text-sm">
