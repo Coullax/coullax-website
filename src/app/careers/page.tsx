@@ -6,7 +6,7 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { ArrowCircleRight, ArrowCircleUpRight } from "@phosphor-icons/react";
 
 import Image, { StaticImageData } from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import Image1 from "../../../public/careersPage/image1.png"
 import Image2 from "../../../public/careersPage/image2.png";
 
@@ -23,17 +23,64 @@ interface CarrouseImageItem {
     height: number;
 }
 
+interface JobPosting {
+    title: string;
+    description: string;
+    type: string;
+    location: string;
+  }
+  
+
+  const jobPostings: JobPosting[] = [
+    {
+      title: "Product Designer",
+      description: "We are hiring a expert product designer for our team",
+      type: "Full Time",
+      location: "on Site"
+    },
+    {
+      title: "Software Engineer",
+      description: "We are hiring a expert software engineer for our team",
+      type: "Full Time",
+      location: "Remote"
+    },
+    {
+      title: "Quality Assurance",
+      description: "We are hiring a expert quality assurance for our team",
+      type: "Part Time",
+      location: "Remote"
+    },
+    {
+        title: "Project Manager",
+        description: "We are hiring a expert project manager for our team",
+        type: "Full Time",
+        location: "on Site"
+    },
+    {
+        title: "User Experience Researcher",
+        description: "We are hiring a expert user experience for our team",
+        type: "Full Time",
+        location: "Remote"
+    },
+    {
+        title: "Software Engineer Intern",
+        description: "We are hiring a software engineer intern for our team",
+        type: "Internship",
+        location: "Remote"
+    },   
+  ];
+
 export default function CareersPage() {
-    const skills = [
+    const [skills,setSkills] = useState([
         { name: 'Software Engineering', isActive: false },
         { name: 'Design', isActive: false },
         { name: 'Quality Assurance', isActive: false },
         { name: 'Project Management', isActive: false },
-        { name: 'User Experience Research', isActive: true },
-        { name: 'User Experience Research', isActive: true },
-        { name: 'User Experience Research', isActive: true },
-
-    ];
+        { name: 'Data Science', isActive: false },
+        { name: 'Product Management,', isActive: false },
+        { name: 'User Experience Research', isActive: false },
+        { name: 'Project Management Intern', isActive: false }
+    ]);
   const processList: ProcessList[] = [
     {
       title: "Your Resume",
@@ -74,6 +121,16 @@ export default function CareersPage() {
     }
   ];
 
+  const handleSkillClick = (clickedIndex: number) => {
+    setSkills(prevSkills => 
+      prevSkills.map((skill, index) => ({
+        ...skill,
+        isActive: index === clickedIndex ? !skill.isActive : false
+      }))
+    );
+  };
+
+
     return (
         <div className=" w-full pt-[50px] bg-[#fff]">
             <div className=" w-full">
@@ -85,12 +142,12 @@ export default function CareersPage() {
             <div className="w-full relative overflow-hidden">
                 <div className=" w-[90%] max-w-[1200px] mx-auto mt-[70px] md:mt-[140px] ">
                     <div
-                        className="flex flex-row bg-[#6abb79] items-start gap-1.5 rounded-[100px] w-fit py-[5px] pl-[5px] pr-[14px]">
-                        <ArrowCircleRight size={24}/>
+                        className="flex flex-row bg-[#6abb79] items-start gap-1.5 rounded-[100px] w-fit py-[5px] pl-[5px] pr-[14px]  justify-center">
+                        <ArrowCircleRight size={32} />
                         <span
-                            className="text-[20px] leading-[23px] -tracking-[1px] text-left text-[#1e201f] font-semibold">
-              We are Hiring
-            </span>
+                            className="text-[20px] text-left text-[#1e201f] font-semibold">
+                            We are Hiring
+                        </span>
                     </div>
                     <h1 className=" text-black my-[24px] lg:my-[32px] leading-[47px] -tracking-[2.2px] text-[36px] lg:text-[45px] font-bold text-left">
                         Careers
@@ -132,173 +189,50 @@ export default function CareersPage() {
                             {skills.map((skill, index) => (
                                 <div
                                     key={index}
-                                    className={`flex shrink-0 justify-around rounded-[100px] text-[20px] font-[600] p-[15px] bg-[#f1f6f1] w-fit1`}
+                                    onClick={() => handleSkillClick(index)}
+                                    className={`flex shrink-0 justify-around rounded-[100px] text-[20px] font-[600] p-[15px] w-fit ${skill.isActive ? 'bg-[#6abb79]' : 'bg-[#f1f6f1]'
+                                        }`}
                                 >
                                     {skill.name}
                                 </div>
                             ))}
-
-
                         </div>
 
 
                         <div
                             className='grid lg:grid-cols-3 mt-[90px] gap-[30px] md:grid-cols-2 grid-cols-1 justify-center items-center'>
-
-                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
-                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
-                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                    We are hiring a expert product designer for our team
-                                </div>
-                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
-                                        Time
+                            {jobPostings.map((job, index) => (
+                                <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 max-h-[270px]'>
+                                    <span className='text-2xl font-[600] mb-[16px]'>{job.title}</span>
+                                    <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
+                                        {job.description}
                                     </div>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
-                                        Site
+                                    <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
+                                        <div
+                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
+                                            {job.type}
+                                        </div>
+                                        <div
+                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
+                                            {job.location}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='flex justify-end'>
-                                    <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
-                                        <ArrowCircleUpRight size={32} color="#6abb78"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
-                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
-                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                    We are hiring a expert product designer for our team
-                                </div>
-                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
-                                        Time
-                                    </div>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
-                                        Site
+                                    <div className='flex justify-end'>
+                                        <div
+                                            className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
+                                            <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
+                                            <ArrowCircleUpRight size={32} color="#6abb78" />
+                                        </div>
                                     </div>
                                 </div>
-                                <div className='flex justify-end'>
-                                    <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
-                                        <ArrowCircleUpRight size={32} color="#6abb78" />
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
-                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
-                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                    We are hiring a expert product designer for our team
-                                </div>
-                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
-                                        Time
-                                    </div>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
-                                        Site
-                                    </div>
-                                </div>
-                                <div className='flex justify-end'>
-                                    <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
-                                        <ArrowCircleUpRight size={32} color="#6abb78" />
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
-                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
-                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                    We are hiring a expert product designer for our team
-                                </div>
-                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
-                                        Time
-                                    </div>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
-                                        Site
-                                    </div>
-                                </div>
-                                <div className='flex justify-end'>
-                                    <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
-                                        <ArrowCircleUpRight size={32} color="#6abb78" />
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
-                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
-                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                    We are hiring a expert product designer for our team
-                                </div>
-                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
-                                        Time
-                                    </div>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
-                                        Site
-                                    </div>
-                                </div>
-                                <div className='flex justify-end'>
-                                    <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
-                                        <ArrowCircleUpRight size={32} color="#6abb78" />
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
-                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
-                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                    We are hiring a expert product designer for our team
-                                </div>
-                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
-                                        Time
-                                    </div>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
-                                        Site
-                                    </div>
-                                </div>
-                                <div className='flex justify-end'>
-                                    <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
-                                        <ArrowCircleUpRight size={32} color="#6abb78" />
-                                    </div>
-                                </div>
-                            </div>
+                            ))}
 
                         </div>
                     </div>
-
-
                 </div>
             </div>
+
+
 
             <div
                 className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
