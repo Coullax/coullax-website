@@ -185,12 +185,12 @@ export default function CareersPage() {
                 <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
 
                     <div className='flex flex-col '>
-                        <div className='flex overflow-y-auto gap-[20px] hide-scrollbar'>
+                        <div className='flex overflow-y-auto gap-[20px]'>
                             {skills.map((skill, index) => (
                                 <div
                                     key={index}
                                     onClick={() => handleSkillClick(index)}
-                                    className={`flex shrink-0 justify-around rounded-[100px] text-[20px] font-[600] p-[15px] w-fit ${skill.isActive ? 'bg-[#6abb79]' : 'bg-[#f1f6f1]'
+                                    className={`flex shrink-0 justify-around rounded-[100px] text-[20px] font-[600] p-[15px] w-fit mb-3 ${skill.isActive ? 'bg-[#6abb79]' : 'bg-[#f1f6f1]'
                                         }`}
                                 >
                                     {skill.name}
@@ -209,19 +209,19 @@ export default function CareersPage() {
                                     </div>
                                     <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
                                         <div
-                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
+                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>
                                             {job.type}
                                         </div>
                                         <div
-                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
+                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>
                                             {job.location}
                                         </div>
                                     </div>
                                     <div className='flex justify-end'>
                                         <div
-                                            className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
-                                            <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
-                                            <ArrowCircleUpRight size={32} color="#6abb78" />
+                                            className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[8px]'>
+                                            <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px] ml-[15px]'>Apply Now</span>
+                                            <ArrowCircleUpRight size={32} color="#6abb78" className="mr-[5px]"/>
                                         </div>
                                     </div>
                                 </div>
