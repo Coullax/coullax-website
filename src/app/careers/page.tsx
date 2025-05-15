@@ -28,6 +28,7 @@ interface JobPosting {
     description: string;
     type: string;
     location: string;
+    link?:string;
   }
 interface SkillJobs {
   name: string;
@@ -38,17 +39,39 @@ const skillJobs: SkillJobs[] = [
     {
       name: 'Software Engineering',
       jobs: [
-        {
-          title: "Software Engineer",
-          description: "We are hiring a expert software engineer for our team",
-          type: "Full Time",
-          location: "Remote"
-        },
+        // {
+        //   title: "Software Engineer",
+        //   description: "We are hiring a expert software engineer for our team",
+        //   type: "Full Time",
+        //   location: "Remote"
+        // },
         {
           title: "Software Engineer Intern",
           description: "We are hiring a software engineer intern for our team",
           type: "Internship",
-          location: "Remote"
+          location: "On Site",
+          link:'https://rooster.jobs/jobs/446914?_gl=1*6oq610*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjU0NSRqNTYkbDAkaDE0NDA5MDkyOQ..&_ga=2.177795308.895242263.1747193804-1782052477.1734762457'
+        },
+        {
+          title: "Associate Tech Lead",
+          description: "We are hiring a Associate Tech Lead for our team",
+          type: "Full Time",
+          location: "On Site",
+          link:'https://rooster.jobs/jobs/446917?_gl=1*1a6cxe8*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjQ0OCRqNDMkbDAkaDE0NDA5MDkyOQ..&_ga=2.142711164.895242263.1747193804-1782052477.1734762457'
+        },
+        {
+          title: "Backend Developer",
+          description: "We are  looking for skilled Backend Developers!",
+          type: "Full Time",
+          location: "On Site",
+          link:'https://rooster.jobs/jobs/446916?_gl=1*cune2*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjczMSRqNTYkbDAkaDE0NDA5MDkyOQ..&_ga=2.241802443.895242263.1747193804-1782052477.1734762457'
+        },
+        {
+          title: "Mobile App Developer",
+          description: "We are looking for Mobile App Developers!",
+          type: "Full Time",
+          location: "On Site",
+          link:'https://rooster.jobs/jobs/446905?_gl=1*fg4nbj*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5Mjc4MSRqNiRsMCRoMTQ0MDkwOTI5&_ga=2.241802443.895242263.1747193804-1782052477.1734762457'
         }
       ]
     },
@@ -56,33 +79,34 @@ const skillJobs: SkillJobs[] = [
       name: 'Design',
       jobs: [
         {
-          title: "Product Designer",
-          description: "We are hiring a expert product designer for our team",
+          title: "Video Editor",
+          description: "We are looking for a Video Editor who knows how to keep viewers hooked, especially on social media.",
           type: "Full Time",
-          location: "on Site"
+          location: "on Site",
+          link:'https://rooster.jobs/jobs/447313?_gl=1*5lvids*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjgyNSRqNTIkbDAkaDE0NDA5MDkyOQ..&_ga=2.139483514.895242263.1747193804-1782052477.1734762457'
         }
       ]
     },
     {
       name: 'Quality Assurance',
       jobs: [
-        {
-          title: "Quality Assurance",
-          description: "We are hiring a expert quality assurance for our team",
-          type: "Part Time",
-          location: "Remote"
-        }
+        // {
+        //   title: "Quality Assurance",
+        //   description: "We are hiring a expert quality assurance for our team",
+        //   type: "Part Time",
+        //   location: "Remote"
+        // }
       ]
     },
     {
       name: 'Project Management',
       jobs: [
-        {
-          title: "Project Manager",
-          description: "We are hiring a expert project manager for our team",
-          type: "Full Time",
-          location: "on Site"
-        }
+        // {
+        //   title: "Project Manager",
+        //   description: "We are hiring a expert project manager for our team",
+        //   type: "Full Time",
+        //   location: "on Site"
+        // }
       ]
     },
     {
@@ -96,12 +120,12 @@ const skillJobs: SkillJobs[] = [
     {
       name: 'User Experience Research',
       jobs: [
-        {
-          title: "User Experience Researcher",
-          description: "We are hiring a expert user experience for our team",
-          type: "Full Time",
-          location: "Remote"
-        }
+        // {
+        //   title: "User Experience Researcher",
+        //   description: "We are hiring a expert user experience for our team",
+        //   type: "Full Time",
+        //   location: "Remote"
+        // }
       ]
     },
     {
@@ -255,9 +279,9 @@ export default function CareersPage() {
                             {activeJobs.length > 0 ? (
                                  <div className='grid lg:grid-cols-3 mt-[90px] gap-[30px] md:grid-cols-2 grid-cols-1 justify-center items-center'>
                                 {activeJobs.map((job, index) => (
-                                    <div key={index} className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 max-h-[270px]'>
+                                    <div key={index} className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 min-h-[270px] '>
                                         <span className='text-2xl font-[600] mb-[16px]'>{job.title}</span>
-                                        <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
+                                        <div className='text-[16px] text-left font-normal mb-[30px]'>
                                             {job.description}
                                         </div>
                                         <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
@@ -269,8 +293,8 @@ export default function CareersPage() {
                                             </div>
                                         </div>
                                         <div className='flex justify-end'>
-                                            <div className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[8px]  cursor-pointer'>
-                                                <span className='text-[#ffffff] text-[16px] font-[600px] my-[5px] ml-[15px]'>Apply Now</span>
+                                            <div className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] gap-[8px]  cursor-pointer' onClick={() => window.open(job.link)}>
+                                                <span className='text-[#ffffff] text-[16px] font-[600px] my-[5px] ml-[15px]' >Apply Now</span>
                                                 <ArrowCircleUpRight size={32} color="#6abb78" className="mr-[5px]" />
                                             </div>
                                         </div>
