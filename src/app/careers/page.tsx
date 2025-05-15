@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import HeaderNavBar from "@/components/Header";
 import { Marquee } from "@/components/magicui/marquee";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import { ArrowCircleRight } from "@phosphor-icons/react";
+import { ArrowCircleRight, ArrowCircleUpRight } from "@phosphor-icons/react";
 
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
@@ -162,8 +162,9 @@ export default function CareersPage() {
                                 </div>
                                 <div className='flex justify-end'>
                                     <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] max-w-[135px] rounded-[100px] cursor-pointer px-1.5'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px] mx-[15px] my-[5px]'>Apply Now</span>
+                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
+                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
+                                        <ArrowCircleUpRight size={32} color="#6abb78"/>
                                     </div>
                                 </div>
                             </div>
@@ -185,32 +186,9 @@ export default function CareersPage() {
                                 </div>
                                 <div className='flex justify-end'>
                                     <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] max-w-[135px] rounded-[100px] cursor-pointer px-1.5'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px] mx-[15px] my-[5px]'>Apply Now</span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
-                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
-                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                    We are hiring a expert product designer for our team
-                                </div>
-                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
-                                        Time
-                                    </div>
-                                    <div
-                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
-                                        Site
-                                    </div>
-                                </div>
-                                <div className='flex justify-end'>
-                                    <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] max-w-[135px] rounded-[100px] cursor-pointer px-1.5'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px] mx-[15px] my-[5px]'>Apply Now</span>
+                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
+                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
+                                        <ArrowCircleUpRight size={32} color="#6abb78" />
                                     </div>
                                 </div>
                             </div>
@@ -233,8 +211,9 @@ export default function CareersPage() {
                                 </div>
                                 <div className='flex justify-end'>
                                     <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] max-w-[135px] rounded-[100px] cursor-pointer px-1.5'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px] mx-[15px] my-[5px]'>Apply Now</span>
+                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
+                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
+                                        <ArrowCircleUpRight size={32} color="#6abb78" />
                                     </div>
                                 </div>
                             </div>
@@ -257,8 +236,9 @@ export default function CareersPage() {
                                 </div>
                                 <div className='flex justify-end'>
                                     <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] max-w-[135px] rounded-[100px] cursor-pointer px-1.5'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px] mx-[15px] my-[5px]'>Apply Now</span>
+                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
+                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
+                                        <ArrowCircleUpRight size={32} color="#6abb78" />
                                     </div>
                                 </div>
                             </div>
@@ -281,8 +261,34 @@ export default function CareersPage() {
                                 </div>
                                 <div className='flex justify-end'>
                                     <div
-                                        className='flex flex-row justify-center items-center p-1 bg-[#000] max-w-[135px] rounded-[100px] cursor-pointer px-1.5'>
-                                        <span className='text-[#ffffff] text-[16px] font-[600px] mx-[15px] my-[5px]'>Apply Now</span>
+                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
+                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
+                                        <ArrowCircleUpRight size={32} color="#6abb78" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 '>
+                                <span className='text-2xl font-[600] mb-[16px]'>Product Designer</span>
+                                <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
+                                    We are hiring a expert product designer for our team
+                                </div>
+                                <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
+                                    <div
+                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>Full
+                                        Time
+                                    </div>
+                                    <div
+                                        className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>on
+                                        Site
+                                    </div>
+                                </div>
+                                <div className='flex justify-end'>
+                                    <div
+                                        className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[4px]'>
+                                        <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px]'>Apply Now</span>
+                                        <ArrowCircleUpRight size={32} color="#6abb78" />
                                     </div>
                                 </div>
                             </div>
