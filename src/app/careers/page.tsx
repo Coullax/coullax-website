@@ -29,58 +29,101 @@ interface JobPosting {
     type: string;
     location: string;
   }
+interface SkillJobs {
+  name: string;
+  jobs: JobPosting[];
+}
+
+const skillJobs: SkillJobs[] = [
+    {
+      name: 'Software Engineering',
+      jobs: [
+        {
+          title: "Software Engineer",
+          description: "We are hiring a expert software engineer for our team",
+          type: "Full Time",
+          location: "Remote"
+        },
+        {
+          title: "Software Engineer Intern",
+          description: "We are hiring a software engineer intern for our team",
+          type: "Internship",
+          location: "Remote"
+        }
+      ]
+    },
+    {
+      name: 'Design',
+      jobs: [
+        {
+          title: "Product Designer",
+          description: "We are hiring a expert product designer for our team",
+          type: "Full Time",
+          location: "on Site"
+        }
+      ]
+    },
+    {
+      name: 'Quality Assurance',
+      jobs: [
+        {
+          title: "Quality Assurance",
+          description: "We are hiring a expert quality assurance for our team",
+          type: "Part Time",
+          location: "Remote"
+        }
+      ]
+    },
+    {
+      name: 'Project Management',
+      jobs: [
+        {
+          title: "Project Manager",
+          description: "We are hiring a expert project manager for our team",
+          type: "Full Time",
+          location: "on Site"
+        }
+      ]
+    },
+    {
+      name: 'Data Science',
+      jobs: []  
+    },
+    {
+      name: 'Product Management',
+      jobs: [] 
+    },
+    {
+      name: 'User Experience Research',
+      jobs: [
+        {
+          title: "User Experience Researcher",
+          description: "We are hiring a expert user experience for our team",
+          type: "Full Time",
+          location: "Remote"
+        }
+      ]
+    },
+    {
+      name: 'Project Management Intern',
+      jobs: []
+    }
+  ];
   
 
-  const jobPostings: JobPosting[] = [
-    {
-      title: "Product Designer",
-      description: "We are hiring a expert product designer for our team",
-      type: "Full Time",
-      location: "on Site"
-    },
-    {
-      title: "Software Engineer",
-      description: "We are hiring a expert software engineer for our team",
-      type: "Full Time",
-      location: "Remote"
-    },
-    {
-      title: "Quality Assurance",
-      description: "We are hiring a expert quality assurance for our team",
-      type: "Part Time",
-      location: "Remote"
-    },
-    {
-        title: "Project Manager",
-        description: "We are hiring a expert project manager for our team",
-        type: "Full Time",
-        location: "on Site"
-    },
-    {
-        title: "User Experience Researcher",
-        description: "We are hiring a expert user experience for our team",
-        type: "Full Time",
-        location: "Remote"
-    },
-    {
-        title: "Software Engineer Intern",
-        description: "We are hiring a software engineer intern for our team",
-        type: "Internship",
-        location: "Remote"
-    },   
-  ];
 
 export default function CareersPage() {
-    const [skills,setSkills] = useState([
-        { name: 'Software Engineering', isActive: false },
-        { name: 'Design', isActive: false },
-        { name: 'Quality Assurance', isActive: false },
-        { name: 'Project Management', isActive: false },
-        { name: 'Data Science', isActive: false },
-        { name: 'Product Management,', isActive: false },
-        { name: 'User Experience Research', isActive: false },
-        { name: 'Project Management Intern', isActive: false }
-    ]);
+    const [skills, setSkills] = useState(
+        skillJobs.map(skill => ({
+          name: skill.name,
+          isActive: false
+        }))
+      );
+
+    const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+    const [activeJobs, setActiveJobs] = useState<JobPosting[]>(
+      skillJobs.flatMap(skill => skill.jobs) // Initially show all jobs
+    );
   const processList: ProcessList[] = [
     {
       title: "Your Resume",
@@ -122,12 +165,22 @@ export default function CareersPage() {
   ];
 
   const handleSkillClick = (clickedIndex: number) => {
-    setSkills(prevSkills => 
-      prevSkills.map((skill, index) => ({
-        ...skill,
-        isActive: index === clickedIndex ? !skill.isActive : false
-      }))
-    );
+    const newSkills = skills.map((skill, index) => ({
+      ...skill,
+      isActive: index === clickedIndex ? !skill.isActive : false
+    }));
+    
+    setSkills(newSkills);
+    
+    const clickedSkill = newSkills[clickedIndex];
+    if (clickedSkill.isActive) {
+      setSelectedSkill(clickedSkill.name);
+      const foundSkill = skillJobs.find(skill => skill.name === clickedSkill.name);
+      setActiveJobs(foundSkill ? foundSkill.jobs : []);
+    } else {
+      setSelectedSkill(null);
+      setActiveJobs(skillJobs.flatMap(skill => skill.jobs)); // Show all jobs when no skill selected
+    }
   };
 
 
@@ -190,7 +243,7 @@ export default function CareersPage() {
                                 <div
                                     key={index}
                                     onClick={() => handleSkillClick(index)}
-                                    className={`flex shrink-0 justify-around rounded-[100px] text-[20px] font-[600] p-[15px] w-fit mb-3 ${skill.isActive ? 'bg-[#6abb79]' : 'bg-[#f1f6f1]'
+                                    className={`flex shrink-0 justify-around rounded-[100px] text-[20px] font-[600] p-[15px] w-fit mb-4 cursor-pointer select-none ${skill.isActive ? 'bg-[#6abb79]' : 'bg-[#f1f6f1]'
                                         }`}
                                 >
                                     {skill.name}
@@ -198,36 +251,44 @@ export default function CareersPage() {
                             ))}
                         </div>
 
-
-                        <div
-                            className='grid lg:grid-cols-3 mt-[90px] gap-[30px] md:grid-cols-2 grid-cols-1 justify-center items-center'>
-                            {jobPostings.map((job, index) => (
-                                <div className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 max-h-[270px]'>
-                                    <span className='text-2xl font-[600] mb-[16px]'>{job.title}</span>
-                                    <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
-                                        {job.description}
+                        <div >
+                            {activeJobs.length > 0 ? (
+                                 <div className='grid lg:grid-cols-3 mt-[90px] gap-[30px] md:grid-cols-2 grid-cols-1 justify-center items-center'>
+                                {activeJobs.map((job, index) => (
+                                    <div key={index} className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 max-h-[270px]'>
+                                        <span className='text-2xl font-[600] mb-[16px]'>{job.title}</span>
+                                        <div className='text-[16px] w-[240px] text-left font-normal mb-[30px]'>
+                                            {job.description}
+                                        </div>
+                                        <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
+                                            <div className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px] border-[2px] border-[#000] min-w-[70px] text-[14px] font-semibold'>
+                                                {job.type}
+                                            </div>
+                                            <div className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px] border-[2px] border-[#000] text-[14px] min-w-[70px] font-semibold'>
+                                                {job.location}
+                                            </div>
+                                        </div>
+                                        <div className='flex justify-end'>
+                                            <div className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[8px]  cursor-pointer'>
+                                                <span className='text-[#ffffff] text-[16px] font-[600px] my-[5px] ml-[15px]'>Apply Now</span>
+                                                <ArrowCircleUpRight size={32} color="#6abb78" className="mr-[5px]" />
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                        <div
-                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]   min-w-[70px] text-[14px] font-semibold'>
-                                            {job.type}
-                                        </div>
-                                        <div
-                                            className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px]  border-[2px] border-[#000]  text-[14px] min-w-[70px] font-semibold'>
-                                            {job.location}
-                                        </div>
+                                ))}
+                                </div>
+                            ) : (
+                                <div className="flex flex-col text-center text-2xl py-[17px] md:py-[57px] px-[20px] md:px-[220px] bg-[#f1f6f1] rounded-3xl mt-[40px] md:mt-[90px] ">
+                                   <div className="text-[24px] font-bold text-[#575757] mb-[20px]">
+                                   There are no open positions right now
                                     </div>
-                                    <div className='flex justify-end'>
-                                        <div
-                                            className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] cursor-pointer gap-[8px]'>
-                                            <span className='text-[#ffffff] text-[16px] font-[600px]  my-[5px] ml-[15px]'>Apply Now</span>
-                                            <ArrowCircleUpRight size={32} color="#6abb78" className="mr-[5px]"/>
-                                        </div>
+                                    <div className="text-[16px] font-normal">
+                                    We kindly ask you to revisit our website at a later date to explore any available job openings that may be active at that time. Your interest is greatly appreciated!
                                     </div>
                                 </div>
-                            ))}
-
+                            )}
                         </div>
+
                     </div>
                 </div>
             </div>
