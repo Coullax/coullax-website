@@ -59,10 +59,26 @@ export default function Home() {
   ];
 
   const demoItems = [
-    { link: '#', text: 'Precision Engineered', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'Value Driven', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: 'Battle  Tested', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: 'Fortified by Design', image: 'https://picsum.photos/600/400?random=4' }
+    {
+      link: "#",
+      text: "Precision Engineered",
+      image: "https://picsum.photos/600/400?random=1",
+    },
+    {
+      link: "#",
+      text: "Value Driven",
+      image: "https://picsum.photos/600/400?random=2",
+    },
+    {
+      link: "#",
+      text: "Battle  Tested",
+      image: "https://picsum.photos/600/400?random=3",
+    },
+    {
+      link: "#",
+      text: "Fortified by Design",
+      image: "https://picsum.photos/600/400?random=4",
+    },
   ];
 
   const servicesList = [
@@ -625,44 +641,42 @@ export default function Home() {
       </div>
 
       <div className="max-w-full bg-black h-[300px] mt-[50px]"></div>
-      
-      <div className="bg-[#e0ef29]  pt-[83px]">
-      <div className="w-[90%] max-w-[1550px] mx-auto ">
-      <div className=" flex justify-between items-start">
-          <span className="font-silkscreen text-[64px] relative">
-            THE SUMMON
-          </span>
-          <span className="font-silkscreen text-[15px] ">
-          We / Listen / Align / Construct.
-          </span>
-        </div>
-        <div className="font-silkscreen uppercase mt-[85px] mb-[65px]">
-        Not all are called.Fewer still respond//connect.If your <br></br>
-        intent is true, channel it below.The Entity// We listens.<br></br> 
-        The threshold responds.
-        </div>  
 
-        <div className="flex border border-black justify-center items-center mb-[85px]">
-          <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans">
-          Have a project in mind? Let’s align.<br></br>
-Book a call to explore how we can bring your vision <br></br>to life through intelligent systems and <br></br>
-purposeful design.
-          </span>
-        </div>
+      {/* <div className="bg-[#e0ef29]  pt-[83px]">
+        <div className="w-[90%] max-w-[1550px] mx-auto ">
+          <div className=" flex justify-between items-start">
+            <span className="font-silkscreen text-[64px] relative">
+              THE SUMMON
+            </span>
+            <span className="font-silkscreen text-[15px] ">
+              We / Listen / Align / Construct.
+            </span>
+          </div>
+          <div className="font-silkscreen uppercase mt-[85px] mb-[65px]">
+            Not all are called.Fewer still respond//connect.If your <br></br>
+            intent is true, channel it below.The Entity// We listens.<br></br>
+            The threshold responds.
+          </div>
 
-        <div className=" flex flex-col justify-center items-center ">
+          <div className="flex border border-black justify-center items-center mb-[85px]">
+            <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans">
+              Have a project in mind? Let’s align.<br></br>
+              Book a call to explore how we can bring your vision <br></br>to
+              life through intelligent systems and <br></br>
+              purposeful design.
+            </span>
+          </div>
+
+          <div className=" flex flex-col justify-center items-center ">
             <button
               type="button"
               className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] mb-[82.5px]"
             >
               BOOK A CALL
             </button>
-            </div>
-      
-      </div>
-      </div>
-
-
+          </div>
+        </div>
+      </div> */}
 
       <div className="bg-[#e0ef29]  pt-[83px]">
         <div className="w-[90%] max-w-[1550px] mx-auto ">
@@ -1193,14 +1207,20 @@ purposeful design.
             The Facets
           </h1>
           <p className="font-inclusive-sans text-[52px] text-[#000] leading-[1.3] text-left my-[50px]">
-           EVERY [ARTIFACT//PRODUCT] WE DELIVER IS SHAPED BY A SET OF PRINCIPLES THAT BALANCE VISION WITH PRECISION, VALUE WITH IMPACT, AND INNOVATION WITH RELIABILITY.
+            EVERY [ARTIFACT//PRODUCT] WE DELIVER IS SHAPED BY A SET OF
+            PRINCIPLES THAT BALANCE VISION WITH PRECISION, VALUE WITH IMPACT,
+            AND INNOVATION WITH RELIABILITY.
           </p>
-          <p className="font-silkscreen text-left text-[15px] text-[#000] leading-[1.3]">[Construct / Reforge / Loop.]</p>
+          <p className="font-silkscreen text-left text-[15px] text-[#000] leading-[1.3]">
+            [Construct / Reforge / Loop.]
+          </p>
 
-          <div style={{ height: '600px', position: 'relative' }} className="mt-[75px]">
+          <div
+            style={{ height: "600px", position: "relative" }}
+            className="mt-[75px]"
+          >
             <FlowingMenu items={demoItems} />
           </div>
-          
         </div>
       </div>
 
