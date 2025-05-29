@@ -89,7 +89,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     );
 };
 
-export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+export const NavBody = ({ children, className, visible  }: NavBodyProps) => {
     return (
         <motion.div
             animate={{
@@ -127,7 +127,7 @@ export const NavItems = ({ items, className, onItemClick , visible }: NavItemsPr
         <motion.div
             onMouseLeave={() => setHovered(null)}
             className={cn(
-                "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-[#000] transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+                "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-[#fff] transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
                 className,
             )}
         >
@@ -136,7 +136,7 @@ export const NavItems = ({ items, className, onItemClick , visible }: NavItemsPr
                     onMouseEnter={() => setHovered(idx)}
                     onClick={onItemClick}
                     className={cn(
-                        "relative px-4 py-2 text-[#000] font-bold leading-[23px] font-stretch-normal",
+                        "relative px-4 py-2 text-[#fff] font-bold leading-[23px] font-stretch-normal",
                         visible ? "text-[16px]" : "text-[16px]" // Font size change
                       )}
                     key={`link-${idx}`}
@@ -250,10 +250,10 @@ export const NavbarLogo = () => {
             className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black ml-[10px] "
         >
             <Image
-                src="/coullax-logo.png"
+                src="/logo-light.png"
                 alt="logo"
-                width={120}
-                height={20}
+                width={157}
+                height={33}
                 className="cursor-pointer"
             />
         </a>

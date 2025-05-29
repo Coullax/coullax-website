@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowLineUpRight,
   Brain,
@@ -22,8 +23,9 @@ import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { AnimatePresence, motion } from "motion/react";
 import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import HeaderNavBar from "@/components/Header";
+// import HeaderNavBar from "@/components/Header";
 import Footer from "@/components/Footer";
+import MetaBalls from "@/components/ui/meta-balls";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 // import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
@@ -39,12 +41,12 @@ export default function Home() {
   const contentRefs = useRef<HTMLDivElement[]>([]);
   const [openReviewModal, setOpenReviewModal] = useState<boolean>(false);
 
-  // const navigationList = [
-  //   { name: "Home", link: "/" },
-  //   { name: "About", link: "/about" },
-  //   { name: "Contact", link: "/contact" },
-  //   { name: "Careers", link: "/careers" },
-  // ];
+  const navigationList = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Case Studies", link: "/case-studies" },
+    { name: "Careers", link: "/careers" },
+  ];
 
   const servicesList = [
     {
@@ -239,7 +241,7 @@ export default function Home() {
       profile: "/HomePage/review_profile/Mark1.svg",
       ratings: "5",
       feedback:
-        "The seller has most definitely exceeded my expectations ! He is hands down experienced in his work. Polite, fast replies, careful listener. Would definitely recommend. Can’t wait for the full project. Thank you again !",
+        "The seller has most definitely exceeded my expectations ! He is hands down experienced in his work. Polite, fast replies, careful listener. Would definitely recommend. Can't wait for the full project. Thank you again !",
     },
   ];
 
@@ -299,9 +301,8 @@ export default function Home() {
     const percentX = (x - centerX) / centerX;
     const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${
-      percentX * 6
-    }deg) rotateX(${percentY * 6}deg)`;
+    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
+      }deg) rotateX(${percentY * 6}deg)`;
     content.style.transform = `translateZ(50px)`;
     glow.style.opacity = "1";
     glow.style.backgroundImage = `
@@ -326,107 +327,83 @@ export default function Home() {
   };
 
   return (
-    <div className=" w-full bg-[#fffef1]">
+    <div className=" w-full bg-[#fff]">
       {/* <div className=" w-full">
         <div className="w-[90%] max-w-[1200px] mx-auto">
           <HeaderNavBar />
         </div>
       </div> */}
 
-      {/* <div className=" w-full">
-        <div className="w-[90%] max-w-[1200px] flex items-center justify-between mx-auto">
-          <div>
-            <div>
-              <Image
-                src="/logo.png"
-                alt="logo"
-                width={197}
-                height={33}
-                className="cursor-pointer"
-              />
-            </div>
-          </div>
 
-          <div className="flex justify-center items-center">
-            <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
-              {navigationList.map((navigation, index) => (
-                <Link key={index} href={navigation.link}>
-                  {navigation.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <SmoothCursor /> */}
+      {/* Hero Section */}
 
       <div className="w-full relative overflow-hidden ">
-        <div className=" w-full min-h-[158px] bg-[#1e201f]">
-          <HeaderNavBar />
-        </div>
-        <div className=" w-full bg-[#1e201f] min-h-[750px]">
-          <div className=" bg-[#1e201f] z-10 relative rounded-[25px] px-[35px] lg:px-[80px] py-[57px] h-full min-h-[750px] ">
-            <div className=" absolute top-0 -z-10 left-0 h-full w-full min-h-[750px] -translate-y-1/3">
-              <Ripple />
+
+        <div className=" w-full bg-[#fff] min-h-dvh">
+            <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-12">
+              <div>
+                <div>
+                  <Image
+                    src="/logo.png"
+                    alt="logo"
+                    width={228}
+                    height={33}
+                    className="cursor-pointer"
+                  />
+                </div>
+              </div>
+
+              <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
+                  {navigationList.map((navigation, index) => (
+                    <Link key={index} href={navigation.link}>
+                      {navigation.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className=" flex flex-col justify-center items-center h-full w-full">
-              <div className=" flex flex-row justify-center items-center gap-[20px] ">
-                <Lightning
-                  size={32}
-                  weight="bold"
-                  className="text-white lg:ml-[16px]"
-                />
-                <ShieldCheck size={32} weight="bold" className="text-white" />
-                <CubeTransparent
-                  size={32}
-                  weight="bold"
-                  className="text-white"
-                />
-              </div>
-              <div className=" mt-[46px] bg-[#414342] mx-auto rounded-full py-[10px] px-[22px] w-fit">
-                <AnimatedShinyText>
-                  <span className=" lg:text-[20px] font-bold rounded-full ">
-                    Efficiency. Security. Transparency.
-                  </span>
-                </AnimatedShinyText>
-              </div>
-              <div className="mt-[46px]">
-                <p className=" text-[#fffef1] text-center  text-[30px] lg:text-[85px] leading-[36px] lg:leading-[88px] font-bold -tracking-[4.25px]">
-                  Making Tech Work{" "}
-                  <span className=" text-[#d1ecb1]" >Smarter</span>
-                  <br />
-                  and <span className=" text-[#b9b8ef]">Safer</span> for
-                  Everyone
-                </p>
-              </div>
-              <div className="mt-[46px] relative w-fit">
-                <a
-                  href="https://cal.com/coullax/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className=" !z-50 cursor-pointer bg-[#e3ffe6] hover:bg-[#c9ebcc] rounded-full flex justify-center px-[36px] py-[7px] mb-[7px] mx-auto">
-                    {/* <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
-                      <ArrowRight className=" h-[15px] aspect-square" />
-                    </div> */}
-                    <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
-                      Let&apos;s talk
-                    </span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
+          {/* <div className="flex flex-col justify-center items-center h-full w-full">
+            <div className="w-[90%] max-w-[1550px] mx-auto"> */}
+          <MetaBalls
+            color="#000"
+            cursorBallColor="#000"
+            cursorBallSize={2}
+            ballCount={30}
+            animationSize={30}
+            enableMouseInteraction={true}
+            enableTransparency={true}
+            hoverSmoothness={0.109}
+            clumpFactor={0.7}
+            speed={0.3}
+          />
+          {/* </div>
+          </div> */}
         </div>
+
+      </div>
+
+      <div className="w-full relative  overflow-hidden ">
+
+        <VelocityScroll
+          fontSize="text-4xl font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
+          defaultVelocity={0.2}
+          className="text-[#000] "
+          numRows={1}
+        >
+          AI, Machine Learning,  Web3, Data science.Software.Research, Chatbot,DeFi,Dapp,AI, Machine Learning,  Web3, Data science, Software , Research, Chatbot,DeFiDeFi  
+
+
+        </VelocityScroll>
       </div>
 
       <div className="w-full relative">
-        <div className="w-[90%] max-w-[1200px] mx-auto">
+        <div className="w-[90%] max-w-[1550px] mx-auto">
           <div className="flex-grow-0 flex flex-col justify-start items-start">
             <div className="w-full flex flex-col justify-between items-start md:p-0">
-              <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
-                <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
+              <div className=" flex flex-row justify-center items-center rounded-full py-[10px] mt-[140px]">
+                <span className="w-full font-bold leading-[52.2px] text-[45px] text-[#000] -tracking-[2.25px]">
                   This is where we ace the game
                 </span>
               </div>
@@ -547,7 +524,7 @@ export default function Home() {
       </div>
 
       <div className="w-full relative  overflow-hidden ">
-        <div className=" w-[90%] max-w-[1200px] mx-auto mt-[80px] mb-[140px]">
+        <div className=" w-full mt-[80px] mb-[140px]">
           <VelocityScroll
             fontSize="text-4xl font-bold md:text-[50px] md:leading-[4.4rem]"
             defaultVelocity={0.2}
@@ -563,7 +540,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fffef1] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
+      <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
         <div className=" w-[90%] max-w-[1200px] mx-auto  ">
           <div className="flex flex-col justify-start items-start gap-[54px] p-0">
             <div className="w-full flex flex-col justify-between items-start">

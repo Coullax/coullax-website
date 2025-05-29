@@ -1,12 +1,32 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Kode_Mono, Silkscreen, Inclusive_Sans } from "next/font/google";
+import DialogflowMessenger from "@/components/DialogflowMessenger";
+import CookieConsent from "@/components/CookieConsent";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-plus-jakarta-sans",
+});
+
+const kodeMono = Kode_Mono({
+  subsets: ["latin"],
+  weight: [ "400", "500", "600", "700"],
+  variable: "--font-kode-mono",
+});
+
+const silkscreen = Silkscreen({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-silkscreen",
+});
+
+const inclusiveSans = Inclusive_Sans({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-inclusive-sans",
 });
 
 // const geistSans = Geist({
@@ -22,7 +42,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Coullax | Igniting Innovation through AI and Blockchain Mastery",
   description:
-    "Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer place. To achieve this, we believe in the power of Artificial intelligence’s efficiency and Blockchain technology’s security and transparency.",
+    "Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer place. To achieve this, we believe in the power of Artificial intelligence's efficiency and Blockchain technology's security and transparency.",
   keywords: ["Blockchain", "Web3", "Defi Development", "AI", "AI Solutions", "Web Development", "UI/UX Design", "Branding", "Coullax", "AI chatbot", "AI Assistant", "Blockchain Solutions",
     "Smart Contract Development",
     "Web3 Development",
@@ -44,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Coullax | Blockchain, AI and Web Development Solutions",
     description:
-      "Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer place. To achieve this, we believe in the power of Artificial intelligence’s efficiency and Blockchain technology’s security and transparency.",
+      "Our mission is to enhance efficiency, security, and transparency across industries. Making the world a smarter, more connected, and a safer place. To achieve this, we believe in the power of Artificial intelligence's efficiency and Blockchain technology's security and transparency.",
     url: "https://www.coullax.com",
     siteName: "coullax",
     images: [
@@ -68,9 +88,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plusJakartaSans.variable} suppressHydrationWarning={true}>
+    <html 
+      lang="en" 
+      suppressHydrationWarning={true}
+    >
       <body
-        className={`flex flex-col min-h-screen`} suppressHydrationWarning={true}
+            className={`flex flex-col min-h-screen ${plusJakartaSans.variable} ${kodeMono.variable} ${silkscreen.variable} ${inclusiveSans.variable}`} 
+
+        suppressHydrationWarning={true}
       >
         {/* <Script src="http://localhost:3000/embed.js" strategy="lazyOnload" /> */}
 
@@ -85,8 +110,10 @@ export default function RootLayout({
   async>
 </script> */}
 
+<DialogflowMessenger/>
 
-        <main className="flex-grow ">{children}</main>
+        <main className="flex-grow">{children}</main>
+        <CookieConsent />
       </body>
     </html>
   );
