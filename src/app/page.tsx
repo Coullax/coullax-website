@@ -408,7 +408,7 @@ export default function Home() {
             Node -Sector 01 / Uplink: True
           </span>
         </div>  
-        <div className="font-InclusiveSans my-[32px] md:text-[52px] text-[22px]">
+        <div className="font-inclusive-sans my-[55px] md:text-[52px] text-[22px] uppercase">
           This is where vision meets velocity.
           Where raw ideas are melted down, reshaped, and forged into real, working systems. The Forge is Coullax’s creative engine.
           a space of experimentation, engineering, and relentless iteration.
@@ -421,9 +421,9 @@ export default function Home() {
 
         <div className="grid grid-cols-6 sm:grid-cols-2 lg:grid-cols-6 mt-[120px] mb-[50px] gap-[50px] ">
           <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px]">COGNITION</span>
+            <span className="font-silkscreen text-[40px] font-bold">COGNITION</span>
             <div className=" flex flex-row justify-between mt-[193px]">
-              <span className="font-InclusiveSans text-[35px]">Artificial  <br></br>Intelligence</span>
+              <span className="font-inclusive-sans text-[35px]">Artificial  <br></br>Intelligence</span>
               <Image
                 src="/HomePage/ForgeCards/card1-1.png"
                 alt="Card illustration"    width={168}
@@ -431,9 +431,9 @@ export default function Home() {
             </div>
           </div>
           <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px]">CONSENSUS</span>
+            <span className="font-silkscreen text-[40px] font-bold">CONSENSUS</span>
             <div className=" flex flex-row justify-between mt-[193px]">
-              <span className="font-InclusiveSans text-[35px]">Blockchain<br></br>Intelligence</span>
+              <span className="font-inclusive-sans text-[35px]">Blockchain<br></br>Intelligence</span>
               <Image
                 src="/HomePage/ForgeCards/card1-2.png"
                 alt="Card illustration"    width={168}
@@ -441,9 +441,9 @@ export default function Home() {
             </div>
           </div>
           <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px]">SYNTHESIS</span>
+            <span className="font-silkscreen text-[40px] font-bold">SYNTHESIS</span>
             <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-InclusiveSans text-[35px]">Research & <br></br>Strategy</span>
+              <span className="font-inclusive-sans text-[35px]">Research & <br></br>Strategy</span>
               <Image
                 src="/HomePage/ForgeCards/card1-3.png"
                 alt="Card illustration"    width={168}
@@ -451,9 +451,9 @@ export default function Home() {
             </div>
           </div>
           <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px]">WEAVE</span>
+            <span className="font-silkscreen text-[40px] font-bold">WEAVE</span>
             <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-InclusiveSans text-[35px]">Web &  <br></br>Software</span>
+              <span className="font-inclusive-sans text-[35px]">Web &  <br></br>Software</span>
               <Image
                 src="/HomePage/ForgeCards/card1-4.png"
                 alt="Card illustration"    width={168}
@@ -461,9 +461,9 @@ export default function Home() {
             </div>
           </div>
           <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px]">FORM</span>
+            <span className="font-silkscreen text-[40px] font-bold">FORM</span>
             <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-InclusiveSans text-[35px]">Design &  <br></br>Branding</span>
+              <span className="font-inclusive-sans text-[35px]">Design &  <br></br>Branding</span>
               <Image
                 src="/HomePage/ForgeCards/card1-5.png"
                 alt="Card illustration"    width={168}
