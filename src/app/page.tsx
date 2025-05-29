@@ -15,12 +15,12 @@ import {
 import { ArrowRight, XIcon } from "lucide-react";
 import { HandFist } from "@phosphor-icons/react/dist/ssr";
 import { NumberTicker } from "../components/magicui/number-ticker";
-import React, { useRef, MouseEvent, useState } from "react";
+import React, { useRef, MouseEvent, useState, useEffect } from "react";
 import { Marquee } from "@/components/magicui/marquee";
 import ReviewCard from "@/components/review-card";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence } from "motion/react";
 import { Ripple } from "@/components/magicui/ripple";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 // import HeaderNavBar from "@/components/Header";
@@ -28,6 +28,8 @@ import Footer from "@/components/Footer";
 import MetaBalls from "@/components/ui/meta-balls";
 import FlowingMenu from "@/components/ui/flowing-menu";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { MorphingText } from "@/components/magicui/morphing-text";
 
 // import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
 // import TheHidden from '../../public/HomePage/brandLogo/thehidden.png'
@@ -41,6 +43,13 @@ export default function Home() {
   const glowRefs = useRef<HTMLDivElement[]>([]);
   const contentRefs = useRef<HTMLDivElement[]>([]);
   const [openReviewModal, setOpenReviewModal] = useState<boolean>(false);
+  const container1 = useRef(null);
+  const container2 = useRef(null);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  useEffect(() => {
+    console.log("Active index:", activeIndex);
+  }, [activeIndex]);
 
   const navigationList = [
     { name: "Home", link: "/" },
@@ -286,8 +295,21 @@ export default function Home() {
     },
   ];
 
+  const texts = ["COGNITION", "CONSENSUS", "CONSTRUCT"];
+
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
   const secondRow = reviewList2.slice(reviewList2.length / 2);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prevIndex) => (prevIndex + 1) % texts.length);
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  const handleActiveIndexChange = (index: number) => {
+    setActiveIndex(index);
+  };
 
   const handleMouseMove = (
     e: MouseEvent<HTMLDivElement>,
@@ -309,8 +331,9 @@ export default function Home() {
     const percentX = (x - centerX) / centerX;
     const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
-      }deg) rotateX(${percentY * 6}deg)`;
+    card.style.transform = `perspective(1000px) rotateY(${
+      percentX * 6
+    }deg) rotateX(${percentY * 6}deg)`;
     content.style.transform = `translateZ(50px)`;
     glow.style.opacity = "1";
     glow.style.backgroundImage = `
@@ -334,32 +357,40 @@ export default function Home() {
     glow.style.opacity = "0";
   };
 
+  const slideUp = {
+    initial: {
+      y: 300,
+    },
+    enter: {
+      y: 0,
+      transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1], delay: 2.5 },
+    },
+  };
+
+  const { scrollYProgress: scrollYProgress1 } = useScroll({
+    target: container1,
+    offset: ["start end", "end start"],
+  });
+
+  const { scrollYProgress: scrollYProgress2 } = useScroll({
+    target: container2,
+    offset: ["start end", "end end"],
+  });
+
   return (
     <div className=" w-full bg-[#fff]">
-      {/* <div className=" w-full">
-        <div className="w-[90%] max-w-[1200px] mx-auto">
-          <HeaderNavBar />
-        </div>
-      </div> */}
-
-
       {/* Hero Section */}
-
-      <div className="w-full relative overflow-hidden ">
-
+      <div ref={container1} className="w-full">
         <div className=" w-full bg-[#fff] min-h-dvh">
-          <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-12">
-            <div>
-              <div>
-                <Image
-                  src="/logo.png"
-                  alt="logo"
-                  width={228}
-                  height={33}
-                  className="cursor-pointer"
-                />
-              </div>
-            </div>
+          {/* Header */}
+          <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={228}
+              height={33}
+              className="cursor-pointer"
+            />
 
             <div className="flex justify-center items-center">
               <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
@@ -372,41 +403,123 @@ export default function Home() {
             </div>
           </div>
 
-          {/* <div className="flex flex-col justify-center items-center h-full w-full">
-            <div className="w-[90%] max-w-[1550px] mx-auto"> */}
-          <MetaBalls
-            color="#000"
-            cursorBallColor="#000"
-            cursorBallSize={2}
-            ballCount={30}
-            animationSize={30}
-            enableMouseInteraction={true}
-            enableTransparency={true}
-            hoverSmoothness={0.109}
-            clumpFactor={0.7}
-            speed={0.3}
-          />
-          {/* </div>
-          </div> */}
+          <div className=" w-full">
+            <div className=" h-[30vh] mx-auto">
+              <MetaBalls
+                color="#000"
+                cursorBallColor="#000"
+                cursorBallSize={2}
+                ballCount={40}
+                animationSize={30}
+                enableMouseInteraction={true}
+                enableTransparency={true}
+                hoverSmoothness={0.109}
+                clumpFactor={0.7}
+                speed={0.3}
+              />
+            </div>
+            <div className=" py-[4vh] w-full flex flex-row justify-center items-center gap-[5px]">
+              <div
+                onClick={() => handleActiveIndexChange(0)}
+                className={` ${
+                  activeIndex === 0 ? "bg-[#f04a34]" : "bg-black"
+                } w-[2.5vh] aspect-square rounded-full transition-colors  ease-in-out`}
+              ></div>
+              <div
+                onClick={() => handleActiveIndexChange(1)}
+                className={` ${
+                  activeIndex === 1 ? "bg-[#f04a34]" : "bg-black"
+                } w-[2.5vh] aspect-square transition-colors  ease-in-out`}
+              ></div>
+              <div
+                onClick={() => handleActiveIndexChange(2)}
+                className={`${
+                  activeIndex === 2 ? "bg-[#f04a34]" : "bg-black"
+                } h-[31px] aspect-square transition-colors  ease-in-out`}
+                style={{
+                  width: "2.5vh",
+                  height: "2.5vh",
+                  clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                }}
+              ></div>
+            </div>
+            <div className=" w-full h-[23vh]">
+              {/* COGNITION */}
+              <MorphingText texts={texts} setActiveIndex={setActiveIndex} />
+            </div>
+            <div className=" w-full my-[8vh] text-center leading-[2.5vh] text-[2vh] uppercase font-kode-mono">
+              {activeIndex === 0 ? (
+                <>
+                  We engineer intelligent products using artificial
+                  <br /> intelligence — systems that learn, adapt, and evolve.
+                </>
+              ) : activeIndex === 2 ? (
+                <>
+                  We build trusted systems using blockchain technology.
+                  <br />
+                  Networks that secure, verify, and operate without compromise.
+                </>
+              ) : (
+                <>
+                  We design and build digital ecosystems.
+                  <br />
+                  Grounded in research, guided by strategy, and brought to life
+                  through
+                  <br /> thoughtful code and bold identity.
+                </>
+              )}
+            </div>
+            <Image
+              src={require("../../public/HomePage/hero/arrow.svg")}
+              alt="Down arrow"
+              className=" mx-auto h-[6vh]"
+            />
+          </div>
         </div>
-
+        <motion.div
+          style={{
+            height: useTransform(scrollYProgress1, [0, 0.9], [50, 0]),
+            backgroundColor: "red",
+            position: "relative",
+            marginTop: "100px",
+            width: "100%",
+          }}
+        >
+          <div
+            style={{
+              height: "1250%",
+              width: "120%",
+              left: "0%",
+              borderRadius: "0 0 50% 50%",
+              backgroundColor: "#FFFFFF",
+              zIndex: 1000,
+              position: "absolute",
+              boxShadow: "0px 60px 50px rgba(0, 0, 0, 0.248)",
+            }}
+            className=" translate-x-[-10%] translate-y-[0%]"
+          ></div>
+        </motion.div>
       </div>
-
-      <div className="w-full relative  overflow-hidden ">
-
+      {/* <div className="w-full h-[61px] relative mt-[80px] overflow-hidden ">
         <VelocityScroll
           fontSize="text-4xl font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
           defaultVelocity={0.2}
           className="text-[#000] "
           numRows={1}
         >
+          AI, Machine Learning, Web3, Data science.Software.Research,
+          Chatbot,DeFi,Dapp,AI, Machine Learning, Web3, Data science, Software ,
+          Research, Chatbot,DeFiDeFi
           AI, Machine Learning,  Web3, Data science.Software.Research, Chatbot,DeFi,Dapp,AI, Machine Learning,  Web3, Data science, Software , Research, Chatbot,DeFiDeFi
 
 
         </VelocityScroll>
-      </div>
-
-
+      </div> */}
+      {/* <motion.div
+        style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
+        ref={container2}
+        className="relative w-full"
+      > */}
       <div className="w-[90%] max-w-[1550px] mx-auto ">
         <div className=" flex justify-between items-start mt-[150px]">
           <span className="font-silkscreen text-[64px] relative">
@@ -415,76 +528,100 @@ export default function Home() {
           <span className="font-silkscreen text-[16px]  text-[#0505cb]">
             Node -Sector 01 / Uplink: True
           </span>
-        </div>  
+        </div>
         <div className="font-inclusive-sans my-[55px] md:text-[52px] text-[22px] uppercase">
-          This is where vision meets velocity.
-          Where raw ideas are melted down, reshaped, and forged into real, working systems. The Forge is Coullax’s creative engine.
-          a space of experimentation, engineering, and relentless iteration.
+          This is where vision meets velocity. Where raw ideas are melted down,
+          reshaped, and forged into real, working systems. The Forge is
+          Coullax’s creative engine. a space of experimentation, engineering,
+          and relentless iteration.
         </div>
 
         <span className="font-silkscreen text-[16px] text-[#0505cb] justify-start ">
-        [Coullax / The Forge / Construct.]
-          </span>
-
+          [Coullax / The Forge / Construct.]
+        </span>
 
         <div className="grid grid-cols-6 sm:grid-cols-2 lg:grid-cols-6 mt-[120px] mb-[50px] gap-[50px] ">
           <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">COGNITION</span>
+            <span className="font-silkscreen text-[40px] font-bold">
+              COGNITION
+            </span>
             <div className=" flex flex-row justify-between mt-[193px]">
-              <span className="font-inclusive-sans text-[35px]">Artificial  <br></br>Intelligence</span>
+              <span className="font-inclusive-sans text-[35px]">
+                Artificial <br></br>Intelligence
+              </span>
               <Image
                 src="/HomePage/ForgeCards/card1-1.png"
-                alt="Card illustration"    width={168}
-                height={99} />
+                alt="Card illustration"
+                width={168}
+                height={99}
+              />
             </div>
           </div>
           <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">CONSENSUS</span>
+            <span className="font-silkscreen text-[40px] font-bold">
+              CONSENSUS
+            </span>
             <div className=" flex flex-row justify-between mt-[193px]">
-              <span className="font-inclusive-sans text-[35px]">Blockchain<br></br>Intelligence</span>
+              <span className="font-inclusive-sans text-[35px]">
+                Blockchain<br></br>Intelligence
+              </span>
               <Image
                 src="/HomePage/ForgeCards/card1-2.png"
-                alt="Card illustration"    width={168}
-                height={99} />
+                alt="Card illustration"
+                width={168}
+                height={99}
+              />
             </div>
           </div>
           <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">SYNTHESIS</span>
+            <span className="font-silkscreen text-[40px] font-bold">
+              SYNTHESIS
+            </span>
             <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-inclusive-sans text-[35px]">Research & <br></br>Strategy</span>
+              <span className="font-inclusive-sans text-[35px]">
+                Research & <br></br>Strategy
+              </span>
               <Image
                 src="/HomePage/ForgeCards/card1-3.png"
-                alt="Card illustration"    width={168}
-                height={99} />
+                alt="Card illustration"
+                width={168}
+                height={99}
+              />
             </div>
           </div>
           <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
             <span className="font-silkscreen text-[40px] font-bold">WEAVE</span>
             <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-inclusive-sans text-[35px]">Web &  <br></br>Software</span>
+              <span className="font-inclusive-sans text-[35px]">
+                Web & <br></br>Software
+              </span>
               <Image
                 src="/HomePage/ForgeCards/card1-4.png"
-                alt="Card illustration"    width={168}
-                height={99} />
+                alt="Card illustration"
+                width={168}
+                height={99}
+              />
             </div>
           </div>
           <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
             <span className="font-silkscreen text-[40px] font-bold">FORM</span>
             <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-inclusive-sans text-[35px]">Design &  <br></br>Branding</span>
+              <span className="font-inclusive-sans text-[35px]">
+                Design & <br></br>Branding
+              </span>
               <Image
                 src="/HomePage/ForgeCards/card1-5.png"
-                alt="Card illustration"    width={168}
-                height={99} />
+                alt="Card illustration"
+                width={168}
+                height={99}
+              />
             </div>
           </div>
         </div>
 
         <span className="font-silkscreen text-[16px] justify-start ">
-        [Coullax / The Forge / Construct.]
-          </span>
-
-
+          [Coullax / The Forge / Construct.]
+        </span>
       </div>
 
       <div className="max-w-full bg-black h-[300px] mt-[50px]"></div>
@@ -526,6 +663,42 @@ purposeful design.
       </div>
 
 
+
+      <div className="bg-[#e0ef29]  pt-[83px]">
+        <div className="w-[90%] max-w-[1550px] mx-auto ">
+          <div className=" flex justify-between items-start">
+            <span className="font-silkscreen text-[64px] relative">
+              THE SUMMON
+            </span>
+            <span className="font-silkscreen text-[15px] ">
+              We / Listen / Align / Construct.
+            </span>
+          </div>
+          <div className="font-silkscreen uppercase mt-[85px] mb-[65px]">
+            Not all are called.Fewer still respond//connect.If your <br></br>
+            intent is true, channel it below.The Entity// We listens.<br></br>
+            The threshold responds.
+          </div>
+
+          <div className="flex border border-black justify-center items-center mb-[85px]">
+            <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans">
+              Have a project in mind? Let’s align.<br></br>
+              Book a call to explore how we can bring your vision <br></br>to
+              life through intelligent systems and <br></br>
+              purposeful design.
+            </span>
+          </div>
+
+          <div className=" flex flex-col justify-center items-center ">
+            <button
+              type="button"
+              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] mb-[82.5px]"
+            >
+              BOOK A CALL
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* <div className="w-full relative">
         <div className="w-[90%] max-w-[1550px] mx-auto">
@@ -808,8 +981,8 @@ purposeful design.
               a safer place <br></br>
               <br></br>
               To achieve this, we believe in the power of Artificial
-              intelligence&apos;s efficiency and Blockchain technology&apos;s security and
-              transparency.
+              intelligence&apos;s efficiency and Blockchain technology&apos;s
+              security and transparency.
             </span>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] p-0">
               <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
@@ -1031,30 +1204,33 @@ purposeful design.
         </div>
       </div>
 
-
       <div className="w-full relative  overflow-hidden bg-[#000]">
         <div className=" w-[90%] max-w-[1550px] mx-auto my-[300px]">
-        <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3]">Granted access_UAC LVL_0</p>
-        <h1 className="text-[64px] font-silkscreen leading-[1.16]  -tracking-[3.2px] text-[#e0ef29] text-left mt-[50px]">
+          <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3]">
+            Granted access_UAC LVL_0
+          </p>
+          <h1 className="text-[64px] font-silkscreen leading-[1.16]  -tracking-[3.2px] text-[#e0ef29] text-left mt-[50px]">
             The artifacts
           </h1>
           <p className="font-inclusive-sans text-[52px] text-[#fff] leading-[1.3] text-left my-[50px]">
             HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR. <br />
-            INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD <br /> 
+            INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD <br />
             BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF <br />
             OUR PROCESS, OUR TECHNOLOGY, <br />
             AND THE PEOPLE WE BUILD FOR.
           </p>
-          <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3]">[Construct / Reforge / Loop.]</p>
+          <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3]">
+            [Construct / Reforge / Loop.]
+          </p>
           <div className="w-full grid grid-cols-5 gap-0  mt-[50px] h-[300px]">
             <div className="col-span-[300px] bg-[#ff4d20]">
               <p>Skillchecker.ai</p>
             </div>
             <div className="col-span-[300px] bg-[#e1e1e1]">
-            <p>Skillchecker.ai</p>
+              <p>Skillchecker.ai</p>
             </div>
             <div className="col-span-[300px] bg-[#c3c2c2]">
-            <p>Skillchecker.ai</p>
+              <p>Skillchecker.ai</p>
             </div>
           </div>
           <div className=" flex flex-col justify-start items-start">
@@ -1064,10 +1240,9 @@ purposeful design.
             >
               VISIT CASE STUDIES
             </button>
-            </div>
+          </div>
         </div>
       </div>
-
 
       {/* <div className="w-full relative  overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px]">
@@ -1110,61 +1285,59 @@ purposeful design.
       <div className="w-full relative  overflow-hidden">
         <div className=" w-[90%] max-w-[1038px] mx-auto py-[70px]">
           <h1 className="text-[52px] font-normal font-inclusive-sans leading-[1.3] text-black text-left">
-          LIGHT THE SIGNAL // CONTACT US
-            
+            LIGHT THE SIGNAL // CONTACT US
           </h1>
 
-          <p className="font-silkscreen text-left text-[15px] text-[#000] py-[66px]">THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.<br />
-            YOU&apos;VE REACHED THE EDGE OF THE KNOWN.<br />
+          <p className="font-silkscreen text-left text-[15px] text-[#000] py-[66px]">
+            THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
+            <br />
+            YOU&apos;VE REACHED THE EDGE OF THE KNOWN.
+            <br />
             WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
-            </p>
-          
+          </p>
+
           <div className="flex flex-col justify-center items-center">
-          <form className="space-y-6 w-full max-w-[1038px] ">
-            {/* Email Input */}
-            <div>
-              
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="YOUR EMAIL"
-                className="w-full h-[98px] p-2 border-[1.3px] border-[#000]  bg-[#f6f6f6] focus:outline-none "
-              />
-            </div>
+            <form className="space-y-6 w-full max-w-[1038px] ">
+              {/* Email Input */}
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="YOUR EMAIL"
+                  className="w-full h-[98px] p-2 border-[1.3px] border-[#000]  bg-[#f6f6f6] focus:outline-none "
+                />
+              </div>
 
-            {/* Message Textarea */}
-            <div>
-              
-              <textarea
-                id="message"
-                name="message"
-                placeholder="THE MESSAGE"
-                rows={4}
-                className="w-full  h-[214px] p-2 border border-[#000]  bg-[#f6f6f6] focus:outline-none "
-              />
-            </div>
+              {/* Message Textarea */}
+              <div>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="THE MESSAGE"
+                  rows={4}
+                  className="w-full  h-[214px] p-2 border border-[#000]  bg-[#f6f6f6] focus:outline-none "
+                />
+              </div>
 
-            {/* Submit Button */}
-            <div className=" flex flex-col justify-center items-center">
-            <p className="font-silkscreen text-left text-[15px] text-[#0505cb] py-[40px]">
-            // TRANSMISSION ENDED  // SYSTEM STANDBY ACTIVE  // AWAITING NEW SIGNAL...
-            </p>
+              {/* Submit Button */}
+              <div className=" flex flex-col justify-center items-center">
+                <p className="font-silkscreen text-left text-[15px] text-[#0505cb] py-[40px]">
+                  // TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
+                  SIGNAL...
+                </p>
 
-            <button
-              type="submit"
-              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 transition-colors font-silkscreen text-[20px]"
-            >
-              CONTACT US
-            </button>
-            </div>
-            
-          </form>
-            
+                <button
+                  type="submit"
+                  className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 transition-colors font-silkscreen text-[20px]"
+                >
+                  CONTACT US
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-
 
       <Footer />
 
