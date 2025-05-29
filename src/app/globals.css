@@ -201,6 +201,6 @@ input::placeholder,
 textarea::placeholder {
   font-family: var(--font-silkscreen); /* Replace with your desired font */
   font-size: 16px; /* Adjust size as needed */
-  font-style: bold; /* Optional: italic style */
+  /* Optional: italic style */
   color: #000; /* Adjust placeholder color if needed */
 }

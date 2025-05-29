@@ -1093,7 +1093,7 @@ export default function Home() {
                 id="email"
                 name="email"
                 placeholder="YOUR EMAIL"
-                className="w-full h-[98px] p-2 border-[1.3px] border-[#000] rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="w-full h-[98px] p-2 border-[1.3px] border-[#000]  bg-[#f6f6f6] focus:outline-none "
               />
             </div>
 
@@ -1105,7 +1105,7 @@ export default function Home() {
                 name="message"
                 placeholder="THE MESSAGE"
                 rows={4}
-                className="w-full  h-[214px] p-2 border border-[#000] rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="w-full  h-[214px] p-2 border border-[#000]  bg-[#f6f6f6] focus:outline-none "
               />
             </div>
 
