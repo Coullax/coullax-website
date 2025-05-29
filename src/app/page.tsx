@@ -26,6 +26,7 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 // import HeaderNavBar from "@/components/Header";
 import Footer from "@/components/Footer";
 import MetaBalls from "@/components/ui/meta-balls";
+import FlowingMenu from "@/components/ui/flowing-menu";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 // import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
@@ -46,6 +47,13 @@ export default function Home() {
     { name: "About", link: "/about" },
     { name: "Case Studies", link: "/case-studies" },
     { name: "Careers", link: "/careers" },
+  ];
+
+  const demoItems = [
+    { link: '#', text: 'Precision Engineered', image: 'https://picsum.photos/600/400?random=1' },
+    { link: '#', text: 'Value Driven', image: 'https://picsum.photos/600/400?random=2' },
+    { link: '#', text: 'Battle  Tested', image: 'https://picsum.photos/600/400?random=3' },
+    { link: '#', text: 'Fortified by Design', image: 'https://picsum.photos/600/400?random=4' }
   ];
 
   const servicesList = [
@@ -644,7 +652,7 @@ purposeful design.
         </div>
       </div> */}
 
-      <div className="w-full relative  overflow-hidden ">
+      {/* <div className="w-full relative  overflow-hidden ">
         <div className=" w-full mt-[80px] mb-[140px]">
           <VelocityScroll
             fontSize="text-4xl font-bold md:text-[50px] md:leading-[4.4rem]"
@@ -659,9 +667,9 @@ purposeful design.
             science. Research.
           </VelocityScroll>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
+      {/* <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
         <div className=" w-[90%] max-w-[1200px] mx-auto  ">
           <div className="flex flex-col justify-start items-start gap-[54px] p-0">
             <div className="w-full flex flex-col justify-between items-start">
@@ -703,9 +711,9 @@ purposeful design.
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+      {/* <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
         <div className="w-[90%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
           <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
             <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
@@ -784,9 +792,9 @@ purposeful design.
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full relative  overflow-hidden ">
+      {/* <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] mx-auto ">
           <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px] py-[45px]">
             <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
@@ -889,9 +897,9 @@ purposeful design.
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full relativeoverflow-hidden">
+      {/* <div className="w-full relativeoverflow-hidden">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
           <div className=" flex rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
             <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
@@ -908,12 +916,7 @@ purposeful design.
             />
 
             <div className=" overflow-y-hidden relative lg:w-[30%] lg:max-h-[350px] max-h-[140px]">
-              {/* <div
-                className={`absolute w-5 h-full lg:w-full lg:h-5 right-0 top-0 bg-gradient-to-l lg:bg-gradient-to-b from-[#fffef1] to-transparent z-10 pointer-events-none`}
-              />
-              <div
-                className={`absolute w-5 h-full lg:w-full lg:h-5 left-0 lg:right-0 bottom-0 bg-gradient-to-r lg:bg-gradient-to-t from-[#fffef1] to-transparent z-10 pointer-events-none`}
-              /> */}
+              
               <Marquee
                 pauseOnHover
                 vertical
@@ -944,12 +947,7 @@ purposeful design.
               </Marquee>
             </div>
             <div className=" overflow-y-hidden relative lg:w-[30%] lg:max-h-[350px] max-h-[140px]">
-              {/* <div
-                className={`absolute w-5 h-full lg:w-full lg:h-5 right-0 top-0 bg-gradient-to-l lg:bg-gradient-to-b from-[#fffef1] to-transparent z-10 pointer-events-none`}
-              />
-              <div
-                className={`absolute w-5 h-full lg:w-full lg:h-5 left-0 lg:right-0 bottom-0 bg-gradient-to-r lg:bg-gradient-to-t from-[#fffef1] to-transparent z-10 pointer-events-none`}
-              /> */}
+              
               <Marquee
                 pauseOnHover
                 reverse
@@ -989,7 +987,7 @@ purposeful design.
             Read more reviews
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* <div className="w-full relative  overflow-hidden ">
         <div className=" w-full">
@@ -1015,6 +1013,23 @@ purposeful design.
           </div>
         </div>
       </div> */}
+
+      <div className="w-full relative  overflow-hidden ">
+        <div className=" w-[90%] max-w-[1550px] mx-auto my-[70px]">
+          <h1 className="text-[250px] font-silkscreen leading-[1.3]  -tracking-[12.5px] text-[#000] text-center ">
+            The Facets
+          </h1>
+          <p className="font-inclusive-sans text-[52px] text-[#000] leading-[1.3] text-left my-[50px]">
+           EVERY [ARTIFACT//PRODUCT] WE DELIVER IS SHAPED BY A SET OF PRINCIPLES THAT BALANCE VISION WITH PRECISION, VALUE WITH IMPACT, AND INNOVATION WITH RELIABILITY.
+          </p>
+          <p className="font-silkscreen text-left text-[15px] text-[#000] leading-[1.3]">[Construct / Reforge / Loop.]</p>
+
+          <div style={{ height: '600px', position: 'relative' }} className="mt-[75px]">
+            <FlowingMenu items={demoItems} />
+          </div>
+          
+        </div>
+      </div>
 
 
       <div className="w-full relative  overflow-hidden bg-[#000]">
