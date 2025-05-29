@@ -112,7 +112,7 @@ export default function RootLayout({
 
 <DialogflowMessenger/>
 
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow overflow-x-hidden">{children}</main>
         <CookieConsent />
       </body>
     </html>
