@@ -398,7 +398,90 @@ export default function Home() {
         </VelocityScroll>
       </div>
 
-      <div className="w-full relative">
+
+      <div className="max-w-[1550px] mx-auto ">
+        <div className=" flex justify-between items-start mt-[150px]">
+          <span className="font-silkscreen text-[64px] relative">
+            The forge
+          </span>
+          <span className="font-silkscreen text-[16px]  text-[#0505cb]">
+            Node -Sector 01 / Uplink: True
+          </span>
+        </div>  
+        <div className="font-InclusiveSans my-[32px] md:text-[52px] text-[22px]">
+          This is where vision meets velocity.
+          Where raw ideas are melted down, reshaped, and forged into real, working systems. The Forge is Coullax’s creative engine.
+          a space of experimentation, engineering, and relentless iteration.
+        </div>
+
+        <span className="font-silkscreen text-[16px] text-[#0505cb] justify-start ">
+        [Coullax / The Forge / Construct.]
+          </span>
+
+
+        <div className="grid grid-cols-6 sm:grid-cols-2 lg:grid-cols-6 mt-[120px] mb-[50px] gap-[50px] ">
+          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
+            <span className="font-silkscreen text-[40px]">COGNITION</span>
+            <div className=" flex flex-row justify-between mt-[193px]">
+              <span className="font-InclusiveSans text-[35px]">Artificial  <br></br>Intelligence</span>
+              <Image
+                src="/HomePage/ForgeCards/card1-1.png"
+                alt="Card illustration"    width={168}
+                height={99} />
+            </div>
+          </div>
+          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
+            <span className="font-silkscreen text-[40px]">CONSENSUS</span>
+            <div className=" flex flex-row justify-between mt-[193px]">
+              <span className="font-InclusiveSans text-[35px]">Blockchain<br></br>Intelligence</span>
+              <Image
+                src="/HomePage/ForgeCards/card1-2.png"
+                alt="Card illustration"    width={168}
+                height={99} />
+            </div>
+          </div>
+          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
+            <span className="font-silkscreen text-[40px]">SYNTHESIS</span>
+            <div className=" flex flex-row justify-between mt-[165px]">
+              <span className="font-InclusiveSans text-[35px]">Research & <br></br>Strategy</span>
+              <Image
+                src="/HomePage/ForgeCards/card1-3.png"
+                alt="Card illustration"    width={168}
+                height={99} />
+            </div>
+          </div>
+          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
+            <span className="font-silkscreen text-[40px]">WEAVE</span>
+            <div className=" flex flex-row justify-between mt-[165px]">
+              <span className="font-InclusiveSans text-[35px]">Web &  <br></br>Software</span>
+              <Image
+                src="/HomePage/ForgeCards/card1-4.png"
+                alt="Card illustration"    width={168}
+                height={99} />
+            </div>
+          </div>
+          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
+            <span className="font-silkscreen text-[40px]">FORM</span>
+            <div className=" flex flex-row justify-between mt-[165px]">
+              <span className="font-InclusiveSans text-[35px]">Design &  <br></br>Branding</span>
+              <Image
+                src="/HomePage/ForgeCards/card1-5.png"
+                alt="Card illustration"    width={168}
+                height={99} />
+            </div>
+          </div>
+        </div>
+
+        <span className="font-silkscreen text-[16px] justify-start ">
+        [Coullax / The Forge / Construct.]
+          </span>
+
+
+      </div>
+
+      <div className="max-w-full bg-black h-[300px] mt-[50px]"></div>
+
+      {/* <div className="w-full relative">
         <div className="w-[90%] max-w-[1550px] mx-auto">
           <div className="flex-grow-0 flex flex-col justify-start items-start">
             <div className="w-full flex flex-col justify-between items-start md:p-0">
@@ -521,7 +604,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-full mt-[80px] mb-[140px]">
