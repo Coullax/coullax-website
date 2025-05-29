@@ -340,29 +340,29 @@ export default function Home() {
       <div className="w-full relative overflow-hidden ">
 
         <div className=" w-full bg-[#fff] min-h-dvh">
-            <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-12">
+          <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-12">
+            <div>
               <div>
-                <div>
-                  <Image
-                    src="/logo.png"
-                    alt="logo"
-                    width={228}
-                    height={33}
-                    className="cursor-pointer"
-                  />
-                </div>
-              </div>
-
-              <div className="flex justify-center items-center">
-                <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
-                  {navigationList.map((navigation, index) => (
-                    <Link key={index} href={navigation.link}>
-                      {navigation.name}
-                    </Link>
-                  ))}
-                </div>
+                <Image
+                  src="/logo.png"
+                  alt="logo"
+                  width={228}
+                  height={33}
+                  className="cursor-pointer"
+                />
               </div>
             </div>
+
+            <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center gap-[35px] font-bold leading-[23px] font-stretch-normal font-plus-jakarta-sans text-[20px]">
+                {navigationList.map((navigation, index) => (
+                  <Link key={index} href={navigation.link}>
+                    {navigation.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* <div className="flex flex-col justify-center items-center h-full w-full">
             <div className="w-[90%] max-w-[1550px] mx-auto"> */}
@@ -392,14 +392,14 @@ export default function Home() {
           className="text-[#000] "
           numRows={1}
         >
-          AI, Machine Learning,  Web3, Data science.Software.Research, Chatbot,DeFi,Dapp,AI, Machine Learning,  Web3, Data science, Software , Research, Chatbot,DeFiDeFi  
+          AI, Machine Learning,  Web3, Data science.Software.Research, Chatbot,DeFi,Dapp,AI, Machine Learning,  Web3, Data science, Software , Research, Chatbot,DeFiDeFi
 
 
         </VelocityScroll>
       </div>
 
 
-      <div className="max-w-[1550px] mx-auto ">
+      <div className="w-[90%] max-w-[1550px] mx-auto ">
         <div className=" flex justify-between items-start mt-[150px]">
           <span className="font-silkscreen text-[64px] relative">
             The forge
@@ -762,7 +762,7 @@ export default function Home() {
               a safer place <br></br>
               <br></br>
               To achieve this, we believe in the power of Artificial
-              intelligence’s efficiency and Blockchain technology’s security and
+              intelligence&apos;s efficiency and Blockchain technology&apos;s security and
               transparency.
             </span>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] p-0">
@@ -1035,7 +1035,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full relative  overflow-hidden">
+      {/* <div className="w-full relative  overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px]">
           <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
             <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">
@@ -1061,9 +1061,9 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full relative  overflow-hidden mb-[80px]">
+      {/* <div className="w-full relative  overflow-hidden mb-[80px]">
         <VelocityScroll
           fontSize="text-4xl font-bold md:text-7xl md:leading-[5.5rem]"
           defaultVelocity={0.5}
@@ -1071,7 +1071,60 @@ export default function Home() {
         >
           Efficiency. Security. Transparency.Efficiency. Security. Transparency.
         </VelocityScroll>
+      </div> */}
+
+      <div className="w-full relative  overflow-hidden">
+        <div className=" w-[90%] max-w-[1550px] mx-auto py-[70px]">
+          <h1 className="text-[52px] font-normal font-inclusive-sans leading-[1.3] text-black text-center">
+            THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.<br />
+            YOU&apos;VE REACHED THE EDGE OF THE KNOWN.<br />
+            WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
+          </h1>
+
+          <p className="font-silkscreen text-center text-[15px] text-[#0505cb] py-16">// TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // Awaiting New Signal...</p>
+          
+          <div className="flex flex-col justify-center items-center">
+          <form className="space-y-6 w-full max-w-[1038px] ">
+            {/* Email Input */}
+            <div>
+              
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="YOUR EMAIL"
+                className="w-full h-[98px] p-2 border-[1.3px] border-[#000] rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+            </div>
+
+            {/* Message Textarea */}
+            <div>
+              
+              <textarea
+                id="message"
+                name="message"
+                placeholder="THE MESSAGE"
+                rows={4}
+                className="w-full  h-[214px] p-2 border border-[#000] rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className=" flex flex-col justify-center items-center">
+            <button
+              type="submit"
+              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 transition-colors font-silkscreen text-[20px]"
+            >
+              CONTACT US
+            </button>
+            </div>
+            
+          </form>
+            
+          </div>
+        </div>
       </div>
+
 
       <Footer />
 
