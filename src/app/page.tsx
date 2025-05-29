@@ -953,9 +953,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full relative  overflow-hidden ">
+      {/* <div className="w-full relative  overflow-hidden ">
         <div className=" w-full">
-          {/* <div className=" flex flex-col md:justify-start items-start "> */}
           <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px] w-[90%] sm:w-fit mx-auto">
             <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
               Awesome peoplewho worked with us
@@ -974,66 +973,48 @@ export default function Home() {
                 />
               ))}
 
-              {/* <div className="w-[172px] h-[40px] flex items-center justify-center">
-              <Image
-                  src="/Homepage/brandLogo/thehidden.png"
-                  alt="image1"
-                  width={267}
-                  height={65}
-                  className="object-contain"
-                />
-              </div>
-
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-              <Image
-                  src="/Homepage/brandLogo/pornopoli.png"
-                  alt="image1"
-                  width={263}
-                  height={65}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-              <Image
-                  src="/Homepage/brandLogo/baddays.png"
-                  alt="image1"
-                  width={173}
-                  height={65}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-              <Image
-                  src="/Homepage/brandLogo/asvoria.png"
-                  alt="image1"
-                  width={245}
-                  height={65}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-              <Image
-                  src="/Homepage/brandLogo/fiverr.png"
-                  alt="image1"
-                  width={214}
-                  height={65}
-                  className="object-contain"
-                />
-              </div>
-              <div className="w-[172px] h-[40px] flex items-center justify-center">
-              <Image
-                  src="/Homepage/brandLogo/skillcheckerlight.png"
-                  alt="image1"
-                  width={243}
-                  height={65}
-                  className="object-contain"
-                />
-              </div> */}
             </Marquee>
           </div>
-          {/* </div> */}
+        </div>
+      </div> */}
+
+
+      <div className="w-full relative  overflow-hidden bg-[#000]">
+        <div className=" w-[90%] max-w-[1550px] mx-auto my-[300px]">
+        <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3]">Granted access_UAC LVL_0</p>
+        <h1 className="text-[64px] font-silkscreen leading-[1.16]  -tracking-[3.2px] text-[#e0ef29] text-left mt-[50px]">
+            The artifacts
+          </h1>
+          <p className="font-inclusive-sans text-[52px] text-[#fff] leading-[1.3] text-left my-[50px]">
+            HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR. <br />
+            INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD <br /> 
+            BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF <br />
+            OUR PROCESS, OUR TECHNOLOGY, <br />
+            AND THE PEOPLE WE BUILD FOR.
+          </p>
+          <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3]">[Construct / Reforge / Loop.]</p>
+          <div className="w-full grid grid-cols-5 gap-0  mt-[50px] h-[300px]">
+            <div className="col-span-[300px] bg-[#ff4d20]">
+              <p>Skillchecker.ai</p>
+            </div>
+            <div className="col-span-[300px] bg-[#e1e1e1]">
+            <p>Skillchecker.ai</p>
+            </div>
+            <div className="col-span-[300px] bg-[#c3c2c2]">
+            <p>Skillchecker.ai</p>
+            </div>
+          </div>
+          <div className=" flex flex-col justify-start items-start">
+            <button
+              type="button"
+              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 transition-colors font-silkscreen text-[20px] mt-[50px]"
+            >
+              VISIT CASE STUDIES
+            </button>
+            </div>
         </div>
       </div>
+
 
       {/* <div className="w-full relative  overflow-hidden">
         <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px]">
@@ -1074,14 +1055,16 @@ export default function Home() {
       </div> */}
 
       <div className="w-full relative  overflow-hidden">
-        <div className=" w-[90%] max-w-[1550px] mx-auto py-[70px]">
-          <h1 className="text-[52px] font-normal font-inclusive-sans leading-[1.3] text-black text-center">
-            THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.<br />
-            YOU&apos;VE REACHED THE EDGE OF THE KNOWN.<br />
-            WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
+        <div className=" w-[90%] max-w-[1038px] mx-auto py-[70px]">
+          <h1 className="text-[52px] font-normal font-inclusive-sans leading-[1.3] text-black text-left">
+          LIGHT THE SIGNAL // CONTACT US
+            
           </h1>
 
-          <p className="font-silkscreen text-center text-[15px] text-[#0505cb] py-16">// TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // Awaiting New Signal...</p>
+          <p className="font-silkscreen text-left text-[15px] text-[#000] py-[66px]">THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.<br />
+            YOU&apos;VE REACHED THE EDGE OF THE KNOWN.<br />
+            WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
+            </p>
           
           <div className="flex flex-col justify-center items-center">
           <form className="space-y-6 w-full max-w-[1038px] ">
@@ -1111,6 +1094,10 @@ export default function Home() {
 
             {/* Submit Button */}
             <div className=" flex flex-col justify-center items-center">
+            <p className="font-silkscreen text-left text-[15px] text-[#0505cb] py-[40px]">
+            // TRANSMISSION ENDED  // SYSTEM STANDBY ACTIVE  // AWAITING NEW SIGNAL...
+            </p>
+
             <button
               type="submit"
               className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 transition-colors font-silkscreen text-[20px]"
