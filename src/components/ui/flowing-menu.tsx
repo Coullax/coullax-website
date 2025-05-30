@@ -85,10 +85,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
     return Array.from({ length: 4 }).map((_, idx) => (
       <React.Fragment key={idx}>
         <span>{text}</span>
-        <div
+        {/* <div
           className="marquee__img"
           style={{ backgroundImage: `url(${image})` }}
-        />
+        /> */}
       </React.Fragment>
     ));
   }, [text, image]);

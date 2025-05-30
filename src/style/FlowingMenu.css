@@ -32,7 +32,7 @@
     white-space: nowrap;
     font-weight: 400;
     color: #000;
-    font-size: 6.4vh;
+    font-size: 64px;
     font-family: var(--font-inclusive-sans);
   }
   
@@ -79,7 +79,7 @@
     white-space: nowrap;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 6.4vh;
+    font-size: 64px;
     line-height: 1.2;
     padding: 1vh 1vw 0;
     font-family: var(--font-inclusive-sans);
