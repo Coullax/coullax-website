@@ -364,9 +364,9 @@ export default function Home() {
   //   return () => clearInterval(interval);
   // }, []);
 
-  const handleActiveIndexChange = (index: number) => {
-    setActiveIndex(index);
-  };
+  // const handleActiveIndexChange = (index: number) => {
+  //   setActiveIndex(index);
+  // };
 
   // const handleMouseMove = (
   //   e: MouseEvent<HTMLDivElement>,
