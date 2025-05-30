@@ -1381,7 +1381,7 @@ export default function Home() {
           <div className=" flex flex-col justify-start items-start">
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 transition-colors font-silkscreen text-[20px] mt-[50px]"
+              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300"
             >
               VISIT CASE STUDIES
             </button>
@@ -1473,8 +1473,8 @@ export default function Home() {
                 </p>
 
                 <button
-                  type="submit"
-                  className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 transition-colors font-silkscreen text-[20px]"
+                  type="button"
+                  className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#000] hover:border hover:border-[#000] transition-all duration-300"
                 >
                   CONTACT US
                 </button>
