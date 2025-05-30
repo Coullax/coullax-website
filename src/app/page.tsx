@@ -38,6 +38,8 @@ import { MorphingText } from "@/components/magicui/morphing-text";
 // import Asvoria from '../../public/HomePage/brandLogo/asvoria.png'
 // import Fiverr from '../../public/HomePage/brandLogo/fiverr.png'
 
+type PhaseKey = 'star' | 'circle' | 'asterisk' | 'triangle';
+
 export default function Home() {
   const cardRefs = useRef<HTMLDivElement[]>([]);
   const glowRefs = useRef<HTMLDivElement[]>([]);
@@ -46,6 +48,7 @@ export default function Home() {
   const container1 = useRef(null);
   const container2 = useRef(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeImage, setActiveImage] = useState<PhaseKey>('star');
 
   useEffect(() => {
     console.log("Active index:", activeIndex);
@@ -57,6 +60,41 @@ export default function Home() {
     { name: "Case Studies", link: "/case-studies" },
     { name: "Careers", link: "/careers" },
   ];
+
+  const phases = {
+    star: {
+      title: 'FIRST LIGHT',
+      subtitle: 'Initial Phase',
+      description: 'This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey, where your signal is received, and the Forge prepares to shape what comes next.',
+    },
+    circle: {
+      title: 'THE CONSTRUCT',
+      subtitle: 'Second Phase',
+      description: 'The foundation takes shape. A framework of ideas and systems is built, aligning vision with structure. This phase establishes the core, ensuring stability as we prepare for the next signal.',
+    },
+    asterisk: {
+      title: 'AWAKENING SPARK',
+      subtitle: 'Third Phase',
+      description: 'Energy flows through the system. The spark ignites, bringing the construct to life. This phase is about activation, where the seeker and the vision begin to align, setting the stage for growth.',
+    },
+    triangle: {
+      title: 'INITIAL PHASE',
+      subtitle: 'Fourth Phase',
+      description: 'The journey aligns with the path. The initial phase is a rupture in the silence, a flicker through the void. Here, the encoded vision takes form, ready to evolve into something greater.',
+    },
+  };
+
+  // Image sources (original and red versions)
+  const images = {
+    star: '/images/star.png',
+    redStar: '/images/red-star.png',
+    circle: '/images/circle.png',
+    redCircle: '/images/red-circle.png',
+    asterisk: '/images/asterisk.png',
+    redAsterisk: '/images/red-asterisk.png',
+    triangle: '/images/triangle.png',
+    redTriangle: '/images/red-triangle.png',
+  };
 
   const demoItems = [
     {
@@ -347,9 +385,8 @@ export default function Home() {
     const percentX = (x - centerX) / centerX;
     const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${
-      percentX * 6
-    }deg) rotateX(${percentY * 6}deg)`;
+    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
+      }deg) rotateX(${percentY * 6}deg)`;
     content.style.transform = `translateZ(50px)`;
     glow.style.opacity = "1";
     glow.style.backgroundImage = `
@@ -437,21 +474,18 @@ export default function Home() {
             <div className=" py-[4vh] w-full flex flex-row justify-center items-center gap-[5px]">
               <div
                 onClick={() => handleActiveIndexChange(0)}
-                className={` ${
-                  activeIndex === 0 ? "bg-[#f04a34]" : "bg-black"
-                } w-[2.5vh] aspect-square rounded-full transition-colors  ease-in-out`}
+                className={` ${activeIndex === 0 ? "bg-[#f04a34]" : "bg-black"
+                  } w-[2.5vh] aspect-square rounded-full transition-colors  ease-in-out`}
               ></div>
               <div
                 onClick={() => handleActiveIndexChange(1)}
-                className={` ${
-                  activeIndex === 1 ? "bg-[#f04a34]" : "bg-black"
-                } w-[2.5vh] aspect-square transition-colors  ease-in-out`}
+                className={` ${activeIndex === 1 ? "bg-[#f04a34]" : "bg-black"
+                  } w-[2.5vh] aspect-square transition-colors  ease-in-out`}
               ></div>
               <div
                 onClick={() => handleActiveIndexChange(2)}
-                className={`${
-                  activeIndex === 2 ? "bg-[#f04a34]" : "bg-black"
-                } h-[31px] aspect-square transition-colors  ease-in-out`}
+                className={`${activeIndex === 2 ? "bg-[#f04a34]" : "bg-black"
+                  } h-[31px] aspect-square transition-colors  ease-in-out`}
                 style={{
                   width: "2.5vh",
                   height: "2.5vh",
@@ -548,7 +582,7 @@ export default function Home() {
         <div className="font-inclusive-sans my-[55px] md:text-[52px] text-[22px] uppercase">
           This is where vision meets velocity. Where raw ideas are melted down,
           reshaped, and forged into real, working systems. The Forge is
-          Coullax’s creative engine. a space of experimentation, engineering,
+          Coullax's creative engine. a space of experimentation, engineering,
           and relentless iteration.
         </div>
 
@@ -660,7 +694,7 @@ export default function Home() {
 
           <div className="flex border border-black justify-center items-center mb-[85px]">
             <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans">
-              Have a project in mind? Let’s align.<br></br>
+              Have a project in mind? Let's align.<br></br>
               Book a call to explore how we can bring your vision <br></br>to
               life through intelligent systems and <br></br>
               purposeful design.
@@ -678,9 +712,9 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="bg-[#e0ef29]  pt-[83px]">
+      <div className="w-full relative  overflow-hidden bg-[#e0ef29]  py-[83px]">
         <div className="w-[90%] max-w-[1550px] mx-auto ">
-          <div className=" flex justify-between items-start">
+          <div className="w-full flex justify-between items-start">
             <span className="font-silkscreen text-[64px] relative">
               THE SUMMON
             </span>
@@ -696,7 +730,7 @@ export default function Home() {
 
           <div className="flex border border-black justify-center items-center mb-[85px]">
             <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans">
-              Have a project in mind? Let’s align.<br></br>
+              Have a project in mind? Let's align.<br></br>
               Book a call to explore how we can bring your vision <br></br>to
               life through intelligent systems and <br></br>
               purposeful design.
@@ -706,7 +740,7 @@ export default function Home() {
           <div className=" flex flex-col justify-center items-center ">
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] mb-[82.5px]"
+              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] "
             >
               BOOK A CALL
             </button>
@@ -1200,6 +1234,118 @@ export default function Home() {
           </div>
         </div>
       </div> */}
+
+      <div className="w-full relative  overflow-hidden bg-[#000] py-[300px]">
+        <div className=" w-[90%] max-w-[1550px] mx-auto">
+
+          <div className="w-full flex justify-between items-center ">
+            <span className="font-silkscreen text-[64px] relative uppercase text-[#e0ef29]">
+              The ritual
+            </span>
+            <div>
+              <Image
+                src="/HomePage/ritual_icons.png"
+                alt="Card illustration"
+                width={168}
+                height={99}
+              />
+            </div>
+
+          </div>
+          <p className="font-inclusive-sans text-[52px] text-[#fff] leading-[1.3] text-left my-[50px] uppercase">
+            The RITUAL is our process of transformation where abstract ideas, complex technologies, and raw ambition are fused into powerful digital systems.
+          </p>
+
+          <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3] mt-[5px]">
+            [Firstlight / Schema / Construct / Lift.]
+          </p>
+
+
+          <div className="mt-[100px] border border-[#e0ef29]">
+            <div className="w-full">
+              {/* Images Row */}
+              <div className="grid grid-cols-4 gap-0 pt-[50px] pb-[65px] px-[20px]">
+                <div className="flex justify-center items-center col-span-[300px]">
+                  <Image
+                  src="/HomePage/phase/phase1_image.png"
+                    width={290}
+                    height={290}
+                    alt="Star"
+                    className=" cursor-pointer"
+                    onClick={() => setActiveImage('star')}
+                  />
+                </div>
+
+                <div className="flex justify-center items-center col-span-[300px]">
+                  <Image
+                  src="/HomePage/phase/phase2_image.png"
+                    width={290}
+                    height={290}
+                    alt="Circle"
+                    className=" cursor-pointer"
+                    onClick={() => setActiveImage('circle')}
+                  />
+                </div>
+                
+                <div className="flex justify-center items-center col-span-[300px]">
+                  <Image
+                  src="/HomePage/phase/phase3_image.png"
+                      width={290}
+                    height={290}
+                    alt="Asterisk"
+                    className=" cursor-pointer"
+                    onClick={() => setActiveImage('asterisk')}
+                  />
+                </div>
+                
+                <div className="flex justify-center items-center col-span-[300px]">
+                  <Image    
+                    src="/HomePage/phase/phase4_image.png"
+                    alt="Triangle"
+                    width={290}
+                    height={290}
+                    className=" cursor-pointer"
+                    onClick={() => setActiveImage('triangle')}
+                  />
+                </div>
+                
+              </div>
+
+              {/* Text Section */}
+              <div className="w-full border-t border-[#e0ef29] py-[28px] px-[29px]">
+
+                <div className="flex justify-between items-center ">
+                  <div className="flex items-center justify-center gap-2">
+                    
+                    <Image
+                        src="/HomePage/phase/phase1_image.png"
+                          width={70}
+                          height={70}
+                          alt="Star"
+                          className=" cursor-pointer"
+                          onClick={() => setActiveImage('star')}
+                        />
+                    <h2 className="text-[40px] font-bold text-[#e0ef29] font-silkscreen leading-[1.16] -tracking-[2px] ">{phases[activeImage].title}</h2>
+                  </div>
+                  
+                  <h2 className="text-[48px] font-bold text-white font-inclusive-sans -tracking-[2.4px] leading-[1.16]">{phases[activeImage].subtitle}</h2>
+
+                </div>
+
+               
+                <p className="text-[40px] my-[61px] font-inclusive-sans text-[#fff] leading-[1.19] ">{phases[activeImage].description}</p>
+                <p className="text-[20px] text-[#e0ef29] uppercase leading-[1.19] font-silkscreen">
+                Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path. 
+                </p>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1550px] mx-auto my-[70px]">
