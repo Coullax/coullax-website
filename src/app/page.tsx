@@ -2,51 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowLineUpRight,
-  Brain,
-  CubeTransparent,
-  Globe,
-  Laptop,
-  Lightning,
-  ShieldCheck,
-  Users,
-} from "@phosphor-icons/react";
-import { ArrowRight, XIcon } from "lucide-react";
-import { HandFist } from "@phosphor-icons/react/dist/ssr";
-import { NumberTicker } from "../components/magicui/number-ticker";
-import React, { useRef, MouseEvent, useState, useEffect } from "react";
-import { Marquee } from "@/components/magicui/marquee";
+
+import {  XIcon } from "lucide-react";
+
+import React, { useRef, useState, useEffect } from "react";
 import ReviewCard from "@/components/review-card";
-import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
-import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { AnimatePresence } from "motion/react";
-import { Ripple } from "@/components/magicui/ripple";
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-// import HeaderNavBar from "@/components/Header";
 import Footer from "@/components/Footer";
 import MetaBalls from "@/components/ui/meta-balls";
 import FlowingMenu from "@/components/ui/flowing-menu";
-// import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MorphingText } from "@/components/magicui/morphing-text";
 
-// import Skillchecker from '../../public/HomePage/brandLogo/skillcheckerlight.png'
-// import TheHidden from '../../public/HomePage/brandLogo/thehidden.png'
-// import Pornopoli from '../../public/HomePage/brandLogo/pornopoli.png'
-// import Baddays from '../../public/HomePage/brandLogo/baddays.png'
-// import Asvoria from '../../public/HomePage/brandLogo/asvoria.png'
-// import Fiverr from '../../public/HomePage/brandLogo/fiverr.png'
 
 type PhaseKey = 'star' | 'circle' | 'asterisk' | 'triangle';
 
 export default function Home() {
-  const cardRefs = useRef<HTMLDivElement[]>([]);
-  const glowRefs = useRef<HTMLDivElement[]>([]);
-  const contentRefs = useRef<HTMLDivElement[]>([]);
+  // const cardRefs = useRef<HTMLDivElement[]>([]);
+  // const glowRefs = useRef<HTMLDivElement[]>([]);
+  // const contentRefs = useRef<HTMLDivElement[]>([]);
   const [openReviewModal, setOpenReviewModal] = useState<boolean>(false);
   const container1 = useRef(null);
-  const container2 = useRef(null);
+  // const container2 = useRef(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeImage, setActiveImage] = useState<PhaseKey>('star');
 
@@ -85,16 +62,16 @@ export default function Home() {
   };
 
   // Image sources (original and red versions)
-  const images = {
-    star: '/images/star.png',
-    redStar: '/images/red-star.png',
-    circle: '/images/circle.png',
-    redCircle: '/images/red-circle.png',
-    asterisk: '/images/asterisk.png',
-    redAsterisk: '/images/red-asterisk.png',
-    triangle: '/images/triangle.png',
-    redTriangle: '/images/red-triangle.png',
-  };
+  // const images = {
+  //   star: '/images/star.png',
+  //   redStar: '/images/red-star.png',
+  //   circle: '/images/circle.png',
+  //   redCircle: '/images/red-circle.png',
+  //   asterisk: '/images/asterisk.png',
+  //   redAsterisk: '/images/red-asterisk.png',
+  //   triangle: '/images/triangle.png',
+  //   redTriangle: '/images/red-triangle.png',
+  // };
 
   const demoItems = [
     {
@@ -119,57 +96,57 @@ export default function Home() {
     },
   ];
 
-  const servicesList = [
-    {
-      title: "Web & Software Development",
-      textColor: "text-[#2a3b40]",
-      background: "bg-[#d4ebf3]",
-      list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
-    },
-    {
-      title: "Research",
-      textColor: "text-[#333a4d]",
-      background: "bg-[#dbdcfd]",
-      list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
-    },
-    {
-      title: "Design & Branding",
-      textColor: "text-[#244733]",
-      background: "bg-[#d6f2e8]",
-      list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
-    },
-  ];
+  // const servicesList = [
+  //   {
+  //     title: "Web & Software Development",
+  //     textColor: "text-[#2a3b40]",
+  //     background: "bg-[#d4ebf3]",
+  //     list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
+  //   },
+  //   {
+  //     title: "Research",
+  //     textColor: "text-[#333a4d]",
+  //     background: "bg-[#dbdcfd]",
+  //     list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
+  //   },
+  //   {
+  //     title: "Design & Branding",
+  //     textColor: "text-[#244733]",
+  //     background: "bg-[#d6f2e8]",
+  //     list: ["Automation Solutions", "Websites & Software", "Mobile Apps"],
+  //   },
+  // ];
 
-  const processList = [
-    {
-      title: "Kickoff",
-      backGround: "bg-[#ffffff]",
-      textColor: "text-[#2c4a40]",
-      description:
-        "We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.",
-    },
-    {
-      title: "Blueprint",
-      backGround: "bg-[#c5d7d8]",
-      textColor: "text-[#1d3633]",
-      description:
-        "We map out the plan. Clear timlelines, smart solutions, and a creative game plan you can vibe with.",
-    },
-    {
-      title: "Build",
-      backGround: "bg-[#163b31]",
-      textColor: "text-[#f2fe65]",
-      description:
-        "This is where the magic happens. Our team gets to work, blending tech and creativity.",
-    },
-    {
-      title: "Launch & Beyond",
-      backGround: "bg-[#e0ef29]",
-      textColor: "text-[#163b31]",
-      description:
-        'We don\'t just hit "go" and disappear. We launch, support, and grow with you, every step after.',
-    },
-  ];
+  // const processList = [
+  //   {
+  //     title: "Kickoff",
+  //     backGround: "bg-[#ffffff]",
+  //     textColor: "text-[#2c4a40]",
+  //     description:
+  //       "We start with a friendly deep dive, getting to know your goals, ideas, and wildest visions.",
+  //   },
+  //   {
+  //     title: "Blueprint",
+  //     backGround: "bg-[#c5d7d8]",
+  //     textColor: "text-[#1d3633]",
+  //     description:
+  //       "We map out the plan. Clear timlelines, smart solutions, and a creative game plan you can vibe with.",
+  //   },
+  //   {
+  //     title: "Build",
+  //     backGround: "bg-[#163b31]",
+  //     textColor: "text-[#f2fe65]",
+  //     description:
+  //       "This is where the magic happens. Our team gets to work, blending tech and creativity.",
+  //   },
+  //   {
+  //     title: "Launch & Beyond",
+  //     backGround: "bg-[#e0ef29]",
+  //     textColor: "text-[#163b31]",
+  //     description:
+  //       'We don\'t just hit "go" and disappear. We launch, support, and grow with you, every step after.',
+  //   },
+  // ];
 
   const reviewList1 = [
     {
@@ -316,38 +293,38 @@ export default function Home() {
     },
   ];
 
-  const brandLogo = [
-    {
-      image: "/HomePage/brandLogo/thehidden.png",
-      height: 65,
-      width: 267,
-    },
-    {
-      image: "/HomePage/brandLogo/pornopoli.png",
-      height: 65,
-      width: 263,
-    },
-    {
-      image: "/HomePage/brandLogo/baddays.png",
-      height: 65,
-      width: 173,
-    },
-    {
-      image: "/HomePage/brandLogo/asvoria.png",
-      height: 65,
-      width: 245,
-    },
-    {
-      image: "/HomePage/brandLogo/fiverr.png",
-      height: 65,
-      width: 214,
-    },
-    {
-      image: "/HomePage/brandLogo/skillcheckerlight.png",
-      height: 65,
-      width: 243,
-    },
-  ];
+  // const brandLogo = [
+  //   {
+  //     image: "/HomePage/brandLogo/thehidden.png",
+  //     height: 65,
+  //     width: 267,
+  //   },
+  //   {
+  //     image: "/HomePage/brandLogo/pornopoli.png",
+  //     height: 65,
+  //     width: 263,
+  //   },
+  //   {
+  //     image: "/HomePage/brandLogo/baddays.png",
+  //     height: 65,
+  //     width: 173,
+  //   },
+  //   {
+  //     image: "/HomePage/brandLogo/asvoria.png",
+  //     height: 65,
+  //     width: 245,
+  //   },
+  //   {
+  //     image: "/HomePage/brandLogo/fiverr.png",
+  //     height: 65,
+  //     width: 214,
+  //   },
+  //   {
+  //     image: "/HomePage/brandLogo/skillcheckerlight.png",
+  //     height: 65,
+  //     width: 243,
+  //   },
+  // ];
 
   const texts = ["COGNITION", "CONSENSUS", "CONSTRUCT"];
 
@@ -365,70 +342,70 @@ export default function Home() {
     setActiveIndex(index);
   };
 
-  const handleMouseMove = (
-    e: MouseEvent<HTMLDivElement>,
-    index: number
-  ): void => {
-    const card = cardRefs.current[index];
-    const glow = glowRefs.current[index];
-    const content = contentRefs.current[index];
+  // const handleMouseMove = (
+  //   e: MouseEvent<HTMLDivElement>,
+  //   index: number
+  // ): void => {
+  //   const card = cardRefs.current[index];
+  //   const glow = glowRefs.current[index];
+  //   const content = contentRefs.current[index];
 
-    if (!card || !glow || !content) return;
+  //   if (!card || !glow || !content) return;
 
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+  //   const rect = card.getBoundingClientRect();
+  //   const x = e.clientX - rect.left;
+  //   const y = e.clientY - rect.top;
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+  //   const centerX = rect.width / 2;
+  //   const centerY = rect.height / 2;
 
-    const percentX = (x - centerX) / centerX;
-    const percentY = -((y - centerY) / centerY);
+  //   const percentX = (x - centerX) / centerX;
+  //   const percentY = -((y - centerY) / centerY);
 
-    card.style.transform = `perspective(1000px) rotateY(${percentX * 6
-      }deg) rotateX(${percentY * 6}deg)`;
-    content.style.transform = `translateZ(50px)`;
-    glow.style.opacity = "1";
-    glow.style.backgroundImage = `
-      radial-gradient(
-        circle at ${x}px ${y}px, 
-        #ffffff44,
-        #0000000f
-      )
-    `;
-  };
+  //   card.style.transform = `perspective(1000px) rotateY(${percentX * 6
+  //     }deg) rotateX(${percentY * 6}deg)`;
+  //   content.style.transform = `translateZ(50px)`;
+  //   glow.style.opacity = "1";
+  //   glow.style.backgroundImage = `
+  //     radial-gradient(
+  //       circle at ${x}px ${y}px, 
+  //       #ffffff44,
+  //       #0000000f
+  //     )
+  //   `;
+  // };
 
-  const handleMouseLeave = (index: number): void => {
-    const card = cardRefs.current[index];
-    const glow = glowRefs.current[index];
-    const content = contentRefs.current[index];
+  // const handleMouseLeave = (index: number): void => {
+  //   const card = cardRefs.current[index];
+  //   const glow = glowRefs.current[index];
+  //   const content = contentRefs.current[index];
 
-    if (!card || !glow || !content) return;
+  //   if (!card || !glow || !content) return;
 
-    card.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg)";
-    content.style.transform = "translateZ(0px)";
-    glow.style.opacity = "0";
-  };
+  //   card.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg)";
+  //   content.style.transform = "translateZ(0px)";
+  //   glow.style.opacity = "0";
+  // };
 
-  const slideUp = {
-    initial: {
-      y: 300,
-    },
-    enter: {
-      y: 0,
-      transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1], delay: 2.5 },
-    },
-  };
+  // const slideUp = {
+  //   initial: {
+  //     y: 300,
+  //   },
+  //   enter: {
+  //     y: 0,
+  //     transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1], delay: 2.5 },
+  //   },
+  // };
 
   const { scrollYProgress: scrollYProgress1 } = useScroll({
     target: container1,
     offset: ["start end", "end start"],
   });
 
-  const { scrollYProgress: scrollYProgress2 } = useScroll({
-    target: container2,
-    offset: ["start end", "end end"],
-  });
+  // const { scrollYProgress: scrollYProgress2 } = useScroll({
+  //   target: container2,
+  //   offset: ["start end", "end end"],
+  // });
 
   return (
     <div className=" w-full bg-[#fff]">
@@ -520,9 +497,11 @@ export default function Home() {
               )}
             </div>
             <Image
-              src={require("../../public/HomePage/hero/arrow.svg")}
-              alt="Down arrow"
+              src="/HomePage/hero/arrow.svg"
+              alt="Down arrow" 
               className=" mx-auto h-[6vh]"
+              width={100}
+              height={100}
             />
           </div>
         </div>
@@ -582,7 +561,7 @@ export default function Home() {
         <div className="font-inclusive-sans my-[55px] md:text-[52px] text-[22px] uppercase">
           This is where vision meets velocity. Where raw ideas are melted down,
           reshaped, and forged into real, working systems. The Forge is
-          Coullax's creative engine. a space of experimentation, engineering,
+          Coullax&apos;s creative engine. a space of experimentation, engineering,
           and relentless iteration.
         </div>
 
@@ -730,7 +709,7 @@ export default function Home() {
 
           <div className="flex border border-black justify-center items-center mb-[85px]">
             <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans">
-              Have a project in mind? Let's align.<br></br>
+              Have a project in mind? Let&apos;s align.<br></br>
               Book a call to explore how we can bring your vision <br></br>to
               life through intelligent systems and <br></br>
               purposeful design.
@@ -1489,7 +1468,7 @@ export default function Home() {
               {/* Submit Button */}
               <div className=" flex flex-col justify-center items-center">
                 <p className="font-silkscreen text-left text-[15px] text-[#0505cb] py-[40px]">
-                  // TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
+                   TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
                   SIGNAL...
                 </p>
 
