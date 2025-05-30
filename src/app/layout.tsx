@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Plus_Jakarta_Sans, Kode_Mono, Silkscreen, Inclusive_Sans } from "next/font/google";
-import DialogflowMessenger from "@/components/DialogflowMessenger";
 import CookieConsent from "@/components/CookieConsent";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -110,7 +109,6 @@ export default function RootLayout({
   async>
 </script> */}
 
-<DialogflowMessenger/>
 
         <main className="flex-grow overflow-x-hidden">{children}</main>
         <CookieConsent />
