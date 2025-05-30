@@ -13,6 +13,8 @@ import MetaBalls from "@/components/ui/meta-balls";
 import FlowingMenu from "@/components/ui/flowing-menu";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MorphingText } from "@/components/magicui/morphing-text";
+import DecryptedText from "@/components/reactbits/DecryptedText";
+import ScrollReveal from "@/components/reactbits/ScrollReveal";
 
 
 type PhaseKey = 'star' | 'circle' | 'asterisk' | 'triangle';
@@ -26,10 +28,20 @@ export default function Home() {
   // const container2 = useRef(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeImage, setActiveImage] = useState<PhaseKey>('star');
+  const container2 = useRef(null);  
+  const [manualIndex, setManualIndex] = useState<number | null>(null);
 
+  // Handle transition from manual back to automatic morphing
   useEffect(() => {
-    console.log("Active index:", activeIndex);
-  }, [activeIndex]);
+    if (manualIndex !== null) {
+      // After a manual selection, wait a bit then resume automatic morphing
+      const timer = setTimeout(() => {
+        setManualIndex(null);
+      }, 4000); // Resume automatic morphing after 4 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [manualIndex]);
 
   const navigationList = [
     { name: "Home", link: "/" },
@@ -327,6 +339,20 @@ export default function Home() {
   // ];
 
   const texts = ["COGNITION", "CONSENSUS", "CONSTRUCT"];
+  const definitions = [
+    `We engineer intelligent products using artificial<br />intelligence — systems that learn, adapt, and evolve.`,
+    `We build trusted systems using blockchain technology.<br />Networks that secure, verify, and operate without compromise.`,
+    `We design and build digital ecosystems. Grounded in research,<br />guided by strategy, and brought to life through thoughtful code and bold identity.`,
+  ];
+
+  const greakArray = [
+    "ʍιʂʂιΘΠ ⇌ †Θ ΞηʜΔηςΞ ΞϝϝιςιΞηςψ, ʂΞςυяι†ψ, Δηδ",
+    "†яΔηʂραяΞηςψ ΔςяΘʂʂ ιηδυʂ†яιΞʂ.",
+    "ϻΔκιηϻ †ʜΞ шΘяʟδ Δ ʂϻΔя†Ξя, ϻΘяΞ ςΘηηΞς†Ξδ, Δηδ Δ ʂΔϝΞя ρʟΔςΞ.",
+    "†Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ",
+    "[ϾΘǤΠι†ιΘΠ]’ʂ ΞϝϝιςιΞηςψ Δηδ",
+    "[ςΘηʂΞηʂυʂ]’ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.",
+  ];
 
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
   const secondRow = reviewList2.slice(reviewList2.length / 2);
@@ -368,7 +394,7 @@ export default function Home() {
   //   glow.style.opacity = "1";
   //   glow.style.backgroundImage = `
   //     radial-gradient(
-  //       circle at ${x}px ${y}px, 
+  //       circle at ${x}px ${y}px,
   //       #ffffff44,
   //       #0000000f
   //     )
@@ -402,10 +428,10 @@ export default function Home() {
     offset: ["start end", "end start"],
   });
 
-  // const { scrollYProgress: scrollYProgress2 } = useScroll({
-  //   target: container2,
-  //   offset: ["start end", "end end"],
-  // });
+  const { scrollYProgress: scrollYProgress2 } = useScroll({
+    target: container2,
+    offset: ["start end", "end end"],
+  });
 
   return (
     <div className=" w-full bg-[#fff]">
@@ -447,22 +473,33 @@ export default function Home() {
                 clumpFactor={0.7}
                 speed={0.3}
               />
-            </div>
-            <div className=" py-[4vh] w-full flex flex-row justify-center items-center gap-[5px]">
+            </div>            <div className=" py-[4vh] w-full flex flex-row justify-center items-center gap-[5px]">
               <div
-                onClick={() => handleActiveIndexChange(0)}
-                className={` ${activeIndex === 0 ? "bg-[#f04a34]" : "bg-black"
-                  } w-[2.5vh] aspect-square rounded-full transition-colors  ease-in-out`}
+                onClick={() => {
+                  setManualIndex(0);
+                  setActiveIndex(0);
+                }}
+                className={` ${
+                  activeIndex === 0 ? "bg-[#f04a34]" : "bg-black"
+                } w-[2.5vh] aspect-square rounded-full transition-colors ease-in-out cursor-pointer`}
               ></div>
               <div
-                onClick={() => handleActiveIndexChange(1)}
-                className={` ${activeIndex === 1 ? "bg-[#f04a34]" : "bg-black"
-                  } w-[2.5vh] aspect-square transition-colors  ease-in-out`}
+                onClick={() => {
+                  setManualIndex(1);
+                  setActiveIndex(1);
+                }}
+                className={` ${
+                  activeIndex === 1 ? "bg-[#f04a34]" : "bg-black"
+                } w-[2.5vh] aspect-square transition-colors ease-in-out cursor-pointer`}
               ></div>
               <div
-                onClick={() => handleActiveIndexChange(2)}
-                className={`${activeIndex === 2 ? "bg-[#f04a34]" : "bg-black"
-                  } h-[31px] aspect-square transition-colors  ease-in-out`}
+                onClick={() => {
+                  setManualIndex(2);
+                  setActiveIndex(2);
+                }}
+                className={`${
+                  activeIndex === 2 ? "bg-[#f04a34]" : "bg-black"
+                } h-[31px] aspect-square transition-colors ease-in-out cursor-pointer`}
                 style={{
                   width: "2.5vh",
                   height: "2.5vh",
@@ -471,11 +508,21 @@ export default function Home() {
               ></div>
             </div>
             <div className=" w-full h-[23vh]">
-              {/* COGNITION */}
-              <MorphingText texts={texts} setActiveIndex={setActiveIndex} />
+              <MorphingText
+                texts={texts}
+                setActiveIndex={setActiveIndex}
+                manualIndex={manualIndex}
+                className="leading-[21vh] text-[20vh] uppercase -tracking-[14px] font-inclusive-sans"
+              />
             </div>
-            <div className=" w-full my-[8vh] text-center leading-[2.5vh] text-[2vh] uppercase font-kode-mono">
-              {activeIndex === 0 ? (
+            <div className=" w-full h-[11vh] text-center">
+              <MorphingText
+                texts={definitions}
+                setActiveIndex={setActiveIndex}
+                manualIndex={manualIndex}
+                className="leading-[2.5vh] my-[8vh] text-[2vh] uppercase font-kode-mono"
+              />
+              {/* {activeIndex === 0 ? (
                 <>
                   We engineer intelligent products using artificial
                   <br /> intelligence — systems that learn, adapt, and evolve.
@@ -488,17 +535,16 @@ export default function Home() {
                 </>
               ) : (
                 <>
-                  We design and build digital ecosystems.
+                  We design and build digital ecosystems. Grounded in research,{" "}
                   <br />
-                  Grounded in research, guided by strategy, and brought to life
-                  through
-                  <br /> thoughtful code and bold identity.
+                  guided by strategy, and brought to life through thoughtful
+                  code and bold identity.
                 </>
-              )}
+              )} */}
             </div>
             <Image
               src="/HomePage/hero/arrow.svg"
-              alt="Down arrow" 
+              alt="Down arrow"
               className=" mx-auto h-[6vh]"
               width={100}
               height={100}
@@ -508,7 +554,7 @@ export default function Home() {
         <motion.div
           style={{
             height: useTransform(scrollYProgress1, [0, 0.9], [50, 0]),
-            backgroundColor: "red",
+            backgroundColor: "#FFFFFF",
             position: "relative",
             marginTop: "100px",
             width: "100%",
@@ -516,14 +562,14 @@ export default function Home() {
         >
           <div
             style={{
-              height: "1250%",
+              height: "1550%",
               width: "120%",
               left: "0%",
               borderRadius: "0 0 50% 50%",
               backgroundColor: "#FFFFFF",
               zIndex: 1000,
               position: "absolute",
-              boxShadow: "0px 60px 50px rgba(0, 0, 0, 0.248)",
+              boxShadow: "0px 60px 100px rgba(255, 255, 255, 0.15)",
             }}
             className=" translate-x-[-10%] translate-y-[0%]"
           ></div>
@@ -544,11 +590,65 @@ export default function Home() {
 
         </VelocityScroll>
       </div> */}
-      {/* <motion.div
+      <motion.div
         style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
         ref={container2}
-        className="relative w-full"
-      > */}
+        className="relative w-full bg-[#000000] py-[300px]"
+      >
+        <div className=" py-[50px] w-[90%] max-w-[1550px] mx-auto">
+          <h1 className=" text-[#E0EF29] text-[64px] font-silkscreen leading-[74px] -tracking-[3px]">
+            <DecryptedText
+              text="The Entity Listens..."
+              speed={100}
+              maxIterations={20}
+              characters="ABCD1234!?"
+              animateOn="hover"
+              className="revealed"
+              parentClassName="all-letters"
+              encryptedClassName="encrypted"
+            />
+          </h1>
+          <div className=" mt-[50px]">
+            <span className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px]">
+              [Signal / Directive / 02A]
+              <br />
+              <br />
+              The Entity has spoken.
+              <br /> Its words drift through noise and time.
+              <br /> To hear is not enough.
+              <br /> Decode. Understand. Align.
+            </span>
+          </div>
+          <div className=" my-[80px]">
+            {greakArray.map((text, index) => (
+              <div key={index}>
+              <ScrollReveal
+                baseOpacity={0}
+                enableBlur={true}
+                baseRotation={4}
+                blurStrength={20}
+                textClassName=" !text-[#FFFFFF] !text-[52px] !font-inclusive-sans !leading-[68px] !uppercase !font-normal"
+              >
+                {text}
+              </ScrollReveal>
+              {index === 2 && (<><br /><br /></>)}
+              </div>
+            ))}
+          </div>
+          <button className="bg-[#E0EF29] h-[94px] min-w-[422px] text-[#000000] text-[20px] leading-[20px] -tracking-[1px] font-silkscreen flex items-center justify-center gap-2">
+            DECODE THE MESSAGE
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 32 32"
+              fill="#000"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon points="16,26 6,12 26,12" fill="#000" />
+            </svg>
+          </button>
+        </div>
+      </motion.div>
       <div className="w-[90%] max-w-[1550px] mx-auto ">
         <div className=" flex justify-between items-start mt-[150px]">
           <span className="font-silkscreen text-[64px] relative">
@@ -561,8 +661,8 @@ export default function Home() {
         <div className="font-inclusive-sans my-[55px] md:text-[52px] text-[22px] uppercase">
           This is where vision meets velocity. Where raw ideas are melted down,
           reshaped, and forged into real, working systems. The Forge is
-          Coullax&apos;s creative engine. a space of experimentation, engineering,
-          and relentless iteration.
+          Coullax&apos;s creative engine. a space of experimentation,
+          engineering, and relentless iteration.
         </div>
 
         <span className="font-silkscreen text-[16px] text-[#0505cb] justify-start ">
@@ -1265,7 +1365,7 @@ export default function Home() {
                     onClick={() => setActiveImage('circle')}
                   />
                 </div>
-                
+
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
                   src="/HomePage/phase/phase3_image.png"
@@ -1276,9 +1376,9 @@ export default function Home() {
                     onClick={() => setActiveImage('asterisk')}
                   />
                 </div>
-                
+
                 <div className="flex justify-center items-center col-span-[300px]">
-                  <Image    
+                  <Image
                     src="/HomePage/phase/phase4_image.png"
                     alt="Triangle"
                     width={290}
@@ -1287,7 +1387,7 @@ export default function Home() {
                     onClick={() => setActiveImage('triangle')}
                   />
                 </div>
-                
+
               </div>
 
               {/* Text Section */}
@@ -1295,7 +1395,7 @@ export default function Home() {
 
                 <div className="flex justify-between items-center ">
                   <div className="flex items-center justify-center gap-2">
-                    
+
                     <Image
                         src="/HomePage/phase/phase1_image.png"
                           width={70}
@@ -1306,15 +1406,15 @@ export default function Home() {
                         />
                     <h2 className="text-[40px] font-bold text-[#e0ef29] font-silkscreen leading-[1.16] -tracking-[2px] ">{phases[activeImage].title}</h2>
                   </div>
-                  
+
                   <h2 className="text-[48px] font-bold text-white font-inclusive-sans -tracking-[2.4px] leading-[1.16]">{phases[activeImage].subtitle}</h2>
 
                 </div>
 
-               
+
                 <p className="text-[40px] my-[61px] font-inclusive-sans text-[#fff] leading-[1.19] ">{phases[activeImage].description}</p>
                 <p className="text-[20px] text-[#e0ef29] uppercase leading-[1.19] font-silkscreen">
-                Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path. 
+                Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path.
                 </p>
 
               </div>

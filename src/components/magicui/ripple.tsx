@@ -1,4 +1,9 @@
-import React, { ComponentPropsWithoutRef, CSSProperties } from "react";
+import React, {
+  ComponentPropsWithoutRef,
+  CSSProperties,
+  useEffect,
+  useState,
+} from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -9,17 +14,36 @@ interface RippleProps extends ComponentPropsWithoutRef<"div"> {
 }
 
 export const Ripple = React.memo(function Ripple({
-  mainCircleSize = 210,
+  // mainCircleSize = 210,
   mainCircleOpacity = 0.24,
   numCircles = 8,
   className,
   ...props
 }: RippleProps) {
+  const [mainCircleSize, setMainCircleSize] = useState(210);
+
+  useEffect(() => {
+    const updateSize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setMainCircleSize(100);
+      } else if (width < 1024) {
+        setMainCircleSize(100);
+      } else {
+        setMainCircleSize(210);
+      }
+    };
+
+    updateSize(); // set initially
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   return (
     <div
       className={cn(
-        "pointer-events-none absolute min-h-[1700px] inset-0 select-none [mask-image:linear-gradient(to_bottom,white,transparent)]",
-        className,
+        "pointer-events-none absolute w-full overflow-hidden lg:min-h-lvh inset-0 select-none [mask-image:linear-gradient(to_bottom,white,transparent)]",
+        className
       )}
       {...props}
     >

@@ -5,16 +5,30 @@ import { useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const morphTime = 2.5;
-const cooldownTime = 2.0;
+const cooldownTime = 5.0;
 
-const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => void) => {
+const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => void, manualIndex?: number) => {
   const textIndexRef = useRef(0);
   const morphRef = useRef(0);
   const cooldownRef = useRef(0);
   const timeRef = useRef(new Date());
+  const lastManualIndexRef = useRef(manualIndex);
 
   const text1Ref = useRef<HTMLSpanElement>(null);
   const text2Ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (manualIndex !== undefined && manualIndex !== lastManualIndexRef.current) {
+      textIndexRef.current = (manualIndex - 1 + texts.length) % texts.length;
+      lastManualIndexRef.current = manualIndex;
+      
+      morphRef.current = 0;
+      cooldownRef.current = 0;
+      timeRef.current = new Date();
+    }
+  }, [manualIndex, texts]);
+
+
 
   const setStyles = useCallback(
     (fraction: number) => {
@@ -31,8 +45,8 @@ const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => vo
       )}px)`;
       current1.style.opacity = `${Math.pow(invertedFraction, 0.4) * 100}%`;
 
-      current1.textContent = texts[textIndexRef.current % texts.length];
-      current2.textContent = texts[(textIndexRef.current + 1) % texts.length];
+      current1.innerHTML = texts[textIndexRef.current % texts.length];
+      current2.innerHTML = texts[(textIndexRef.current + 1) % texts.length];
     },
     [texts],
   );
@@ -52,8 +66,8 @@ const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => vo
 
     if (fraction === 1) {
       textIndexRef.current++;
-      // setActiveIndex?.((textIndexRef.current + 1) % texts.length);
-
+      // Update active index when morphing completes
+      setActiveIndex?.((textIndexRef.current + 1) % texts.length);
     }
   }, [setStyles, texts, setActiveIndex]);
 
@@ -71,12 +85,8 @@ const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => vo
   useEffect(() => {
     let animationFrameId: number;
 
-    // Initially, current2 is visible (opacity 100%) and shows texts[(textIndexRef.current + 1) % texts.length]
-    // So the initially visible text index is (textIndexRef.current + 1) % texts.length
-    setInterval(() => {
+    // Set initial active index
     setActiveIndex?.((textIndexRef.current + 1) % texts.length);
-    }
-    , cooldownTime * 1000 + (morphTime*3) * 1000);
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
@@ -104,10 +114,11 @@ interface MorphingTextProps {
   className?: string;
   texts: string[];
   setActiveIndex?: (index: number) => void;
+  manualIndex?: number | null;
 }
 
-const Texts: React.FC<Pick<MorphingTextProps, "texts" | "setActiveIndex">> = ({ texts, setActiveIndex }) => {
-  const { text1Ref, text2Ref } = useMorphingText(texts, setActiveIndex);
+const Texts: React.FC<Pick<MorphingTextProps, "texts" | "setActiveIndex" | "manualIndex">> = ({ texts, setActiveIndex, manualIndex }) => {
+  const { text1Ref, text2Ref } = useMorphingText(texts, setActiveIndex, manualIndex ?? undefined);
   return (
     <>
       <span
@@ -147,14 +158,15 @@ export const MorphingText: React.FC<MorphingTextProps> = ({
   texts,
   className,
   setActiveIndex,
+  manualIndex
 }) => (
   <div
     className={cn(
-      "relative mx-auto w-full text-center leading-[21vh] text-[20vh] uppercase -tracking-[14px] font-inclusive-sans [filter:url(#threshold)_blur(0.6px)]",
+      "relative mx-auto w-full text-center text-black [filter:url(#threshold)_blur(0.6px)]",
       className,
     )}
   >
-    <Texts texts={texts} setActiveIndex={setActiveIndex} />
+    <Texts texts={texts} setActiveIndex={setActiveIndex} manualIndex={manualIndex} />
     <SvgFilters />
   </div>
 );
