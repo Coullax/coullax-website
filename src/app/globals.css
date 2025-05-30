@@ -204,3 +204,29 @@ textarea::placeholder {
   /* Optional: italic style */
   color: #000; /* Adjust placeholder color if needed */
 }
+
+
+.block-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.block-container .block-grid{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+
+.block-grid .block-column{
+  width: 5vw;
+}
+
+.block-column div{
+  width: 100%;
+  height: 5vw;
+}

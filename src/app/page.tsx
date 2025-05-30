@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { XIcon } from "lucide-react";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, Suspense } from "react";
 import ReviewCard from "@/components/review-card";
 import { AnimatePresence } from "motion/react";
 import Footer from "@/components/Footer";
@@ -16,9 +16,17 @@ import { MorphingText } from "@/components/magicui/morphing-text";
 import DecryptedText from "@/components/reactbits/DecryptedText";
 import ScrollReveal from "@/components/reactbits/ScrollReveal";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import { footer } from "framer-motion/client";
+// import { footer } from "framer-motion/client";
+// import { AudioToggle } from "@/components/AudioPlayer";
+import dynamic from 'next/dynamic';
 
-type PhaseKey = "star" | "circle" | "asterisk" | "triangle";
+// Dynamically import AudioToggle with no SSR
+const AudioToggle = dynamic(
+  () => import('@/components/AudioPlayer').then((mod) => mod.AudioToggle),
+  { ssr: false }
+);
+
+type PhaseKey = 'star' | 'circle' | 'asterisk' | 'triangle';
 
 export default function Home() {
   // const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -59,7 +67,7 @@ export default function Home() {
       subtitle: "Initial Phase",
       description:
         "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes next.",
-      footer: "Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path." 
+      footer: "Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path."
     },
     circle: {
       icon: "/HomePage/phase/phase2_image_yellow.svg",
@@ -478,6 +486,10 @@ export default function Home() {
                     {navigation.name}
                   </Link>
                 ))}
+                          <Suspense >
+                          <AudioToggle />
+                        </Suspense>
+
               </div>
             </div>
           </div>
@@ -633,7 +645,7 @@ export default function Home() {
             />
           </h1>
           <div className=" mt-[50px] flex items-center min-h-[114px]">
-            <TypingAnimation className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px]">
+            <TypingAnimation className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px] ">
               {`[Signal / Directive / 02A] \n
               The Entity has spoken.
               Its words drift through noise and time.
@@ -668,7 +680,7 @@ export default function Home() {
                   <div key={index}>
                     <DecryptedText
                       text={line}
-                      
+
                       speed={100}
                       maxIterations={20}
                       characters="ηψΔϻ†"
@@ -1606,13 +1618,18 @@ export default function Home() {
             LIGHT THE SIGNAL // CONTACT US
           </h1>
 
-          <p className="font-silkscreen text-left text-[15px] text-[#000] py-[66px]">
+          {/* <p className="font-silkscreen text-left text-[15px] text-[#000] py-[66px]">
             THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
             <br />
             YOU&apos;VE REACHED THE EDGE OF THE KNOWN.
             <br />
             WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
-          </p>
+          </p> */}
+          <TypingAnimation className="font-silkscreen text-left text-[15px] text-[#000] py-[66px] ">
+              {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
+              YOU'VE REACHED THE EDGE OF THE KNOWN.
+              WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
+            </TypingAnimation>
 
           <div className="flex flex-col justify-center items-center">
             <form className="space-y-6 w-full max-w-[1038px] ">

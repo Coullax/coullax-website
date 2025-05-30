@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import {
   Navbar,
   NavBody,
@@ -12,6 +12,13 @@ import {
   NavbarLogo,
   NavbarButton,
 } from "@/components/ui/resizable-navbar";
+import dynamic from 'next/dynamic';
+
+// Dynamically import AudioToggle with no SSR
+const AudioToggle = dynamic(
+  () => import('./AudioPlayer').then((mod) => mod.AudioToggle),
+  { ssr: false }
+);
 
 export default function HeaderNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,7 +37,9 @@ export default function HeaderNavBar() {
         <NavbarLogo />
         <NavItems items={navigationList} />
         <div className="flex items-center gap-4">
-          {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
+          <Suspense fallback={<div className="w-5 h-5" />}>
+            <AudioToggle />
+          </Suspense>
           <NavbarButton href="https://cal.com/coullax/30min" target="_blank" className=" shadow-none">
             Book a call
           </NavbarButton>
@@ -49,10 +58,15 @@ export default function HeaderNavBar() {
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo />
-          <MobileNavToggle
-            isOpen={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          />
+          <div className="flex items-center gap-2">
+            <Suspense fallback={<div className="w-5 h-5" />}>
+              <AudioToggle />
+            </Suspense>
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu

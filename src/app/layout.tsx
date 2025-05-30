@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Plus_Jakarta_Sans, Kode_Mono, Silkscreen, Inclusive_Sans } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
+import { AudioProvider } from "@/components/AudioPlayer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -91,11 +92,7 @@ export default function RootLayout({
       lang="en" 
       suppressHydrationWarning={true}
     >
-      <body
-            className={`flex flex-col min-h-screen ${plusJakartaSans.variable} ${kodeMono.variable} ${silkscreen.variable} ${inclusiveSans.variable}`} 
-
-        suppressHydrationWarning={true}
-      >
+      <head>
         {/* <Script src="http://localhost:3000/embed.js" strategy="lazyOnload" /> */}
 
         {/* <script 
@@ -108,10 +105,15 @@ export default function RootLayout({
   data-company="Goddiva"
   async>
 </script> */}
-
-
-        <main className="flex-grow overflow-x-hidden">{children}</main>
-        <CookieConsent />
+      </head>
+      <body
+        className={`flex-grow overflow-x-hidden ${plusJakartaSans.variable} ${kodeMono.variable} ${silkscreen.variable} ${inclusiveSans.variable}`} 
+        suppressHydrationWarning={true}
+      >
+        <AudioProvider>
+          {children}
+          <CookieConsent />
+        </AudioProvider>
       </body>
     </html>
   );
