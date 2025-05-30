@@ -144,7 +144,7 @@ export default function CareersPage() {
         }))
       );
 
-    const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+    // const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
     const [activeJobs, setActiveJobs] = useState<JobPosting[]>(
       skillJobs.flatMap(skill => skill.jobs) // Initially show all jobs
     );
@@ -198,11 +198,11 @@ export default function CareersPage() {
     
     const clickedSkill = newSkills[clickedIndex];
     if (clickedSkill.isActive) {
-      setSelectedSkill(clickedSkill.name);
+      // setSelectedSkill(clickedSkill.name);
       const foundSkill = skillJobs.find(skill => skill.name === clickedSkill.name);
       setActiveJobs(foundSkill ? foundSkill.jobs : []);
     } else {
-      setSelectedSkill(null);
+      // setSelectedSkill(null);
       setActiveJobs(skillJobs.flatMap(skill => skill.jobs)); // Show all jobs when no skill selected
     }
   };

@@ -43,7 +43,7 @@ export default function TermsandConditionsPage() {
                         Terms and Conditions
                     </h1>
                         <div className='font-[400] text-[14px] mt-[50px] items-center text-center'>
-                            The following Terms of Services (The “Agreement”) apply to your uses of COULLAX, including any functions, content,<br /> and/or services offered on coullax.com (The “Website”).<br /><br />
+                            The following Terms of Services (The &quot;Agreement&quot;) apply to your uses of COULLAX, including any functions, content,<br /> and/or services offered on coullax.com (The “Website”).<br /><br />
 
                             Please read the Agreement carefully prior to starting use of the Website, because by using the website you <br />
                             expressly accept and agree to be bound and to abide by these Terms of Services.<br /><br />
@@ -96,7 +96,7 @@ export default function TermsandConditionsPage() {
 
                     <span className='font-[600] text-[20px]'>Disclaimer of Warranties</span>
                     <div className='items-center'>
-                        Our website is provided on an "as is" and "as available" basis. We make no representations or warranties of any <br />
+                        Our website is provided on an &quot;as is&quot; and &quot;as available&quot; basis. We make no representations or warranties of any <br />
                         kind, express or implied, as to the operation of our website or the information, content, materials, or products <br />
                         included on our website. You expressly agree that your use of our website is at your sole risk.<br /><br /><br />
                     </div>
@@ -112,7 +112,7 @@ export default function TermsandConditionsPage() {
                     <div className='items-center'>
                         You agree to indemnify, defend, and hold harmless our company, its officers, directors, employees, agents, <br />
                         licensors, and suppliers from and against all claims, liabilities, expenses, damages, and losses, including <br />
-                        reasonable attorneys' fees, arising out of or in connection with your use of our website or your violation of these <br />terms of service.<br /><br /><br />
+                        reasonable attorneys&lsquo; fees, arising out of or in connection with your use of our website or your violation of these <br />terms of service.<br /><br /><br />
                     </div>
                     
                     <span className='font-[600] text-[20px]'>Governing Law and Jurisdiction</span>
