@@ -54,7 +54,7 @@ export default function Home() {
 
   const phases = {
     star: {
-      icon: "/HomePage/hero/phase1_image_yellow.svg",
+      icon: "/HomePage/phase/phase1_image_yellow.svg",
       title: "FIRST LIGHT",
       subtitle: "Initial Phase",
       description:
@@ -62,7 +62,7 @@ export default function Home() {
       footer: "Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path." 
     },
     circle: {
-      icon: "/HomePage/hero/phase2_image_yellow.svg",
+      icon: "/HomePage/phase/phase2_image_yellow.svg",
       title: "THE GLYPH",
       subtitle: "Research phase",
       description:
@@ -70,7 +70,7 @@ export default function Home() {
       footer: "From the noise, meaning crystallizes. Symbols form. not drawn, but discovered. Each line, a thread of logic. Each curve, a fragment of intent. The Glyph is carved: not to be admired, but to be followed."
     },
     asterisk: {
-      icon: "/HomePage/hero/phase3_image_yellow.svg",
+      icon: "/HomePage/phase/phase3_image_yellow.svg",
       title: "THE FRAME",
       subtitle: "Building phase",
       description:
@@ -78,7 +78,7 @@ export default function Home() {
       footer: "The Forge awakens. Particles assemble. Code and concept bind. Through fire and function, a Construct emerges — not static, but living. Not built to exist, but to move."
     },
     triangle: {
-      icon: "/HomePage/hero/phase4_image_yellow.svg",
+      icon: "/HomePage/phase/phase4_image_yellow.svg",
       title: "THE ASCENSION",
       subtitle: "Launch & post launch Phase",
       description:
@@ -1422,7 +1422,7 @@ export default function Home() {
               <div className="grid grid-cols-4 gap-0 pt-[50px] pb-[65px] px-[20px]">
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                    src={activeImage ===  'star' ?  "/HomePage/phase/phase1_image_red.png" : "/HomePage/phase/phase1_image_white.png"}
+                    src={activeImage ===  'star' ?  "/HomePage/phase/phase1_image_red.svg" : "/HomePage/phase/phase1_image_white.svg"}
                     width={290}
                     height={290}
                     alt="Star"
@@ -1433,7 +1433,7 @@ export default function Home() {
 
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                    src={activeImage ===  'circle' ?  "/HomePage/phase/phase2_image_red.png" : "/HomePage/phase/phase2_image_white.png"}
+                    src={activeImage ===  'circle' ?  "/HomePage/phase/phase2_image_red.svg" : "/HomePage/phase/phase2_image_white.svg"}
                     width={290}
                     height={290}
                     alt="Circle"
@@ -1444,7 +1444,7 @@ export default function Home() {
 
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                    src={activeImage ===  'asterisk' ?  "/HomePage/phase/phase3_image_red.png" : "/HomePage/phase/phase3_image_white.png"}
+                    src={activeImage ===  'asterisk' ?  "/HomePage/phase/phase3_image_red.svg" : "/HomePage/phase/phase3_image_white.svg"}
                     width={290}
                     height={290}
                     alt="Asterisk"
@@ -1455,7 +1455,7 @@ export default function Home() {
 
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                    src={activeImage ===  'triangle' ?  "/HomePage/phase/phase4_image_red.png" : "/HomePage/phase/phase4_image_white.png"}
+                    src={activeImage ===  'triangle' ?  "/HomePage/phase/phase4_image_red.svg" : "/HomePage/phase/phase4_image_white.svg"}
                     alt="Triangle"
                     width={290}
                     height={290}
@@ -1491,10 +1491,7 @@ export default function Home() {
                   {phases[activeImage].description}
                 </p>
                 <p className="text-[20px] text-[#e0ef29] uppercase leading-[1.19] font-silkscreen">
-                  Before the construct. Before the signal. There was the First
-                  Light. A rupture in the silence. A flicker through the void.
-                  The awakening spark that summoned the Seeker, encoded the
-                  vision, and aligned the path.
+                 {phases[activeImage].footer}
                 </p>
               </div>
             </div>
