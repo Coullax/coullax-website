@@ -26,14 +26,14 @@ const DialogflowMessenger = () => {
         href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
       />
       {/* Dialogflow Messenger web component */}
-      <df-messenger
+      {/* <df-messenger
         project-id="flawless-augury-448410-b4"
         agent-id="f9cf408b-0ec9-421f-b8ad-d3243b71c893"
         language-code="en"
         max-query-length="-1"
       >
         <df-messenger-chat-bubble chat-title="coullaxChat"></df-messenger-chat-bubble>
-      </df-messenger>
+      </df-messenger> */}
       {/* Inline styles for customization */}
       <style jsx>{`
         df-messenger {
