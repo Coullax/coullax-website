@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import {  XIcon } from "lucide-react";
+import { XIcon } from "lucide-react";
 
 import React, { useRef, useState, useEffect } from "react";
 import ReviewCard from "@/components/review-card";
@@ -15,9 +15,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { MorphingText } from "@/components/magicui/morphing-text";
 import DecryptedText from "@/components/reactbits/DecryptedText";
 import ScrollReveal from "@/components/reactbits/ScrollReveal";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
+import { footer } from "framer-motion/client";
 
-
-type PhaseKey = 'star' | 'circle' | 'asterisk' | 'triangle';
+type PhaseKey = "star" | "circle" | "asterisk" | "triangle";
 
 export default function Home() {
   // const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -27,9 +28,10 @@ export default function Home() {
   const container1 = useRef(null);
   // const container2 = useRef(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [activeImage, setActiveImage] = useState<PhaseKey>('star');
-  const container2 = useRef(null);  
+  const [activeImage, setActiveImage] = useState<PhaseKey>("star");
+  const container2 = useRef(null);
   const [manualIndex, setManualIndex] = useState<number | null>(null);
+  const [isDecoded, setIsDecoded] = useState<boolean>(false);
 
   // Handle transition from manual back to automatic morphing
   useEffect(() => {
@@ -52,24 +54,36 @@ export default function Home() {
 
   const phases = {
     star: {
-      title: 'FIRST LIGHT',
-      subtitle: 'Initial Phase',
-      description: 'This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey, where your signal is received, and the Forge prepares to shape what comes next.',
+      icon: "/HomePage/hero/phase1_image_yellow.svg",
+      title: "FIRST LIGHT",
+      subtitle: "Initial Phase",
+      description:
+        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes next.",
+      footer: "Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path." 
     },
     circle: {
-      title: 'THE CONSTRUCT',
-      subtitle: 'Second Phase',
-      description: 'The foundation takes shape. A framework of ideas and systems is built, aligning vision with structure. This phase establishes the core, ensuring stability as we prepare for the next signal.',
+      icon: "/HomePage/hero/phase2_image_yellow.svg",
+      title: "THE GLYPH",
+      subtitle: "Research phase",
+      description:
+        "With your vision as our compass, we map possibilities, identify needs, and define the system's architecture. Through research, analysis, and strategic planning, we carve the blueprint that guides every layer of what comes next.",
+      footer: "From the noise, meaning crystallizes. Symbols form. not drawn, but discovered. Each line, a thread of logic. Each curve, a fragment of intent. The Glyph is carved: not to be admired, but to be followed."
     },
     asterisk: {
-      title: 'AWAKENING SPARK',
-      subtitle: 'Third Phase',
-      description: 'Energy flows through the system. The spark ignites, bringing the construct to life. This phase is about activation, where the seeker and the vision begin to align, setting the stage for growth.',
+      icon: "/HomePage/hero/phase3_image_yellow.svg",
+      title: "THE FRAME",
+      subtitle: "Building phase",
+      description:
+        "We now bring the vision to life . shaping interfaces, engineering logic, designing systems that respond and evolve. Whether it's software, brand identity, or workflow design, this is where your solution takes true form.",
+      footer: "The Forge awakens. Particles assemble. Code and concept bind. Through fire and function, a Construct emerges — not static, but living. Not built to exist, but to move."
     },
     triangle: {
-      title: 'INITIAL PHASE',
-      subtitle: 'Fourth Phase',
-      description: 'The journey aligns with the path. The initial phase is a rupture in the silence, a flicker through the void. Here, the encoded vision takes form, ready to evolve into something greater.',
+      icon: "/HomePage/hero/phase4_image_yellow.svg",
+      title: "THE ASCENSION",
+      subtitle: "Launch & post launch Phase",
+      description:
+        "We deploy the product to the world. but that's not where it ends. We continue listening, refining, and evolving. Feedback loops guide growth. We ensure it remains aligned, functional, and future ready.",
+      footer: "The Construct breathes. Signal out. Echo in. What was once blueprint becomes broadcast. And yet, this is not a conclusion — it is a rhythm. A continuum. The Pulse persists."
     },
   };
 
@@ -354,6 +368,15 @@ export default function Home() {
     "[ςΘηʂΞηʂυʂ]’ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.",
   ];
 
+  const missionArray = [
+    "Our mission is to enhance efficiency, security, and",
+    "transparency across industries.",
+    "Making the world a smarter, more connected, and a safer place.",
+    "To achieve this, we believe in the power of",
+    "Artificial intelligence's efficiency and",
+    "Blockchain technology's security and transparency.",
+  ];
+
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
   const secondRow = reviewList2.slice(reviewList2.length / 2);
 
@@ -473,7 +496,8 @@ export default function Home() {
                 clumpFactor={0.7}
                 speed={0.3}
               />
-            </div>            <div className=" py-[4vh] w-full flex flex-row justify-center items-center gap-[5px]">
+            </div>{" "}
+            <div className=" py-[4vh] w-full flex flex-row justify-center items-center gap-[5px]">
               <div
                 onClick={() => {
                   setManualIndex(0);
@@ -608,34 +632,68 @@ export default function Home() {
               encryptedClassName="encrypted"
             />
           </h1>
-          <div className=" mt-[50px]">
-            <span className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px]">
-              [Signal / Directive / 02A]
-              <br />
-              <br />
+          <div className=" mt-[50px] flex items-center min-h-[114px]">
+            <TypingAnimation className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px]">
+              {`[Signal / Directive / 02A] \n
               The Entity has spoken.
-              <br /> Its words drift through noise and time.
-              <br /> To hear is not enough.
-              <br /> Decode. Understand. Align.
-            </span>
+              Its words drift through noise and time.
+              To hear is not enough.
+              Decode. Understand. Align.`}
+            </TypingAnimation>
           </div>
-          <div className=" my-[80px]">
-            {greakArray.map((text, index) => (
-              <div key={index}>
-              <ScrollReveal
-                baseOpacity={0}
-                enableBlur={true}
-                baseRotation={4}
-                blurStrength={20}
-                textClassName=" !text-[#FFFFFF] !text-[52px] !font-inclusive-sans !leading-[68px] !uppercase !font-normal"
-              >
-                {text}
-              </ScrollReveal>
-              {index === 2 && (<><br /><br /></>)}
-              </div>
-            ))}
+          <div className=" my-[80px] border-2 border-white min-h-[545px]">
+            {!isDecoded ? (
+              greakArray.map((text, index) => (
+                <div key={index}>
+                  <ScrollReveal
+                    baseOpacity={0}
+                    enableBlur={true}
+                    baseRotation={4}
+                    blurStrength={20}
+                    textClassName=" !text-[#FFFFFF] !text-[52px] !font-inclusive-sans !leading-[68px] !uppercase !font-normal"
+                  >
+                    {text}
+                  </ScrollReveal>
+                  {index === 2 && (
+                    <>
+                      <br />
+                      <br />
+                    </>
+                  )}
+                </div>
+              ))
+            ) : (
+              <span className="text-[#FFFFFF] text-[50px] font-inclusive-sans leading-[68px] uppercase font-normal">
+                {missionArray.map((line, index) => (
+                  <div key={index}>
+                    <DecryptedText
+                      text={line}
+                      
+                      speed={100}
+                      maxIterations={20}
+                      characters="ηψΔϻ†"
+                      animateOn="view"
+                      className="revealed"
+                      parentClassName="all-letters"
+                      encryptedClassName="encrypted"
+                    />
+                    {index === 2 && (
+                      <>
+                        <br />
+                        <br />
+                      </>
+                    )}
+                  </div>
+                ))}
+              </span>
+            )}
           </div>
-          <button className="bg-[#E0EF29] h-[94px] min-w-[422px] text-[#000000] text-[20px] leading-[20px] -tracking-[1px] font-silkscreen flex items-center justify-center gap-2">
+          <button
+            onClick={() => setIsDecoded(true)}
+            className={` h-[94px] bg-[#e0ef29] cursor-pointer text-black min-w-[422px] text-[20px] leading-[20px] -tracking-[1px] font-silkscreen flex items-center justify-center transition-none gap-2 ${
+              !isDecoded ? "animate-blink" : ""
+            }`}
+          >
             DECODE THE MESSAGE
             <svg
               width="18"
@@ -647,6 +705,25 @@ export default function Home() {
               <polygon points="16,26 6,12 26,12" fill="#000" />
             </svg>
           </button>
+          <style jsx>{`
+            @keyframes blink {
+              0%,
+              100% {
+                background: #e0ef29;
+                color: #000000;
+                border: 2px solid #000000;
+              }
+              50% {
+                background: #000000;
+                color: #e0ef29;
+                border: 2px solid #e0ef29;
+              }
+            }
+            .animate-blink {
+              animation: blink 1.5s infinite;
+              transition: none !important;
+            }
+          `}</style>
         </div>
       </motion.div>
       <div className="w-[90%] max-w-[1550px] mx-auto ">
@@ -1316,7 +1393,6 @@ export default function Home() {
 
       <div className="w-full relative  overflow-hidden bg-[#000] py-[300px]">
         <div className=" w-[90%] max-w-[1550px] mx-auto">
-
           <div className="w-full flex justify-between items-center ">
             <span className="font-silkscreen text-[64px] relative uppercase text-[#e0ef29]">
               The ritual
@@ -1329,16 +1405,16 @@ export default function Home() {
                 height={99}
               />
             </div>
-
           </div>
           <p className="font-inclusive-sans text-[52px] text-[#fff] leading-[1.3] text-left my-[50px] uppercase">
-            The RITUAL is our process of transformation where abstract ideas, complex technologies, and raw ambition are fused into powerful digital systems.
+            The RITUAL is our process of transformation where abstract ideas,
+            complex technologies, and raw ambition are fused into powerful
+            digital systems.
           </p>
 
           <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3] mt-[5px]">
             [Firstlight / Schema / Construct / Lift.]
           </p>
-
 
           <div className="mt-[100px] border border-[#e0ef29]">
             <div className="w-full">
@@ -1346,85 +1422,85 @@ export default function Home() {
               <div className="grid grid-cols-4 gap-0 pt-[50px] pb-[65px] px-[20px]">
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                  src="/HomePage/phase/phase1_image.png"
+                    src={activeImage ===  'star' ?  "/HomePage/phase/phase1_image_red.png" : "/HomePage/phase/phase1_image_white.png"}
                     width={290}
                     height={290}
                     alt="Star"
                     className=" cursor-pointer"
-                    onClick={() => setActiveImage('star')}
+                    onClick={() => setActiveImage("star")}
                   />
                 </div>
 
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                  src="/HomePage/phase/phase2_image.png"
+                    src={activeImage ===  'circle' ?  "/HomePage/phase/phase2_image_red.png" : "/HomePage/phase/phase2_image_white.png"}
                     width={290}
                     height={290}
                     alt="Circle"
                     className=" cursor-pointer"
-                    onClick={() => setActiveImage('circle')}
+                    onClick={() => setActiveImage("circle")}
                   />
                 </div>
 
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                  src="/HomePage/phase/phase3_image.png"
-                      width={290}
+                    src={activeImage ===  'asterisk' ?  "/HomePage/phase/phase3_image_red.png" : "/HomePage/phase/phase3_image_white.png"}
+                    width={290}
                     height={290}
                     alt="Asterisk"
                     className=" cursor-pointer"
-                    onClick={() => setActiveImage('asterisk')}
+                    onClick={() => setActiveImage("asterisk")}
                   />
                 </div>
 
                 <div className="flex justify-center items-center col-span-[300px]">
                   <Image
-                    src="/HomePage/phase/phase4_image.png"
+                    src={activeImage ===  'triangle' ?  "/HomePage/phase/phase4_image_red.png" : "/HomePage/phase/phase4_image_white.png"}
                     alt="Triangle"
                     width={290}
                     height={290}
                     className=" cursor-pointer"
-                    onClick={() => setActiveImage('triangle')}
+                    onClick={() => setActiveImage("triangle")}
                   />
                 </div>
-
               </div>
 
               {/* Text Section */}
               <div className="w-full border-t border-[#e0ef29] py-[28px] px-[29px]">
-
                 <div className="flex justify-between items-center ">
                   <div className="flex items-center justify-center gap-2">
-
                     <Image
-                        src="/HomePage/phase/phase1_image.png"
-                          width={70}
-                          height={70}
-                          alt="Star"
-                          className=" cursor-pointer"
-                          onClick={() => setActiveImage('star')}
-                        />
-                    <h2 className="text-[40px] font-bold text-[#e0ef29] font-silkscreen leading-[1.16] -tracking-[2px] ">{phases[activeImage].title}</h2>
+                      src={phases[activeImage].icon}
+                      width={70}
+                      height={70}
+                      alt="Star"
+                      className=" cursor-pointer"
+                      onClick={() => setActiveImage("star")}
+                    />
+                    <h2 className="text-[40px] font-bold text-[#e0ef29] font-silkscreen leading-[1.16] -tracking-[2px] ">
+                      {phases[activeImage].title}
+                    </h2>
                   </div>
 
-                  <h2 className="text-[48px] font-bold text-white font-inclusive-sans -tracking-[2.4px] leading-[1.16]">{phases[activeImage].subtitle}</h2>
-
+                  <h2 className="text-[48px] font-bold text-white font-inclusive-sans -tracking-[2.4px] leading-[1.16]">
+                    {phases[activeImage].subtitle}
+                  </h2>
                 </div>
 
-
-                <p className="text-[40px] my-[61px] font-inclusive-sans text-[#fff] leading-[1.19] ">{phases[activeImage].description}</p>
-                <p className="text-[20px] text-[#e0ef29] uppercase leading-[1.19] font-silkscreen">
-                Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path.
+                <p className="text-[40px] my-[61px] font-inclusive-sans text-[#fff] leading-[1.19] ">
+                  {phases[activeImage].description}
                 </p>
-
+                <p className="text-[20px] text-[#e0ef29] uppercase leading-[1.19] font-silkscreen">
+                  Before the construct. Before the signal. There was the First
+                  Light. A rupture in the silence. A flicker through the void.
+                  The awakening spark that summoned the Seeker, encoded the
+                  vision, and aligned the path.
+                </p>
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
-
 
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1550px] mx-auto my-[70px]">
@@ -1568,7 +1644,7 @@ export default function Home() {
               {/* Submit Button */}
               <div className=" flex flex-col justify-center items-center">
                 <p className="font-silkscreen text-left text-[15px] text-[#0505cb] py-[40px]">
-                   TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
+                  TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
                   SIGNAL...
                 </p>
 
