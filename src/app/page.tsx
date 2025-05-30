@@ -719,7 +719,7 @@ export default function Home() {
           <div className=" flex flex-col justify-center items-center ">
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] "
+              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#0505cb] hover:border hover:border-[#0505cb] transition-all duration-300"
             >
               BOOK A CALL
             </button>
