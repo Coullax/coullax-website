@@ -740,9 +740,21 @@ export default function Home() {
       </motion.div>
       <div className="w-[90%] max-w-[1550px] mx-auto ">
         <div className=" flex justify-between items-start mt-[150px]">
-          <span className="font-silkscreen text-[64px] relative">
+        <h1 className=" text-[#000] font-silkscreen text-[64px] relative">
+            <DecryptedText
+              text="The forge"
+              speed={100}
+              maxIterations={20}
+              characters="ABCD1234!?"
+              animateOn="hover"
+              className="revealed"
+              parentClassName="all-letters"
+              encryptedClassName="encrypted"
+            />
+          </h1>
+          {/* <span className="font-silkscreen text-[64px] relative">
             The forge
-          </span>
+          </span> */}
           <span className="font-silkscreen text-[16px]  text-[#0505cb]">
             Node -Sector 01 / Uplink: True
           </span>
@@ -883,9 +895,21 @@ export default function Home() {
       <div className="w-full relative  overflow-hidden bg-[#e0ef29]  py-[83px]">
         <div className="w-[90%] max-w-[1550px] mx-auto ">
           <div className="w-full flex justify-between items-start">
-            <span className="font-silkscreen text-[64px] relative">
+            {/* <span className="font-silkscreen text-[64px] relative">
               THE SUMMON
-            </span>
+            </span> */}
+            <h1 className=" text-[#000] font-silkscreen text-[64px] relative">
+            <DecryptedText
+              text="THE SUMMON"
+              speed={100}
+              maxIterations={20}
+              characters="ABCD1234!?"
+              animateOn="hover"
+              className="revealed"
+              parentClassName="all-letters"
+              encryptedClassName="encrypted"
+            />
+          </h1>
             <span className="font-silkscreen text-[15px] ">
               We / Listen / Align / Construct.
             </span>
@@ -908,7 +932,7 @@ export default function Home() {
           <div className=" flex flex-col justify-center items-center ">
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#0505cb] hover:border hover:border-[#0505cb] transition-all duration-300"
+              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#0505cb] hover:border hover:border-[#0505cb] transition-all duration-300 hover:scale-105"
             >
               BOOK A CALL
             </button>
@@ -1406,9 +1430,21 @@ export default function Home() {
       <div className="w-full relative  overflow-hidden bg-[#000] py-[300px]">
         <div className=" w-[90%] max-w-[1550px] mx-auto">
           <div className="w-full flex justify-between items-center ">
-            <span className="font-silkscreen text-[64px] relative uppercase text-[#e0ef29]">
+          <h1 className=" font-silkscreen text-[64px] relative uppercase text-[#e0ef29]">
+            <DecryptedText
+              text="The ritual"
+              speed={100}
+              maxIterations={20}
+              characters="ABCD1234!?"
+              animateOn="hover"
+              className="revealed"
+              parentClassName="all-letters"
+              encryptedClassName="encrypted"
+            />
+          </h1>
+            {/* <span className="font-silkscreen text-[64px] relative uppercase text-[#e0ef29]">
               The ritual
-            </span>
+            </span> */}
             <div>
               <Image
                 src="/HomePage/ritual_icons.png"
@@ -1566,7 +1602,7 @@ export default function Home() {
           <div className=" flex flex-col justify-start items-start">
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300"
+              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105"
             >
               VISIT CASE STUDIES
             </button>
@@ -1664,7 +1700,7 @@ export default function Home() {
 
                 <button
                   type="button"
-                  className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#000] hover:border hover:border-[#000] transition-all duration-300"
+                  className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#000] hover:border hover:border-[#000] transition-all duration-300 hover:scale-105"
                 >
                   CONTACT US
                 </button>
