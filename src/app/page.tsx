@@ -40,6 +40,7 @@ export default function Home() {
   const container2 = useRef(null);
   const [manualIndex, setManualIndex] = useState<number | null>(null);
   const [isDecoded, setIsDecoded] = useState<boolean>(false);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   // Handle transition from manual back to automatic morphing
   useEffect(() => {
@@ -629,11 +630,12 @@ export default function Home() {
       <motion.div
         style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
         ref={container2}
-        className="relative w-full bg-[#000000] py-[300px]"
+        className="relative w-full bg-[#000000] py-[200px]"
       >
         <div className=" py-[50px] w-[90%] max-w-[1550px] mx-auto">
-          <h1 className=" text-[#E0EF29] text-[64px] font-silkscreen leading-[74px] -tracking-[3px]">
-            <DecryptedText
+          <h1 className=" text-[#E0EF29] text-[153px] font-silkscreen leading-[1.16] -tracking-[7.63px] text-center">
+          The Entity Listens...
+            {/* <DecryptedText
               text="The Entity Listens..."
               speed={100}
               maxIterations={20}
@@ -642,18 +644,16 @@ export default function Home() {
               className="revealed"
               parentClassName="all-letters"
               encryptedClassName="encrypted"
-            />
+            /> */}
           </h1>
-          <div className=" mt-[50px] flex items-center min-h-[114px]">
-            <TypingAnimation className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px] ">
+          <div className=" mt-[50px] flex items-center min-h-[114px] justify-center">
+            <TypingAnimation className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px] text-center">
               {`[Signal / Directive / 02A] \n
-              The Entity has spoken.
-              Its words drift through noise and time.
-              To hear is not enough.
-              Decode. Understand. Align.`}
+              The Entity has spoken.Its words drift through noise and time.
+              To hear is not enough.Decode. Understand. Align.`}
             </TypingAnimation>
           </div>
-          <div className=" my-[80px] border-2 border-white min-h-[545px]">
+          <div className=" my-[80px] min-h-[545px] text-center">
             {!isDecoded ? (
               greakArray.map((text, index) => (
                 <div key={index}>
@@ -700,6 +700,7 @@ export default function Home() {
               </span>
             )}
           </div>
+          <div className="flex justify-center">
           <button
             onClick={() => setIsDecoded(true)}
             className={` h-[94px] bg-[#e0ef29] cursor-pointer text-black min-w-[422px] text-[20px] leading-[20px] -tracking-[1px] font-silkscreen flex items-center justify-center transition-none gap-2 ${
@@ -717,6 +718,8 @@ export default function Home() {
               <polygon points="16,26 6,12 26,12" fill="#000" />
             </svg>
           </button>
+          </div>
+          
           <style jsx>{`
             @keyframes blink {
               0%,
@@ -739,9 +742,13 @@ export default function Home() {
         </div>
       </motion.div>
       <div className="w-[90%] max-w-[1550px] mx-auto ">
-        <div className=" flex justify-between items-start mt-[150px]">
-        <h1 className=" text-[#000] font-silkscreen text-[64px] relative">
-            <DecryptedText
+      <p className="font-silkscreen text-[16px]  text-[#0505cb] text-right mt-[150px]">
+            Node -Sector 01 / Uplink: True
+          </p>
+        <div className=" flex flex-col items-center ">
+        <h1 className=" text-[#0505cb] font-silkscreen text-[275px] relative leading-[1.16] -tracking-[13.75px] text-center">
+        The forge
+            {/* <DecryptedText
               text="The forge"
               speed={100}
               maxIterations={20}
@@ -750,17 +757,15 @@ export default function Home() {
               className="revealed"
               parentClassName="all-letters"
               encryptedClassName="encrypted"
-            />
+            /> */}
           </h1>
           {/* <span className="font-silkscreen text-[64px] relative">
             The forge
           </span> */}
-          <span className="font-silkscreen text-[16px]  text-[#0505cb]">
-            Node -Sector 01 / Uplink: True
-          </span>
+          
         </div>
-        <div className="font-inclusive-sans my-[55px] md:text-[52px] text-[22px] uppercase">
-          This is where vision meets velocity. Where raw ideas are melted down,
+        <div className="font-inclusive-sans my-[55px] md:text-[48px] text-[48px] uppercase">
+          This is where vision meets velocity.<br/> Where raw ideas are melted down,
           reshaped, and forged into real, working systems. The Forge is
           Coullax&apos;s creative engine. a space of experimentation,
           engineering, and relentless iteration.
@@ -771,80 +776,149 @@ export default function Home() {
         </span>
 
         <div className="grid grid-cols-6 sm:grid-cols-2 lg:grid-cols-6 mt-[120px] mb-[50px] gap-[50px] ">
-          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">
-              COGNITION
-            </span>
-            <div className=" flex flex-row justify-between mt-[193px]">
-              <span className="font-inclusive-sans text-[35px]">
-                Artificial <br></br>Intelligence
-              </span>
+          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+               onMouseEnter={() => setHoveredCard('cognition')}
+               onMouseLeave={() => setHoveredCard(null)}>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
-                src="/HomePage/ForgeCards/card1-1.png"
-                alt="Card illustration"
-                width={168}
-                height={99}
+                src="/HomePage/service_cover/ai_cover.png"
+                alt="AI Cover"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
-          </div>
-          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">
-              CONSENSUS
-            </span>
-            <div className=" flex flex-row justify-between mt-[193px]">
-              <span className="font-inclusive-sans text-[35px]">
-                Blockchain<br></br>Intelligence
+            <div className="relative z-10 h-full">
+              <span className="font-silkscreen text-[40px] font-bold group-hover:text-white transition-colors duration-300">
+                COGNITION
               </span>
-              <Image
-                src="/HomePage/ForgeCards/card1-2.png"
-                alt="Card illustration"
-                width={168}
-                height={99}
-              />
+              <div className="flex flex-row justify-between mt-[193px]">
+                <span className="font-inclusive-sans text-[35px] group-hover:text-white transition-colors duration-300">
+                  Artificial <br></br>Intelligence
+                </span>
+                <Image
+                  src={`/HomePage/ForgeCards/${hoveredCard === 'cognition' ? 'card1-1-hover.png' : 'card1-1.png'}`}
+                  alt="Card illustration"
+                  width={168}
+                  height={99}
+                  className="transition-all duration-300"
+                />
+              </div>
             </div>
           </div>
-          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">
-              SYNTHESIS
-            </span>
-            <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-inclusive-sans text-[35px]">
-                Research & <br></br>Strategy
-              </span>
+          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+               onMouseEnter={() => setHoveredCard('consensus')}
+               onMouseLeave={() => setHoveredCard(null)}>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
-                src="/HomePage/ForgeCards/card1-3.png"
-                alt="Card illustration"
-                width={168}
-                height={99}
+                src="/HomePage/service_cover/blockchain_cover.png"
+                alt="Blockchain Cover"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
-          </div>
-          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">WEAVE</span>
-            <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-inclusive-sans text-[35px]">
-                Web & <br></br>Software
+            <div className="relative z-10 h-full">
+              <span className="font-silkscreen text-[40px] font-bold group-hover:text-white transition-colors duration-300">
+                CONSENSUS
               </span>
-              <Image
-                src="/HomePage/ForgeCards/card1-4.png"
-                alt="Card illustration"
-                width={168}
-                height={99}
-              />
+              <div className="flex flex-row justify-between mt-[193px]">
+                <span className="font-inclusive-sans text-[35px] group-hover:text-white transition-colors duration-300">
+                  Blockchain<br></br>Intelligence
+                </span>
+                <Image
+                  src={`/HomePage/ForgeCards/${hoveredCard === 'consensus' ? 'card1-2-hover.png' : 'card1-2.png'}`}
+                  alt="Card illustration"
+                  width={168}
+                  height={99}
+                  className="transition-all duration-300"
+                />
+              </div>
             </div>
           </div>
-          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black">
-            <span className="font-silkscreen text-[40px] font-bold">FORM</span>
-            <div className=" flex flex-row justify-between mt-[165px]">
-              <span className="font-inclusive-sans text-[35px]">
-                Design & <br></br>Branding
-              </span>
+          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+               onMouseEnter={() => setHoveredCard('synthesis')}
+               onMouseLeave={() => setHoveredCard(null)}>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
-                src="/HomePage/ForgeCards/card1-5.png"
-                alt="Card illustration"
-                width={168}
-                height={99}
+                src="/HomePage/service_cover/research_cover.png"
+                alt="Research Cover"
+                layout="fill"
+                objectFit="cover"
               />
+            </div>
+            <div className="relative z-10 h-full">
+              <span className="font-silkscreen text-[40px] font-bold group-hover:text-white transition-colors duration-300">
+                SYNTHESIS
+              </span>
+              <div className="flex flex-row justify-between mt-[165px]">
+                <span className="font-inclusive-sans text-[35px] group-hover:text-white transition-colors duration-300">
+                  Research & <br></br>Strategy
+                </span>
+                <Image
+                  src={`/HomePage/ForgeCards/${hoveredCard === 'synthesis' ? 'card1-3-hover.png' : 'card1-3.png'}`}
+                  alt="Card illustration"
+                  width={168}
+                  height={99}
+                  className="transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+               onMouseEnter={() => setHoveredCard('weave')}
+               onMouseLeave={() => setHoveredCard(null)}>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+              <Image
+                src="/HomePage/service_cover/web_cover.png"
+                alt="Web Cover"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className="relative z-10 h-full">
+              <span className="font-silkscreen text-[40px] font-bold group-hover:text-white transition-colors duration-300">
+                WEAVE
+              </span>
+              <div className="flex flex-row justify-between mt-[165px]">
+                <span className="font-inclusive-sans text-[35px] group-hover:text-white transition-colors duration-300">
+                  Web & <br></br>Software
+                </span>
+                <Image
+                  src={`/HomePage/ForgeCards/${hoveredCard === 'weave' ? 'card1-4-hover.png' : 'card1-4.png'}`}
+                  alt="Card illustration"
+                  width={168}
+                  height={99}
+                  className="transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+               onMouseEnter={() => setHoveredCard('form')}
+               onMouseLeave={() => setHoveredCard(null)}>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+              <Image
+                src="/HomePage/service_cover/design_cover.png"
+                alt="Design Cover"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className="relative z-10 h-full">
+              <span className="font-silkscreen text-[40px] font-bold group-hover:text-white transition-colors duration-300">
+                FORM
+              </span>
+              <div className="flex flex-row justify-between mt-[165px]">
+                <span className="font-inclusive-sans text-[35px] group-hover:text-white transition-colors duration-300">
+                  Design & <br></br>Branding
+                </span>
+                <Image
+                  src={`/HomePage/ForgeCards/${hoveredCard === 'form' ? 'card1-5-hover.png' : 'card1-5.png'}`}
+                  alt="Card illustration"
+                  width={168}
+                  height={99}
+                  className="transition-all duration-300"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -892,14 +966,18 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="w-full relative  overflow-hidden bg-[#e0ef29]  py-[83px]">
+      <div className="w-full relative  overflow-hidden bg-[#fff]  py-[50px]">
         <div className="w-[90%] max-w-[1550px] mx-auto ">
-          <div className="w-full flex justify-between items-start">
+        <p className="font-silkscreen text-[15px] text-right">
+              We / Listen / Align / Construct.
+            </p>
+          <div className="w-full flex flex-col items-center">
             {/* <span className="font-silkscreen text-[64px] relative">
               THE SUMMON
             </span> */}
-            <h1 className=" text-[#000] font-silkscreen text-[64px] relative">
-            <DecryptedText
+            <h1 className=" text-[#000] font-silkscreen text-[220px] relative leading-[1.16] -tracking-[11px] ">
+            THE SUMMON
+            {/* <DecryptedText
               text="THE SUMMON"
               speed={100}
               maxIterations={20}
@@ -908,19 +986,13 @@ export default function Home() {
               className="revealed"
               parentClassName="all-letters"
               encryptedClassName="encrypted"
-            />
+            /> */}
           </h1>
-            <span className="font-silkscreen text-[15px] ">
-              We / Listen / Align / Construct.
-            </span>
+            
           </div>
-          <div className="font-silkscreen uppercase mt-[85px] mb-[65px]">
-            Not all are called.Fewer still respond//connect.If your <br></br>
-            intent is true, channel it below.The Entity// We listens.<br></br>
-            The threshold responds.
-          </div>
+          
 
-          <div className="flex border border-black justify-center items-center mb-[85px]">
+          <div className="flex justify-center items-center mt-[150px]  ">
             <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans">
               Have a project in mind? Let&apos;s align.<br></br>
               Book a call to explore how we can bring your vision <br></br>to
@@ -928,11 +1000,15 @@ export default function Home() {
               purposeful design.
             </span>
           </div>
-
+          <div className="font-silkscreen uppercase my-[65px] text-[20px] leading-[1.19] text-center">
+            Not all are called.Fewer still respond//connect.If your 
+            intent is true, channel it below.The Entity// We listens.
+            The threshold responds.
+          </div>
           <div className=" flex flex-col justify-center items-center ">
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#0505cb] hover:border hover:border-[#0505cb] transition-all duration-300 hover:scale-105"
+              className="w-full max-w-[422px] h-[94px] bg-[#0505cb] text-[#e0ef29] font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#0505cb] hover:border hover:border-[#0505cb] transition-all duration-300 hover:scale-105"
             >
               BOOK A CALL
             </button>
@@ -1427,11 +1503,12 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="w-full relative  overflow-hidden bg-[#000] py-[300px]">
+      <div className="w-full relative  overflow-hidden bg-[#000] py-[200px]">
         <div className=" w-[90%] max-w-[1550px] mx-auto">
-          <div className="w-full flex justify-between items-center ">
-          <h1 className=" font-silkscreen text-[64px] relative uppercase text-[#e0ef29]">
-            <DecryptedText
+          <div className="w-full flex justify-center items-center ">
+          <h1 className=" font-silkscreen text-[250px] relative uppercase text-[#e0ef29] leading-[1.16] -tracking-[12.5px] text-center">
+            The ritual
+            {/* <DecryptedText
               text="The ritual"
               speed={100}
               maxIterations={20}
@@ -1440,19 +1517,19 @@ export default function Home() {
               className="revealed"
               parentClassName="all-letters"
               encryptedClassName="encrypted"
-            />
+            /> */}
           </h1>
             {/* <span className="font-silkscreen text-[64px] relative uppercase text-[#e0ef29]">
               The ritual
             </span> */}
-            <div>
+            {/* <div>
               <Image
                 src="/HomePage/ritual_icons.png"
                 alt="Card illustration"
                 width={168}
                 height={99}
               />
-            </div>
+            </div> */}
           </div>
           <p className="font-inclusive-sans text-[52px] text-[#fff] leading-[1.3] text-left my-[50px] uppercase">
             The RITUAL is our process of transformation where abstract ideas,
@@ -1548,8 +1625,8 @@ export default function Home() {
       </div>
 
       <div className="w-full relative  overflow-hidden ">
-        <div className=" w-[90%] max-w-[1550px] mx-auto my-[70px]">
-          <h1 className="text-[250px] font-silkscreen leading-[1.3]  -tracking-[12.5px] text-[#000] text-center ">
+        <div className=" w-[90%] max-w-[1550px] mx-auto my-[176px]">
+          <h1 className="text-[250px] font-silkscreen leading-[1.3]  -tracking-[12.5px] text-[#0505cb] text-center ">
             The Facets
           </h1>
           <p className="font-inclusive-sans text-[52px] text-[#000] leading-[1.3] text-left my-[50px]">
@@ -1571,11 +1648,11 @@ export default function Home() {
       </div>
 
       <div className="w-full relative  overflow-hidden bg-[#000]">
-        <div className=" w-[90%] max-w-[1550px] mx-auto my-[300px]">
+        <div className=" w-[90%] max-w-[1550px] mx-auto my-[200px]">
           <p className="font-silkscreen text-left text-[15px] text-[#e0ef29] leading-[1.3]">
             Granted access_UAC LVL_0
           </p>
-          <h1 className="text-[64px] font-silkscreen leading-[1.16]  -tracking-[3.2px] text-[#e0ef29] text-left mt-[50px]">
+          <h1 className="text-[196px] font-silkscreen leading-[1.16]  -tracking-[9.8px] text-[#e0ef29] text-center mt-[50px]">
             The artifacts
           </h1>
           <p className="font-inclusive-sans text-[52px] text-[#fff] leading-[1.3] text-left my-[50px]">
@@ -1649,8 +1726,8 @@ export default function Home() {
       </div> */}
 
       <div className="w-full relative  overflow-hidden">
-        <div className=" w-[90%] max-w-[1038px] mx-auto py-[70px]">
-          <h1 className="text-[52px] font-normal font-inclusive-sans leading-[1.3] text-black text-left">
+        <div className=" w-[90%] max-w-[1038px] mx-auto py-[90px]">
+          <h1 className="text-[52px] font-normal font-inclusive-sans leading-[1.3] text-black text-center">
             LIGHT THE SIGNAL // CONTACT US
           </h1>
 
@@ -1661,7 +1738,7 @@ export default function Home() {
             <br />
             WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
           </p> */}
-          <TypingAnimation className="font-silkscreen text-left text-[15px] text-[#000] py-[66px] ">
+          <TypingAnimation className="font-silkscreen text-center text-[20px] text-[#000] py-[66px] ">
               {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
               YOU'VE REACHED THE EDGE OF THE KNOWN.
               WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
