@@ -10,18 +10,16 @@ import ReviewCard from "@/components/review-card";
 import { AnimatePresence } from "motion/react";
 import Footer from "@/components/Footer";
 import MetaBalls from "@/components/ui/meta-balls";
-import FlowingMenu from "@/components/ui/flowing-menu";
+// import FlowingMenu from "@/components/ui/flowing-menu";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MorphingText } from "@/components/magicui/morphing-text";
-import DecryptedText from "@/components/reactbits/DecryptedText";
-import ScrollReveal from "@/components/reactbits/ScrollReveal";
+// import { MorphingText } from "@/components/magicui/morphing-text";
+// import DecryptedText from "@/components/reactbits/DecryptedText";
+// import ScrollReveal from "@/components/reactbits/ScrollReveal";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 // import { footer } from "framer-motion/client";
 // import { AudioToggle } from "@/components/AudioPlayer";
 import dynamic from "next/dynamic";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import { desc, image, p } from "framer-motion/client";
-import { title } from "process";
 import { Marquee } from "@/components/magicui/marquee";
 
 // Dynamically import AudioToggle with no SSR
@@ -49,8 +47,8 @@ export default function Home() {
   const [activeImage, setActiveImage] = useState<PhaseKey>("star");
   const container2 = useRef(null);
   const [manualIndex, setManualIndex] = useState<number | null>(null);
-  const [isDecoded, setIsDecoded] = useState<boolean>(false);
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  // const [isDecoded, setIsDecoded] = useState<boolean>(false);
+  // const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [activePrimordial, setActivePrimordial] =
     useState<PrimordialKey>("primordial1");
 
@@ -171,28 +169,28 @@ export default function Home() {
   //   redTriangle: '/images/red-triangle.png',
   // };
 
-  const demoItems = [
-    {
-      link: "#",
-      text: "Precision Engineered",
-      image: "https://picsum.photos/600/400?random=1",
-    },
-    {
-      link: "#",
-      text: "Value Driven",
-      image: "https://picsum.photos/600/400?random=2",
-    },
-    {
-      link: "#",
-      text: "Battle  Tested",
-      image: "https://picsum.photos/600/400?random=3",
-    },
-    {
-      link: "#",
-      text: "Fortified by Design",
-      image: "https://picsum.photos/600/400?random=4",
-    },
-  ];
+  // const demoItems = [
+  //   {
+  //     link: "#",
+  //     text: "Precision Engineered",
+  //     image: "https://picsum.photos/600/400?random=1",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Value Driven",
+  //     image: "https://picsum.photos/600/400?random=2",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Battle  Tested",
+  //     image: "https://picsum.photos/600/400?random=3",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Fortified by Design",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //   },
+  // ];
 
   // const servicesList = [
   //   {
@@ -424,30 +422,30 @@ export default function Home() {
   //   },
   // ];
 
-  const texts = ["COGNITION", "CONSENSUS", "CONSTRUCT"];
-  const definitions = [
-    `We engineer intelligent products using artificial<br />intelligence — systems that learn, adapt, and evolve.`,
-    `We build trusted systems using blockchain technology.<br />Networks that secure, verify, and operate without compromise.`,
-    `We design and build digital ecosystems. Grounded in research,<br />guided by strategy, and brought to life through thoughtful code and bold identity.`,
-  ];
+  // const texts = ["COGNITION", "CONSENSUS", "CONSTRUCT"];
+  // const definitions = [
+  //   `We engineer intelligent products using artificial<br />intelligence — systems that learn, adapt, and evolve.`,
+  //   `We build trusted systems using blockchain technology.<br />Networks that secure, verify, and operate without compromise.`,
+  //   `We design and build digital ecosystems. Grounded in research,<br />guided by strategy, and brought to life through thoughtful code and bold identity.`,
+  // ];
 
-  const greakArray = [
-    "ʍιʂʂιΘΠ ⇌ †Θ ΞηʜΔηςΞ ΞϝϝιςιΞηςψ, ʂΞςυяι†ψ, Δηδ",
-    "†яΔηʂραяΞηςψ ΔςяΘʂʂ ιηδυʂ†яιΞʂ.",
-    "ϻΔκιηϻ †ʜΞ шΘяʟδ Δ ʂϻΔя†Ξя, ϻΘяΞ ςΘηηΞς†Ξδ, Δηδ Δ ʂΔϝΞя ρʟΔςΞ.",
-    "†Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ",
-    "[ϾΘǤΠι†ιΘΠ]’ʂ ΞϝϝιςιΞηςψ Δηδ",
-    "[ςΘηʂΞηʂυʂ]’ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.",
-  ];
+  // const greakArray = [
+  //   "ʍιʂʂιΘΠ ⇌ †Θ ΞηʜΔηςΞ ΞϝϝιςιΞηςψ, ʂΞςυяι†ψ, Δηδ",
+  //   "†яΔηʂραяΞηςψ ΔςяΘʂʂ ιηδυʂ†яιΞʂ.",
+  //   "ϻΔκιηϻ †ʜΞ шΘяʟδ Δ ʂϻΔя†Ξя, ϻΘяΞ ςΘηηΞς†Ξδ, Δηδ Δ ʂΔϝΞя ρʟΔςΞ.",
+  //   "†Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ",
+  //   "[ϾΘǤΠι†ιΘΠ]’ʂ ΞϝϝιςιΞηςψ Δηδ",
+  //   "[ςΘηʂΞηʂυʂ]’ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.",
+  // ];
 
-  const missionArray = [
-    "Our mission is to enhance efficiency, security, and",
-    "transparency across industries.",
-    "Making the world a smarter, more connected, and a safer place.",
-    "To achieve this, we believe in the power of",
-    "Artificial intelligence's efficiency and",
-    "Blockchain technology's security and transparency.",
-  ];
+  // const missionArray = [
+  //   "Our mission is to enhance efficiency, security, and",
+  //   "transparency across industries.",
+  //   "Making the world a smarter, more connected, and a safer place.",
+  //   "To achieve this, we believe in the power of",
+  //   "Artificial intelligence's efficiency and",
+  //   "Blockchain technology's security and transparency.",
+  // ];
 
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
   const secondRow = reviewList2.slice(reviewList2.length / 2);
