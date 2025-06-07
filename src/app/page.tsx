@@ -1477,7 +1477,7 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="w-full relative  overflow-hidden bg-[#000]  py-[50px]">
+      <div className="w-full relative  overflow-hidden bg-[#000]  py-[282px]">
         <div className="w-[90%] max-w-[1550px] mx-auto ">
           <div className="w-full flex flex-col items-center">
             {/* <span className="font-silkscreen text-[64px] relative">
@@ -1498,7 +1498,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="flex justify-center items-center mt-[150px]  ">
+          <div className="flex justify-center items-center mt-[30px]  ">
             <span className="justify-center text-[15px] text-center uppercase font-silkscreen text-white">
               Speak, and the signal will reach us. Across realms of silence and
               syntax,<br></br>your intent will be felt. This is not a form. it
@@ -1506,7 +1506,7 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="flex justify-center items-center mt-[150px]  ">
+          <div className="flex justify-center items-center mt-[56px]  ">
             <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans text-white">
               Have a project in mind? Let&apos;s align.<br></br>
               Book a call to explore how we can bring your vision <br></br>to
@@ -1514,15 +1514,15 @@ export default function Home() {
               purposeful design.
             </span>
           </div>
-          <div className="font-silkscreen uppercase my-[65px] text-[20px] leading-[1.19] text-center">
+          {/* <div className="font-silkscreen uppercase my-[65px] text-[20px] leading-[1.19] text-center">
             Not all are called.Fewer still respond//connect.If your intent is
             true, channel it below.The Entity// We listens. The threshold
             responds.
-          </div>
-          <div className=" flex flex-col justify-center items-center ">
-            <button
+          </div> */}
+          <div className=" flex flex-col justify-center items-center mt-[50px]">
+          <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-[#000] font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#0505cb] hover:border hover:border-[#0505cb] transition-all duration-300 hover:scale-105"
+              className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px]  cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#000] transition-all duration-300 hover:scale-105 border-dashed border-black border"
             >
               BOOK A CALL
             </button>
@@ -2160,7 +2160,7 @@ export default function Home() {
         </VelocityScroll>
       </div>
       <div className="w-full relative  overflow-hidden bg-white">
-        <div className=" w-[90%] max-w-[1550px] mx-auto my-[200px]">
+        <div className=" w-[90%] max-w-[1550px] mx-auto my-[100px]">
           <div className="flex flex-col">
             <div className="flex justify-between">
               <span className="text-[96px] font-special-gothic-expanded-one uppercase">
@@ -2183,22 +2183,22 @@ export default function Home() {
             OUR PROCESS, OUR TECHNOLOGY, <br />
             AND THE PEOPLE WE BUILD FOR.
           </p>
-          <div className=" flex flex-row justify-start items-start gap-[30px]">
+          <div className=" flex flex-row gap-[30px]">
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[black] text-[#e0ef29] py-2 font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-white border"
+              className="w-full max-w-[312px] h-[70px] bg-[black] text-[#e0ef29] py-2 font-silkscreen text-[20px]  cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-white border"
             >
               VISIT CASE STUDIES
             </button>
             <button
               type="button"
-              className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] mt-[50px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-black border"
+              className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px]  cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-black border"
             >
               BOOK A CALL
             </button>
           </div>
 
-          <div className="w-full grid grid-cols-4 gap-[12.7px]  mt-[50px] h-[378px]">
+          <div className="w-full grid grid-cols-4 gap-[12.7px]  mt-[104px] h-[378px]">
             <div className="col-span-[378px] bg-[#e8e8e8]">
               <p>Skillchecker.ai</p>
             </div>
@@ -2254,7 +2254,7 @@ export default function Home() {
       </div> */}
 
       <div className="w-full relative  overflow-hidden bg-black">
-        <div className=" w-[90%] max-w-[1038px] mx-auto py-[90px]">
+        <div className=" w-[90%] max-w-[1038px] mx-auto">
           <TypingAnimation className="font-silkscreen text-center text-[20px] text-white mt-[247px]">
             {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
               YOU'VE REACHED THE EDGE OF THE KNOWN.
