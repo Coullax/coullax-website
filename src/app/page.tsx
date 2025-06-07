@@ -3,9 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 import { XIcon } from "lucide-react";
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 
 import React, { useRef, useState, useEffect, Suspense } from "react";
 import ReviewCard from "@/components/review-card";
@@ -20,15 +18,24 @@ import ScrollReveal from "@/components/reactbits/ScrollReveal";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 // import { footer } from "framer-motion/client";
 // import { AudioToggle } from "@/components/AudioPlayer";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import { desc, image, p } from "framer-motion/client";
+import { title } from "process";
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
-  () => import('@/components/AudioPlayer').then((mod) => mod.AudioToggle),
+  () => import("@/components/AudioPlayer").then((mod) => mod.AudioToggle),
   { ssr: false }
 );
 
-type PhaseKey = 'star' | 'circle' | 'asterisk' | 'triangle';
+type PhaseKey = "star" | "circle" | "asterisk" | "triangle";
+type PrimordialKey =
+  | "primordial1"
+  | "primordial2"
+  | "primordial3"
+  | "primordial4"
+  | "primordial5";
 
 export default function Home() {
   // const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -43,6 +50,8 @@ export default function Home() {
   const [manualIndex, setManualIndex] = useState<number | null>(null);
   const [isDecoded, setIsDecoded] = useState<boolean>(false);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [activePrimordial, setActivePrimordial] =
+    useState<PrimordialKey>("primordial1");
 
   // Handle transition from manual back to automatic morphing
   useEffect(() => {
@@ -70,7 +79,8 @@ export default function Home() {
       subtitle: "Initial Phase",
       description:
         "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes next.",
-      footer: "Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path."
+      footer:
+        "Before the construct. Before the signal. There was the First Light. A rupture in the silence. A flicker through the void. The awakening spark that summoned the Seeker, encoded the vision, and aligned the path.",
     },
     circle: {
       icon: "/HomePage/phase/phase2_image_yellow.svg",
@@ -78,7 +88,8 @@ export default function Home() {
       subtitle: "Research phase",
       description:
         "With your vision as our compass, we map possibilities, identify needs, and define the system's architecture. Through research, analysis, and strategic planning, we carve the blueprint that guides every layer of what comes next.",
-      footer: "From the noise, meaning crystallizes. Symbols form. not drawn, but discovered. Each line, a thread of logic. Each curve, a fragment of intent. The Glyph is carved: not to be admired, but to be followed."
+      footer:
+        "From the noise, meaning crystallizes. Symbols form. not drawn, but discovered. Each line, a thread of logic. Each curve, a fragment of intent. The Glyph is carved: not to be admired, but to be followed.",
     },
     asterisk: {
       icon: "/HomePage/phase/phase3_image_yellow.svg",
@@ -86,7 +97,8 @@ export default function Home() {
       subtitle: "Building phase",
       description:
         "We now bring the vision to life . shaping interfaces, engineering logic, designing systems that respond and evolve. Whether it's software, brand identity, or workflow design, this is where your solution takes true form.",
-      footer: "The Forge awakens. Particles assemble. Code and concept bind. Through fire and function, a Construct emerges — not static, but living. Not built to exist, but to move."
+      footer:
+        "The Forge awakens. Particles assemble. Code and concept bind. Through fire and function, a Construct emerges — not static, but living. Not built to exist, but to move.",
     },
     triangle: {
       icon: "/HomePage/phase/phase4_image_yellow.svg",
@@ -94,7 +106,46 @@ export default function Home() {
       subtitle: "Launch & post launch Phase",
       description:
         "We deploy the product to the world. but that's not where it ends. We continue listening, refining, and evolving. Feedback loops guide growth. We ensure it remains aligned, functional, and future ready.",
-      footer: "The Construct breathes. Signal out. Echo in. What was once blueprint becomes broadcast. And yet, this is not a conclusion — it is a rhythm. A continuum. The Pulse persists."
+      footer:
+        "The Construct breathes. Signal out. Echo in. What was once blueprint becomes broadcast. And yet, this is not a conclusion — it is a rhythm. A continuum. The Pulse persists.",
+    },
+  };
+
+  const primordials = {
+    primordial1: {
+      image: "primordial_img_1.webp",
+      title: "Efficiency",
+      subtitle: "vector",
+      description:
+        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+    },
+    primordial2: {
+      image: "primordial_img_2.webp",
+      title: "Security",
+      subtitle: "Pylon",
+      description:
+        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+    },
+    primordial3: {
+      image: "primordial_img_3.webp",
+      title: "Transparency",
+      subtitle: "veil",
+      description:
+        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+    },
+    primordial4: {
+      image: "primordial_img_4.webp",
+      title: "Connectivity",
+      subtitle: "nexus",
+      description:
+        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+    },
+    primordial5: {
+      image: "primordial_img_5.webp",
+      title: "adaptability",
+      subtitle: "flux",
+      description:
+        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
     },
   };
 
@@ -471,7 +522,7 @@ export default function Home() {
     <div className=" w-full bg-[#fff]">
       {/* Hero Section */}
       <div ref={container1} className="w-full">
-        <div className=" w-full bg-[#fff] min-h-dvh py-[100px]">
+        <div className=" w-full bg-[#fff] min-h-dvh">
           {/* Header */}
           <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
             <Image
@@ -508,11 +559,13 @@ export default function Home() {
               ιηδυʂ†яιΞʂ. ϻΔκιηϻ †ʜΞ шΘяʟδ Δ ʂϻΔя†Ξя, ϻΘяΞ ςΘηηΞς†Ξδ, Δηδ Δ
               ʂΔϝΞя ρʟΔςΞ.
               <br />
-              <br /> †Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ [ϾΘǤΠι†ιΘΠ]&apos;ʂ
-              ΞϝϝιςιΞηςψ Δηδ
+              <br /> †Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ
+              [ϾΘǤΠι†ιΘΠ]&apos;ʂ ΞϝϝιςιΞηςψ Δηδ
               <br /> [ςΘηʂΞηʂυʂ]&apos;ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.
             </div>
-            <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">DECODE THE MESSAGE</button>
+            <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
+              DECODE THE MESSAGE
+            </button>
           </div>
           {/* <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
             <Image
@@ -654,12 +707,153 @@ export default function Home() {
       <motion.div
         style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
         ref={container2}
-        className="relative w-full bg-[#000000] py-[200px]"
+        className="relative w-full bg-[#000000] py-[100px]"
       >
         <div className=" py-[50px] w-[90%] max-w-[1550px] mx-auto">
-          <h1 className=" text-[#E0EF29] text-[153px] font-silkscreen leading-[1.16] -tracking-[7.63px] text-center">
-          The Entity Listens...
-            {/* <DecryptedText
+          <h1 className=" text-white font-silkscreen text-[15px] leading-[20px]">
+            Shaped by glyph, born of will. Created in silence, between signals.
+            <br /> The crucible of ideas, fueled by intent. This is where we
+            build the unbuilt.
+          </h1>
+          <h1 className=" mt-[50px] text-white font-special-gothic-expanded-one text-[243px] leading-[282px] -tracking-[12px] uppercase">
+            THE FORGE
+          </h1>
+          <div className=" text-[40px] font-inclusive-sans text-white leading-[52px] uppercase my-[56px]">
+            This is where vision meets velocity.
+            <br />
+            Where raw ideas are melted down, reshaped, and forged
+            <br /> into real, working systems. The Forge is Coullax&apos;s
+            <br /> creative engine. a space of experimentation,
+            <br /> engineering, and relentless iteration.
+          </div>
+          <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
+            BOOK A CALL
+          </button>
+          <div className=" mt-[100px]">
+            <div className=" w-full grid grid-cols-2 gap-[50px] mb-[50px]">
+              <div
+                className=" w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent "
+                style={{
+                  backgroundImage: `url('/HomePage/ForgeCards/aiBackground.webp')`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className=" w-full flex flex-row justify-between items-center">
+                  <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                    COGNITION
+                  </h1>
+                  <Image
+                    src="/HomePage/ForgeCards/cognitionIcon.svg"
+                    width={167}
+                    height={99}
+                    alt="studiosAndLabsIcon"
+                  />
+                </div>
+                <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
+                  ARTIFICIAL
+                  <br />
+                  INTELLIGENCE
+                </h1>
+              </div>
+              <div
+                className=" w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
+                style={{
+                  backgroundImage: `url('/HomePage/ForgeCards/blockchainBackground.webp')`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className=" w-full flex flex-row justify-between items-center">
+                  <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                    CONSENSUS
+                  </h1>
+                  <Image
+                    src="/HomePage/ForgeCards/consensusIcon.svg"
+                    width={167}
+                    height={99}
+                    alt="studiosAndLabsIcon"
+                  />
+                </div>
+                <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
+                  BLOCKCHAIN
+                </h1>
+              </div>
+            </div>
+            <div className=" my-[50px] border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+                STUDIOS AND LABS
+              </h1>
+              <div className=" w-full flex flex-row justify-between items-center">
+                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                  ETHER
+                </h1>
+                <Image
+                  src="/HomePage/ForgeCards/etherIcon.svg"
+                  width={167}
+                  height={99}
+                  alt="studiosAndLabsIcon"
+                />
+              </div>
+            </div>
+            <div className=" w-full grid grid-cols-3 gap-[50px] mb-[50px]">
+              <div className=" w-full bg-white border border-white py-[28px] px-[29px] min-h-[365px] text-black flex flex-col justify-between items-start">
+                <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px] uppercase">
+                  Web & <br />
+                  Software
+                </h1>
+                <div className=" w-full flex flex-row justify-between items-center">
+                  <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                    WEAVE
+                  </h1>
+                  <Image
+                    src="/HomePage/ForgeCards/weaveIcon.svg"
+                    width={167}
+                    height={99}
+                    alt="studiosAndLabsIcon"
+                  />
+                </div>
+              </div>
+              <div className=" w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+                <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+                  Research & <br />
+                  Strategy
+                </h1>
+                <div className=" w-full flex flex-row justify-between items-center">
+                  <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                    SYNTHESIS
+                  </h1>
+                  <Image
+                    src="/HomePage/ForgeCards/synthesisIcon.svg"
+                    width={167}
+                    height={99}
+                    alt="studiosAndLabsIcon"
+                  />
+                </div>
+              </div>
+              <div className=" w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+                <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+                  MOBILE <br />
+                  DEVELOPMENT
+                </h1>
+                <div className=" w-full flex flex-row justify-between items-center">
+                  <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                    MOTILITH
+                  </h1>
+                  <Image
+                    src="/HomePage/ForgeCards/motilithIcon.svg"
+                    width={160}
+                    height={99}
+                    alt="studiosAndLabsIcon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" text-[15px] leading-[20px] uppercase font-silkscreen text-white">
+            [Directive / Builds / Main]
+          </div>
+          {/* <h1 className=" text-[#E0EF29] text-[153px] font-silkscreen leading-[1.16] -tracking-[7.63px] text-center">
+            The Entity Listens...
+            <DecryptedText
               text="The Entity Listens..."
               speed={100}
               maxIterations={20}
@@ -668,13 +862,12 @@ export default function Home() {
               className="revealed"
               parentClassName="all-letters"
               encryptedClassName="encrypted"
-            /> */}
+            />
           </h1>
           <div className=" mt-[50px] flex items-center min-h-[114px] justify-center">
             <TypingAnimation className="text-[#E0EF29] text-[15px] font-silkscreen leading-[20px] text-center">
               {`[Signal / Directive / 02A] \n
-              The Entity has spoken.Its words drift through noise and time.
-              To hear is not enough.Decode. Understand. Align.`}
+              The Entity has spoken.Its words drift through noise and time. To hear is not enough.Decode. Understand. Align.`}
             </TypingAnimation>
           </div>
           <div className=" my-[80px] min-h-[545px] text-center">
@@ -704,7 +897,6 @@ export default function Home() {
                   <div key={index}>
                     <DecryptedText
                       text={line}
-
                       speed={100}
                       maxIterations={20}
                       characters="ηψΔϻ†"
@@ -725,25 +917,25 @@ export default function Home() {
             )}
           </div>
           <div className="flex justify-center">
-          <button
-            onClick={() => setIsDecoded(true)}
-            className={` h-[94px] bg-[#e0ef29] cursor-pointer text-black min-w-[422px] text-[20px] leading-[20px] -tracking-[1px] font-silkscreen flex items-center justify-center transition-none gap-2 ${
-              !isDecoded ? "animate-blink" : ""
-            }`}
-          >
-            DECODE THE MESSAGE
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 32 32"
-              fill="#000"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              onClick={() => setIsDecoded(true)}
+              className={` h-[94px] bg-[#e0ef29] cursor-pointer text-black min-w-[422px] text-[20px] leading-[20px] -tracking-[1px] font-silkscreen flex items-center justify-center transition-none gap-2 ${
+                !isDecoded ? "animate-blink" : ""
+              }`}
             >
-              <polygon points="16,26 6,12 26,12" fill="#000" />
-            </svg>
-          </button>
+              DECODE THE MESSAGE
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 32 32"
+                fill="#000"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon points="16,26 6,12 26,12" fill="#000" />
+              </svg>
+            </button>
           </div>
-          
+
           <style jsx>{`
             @keyframes blink {
               0%,
@@ -762,37 +954,304 @@ export default function Home() {
               animation: blink 1.5s infinite;
               transition: none !important;
             }
-          `}</style>
+          `}</style> */}
         </div>
       </motion.div>
-      <div className="w-[90%] max-w-[1550px] mx-auto ">
-      <p className="font-silkscreen text-[16px]  text-[#0505cb] text-right mt-[150px]">
-            Node -Sector 01 / Uplink: True
-          </p>
-        <div className=" flex flex-col items-center ">
-        <h1 className=" text-[#0505cb] font-silkscreen text-[275px] relative leading-[1.16] -tracking-[13.75px] text-center">
-        The forge
-            {/* <DecryptedText
-              text="The forge"
-              speed={100}
-              maxIterations={20}
-              characters="ABCD1234!?"
-              animateOn="hover"
-              className="revealed"
-              parentClassName="all-letters"
-              encryptedClassName="encrypted"
-            /> */}
+      <VelocityScroll
+        fontSize="text-4xl font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
+        defaultVelocity={0.2}
+        className="text-white !font-special-gothic-expanded-one uppercase !text-[60px] !leading-[70px] !-tracking-[3px] bg-[#0505cb] py-[30px] "
+        numRows={1}
+      >
+        AI, Machine Learning, Web3, Data science.Software.Research,
+        Chatbot,DeFi,Dapp,AI, Machine Learning, Web3, Data science, Software ,
+        Research, Chatbot,DeFiDeFi
+      </VelocityScroll>
+      <div className="w-[90%] max-w-[1550px] mx-auto py-[100px]">
+        <div className=" w-full flex flex-row justify-between items-start">
+          <h1 className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase">
+            The ritual
           </h1>
-          {/* <span className="font-silkscreen text-[64px] relative">
+          <h1 className=" text-[36px] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
+            process
+          </h1>
+        </div>
+        <h1 className=" text-black font-silkscreen pt-[30px] text-[15px] leading-[20px]">
+          It begins in stillness. A glyph. A pulse. A knowing.
+          <br />
+          Not all who enter understand, but all who emerge are changed.
+        </h1>
+        <div className=" mt-[56px] text-[40px] uppercase font-inclusive-sans leading-[52px]">
+          The RITUAL is our process of transformation where
+          <br /> abstract ideas, complex technologies, and raw
+          <br /> ambition are fused into powerful digital systems.
+        </div>
+        <div className=" my-[50px] text-[15px] font-silkscreen leading-[20px] uppercase">
+          [Firstlight / Schema / Construct / Lift.]
+        </div>
+        <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
+          BOOK A CALL
+        </button>
+        <div className=" mt-[100px]">
+          <div className=" flex flex-row justify-start items-center gap-[30px]">
+            <div
+              className={` rounded-full ${
+                activeImage === "star" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+              } h-[22px] aspect-square`}
+            ></div>
+            <div
+              className={` rounded-full ${
+                activeImage === "circle" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+              } h-[22px] aspect-square`}
+            ></div>
+            <div
+              className={` rounded-full ${
+                activeImage === "asterisk" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+              } h-[22px] aspect-square`}
+            ></div>
+            <div
+              className={` rounded-full ${
+                activeImage === "triangle" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+              } h-[22px] aspect-square`}
+            ></div>
+          </div>
+          <div className=" border border-black mt-[40px]">
+            <div className="grid grid-cols-4 gap-[90px] pt-[50px] pb-[65px] px-[40px]">
+              <div className="flex justify-center items-center col-span-[300px]">
+                <Image
+                  src={
+                    activeImage === "star"
+                      ? "/HomePage/phase/phase1_image_red.svg"
+                      : "/HomePage/phase/phase1_image_black.svg"
+                  }
+                  width={290}
+                  height={290}
+                  alt="Star"
+                  className=" cursor-pointer"
+                  onClick={() => setActiveImage("star")}
+                />
+              </div>
+
+              <div className="flex justify-center items-center col-span-[300px]">
+                <Image
+                  src={
+                    activeImage === "circle"
+                      ? "/HomePage/phase/phase2_image_red.svg"
+                      : "/HomePage/phase/phase2_image_black.svg"
+                  }
+                  width={290}
+                  height={290}
+                  alt="Circle"
+                  className=" cursor-pointer"
+                  onClick={() => setActiveImage("circle")}
+                />
+              </div>
+
+              <div className="flex justify-center items-center col-span-[300px]">
+                <Image
+                  src={
+                    activeImage === "asterisk"
+                      ? "/HomePage/phase/phase3_image_red.svg"
+                      : "/HomePage/phase/phase3_image_black.svg"
+                  }
+                  width={290}
+                  height={290}
+                  alt="Asterisk"
+                  className=" cursor-pointer"
+                  onClick={() => setActiveImage("asterisk")}
+                />
+              </div>
+
+              <div className="flex justify-center items-center col-span-[300px]">
+                <Image
+                  src={
+                    activeImage === "triangle"
+                      ? "/HomePage/phase/phase4_image_red.svg"
+                      : "/HomePage/phase/phase4_image_black.svg"
+                  }
+                  alt="Triangle"
+                  width={290}
+                  height={290}
+                  className=" cursor-pointer"
+                  onClick={() => setActiveImage("triangle")}
+                />
+              </div>
+            </div>
+            <div className="w-full border-t border-[#000000] py-[28px] px-[29px]">
+              <div className="flex justify-between items-center ">
+                <h2 className="text-[48px] text-black font-special-gothic-expanded-one leading-[56px] -tracking-[2.4px] ">
+                  {phases[activeImage].subtitle}
+                </h2>
+
+                <h2 className="text-[48px] font-bold text-black font-silkscreen -tracking-[2.4px] leading-[56px]">
+                  {phases[activeImage].title}
+                </h2>
+              </div>
+
+              <p className="text-[40px] my-[61px] font-inclusive-sans text-black leading-[48px] ">
+                {phases[activeImage].description}
+              </p>
+              <p className="text-[15px] text-black uppercase leading-[18px] font-silkscreen">
+                {phases[activeImage].footer}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className=" w-full bg-[#F0F0F0] py-[100px]">
+        <div className="w-[90%] max-w-[1550px] mx-auto">
+          <div className=" w-full flex flex-row justify-between items-start">
+            <h1 className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase">
+              PRIMORDIALs
+            </h1>
+            <h1 className=" text-[36px] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
+              core values
+            </h1>
+          </div>
+          <h1 className=" text-black font-silkscreen pt-[30px] text-[15px] leading-[20px]">
+            Before thought had form, they carved meaning into the void.
+            <br />
+            The first to build. The first to break silence.
+            <br />
+            From their glyphs, all creation followed.
+          </h1>
+          <div className=" mt-[56px] text-[40px] uppercase font-inclusive-sans leading-[52px]">
+            Every product we deliver is shaped by a set of principles
+            <br /> that balance vision with precision, value with impact,
+            <br /> and innovation with reliability.
+          </div>
+          <div className=" my-[50px] text-[15px] font-silkscreen leading-[20px] uppercase">
+            [VECTOR / PYLON / VEIL / NEXUS / FLUX.]
+          </div>
+          <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
+            BOOK A CALL
+          </button>
+          <div className="flex flex-row justify-start items-center gap-[19px] my-[75px]">
+            <div
+              className={` ${
+                activePrimordial === "primordial1"
+                  ? "bg-[#dedede]"
+                  : "bg-transparent"
+              } flex justify-center items-center h-[155px] aspect-square`}
+            >
+              <Image
+                src="/HomePage/primordials/primordial_1.svg"
+                width={155}
+                height={155}
+                alt="Star"
+                className=" cursor-pointer"
+                onClick={() => setActivePrimordial("primordial1")}
+              />
+            </div>
+
+            <div
+              className={` ${
+                activePrimordial === "primordial2"
+                  ? "bg-[#dedede]"
+                  : "bg-transparent"
+              } flex justify-center items-center h-[155px] aspect-square`}
+            >
+              <Image
+                src="/HomePage/primordials/primordial_2.svg"
+                width={155}
+                height={155}
+                alt="Circle"
+                className=" cursor-pointer"
+                onClick={() => setActivePrimordial("primordial2")}
+              />
+            </div>
+
+            <div
+              className={` ${
+                activePrimordial === "primordial3"
+                  ? "bg-[#dedede]"
+                  : "bg-transparent"
+              } flex justify-center items-center h-[155px] aspect-square`}
+            >
+              <Image
+                src="/HomePage/primordials/primordial_3.svg"
+                width={155}
+                height={155}
+                alt="Asterisk"
+                className=" cursor-pointer"
+                onClick={() => setActivePrimordial("primordial3")}
+              />
+            </div>
+
+            <div
+              className={` ${
+                activePrimordial === "primordial4"
+                  ? "bg-[#dedede]"
+                  : "bg-transparent"
+              } flex justify-center items-center h-[155px] aspect-square`}
+            >
+              <Image
+                src="/HomePage/primordials/primordial_4.svg"
+                alt="Triangle"
+                width={155}
+                height={155}
+                className=" cursor-pointer"
+                onClick={() => setActivePrimordial("primordial4")}
+              />
+            </div>
+
+            <div
+              className={` ${
+                activePrimordial === "primordial5"
+                  ? "bg-[#dedede]"
+                  : "bg-transparent"
+              } flex justify-center items-center h-[155px] aspect-square`}
+            >
+              <Image
+                src="/HomePage/primordials/primordial_5.svg"
+                alt="Triangle"
+                width={155}
+                height={155}
+                className=" cursor-pointer"
+                onClick={() => setActivePrimordial("primordial5")}
+              />
+            </div>
+          </div>
+          <div className=" flex flex-row border-2 border-black justify-between items-start gap-0">
+            <div className=" h-[373px] aspect-square ">
+              <Image
+                src={`/HomePage/primordials/${primordials[activePrimordial].image}`}
+                alt="Primordial Image"
+                width={373}
+                height={373}
+              />
+            </div>
+            <div className=" w-full py-[45px] px-[50px]">
+              <div className=" flex justify-between items-center text-[48px] leading-[62px] uppercase">
+                <h1 className=" font-special-gothic-expanded-one">
+                  {primordials[activePrimordial].title}
+                </h1>
+                <h1 className=" font-silkscreen">
+                  {primordials[activePrimordial].subtitle}
+                </h1>
+              </div>
+              <div className=" mt-[30px] font-inclusive-sans text-[40px] leading-[46px] w-full">
+                {primordials[activePrimordial].description}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="w-[90%] max-w-[1550px] mx-auto ">
+        <p className="font-silkscreen text-[16px]  text-[#0505cb] text-right mt-[150px]">
+          Node -Sector 01 / Uplink: True
+        </p>
+        <div className=" flex flex-col items-center ">
+          <h1 className=" text-[#0505cb] font-silkscreen text-[275px] relative leading-[1.16] -tracking-[13.75px] text-center">
             The forge
-          </span> */}
-          
+          </h1>
         </div>
         <div className="font-inclusive-sans my-[55px] md:text-[48px] text-[48px] uppercase">
-          This is where vision meets velocity.<br/> Where raw ideas are melted down,
-          reshaped, and forged into real, working systems. The Forge is
-          Coullax&apos;s creative engine. a space of experimentation,
-          engineering, and relentless iteration.
+          This is where vision meets velocity.
+          <br /> Where raw ideas are melted down, reshaped, and forged into
+          real, working systems. The Forge is Coullax&apos;s creative engine. a
+          space of experimentation, engineering, and relentless iteration.
         </div>
 
         <span className="font-silkscreen text-[16px] text-[#0505cb] justify-start ">
@@ -800,9 +1259,11 @@ export default function Home() {
         </span>
 
         <div className="grid grid-cols-6 sm:grid-cols-2 lg:grid-cols-6 mt-[120px] mb-[50px] gap-[50px] ">
-          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
-               onMouseEnter={() => setHoveredCard('cognition')}
-               onMouseLeave={() => setHoveredCard(null)}>
+          <div
+            className="col-span-3 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+            onMouseEnter={() => setHoveredCard("cognition")}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
                 src="/HomePage/service_cover/ai_cover.png"
@@ -820,7 +1281,11 @@ export default function Home() {
                   Artificial <br></br>Intelligence
                 </span>
                 <Image
-                  src={`/HomePage/ForgeCards/${hoveredCard === 'cognition' ? 'card1-1-hover.png' : 'card1-1.png'}`}
+                  src={`/HomePage/ForgeCards/${
+                    hoveredCard === "cognition"
+                      ? "card1-1-hover.png"
+                      : "card1-1.png"
+                  }`}
                   alt="Card illustration"
                   width={168}
                   height={99}
@@ -829,9 +1294,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="col-span-3 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
-               onMouseEnter={() => setHoveredCard('consensus')}
-               onMouseLeave={() => setHoveredCard(null)}>
+          <div
+            className="col-span-3 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+            onMouseEnter={() => setHoveredCard("consensus")}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
                 src="/HomePage/service_cover/blockchain_cover.png"
@@ -849,7 +1316,11 @@ export default function Home() {
                   Blockchain<br></br>Intelligence
                 </span>
                 <Image
-                  src={`/HomePage/ForgeCards/${hoveredCard === 'consensus' ? 'card1-2-hover.png' : 'card1-2.png'}`}
+                  src={`/HomePage/ForgeCards/${
+                    hoveredCard === "consensus"
+                      ? "card1-2-hover.png"
+                      : "card1-2.png"
+                  }`}
                   alt="Card illustration"
                   width={168}
                   height={99}
@@ -858,9 +1329,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
-               onMouseEnter={() => setHoveredCard('synthesis')}
-               onMouseLeave={() => setHoveredCard(null)}>
+          <div
+            className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+            onMouseEnter={() => setHoveredCard("synthesis")}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
                 src="/HomePage/service_cover/research_cover.png"
@@ -878,7 +1351,11 @@ export default function Home() {
                   Research & <br></br>Strategy
                 </span>
                 <Image
-                  src={`/HomePage/ForgeCards/${hoveredCard === 'synthesis' ? 'card1-3-hover.png' : 'card1-3.png'}`}
+                  src={`/HomePage/ForgeCards/${
+                    hoveredCard === "synthesis"
+                      ? "card1-3-hover.png"
+                      : "card1-3.png"
+                  }`}
                   alt="Card illustration"
                   width={168}
                   height={99}
@@ -887,9 +1364,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
-               onMouseEnter={() => setHoveredCard('weave')}
-               onMouseLeave={() => setHoveredCard(null)}>
+          <div
+            className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+            onMouseEnter={() => setHoveredCard("weave")}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
                 src="/HomePage/service_cover/web_cover.png"
@@ -907,7 +1386,11 @@ export default function Home() {
                   Web & <br></br>Software
                 </span>
                 <Image
-                  src={`/HomePage/ForgeCards/${hoveredCard === 'weave' ? 'card1-4-hover.png' : 'card1-4.png'}`}
+                  src={`/HomePage/ForgeCards/${
+                    hoveredCard === "weave"
+                      ? "card1-4-hover.png"
+                      : "card1-4.png"
+                  }`}
                   alt="Card illustration"
                   width={168}
                   height={99}
@@ -916,9 +1399,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
-               onMouseEnter={() => setHoveredCard('form')}
-               onMouseLeave={() => setHoveredCard(null)}>
+          <div
+            className="col-span-2 px-[32px] py-[31px] border-2 border-black relative group overflow-hidden"
+            onMouseEnter={() => setHoveredCard("form")}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <Image
                 src="/HomePage/service_cover/design_cover.png"
@@ -936,7 +1421,9 @@ export default function Home() {
                   Design & <br></br>Branding
                 </span>
                 <Image
-                  src={`/HomePage/ForgeCards/${hoveredCard === 'form' ? 'card1-5-hover.png' : 'card1-5.png'}`}
+                  src={`/HomePage/ForgeCards/${
+                    hoveredCard === "form" ? "card1-5-hover.png" : "card1-5.png"
+                  }`}
                   alt="Card illustration"
                   width={168}
                   height={99}
@@ -950,9 +1437,9 @@ export default function Home() {
         <span className="font-silkscreen text-[16px] justify-start ">
           [Coullax / The Forge / Construct.]
         </span>
-      </div>
+      </div> */}
 
-      <div className="max-w-full bg-black h-[300px] mt-[50px]"></div>
+      {/* <div className="max-w-full bg-black h-[300px] mt-[50px]"></div> */}
 
       {/* <div className="bg-[#e0ef29]  pt-[83px]">
         <div className="w-[90%] max-w-[1550px] mx-auto ">
@@ -997,8 +1484,8 @@ export default function Home() {
               THE SUMMON
             </span> */}
             <h1 className=" text-[#fff] font-special-gothic-expanded-one text-[96px]">
-            THE SUMMON
-            {/* <DecryptedText
+              THE SUMMON
+              {/* <DecryptedText
               text="THE SUMMON"
               speed={100}
               maxIterations={20}
@@ -1008,16 +1495,16 @@ export default function Home() {
               parentClassName="all-letters"
               encryptedClassName="encrypted"
             /> */}
-          </h1>
-            
+            </h1>
           </div>
 
           <div className="flex justify-center items-center mt-[150px]  ">
             <span className="justify-center text-[15px] text-center uppercase font-silkscreen text-white">
-            Speak, and the signal will reach us. Across realms of silence and syntax,<br></br>your intent will be felt. This is not a form. it is a calling.
+              Speak, and the signal will reach us. Across realms of silence and
+              syntax,<br></br>your intent will be felt. This is not a form. it
+              is a calling.
             </span>
           </div>
-          
 
           <div className="flex justify-center items-center mt-[150px]  ">
             <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans text-white">
@@ -1028,9 +1515,9 @@ export default function Home() {
             </span>
           </div>
           <div className="font-silkscreen uppercase my-[65px] text-[20px] leading-[1.19] text-center">
-            Not all are called.Fewer still respond//connect.If your 
-            intent is true, channel it below.The Entity// We listens.
-            The threshold responds.
+            Not all are called.Fewer still respond//connect.If your intent is
+            true, channel it below.The Entity// We listens. The threshold
+            responds.
           </div>
           <div className=" flex flex-col justify-center items-center ">
             <button
@@ -1611,7 +2098,7 @@ export default function Home() {
                 </div>
               </div>
 
-     
+
               <div className="w-full border-t border-[#e0ef29] py-[28px] px-[29px]">
                 <div className="flex justify-between items-center ">
                   <div className="flex items-center justify-center gap-2">
@@ -1644,7 +2131,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-{/* 
+      {/*
       <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1550px] mx-auto my-[176px]">
           <h1 className="text-[250px] font-silkscreen leading-[1.3]  -tracking-[12.5px] text-[#0505cb] text-center ">
@@ -1668,29 +2155,33 @@ export default function Home() {
         </div>
       </div> */}
       <div className="bg-[#e0ef29] font-bold">
-        <VelocityScroll fontSize="text-[60px]" numRows={1}>JOIN THE BUILD.</VelocityScroll>
-        </div>
+        <VelocityScroll fontSize="text-[60px]" numRows={1}>
+          JOIN THE BUILD.
+        </VelocityScroll>
+      </div>
       <div className="w-full relative  overflow-hidden bg-white">
         <div className=" w-[90%] max-w-[1550px] mx-auto my-[200px]">
-
-
           <div className="flex flex-col">
-          <div className="flex justify-between">
-            <span className="text-[96px] font-special-gothic-expanded-one uppercase">artifacts</span>
-            <span className="text-[36px] font-special-gothic-expanded-one uppercase">case stuides</span>
-
-          </div>
-          <span className="text-[15px] font-silkscreen">
-          Each artifact tells a story.<br></br>a fragment of vision forged in the fires of creation<br></br>.Born from whispers of code and pulses of intent,<br></br>these are the echoes of ideas made real.
-          </span>
-
+            <div className="flex justify-between">
+              <span className="text-[96px] font-special-gothic-expanded-one uppercase">
+                artifacts
+              </span>
+              <span className="text-[36px] font-special-gothic-expanded-one uppercase">
+                case stuides
+              </span>
+            </div>
+            <span className="text-[15px] font-silkscreen">
+              Each artifact tells a story.<br></br>a fragment of vision forged
+              in the fires of creation<br></br>.Born from whispers of code and
+              pulses of intent,<br></br>these are the echoes of ideas made real.
+            </span>
           </div>
           <p className="font-inclusive-sans text-[40px] leading-[1.3] text-left my-[50px]">
             HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR. <br />
             INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD <br />
             BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF <br />
             OUR PROCESS, OUR TECHNOLOGY, <br />
-            AND THE PEOPLE WE BUILD FOR.  
+            AND THE PEOPLE WE BUILD FOR.
           </p>
           <div className=" flex flex-row justify-start items-start gap-[30px]">
             <button
@@ -1719,7 +2210,7 @@ export default function Home() {
             </div>
             <div className="col-span-[378px] bg-[#e8e8e8]">
               <p>Skillchecker.ai</p>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
@@ -1764,13 +2255,11 @@ export default function Home() {
 
       <div className="w-full relative  overflow-hidden bg-black">
         <div className=" w-[90%] max-w-[1038px] mx-auto py-[90px]">
-
-        <TypingAnimation className="font-silkscreen text-center text-[20px] text-white mt-[247px]">
-              {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
+          <TypingAnimation className="font-silkscreen text-center text-[20px] text-white mt-[247px]">
+            {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
               YOU'VE REACHED THE EDGE OF THE KNOWN.
               WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
-            </TypingAnimation>
-
+          </TypingAnimation>
 
           <h1 className="text-[94px] font-special-gothic-expanded-one font-SpecialGothicOne leading-[1.3] text-white text-center py-[66px] ">
             LIGHT THE SIGNAL
