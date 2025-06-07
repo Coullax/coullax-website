@@ -87,13 +87,6 @@ export default function Footer() {
       <div className="w-[90%] max-w-[1550px] mx-auto px-12 pt-8 flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
         {/* Mission Statement */}
         <div className="max-w-[406px]">
-        <Image
-                    src="/coullax_footer_logo.png"
-                    alt="logo"
-                    width={406}
-                    height={84}
-                    className="cursor-pointer"
-                  />
           <p className="text-sm font-kode-mono mt-6">
             Our Mission Is To Enhance Efficiency, Security, And Transparency Across Industries. Making The World A Smarter, More Connected, And A Safer Place.
           </p>
@@ -107,7 +100,7 @@ export default function Footer() {
           {/* Home Column */}
           <div>
             <h3 className="font-bold mb-2 font-inclusive-sans text-[20px]">Home</h3>
-            <ul className="space-y-1  font-inclusive-sans text-[20px] font-medium">
+            <ul className="space-y-1  font-inclusive-sans text-[20px] font-bold">
               <li><a href="#" className="hover:underline">About</a></li>
               <li><a href="#" className="hover:underline">Case Studies</a></li>
               <li><a href="#" className="hover:underline">Careers</a></li>
@@ -118,7 +111,7 @@ export default function Footer() {
           {/* Services Column */}
           <div>
             <h3 className="font-bold mb-2 font-inclusive-sans text-[20px]">Services</h3>
-            <ul className="space-y-1  font-inclusive-sans text-[20px] font-medium">
+            <ul className="space-y-1  font-inclusive-sans text-[20px] font-bold">
               <li><a href="#" className="hover:underline">AI</a></li>
               <li><a href="#" className="hover:underline">Blockchain</a></li>
               <li><a href="#" className="hover:underline">Web & Software</a></li>
@@ -129,7 +122,7 @@ export default function Footer() {
           {/* Legal Column */}
           <div>
             <h3 className="font-bold mb-2 font-inclusive-sans text-[20px]">Legal</h3>
-            <ul className="space-y-1 font-inclusive-sans text-[20px] font-medium">
+            <ul className="space-y-1 font-inclusive-sans text-[20px] font-bold">
               <li><a href="#" className="hover:underline">Privacy Policy</a></li>
               <li><a href="#" className="hover:underline">Terms of Service</a></li>
               <li><a href="#" className="hover:underline">FAQ</a></li>
@@ -139,7 +132,7 @@ export default function Footer() {
           {/* Socials Column */}
           <div>
             <h3 className="font-bold mb-2 font-inclusive-sans text-[20px]">Socials</h3>
-            <ul className="space-y-1  font-inclusive-sans text-[20px] font-medium">
+            <ul className="space-y-1  font-inclusive-sans text-[20px] font-bold">
               <li><a href="#" className="hover:underline">Instagram</a></li>
               <li><a href="#" className="hover:underline">LinkedIn</a></li>
               <li><a href="#" className="hover:underline">TikTok</a></li>
@@ -148,6 +141,19 @@ export default function Footer() {
         </div>
       </div>
 
+      <div className="w-[90%] max-w-[1550px] mx-auto my-[50px]">
+
+      <Image
+                    src="/coullaxFooterImage.png"
+                    alt="logo"
+                    width={1548}
+                    height={197}
+                    className="cursor-pointer"
+                  />
+
+      </div>
+
+    
       {/* Copyright Bar */}
       <div className="bg-black text-[#e0ef29] text-center py-5 ">
         <p className="text-[20px] font-inclusive-sans font-medium">© 2025. All Rights Reserved.</p>
