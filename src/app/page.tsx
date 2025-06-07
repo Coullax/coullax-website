@@ -22,6 +22,7 @@ import dynamic from "next/dynamic";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { desc, image, p } from "framer-motion/client";
 import { title } from "process";
+import { Marquee } from "@/components/magicui/marquee";
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
@@ -70,6 +71,15 @@ export default function Home() {
     { name: "About", link: "/about" },
     { name: "Case Studies", link: "/case-studies" },
     { name: "Careers", link: "/careers" },
+  ];
+
+  const imageList = [
+    "motilithIcon_yellow.svg",
+    "synthesisIcon_yellow.svg",
+    "cognitionIcon_yellow.svg",
+    "consensusIcon_yellow.svg",
+    "etherIcon_yellow.svg",
+    "weaveIcon_yellow.svg",
   ];
 
   const phases = {
@@ -520,9 +530,51 @@ export default function Home() {
 
   return (
     <div className=" w-full bg-[#fff]">
+      <div className=" bg-black h-dvh relative">
+        <div className=" h-[80dvh] w-full absolute top-0 left-0 flex flex-col items-center justify-center">
+          <div className=" h-[583px] w-full">
+            <MetaBalls
+              color="#ffffff"
+              cursorBallColor="#ffffff"
+              cursorBallSize={2}
+              ballCount={40}
+              animationSize={30}
+              enableMouseInteraction={true}
+              enableTransparency={true}
+              hoverSmoothness={0.109}
+              clumpFactor={0.7}
+              speed={0.3}
+            />
+          </div>
+          <h1 className=" font-silkscreen text-[23px] text-center leading-[42px] uppercase text-[#E0EF29] pt-[72px] pb-[50px]">
+            Scroll to traverse the threshold.
+          </h1>
+          <Image
+            src="/homepage/hero/arrow_white.svg"
+            alt="arrow"
+            width={40}
+            height={71}
+            className="animate-bounce"
+          />
+        </div>
+        <div className=" absolute bottom-0 left-0 right-0 z-10 w-[100%] ">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {imageList.map((image, index) => (
+              <Image
+                key={index}
+                src={`/homepage/ForgeCards/${image}`}
+                alt="cognitionIcon"
+                width={172}
+                height={215}
+                className="mr-[78px]"
+              />
+            ))}
+          </Marquee>
+        </div>
+      </div>
       {/* Hero Section */}
       <div ref={container1} className="w-full">
-        <div className=" w-full bg-[#fff] min-h-dvh">
+        <div className=" w-full bg-[#fff] min-h-dvh py-[40px]">
           {/* Header */}
           <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
             <Image
@@ -2306,7 +2358,7 @@ export default function Home() {
 
                 <button
                   type="button"
-                  className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#000] hover:border hover:border-[#000] transition-all duration-300 hover:scale-105 mb-[247px]"
+                  className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 mb-[247px]"
                 >
                   CONTACT US
                 </button>
