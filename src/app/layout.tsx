@@ -4,6 +4,7 @@ import "./globals.css";
 import { Plus_Jakarta_Sans, Kode_Mono, Silkscreen, Inclusive_Sans } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
 import { AudioProvider } from "@/components/AudioPlayer";
+import localfont from "next/font/local";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -28,6 +29,17 @@ const inclusiveSans = Inclusive_Sans({
   weight: ["400"],
   variable: "--font-inclusive-sans",
 });
+
+const specialGothicExpandedOne = localfont({
+  src: [
+    {
+      path: '../../public/fonts/SpecialGothicExpandedOne-Regular.ttf',
+      weight: "400",
+    },
+  ],
+  variable: "--font-special-gothic-expanded-one",
+});
+
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -107,7 +119,7 @@ export default function RootLayout({
 </script> */}
       </head>
       <body
-        className={`flex-grow overflow-x-hidden ${plusJakartaSans.variable} ${kodeMono.variable} ${silkscreen.variable} ${inclusiveSans.variable}`} 
+        className={`flex-grow overflow-x-hidden ${plusJakartaSans.variable} ${kodeMono.variable} ${silkscreen.variable} ${inclusiveSans.variable} ${specialGothicExpandedOne.variable}`} 
         suppressHydrationWarning={true}
       >
         <AudioProvider>

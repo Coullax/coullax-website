@@ -28,8 +28,13 @@ export function TypingAnimation({
 
   const [displayedText, setDisplayedText] = useState<string>("");
   const [started, setStarted] = useState(false);
-  const [cursorVisible, setCursorVisible] = useState(true);
+  const [showCursor, setShowCursor] = useState(true);
   const elementRef = useRef<HTMLElement | null>(null);
+
+  // Convert newlines to HTML breaks
+  const processText = (text: string) => {
+    return text.replace(/\n/g, '<br />');
+  };
 
   useEffect(() => {
     if (!startOnView) {
@@ -59,22 +64,12 @@ export function TypingAnimation({
   }, [delay, startOnView]);
 
   useEffect(() => {
-    const cursorBlinkInterval = setInterval(() => {
-      setCursorVisible((prev) => !prev);
-    }, 500); // Cursor blinks every 500ms
-
-    return () => clearInterval(cursorBlinkInterval);
-  }, []);
-
-  useEffect(() => {
     if (!started) return;
 
     let i = 0;
     const typingEffect = setInterval(() => {
       if (i < children.length) {
-        const currentText = children.substring(0, i + 1);
-        const parsedText = currentText.replace(/\n/g, "<br />");
-        setDisplayedText(parsedText);
+        setDisplayedText(children.substring(0, i + 1));
         i++;
       } else {
         clearInterval(typingEffect);
@@ -86,6 +81,15 @@ export function TypingAnimation({
     };
   }, [children, duration, started]);
 
+  // Blinking cursor effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+
+    return () => clearInterval(cursorInterval);
+  }, []);
+
   return (
     <MotionComponent
       ref={elementRef}
@@ -95,7 +99,7 @@ export function TypingAnimation({
       )}
       {...props}
       dangerouslySetInnerHTML={{
-        __html: `${displayedText}${cursorVisible ? "<span class='cursor'>|</span>" : ""}`,
+        __html: processText(displayedText) + (showCursor ? '<span class="animate-pulse">|</span>' : '<span style="opacity: 0;">|</span>')
       }}
     />
   );

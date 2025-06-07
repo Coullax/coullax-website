@@ -5,25 +5,30 @@ import { useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const morphTime = 2.5;
-const cooldownTime = 5.0;
+const cooldownTime = 3.0;
 
 const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => void, manualIndex?: number) => {
   const textIndexRef = useRef(0);
   const morphRef = useRef(0);
-  const cooldownRef = useRef(0);
+  const cooldownRef = useRef(cooldownTime); // Start with cooldown
   const timeRef = useRef(new Date());
   const lastManualIndexRef = useRef(manualIndex);
+  const forceAnimationRef = useRef(false);
 
   const text1Ref = useRef<HTMLSpanElement>(null);
   const text2Ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (manualIndex !== undefined && manualIndex !== lastManualIndexRef.current) {
-      textIndexRef.current = (manualIndex - 1 + texts.length) % texts.length;
+      // Manual index changed, set up for morphing to that text
+      const targetIndex = manualIndex;
+      textIndexRef.current = (targetIndex - 1 + texts.length) % texts.length;
       lastManualIndexRef.current = manualIndex;
       
+      // Force start morphing animation immediately
       morphRef.current = 0;
-      cooldownRef.current = 0;
+      cooldownRef.current = 0; 
+      forceAnimationRef.current = true;
       timeRef.current = new Date();
     }
   }, [manualIndex, texts]);
@@ -60,6 +65,7 @@ const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => vo
     if (fraction > 1) {
       cooldownRef.current = cooldownTime;
       fraction = 1;
+      forceAnimationRef.current = false; // Reset force flag
     }
 
     setStyles(fraction);
@@ -95,10 +101,15 @@ const useMorphingText = (texts: string[], setActiveIndex?: (index: number) => vo
       const dt = (newTime.getTime() - timeRef.current.getTime()) / 1000;
       timeRef.current = newTime;
 
-      cooldownRef.current -= dt;
+      // Add delta time to morph progress
+      morphRef.current += dt;
 
-      if (cooldownRef.current <= 0) doMorph();
-      else doCooldown();
+      if (cooldownRef.current <= 0 || forceAnimationRef.current) {
+        doMorph();
+      } else {
+        cooldownRef.current -= dt;
+        doCooldown();
+      }
     };
 
     animate();
@@ -114,11 +125,11 @@ interface MorphingTextProps {
   className?: string;
   texts: string[];
   setActiveIndex?: (index: number) => void;
-  manualIndex?: number | null;
+  manualIndex?: number;
 }
 
 const Texts: React.FC<Pick<MorphingTextProps, "texts" | "setActiveIndex" | "manualIndex">> = ({ texts, setActiveIndex, manualIndex }) => {
-  const { text1Ref, text2Ref } = useMorphingText(texts, setActiveIndex, manualIndex ?? undefined);
+  const { text1Ref, text2Ref } = useMorphingText(texts, setActiveIndex, manualIndex);
   return (
     <>
       <span

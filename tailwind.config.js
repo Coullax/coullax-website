@@ -12,6 +12,7 @@ module.exports = {
 			'kode': ['var(--font-kode-mono)', 'sans-serif'],
 			'silkscreen': ['var(--font-silkscreen)', 'sans-serif'],
 			'inclusive': ['var(--font-inclusive-sans)', 'sans-serif'],
+			'specialGothicExpandedOne': ['var(--font-special-gothic-expanded-one)', 'sans-serif'],
 		  },
 		},
 	  },
