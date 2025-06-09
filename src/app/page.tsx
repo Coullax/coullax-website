@@ -21,6 +21,7 @@ import { TypingAnimation } from "@/components/magicui/typing-animation";
 import dynamic from "next/dynamic";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { Marquee } from "@/components/magicui/marquee";
+import SplitText from "../components/reactbits/splitText";
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
@@ -765,9 +766,19 @@ export default function Home() {
             <br /> The crucible of ideas, fueled by intent. This is where we
             build the unbuilt.
           </h1>
-          <h1 className=" mt-[50px] text-white font-special-gothic-expanded-one text-[243px] leading-[282px] -tracking-[12px] uppercase">
-            THE FORGE
-          </h1>
+          <SplitText
+  text="THE FORGE"
+  className=" mt-[50px] text-white font-special-gothic-expanded-one text-[243px] leading-[282px] -tracking-[12px] uppercase"
+  delay={10}
+  duration={2}
+  ease="power3.out"
+  splitType="chars"
+  from={{ opacity: 0, y: 40 }}
+  to={{ opacity: 1, y: 0 }}
+  threshold={0.1}
+  rootMargin="-100px"
+  textAlign="center"
+/>
           <div className=" text-[40px] font-inclusive-sans text-white leading-[52px] uppercase my-[56px]">
             This is where vision meets velocity.
             <br />
