@@ -2220,7 +2220,7 @@ export default function Home() {
                 case stuides
               </span>
             </div>
-            <span className="text-[15px] font-silkscreen">
+            <span className="text-[15px] font-silkscreen mt-[30px] mb-[6px]">
               Each artifact tells a story.<br></br>a fragment of vision forged
               in the fires of creation<br></br>.Born from whispers of code and
               pulses of intent,<br></br>these are the echoes of ideas made real.
