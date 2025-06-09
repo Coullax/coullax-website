@@ -22,6 +22,7 @@ import dynamic from "next/dynamic";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { Marquee } from "@/components/magicui/marquee";
 import SplitText from "../components/reactbits/splitText";
+import DecryptedText from '../components/reactbits/DecryptedText'
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
@@ -572,6 +573,7 @@ export default function Home() {
         </div>
       </div>
       {/* Hero Section */}
+
       <div ref={container1} className="w-full">
         <div className=" w-full bg-[#fff] min-h-dvh py-[40px]">
           {/* Header */}
@@ -596,6 +598,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
           <div className="w-[90%] max-w-[1550px] h-[90dvh] flex flex-col items-center justify-center mx-auto">
             <h1 className=" text-[230px] text-center leading-[267px] text-[#000000] font-special-gothic-expanded-one uppercase">
               BUILD THE
@@ -1030,9 +1033,19 @@ export default function Home() {
       </VelocityScroll>
       <div className="w-[90%] max-w-[1550px] mx-auto py-[100px]">
         <div className=" w-full flex flex-row justify-between items-start">
-          <h1 className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase">
-            The ritual
-          </h1>
+          <SplitText
+            text="The ritual"
+            className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase"
+            delay={10}
+            duration={2}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
           <h1 className=" text-[36px] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
             process
           </h1>
@@ -1162,9 +1175,19 @@ export default function Home() {
       <div className=" w-full bg-[#F0F0F0] py-[100px]">
         <div className="w-[90%] max-w-[1550px] mx-auto">
           <div className=" w-full flex flex-row justify-between items-start">
-            <h1 className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase">
-              PRIMORDIALs
-            </h1>
+            <SplitText
+            text="PRIMORDIALs"
+            className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase"
+            delay={10}
+            duration={2}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
             <h1 className=" text-[36px] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
               core values
             </h1>
@@ -1544,19 +1567,21 @@ export default function Home() {
             {/* <span className="font-silkscreen text-[64px] relative">
               THE SUMMON
             </span> */}
-            <h1 className=" text-[#fff] font-special-gothic-expanded-one text-[96px]">
               THE SUMMON
-              {/* <DecryptedText
-              text="THE SUMMON"
-              speed={100}
-              maxIterations={20}
-              characters="ABCD1234!?"
-              animateOn="hover"
-              className="revealed"
-              parentClassName="all-letters"
-              encryptedClassName="encrypted"
-            /> */}
-            </h1>
+              <SplitText
+            text="THE SUMMON"
+            className=" text-[#fff] font-special-gothic-expanded-one text-[96px]"
+            delay={10}
+            duration={2}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+          
           </div>
 
           <div className="flex justify-center items-center mt-[30px]  ">
@@ -2224,9 +2249,19 @@ export default function Home() {
         <div className=" w-[90%] max-w-[1550px] mx-auto my-[100px]">
           <div className="flex flex-col">
             <div className="flex justify-between">
-              <span className="text-[96px] font-special-gothic-expanded-one uppercase">
-                artifacts
-              </span>
+              <SplitText
+                text="artifacts"
+                className="text-[96px] font-special-gothic-expanded-one uppercase"
+                delay={10}
+                duration={2}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+              />
               <span className="text-[36px] font-special-gothic-expanded-one uppercase">
                 case stuides
               </span>
@@ -2322,9 +2357,19 @@ export default function Home() {
               WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
           </TypingAnimation>
 
-          <h1 className="text-[94px] font-special-gothic-expanded-one font-SpecialGothicOne leading-[1.3] text-white text-center py-[66px] ">
-            LIGHT THE SIGNAL
-          </h1>
+          <SplitText
+            text="LIGHT THE SIGNAL"
+            className="text-[94px] font-special-gothic-expanded-one font-SpecialGothicOne leading-[1.3] text-white text-center py-[66px] "
+            delay={10}
+            duration={2}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
 
           {/* <p className="font-silkscreen text-left text-[15px] text-[#000] py-[66px]">
             THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
