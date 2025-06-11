@@ -599,35 +599,13 @@ export default function Home() {
                 </div>
               </div> */}
 
-              <div className="w-[90%] max-w-[1550px] h-[90dvh] flex flex-col items-center justify-center mx-auto">
-                  <h1 className="text-center">
-                    <SplitText
-                      text="BUILD THE"
-                      className="text-[230px] leading-[267px] text-[#000000] font-special-gothic-expanded-one uppercase"
-                      delay={10}
-                      duration={2}
-                      ease="power3.out"
-                      splitType="chars"
-                      from={{ opacity: 0, y: 40 }}
-                      to={{ opacity: 1, y: 0 }}
-                      threshold={0.1}
-                      rootMargin="-100px"
-                      textAlign="center"
-                    />
+                <div className="w-[90%] max-w-[1550px] h-dvh flex flex-col items-center justify-center mx-auto">
+                  <h1 className=" text-[17.5vh] text-center leading-[10vh] text-[#000000] font-special-gothic-expanded-one uppercase">
+                    BUILD THE
                     <br />{" "}
-                    <SplitText
-                      text="UNBUILD"
-                      className="text-[286px] leading-[332px] -tracking-[14px] font-special-gothic-expanded-one uppercase"
-                      delay={10}
-                      duration={2}
-                      ease="power3.out"
-                      splitType="chars"
-                      from={{ opacity: 0, y: 40 }}
-                      to={{ opacity: 1, y: 0 }}
-                      threshold={0.1}
-                      rootMargin="-100px"
-                      textAlign="center"
-                    />
+                    <span className=" text-[22vh] leading-[27vh] -tracking-[1vh]">
+                      UNBUILD
+                    </span>
                   </h1>
 
                 <span className="w-full !font-inclusive-sans !text-[2.4vh] text-center !leading-[3.4vh] !uppercase !text-black my-[6vh]">
