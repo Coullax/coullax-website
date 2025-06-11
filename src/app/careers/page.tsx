@@ -353,7 +353,7 @@ export default function CareersPage() {
         Joining Coullax is not a transaction — it is a transition. We don't merely review resumes; we decipher intent, resonance, and potential. Our process is built to uncover builders who think beyond the visible . individuals who feel the pulse of systems not yet formed.
       </div>
 
-      <button className="bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[50px] my-[100px]">
+      <button className="bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[50px] my-[100px]">
         SEND US YOUR RESUME
       </button>
     </div>
