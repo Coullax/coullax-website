@@ -23,12 +23,12 @@ const AudioToggle = dynamic(
 export default function HeaderNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const navigationList = [
-        { name: "Home", link: "/" },
-        { name: "Service", link: "/services" },
-        { name: "Case studies", link: "/case-studies" },
-        { name: "Careers", link: "/careers" },
-    ];
+  const navigationList = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Case Studies", link: "/case-studies" },
+    { name: "Careers", link: "/careers" },
+  ];
 
   return (
     <Navbar>
@@ -36,13 +36,13 @@ export default function HeaderNavBar() {
       <NavBody>
         <NavbarLogo />
         <NavItems items={navigationList} />
-        <div className="flex items-center gap-4">
-          <Suspense fallback={<div className="w-5 h-5" />}>
+        {/* <div className="flex items-center gap-4"> */}
+          {/* <Suspense fallback={<div className="w-5 h-5" />}>
             <AudioToggle />
-          </Suspense>
-          <NavbarButton href="https://cal.com/coullax/30min" target="_blank" className=" shadow-none">
+          </Suspense> */}
+          {/* <NavbarButton href="https://cal.com/coullax/30min" target="_blank" className=" shadow-none">
             Book a call
-          </NavbarButton>
+          </NavbarButton> */}
           {/* <button className=" bg-[#e3ffe6] rounded-full flex justify-center p-[9px] ">
                         <div className=" bg-[#6abb79] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
                             <ArrowRight className=" h-[15px] aspect-square" />
@@ -51,7 +51,7 @@ export default function HeaderNavBar() {
                             Book a call
                         </span>
                     </button> */}
-        </div>
+        {/* </div> */}
       </NavBody>
 
       {/* Mobile Navigation */}
