@@ -132,35 +132,35 @@ export default function Home() {
       title: "Efficiency",
       subtitle: "vector",
       description:
-        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+        "Our systems are designed to be fast, focused, and streamlined. We aim to reduce waste and increase clarity in every layer of work.",
     },
     primordial2: {
       image: "primordial_img_2.webp",
       title: "Security",
       subtitle: "Pylon",
       description:
-        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+        "We ensure everything we build is protected. from data to infrastructure. Security isn't an afterthought, it's the foundation.",
     },
     primordial3: {
       image: "primordial_img_3.webp",
       title: "Transparency",
       subtitle: "veil",
       description:
-        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+        "We believe in open systems, honest communication, and traceable actions. Nothing hidden, everything accountable.",
     },
     primordial4: {
       image: "primordial_img_4.webp",
       title: "Connectivity",
       subtitle: "nexus",
       description:
-        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+        "We build connections. between people, platforms, and processes. The stronger the link, the stronger the system.",
     },
     primordial5: {
       image: "primordial_img_5.webp",
       title: "adaptability",
       subtitle: "flux",
       description:
-        "This is where it all begins. The first spark of connection. The moment your vision enters the grid. First Light marks the start of the journey. where your signal is received, and the Forge prepares to shape what comes",
+        "The world changes fast.  so do we. Our solutions are flexible and built to grow, shift, and evolve with your needs.",
     },
   };
 
@@ -571,11 +571,11 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Hero Section */}
-          <HeaderNavBar />
 
           <div className="w-full">
             <div className=" w-full bg-[#fff] min-h-dvh py-[40px]">
               {/* Header */}
+          <HeaderNavBar />
               {/* <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
                 <Image
                   src="/logo.png"
@@ -602,12 +602,12 @@ export default function Home() {
                 <h1 className=" text-[17.5vh] text-center leading-[10vh] text-[#000000] font-special-gothic-expanded-one uppercase">
                   BUILD THE
                   <br />{" "}
-                  <span className=" text-[22vh] leading-[27vh] -tracking-[14px]">
+                  <span className=" text-[22vh] leading-[27vh] -tracking-[1vh]">
                     UNBUILD
                   </span>
                 </h1>
 
-                <span className="w-full !font-inclusive-sans !text-[32px] text-center !leading-[42px] !uppercase !text-black my-[76px]">
+                <span className="w-full !font-inclusive-sans !text-[2.4vh] text-center !leading-[3.4vh] !uppercase !text-black my-[6vh]">
                   {!isDecoded
                     ? greakArray.map((text, index) => (
                         <div key={index}>
@@ -643,7 +643,7 @@ export default function Home() {
                 </span>
                 <button
                   onClick={() => setIsDecoded(true)}
-                  className={` bg-[#e0ef29] min-w-[312px] cursor-pointer py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black ${
+                  className={` bg-[#e0ef29] min-w-[13vw] cursor-pointer py-[2vh] px-[41px] text-[1.5vh] text-center leading-[1.5vh] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black ${
                     !isDecoded ? "animate-blink" : ""
                   }`}
                 >
@@ -809,7 +809,7 @@ export default function Home() {
             <div
             // style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
             // ref={container2}
-            className="relative w-full bg-[#000000] py-[100px]"
+            className="relative w-full bg-[#000000] py-[8vh]"
             >
             <div
               className={cn(
@@ -830,7 +830,7 @@ export default function Home() {
               </h1>
               <SplitText
               text="THE FORGE"
-              className="  mt-[50px] text-white font-special-gothic-expanded-one text-[243px] leading-[282px] -tracking-[12px] uppercase"
+              className="  mt-[5vh] text-white font-special-gothic-expanded-one text-[18vh] leading-[20vh] -tracking-[0.5vh] uppercase"
               delay={10}
               duration={2}
               ease="power3.out"
@@ -841,7 +841,7 @@ export default function Home() {
               rootMargin="-100px"
               textAlign="center"
               />
-              <div className=" text-[40px] font-inclusive-sans text-white leading-[52px] uppercase my-[56px]">
+              <div className=" text-[3.5vh] font-inclusive-sans text-white leading-[5vh] uppercase my-[6vh]">
               This is where vision meets velocity.
               <br />
               Where raw ideas are melted down, reshaped, and forged
@@ -876,7 +876,7 @@ export default function Home() {
                 alt="studiosAndLabsIcon"
                 />
               </div>
-              <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
+              <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
                 ARTIFICIAL
                 <br />
                 INTELLIGENCE
@@ -900,13 +900,13 @@ export default function Home() {
                 alt="studiosAndLabsIcon"
                 />
               </div>
-              <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
+              <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
                 BLOCKCHAIN
               </h1>
               </div>
               </div>
-              <div className=" z-10 my-[50px] bg-black border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start" style={{ zIndex: 10, position: "relative" }}>
-              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+              <div className=" z-10 my-[50px] bg-black border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start" style={{ zIndex: 10, position: "relative" }}>
+              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
                 STUDIOS AND LABS
               </h1>
               <div className="  w-full flex flex-row justify-between items-center">
@@ -922,13 +922,13 @@ export default function Home() {
               </div>
               </div>
               <div className=" z-10 w-full grid grid-cols-3 gap-[50px] mb-[50px]">
-              <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[365px] text-black flex flex-col justify-between items-start">
-              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px] uppercase">
+              <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-black flex flex-col justify-between items-start">
+              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
                 Web & <br />
                 Software
               </h1>
               <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
                 WEAVE
                 </h1>
                 <Image
@@ -939,13 +939,13 @@ export default function Home() {
                 />
               </div>
               </div>
-              <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
-              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+              <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
+              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
                 Research & <br />
                 Strategy
               </h1>
               <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
                 SYNTHESIS
                 </h1>
                 <Image
@@ -956,13 +956,13 @@ export default function Home() {
                 />
               </div>
               </div>
-              <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
-              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+              <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
+              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh]">
                 MOBILE <br />
                 DEVELOPMENT
               </h1>
               <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
                 MOTILITH
                 </h1>
                 <Image
@@ -1086,9 +1086,9 @@ export default function Home() {
             </div>
           </div>
           <VelocityScroll
-            fontSize="text-4xl font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
+            fontSize="font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
             defaultVelocity={0.2}
-            className="text-white !font-special-gothic-expanded-one uppercase !text-[60px] !leading-[70px] !-tracking-[3px] bg-[#0505cb] py-[30px] "
+            className="text-white !font-special-gothic-expanded-one uppercase !text-[5vh] !leading-[5.5vh] !-tracking-[3px] bg-[#0505cb] py-[2.5vh] "
             numRows={1}
           >
             AI, Machine Learning, Web3, Data science.Software.Research,
@@ -1099,7 +1099,7 @@ export default function Home() {
             <div className=" w-full flex flex-row justify-between items-start">
               <SplitText
                 text="The ritual"
-                className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase"
+                className=" text-[8vh] font-special-gothic-expanded-one leading-[10vh] -tracking-[0.4vh] uppercase"
                 delay={10}
                 duration={2}
                 ease="power3.out"
@@ -1110,7 +1110,7 @@ export default function Home() {
                 rootMargin="-100px"
                 textAlign="center"
               />
-              <h1 className=" text-[36px] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
+              <h1 className=" text-[2.5vh] font-special-gothic-expanded-one leading-[42px] -tracking-[0.2vh] uppercase">
                 process
               </h1>
             </div>
@@ -1244,7 +1244,7 @@ export default function Home() {
               <div className=" w-full flex flex-row justify-between items-start">
                 <SplitText
                   text="PRIMORDIALs"
-                  className=" text-[96px] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase"
+                  className=" text-[8vh] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase"
                   delay={10}
                   duration={2}
                   ease="power3.out"
@@ -1255,7 +1255,7 @@ export default function Home() {
                   rootMargin="-100px"
                   textAlign="center"
                 />
-                <h1 className=" text-[36px] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
+                <h1 className=" text-[3vh] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
                   core values
                 </h1>
               </div>
@@ -1367,12 +1367,16 @@ export default function Home() {
                 </div>
               </div>
               <div className=" flex flex-row border-2 border-black justify-between items-start gap-0">
-                <div className=" h-[373px] aspect-square ">
+                <div
+                  className="aspect-square"
+                  style={{ width: "33vh", height: "33vh" }}
+                >
                   <Image
-                    src={`/HomePage/primordials/${primordials[activePrimordial].image}`}
-                    alt="Primordial Image"
-                    width={373}
-                    height={373}
+                  src={`/HomePage/primordials/${primordials[activePrimordial].image}`}
+                  alt="Primordial Image"
+                  width={373}
+                  height={373}
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </div>
                 <div className=" w-full py-[45px] px-[50px]">
@@ -1384,7 +1388,7 @@ export default function Home() {
                       {primordials[activePrimordial].subtitle}
                     </h1>
                   </div>
-                  <div className=" mt-[30px] font-inclusive-sans text-[40px] leading-[46px] w-full">
+                  <div className=" mt-[30px] font-inclusive-sans text-[3.5vh] leading-[3.5vh] w-full">
                     {primordials[activePrimordial].description}
                   </div>
                 </div>
@@ -1631,7 +1635,7 @@ export default function Home() {
         </div>
       </div> */}
 
-          <div className="w-full relative  overflow-hidden bg-[#000]  py-[282px]">
+          <div className="w-full relative overflow-hidden bg-[#000] py-[15vh]">
             <div className="w-[90%] max-w-[1550px] mx-auto ">
               <div className="w-full flex flex-col items-center">
                 <div
@@ -1646,10 +1650,10 @@ export default function Home() {
                 {/* <span className="font-silkscreen text-[64px] relative">
               THE SUMMON
             </span> */}
-                THE SUMMON
+                {/* THE SUMMON */}
                 <SplitText
                   text="THE SUMMON"
-                  className=" text-[#fff] font-special-gothic-expanded-one text-[96px]"
+                  className=" text-[#fff] font-special-gothic-expanded-one text-[9vh]"
                   delay={10}
                   duration={2}
                   ease="power3.out"
@@ -1671,7 +1675,7 @@ export default function Home() {
               </div>
 
               <div className="flex justify-center items-center mt-[56px]  ">
-                <span className="justify-center text-[52px] text-center uppercase font-inclusive-sans text-white">
+                <span className="justify-center text-[4vh] text-center uppercase font-inclusive-sans text-white">
                   Have a project in mind? Let&apos;s align.<br></br>
                   Book a call to explore how we can bring your vision <br></br>
                   to life through intelligent systems and <br></br>
@@ -2320,17 +2324,17 @@ export default function Home() {
         </div>
       </div> */}
           <div className="bg-[#e0ef29] font-bold">
-            <VelocityScroll fontSize="text-[60px]" numRows={1}>
+            <VelocityScroll fontSize="text-[5vh]" numRows={1}>
               JOIN THE BUILD.
             </VelocityScroll>
           </div>
           <div className="w-full relative  overflow-hidden bg-white">
-            <div className=" w-[90%] max-w-[1550px] mx-auto my-[100px]">
+            <div className=" w-[90%] max-w-[1550px] mx-auto my-[5vh]">
               <div className="flex flex-col">
                 <div className="flex justify-between">
                   <SplitText
                     text="artifacts"
-                    className="text-[96px] font-special-gothic-expanded-one uppercase"
+                    className="text-[8vh] font-special-gothic-expanded-one uppercase"
                     delay={10}
                     duration={2}
                     ease="power3.out"
@@ -2341,7 +2345,7 @@ export default function Home() {
                     rootMargin="-100px"
                     textAlign="center"
                   />
-                  <span className="text-[36px] font-special-gothic-expanded-one uppercase">
+                  <span className="text-[2.5vh] font-special-gothic-expanded-one uppercase">
                     case stuides
                   </span>
                 </div>
@@ -2352,7 +2356,7 @@ export default function Home() {
                   ideas made real.
                 </span>
               </div>
-              <p className="font-inclusive-sans text-[40px] leading-[1.3] text-left my-[50px]">
+              <p className="text-left text-[3.5vh] font-inclusive-sans text-black leading-[5vh] uppercase my-[6vh]">
                 HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR. <br />
                 INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD <br />
                 BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF <br />
@@ -2441,7 +2445,7 @@ export default function Home() {
               )}
             />
             <div className=" w-[90%] max-w-[1038px] mx-auto">
-              <TypingAnimation className="font-silkscreen text-center text-[20px] text-white mt-[247px]">
+              <TypingAnimation className="font-silkscreen text-center text-[2vh] text-white mt-[18vh]">
                 {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
               YOU'VE REACHED THE EDGE OF THE KNOWN.
               WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
@@ -2449,7 +2453,7 @@ export default function Home() {
 
               <SplitText
                 text="LIGHT THE SIGNAL"
-                className="text-[94px] font-special-gothic-expanded-one font-SpecialGothicOne leading-[1.3] text-white text-center py-[66px] "
+                className="text-[7.3vh] font-special-gothic-expanded-one leading-[1.3] text-white text-center py-[5vh] w-full "
                 delay={10}
                 duration={2}
                 ease="power3.out"
