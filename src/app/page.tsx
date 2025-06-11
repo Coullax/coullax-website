@@ -27,6 +27,7 @@ import { view } from "framer-motion/client";
 import Loading from "./loading";
 import { cn } from "@/lib/utils";
 import HeaderNavBar from "@/components/Header";
+import ContactUs from "@/components/ContactUs";
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
@@ -843,7 +844,7 @@ export default function Home() {
               )}
             />
             <div className=" z-20 py-[50px] w-[90%] max-w-[1550px] mx-auto">
-
+              
               <h1 className=" text-white font-silkscreen text-[15px] leading-[20px]">
               Shaped by glyph, born of will. Created in silence, between
               signals.
@@ -2418,131 +2419,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* <div className="w-full relative  overflow-hidden">
-        <div className=" w-[90%] max-w-[1200px] mx-auto my-[140px]">
-          <div className="min-h-[260px] self-stretch flex-grow-0 flex flex-col justify-center items-center gap-[22px] p-[30px] rounded-[25px] bg-[#d1ecb1]">
-            <h1 className="text-[20px] font-bold leading-[1.16] text-black -tracking-[1px] text-center">
-              Want to know more ?
-            </h1>
-            <p className="text-[16px] font-normal leading-[1.04] text-black text-center">
-              Hop on a quick 1-to-1 meeting for any questions or to kickstart
-              your project with custom requirements.
-            </p>
-            <a
-              href="https://cal.com/coullax/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className=" bg-[#6abb79] cursor-pointer hover:bg-[#7dd98e] rounded-full flex justify-center p-[9px] mb-[7px]">
-                <div className=" bg-[#fffef1] border-[2px] rounded-full h-[24px] w-[24px] aspect-square flex justify-center items-center">
-                  <ArrowRight className=" h-[15px] aspect-square" />
-                </div>
-                <span className=" ml-[6px] text-[20px] font-semibold leading-[23px] -tracking-[1px] pr-[5px]">
-                  Let&apos;s talk
-                </span>
-              </button>
-            </a>
-          </div>
-        </div>
-      </div> */}
-
-          {/* <div className="w-full relative  overflow-hidden mb-[80px]">
-        <VelocityScroll
-          fontSize="text-4xl font-bold md:text-7xl md:leading-[5.5rem]"
-          defaultVelocity={0.5}
-          className="text-[#eeeddf]"
-        >
-          Efficiency. Security. Transparency.Efficiency. Security. Transparency.
-        </VelocityScroll>
-      </div> */}
-
-          <div className="w-full relative overflow-hidden bg-black">
-            <div
-              className={cn(
-                "absolute inset-0",
-                "[background-size:20px_20px]",
-                "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-                "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
-                "opacity-25 dark:opacity-25 z-0"
-              )}
-            />
-            <div className=" w-[90%] max-w-[1038px] mx-auto">
-              <TypingAnimation className="font-silkscreen text-center text-[2vh] text-white mt-[18vh]">
-                {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
-              YOU'VE REACHED THE EDGE OF THE KNOWN.
-              WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
-              </TypingAnimation>
-
-              <SplitText
-                text="LIGHT THE SIGNAL"
-                className="text-[7.1vh] font-special-gothic-expanded-one leading-[1.3] text-white text-center py-[5vh] w-full "
-                delay={10}
-                duration={2}
-                ease="power3.out"
-                splitType="chars"
-                from={{ opacity: 0, y: 40 }}
-                to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
-                rootMargin="-100px"
-                textAlign="center"
-              />
-
-              {/* <p className="font-silkscreen text-left text-[15px] text-[#000] py-[66px]">
-            THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
-            <br />
-            YOU&apos;VE REACHED THE EDGE OF THE KNOWN.
-            <br />
-            WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
-          </p> */}
-
-              <div className=" flex flex-col justify-center items-center">
-                <form className="z-10 space-y-6 w-full max-w-[1038px] ">
-                  {/* Email Input */}
-                  <div>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="YOUR EMAIL"
-                      className="w-full h-[98px] p-2 border-[1.3px] border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white px-[15px] text-white"
-                    />
-                  </div>
-
-                  {/* Message Textarea */}
-                  <div>
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="THE MESSAGE"
-                      rows={4}
-                      className="w-full  h-[214px] p-2 border border-[#000]  bg-[#242425] focus:outline-none placeholder:!text-white px-[15px]  text-white"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className=" flex flex-col justify-center items-center">
-                    <p className="font-silkscreen text-left text-[15px] text-white py-[40px]">
-                      TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING
-                      NEW SIGNAL...
-                    </p>
-
-                    {/* <button
-                      type="button"
-                      className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 mb-[247px]"
-                    >
-                      CONTACT US
-                    </button> */}
-                    <button
-                      type="button"
-                      className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black hover:border-[#e0ef29] hover:text-[#e0ef29] border-2 mb-[247px]"
-                    >
-                      CONTACT US
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+          <ContactUs />
 
           <Footer />
 
