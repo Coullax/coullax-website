@@ -445,7 +445,7 @@ export default function Home() {
   const missionArray = [
     {text: "Our mission is to enhance efficiency, security, and transparency across ", key: "†яΔηʂραяΞης."},
     {text: "industries.Making the world a smarter, more connected, and a safer place.", key: "†яΔηʂς."},,
-    {text: "To achieve this, we believe in the power of Artificial intelligence's efficiency and", key: "Δ."},
+    {text: "To achieve this, we believe in the power of Artificial intelligence's efficiency and", key: "Δʂρ."},
     {text: "Blockchain technology's security and transparency.", key: "†яΔηʂαяΞης."},
   ];
 
