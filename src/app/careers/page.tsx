@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import HeaderNavBar from "@/components/Header";
 import { Marquee } from "@/components/magicui/marquee";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import { ArrowCircleRight, ArrowCircleUpRight } from "@phosphor-icons/react";
+import { ArrowCircleRight, ArrowCircleUpRight, ArrowUpRight } from "@phosphor-icons/react";
 
 import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
@@ -39,12 +39,6 @@ const skillJobs: SkillJobs[] = [
     {
       name: 'Software Engineering',
       jobs: [
-        // {
-        //   title: "Software Engineer",
-        //   description: "We are hiring a expert software engineer for our team",
-        //   type: "Full Time",
-        //   location: "Remote"
-        // },
         {
           title: "Software Engineer Intern",
           description: "We are hiring a software engineer intern for our team",
@@ -133,6 +127,45 @@ const skillJobs: SkillJobs[] = [
       jobs: []
     }
   ];
+
+  const jobListings = [
+    {
+      name: 'Product Design',
+      jobs: [
+        {
+          title: "PRODUCT DESIGNER",
+          description: "we are looking for a highly skilled product designer to join our dynamic team.",
+          type: "FULL TIME",
+          location: "ON SITE",
+          link: 'https://example.com/product-designer'
+        }
+      ]
+    },
+    {
+      name: 'Product Design',
+      jobs: [
+        {
+          title: "PRODUCT DESIGNER",
+          description: "we are looking for a highly skilled product designer to join our dynamic team.",
+          type: "FULL TIME",
+          location: "ON SITE",
+          link: 'https://example.com/product-designer'
+        }
+      ]
+    },
+    {
+      name: 'Product Design',
+      jobs: [
+        {
+          title: "PRODUCT DESIGNER",
+          description: "we are looking for a highly skilled product designer to join our dynamic team.",
+          type: "FULL TIME",
+          location: "ON SITE",
+          link: 'https://example.com/product-designer'
+        }
+      ]
+    },
+  ];
   
 
 
@@ -178,14 +211,20 @@ export default function CareersPage() {
   const carrouseImageList: CarrouseImageItem[] = [
     {
       image: Image1,
-      width: 554,
-      height: 318,
+      width: 782,
+      height: 450,
     },
     {
       image: Image2,
-      width: 554,
-      height: 318,
-    }
+      width: 782,
+      height: 450,
+    },
+    {
+      image: Image1,
+      width: 782,
+      height: 450,
+    },
+
   ];
 
   const handleSkillClick = (clickedIndex: number) => {
@@ -216,31 +255,32 @@ export default function CareersPage() {
                 </div>
             </div>
 
+
+            <div className="w-[90%] max-w-[1550px]  mx-auto flex justify-between mt-[100px]">
+              <span className="text-[96px] uppercase font-special-gothic-expanded-one">The hand of<br></br> entity</span>
+              <span className="text-[36px] uppercase font-special-gothic-expanded-one">careers</span>
+            </div>
+
+        <div className="w-[90%] max-w-[1550px]  mx-auto mt-[30px] text-left">
+          <div className=" text-[15px] leading-[20px] uppercase font-silkscreen text-black">
+          To build the unbuilt, we gather the rare, the restless, the aligne
+          </div>
+
+          <div className=" text-[40px] mt-[56px] uppercase font-inclusive-sans text-black">
+          Coullax seeks thinkers, makers, and system breakers , <br></br>individuals drawn to the strange, the powerful, and <br></br>the unseen mechanics behind what we build. Whether <br></br>you wield code like language, design like ritual, or<br></br> strategy like signal alignment, there is a place for<br></br> you within the Forge.
+          </div>
+
+          <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[50px] my-[100px]">
+              SEND US YOUR RESUME
+            </button>
+        </div>
+
             <div className="w-full relative overflow-hidden">
-                <div className=" w-[90%] max-w-[1200px] mx-auto mt-[70px] md:mt-[140px] ">
-                    <div
-                        className="flex flex-row bg-[#6abb79] items-start gap-1.5 rounded-[100px] w-fit py-[5px] pl-[5px] pr-[14px]  justify-center">
-                        <ArrowCircleRight size={32} />
-                        <span
-                            className="text-[20px] text-left text-[#1e201f] font-semibold">
-                            We are Hiring
-                        </span>
-                    </div>
-                    <h1 className=" text-black my-[24px] lg:my-[32px] leading-[47px] -tracking-[2.2px] text-[36px] lg:text-[45px] font-bold text-left">
-                        Careers
+                <div className="w-[90%] max-w-[1550px]  mx-auto mt-[100px] md:mt-[140px] ">
+                    <h1 className=" text-black -tracking-[2.2px] text-[36px] lg:text-[45px] font-bold text-left">
+                    AVAILABLE POSITIONS
                     </h1>
-                    <div
-                        className="text-left text-[20px] lg:text-[24px] text-[#575757] font-medium leading-[28px] max-w-[760px]">
-                        Our mission is to enhance efficiency, security, and transparency
-                        across industries. Making the world a smarter, more connected, and a
-                        safer place.
-                        <br/>
-                        <br/>
-                        To achieve this, we believe in the power of Artificial
-                        intelligence&apos;s efficiency and Blockchain technology&apos;s
-                        security and transparency
-                    </div>
-                    <div className=" mt-[24px] lg:mt-[32px]">
+                    <div className="mt-[24px] lg:mt-[32px]">
                         <Marquee pauseOnHover className="[--duration:20s] p-0">
                             {carrouseImageList.map((image: CarrouseImageItem, index: number) => (
                                 <Image
@@ -249,7 +289,7 @@ export default function CareersPage() {
                                     alt={`image${index}`}
                                     width={image.width}
                                     height={image.height}
-                                    className=" rounded-[15px] bg-[#d9d9d9] mr-[32px]"
+                                    className=" bg-[#d9d9d9]"
                                 />
                             ))}
                         </Marquee>
@@ -258,124 +298,101 @@ export default function CareersPage() {
             </div>
 
 
-            <div className="w-full relative overflow-hidden">
-                <div className=" w-[90%] max-w-[1200px] mx-auto my-[70px] md:my-[140px] ">
-
-                    <div className='flex flex-col '>
-                        <div className='flex overflow-y-auto gap-[20px]'>
-                            {skills.map((skill, index) => (
-                                <div
-                                    key={index}
-                                    onClick={() => handleSkillClick(index)}
-                                    className={`flex shrink-0 justify-around rounded-[100px] text-[20px] font-[600] p-[15px] w-fit mb-4 cursor-pointer select-none ${skill.isActive ? 'bg-[#6abb79]' : 'bg-[#f1f6f1]'
-                                        }`}
-                                >
-                                    {skill.name}
-                                </div>
-                            ))}
-                        </div>
-
-                        <div >
-                            {activeJobs.length > 0 ? (
-                                 <div className='grid lg:grid-cols-3 mt-[90px] gap-[30px] md:grid-cols-2 grid-cols-1 justify-center items-center'>
-                                {activeJobs.map((job, index) => (
-                                    <div key={index} className='flex flex-col min-w-[380px] bg-[#f1f6f1] rounded-3xl p-6 min-h-[270px] '>
-                                        <span className='text-2xl font-[600] mb-[16px]'>{job.title}</span>
-                                        <div className='text-[16px] text-left font-normal mb-[30px]'>
-                                            {job.description}
-                                        </div>
-                                        <div className='flex flex-row justify-start gap-[10px] mb-[30px]'>
-                                            <div className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px] border-[2px] border-[#000] min-w-[70px] text-[14px] font-semibold'>
-                                                {job.type}
-                                            </div>
-                                            <div className='flex flex-row justify-center items-center gap-[4.8px] px-[10px] py-[5px] rounded-[50px] border-[2px] border-[#000] text-[14px] min-w-[70px] font-semibold'>
-                                                {job.location}
-                                            </div>
-                                        </div>
-                                        <div className='flex justify-end'>
-                                            <div className='flex flex-row justify-center items-center p-1 bg-[#000] min-w-[135px] rounded-[100px] gap-[8px]  cursor-pointer' onClick={() => window.open(job.link)}>
-                                                <span className='text-[#ffffff] text-[16px] font-[600px] my-[5px] ml-[15px]' >Apply Now</span>
-                                                <ArrowCircleUpRight size={32} color="#6abb78" className="mr-[5px]" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                                </div>
-                            ) : (
-                                <div className="flex flex-col text-center text-2xl py-[17px] md:py-[57px] px-[20px] md:px-[220px] bg-[#f1f6f1] rounded-3xl mt-[40px] md:mt-[90px] ">
-                                   <div className="text-[24px] font-bold text-[#575757] mb-[20px]">
-                                   There are no open positions right now
-                                    </div>
-                                    <div className="text-[16px] font-normal">
-                                    We kindly ask you to revisit our website at a later date to explore any available job openings that may be active at that time. Your interest is greatly appreciated!
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
+        <div className="w-[90%] max-w-[1550px] mx-auto mt-[100px] mb-[100px]">
+          <div className="grid grid-cols-3 gap-[50px]">
+            {jobListings.map((category) =>
+              category.jobs.map((job) => (
+                <div key={job.title} className="flex flex-col p-[28px] border border-black hover:bg-black hover:text-white transition-colors duration-300 group">
+                  <span className="font-special-gothic-expanded-one text-left text-[40px] group-hover:text-white -leading-[2]">
+                    {job.title}
+                  </span>
+                  <div className="flex flex-row gap-[11.8px] mt-[30px]">
+                    <div className="border border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
+                      {job.type}
                     </div>
-                </div>
-            </div>
-
-
-
-            <div
-                className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
-                <div className=" w-[90%] max-w-[1200px] mx-auto  ">
-                    <div className="flex flex-col justify-center items-center gap-[54px] p-0">
-                        <div className="w-full flex flex-col justify-between items-center">
-                            <div
-                                className=" flex flex-row justify-center items-center rounded-full py-[10px] px-[22px]">
-                                <span className="w-full font-bold leading-[23px] text-[24px] text-[#000]">
-                                    Our hiring process
-                                </span>
-                            </div>
-                            <span
-                                className="w-full mt-[45px] text-[20px] font-medium leading-[23px] text-center text-[#575757]">
-                                Working with us is easy. We follow a clear, no fuss process 
-                                <br/>
-                                that keeps things moving fast and smooth, from first chat to 
-                                <br/>
-                                final delivery.
-                            </span>
-                        </div>
-                        <Image
-                            src='/HomePage/Arrow.png'
-                            alt="image1"
-                            width={1200}
-                            height={10}
-                            className="object-contain w-[346px]"
-                        />
-
-                        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px]">
-                            {processList.map((process: ProcessList, index: number) => (
-                                <div
-                                    key={index}
-                                    className={` min-h-[230px]  md:min-h-[160px] ${process.backGround} ${process.textColor}  w-full flex flex-col justify-between items-start px-[25px] py-[24px] rounded-[25px]`}
-                                >
-                                    <span className="text-[24px] font-bold leading-[28px] -tracking-[1.2px] text-left">
-                                        {process.title}
-                                    </span>
-                                    <span className=" w-[250px] md:w-[166px] text-[16px] leading-[19px] text-left">
-                                        {process.description}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+                    <div className="border border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
+                      {job.location}
                     </div>
+                  </div>
+                  <div className="font-inclusive-sans text-[24px] mt-[30px] group-hover:text-white uppercase">
+                    {job.description}
+                  </div>
+                  <a href={job.link}>
+                    <button className="bg-[#e0ef29] w-[214px] py-[25px] px-[30px] text-[20px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[100px] group-hover:bg-white group-hover:text-black group-hover:border-white flex flex-row">
+                      Apply Now
+                      <ArrowUpRight size={22} />
+                    </button>
+                  </a>
                 </div>
+              ))
+            )}
+          </div>
+        </div>
+
+
+        <div className="bg-black ">
+
+  <div className="w-[90%] max-w-[1550px] mx-auto py-[100px]">
+    {/* Header section */}
+    <div className="flex justify-between ">
+      <span className="text-[96px] uppercase font-special-gothic-expanded-one text-white">
+        Rite of Entry
+      </span>
+      <span className="text-[36px] uppercase font-special-gothic-expanded-one text-white">
+        hiring process
+      </span>
+    </div>
+
+    {/* Content section */}
+    <div className="mt-[30px] text-left">
+      <div className="text-[15px] leading-[20px] uppercase font-silkscreen text-white">
+        through signal, ritual, and intent — the few become part of the whole.
+      </div>
+
+      <div className="text-[40px] mt-[56px] uppercase font-inclusive-sans text-white">
+        Joining Coullax is not a transaction — it is a transition. We don't merely review resumes; we decipher intent, resonance, and potential. Our process is built to uncover builders who think beyond the visible . individuals who feel the pulse of systems not yet formed.
+      </div>
+
+      <button className="bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[50px] my-[100px]">
+        SEND US YOUR RESUME
+      </button>
+    </div>
+
+    {/* Grid section */}
+            <div className="grid grid-cols-4 gap-[25.4px]">
+              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
+                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Your Resume</span>
+                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">We carefully examine your resume</span>
+              </div>
+
+              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
+                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Assessment</span>
+                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">You face our Technical Assesments</span>
+              </div>
+
+              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
+                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Interview</span>
+                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">You face for our interviews</span>
+              </div>
+
+              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
+                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Join the forge</span>
+                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">Congratse</span>
+              </div>
             </div>
 
 
-            <div className="w-full relative  overflow-hidden mb-[80px]">
-                <VelocityScroll
-                    fontSize="text-4xl font-bold md:text-7xl md:leading-[5.5rem]"
-                    defaultVelocity={0.5}
-                    className="text-[#f1f6f1]"
-                >
-                    Efficiency. Security. Transparency.Efficiency. Security. Transparency.
-                </VelocityScroll>
-            </div>
+  </div>
+</div>
+
+
+  
+
+
+
+
+
+
 
             <Footer/>
         </div>
