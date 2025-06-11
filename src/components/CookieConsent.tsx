@@ -40,11 +40,11 @@ const CookieConsent = () => {
 
     return (
         <div 
-            className={`fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50 border-t border-gray-200 transition-all duration-300 ease-in-out ${
+            className={` !z-[1000] fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 transition-all duration-300 ease-in-out ${
                 showBanner ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
             } ${isClosing ? 'translate-y-full opacity-0' : ''}`}
         >
-            <div className="w-[90%] max-w-[1200px] mx-auto py-6 px-4">
+            <div className="w-[90%] max-w-[1200px] mx-auto py-6 px-4 ">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="flex flex-col gap-2 text-center md:text-left">
                         <h3 className="text-lg font-semibold text-gray-900">🍪 Cookie Settings</h3>
