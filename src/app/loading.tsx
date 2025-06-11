@@ -48,7 +48,7 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
           hoverFillColor="#000000"
         />
         <div className=" z-10 h-[80dvh] w-full absolute top-0 left-0 flex flex-col items-center justify-center">
-          <div className=" h-[439px] w-full my-[50px]">
+          <div className=" h-[25vh] w-full my-[5vh]">
             <MetaBalls
               color="#ffffff"
               cursorBallColor="#ffffff"
@@ -64,7 +64,7 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
           </div>
           <TypingAnimation
             duration={50}
-            className="font-silkscreen text-[23px] text-center leading-[42px] uppercase text-[#e0ef29] py-[72px]"
+            className="font-silkscreen text-[1.8vh] text-center leading-[3.5vh] uppercase text-[#e0ef29] py-[5.5vh]"
           >
             {`Welcome Seeker. we&apos;ve found your Signal.
             traverse the threshold here.`}
@@ -83,7 +83,7 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
           /> */}
           <button
             onClick={handleClickEnter}
-            className=" bg-[#e0ef29] min-w-[160px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black cursor-pointer hover:text-[#e0ef29] hover:bg-transparent hover:border-[#e0ef29] transition-colors duration-300 ease-in-out flex items-center justify-center gap-2"
+            className=" bg-[#e0ef29] min-w-[6vw] py-[2vh] px-[41px] text-[1.5vh] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black cursor-pointer hover:text-[#e0ef29] hover:bg-transparent hover:border-[#e0ef29] transition-colors duration-300 ease-in-out flex items-center justify-center gap-2"
           >
             ENTER
           </button>
@@ -91,13 +91,23 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
         <div className=" absolute bottom-0 left-0 right-0 z-10 w-[100%] ">
           <Marquee pauseOnHover className="[--duration:20s]">
             {imageList.map((image, index) => (
-              <Image
+              <div
                 key={index}
-                src={`/homepage/ForgeCards/${image}`}
-                alt="cognitionIcon"
-                width={172}
-                height={215}
-              />
+                style={{
+                  width: "12vh",
+                  height: "15vh",
+                  position: "relative",
+                  display: "inline-block",
+                }}
+              >
+                <Image
+                  src={`/homepage/ForgeCards/${image}`}
+                  alt="cognitionIcon"
+                  fill
+                  style={{ objectFit: "contain" }}
+                  sizes="12vh"
+                />
+              </div>
             ))}
           </Marquee>
         </div>
