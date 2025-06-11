@@ -26,6 +26,7 @@ import DecryptedText from "../components/reactbits/DecryptedText";
 import { view } from "framer-motion/client";
 import Loading from "./loading";
 import { cn } from "@/lib/utils";
+import HeaderNavBar from "@/components/Header";
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
@@ -443,10 +444,23 @@ export default function Home() {
   ];
 
   const missionArray = [
-    {text: "Our mission is to enhance efficiency, security, and transparency across ", key: "†яΔηʂραяΞης."},
-    {text: "industries.Making the world a smarter, more connected, and a safer place.", key: "†яΔηʂς."},,
-    {text: "To achieve this, we believe in the power of Artificial intelligence's efficiency and", key: "Δʂρ."},
-    {text: "Blockchain technology's security and transparency.", key: "†яΔηʂαяΞης."},
+    {
+      text: "Our mission is to enhance efficiency, security, and transparency across ",
+      key: "†яΔηʂραяΞης",
+    },
+    {
+      text: "industries.Making the world a smarter, more connected, and a safer place.",
+      key: "†яΔηʂς",
+    },
+    ,
+    {
+      text: "To achieve this, we believe in the power of Artificial intelligence's efficiency and",
+      key: "Δʂρ",
+    },
+    {
+      text: "Blockchain technology's security and transparency.",
+      key: "†яΔηʂαяΞης",
+    },
   ];
 
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
@@ -542,6 +556,10 @@ export default function Home() {
     }, 300); // Small delay for visual transition
   };
 
+  const handleBookCallClick = () => {
+    window.open("https://cal.com/coullax/30min", "_blank");
+  };
+
   return (
     <div className=" w-full bg-[#fff]">
       {!viewLoading ? (
@@ -553,11 +571,12 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Hero Section */}
+          <HeaderNavBar />
 
           <div className="w-full">
             <div className=" w-full bg-[#fff] min-h-dvh py-[40px]">
               {/* Header */}
-              <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
+              {/* <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
                 <Image
                   src="/logo.png"
                   alt="logo"
@@ -577,20 +596,20 @@ export default function Home() {
                     </Suspense>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="w-[90%] max-w-[1550px] h-[90dvh] flex flex-col items-center justify-center mx-auto">
-                <h1 className=" text-[230px] text-center leading-[267px] text-[#000000] font-special-gothic-expanded-one uppercase">
+              <div className="w-[90%] max-w-[1550px] h-dvh flex flex-col items-center justify-center mx-auto">
+                <h1 className=" text-[17.5vh] text-center leading-[10vh] text-[#000000] font-special-gothic-expanded-one uppercase">
                   BUILD THE
                   <br />{" "}
-                  <span className=" text-[286px] leading-[332px] -tracking-[14px]">
+                  <span className=" text-[22vh] leading-[27vh] -tracking-[14px]">
                     UNBUILD
                   </span>
                 </h1>
 
-                  <span className="w-full !font-inclusive-sans !text-[32px] text-center !leading-[42px] !uppercase !text-black my-[76px]">
-                    {!isDecoded ? (
-                      greakArray.map((text, index) => (
+                <span className="w-full !font-inclusive-sans !text-[32px] text-center !leading-[42px] !uppercase !text-black my-[76px]">
+                  {!isDecoded
+                    ? greakArray.map((text, index) => (
                         <div key={index}>
                           {text}
                           {index === 1 && (
@@ -601,8 +620,7 @@ export default function Home() {
                           )}
                         </div>
                       ))
-                    ) : (
-                      missionArray.map((line: any, index) => (
+                    : missionArray.map((line: any, index) => (
                         <div key={index}>
                           <DecryptedText
                             text={line.text}
@@ -621,13 +639,35 @@ export default function Home() {
                             </>
                           )}
                         </div>
-                      ))
-                    )}
-                  </span>
-            <button  onClick={() => setIsDecoded(true)} className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
-              DECODE THE MESSAGE
-            </button>
- 
+                      ))}
+                </span>
+                <button
+                  onClick={() => setIsDecoded(true)}
+                  className={` bg-[#e0ef29] min-w-[312px] cursor-pointer py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black ${
+                    !isDecoded ? "animate-blink" : ""
+                  }`}
+                >
+                  DECODE THE MESSAGE
+                </button>
+                <style jsx>{`
+                  @keyframes blink {
+                    0%,
+                    100% {
+                      background: #e0ef29;
+                      color: #000000;
+                      border: 2px dashed #000000;
+                    }
+                    50% {
+                      background: #ffffff;
+                      color: #000000;
+                      border: 2px dashed #000000;
+                    }
+                  }
+                  .animate-blink {
+                    animation: blink 1.5s infinite;
+                    transition: none !important;
+                  }
+                `}</style>
               </div>
               {/* <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
             <Image
@@ -726,8 +766,8 @@ export default function Home() {
               height={100}
             />
           </div> */}
-        </div>
-        {/* <motion.div
+            </div>
+            {/* <motion.div
           style={{
             height: useTransform(scrollYProgress1, [0, 0.9], [50, 0]),
             backgroundColor: "#FFFFFF",
@@ -750,8 +790,8 @@ export default function Home() {
             className=" translate-x-[-10%] translate-y-[0%]"
           ></div>
         </motion.div> */}
-      </div>
-      {/* <div className="w-full h-[61px] relative mt-[80px] overflow-hidden ">
+          </div>
+          {/* <div className="w-full h-[61px] relative mt-[80px] overflow-hidden ">
         <VelocityScroll
           fontSize="text-4xl font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
           defaultVelocity={0.2}
@@ -766,178 +806,177 @@ export default function Home() {
 
         </VelocityScroll>
       </div> */}
-          <motion.div
+            <div
             // style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
             // ref={container2}
             className="relative w-full bg-[#000000] py-[100px]"
-          >
-            {/* <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black"> */}
+            >
             <div
               className={cn(
-                "absolute inset-0",
-                "[background-size:20px_20px]",
-                "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-                "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
-                "opacity-25 dark:opacity-25 z-0"
+              "absolute inset-0",
+              "[background-size:20px_20px]",
+              "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+              "opacity-25 dark:opacity-25"
               )}
             />
-            {/* Radial gradient for the container to give a faded look */}
-            {/* <div className="pointer-events-none absolute inset-0 flex items-center opacity-15 justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div> */}
-
-            <div className=" z-10 py-[50px] w-[90%] max-w-[1550px] mx-auto">
+            <div className=" z-20 py-[50px] w-[90%] max-w-[1550px] mx-auto">
+              
               <h1 className=" text-white font-silkscreen text-[15px] leading-[20px]">
-                Shaped by glyph, born of will. Created in silence, between
-                signals.
-                <br /> The crucible of ideas, fueled by intent. This is where we
-                build the unbuilt.
+              Shaped by glyph, born of will. Created in silence, between
+              signals.
+              <br /> The crucible of ideas, fueled by intent. This is where we
+              build the unbuilt.
               </h1>
               <SplitText
-                text="THE FORGE"
-                className=" mt-[50px] text-white font-special-gothic-expanded-one text-[243px] leading-[282px] -tracking-[12px] uppercase"
-                delay={10}
-                duration={2}
-                ease="power3.out"
-                splitType="chars"
-                from={{ opacity: 0, y: 40 }}
-                to={{ opacity: 1, y: 0 }}
-                threshold={0.1}
-                rootMargin="-100px"
-                textAlign="center"
+              text="THE FORGE"
+              className="  mt-[50px] text-white font-special-gothic-expanded-one text-[243px] leading-[282px] -tracking-[12px] uppercase"
+              delay={10}
+              duration={2}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
               />
               <div className=" text-[40px] font-inclusive-sans text-white leading-[52px] uppercase my-[56px]">
-                This is where vision meets velocity.
-                <br />
-                Where raw ideas are melted down, reshaped, and forged
-                <br /> into real, working systems. The Forge is Coullax&apos;s
-                <br /> creative engine. a space of experimentation,
-                <br /> engineering, and relentless iteration.
+              This is where vision meets velocity.
+              <br />
+              Where raw ideas are melted down, reshaped, and forged
+              <br /> into real, working systems. The Forge is Coullax&apos;s
+              <br /> creative engine. a space of experimentation,
+              <br /> engineering, and relentless iteration.
               </div>
-              <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
-                BOOK A CALL
+              <button
+              onClick={handleBookCallClick}
+              className="z-50 relative bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] cursor-pointer text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105"
+              style={{ zIndex: 10 }}
+              >
+              BOOK A CALL
               </button>
               <div className=" mt-[100px] z-10">
-                <div className=" w-full grid grid-cols-2 gap-[50px] mb-[50px]">
-                  <div
-                    className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent "
-                    style={{
-                      backgroundImage: `url('/HomePage/ForgeCards/aiBackground.webp')`,
-                      backgroundSize: "cover",
-                    }}
-                  >
-                    <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
-                        COGNITION
-                      </h1>
-                      <Image
-                        src="/HomePage/ForgeCards/cognitionIcon.svg"
-                        width={167}
-                        height={99}
-                        alt="studiosAndLabsIcon"
-                      />
-                    </div>
-                    <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
-                      ARTIFICIAL
-                      <br />
-                      INTELLIGENCE
-                    </h1>
-                  </div>
-                  <div
-                    className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
-                    style={{
-                      backgroundImage: `url('/HomePage/ForgeCards/blockchainBackground.webp')`,
-                      backgroundSize: "cover",
-                    }}
-                  >
-                    <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
-                        CONSENSUS
-                      </h1>
-                      <Image
-                        src="/HomePage/ForgeCards/consensusIcon.svg"
-                        width={167}
-                        height={99}
-                        alt="studiosAndLabsIcon"
-                      />
-                    </div>
-                    <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
-                      BLOCKCHAIN
-                    </h1>
-                  </div>
-                </div>
-                <div className=" bg-black z-10">
-                  <div className=" z-50 my-[50px] border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
-                    <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
-                      STUDIOS AND LABS
-                    </h1>
-                    <div className="  w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
-                        ETHER
-                      </h1>
-                      <Image
-                        src="/HomePage/ForgeCards/etherIcon.svg"
-                        width={167}
-                        height={99}
-                        alt="studiosAndLabsIcon"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className=" z-10 w-full grid grid-cols-3 gap-[50px] mb-[50px]">
-                  <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[365px] text-black flex flex-col justify-between items-start">
-                    <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px] uppercase">
-                      Web & <br />
-                      Software
-                    </h1>
-                    <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
-                        WEAVE
-                      </h1>
-                      <Image
-                        src="/HomePage/ForgeCards/weaveIcon.svg"
-                        width={167}
-                        height={99}
-                        alt="studiosAndLabsIcon"
-                      />
-                    </div>
-                  </div>
-                  <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
-                    <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
-                      Research & <br />
-                      Strategy
-                    </h1>
-                    <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
-                        SYNTHESIS
-                      </h1>
-                      <Image
-                        src="/HomePage/ForgeCards/synthesisIcon.svg"
-                        width={167}
-                        height={99}
-                        alt="studiosAndLabsIcon"
-                      />
-                    </div>
-                  </div>
-                  <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
-                    <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
-                      MOBILE <br />
-                      DEVELOPMENT
-                    </h1>
-                    <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
-                        MOTILITH
-                      </h1>
-                      <Image
-                        src="/HomePage/ForgeCards/motilithIcon.svg"
-                        width={160}
-                        height={99}
-                        alt="studiosAndLabsIcon"
-                      />
-                    </div>
-                  </div>
-                </div>
+              <div className=" z-10 w-full grid grid-cols-2 gap-[50px] mb-[50px]">
+              <div
+              className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent "
+              style={{
+                backgroundImage: `url('/HomePage/ForgeCards/aiBackground.webp')`,
+                backgroundSize: "cover",
+              }}
+              >
+              <div className=" w-full flex flex-row justify-between items-center">
+                <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                COGNITION
+                </h1>
+                <Image
+                src="/HomePage/ForgeCards/cognitionIcon.svg"
+                width={167}
+                height={99}
+                alt="studiosAndLabsIcon"
+                />
+              </div>
+              <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
+                ARTIFICIAL
+                <br />
+                INTELLIGENCE
+              </h1>
+              </div>
+              <div
+              className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
+              style={{
+                backgroundImage: `url('/HomePage/ForgeCards/blockchainBackground.webp')`,
+                backgroundSize: "cover",
+              }}
+              >
+              <div className=" w-full flex flex-row justify-between items-center">
+                <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                CONSENSUS
+                </h1>
+                <Image
+                src="/HomePage/ForgeCards/consensusIcon.svg"
+                width={167}
+                height={99}
+                alt="studiosAndLabsIcon"
+                />
+              </div>
+              <h1 className=" text-[80px] font-special-gothic-expanded-one leading-[93px] -tracking-[4px] uppercase">
+                BLOCKCHAIN
+              </h1>
+              </div>
+              </div>
+              <div className=" z-10 my-[50px] bg-black border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start" style={{ zIndex: 10, position: "relative" }}>
+              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+                STUDIOS AND LABS
+              </h1>
+              <div className="  w-full flex flex-row justify-between items-center">
+                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                ETHER
+                </h1>
+                <Image
+                src="/HomePage/ForgeCards/etherIcon.svg"
+                width={167}
+                height={99}
+                alt="studiosAndLabsIcon"
+                />
+              </div>
+              </div>
+              <div className=" z-10 w-full grid grid-cols-3 gap-[50px] mb-[50px]">
+              <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[365px] text-black flex flex-col justify-between items-start">
+              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px] uppercase">
+                Web & <br />
+                Software
+              </h1>
+              <div className=" w-full flex flex-row justify-between items-center">
+                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                WEAVE
+                </h1>
+                <Image
+                src="/HomePage/ForgeCards/weaveIcon.svg"
+                width={167}
+                height={99}
+                alt="studiosAndLabsIcon"
+                />
+              </div>
+              </div>
+              <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+                Research & <br />
+                Strategy
+              </h1>
+              <div className=" w-full flex flex-row justify-between items-center">
+                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                SYNTHESIS
+                </h1>
+                <Image
+                src="/HomePage/ForgeCards/synthesisIcon.svg"
+                width={167}
+                height={99}
+                alt="studiosAndLabsIcon"
+                />
+              </div>
+              </div>
+              <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+              <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+                MOBILE <br />
+                DEVELOPMENT
+              </h1>
+              <div className=" w-full flex flex-row justify-between items-center">
+                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                MOTILITH
+                </h1>
+                <Image
+                src="/HomePage/ForgeCards/motilithIcon.svg"
+                width={160}
+                height={99}
+                alt="studiosAndLabsIcon"
+                />
+              </div>
+              </div>
+              </div>
               </div>
               <div className=" text-[15px] leading-[20px] uppercase font-silkscreen text-white">
-                [Directive / Builds / Main]
+              [Directive / Builds / Main]
               </div>
 
               {/* <h1 className=" text-[#E0EF29] text-[153px] font-silkscreen leading-[1.16] -tracking-[7.63px] text-center">
@@ -1045,7 +1084,7 @@ export default function Home() {
             }
           `}</style> */}
             </div>
-          </motion.div>
+          </div>
           <VelocityScroll
             fontSize="text-4xl font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
             defaultVelocity={0.2}
@@ -1088,7 +1127,10 @@ export default function Home() {
             <div className=" my-[50px] text-[15px] font-silkscreen leading-[20px] uppercase">
               [Firstlight / Schema / Construct / Lift.]
             </div>
-            <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
+            <button
+              onClick={handleBookCallClick}
+              className=" cursor-pointer bg-[#e0ef29] hover:bg-transparent hover:scale-105 min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black"
+            >
               BOOK A CALL
             </button>
             <div className=" mt-[100px]">
@@ -1232,7 +1274,10 @@ export default function Home() {
               <div className=" my-[50px] text-[15px] font-silkscreen leading-[20px] uppercase">
                 [VECTOR / PYLON / VEIL / NEXUS / FLUX.]
               </div>
-              <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
+              <button
+                onClick={handleBookCallClick}
+                className=" cursor-pointer bg-[#e0ef29] hover:bg-transparent hover:scale-105 min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black"
+              >
                 BOOK A CALL
               </button>
               <div className="flex flex-row justify-start items-center gap-[19px] my-[75px]">
@@ -1589,6 +1634,15 @@ export default function Home() {
           <div className="w-full relative  overflow-hidden bg-[#000]  py-[282px]">
             <div className="w-[90%] max-w-[1550px] mx-auto ">
               <div className="w-full flex flex-col items-center">
+                <div
+                  className={cn(
+                    "absolute inset-0",
+                    "[background-size:20px_20px]",
+                    "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+                    "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+                    "opacity-25 dark:opacity-25 z-0"
+                  )}
+                />
                 {/* <span className="font-silkscreen text-[64px] relative">
               THE SUMMON
             </span> */}
@@ -1629,10 +1683,11 @@ export default function Home() {
             true, channel it below.The Entity// We listens. The threshold
             responds.
           </div> */}
-              <div className=" flex flex-col justify-center items-center mt-[50px]">
+              <div className=" z-10 flex flex-col justify-center items-center mt-[50px]">
                 <button
                   type="button"
-                  className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px]  cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#000] transition-all duration-300 hover:scale-105 border-dashed border-black border"
+                  onClick={handleBookCallClick}
+                  className=" z-10 w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-black border-2"
                 >
                   BOOK A CALL
                 </button>
@@ -2307,13 +2362,14 @@ export default function Home() {
               <div className=" flex flex-row gap-[30px]">
                 <button
                   type="button"
-                  className="w-full max-w-[312px] h-[70px] bg-[black] text-[#e0ef29] py-2 font-silkscreen text-[20px]  cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-white border"
+                  className="w-full max-w-[312px] h-[70px] bg-[black] text-[#e0ef29] py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-[#e0ef29] border-2"
                 >
                   VISIT CASE STUDIES
                 </button>
                 <button
                   type="button"
-                  className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px]  cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-black border"
+                  onClick={handleBookCallClick}
+                  className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black border-2"
                 >
                   BOOK A CALL
                 </button>
@@ -2374,7 +2430,16 @@ export default function Home() {
         </VelocityScroll>
       </div> */}
 
-          <div className="w-full relative  overflow-hidden bg-black">
+          <div className="w-full relative overflow-hidden bg-black">
+            <div
+              className={cn(
+                "absolute inset-0",
+                "[background-size:20px_20px]",
+                "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+                "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+                "opacity-25 dark:opacity-25 z-0"
+              )}
+            />
             <div className=" w-[90%] max-w-[1038px] mx-auto">
               <TypingAnimation className="font-silkscreen text-center text-[20px] text-white mt-[247px]">
                 {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
@@ -2404,8 +2469,8 @@ export default function Home() {
             WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
           </p> */}
 
-              <div className="flex flex-col justify-center items-center">
-                <form className="space-y-6 w-full max-w-[1038px] ">
+              <div className=" flex flex-col justify-center items-center">
+                <form className="z-10 space-y-6 w-full max-w-[1038px] ">
                   {/* Email Input */}
                   <div>
                     <input
@@ -2413,7 +2478,7 @@ export default function Home() {
                       id="email"
                       name="email"
                       placeholder="YOUR EMAIL"
-                      className="w-full h-[98px] p-2 border-[1.3px] border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white px-[15px]  text-white"
+                      className="w-full h-[98px] p-2 border-[1.3px] border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white px-[15px] text-white"
                     />
                   </div>
 
@@ -2435,9 +2500,15 @@ export default function Home() {
                       NEW SIGNAL...
                     </p>
 
-                    <button
+                    {/* <button
                       type="button"
                       className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 mb-[247px]"
+                    >
+                      CONTACT US
+                    </button> */}
+                    <button
+                      type="button"
+                      className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black hover:border-[#e0ef29] hover:text-[#e0ef29] border-2 mb-[247px]"
                     >
                       CONTACT US
                     </button>
