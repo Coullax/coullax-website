@@ -83,7 +83,7 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
           /> */}
           <button
             onClick={handleClickEnter}
-            className=" bg-[#e0ef29] min-w-[160px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black"
+            className=" bg-[#e0ef29] min-w-[160px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black cursor-pointer hover:text-[#e0ef29] hover:bg-transparent hover:border-[#e0ef29] transition-colors duration-300 ease-in-out flex items-center justify-center gap-2"
           >
             ENTER
           </button>
