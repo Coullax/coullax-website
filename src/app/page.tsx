@@ -25,6 +25,7 @@ import SplitText from "../components/reactbits/splitText";
 import DecryptedText from "../components/reactbits/DecryptedText";
 import { view } from "framer-motion/client";
 import Loading from "./loading";
+import { cn } from "@/lib/utils";
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
@@ -756,7 +757,20 @@ export default function Home() {
             // ref={container2}
             className="relative w-full bg-[#000000] py-[100px]"
           >
-            <div className=" py-[50px] w-[90%] max-w-[1550px] mx-auto">
+            {/* <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black"> */}
+            <div
+              className={cn(
+                "absolute inset-0",
+                "[background-size:20px_20px]",
+                "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+                "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+                "opacity-25 dark:opacity-25 z-0"
+              )}
+            />
+            {/* Radial gradient for the container to give a faded look */}
+            {/* <div className="pointer-events-none absolute inset-0 flex items-center opacity-15 justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div> */}
+
+            <div className=" z-10 py-[50px] w-[90%] max-w-[1550px] mx-auto">
               <h1 className=" text-white font-silkscreen text-[15px] leading-[20px]">
                 Shaped by glyph, born of will. Created in silence, between
                 signals.
@@ -787,10 +801,10 @@ export default function Home() {
               <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
                 BOOK A CALL
               </button>
-              <div className=" mt-[100px]">
+              <div className=" mt-[100px] z-10">
                 <div className=" w-full grid grid-cols-2 gap-[50px] mb-[50px]">
                   <div
-                    className=" w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent "
+                    className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent "
                     style={{
                       backgroundImage: `url('/HomePage/ForgeCards/aiBackground.webp')`,
                       backgroundSize: "cover",
@@ -814,7 +828,7 @@ export default function Home() {
                     </h1>
                   </div>
                   <div
-                    className=" w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
+                    className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
                     style={{
                       backgroundImage: `url('/HomePage/ForgeCards/blockchainBackground.webp')`,
                       backgroundSize: "cover",
@@ -836,24 +850,26 @@ export default function Home() {
                     </h1>
                   </div>
                 </div>
-                <div className=" my-[50px] border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
-                  <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
-                    STUDIOS AND LABS
-                  </h1>
-                  <div className=" w-full flex flex-row justify-between items-center">
-                    <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
-                      ETHER
+                <div className=" bg-black z-10">
+                  <div className=" z-50 my-[50px] border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+                    <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
+                      STUDIOS AND LABS
                     </h1>
-                    <Image
-                      src="/HomePage/ForgeCards/etherIcon.svg"
-                      width={167}
-                      height={99}
-                      alt="studiosAndLabsIcon"
-                    />
+                    <div className="  w-full flex flex-row justify-between items-center">
+                      <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                        ETHER
+                      </h1>
+                      <Image
+                        src="/HomePage/ForgeCards/etherIcon.svg"
+                        width={167}
+                        height={99}
+                        alt="studiosAndLabsIcon"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className=" w-full grid grid-cols-3 gap-[50px] mb-[50px]">
-                  <div className=" w-full bg-white border border-white py-[28px] px-[29px] min-h-[365px] text-black flex flex-col justify-between items-start">
+                <div className=" z-10 w-full grid grid-cols-3 gap-[50px] mb-[50px]">
+                  <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[365px] text-black flex flex-col justify-between items-start">
                     <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px] uppercase">
                       Web & <br />
                       Software
@@ -870,7 +886,7 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+                  <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
                     <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
                       Research & <br />
                       Strategy
@@ -887,7 +903,7 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <div className=" w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
+                  <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[365px] text-white flex flex-col justify-between items-start">
                     <h1 className=" text-[40px] font-special-gothic-expanded-one leading-[47px] -tracking-[2px]">
                       MOBILE <br />
                       DEVELOPMENT
@@ -909,6 +925,7 @@ export default function Home() {
               <div className=" text-[15px] leading-[20px] uppercase font-silkscreen text-white">
                 [Directive / Builds / Main]
               </div>
+
               {/* <h1 className=" text-[#E0EF29] text-[153px] font-silkscreen leading-[1.16] -tracking-[7.63px] text-center">
             The Entity Listens...
             <DecryptedText
