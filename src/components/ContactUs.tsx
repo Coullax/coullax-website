@@ -1,9 +1,17 @@
+"use client";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useState } from "react";
 import { TypingAnimation } from "./magicui/typing-animation";
 import SplitText from "./reactbits/splitText";
 
 export default function ContactUs() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="w-full relative overflow-hidden bg-black py-[18vh]">
       <div
@@ -45,7 +53,10 @@ export default function ContactUs() {
           </p> */}
 
         <div className=" flex flex-col justify-center items-center">
-          <form className="z-10 space-y-6 w-full max-w-[1038px] ">
+          <form
+            onSubmit={handleSubmit}
+            className="z-10 space-y-6 w-full max-w-[1038px] "
+          >
             {/* Email Input */}
             <div>
               <input
@@ -54,6 +65,8 @@ export default function ContactUs() {
                 name="email"
                 placeholder="YOUR EMAIL"
                 className="w-full h-[98px] p-2 border-[1.3px] border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white px-[15px] text-white"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
             </div>
 
@@ -64,6 +77,8 @@ export default function ContactUs() {
                 name="message"
                 placeholder="THE MESSAGE"
                 rows={4}
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
                 className="w-full  h-[214px] p-2 border border-[#000]  bg-[#242425] focus:outline-none placeholder:!text-white px-[15px]  text-white"
               />
             </div>
@@ -75,12 +90,6 @@ export default function ContactUs() {
                 SIGNAL...
               </p>
 
-              {/* <button
-                      type="button"
-                      className="w-full max-w-[422px] h-[94px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 mb-[247px]"
-                    >
-                      CONTACT US
-                    </button> */}
               <button
                 type="button"
                 className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black hover:border-[#e0ef29] hover:text-[#e0ef29] border-2 "
