@@ -14,7 +14,7 @@ import MetaBalls from "@/components/ui/meta-balls";
 import { motion, useScroll, useTransform } from "framer-motion";
 // import { MorphingText } from "@/components/magicui/morphing-text";
 // import DecryptedText from "@/components/reactbits/DecryptedText";
-// import ScrollReveal from "@/components/reactbits/ScrollReveal";
+import ScrollReveal from "@/components/reactbits/ScrollReveal";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 // import { footer } from "framer-motion/client";
 // import { AudioToggle } from "@/components/AudioPlayer";
@@ -52,20 +52,11 @@ export default function Home() {
   const [activeImage, setActiveImage] = useState<PhaseKey>("star");
   const container2 = useRef(null);
   const [manualIndex, setManualIndex] = useState<number | null>(null);
-  // const [isDecoded, setIsDecoded] = useState<boolean>(false);
+  const [isDecoded, setIsDecoded] = useState<boolean>(false);
   // const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [viewLoading, setViewLoading] = useState<boolean>(false);
   const [activePrimordial, setActivePrimordial] =
     useState<PrimordialKey>("primordial1");
-
-  // useEffect(() => {
-  //   // const viewLodingScreen = localStorage.getItem("viewLoadingScreen");
-  //   if (viewLodingScreen === "true") {
-  //     setViewLoading(true);
-  //   } else {
-  //     setViewLoading(false);
-  //   }
-  // });
 
   // Handle transition from manual back to automatic morphing
   useEffect(() => {
@@ -444,23 +435,19 @@ export default function Home() {
   //   `We design and build digital ecosystems. Grounded in research,<br />guided by strategy, and brought to life through thoughtful code and bold identity.`,
   // ];
 
-  // const greakArray = [
-  //   "ʍιʂʂιΘΠ ⇌ †Θ ΞηʜΔηςΞ ΞϝϝιςιΞηςψ, ʂΞςυяι†ψ, Δηδ",
-  //   "†яΔηʂραяΞηςψ ΔςяΘʂʂ ιηδυʂ†яιΞʂ.",
-  //   "ϻΔκιηϻ †ʜΞ шΘяʟδ Δ ʂϻΔя†Ξя, ϻΘяΞ ςΘηηΞς†Ξδ, Δηδ Δ ʂΔϝΞя ρʟΔςΞ.",
-  //   "†Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ",
-  //   "[ϾΘǤΠι†ιΘΠ]’ʂ ΞϝϝιςιΞηςψ Δηδ",
-  //   "[ςΘηʂΞηʂυʂ]’ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.",
-  // ];
+  const greakArray = [
+    "  ʍιʂʂιΘΠ ⇌ †Θ ΞηʜΔηςΞ ΞϝϝιςιΞηςψ, ʂΞςυяι†ψ, Δηδ †яΔηʂραяΞηςψ ΔςяΘʂʂ",
+    "ιηδυʂ†яιΞʂ.  ϻΔκιηϻ †ʜΞ шΘяʟδ Δ ʂϻΔя†Ξя, ϻΘяΞ ςΘηηΞς†Ξδ, Δηδ Δ ʂΔϝΞя ρʟΔςΞ.",
+    "†Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ  [ϾΘǤΠι†ιΘΠ]’ʂ ΞϝϝιςιΞηςψ Δηδ",
+    "[ςΘηʂΞηʂυʂ]’ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.",
+  ];
 
-  // const missionArray = [
-  //   "Our mission is to enhance efficiency, security, and",
-  //   "transparency across industries.",
-  //   "Making the world a smarter, more connected, and a safer place.",
-  //   "To achieve this, we believe in the power of",
-  //   "Artificial intelligence's efficiency and",
-  //   "Blockchain technology's security and transparency.",
-  // ];
+  const missionArray = [
+    {text: "Our mission is to enhance efficiency, security, and transparency across ", key: "†яΔηʂραяΞης."},
+    {text: "industries.Making the world a smarter, more connected, and a safer place.", key: "†яΔηʂς."},,
+    {text: "To achieve this, we believe in the power of Artificial intelligence's efficiency and", key: "Δ."},
+    {text: "Blockchain technology's security and transparency.", key: "†яΔηʂαяΞης."},
+  ];
 
   const firstRow = reviewList1.slice(0, reviewList1.length / 2);
   const secondRow = reviewList2.slice(reviewList2.length / 2);
@@ -600,20 +587,47 @@ export default function Home() {
                     UNBUILD
                   </span>
                 </h1>
-                <div className=" w-full font-inclusive-sans text-[32px] text-center leading-[42px] uppercase text-black my-[76px]">
-                  ʍιʂʂιΘΠ ⇌ †Θ ΞηʜΔηςΞ ΞϝϝιςιΞηςψ, ʂΞςυяι†ψ, Δηδ †яΔηʂραяΞηςψ
-                  ΔςяΘʂʂ
-                  <br />
-                  ιηδυʂ†яιΞʂ. ϻΔκιηϻ †ʜΞ шΘяʟδ Δ ʂϻΔя†Ξя, ϻΘяΞ ςΘηηΞς†Ξδ, Δηδ Δ
-                  ʂΔϝΞя ρʟΔςΞ.
-                  <br />
-                  <br /> †Θ ΔςʜιΞνΞ †ʜιʂ, шΞ вΞʟιΞνΞ ιη †ʜΞ ρΘшΞя Θϝ
-                  [ϾΘǤΠι†ιΘΠ]&apos;ʂ ΞϝϝιςιΞηςψ Δηδ
-                  <br /> [ςΘηʂΞηʂυʂ]&apos;ʂ ʂΞςυяι†ψ Δηδ †яΔηʂραяΞηςψ.
-                </div>
-                <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
-                  DECODE THE MESSAGE
-                </button>
+
+                  <span className="w-full !font-inclusive-sans !text-[32px] text-center !leading-[42px] !uppercase !text-black my-[76px]">
+                    {!isDecoded ? (
+                      greakArray.map((text, index) => (
+                        <div key={index}>
+                          {text}
+                          {index === 1 && (
+                            <>
+                              <br />
+                              <br />
+                            </>
+                          )}
+                        </div>
+                      ))
+                    ) : (
+                      missionArray.map((line: any, index) => (
+                        <div key={index}>
+                          <DecryptedText
+                            text={line.text}
+                            speed={100}
+                            maxIterations={20}
+                            characters={line.key}
+                            animateOn="view"
+                            className="revealed"
+                            parentClassName="all-letters"
+                            encryptedClassName="encrypted"
+                          />
+                          {index === 1 && (
+                            <>
+                              <br />
+                              <br />
+                            </>
+                          )}
+                        </div>
+                      ))
+                    )}
+                  </span>
+            <button  onClick={() => setIsDecoded(true)} className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[41px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black">
+              DECODE THE MESSAGE
+            </button>
+ 
               </div>
               {/* <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
             <Image
@@ -712,32 +726,32 @@ export default function Home() {
               height={100}
             />
           </div> */}
-            </div>
-            {/* <motion.div
-              style={{
-                height: useTransform(scrollYProgress1, [0, 0.9], [50, 0]),
-                backgroundColor: "#FFFFFF",
-                position: "relative",
-                marginTop: "100px",
-                width: "100%",
-              }}
-            >
-              <div
-                style={{
-                  height: "1550%",
-                  width: "120%",
-                  left: "0%",
-                  borderRadius: "0 0 50% 50%",
-                  backgroundColor: "#FFFFFF",
-                  zIndex: 1000,
-                  position: "absolute",
-                  boxShadow: "0px 60px 100px rgba(255, 255, 255, 0.15)",
-                }}
-                className=" translate-x-[-10%] translate-y-[0%]"
-              ></div>
-            </motion.div> */}
-          </div>
-          {/* <div className="w-full h-[61px] relative mt-[80px] overflow-hidden ">
+        </div>
+        {/* <motion.div
+          style={{
+            height: useTransform(scrollYProgress1, [0, 0.9], [50, 0]),
+            backgroundColor: "#FFFFFF",
+            position: "relative",
+            marginTop: "100px",
+            width: "100%",
+          }}
+        >
+          <div
+            style={{
+              height: "1550%",
+              width: "120%",
+              left: "0%",
+              borderRadius: "0 0 50% 50%",
+              backgroundColor: "#FFFFFF",
+              zIndex: 999,
+              position: "absolute",
+              boxShadow: "0px 60px 100px rgba(255, 255, 255, 0.15)",
+            }}
+            className=" translate-x-[-10%] translate-y-[0%]"
+          ></div>
+        </motion.div> */}
+      </div>
+      {/* <div className="w-full h-[61px] relative mt-[80px] overflow-hidden ">
         <VelocityScroll
           fontSize="text-4xl font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
           defaultVelocity={0.2}
