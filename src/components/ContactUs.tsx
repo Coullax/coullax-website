@@ -32,7 +32,7 @@ export default function ContactUs() {
 
         <SplitText
           text="LIGHT THE SIGNAL"
-          className="text-[7vh] font-special-gothic-expanded-one leading-[1.3] text-white text-center py-[5vh] w-full "
+          className="text-[7vh] font-special-gothic-expanded-one leading-[1.3] text-white text-center py-[5vw] w-full "
           delay={10}
           duration={2}
           ease="power3.out"
