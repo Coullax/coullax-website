@@ -184,7 +184,7 @@ const recruitmentSteps = [
   },
   {
     title: "Join the forge",
-    description: <div className="mt-[30px]">Congrats!</div>
+    description: <div className="mt-[32px]">Congrats!</div>
   }
 ];
   
