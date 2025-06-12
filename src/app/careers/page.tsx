@@ -130,38 +130,74 @@ const skillJobs: SkillJobs[] = [
 
   const jobListings = [
     {
-      name: 'Product Design',
+      name: 'Software Engineer Intern',
       jobs: [
         {
           title: "Software Engineer Intern",
-          description: "we are looking for a highly skilled product designer to join our dynamic team.",
-          type: "FULL TIME",
+          description: "We are hiring a software engineer intern for our team",
+          type: "Internship",
           location: "ON SITE",
-          link: 'https://example.com/product-designer'
+          link: 'https://rooster.jobs/jobs/446914?_gl=1*6oq610*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjU0NSRqNTYkbDAkaDE0NDA5MDkyOQ..&_ga=2.177795308.895242263.1747193804-1782052477.1734762457'
         }
       ]
     },
     {
-      name: 'Product Design',
+      name: 'Associate Tech Lead',
       jobs: [
         {
-          title: "PRODUCT DESIGNER",
-          description: "we are looking for a highly skilled product designer to join our dynamic team.",
+          title: "Associate Tech Lead",
+          description: "We are  looking for skilled Backend Developers!",
           type: "FULL TIME",
           location: "ON SITE",
-          link: 'https://example.com/product-designer'
+          link: 'https://rooster.jobs/jobs/446917'
         }
       ]
     },
     {
-      name: 'Product Design',
+      name: 'Mobile App Developer',
       jobs: [
         {
-          title: "PRODUCT DESIGNER",
-          description: "we are looking for a highly skilled product designer to join our dynamic team.",
+          title: "Mobile App Developer",
+          description: "We are looking for Mobile App Developers!",
           type: "FULL TIME",
           location: "ON SITE",
-          link: 'https://example.com/product-designer'
+          link:'https://rooster.jobs/jobs/446905?_gl=1*fg4nbj*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5Mjc4MSRqNiRsMCRoMTQ0MDkwOTI5&_ga=2.241802443.895242263.1747193804-1782052477.1734762457'
+        }
+      ]
+    },
+    {
+      name: 'Backend Developer',
+      jobs: [
+        {
+          title: "Backend Developer",
+          description: "We are looking for Backend Developers!",
+          type: "FULL TIME",
+          location: "ON SITE",
+          link:'https://rooster.jobs/jobs/446916'
+        }
+      ]
+    },
+    {
+      name: 'Creatives',
+      jobs: [
+        {
+          title: "2D character Animator",
+          description: "We are looking for a 2D character Animator who can bring our characters to life with fluid and expressive animations.",
+          type: "Full Time",
+          location: "on Site",
+          link:'https://rooster.jobs/jobs/508232'
+        }
+      ]
+    },
+    {
+      name: 'Design',
+      jobs: [
+        {
+          title: "Video Editor",
+          description: "We are looking for a Video Editor who knows how to keep viewers hooked, especially on social media.",
+          type: "Full Time",
+          location: "on Site",
+          link:'https://rooster.jobs/jobs/447313?_gl=1*5lvids*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjgyNSRqNTIkbDAkaDE0NDA5MDkyOQ..&_ga=2.139483514.895242263.1747193804-1782052477.1734762457'
         }
       ]
     },
@@ -344,15 +380,15 @@ export default function CareersPage() {
                         {job.location}
                       </div>
                     </div>
-                    <div className="font-inclusive-sans text-[24px] mt-[30px] group-hover:text-white uppercase">
+                    <div className="font-inclusive-sans text-[24px] mt-[30px] group-hover:text-white uppercase mb-[100px]">
                       {job.description}
                     </div>
-                      <div className="items-center justify-center">
-                        <button className="bg-[#e0ef29] py-[25px] px-[30px] text-[20px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border-3 border-dashed border-black  mt-[101px] group-hover:bg-white group-hover:text-black group-hover:border-black flex items-center gap-2 cursor-pointer">
-                          Apply Now
-                          <ArrowUpRight size={22} />
-                        </button>
-                      </div>
+        <div className="mt-auto">
+          <button className="bg-[#e0ef29] py-[25px] px-[30px] text-[20px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border-3 border-dashed border-black group-hover:bg-white group-hover:text-black group-hover:border-black flex items-center gap-2 cursor-pointer" onClick={() => job.link && window.open(job.link, '_blank')}>
+            Apply Now
+            <ArrowUpRight size={22} />
+          </button>
+        </div>
                   </div>
                 ))
               )}
