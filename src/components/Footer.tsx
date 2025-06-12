@@ -103,7 +103,7 @@ export default function Footer() {
             <ul className="space-y-1  font-inclusive-sans text-[20px] -tracking-[0.7px] font-stretch-normal">
               <li><a href="#" className="hover:underline">About</a></li>
               <li><a href="#" className="hover:underline">Case Studies</a></li>
-              <li><a href="#" className="hover:underline">Careers</a></li>
+              <li><a href="/careers" className="hover:underline">Careers</a></li>
               <li><a href="#" className="hover:underline">Services</a></li>
             </ul>
           </div>
