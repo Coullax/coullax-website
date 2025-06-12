@@ -7,6 +7,7 @@ interface MenuItemProps {
   link: string;
   text: string;
   image: string;
+  ind: string;
 }
 
 interface FlowingMenuProps {
@@ -15,7 +16,7 @@ interface FlowingMenuProps {
 
 const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   return (
-    <div className="menu-wrap">
+    <div className="menu-wrap my-[100px]">
       <nav className="menu">
         {items.map((item, idx) => (
           <MenuItem key={idx} {...item} />
@@ -25,7 +26,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
@@ -84,24 +85,21 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
   const repeatedMarqueeContent = React.useMemo(() => {
     return Array.from({ length: 4 }).map((_, idx) => (
       <React.Fragment key={idx}>
-        <span>{text}</span>
-        {/* <div
-          className="marquee__img"
-          style={{ backgroundImage: `url(${image})` }}
-        /> */}
+        <span className=" text-[48px] !font-special-gothic-expanded-one leading-[62.4px] !text-[#e0ef29]">{text}</span>
+        <div className=" text-[48px] w-[175px] rounded-full text-center font-special-gothic-expanded-one leading-[62.4px] bg-[#e0ef29] text-[#0505cb]">{ind.length === 1 ? 0 + ind : ind}</div>
       </React.Fragment>
     ));
-  }, [text, image]);
+  }, [text, image, ind]);
 
   return (
     <div className="menu__item" ref={itemRef}>
       <a
-        className="menu__item-link"
+        className="menu__item-link !font-special-gothic-expanded-one pt-[41.5px]"
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {text}
+        <span className=" mr-4">{ind.length === 1 ? 0 + ind : ind}</span>{text}
       </a>
       <div className="marquee" ref={marqueeRef}>
         <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
