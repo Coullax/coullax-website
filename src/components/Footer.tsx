@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
-
 
   return (
     // <div className="w-full relative  overflow-hidden bg-[#1e201f]">
@@ -112,7 +112,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-2 font-inclusive-sans text-[20px]">Services</h3>
             <ul className="space-y-1  font-inclusive-sans text-[20px] -tracking-[0.7px] font-stretch-normal ">
-              <li><a href="#" className="hover:underline">AI</a></li>
+              <li><Link href={'/ai'} className="hover:underline">AI</Link></li>
               <li><a href="#" className="hover:underline">Blockchain</a></li>
               <li><a href="#" className="hover:underline">Web & Software</a></li>
               <li><a href="#" className="hover:underline">Research & Strategy</a></li>
