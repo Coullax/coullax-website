@@ -629,7 +629,7 @@ export default function Home() {
                             maxIterations={20}
                             characters={line.key}
                             animateOn="view"
-                            className="revealed"
+                            className="revealed !text-[2.4vh]"
                             parentClassName="all-letters"
                             encryptedClassName="encrypted"
                           />
