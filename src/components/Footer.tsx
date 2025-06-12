@@ -84,7 +84,7 @@ export default function Footer() {
     //         </div>
     //       </div>
     <footer className="bg-[#e0ef29] text-black pt-6">
-      <div className="w-[90%] max-w-[1550px] mx-auto pt-8 flex flex-col md:flex-row justify-between items-end gap-6">
+      <div className="w-[90%] max-w-[1550px] mx-auto pt-8 flex justify-between items-end gap-6 flex-wrap">
         {/* Mission Statement */}
         <div className="max-w-[406px]">
           <p className="text-sm font-silkscreen mt-6">
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation Columns */}
-        <div className="flex flex-col md:flex-row gap-[41.2px]  w-fit">
+        <div className="flex flex-col-4 md:flex-row gap-[41.2px]  w-fit">
           {/* Home Column */}
           <div>
             <h3 className="font-bold mb-2 font-inclusive-sans text-[20px]">Home</h3>
