@@ -166,6 +166,27 @@ const skillJobs: SkillJobs[] = [
       ]
     },
   ];
+  // jobListings.length = 0;
+
+  // First define the card data structure
+const recruitmentSteps = [
+  {
+    title: "Your Resume",
+    description: "We carefully examine your resume",
+  },
+  {
+    title: "Assessment",
+    description: "You face our Technical Assessments"
+  },
+  {
+    title: "Interview",
+    description: <>You face for<br/>our interviews</>
+  },
+  {
+    title: "Join the forge",
+    description: <div className="mt-[30px]">Congrats!</div>
+  }
+];
   
 
 
@@ -250,14 +271,14 @@ export default function CareersPage() {
     return (
         <div className=" w-full pt-[50px] bg-[#fff]">
             <div className=" w-full">
-                <div className="w-[90%] max-w-[1200px] mx-auto">
+                <div className="w-[90%] max-w-[1550px] mx-auto">
                     <HeaderNavBar/>
                 </div>
             </div>
 
 
-            <div className="w-[90%] max-w-[1550px]  mx-auto flex justify-between mt-[100px]">
-              <span className="text-[96px] uppercase font-special-gothic-expanded-one">The hand of<br></br> entity</span>
+            <div className="w-[90%] max-w-[1550px] mx-auto flex justify-between mt-[200px]">
+              <span className="text-[96px] uppercase font-special-gothic-expanded-one -tracking-[4.8px]">The hand of<br></br> entity</span>
               <span className="text-[36px] uppercase font-special-gothic-expanded-one">careers</span>
             </div>
 
@@ -270,14 +291,14 @@ export default function CareersPage() {
           Coullax seeks thinkers, makers, and system breakers , <br></br>individuals drawn to the strange, the powerful, and <br></br>the unseen mechanics behind what we build. Whether <br></br>you wield code like language, design like ritual, or<br></br> strategy like signal alignment, there is a place for<br></br> you within the Forge.
           </div>
 
-          <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[50px] my-[100px]">
+          <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-dashed border-black mt-[50px] my-[100px] border-3 hover:bg-transparent hover:text-[#000000] hover:border-[#000000] hover:scale-105">
               SEND US YOUR RESUME
             </button>
         </div>
 
             <div className="w-full relative overflow-hidden">
-                <div className="w-[90%] max-w-[1550px]  mx-auto mt-[100px] md:mt-[140px] ">
-                    <h1 className=" text-black -tracking-[2.2px] text-[36px] lg:text-[45px] font-bold text-left">
+                <div className="w-[90%] max-w-[1550px]  mx-auto mt-[100px] md:mt-[100px] ">
+                    <h1 className=" text-black text-[36px] lg:text-[45px] font-normal text-left font-special-gothic-expanded-one -tracking-[2.25px]">
                     AVAILABLE POSITIONS
                     </h1>
                     <div className="mt-[24px] lg:mt-[32px]">
@@ -299,34 +320,46 @@ export default function CareersPage() {
 
 
         <div className="w-[90%] max-w-[1550px] mx-auto mt-[100px] mb-[100px]">
-          <div className="grid grid-cols-3 gap-[50px]">
-            {jobListings.map((category) =>
-              category.jobs.map((job) => (
-                <div key={job.title} className="flex flex-col p-[28px] border border-black hover:bg-black hover:text-white transition-colors duration-300 group">
-                  <span className="font-special-gothic-expanded-one text-left text-[40px] group-hover:text-white -leading-[2]">
-                    {job.title}
-                  </span>
-                  <div className="flex flex-row gap-[11.8px] mt-[30px]">
-                    <div className="border border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
-                      {job.type}
+          {jobListings.length === 0 ? (
+            <div className="flex flex-col  border border-black">
+              <div className="font-silkscreen text-[15px] text-center my-[37px]">
+              There are no open positions right now <br></br><br></br>
+              We kindly ask you to revisit our website at a later date to explore any available job openings<br></br>
+              that may be active at that time. Your interest is greatly appreciated!
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-[50px]">
+              {jobListings.map((category) =>
+                category.jobs.map((job) => (
+                  <div key={job.title} className="flex flex-col py-[27.7px] px-[28.8px] border border-black hover:bg-black hover:text-white transition-colors duration-300 group">
+                    <span className="font-special-gothic-expanded-one text-left text-[40px] group-hover:text-white -leading-[2]">
+                      {job.title}
+                    </span>
+                    <div className="flex flex-row gap-[11.8px] mt-[30px]">
+                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
+                        {job.type}
+                      </div>
+                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
+                        {job.location}
+                      </div>
                     </div>
-                    <div className="border border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
-                      {job.location}
+                    <div className="font-inclusive-sans text-[24px] mt-[30px] group-hover:text-white uppercase">
+                      {job.description}
                     </div>
+                    <a href={job.link}>
+                      <div className="items-center justify-center">
+                        <button className="bg-[#e0ef29] py-[25px] px-[30px] text-[20px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border-3 border-dashed border-black  mt-[101px] group-hover:bg-white group-hover:text-black group-hover:border-black flex items-center gap-2">
+                          Apply Now
+                          <ArrowUpRight size={22} />
+                        </button>
+                      </div>
+                    </a>
                   </div>
-                  <div className="font-inclusive-sans text-[24px] mt-[30px] group-hover:text-white uppercase">
-                    {job.description}
-                  </div>
-                  <a href={job.link}>
-                    <button className="bg-[#e0ef29] w-[214px] py-[25px] px-[30px] text-[20px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[100px] group-hover:bg-white group-hover:text-black group-hover:border-white flex flex-row">
-                      Apply Now
-                      <ArrowUpRight size={22} />
-                    </button>
-                  </a>
-                </div>
-              ))
-            )}
-          </div>
+                ))
+              )}
+            </div>
+          )}
         </div>
 
 
@@ -335,7 +368,7 @@ export default function CareersPage() {
   <div className="w-[90%] max-w-[1550px] mx-auto py-[100px]">
     {/* Header section */}
     <div className="flex justify-between ">
-      <span className="text-[96px] uppercase font-special-gothic-expanded-one text-white">
+      <span className="text-[96px] uppercase font-special-gothic-expanded-one text-white -tracking-[4.8px]">
         Rite of Entry
       </span>
       <span className="text-[36px] uppercase font-special-gothic-expanded-one text-white">
@@ -350,35 +383,28 @@ export default function CareersPage() {
       </div>
 
       <div className="text-[40px] mt-[56px] uppercase font-inclusive-sans text-white">
-        Joining Coullax is not a transaction — it is a transition. We don't merely review resumes; we decipher intent, resonance, and potential. Our process is built to uncover builders who think beyond the visible . individuals who feel the pulse of systems not yet formed.
+        Joining Coullax is not a transaction — it is a<br></br>transition. We don't merely review resumes; we<br></br>decipher intent, resonance, and potential. Our<br></br>process is built to uncover builders who think<br></br> beyond the visible . individuals who feel the pulse<br></br> of systems not yet formed.
       </div>
 
-      <button className="bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border border-dashed border-black mt-[50px] my-[100px]">
+      <button className="bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303]  border-dashed border-black mt-[50px] my-[100px] border-2 hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105">
         SEND US YOUR RESUME
       </button>
     </div>
 
-    {/* Grid section */}
             <div className="grid grid-cols-4 gap-[25.4px]">
-              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
-                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Your Resume</span>
-                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">We carefully examine your resume</span>
-              </div>
-
-              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
-                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Assessment</span>
-                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">You face our Technical Assesments</span>
-              </div>
-
-              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
-                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Interview</span>
-                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">You face for our interviews</span>
-              </div>
-
-              <div className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group">
-                <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black">Join the forge</span>
-                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black">Congratse</span>
-              </div>
+              {recruitmentSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group"
+                >
+                  <span className="font-special-gothic-expanded-one text-[40px] text-white group-hover:text-black -tracking-[2px]">
+                    {step.title}
+                  </span>
+                  <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black uppercase -tracking-[0.2px]">
+                    {step.description}
+                  </span>
+                </div>
+              ))}
             </div>
 
 
