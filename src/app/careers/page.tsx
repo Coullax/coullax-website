@@ -134,7 +134,7 @@ interface CarrouseImageItem {
       jobs: [
         {
           title: "Software Engineer Intern",
-          description: "We are hiring a software engineer intern for our team",
+          description: "We are seeking a Software Engineer Intern to assist with development projects and learn from our team.",
           type: "Internship",
           location: "ON SITE",
           link: 'https://rooster.jobs/jobs/446914?_gl=1*6oq610*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjU0NSRqNTYkbDAkaDE0NDA5MDkyOQ..&_ga=2.177795308.895242263.1747193804-1782052477.1734762457'
@@ -146,7 +146,7 @@ interface CarrouseImageItem {
       jobs: [
         {
           title: "Associate Tech Lead",
-          description: "We are  looking for skilled Backend Developers!",
+          description: "We are looking for an Associate Tech Lead to guide technical projects and mentor team members.",
           type: "FULL TIME",
           location: "ON SITE",
           link: 'https://rooster.jobs/jobs/446917'
@@ -158,7 +158,7 @@ interface CarrouseImageItem {
       jobs: [
         {
           title: "Mobile App Developer",
-          description: "We are looking for Mobile App Developers!",
+          description: "We are seeking a Mobile App Developer to create and maintain iOS/Android applications.",
           type: "FULL TIME",
           location: "ON SITE",
           link:'https://rooster.jobs/jobs/446905?_gl=1*fg4nbj*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5Mjc4MSRqNiRsMCRoMTQ0MDkwOTI5&_ga=2.241802443.895242263.1747193804-1782052477.1734762457'
@@ -170,7 +170,7 @@ interface CarrouseImageItem {
       jobs: [
         {
           title: "Backend Developer",
-          description: "We are looking for Backend Developers!",
+          description: "We are looking for a Backend Developer to build and maintain server-side solutions.!",
           type: "FULL TIME",
           location: "ON SITE",
           link:'https://rooster.jobs/jobs/446916'
@@ -182,7 +182,7 @@ interface CarrouseImageItem {
       jobs: [
         {
           title: "2D character Animator",
-          description: "We are looking for a 2D character Animator who can bring our characters to life with fluid and expressive animations.",
+          description: "We are seeking a 2D Character Animator to create engaging character animations for our projects.",
           type: "Full Time",
           location: "on Site",
           link:'https://rooster.jobs/jobs/508232'
@@ -194,7 +194,7 @@ interface CarrouseImageItem {
       jobs: [
         {
           title: "Video Editor",
-          description: "We are looking for a Video Editor who knows how to keep viewers hooked, especially on social media.",
+          description: "We are looking for a Video Editor to create compelling social media content.",
           type: "Full Time",
           location: "on Site",
           link:'https://rooster.jobs/jobs/447313?_gl=1*5lvids*_gcl_au*MjE0NjU3NjA2NC4xNzQyNzg5MjE3*_ga*MTc4MjA1MjQ3Ny4xNzM0NzYyNDU3*_ga_2WG2Q8KFS3*czE3NDcyOTI0MzEkbzI0NCRnMSR0MTc0NzI5MjgyNSRqNTIkbDAkaDE0NDA5MDkyOQ..&_ga=2.139483514.895242263.1747193804-1782052477.1734762457'
