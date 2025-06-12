@@ -291,7 +291,7 @@ export default function CareersPage() {
           Coullax seeks thinkers, makers, and system breakers , <br></br>individuals drawn to the strange, the powerful, and <br></br>the unseen mechanics behind what we build. Whether <br></br>you wield code like language, design like ritual, or<br></br> strategy like signal alignment, there is a place for<br></br> you within the Forge.
           </div>
 
-          <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-dashed border-black mt-[50px] my-[100px] border-3 hover:bg-transparent hover:text-[#000000] hover:border-[#000000] hover:scale-105">
+          <button className=" bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-dashed border-black mt-[50px] my-[100px] border-3 hover:bg-transparent hover:text-[#000000] hover:border-[#000000] hover:scale-105 cursor-pointer">
               SEND US YOUR RESUME
             </button>
         </div>
@@ -347,14 +347,12 @@ export default function CareersPage() {
                     <div className="font-inclusive-sans text-[24px] mt-[30px] group-hover:text-white uppercase">
                       {job.description}
                     </div>
-                    <a href={job.link}>
                       <div className="items-center justify-center">
-                        <button className="bg-[#e0ef29] py-[25px] px-[30px] text-[20px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border-3 border-dashed border-black  mt-[101px] group-hover:bg-white group-hover:text-black group-hover:border-black flex items-center gap-2">
+                        <button className="bg-[#e0ef29] py-[25px] px-[30px] text-[20px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border-3 border-dashed border-black  mt-[101px] group-hover:bg-white group-hover:text-black group-hover:border-black flex items-center gap-2 cursor-pointer">
                           Apply Now
                           <ArrowUpRight size={22} />
                         </button>
                       </div>
-                    </a>
                   </div>
                 ))
               )}
@@ -386,7 +384,7 @@ export default function CareersPage() {
         Joining Coullax is not a transaction — it is a<br></br>transition. We don't merely review resumes; we<br></br>decipher intent, resonance, and potential. Our<br></br>process is built to uncover builders who think<br></br> beyond the visible . individuals who feel the pulse<br></br> of systems not yet formed.
       </div>
 
-      <button className="bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303]  border-dashed border-black mt-[50px] my-[100px] border-2 hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105">
+      <button className="bg-[#e0ef29] min-w-[312px] py-[25px] px-[30px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303]  border-dashed border-black mt-[50px] my-[100px] border-2 hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105 cursor-pointer">
         SEND US YOUR RESUME
       </button>
     </div>
