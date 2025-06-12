@@ -17,7 +17,7 @@
     position: relative;
     overflow: hidden;
     text-align: start;
-    box-shadow: 0 -1px #fff;
+    /* box-shadow: 0 -1px #fff; */
   }
   
   .menu__item-link {
@@ -31,7 +31,7 @@
     text-decoration: none;
     white-space: nowrap;
     font-weight: 400;
-    color: #000;
+    color: #00000080;
     font-size: 64px;
     font-family: var(--font-inclusive-sans);
   }
@@ -52,7 +52,7 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background: #e0ef29;
+    background: #0505cb;
     transform: translate3d(0, 101%, 0);
     transition: transform 0.6s ease-expo;
   }
