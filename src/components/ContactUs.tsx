@@ -13,7 +13,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="w-full relative overflow-hidden bg-black py-[18vh]">
+    <div className="w-full relative overflow-hidden bg-black py-[18.712vh]">
       <div
         className={cn(
           "absolute inset-0",
@@ -23,8 +23,8 @@ export default function ContactUs() {
           "opacity-25 dark:opacity-25 z-0"
         )}
       />
-      <div className=" w-[90%] max-w-[1038px] mx-auto">
-        <TypingAnimation className="font-silkscreen text-center text-[2vh] text-white ">
+      <div className=" w-[90%] max-w-[80.729vw] mx-auto">
+        <TypingAnimation className="font-silkscreen text-center text-[1.042vw] text-white ">
           {`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS.
               YOU'VE REACHED THE EDGE OF THE KNOWN.
               WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
@@ -32,7 +32,7 @@ export default function ContactUs() {
 
         <SplitText
           text="LIGHT THE SIGNAL"
-          className="text-[7vh] font-special-gothic-expanded-one leading-[1.3] text-white text-center py-[5vw] w-full "
+          className="text-[7vh] font-special-gothic-expanded-one leading-[5.802vw] text-white text-center py-[5vh] w-full "
           delay={10}
           duration={2}
           ease="power3.out"
@@ -52,10 +52,10 @@ export default function ContactUs() {
             WHEN YOU&apos;RE READY TO BUILD — WE AWAIT.
           </p> */}
 
-        <div className=" flex flex-col justify-center items-center">
+        <div className=" flex flex-col justify-center items-center w-full max-w-[42vw] mx-auto ">
           <form
             onSubmit={handleSubmit}
-            className="z-10 space-y-6 w-full max-w-[1038px] "
+            className="z-10 space-y-[2.273vh] w-full"
           >
             {/* Email Input */}
             <div>
@@ -64,7 +64,7 @@ export default function ContactUs() {
                 id="email"
                 name="email"
                 placeholder="YOUR EMAIL"
-                className="w-full h-[98px] p-2 border-[1.3px] border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white px-[15px] text-white"
+                className="w-full h-[7.424vh] p-[0.781vw] border-[1.3px] border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white text-white"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
               />
@@ -79,21 +79,24 @@ export default function ContactUs() {
                 rows={4}
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}
-                className="w-full  h-[214px] p-2 border border-[#000]  bg-[#242425] focus:outline-none placeholder:!text-white px-[15px]  text-white"
+                className="w-full h-[16.212vh] p-[0.781vw] border border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white px-[1.042vw] text-white"
               />
             </div>
 
             {/* Submit Button */}
             <div className=" flex flex-col justify-center items-center">
-              <p className="font-silkscreen text-left text-[15px] text-white py-[40px]">
+              <p className="font-silkscreen text-left text-[0.781vw] text-white py-[3.03vh]">
                 TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
                 SIGNAL...
               </p>
 
-              <button
+              {/* <button
                 type="button"
-                className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black hover:border-[#e0ef29] hover:text-[#e0ef29] border-2 "
+                className="w-full max-w-[16.25vw] bg-[#e0ef29] text-black py-[1.894vh] font-silkscreen text-[1.042vw] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black hover:border-[#e0ef29] hover:text-[#e0ef29] border-2 "
               >
+                CONTACT US
+              </button> */}
+              <button className="cursor-pointer bg-[#e0ef29] py-[25px] px-[86px] text-black uppercase text-[20px] font-silkscreen text-center leading-[19.6px] -tracking-[1px] border-2 border-dashed border-black hover:bg-transparent hover:scale-105 hover:text-[#e0ef29] hover:border-[#e0ef29] transition-all duration-300 ease-in-out">
                 CONTACT US
               </button>
             </div>
