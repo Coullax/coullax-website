@@ -133,7 +133,7 @@ const skillJobs: SkillJobs[] = [
       name: 'Product Design',
       jobs: [
         {
-          title: "PRODUCT DESIGNER",
+          title: "Software Engineer Intern",
           description: "we are looking for a highly skilled product designer to join our dynamic team.",
           type: "FULL TIME",
           location: "ON SITE",
@@ -333,14 +333,14 @@ export default function CareersPage() {
               {jobListings.map((category) =>
                 category.jobs.map((job) => (
                   <div key={job.title} className="flex flex-col py-[27.7px] px-[28.8px] border border-black hover:bg-black hover:text-white transition-colors duration-300 group">
-                    <span className="font-special-gothic-expanded-one text-left text-[40px] group-hover:text-white -leading-[2]">
+                    <span className="font-special-gothic-expanded-one text-left text-[40px] group-hover:text-white -leading-[2] uppercase">
                       {job.title}
                     </span>
                     <div className="flex flex-row gap-[11.8px] mt-[30px]">
-                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
+                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600] uppercase">
                         {job.type}
                       </div>
-                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600]">
+                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans text-[16px] group-hover:border-white group-hover:text-white font-[600] uppercase">
                         {job.location}
                       </div>
                     </div>
