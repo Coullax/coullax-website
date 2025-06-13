@@ -484,7 +484,7 @@ export default function AIPage() {
                 key={index}
                 className=" group p-[2.685vh] min-h-[40.268vh] flex flex-col justify-start bg-transparent border border-black overflow-hidden relative"
               >
-                <div className=" h-[0px] group-hover:h-[201.342vh] transition-all duration-800 aspect-square rounded-full absolute bottom-0 translate-y-1/2 left-0 -translate-x-1/2 bg-black"></div>
+                <div className=" h-[0px] group-hover:h-[201.342vh] transition-all duration-1000 aspect-square rounded-full absolute bottom-0 translate-y-1/2 left-0 -translate-x-1/2 bg-black"></div>
                 <div className=" z-10">
                   <Image
                     src={`/ai/construct/${item.image}_black.svg`}
