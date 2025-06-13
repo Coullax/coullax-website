@@ -28,6 +28,8 @@ import Loading from "./loading";
 import { cn } from "@/lib/utils";
 import HeaderNavBar from "@/components/Header";
 import ContactUs from "@/components/ContactUs";
+import TypingEffect from "@/components/gsp/TypingEffect";
+import AnimatedText from "@/components/gsp/AnimatedText";
 
 // Dynamically import AudioToggle with no SSR
 const AudioToggle = dynamic(
@@ -600,15 +602,15 @@ export default function Home() {
               </div> */}
 
               <div className="w-[90%] max-w-[1550px] h-dvh flex flex-col items-center justify-center mx-auto">
-                <h1 className=" text-[17.5vh] text-center leading-[10vh] text-[#000000] font-special-gothic-expanded-one uppercase">
+                <h1 className=" text-[15.436vh] text-center leading-[17.906vh] -tracking-[0.772vh] text-[#000000] font-special-gothic-expanded-one uppercase">
                   BUILD THE
                   <br />{" "}
-                  <span className=" text-[22vh] leading-[27vh] -tracking-[1vh]">
+                  <span className=" text-[19.195vh] leading-[15.557vh] -tracking-[0.96vh]">
                     UNBUILD
                   </span>
                 </h1>
 
-                <span className="w-full !font-inclusive-sans !text-[2.4vh] text-center !leading-[3.4vh] !uppercase !text-black my-[6vh]">
+                <span className="w-full !font-inclusive-sans !text-[2.148vh] text-center !leading-[2.792vh] !uppercase !text-black my-[5.101vh]">
                   {!isDecoded
                     ? greakArray.map((text, index) => (
                         <div key={index}>
@@ -629,7 +631,7 @@ export default function Home() {
                             maxIterations={20}
                             characters={line.key}
                             animateOn="view"
-                            className="revealed !text-[2.4vh]"
+                            className="revealed !text-[2.148vh]"
                             parentClassName="all-letters"
                             encryptedClassName="encrypted"
                           />
@@ -644,7 +646,7 @@ export default function Home() {
                 </span>
                 <button
                   onClick={() => setIsDecoded(true)}
-                  className={` bg-[#e0ef29] min-w-[13vw] cursor-pointer py-[2vh] px-[41px] text-[1.5vh] text-center leading-[1.5vh] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black ${
+                  className={` bg-[#e0ef29] min-w-[20.94vh] cursor-pointer py-[1.678vh] px-[2.752vh] text-[1.342vh] text-center leading-[1.315vh] -tracking-[0.067vh] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black ${
                     !isDecoded ? "animate-blink" : ""
                   }`}
                 >
@@ -810,7 +812,7 @@ export default function Home() {
           <div
             // style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
             // ref={container2}
-            className="relative w-full bg-[#000000] py-[8vh]"
+            className="relative w-full bg-[#000000] py-[6.711vh]"
           >
             <div
               className={cn(
@@ -821,16 +823,18 @@ export default function Home() {
                 "opacity-25 dark:opacity-25"
               )}
             />
-            <div className=" z-20 py-[50px] w-[90%] max-w-[1550px] mx-auto">
-              <h1 className=" text-white font-silkscreen text-[15px] leading-[20px]">
-                Shaped by glyph, born of will. Created in silence, between
-                signals.
-                <br /> The crucible of ideas, fueled by intent. This is where we
-                build the unbuilt.
+            <div className=" z-20 w-[90%] max-w-[104.027vh] mx-auto">
+              <h1 className=" text-white font-silkscreen text-[1.007vh] leading-[1.309vh]">
+                <TypingEffect
+                  text={`Shaped by glyph, born of will. Created in silence, between signals. \n The crucible of ideas, fueled by intent. This is where we build the unbuilt.`}
+                  speed={30}
+                  delay={500}
+                  className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+                />
               </h1>
               <SplitText
                 text="THE FORGE"
-                className="  mt-[5vh] text-white font-special-gothic-expanded-one text-[18vh] leading-[20vh] -tracking-[0.5vh] uppercase"
+                className="  mt-[3.356vh] text-white font-special-gothic-expanded-one text-[16.289vh] leading-[18.899vh] -tracking-[0.815vh] uppercase"
                 delay={10}
                 duration={2}
                 ease="power3.out"
@@ -841,33 +845,42 @@ export default function Home() {
                 rootMargin="-100px"
                 textAlign="center"
               />
-              <div className=" text-[3.5vh] font-inclusive-sans text-white leading-[5vh] uppercase my-[6vh]">
-                This is where vision meets velocity.
-                <br />
-                Where raw ideas are melted down, reshaped, and forged
-                <br /> into real, working systems. The Forge is Coullax&apos;s
-                <br /> creative engine. a space of experimentation,
-                <br /> engineering, and relentless iteration.
+              <div className=" text-[2.685vh] font-inclusive-sans text-white leading-[3.49vh] uppercase my-[3.758vh]">
+                <AnimatedText delay={0}>
+                  This is where vision meets velocity.
+                </AnimatedText>
+                <AnimatedText delay={0.2}>
+                  Where raw ideas are melted down, reshaped, and forged
+                </AnimatedText>
+                <AnimatedText delay={0.4}>
+                  into real, working systems. The Forge is Coullax&apos;s
+                </AnimatedText>
+                <AnimatedText delay={0.4}>
+                  creative engine. a space of experimentation,
+                </AnimatedText>
+                <AnimatedText delay={0.4}>
+                  engineering, and relentless iteration.
+                </AnimatedText>
               </div>
               <button
                 onClick={handleBookCallClick}
-                className="z-50 relative bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] cursor-pointer text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105"
+                className="z-50 relative bg-[#e0ef29] min-w-[20.94vh] py-[1.678vh] px-[5.772vh] text-[1.342vh] cursor-pointer text-center leading-[1.315vh] -tracking-[0.067vh] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105"
                 style={{ zIndex: 10 }}
               >
                 BOOK A CALL
               </button>
-              <div className=" mt-[100px] z-10">
-                <div className=" z-10 w-full grid grid-cols-2 gap-[50px] mb-[50px]">
-                  <Link href={'/ai'} className=" z-10 w-full">
+              <div className=" mt-[6.711vh] z-10">
+                <div className=" z-10 w-full grid grid-cols-2 gap-[3.356vh] mb-[3.356vh]">
+                  <Link href={"/ai"} className=" z-10 w-full">
                     <div
-                      className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent hover:scale-105 transition-transform duration-300 ease-in-out"
+                      className=" z-10 w-full py-[2.054vh] px-[2.624vh] min-h-[38.926vh] text-white flex flex-col justify-between items-start bg-transparent hover:scale-105 transition-transform duration-300 ease-in-out"
                       style={{
                         backgroundImage: `url('/HomePage/ForgeCards/aiBackground.webp')`,
                         backgroundSize: "cover",
                       }}
                     >
                       <div className=" w-full flex flex-row justify-between items-center">
-                        <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                        <h1 className=" text-[3.221vh] font-silkscreen leading-[3.336vh] -tracking-[0.161vh]">
                           COGNITION
                         </h1>
                         <Image
@@ -875,9 +888,10 @@ export default function Home() {
                           width={167}
                           height={99}
                           alt="studiosAndLabsIcon"
+                          className=" w-[11.208vh] h-[6.644vh]"
                         />
                       </div>
-                      <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
+                      <h1 className=" text-[5.369vh] font-special-gothic-expanded-one leading-[6.228vh] -tracking-[0.268vh] uppercase">
                         ARTIFICIAL
                         <br />
                         INTELLIGENCE
@@ -885,14 +899,14 @@ export default function Home() {
                     </div>
                   </Link>
                   <div
-                    className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
+                    className=" z-10 w-full py-[2.054vh] px-[2.141vh] min-h-[38.926vh] text-white flex flex-col justify-between items-start"
                     style={{
                       backgroundImage: `url('/HomePage/ForgeCards/blockchainBackground.webp')`,
                       backgroundSize: "cover",
                     }}
                   >
                     <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                      <h1 className=" text-[3.221vh] font-silkscreen leading-[3.336vh] -tracking-[0.161vh]">
                         CONSENSUS
                       </h1>
                       <Image
@@ -900,22 +914,23 @@ export default function Home() {
                         width={167}
                         height={99}
                         alt="studiosAndLabsIcon"
+                        className=" w-[11.208vh] h-[6.644vh]"
                       />
                     </div>
-                    <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
+                    <h1 className=" text-[5.369vh] font-special-gothic-expanded-one leading-[6.228vh] -tracking-[0.268vh] uppercase">
                       BLOCKCHAIN
                     </h1>
                   </div>
                 </div>
                 <div
-                  className=" z-10 my-[50px] bg-black border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start"
+                  className=" z-10 my-[3.356vh] bg-black border border-white py-[1.859vh] px-[1.946vh] min-h-[24.497vh] text-white flex flex-col justify-between items-start"
                   style={{ zIndex: 10, position: "relative" }}
                 >
-                  <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
+                  <h1 className=" text-[2.685vh] font-special-gothic-expanded-one leading-[3.114vh] -tracking-[0.134vh] uppercase">
                     STUDIOS AND LABS
                   </h1>
                   <div className="  w-full flex flex-row justify-between items-center">
-                    <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                    <h1 className=" text-[2.349vh] font-silkscreen leading-[2.436vh] -tracking-[0.117vh]">
                       ETHER
                     </h1>
                     <Image
@@ -923,17 +938,18 @@ export default function Home() {
                       width={167}
                       height={99}
                       alt="studiosAndLabsIcon"
+                      className=" w-[11.208vh] h-[6.644vh]"
                     />
                   </div>
                 </div>
-                <div className=" z-10 w-full grid grid-cols-3 gap-[50px] mb-[50px]">
-                  <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-black flex flex-col justify-between items-start">
-                    <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
+                <div className=" z-10 w-full grid grid-cols-3 gap-[3.356vh] mb-[3.356vh]">
+                  <div className="  z-10 w-full bg-white border border-white py-[1.859vh] px-[1.946vh] min-h-[24.497vh] text-black flex flex-col justify-between items-start">
+                    <h1 className=" text-[2.685vh] font-special-gothic-expanded-one leading-[3.114vh] -tracking-[0.134vh] uppercase">
                       Web & <br />
                       Software
                     </h1>
                     <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
+                      <h1 className=" text-[2.349vh] font-silkscreen leading-[2.436vh] -tracking-[0.117vh]">
                         WEAVE
                       </h1>
                       <Image
@@ -941,16 +957,17 @@ export default function Home() {
                         width={167}
                         height={99}
                         alt="studiosAndLabsIcon"
+                        className=" w-[11.208vh] h-[6.644vh]"
                       />
                     </div>
                   </div>
-                  <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
-                    <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
+                  <div className=" z-10 w-full border bg-black border-white py-[1.859vh] px-[1.946vh] min-h-[24.497vh] text-white flex flex-col justify-between items-start">
+                    <h1 className=" text-[2.685vh] font-special-gothic-expanded-one leading-[3.114vh] -tracking-[0.134vh] uppercase">
                       Research & <br />
                       Strategy
                     </h1>
                     <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
+                      <h1 className=" text-[2.349vh] font-silkscreen leading-[2.436vh] -tracking-[0.117vh]">
                         SYNTHESIS
                       </h1>
                       <Image
@@ -958,16 +975,17 @@ export default function Home() {
                         width={167}
                         height={99}
                         alt="studiosAndLabsIcon"
+                        className=" w-[11.208vh] h-[6.644vh]"
                       />
                     </div>
                   </div>
-                  <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
-                    <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh]">
+                  <div className=" bg-black z-10 w-full border border-white py-[1.859vh] px-[1.946vh] min-h-[24.497vh] text-white flex flex-col justify-between items-start">
+                    <h1 className=" text-[2.685vh] font-special-gothic-expanded-one leading-[3.114vh] -tracking-[0.134vh]">
                       MOBILE <br />
                       DEVELOPMENT
                     </h1>
                     <div className=" w-full flex flex-row justify-between items-center">
-                      <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
+                      <h1 className=" text-[2.349vh] font-silkscreen leading-[2.436vh] -tracking-[0.117vh]">
                         MOTILITH
                       </h1>
                       <Image
@@ -975,12 +993,13 @@ export default function Home() {
                         width={160}
                         height={99}
                         alt="studiosAndLabsIcon"
+                        className=" w-[11.208vh] h-[6.644vh]"
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <div className=" text-[15px] leading-[20px] uppercase font-silkscreen text-white">
+              <div className=" text-[1.007vh] leading-[1.309vh] uppercase font-silkscreen text-white">
                 [Directive / Builds / Main]
               </div>
 
@@ -1091,20 +1110,20 @@ export default function Home() {
             </div>
           </div>
           <VelocityScroll
-            fontSize="font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
+            fontSize="font-normal text-[4.034vh] leading-[4.678vh] font-special-gothic-expanded-one uppercase -tracking-[0.202vh] text-white py-[2.013vh]"
             defaultVelocity={0.2}
-            className="text-white !font-special-gothic-expanded-one uppercase !text-[5vh] !leading-[5.5vh] !-tracking-[3px] bg-[#0505cb] py-[2.5vh] "
+            className="bg-[#0505cb] "
             numRows={1}
           >
             AI, Machine Learning, Web3, Data science.Software.Research,
             Chatbot,DeFi,Dapp,AI, Machine Learning, Web3, Data science, Software
             , Research, Chatbot,DeFiDeFi
           </VelocityScroll>
-          <div className="w-[90%] max-w-[1550px] mx-auto py-[100px]">
+          <div className="w-[90%] max-w-[104.027vh] mx-auto py-[6.711vh]">
             <div className=" w-full flex flex-row justify-between items-start">
               <SplitText
                 text="The ritual"
-                className=" text-[8vh] font-special-gothic-expanded-one leading-[10vh] -tracking-[0.4vh] uppercase"
+                className=" text-[6.443vh] font-special-gothic-expanded-one leading-[7.477vh] -tracking-[0.322vh] uppercase"
                 delay={10}
                 duration={2}
                 ease="power3.out"
@@ -1115,31 +1134,40 @@ export default function Home() {
                 rootMargin="-100px"
                 textAlign="center"
               />
-              <h1 className=" text-[2.5vh] font-special-gothic-expanded-one leading-[42px] -tracking-[0.2vh] uppercase">
+              <h1 className=" text-[2.416vh] font-special-gothic-expanded-one leading-[2.805vh] -tracking-[0.121vh] uppercase">
                 process
               </h1>
             </div>
-            <h1 className=" text-black font-silkscreen pt-[30px] text-[15px] leading-[20px]">
-              It begins in stillness. A glyph. A pulse. A knowing.
-              <br />
-              Not all who enter understand, but all who emerge are changed.
+            <h1 className=" text-black font-silkscreen pt-[2.013vh] text-[2.013vh] leading-[1.309vh] uppercase">
+              <TypingEffect
+                text={`It begins in stillness. A glyph. A pulse. A knowing. \n Not all who enter understand, but all who emerge are changed.`}
+                speed={30}
+                delay={500}
+                className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+              />
             </h1>
-            <div className=" mt-[56px] text-[40px] uppercase font-inclusive-sans leading-[52px]">
-              The RITUAL is our process of transformation where
-              <br /> abstract ideas, complex technologies, and raw
-              <br /> ambition are fused into powerful digital systems.
+            <div className=" mt-[3.758vh] text-[2.685vh] uppercase font-inclusive-sans leading-[3.49vh]">
+              <AnimatedText delay={0}>
+                The RITUAL is our process of transformation where
+              </AnimatedText>
+              <AnimatedText delay={0.2}>
+                abstract ideas, complex technologies, and raw
+              </AnimatedText>
+              <AnimatedText delay={0.4}>
+                ambition are fused into powerful digital systems.
+              </AnimatedText>
             </div>
-            <div className=" my-[50px] text-[15px] font-silkscreen leading-[20px] uppercase">
+            <div className=" my-[3.356vh] text-[1.007vh] font-silkscreen leading-[1.309vh] uppercase">
               [Firstlight / Schema / Construct / Lift.]
             </div>
             <button
               onClick={handleBookCallClick}
-              className=" cursor-pointer bg-[#e0ef29] hover:bg-transparent hover:scale-105 min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black"
+              className=" cursor-pointer bg-[#e0ef29] hover:bg-transparent hover:scale-105 min-w-[20.94vh] py-[1.678vh] px-[5.772vh] text-[1.342vh] text-center leading-[1.315vh] -tracking-[0.067vh] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black"
             >
               BOOK A CALL
             </button>
-            <div className=" mt-[100px]">
-              <div className=" flex flex-row justify-start items-center gap-[30px]">
+            <div className=" mt-[6.711vh]">
+              <div className=" flex flex-row justify-start items-center gap-[2.013vh]">
                 <div
                   className={` rounded-full ${
                     activeImage === "star" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
@@ -1161,9 +1189,9 @@ export default function Home() {
                   } h-[22px] aspect-square`}
                 ></div>
               </div>
-              <div className=" border border-black mt-[40px]">
-                <div className="grid grid-cols-4 gap-[90px] pt-[50px] pb-[65px] px-[40px]">
-                  <div className="flex justify-center items-center col-span-[300px]">
+              <div className=" border border-black mt-[2.685vh]">
+                <div className="grid grid-cols-4 gap-[6.034vh] pt-[3.356vh] pb-[4.362vh] px-[4.027vh]">
+                  <div className="flex justify-center items-center col-span-[19.463vh]">
                     <Image
                       src={
                         activeImage === "star"
@@ -1173,12 +1201,12 @@ export default function Home() {
                       width={290}
                       height={290}
                       alt="Star"
-                      className=" cursor-pointer"
+                      className=" cursor-pointer w-[19.463vh] h-[19.463vh]"
                       onClick={() => setActiveImage("star")}
                     />
                   </div>
 
-                  <div className="flex justify-center items-center col-span-[300px]">
+                  <div className="flex justify-center items-center col-span-[19.463vh]">
                     <Image
                       src={
                         activeImage === "circle"
@@ -1188,12 +1216,12 @@ export default function Home() {
                       width={290}
                       height={290}
                       alt="Circle"
-                      className=" cursor-pointer"
+                      className=" cursor-pointer w-[19.463vh] h-[19.463vh]"
                       onClick={() => setActiveImage("circle")}
                     />
                   </div>
 
-                  <div className="flex justify-center items-center col-span-[300px]">
+                  <div className="flex justify-center items-center col-span-[19.463vh]">
                     <Image
                       src={
                         activeImage === "asterisk"
@@ -1203,12 +1231,12 @@ export default function Home() {
                       width={290}
                       height={290}
                       alt="Asterisk"
-                      className=" cursor-pointer"
+                      className=" cursor-pointer w-[19.463vh] h-[19.463vh]"
                       onClick={() => setActiveImage("asterisk")}
                     />
                   </div>
 
-                  <div className="flex justify-center items-center col-span-[300px]">
+                  <div className="flex justify-center items-center col-span-[19.463vh]">
                     <Image
                       src={
                         activeImage === "triangle"
@@ -1218,38 +1246,38 @@ export default function Home() {
                       alt="Triangle"
                       width={290}
                       height={290}
-                      className=" cursor-pointer"
+                      className=" cursor-pointer w-[19.463vh] h-[19.463vh]"
                       onClick={() => setActiveImage("triangle")}
                     />
                   </div>
                 </div>
-                <div className="w-full border-t border-[#000000] py-[28px] px-[29px]">
+                <div className="w-full border-t border-[#000000] py-[1.859vh] px-[1.933vh]">
                   <div className="flex justify-between items-center ">
-                    <h2 className="text-[48px] text-black font-special-gothic-expanded-one leading-[56px] -tracking-[2.4px] ">
+                    <h2 className="text-[3.221vh] text-black font-special-gothic-expanded-one leading-[3.738vh] -tracking-[0.161vh] ">
                       {phases[activeImage].subtitle}
                     </h2>
 
-                    <h2 className="text-[48px] font-bold text-black font-silkscreen -tracking-[2.4px] leading-[56px]">
+                    <h2 className="text-[3.221vh] font-bold text-black font-silkscreen -tracking-[0.161vh] leading-[3.738vh]">
                       {phases[activeImage].title}
                     </h2>
                   </div>
 
-                  <p className="text-[40px] my-[61px] font-inclusive-sans text-black leading-[48px] ">
+                  <p className="text-[2.685vh] my-[4.094vh] font-inclusive-sans text-black leading-[3.195vh] ">
                     {phases[activeImage].description}
                   </p>
-                  <p className="text-[15px] text-black uppercase leading-[18px] font-silkscreen">
+                  <p className="text-[1.007vh] text-black uppercase leading-[1.201vh] font-silkscreen">
                     {phases[activeImage].footer}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className=" w-full bg-[#F0F0F0] py-[100px]">
-            <div className="w-[90%] max-w-[1550px] mx-auto">
+          <div className=" w-full bg-[#F0F0F0] py-[6.711vh]">
+            <div className="w-[90%] max-w-[104.027vh] mx-auto">
               <div className=" w-full flex flex-row justify-between items-start">
                 <SplitText
                   text="PRIMORDIALs"
-                  className=" text-[8vh] font-special-gothic-expanded-one leading-[111px] -tracking-[5px] uppercase"
+                  className=" text-[6.443vh] font-special-gothic-expanded-one leading-[7.477vh] -tracking-[0.322vh] uppercase"
                   delay={10}
                   duration={2}
                   ease="power3.out"
@@ -1260,45 +1288,52 @@ export default function Home() {
                   rootMargin="-100px"
                   textAlign="center"
                 />
-                <h1 className=" text-[3vh] font-special-gothic-expanded-one leading-[42px] -tracking-[2px] uppercase">
+                <h1 className=" text-[2.416vh] font-special-gothic-expanded-one leading-[2.805vh] -tracking-[0.121vh] uppercase">
                   core values
                 </h1>
               </div>
-              <h1 className=" text-black font-silkscreen pt-[30px] text-[15px] leading-[20px]">
-                Before thought had form, they carved meaning into the void.
-                <br />
-                The first to build. The first to break silence.
-                <br />
-                From their glyphs, all creation followed.
+              <h1 className=" text-black font-silkscreen pt-[2.013vh] text-[1.007vh] leading-[1.309vh] uppercase">
+                <TypingEffect
+                  text={`Before thought had form, they carved meaning into the void. \n The first to build. The first to break silence. \n From their glyphs, all creation followed.`}
+                  speed={30}
+                  delay={500}
+                  className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+                />
               </h1>
-              <div className=" mt-[56px] text-[40px] uppercase font-inclusive-sans leading-[52px]">
-                Every product we deliver is shaped by a set of principles
-                <br /> that balance vision with precision, value with impact,
-                <br /> and innovation with reliability.
+              <div className=" mt-[3.758vh] text-[2.685vh] uppercase font-inclusive-sans leading-[3.49vh]">
+                <AnimatedText delay={0}>
+                  Every product we deliver is shaped by a set of principles
+                </AnimatedText>
+                <AnimatedText delay={0.2}>
+                  that balance vision with precision, value with impact,
+                </AnimatedText>
+                <AnimatedText delay={0.4}>
+                  and innovation with reliability.
+                </AnimatedText>
               </div>
-              <div className=" my-[50px] text-[15px] font-silkscreen leading-[20px] uppercase">
+              <div className=" my-[3.356vh] text-[1.007vh] font-silkscreen leading-[1.309vh] uppercase">
                 [VECTOR / PYLON / VEIL / NEXUS / FLUX.]
               </div>
               <button
                 onClick={handleBookCallClick}
-                className=" cursor-pointer bg-[#e0ef29] hover:bg-transparent hover:scale-105 min-w-[312px] py-[25px] px-[86px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black"
+                className=" cursor-pointer bg-[#e0ef29] hover:bg-transparent hover:scale-105 min-w-[20.94vh] py-[1.678vh] px-[5.772vh] text-[1.342vh] text-center leading-[1.315vh] -tracking-[0.067vh] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black"
               >
                 BOOK A CALL
               </button>
-              <div className="flex flex-row justify-start items-center gap-[19px] my-[75px]">
+              <div className="flex flex-row justify-start items-center gap-[1.275vh] my-[5.034vh]">
                 <div
                   className={` ${
                     activePrimordial === "primordial1"
                       ? "bg-[#dedede]"
                       : "bg-transparent"
-                  } flex justify-center items-center h-[155px] aspect-square`}
+                  } flex justify-center items-center h-[10.403vh] aspect-square`}
                 >
                   <Image
                     src="/HomePage/primordials/primordial_1.svg"
                     width={155}
                     height={155}
                     alt="Star"
-                    className=" cursor-pointer"
+                    className=" cursor-pointer h-[10.403vh] w-[10.403vh]"
                     onClick={() => setActivePrimordial("primordial1")}
                   />
                 </div>
@@ -1308,14 +1343,14 @@ export default function Home() {
                     activePrimordial === "primordial2"
                       ? "bg-[#dedede]"
                       : "bg-transparent"
-                  } flex justify-center items-center h-[155px] aspect-square`}
+                  } flex justify-center items-center h-[10.403vh] aspect-square`}
                 >
                   <Image
                     src="/HomePage/primordials/primordial_2.svg"
                     width={155}
                     height={155}
                     alt="Circle"
-                    className=" cursor-pointer"
+                    className=" cursor-pointer h-[10.403vh] w-[10.403vh]"
                     onClick={() => setActivePrimordial("primordial2")}
                   />
                 </div>
@@ -1325,14 +1360,14 @@ export default function Home() {
                     activePrimordial === "primordial3"
                       ? "bg-[#dedede]"
                       : "bg-transparent"
-                  } flex justify-center items-center h-[155px] aspect-square`}
+                  } flex justify-center items-center h-[10.403vh] aspect-square`}
                 >
                   <Image
                     src="/HomePage/primordials/primordial_3.svg"
                     width={155}
                     height={155}
                     alt="Asterisk"
-                    className=" cursor-pointer"
+                    className=" cursor-pointer h-[10.403vh] w-[10.403vh]"
                     onClick={() => setActivePrimordial("primordial3")}
                   />
                 </div>
@@ -1342,14 +1377,14 @@ export default function Home() {
                     activePrimordial === "primordial4"
                       ? "bg-[#dedede]"
                       : "bg-transparent"
-                  } flex justify-center items-center h-[155px] aspect-square`}
+                  } flex justify-center items-center h-[10.403vh] aspect-square`}
                 >
                   <Image
                     src="/HomePage/primordials/primordial_4.svg"
                     alt="Triangle"
                     width={155}
                     height={155}
-                    className=" cursor-pointer"
+                    className=" cursor-pointer h-[10.403vh] w-[10.403vh]"
                     onClick={() => setActivePrimordial("primordial4")}
                   />
                 </div>
@@ -1359,14 +1394,14 @@ export default function Home() {
                     activePrimordial === "primordial5"
                       ? "bg-[#dedede]"
                       : "bg-transparent"
-                  } flex justify-center items-center h-[155px] aspect-square`}
+                  } flex justify-center items-center h-[10.403vh] aspect-square`}
                 >
                   <Image
                     src="/HomePage/primordials/primordial_5.svg"
                     alt="Triangle"
                     width={155}
                     height={155}
-                    className=" cursor-pointer"
+                    className=" cursor-pointer h-[10.403vh] w-[10.403vh]"
                     onClick={() => setActivePrimordial("primordial5")}
                   />
                 </div>
@@ -1374,7 +1409,7 @@ export default function Home() {
               <div className=" flex flex-row border-2 border-black justify-between items-start gap-0">
                 <div
                   className="aspect-square"
-                  style={{ width: "33vh", height: "33vh" }}
+                  style={{ width: "25.034vh", height: "25.034vh" }}
                 >
                   <Image
                     src={`/HomePage/primordials/${primordials[activePrimordial].image}`}
@@ -1388,8 +1423,8 @@ export default function Home() {
                     }}
                   />
                 </div>
-                <div className=" w-full py-[45px] px-[50px]">
-                  <div className=" flex justify-between items-center text-[48px] leading-[62px] uppercase">
+                <div className=" w-full py-[3.255vh] pr-[3.624vh] pl-[5.034vh]">
+                  <div className=" flex justify-between items-center text-[3.221vh] leading-[4.188vh] uppercase">
                     <h1 className=" font-special-gothic-expanded-one">
                       {primordials[activePrimordial].title}
                     </h1>
@@ -1397,7 +1432,7 @@ export default function Home() {
                       {primordials[activePrimordial].subtitle}
                     </h1>
                   </div>
-                  <div className=" mt-[30px] font-inclusive-sans text-[3.5vh] leading-[3.5vh] w-full">
+                  <div className=" mt-[30px] font-inclusive-sans text-[2.685vh] leading-[3.06vh] w-full">
                     {primordials[activePrimordial].description}
                   </div>
                 </div>
@@ -2360,7 +2395,7 @@ export default function Home() {
                 </div>
                 <span className="text-[15px] font-silkscreen mt-[30px] mb-[6px]">
                   Each artifact tells a story.<br></br>a fragment of vision
-                  forged in the fires of creation<br></br>.Born from whispers of
+                  forged in the fires of creation.<br></br>Born from whispers of
                   code and pulses of intent,<br></br>these are the echoes of
                   ideas made real.
                 </span>
@@ -2375,7 +2410,7 @@ export default function Home() {
               <div className=" flex flex-row gap-[30px]">
                 <button
                   type="button"
-                  className="w-full max-w-[312px] h-[70px] bg-[black] text-[#e0ef29] py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-[#e0ef29] border-2"
+                  className="w-full max-w-[312px] h-[70px] bg-[black] text-[#e0ef29] py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition-all duration-300 hover:scale-105 border-dashed border-[#e0ef29] border-2"
                 >
                   VISIT CASE STUDIES
                 </button>
