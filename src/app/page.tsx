@@ -576,7 +576,7 @@ export default function Home() {
           <div className="w-full">
             <div className=" w-full bg-[#fff] min-h-dvh py-[40px]">
               {/* Header */}
-          <HeaderNavBar />
+              <HeaderNavBar />
               {/* <div className="w-[90%] max-w-[1550px] flex items-center justify-between mx-auto py-[2.5vh]">
                 <Image
                   src="/logo.png"
@@ -599,14 +599,14 @@ export default function Home() {
                 </div>
               </div> */}
 
-                <div className="w-[90%] max-w-[1550px] h-dvh flex flex-col items-center justify-center mx-auto">
-                  <h1 className=" text-[17.5vh] text-center leading-[10vh] text-[#000000] font-special-gothic-expanded-one uppercase">
-                    BUILD THE
-                    <br />{" "}
-                    <span className=" text-[22vh] leading-[27vh] -tracking-[1vh]">
-                      UNBUILD
-                    </span>
-                  </h1>
+              <div className="w-[90%] max-w-[1550px] h-dvh flex flex-col items-center justify-center mx-auto">
+                <h1 className=" text-[17.5vh] text-center leading-[10vh] text-[#000000] font-special-gothic-expanded-one uppercase">
+                  BUILD THE
+                  <br />{" "}
+                  <span className=" text-[22vh] leading-[27vh] -tracking-[1vh]">
+                    UNBUILD
+                  </span>
+                </h1>
 
                 <span className="w-full !font-inclusive-sans !text-[2.4vh] text-center !leading-[3.4vh] !uppercase !text-black my-[6vh]">
                   {!isDecoded
@@ -807,177 +807,181 @@ export default function Home() {
 
         </VelocityScroll>
       </div> */}
-            <div
+          <div
             // style={{ y: useTransform(scrollYProgress2, [0, 1], [100, 0]) }}
             // ref={container2}
             className="relative w-full bg-[#000000] py-[8vh]"
-            >
+          >
             <div
               className={cn(
-              "absolute inset-0",
-              "[background-size:20px_20px]",
-              "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
-              "opacity-25 dark:opacity-25"
+                "absolute inset-0",
+                "[background-size:20px_20px]",
+                "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+                "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+                "opacity-25 dark:opacity-25"
               )}
             />
             <div className=" z-20 py-[50px] w-[90%] max-w-[1550px] mx-auto">
-              
               <h1 className=" text-white font-silkscreen text-[15px] leading-[20px]">
-              Shaped by glyph, born of will. Created in silence, between
-              signals.
-              <br /> The crucible of ideas, fueled by intent. This is where we
-              build the unbuilt.
+                Shaped by glyph, born of will. Created in silence, between
+                signals.
+                <br /> The crucible of ideas, fueled by intent. This is where we
+                build the unbuilt.
               </h1>
               <SplitText
-              text="THE FORGE"
-              className="  mt-[5vh] text-white font-special-gothic-expanded-one text-[18vh] leading-[20vh] -tracking-[0.5vh] uppercase"
-              delay={10}
-              duration={2}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
+                text="THE FORGE"
+                className="  mt-[5vh] text-white font-special-gothic-expanded-one text-[18vh] leading-[20vh] -tracking-[0.5vh] uppercase"
+                delay={10}
+                duration={2}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
               />
               <div className=" text-[3.5vh] font-inclusive-sans text-white leading-[5vh] uppercase my-[6vh]">
-              This is where vision meets velocity.
-              <br />
-              Where raw ideas are melted down, reshaped, and forged
-              <br /> into real, working systems. The Forge is Coullax&apos;s
-              <br /> creative engine. a space of experimentation,
-              <br /> engineering, and relentless iteration.
+                This is where vision meets velocity.
+                <br />
+                Where raw ideas are melted down, reshaped, and forged
+                <br /> into real, working systems. The Forge is Coullax&apos;s
+                <br /> creative engine. a space of experimentation,
+                <br /> engineering, and relentless iteration.
               </div>
               <button
-              onClick={handleBookCallClick}
-              className="z-50 relative bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] cursor-pointer text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105"
-              style={{ zIndex: 10 }}
+                onClick={handleBookCallClick}
+                className="z-50 relative bg-[#e0ef29] min-w-[312px] py-[25px] px-[86px] text-[20px] cursor-pointer text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105"
+                style={{ zIndex: 10 }}
               >
-              BOOK A CALL
+                BOOK A CALL
               </button>
               <div className=" mt-[100px] z-10">
-              <div className=" z-10 w-full grid grid-cols-2 gap-[50px] mb-[50px]">
-              <div
-              className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent "
-              style={{
-                backgroundImage: `url('/HomePage/ForgeCards/aiBackground.webp')`,
-                backgroundSize: "cover",
-              }}
-              >
-              <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
-                COGNITION
-                </h1>
-                <Image
-                src="/HomePage/ForgeCards/cognitionIcon.svg"
-                width={167}
-                height={99}
-                alt="studiosAndLabsIcon"
-                />
-              </div>
-              <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
-                ARTIFICIAL
-                <br />
-                INTELLIGENCE
-              </h1>
-              </div>
-              <div
-              className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
-              style={{
-                backgroundImage: `url('/HomePage/ForgeCards/blockchainBackground.webp')`,
-                backgroundSize: "cover",
-              }}
-              >
-              <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
-                CONSENSUS
-                </h1>
-                <Image
-                src="/HomePage/ForgeCards/consensusIcon.svg"
-                width={167}
-                height={99}
-                alt="studiosAndLabsIcon"
-                />
-              </div>
-              <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
-                BLOCKCHAIN
-              </h1>
-              </div>
-              </div>
-              <div className=" z-10 my-[50px] bg-black border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start" style={{ zIndex: 10, position: "relative" }}>
-              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
-                STUDIOS AND LABS
-              </h1>
-              <div className="  w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
-                ETHER
-                </h1>
-                <Image
-                src="/HomePage/ForgeCards/etherIcon.svg"
-                width={167}
-                height={99}
-                alt="studiosAndLabsIcon"
-                />
-              </div>
-              </div>
-              <div className=" z-10 w-full grid grid-cols-3 gap-[50px] mb-[50px]">
-              <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-black flex flex-col justify-between items-start">
-              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
-                Web & <br />
-                Software
-              </h1>
-              <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
-                WEAVE
-                </h1>
-                <Image
-                src="/HomePage/ForgeCards/weaveIcon.svg"
-                width={167}
-                height={99}
-                alt="studiosAndLabsIcon"
-                />
-              </div>
-              </div>
-              <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
-              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
-                Research & <br />
-                Strategy
-              </h1>
-              <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
-                SYNTHESIS
-                </h1>
-                <Image
-                src="/HomePage/ForgeCards/synthesisIcon.svg"
-                width={167}
-                height={99}
-                alt="studiosAndLabsIcon"
-                />
-              </div>
-              </div>
-              <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
-              <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh]">
-                MOBILE <br />
-                DEVELOPMENT
-              </h1>
-              <div className=" w-full flex flex-row justify-between items-center">
-                <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
-                MOTILITH
-                </h1>
-                <Image
-                src="/HomePage/ForgeCards/motilithIcon.svg"
-                width={160}
-                height={99}
-                alt="studiosAndLabsIcon"
-                />
-              </div>
-              </div>
-              </div>
+                <div className=" z-10 w-full grid grid-cols-2 gap-[50px] mb-[50px]">
+                  <Link href={'/ai'} className=" z-10 w-full">
+                    <div
+                      className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start bg-transparent hover:scale-105 transition-transform duration-300 ease-in-out"
+                      style={{
+                        backgroundImage: `url('/HomePage/ForgeCards/aiBackground.webp')`,
+                        backgroundSize: "cover",
+                      }}
+                    >
+                      <div className=" w-full flex flex-row justify-between items-center">
+                        <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                          COGNITION
+                        </h1>
+                        <Image
+                          src="/HomePage/ForgeCards/cognitionIcon.svg"
+                          width={167}
+                          height={99}
+                          alt="studiosAndLabsIcon"
+                        />
+                      </div>
+                      <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
+                        ARTIFICIAL
+                        <br />
+                        INTELLIGENCE
+                      </h1>
+                    </div>
+                  </Link>
+                  <div
+                    className=" z-10 w-full py-[30px] px-[32px] min-h-[580px] text-white flex flex-col justify-between items-start"
+                    style={{
+                      backgroundImage: `url('/HomePage/ForgeCards/blockchainBackground.webp')`,
+                      backgroundSize: "cover",
+                    }}
+                  >
+                    <div className=" w-full flex flex-row justify-between items-center">
+                      <h1 className=" text-[48px] font-silkscreen leading-[50px] -tracking-[2.4px]">
+                        CONSENSUS
+                      </h1>
+                      <Image
+                        src="/HomePage/ForgeCards/consensusIcon.svg"
+                        width={167}
+                        height={99}
+                        alt="studiosAndLabsIcon"
+                      />
+                    </div>
+                    <h1 className=" text-[6vh] font-special-gothic-expanded-one leading-[6.5vh] -tracking-[0.2vh] uppercase">
+                      BLOCKCHAIN
+                    </h1>
+                  </div>
+                </div>
+                <div
+                  className=" z-10 my-[50px] bg-black border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start"
+                  style={{ zIndex: 10, position: "relative" }}
+                >
+                  <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
+                    STUDIOS AND LABS
+                  </h1>
+                  <div className="  w-full flex flex-row justify-between items-center">
+                    <h1 className=" text-[35px] font-silkscreen leading-[36px] -tracking-[2px]">
+                      ETHER
+                    </h1>
+                    <Image
+                      src="/HomePage/ForgeCards/etherIcon.svg"
+                      width={167}
+                      height={99}
+                      alt="studiosAndLabsIcon"
+                    />
+                  </div>
+                </div>
+                <div className=" z-10 w-full grid grid-cols-3 gap-[50px] mb-[50px]">
+                  <div className="  z-10 w-full bg-white border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-black flex flex-col justify-between items-start">
+                    <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
+                      Web & <br />
+                      Software
+                    </h1>
+                    <div className=" w-full flex flex-row justify-between items-center">
+                      <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
+                        WEAVE
+                      </h1>
+                      <Image
+                        src="/HomePage/ForgeCards/weaveIcon.svg"
+                        width={167}
+                        height={99}
+                        alt="studiosAndLabsIcon"
+                      />
+                    </div>
+                  </div>
+                  <div className=" z-10 w-full border bg-black border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
+                    <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh] uppercase">
+                      Research & <br />
+                      Strategy
+                    </h1>
+                    <div className=" w-full flex flex-row justify-between items-center">
+                      <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
+                        SYNTHESIS
+                      </h1>
+                      <Image
+                        src="/HomePage/ForgeCards/synthesisIcon.svg"
+                        width={167}
+                        height={99}
+                        alt="studiosAndLabsIcon"
+                      />
+                    </div>
+                  </div>
+                  <div className=" bg-black z-10 w-full border border-white py-[28px] px-[29px] min-h-[300px] h-[29.5vh] text-white flex flex-col justify-between items-start">
+                    <h1 className=" text-[3.5vh] font-special-gothic-expanded-one leading-[4vh] -tracking-[0.2vh]">
+                      MOBILE <br />
+                      DEVELOPMENT
+                    </h1>
+                    <div className=" w-full flex flex-row justify-between items-center">
+                      <h1 className=" text-[3vh] font-silkscreen leading-[36px] -tracking-[2px]">
+                        MOTILITH
+                      </h1>
+                      <Image
+                        src="/HomePage/ForgeCards/motilithIcon.svg"
+                        width={160}
+                        height={99}
+                        alt="studiosAndLabsIcon"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className=" text-[15px] leading-[20px] uppercase font-silkscreen text-white">
-              [Directive / Builds / Main]
+                [Directive / Builds / Main]
               </div>
 
               {/* <h1 className=" text-[#E0EF29] text-[153px] font-silkscreen leading-[1.16] -tracking-[7.63px] text-center">
@@ -1373,11 +1377,15 @@ export default function Home() {
                   style={{ width: "33vh", height: "33vh" }}
                 >
                   <Image
-                  src={`/HomePage/primordials/${primordials[activePrimordial].image}`}
-                  alt="Primordial Image"
-                  width={373}
-                  height={373}
-                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    src={`/HomePage/primordials/${primordials[activePrimordial].image}`}
+                    alt="Primordial Image"
+                    width={373}
+                    height={373}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
                   />
                 </div>
                 <div className=" w-full py-[45px] px-[50px]">
