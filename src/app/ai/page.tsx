@@ -14,6 +14,10 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import React, { useState, useRef } from "react";
+import SplitText from "@/components/reactbits/splitText";
+import AnimatedText from "@/components/gsp/AnimatedText";
+import TypingEffect from "@/components/gsp/TypingEffect";
+import { MorphingText } from "@/components/magicui/morphing-text";
 
 export default function AIPage() {
   const [activeCognitionIndex, setActiveCognitionIndex] =
@@ -28,7 +32,7 @@ export default function AIPage() {
     offset: ["start start", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -250]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
 
   const getActiveIndex = () => {
     return cognitionCoreItems.findIndex(
@@ -95,24 +99,45 @@ export default function AIPage() {
   const cognitionCoreItems = [
     {
       image: "group_1",
+      title: "Deep Learning Frameworks",
+      description:
+        "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
     },
     {
       image: "group_2",
+      title: "Natural Language Processing (NLP) Tools",
+      description:
+        "Tools designed to analyze, understand, and generate human language. They enable applications like chatbots, sentiment analysis, translation, and text summarization.",
     },
     {
       image: "group_3",
+      title: "Data Manipulation and Analysis",
+      description:
+        "Toolkits for cleaning, transforming, and exploring datasets. These are essential for preparing data for machine learning and drawing insights from structured or unstructured information.",
     },
     {
       image: "group_4",
+      title: "Cloud-Based Machine Learning Services",
+      description:
+        "Scalable platforms offered by cloud providers (like AWS, Azure, or Google Cloud) that allow users to build, train, and deploy machine learning models without managing infrastructure.",
     },
     {
       image: "group_5",
+      title: "Model Deployment and Serving Platforms",
+      description:
+        "Systems that host trained AI models and provide APIs or endpoints for real-time inference, ensuring high availability, scalability, and performance in production environments.",
     },
     {
       image: "group_6",
+      title: "AI-Assisted Coding Tools",
+      description:
+        "Intelligent coding assistants that help developers write, debug, and optimize code using machine learning, such as code completion, generation, or review features.",
     },
     {
       image: "group_7",
+      title: "AI Model Fine-Tuning",
+      description:
+        "Techniques and tools used to adapt pre-trained models to specific tasks or datasets, improving accuracy and performance in targeted applications.",
     },
   ];
 
@@ -174,52 +199,58 @@ export default function AIPage() {
         {/* header */}
         <HeaderNavBar />
 
-        <div className=" w-[90%] max-w-[1550px] mx-auto flex flex-col items-center justify-center">
-          <div className=" w-full flex flex-col items-center justify-center mt-[150px]">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className=" w-[90%] max-w-[104.027vhvh] mx-auto flex flex-col items-center justify-center"
+        >
+          <div className=" w-full flex flex-col items-center justify-center mt-[13.423vh]">
             <Image
               src="/ai/aiIcon.svg"
               alt="AI Icon"
               width={68.2}
               height={54.4}
-              className=" mb-[20px]"
+              className=" mb-[1.705vh] w-[3.552vw] h-[3.651vh]"
             />
-            <h1 className=" w-full font-special-gothic-expanded-one text-[30px] leading-[34.8px] -tracking-[1.5px] uppercase text-center">
+            <h1 className=" w-full font-special-gothic-expanded-one text-[1.563vw] leading-[2.336vh] -tracking-[0.078vw] uppercase text-center">
               ARTIFICIAL INTELLIGENCE
             </h1>
           </div>
-          <div className=" w-full flex flex-col items-center justify-center my-[50px]">
-            <h1 className=" font-special-gothic-expanded-one text-[110px] text-center leading-[127.6px] -tracking-[5.5px] uppercase">
+          <div className=" w-full flex flex-col items-center justify-center my-[3.356vh]">
+            <h1 className=" font-special-gothic-expanded-one text-[7.383vh] text-center leading-[8.564vh] -tracking-[0.286vw] uppercase">
               Systems That Learn,
               <br />
               Minds That Scale
             </h1>
-            <div className=" font-inclusive-sans text-[36px] text-center leading-[46.8px] uppercase py-[47px]">
+            <div className=" font-inclusive-sans text-[2.416vh] text-center leading-[3.141vh] uppercase py-[3.154vh]">
               we build/ integrate AI that thinks, learns, and evolves.
             </div>
             <button
               onClick={handleBookCallClick}
-              className="cursor-pointer bg-[#0505cb] py-[25px] px-[86px] text-white uppercase text-[20px] font-silkscreen text-center leading-[19.6px] -tracking-[1px] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
+              className="cursor-pointer bg-[#0505cb] mh-[70px] py-[1.678vh] px-[4.479vw] text-white uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
             >
               book a call
             </button>
           </div>
-        </div>
+        </motion.div>
         <motion.div
           style={{ y: imageY }}
-          className=" absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4"
+          className=" absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[12%] w-[55.168vh] h-[47.584vh] overflow-hidden"
         >
           <Image
             src="/ai/aiHuman.webp"
             alt="AI Human"
             width={822}
             height={709}
+            className=" h-[47.584vh] w-[55.168vh]"
           />
         </motion.div>
         <div className=" absolute bottom-0 left-0 w-full">
           <VelocityScroll
-            fontSize="font-normal md:text-[35px] md:leading-[1.16] font-silkscreen"
+            fontSize="font-normal text-white text-[1.611vh] !font-inclusive-sans uppercase leading-[1.745vh] py-[1.745vh]"
             defaultVelocity={0.2}
-            className="text-white !font-inclusive-sans uppercase !text-[20px] !leading-[26px] bg-[#0505cb] py-[20px]"
+            className=" bg-[#0505cb]"
             numRows={1}
           >
             72% of global organisations are now using AI — a major leap in
@@ -228,26 +259,49 @@ export default function AIPage() {
         </div>
       </div>
 
-      <div className=" py-[100px] w-full">
-        <div className=" w-[90%] max-w-[1550px] mx-auto">
-          <h1 className=" font-special-gothic-expanded-one text-[96px] leading-[111.4px] -tracking-[4.8px] uppercase mt-[50px]">
+      <div className=" py-[6.711vh] w-full">
+        <div className=" w-[90%] max-w-[104.027vh] mx-auto">
+          {/* <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh]">
             Ritual of Build
-          </h1>
-          <div className=" my-[50px] text-[15px] leading-[19.5px] font-silkscreen">
-            through signal, ritual, and intent — the few become part of the
-            whole.
+          </h1> */}
+          <SplitText
+            text=" Ritual of Build"
+            className="font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh]"
+            delay={10}
+            duration={2}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+          <div className=" my-[3.356vh] text-[1.007vh] leading-[1.309vh] font-silkscreen">
+            <TypingEffect
+              text="through signal, ritual, and intent — the few become part of the whole."
+              speed={30}
+              delay={500}
+              className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+            />
           </div>
-          <div className=" font-inclusive-sans text-[40px] leading-[52px] uppercase">
-            Working with us is easy. We follow a clear, no
-            <br /> fuss process that keeps things moving fast and
-            <br /> smooth, from first chat to final delivery.
+          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase">
+            <AnimatedText delay={0}>
+              Working with us is easy. We follow a clear, no
+            </AnimatedText>
+            <AnimatedText delay={0.2}>
+              fuss process that keeps things moving fast and
+            </AnimatedText>
+            <AnimatedText delay={0.4}>
+              smooth, from first chat to final delivery.
+            </AnimatedText>
           </div>
 
           <FlowingMenu items={demoItems} />
         </div>
       </div>
 
-      <div className=" py-[100px] relative w-full bg-black">
+      <div className=" py-[6.711vh] relative w-full bg-black">
         <div
           className={cn(
             "absolute inset-0",
@@ -257,25 +311,43 @@ export default function AIPage() {
             "opacity-25 dark:opacity-25 z-0"
           )}
         />
-        <div className=" w-[90%] max-w-[1550px] mx-auto">
-          <div className=" w-full py-[50px] mt-[77px]">
-            <h1 className=" font-special-gothic-expanded-one text-white text-[96px] leading-[111.4px] -tracking-[4.8px] uppercase">
-              cognition core
-            </h1>
-            <div className=" font-silkscreen text-[15px] leading-[19.5px] uppercase text-white my-[50px]">
-              The pulse of artificial thought, <br />
-              wired with intention and built to evolve.
-            </div>
-            <div className=" font-inclusive-sans text-[40px] leading-[52px] uppercase text-white">
-              the toolkit we use to build intelligent systems.
-              <br />
-              from training models to understanding
-              <br /> language and deploying AI into the real world.
+        <div className=" w-[90%] max-w-[104.027vh] mx-auto">
+          <div className=" w-full py-[3.356vh] mt-[5.168vh]">
+            <SplitText
+              text="cognition core"
+              className=" font-special-gothic-expanded-one text-white text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+              delay={10}
+              duration={2}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+            />
+            <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-white my-[3.356vh]">
+              <TypingEffect
+                text={`The pulse of artificial thought, \n wired with intention and built to evolve.`}
+                speed={30}
+                delay={500}
+                className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+              />
+            </div>{" "}
+            <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-white relative">
+              <AnimatedText delay={0}>
+                the toolkit we use to build intelligent systems.
+              </AnimatedText>
+              <AnimatedText delay={0.2}>
+                from training models to understanding
+              </AnimatedText>
+              <AnimatedText delay={0.4}>
+                language and deploying AI into the real world.
+              </AnimatedText>
             </div>
           </div>{" "}
-          <div className=" pt-[100px] py-[40px] pr-[40px] ">
-            <div className=" w-full grid grid-cols-7 gap-[97.6px] relative">
-              {" "}
+          <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">
+            <div className=" flex flex-row gap-[6.55vh] items-center relative justify-start">
               <motion.div
                 key={activeCognitionIndex}
                 initial={{
@@ -300,7 +372,7 @@ export default function AIPage() {
                     duration: 1.2,
                   },
                 }}
-                className="bg-[#E0EF29] w-[130px] h-[130px] absolute top-0 left-0 rounded-full"
+                className="bg-[#E0EF29] w-[8.725vh] h-[8.725vh] absolute top-0 left-0 rounded-full"
                 style={{
                   filter: "blur(2px)",
                   boxShadow: "0 0 20px rgba(224, 239, 41, 0.2)",
@@ -309,8 +381,8 @@ export default function AIPage() {
               {cognitionCoreItems.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="flex justify-center items-center relative z-10 cursor-pointer"
-                  onClick={() => handleCognitionClick(item.image)}
+                  className="flex justify-start items-center relative z-10 cursor-pointer"
+                  onClick={() => handleCognitionClick("group_" + (index + 1))}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -338,85 +410,104 @@ export default function AIPage() {
                       alt={`Cognition Core ${index + 1}`}
                       width={130}
                       height={130}
-                      className="w-full h-auto relative z-20"
+                      className="relative z-20 w-[8.725vh] h-[8.725vh]"
                     />
                   </motion.div>
                 </motion.div>
               ))}
             </div>
-            <div className=" mt-[154px]">
-              <h1 className=" text-[#e0ef29] font-special-gothic-expanded-one text-[40px] leading-[52px] uppercase">
-                Deep Learning Frameworks
+            <div className=" mt-[10.336vh]">
+              <h1 className=" text-[#e0ef29] font-special-gothic-expanded-one text-[2.685vh] leading-[3.49vh] uppercase">
+                {
+                  cognitionCoreItems.find(
+                    (item) => item.image === activeCognitionIndex
+                  )?.title
+                }
               </h1>
-              <div className=" mt-[40px] text-[40px] font-inclusive-sans leading-[52px] uppercase text-white">
-                We use advanced frameworks like TensorFlow and PyTorch to
-                <br />
-                build and train powerful AI models.
+              <div className=" mt-[2.685vh] min-h-[11.067vh] text-[2.685vh] font-inclusive-sans leading-[3.49vh] uppercase text-white">
+                {
+                  cognitionCoreItems.find(
+                    (item) => item.image === activeCognitionIndex
+                  )?.description
+                }
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className=" py-[100px] w-full">
-        <div className=" w-[90%] max-w-[1550px] mx-auto">
+      <div className=" py-[6.711vh] w-full">
+        <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full flex flex-row justify-between items-start">
-            <h1 className=" font-special-gothic-expanded-one text-[96px] leading-[111.4px] -tracking-[4.8px] uppercase">
+            <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase">
               constructs
             </h1>
-            <h1 className=" font-special-gothic-expanded-one text-[36px] leading-[41.8px] -tracking-[1.8px] uppercase">
+            <h1 className=" font-special-gothic-expanded-one text-[2.416vh] leading-[2.805vh] -tracking-[0.121vh] uppercase">
               services
             </h1>
           </div>
-          <div className=" font-silkscreen text-[15px] leading-[19.5px] uppercase mt-[30px]">
-            Every Construct is a fragment of the Entity,
-            <br />
-            thinking on your behalf.
+          <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase mt-[2.013vh]">
+            <TypingEffect
+              text={`Every Construct is a fragment of the Entity, \n thinking on your behalf.`}
+              speed={30}
+              delay={500}
+              className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+            />
           </div>
-          <div className=" font-inclusive-sans text-[40px] leading-[52px] my-[50px] uppercase">
-            Our services are known as{" "}
-            <span className=" font-bold">Constructs</span>.<br />
-            systems born from cognition and shaped by signal.
-            <br />
-            Each Construct is built to learn, evolve, and serve
-            <br /> whether it's automating decisions, analyzing
-            <br /> complex data, or powering adaptive experiences.
+          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase">
+            <AnimatedText delay={0}>
+              Our services are known as{" "}
+              <span className=" font-bold">Constructs</span>.
+            </AnimatedText>
+            <AnimatedText delay={0.2}>
+              systems born from cognition and shaped by signal.
+            </AnimatedText>
+            <AnimatedText delay={0.4}>
+              Each Construct is built to learn, evolve, and serve
+            </AnimatedText>
+            <AnimatedText delay={0.6}>
+              whether it's automating decisions, analyzing
+            </AnimatedText>
+            <AnimatedText delay={0.8}>
+              complex data, or powering adaptive experiences.
+            </AnimatedText>
           </div>
           <button
             onClick={handleBookCallClick}
-            className="cursor-pointer bg-[#0505cb] py-[25px] px-[86px] text-white uppercase text-[20px] font-silkscreen text-center leading-[19.6px] -tracking-[1px] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
+            className="cursor-pointer bg-[#0505cb] py-[1.678vh] px-[5.772vh] text-white uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
           >
             book a call
           </button>
-          <div className=" w-full mt-[100px] grid grid-cols-3 gap-[20px]">
+          <div className=" w-full mt-[6.711vh] grid grid-cols-3 gap-[1.342vh]">
             {constructsItems.map((item, index) => (
               <div
                 key={index}
-                className=" group p-[40px] min-h-[600px] flex flex-col justify-start bg-transparent hover:bg-black border border-black"
+                className=" group p-[2.685vh] min-h-[40.268vh] flex flex-col justify-start bg-transparent border border-black overflow-hidden relative"
               >
-                <div>
+                <div className=" h-[0px] group-hover:h-[201.342vh] transition-all duration-800 aspect-square rounded-full absolute bottom-0 translate-y-1/2 left-0 -translate-x-1/2 bg-black"></div>
+                <div className=" z-10">
                   <Image
                     src={`/ai/construct/${item.image}_black.svg`}
                     alt={`Construct ${index + 1}`}
                     width={105}
                     height={105}
-                    className=" group-hover:hidden block"
+                    className=" group-hover:hidden block w-[7.047vh] h-[7.047vh] "
                   />
                   <Image
                     src={`/ai/construct/${item.image}_yellow.svg`}
                     alt={`Construct ${index + 1}`}
                     width={105}
                     height={105}
-                    className=" group-hover:block hidden"
+                    className=" group-hover:block hidden w-[7.047vh] h-[7.047vh]"
                   />
                 </div>
-                <div className=" mt-[116px]">
-                  <h1 className=" font-special-gothic-expanded-one text-[40px] leading-[52px] uppercase group-hover:text-white">
+                <div className=" mt-[7.785vh] z-10">
+                  <h1 className=" font-special-gothic-expanded-one text-[2.685vh] leading-[3.49vh] uppercase group-hover:text-white">
                     {item.title1}
                     <br />
                     {item.title2}
                   </h1>
-                  <div className=" font-inclusive-sans text-[24px] leading-[31.2px] uppercase group-hover:text-white mt-[40px]">
+                  <div className=" font-inclusive-sans text-[1.611vh] leading-[2.094vh] uppercase group-hover:text-white mt-[2.685vh]">
                     {item.description}
                   </div>
                 </div>
