@@ -16,7 +16,7 @@ interface FlowingMenuProps {
 
 const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   return (
-    <div className="menu-wrap my-[100px]">
+    <div className="menu-wrap my-[6.711vh]">
       <nav className="menu">
         {items.map((item, idx) => (
           <MenuItem key={idx} {...item} />
@@ -83,10 +83,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
   };
 
   const repeatedMarqueeContent = React.useMemo(() => {
-    return Array.from({ length: 4 }).map((_, idx) => (
+    return Array.from({ length: 8 }).map((_, idx) => (
       <React.Fragment key={idx}>
-        <span className=" text-[48px] !font-special-gothic-expanded-one leading-[62.4px] !text-[#e0ef29]">{text}</span>
-        <div className=" text-[48px] w-[175px] rounded-full text-center font-special-gothic-expanded-one leading-[62.4px] bg-[#e0ef29] text-[#0505cb]">{ind.length === 1 ? 0 + ind : ind}</div>
+        <span className=" text-[3.221vh] !font-special-gothic-expanded-one leading-[4.174vh] !text-[#e0ef29]">{text}</span>
+        <div className=" text-[3.221vh] min-w-[11.745vh] rounded-full text-center font-special-gothic-expanded-one leading-[4.174vh] bg-[#e0ef29] text-[#0505cb]">{ind.length === 1 ? 0 + ind : ind}</div>
       </React.Fragment>
     ));
   }, [text, image, ind]);
@@ -94,7 +94,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
   return (
     <div className="menu__item" ref={itemRef}>
       <a
-        className="menu__item-link !font-special-gothic-expanded-one pt-[41.5px]"
+        className="menu__item-link !font-special-gothic-expanded-one pt-[2.785vh]"
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
