@@ -25,10 +25,10 @@ export default function ContactUs() {
       />
       <div className=" w-[90%] max-w-[104.027vh] mx-auto">
         <TypingEffect
-          text={`[THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. \n YOU'VE REACHED THE EDGE OF THE KNOWN. \n WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
+          text={`THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. \n YOU'VE REACHED THE EDGE OF THE KNOWN. \n WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
           speed={30}
           delay={500}
-          className="font-silkscreen text-center text-[1.342vh] text-white w-full "
+          className="font-silkscreen text-center text-[1.342vh] text-white w-full min-h-[100px]"
         />
 
         <SplitText
