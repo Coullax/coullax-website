@@ -264,7 +264,7 @@ export const NavbarLogo = () => {
         alt="logo"
         width={226}
         height={24.6}
-        className="cursor-pointer w-[15.235vh] h-[1.678vh]"
+        className="cursor-pointer w-[15.235vh] h-[2.349vh]"
       />
     </a>
   );
