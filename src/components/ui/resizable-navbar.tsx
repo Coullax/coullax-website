@@ -112,7 +112,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-[1550px] flex-row items-center justify-between self-start rounded-full bg-transparent px-[10px] py-2 lg:flex dark:bg-transparent",
+        "relative z-[60] mx-auto hidden w-full max-w-[104.027vh] flex-row items-center justify-between self-start rounded-full bg-transparent px-[10px] py-2 lg:flex dark:bg-transparent",
         visible && "bg-[#fff] dark:bg-transparent",
         className
       )}
@@ -143,13 +143,13 @@ export const NavItems = ({
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className={cn(
-            "relative px-4 py-2 text-[#000] font-semibold leading-[23px] font-inclusive-sans -tracking-[1px]",
-            visible ? "text-[20px]" : "text-[20px]" // Font size change
+            "relative px-4 py-2 text-[#000] font-semibold leading-[1.557vh] font-inclusive-sans -tracking-[0.067vh]",
+            visible ? "text-[1.342vh]" : "text-[1.342vh]" // Font size change
           )}
           key={`link-${idx}`}
           href={item.link}
           animate={{
-            fontSize: visible ? "16px" : "16px", // Framer Motion animation
+            fontSize: visible ? "1.342vh" : "1.342vh", // Framer Motion animation
           }}
           transition={{ duration: 0.3 }}
         >
@@ -257,14 +257,14 @@ export const NavbarLogo = () => {
   return (
     <a
       href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black ml-[10px] "
+      className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black "
     >
       <Image
         src="/logo.png"
         alt="logo"
-        width={227}
-        height={25}
-        className="cursor-pointer"
+        width={226}
+        height={24.6}
+        className="cursor-pointer w-[15.235vh] h-[1.678vh]"
       />
     </a>
   );
