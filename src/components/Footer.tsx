@@ -138,7 +138,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href={"/blockchain"} className="hover:underline">
                   Blockchain
                 </a>
               </li>
