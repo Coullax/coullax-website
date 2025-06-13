@@ -85,8 +85,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
   const repeatedMarqueeContent = React.useMemo(() => {
     return Array.from({ length: 8 }).map((_, idx) => (
       <React.Fragment key={idx}>
-        <span className=" text-[3.221vh] !font-special-gothic-expanded-one leading-[4.174vh] !text-[#e0ef29]">{text}</span>
-        <div className=" text-[3.221vh] min-w-[11.745vh] rounded-full text-center font-special-gothic-expanded-one leading-[4.174vh] bg-[#e0ef29] text-[#0505cb]">{ind.length === 1 ? 0 + ind : ind}</div>
+        <span className=" text-[3.221vh] !font-special-gothic-expanded-one leading-[4.174vh] !text-[#e0ef29]">
+          {text}
+        </span>
+        <div className=" text-[3.221vh] min-w-[11.745vh] rounded-full text-center font-special-gothic-expanded-one leading-[4.174vh] bg-[#e0ef29] text-[#0505cb]">
+          {ind.length === 1 ? 0 + ind : ind}
+        </div>
       </React.Fragment>
     ));
   }, [text, image, ind]);
@@ -99,7 +103,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <span className=" mr-4">{ind.length === 1 ? 0 + ind : ind}</span>{text}
+        <div className=" flex flex-row justify-start items-center">
+          <div className=" min-w-[100px] mr-4">
+            {ind.length === 1 ? 0 + ind : ind}
+          </div>
+          <div>{text}</div>
+        </div>
       </a>
       <div className="marquee" ref={marqueeRef}>
         <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
