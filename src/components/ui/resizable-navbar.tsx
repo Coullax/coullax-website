@@ -134,7 +134,7 @@ export const NavItems = ({
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden mr-4 flex-1 flex-row items-center justify-end space-x-2 text-sm font-medium  transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden mr-4 flex-1 flex-row items-center justify-end space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2 ",
         className
       )}
     >
@@ -143,13 +143,13 @@ export const NavItems = ({
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className={cn(
-            "relative px-4 py-2  font-semibold leading-[1.557vh] font-inclusive-sans -tracking-[0.067vh] ",
-            visible ? " text-[1.342vh]" : "text-[1.342vh] " // Font size change
+            "relative px-4 py-2 font-semibold leading-[1.557vh] font-inclusive-sans -tracking-[0.067vh]  hover:text-zinc-800",
+            visible ? "text-[1.342vh]" : "text-[1.342vh]"
           )}
           key={`link-${idx}`}
           href={item.link}
           animate={{
-            fontSize: visible ? "1.342vh" : "1.342vh", // Framer Motion animation
+            fontSize: visible ? "1.342vh" : "1.342vh",
           }}
           transition={{ duration: 0.3 }}
         >
@@ -294,7 +294,7 @@ export const NavbarButton = ({
     primary:
       "shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
     secondary: "bg-transparent shadow-none dark:text-white",
-    dark: "bg-white text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+    dark: "bg-white text-back shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
     gradient:
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
