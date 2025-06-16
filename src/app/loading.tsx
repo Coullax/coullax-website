@@ -6,18 +6,25 @@ import MetaBalls from "@/components/ui/meta-balls";
 import Image from "next/image";
 import React from "react";
 
+import synthesisIcon_yellow from "../../public/HomePage/ForgeCards/synthesisIcon_yellow.svg";
+import motilithIcon_yellow from "../../public/HomePage/ForgeCards/motilithIcon_yellow.svg";
+import cognitionIcon_yellow from "../../public/HomePage/ForgeCards/cognitionIcon_yellow.svg";
+import consensusIcon_yellow from "../../public/HomePage/ForgeCards/consensusIcon_yellow.svg";
+import etherIcon_yellow from "../../public/HomePage/ForgeCards/etherIcon_yellow.svg";
+import weaveIcon_yellow from "../../public/HomePage/ForgeCards/weaveIcon_yellow.svg";
+
 export default function Loading({
   setViewLoading,
 }: {
   setViewLoading: (loading: boolean) => void;
 }) {
   const imageList = [
-    "synthesisIcon_yellow.svg",
-    "motilithIcon_yellow.svg",
-    "cognitionIcon_yellow.svg",
-    "consensusIcon_yellow.svg",
-    "etherIcon_yellow.svg",
-    "weaveIcon_yellow.svg",
+    synthesisIcon_yellow,
+    motilithIcon_yellow,
+    cognitionIcon_yellow,
+    consensusIcon_yellow,
+    etherIcon_yellow,
+    weaveIcon_yellow,
   ];
 
   const handleClickEnter = () => {
@@ -86,8 +93,8 @@ export default function Loading({
                 className=" "
               >
                 <Image
-                  src={`/HomePage/ForgeCards/${image}`}
-                  alt={`${image} icon`}
+                  src={image}
+                  alt={`icon ${index}`}
                   fill
                   className=" w-[14.527vh] h-[11.642vh] object-contain"
                 />
