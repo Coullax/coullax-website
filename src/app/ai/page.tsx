@@ -5,11 +5,7 @@ import HeaderNavBar from "@/components/Header";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import FlowingMenu from "@/components/ui/flowing-menu";
 import { cn } from "@/lib/utils";
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import SplitText from "@/components/reactbits/splitText";
@@ -21,7 +17,9 @@ export default function AIPage() {
     useState<string>("group_1");
   const [previousCognitionIndex, setPreviousCognitionIndex] =
     useState<string>("group_1");
-  const [vhUnit, setVhUnit] = useState(typeof window !== 'undefined' ? window.innerHeight / 100 : 8);
+  const [vhUnit, setVhUnit] = useState(
+    typeof window !== "undefined" ? window.innerHeight / 100 : 8
+  );
 
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +28,7 @@ export default function AIPage() {
     offset: ["start start", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);  // Calculate responsive vh units
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]); // Calculate responsive vh units
   useEffect(() => {
     const updateVhUnit = () => {
       setVhUnit(window.innerHeight / 100);
@@ -44,9 +42,9 @@ export default function AIPage() {
     };
 
     updateVhUnit();
-    window.addEventListener('resize', throttledUpdateVhUnit);
+    window.addEventListener("resize", throttledUpdateVhUnit);
     return () => {
-      window.removeEventListener('resize', throttledUpdateVhUnit);
+      window.removeEventListener("resize", throttledUpdateVhUnit);
       clearTimeout(timeoutId);
     };
   }, []);
@@ -302,13 +300,13 @@ export default function AIPage() {
             />
           </div>
           <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase">
-            <AnimatedText delay={0}>
+            <AnimatedText key={`ritual-1-${activeCognitionIndex}`} delay={0}>
               Working with us is easy. We follow a clear, no
             </AnimatedText>
-            <AnimatedText delay={0.2}>
+            <AnimatedText key={`ritual-2-${activeCognitionIndex}`} delay={0.2}>
               fuss process that keeps things moving fast and
             </AnimatedText>
-            <AnimatedText delay={0.4}>
+            <AnimatedText key={`ritual-3-${activeCognitionIndex}`} delay={0.4}>
               smooth, from first chat to final delivery.
             </AnimatedText>
           </div>
@@ -351,17 +349,20 @@ export default function AIPage() {
               />
             </div>{" "}
             <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-white relative">
-              <AnimatedText delay={0}>
+              <AnimatedText key={`cognition-1-${activeCognitionIndex}`} delay={0}>
                 the toolkit we use to build intelligent systems.
               </AnimatedText>
-              <AnimatedText delay={0.2}>
+              <AnimatedText key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
                 from training models to understanding
               </AnimatedText>
-              <AnimatedText delay={0.4}>
+              <AnimatedText key={`cognition-3-${activeCognitionIndex}`} delay={0.4}>
                 language and deploying AI into the real world.
               </AnimatedText>
             </div>
-          </div>{" "}          <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">            <div className=" flex flex-row gap-[6.55vh] items-center relative justify-start">
+          </div>{" "}
+          <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">
+            {" "}
+            <div className=" flex flex-row gap-[6.55vh] items-center relative justify-start">
               <motion.div
                 key={`${activeCognitionIndex}-${vhUnit}`}
                 initial={{
@@ -453,9 +454,19 @@ export default function AIPage() {
       <div className=" py-[6.711vh] w-full">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full flex flex-row justify-between items-start">
-            <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase">
-              constructs
-            </h1>
+            <SplitText
+              text="constructs"
+              className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+              delay={10}
+              duration={2}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+            />
             <h1 className=" font-special-gothic-expanded-one text-[2.416vh] leading-[2.805vh] -tracking-[0.121vh] uppercase">
               services
             </h1>
@@ -469,20 +480,20 @@ export default function AIPage() {
             />
           </div>
           <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase">
-            <AnimatedText delay={0}>
+            <AnimatedText key={`constructs-1-${activeCognitionIndex}`} delay={0}>
               Our services are known as{" "}
               <span className=" font-bold">Constructs</span>.
             </AnimatedText>
-            <AnimatedText delay={0.2}>
+            <AnimatedText key={`constructs-2-${activeCognitionIndex}`} delay={0.2}>
               systems born from cognition and shaped by signal.
             </AnimatedText>
-            <AnimatedText delay={0.4}>
+            <AnimatedText key={`constructs-3-${activeCognitionIndex}`} delay={0.4}>
               Each Construct is built to learn, evolve, and serve
             </AnimatedText>
-            <AnimatedText delay={0.6}>
+            <AnimatedText key={`constructs-4-${activeCognitionIndex}`} delay={0.6}>
               whether it&apos;s automating decisions, analyzing
             </AnimatedText>
-            <AnimatedText delay={0.8}>
+            <AnimatedText key={`constructs-5-${activeCognitionIndex}`} delay={0.8}>
               complex data, or powering adaptive experiences.
             </AnimatedText>
           </div>
