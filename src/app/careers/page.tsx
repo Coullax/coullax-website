@@ -8,6 +8,7 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Image1 from "../../../public/careersPage/image1.png";
 import Image2 from "../../../public/careersPage/image2.png";
+import TypingEffect from "@/components/gsp/TypingEffect";
 
 interface CarrouseImageItem {
   image: StaticImageData;
@@ -303,9 +304,14 @@ export default function CareersPage() {
       </div>
 
       <div className="w-[90%] max-w-[104.73vh]  mx-auto mt-[2.027vh] text-left">
-        <div className="lg:text-[1.014vh]  text-[0.878vh]  leading-[1.351vh] uppercase font-silkscreen text-black">
-          To build the unbuilt, we gather the rare, the restless, the aligne
-        </div>
+      <div className="lg:text-[1.014vh] text-[0.878vh] leading-[1.351vh] uppercase font-silkscreen text-black">
+  <TypingEffect
+    text="To build the unbuilt, we gather the rare, the restless, the aligned"
+    speed={30}
+    delay={500}
+    className="block" // Added to maintain block layout
+  />
+</div>
 
         <div className="text-[1.351vh] md:text-[2.703vh] mt-[3.784vh] uppercase font-inclusive-sans text-black">
           Coullax seeks thinkers, makers, and system breakers , <br></br>
@@ -398,7 +404,7 @@ export default function CareersPage() {
           </div>
         )}
       </div>
-
+    
       <div className="bg-black ">
         <div className="w-[90%] max-w-[104.73vh] mx-auto py-[6.757vh]">
           {/* Header section */}
@@ -413,9 +419,13 @@ export default function CareersPage() {
 
           {/* Content section */}
           <div className="mt-[2.027vh] text-left">
-            <div className="lg:text-[1.014vh]  text-[0.811vh] leading-[1.351vh] uppercase font-silkscreen text-white">
-              through signal, ritual, and intent — the few become part of the
-              whole.
+            <div className="lg:text-[1.014vh] text-[0.811vh] leading-[1.351vh] uppercase font-silkscreen text-white">
+              <TypingEffect
+                text="through signal, ritual, and intent — the few become part of the whole."
+                speed={30}
+                delay={500}
+                className="block"
+              />
             </div>
 
             <div className="lg:text-[2.703vh] text-[1.351vh] mt-[2.432vh] lg:mt-[3.784vh] uppercase font-inclusive-sans text-white">
