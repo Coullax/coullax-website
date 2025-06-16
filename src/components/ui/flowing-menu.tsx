@@ -26,7 +26,12 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ 
+  link, 
+  text, 
+  image: _image, // eslint-disable-line @typescript-eslint/no-unused-vars
+  ind 
+}) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
@@ -81,7 +86,6 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
       0
     );
   };
-
   const repeatedMarqueeContent = React.useMemo(() => {
     return Array.from({ length: 8 }).map((_, idx) => (
       <React.Fragment key={idx}>
@@ -93,7 +97,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, ind }) => {
         </div>
       </React.Fragment>
     ));
-  }, [text, image, ind]);
+  }, [text, ind]);
 
   return (
     <div className="menu__item" ref={itemRef}>
