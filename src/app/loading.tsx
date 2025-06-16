@@ -86,8 +86,8 @@ export default function Loading({
                 className=" "
               >
                 <Image
-                  src={`/homepage/ForgeCards/${image}`}
-                  alt="cognitionIcon"
+                  src={`/HomePage/ForgeCards/${image}`}
+                  alt={`${image} icon`}
                   fill
                   className=" w-[14.527vh] h-[11.642vh] object-contain"
                 />
