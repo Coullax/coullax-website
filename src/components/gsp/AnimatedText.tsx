@@ -7,9 +7,10 @@ interface AnimatedTextProps {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  refresh?: any;
 }
 
-function AnimatedText({ children, delay = 0, className = "" }: AnimatedTextProps) {
+function AnimatedText({ children, delay = 0, className = "", refresh }: AnimatedTextProps) {
   const text = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -54,7 +55,7 @@ function AnimatedText({ children, delay = 0, className = "" }: AnimatedTextProps
         }
       });
     };
-  }, [delay, children]);
+  }, [delay, children, refresh]); // Add refresh to dependencies
 
   return <div className={`block ${className}`} ref={text}>{children}</div>;
 }

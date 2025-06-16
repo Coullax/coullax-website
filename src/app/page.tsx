@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { XIcon } from "lucide-react";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import ReviewCard from "@/components/review-card";
 import { AnimatePresence } from "motion/react";
 import Footer from "@/components/Footer";
@@ -30,6 +30,7 @@ import HeaderNavBar from "@/components/Header";
 import ContactUs from "@/components/ContactUs";
 import TypingEffect from "@/components/gsp/TypingEffect";
 import AnimatedText from "@/components/gsp/AnimatedText";
+import { a } from "framer-motion/client";
 
 // Dynamically import AudioToggle with no SSR to avoid SSR hydration issues
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -58,6 +59,7 @@ export default function Home() {
   // const container2 = useRef(null);
   const [manualIndex, setManualIndex] = useState<number | null>(null);
   const [isDecoded, setIsDecoded] = useState<boolean>(false);
+  const [animation, setAnimation] = useState<boolean>(false);
   // const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [viewLoading, setViewLoading] = useState<boolean>(false);
   const [activePrimordial, setActivePrimordial] =
@@ -74,6 +76,10 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [manualIndex]);
+
+  useEffect(() => {
+    setAnimation(!animation);
+  }, [activeImage, activePrimordial, isDecoded]);
 
   // const navigationList = [
   //   { name: "Home", link: "/" },
@@ -852,19 +858,19 @@ export default function Home() {
                 textAlign="center"
               />
               <div className=" text-[2.685vh] font-inclusive-sans text-white leading-[3.49vh] uppercase my-[3.758vh]">
-                <AnimatedText key={`forge-1-${isDecoded}`} delay={0}>
+                <AnimatedText key={`forge-1-${animation}`} delay={0}>
                   This is where vision meets velocity.
                 </AnimatedText>
-                <AnimatedText key={`forge-2-${isDecoded}`} delay={0.2}>
+                <AnimatedText key={`forge-2-${animation}`} delay={0.2}>
                   Where raw ideas are melted down, reshaped, and forged
                 </AnimatedText>
-                <AnimatedText key={`forge-3-${isDecoded}`} delay={0.4}>
+                <AnimatedText key={`forge-3-${animation}`} delay={0.4}>
                   into real, working systems. The Forge is Coullax&apos;s
                 </AnimatedText>
-                <AnimatedText key={`forge-4-${isDecoded}`} delay={0.4}>
+                <AnimatedText key={`forge-4-${animation}`} delay={0.4}>
                   creative engine. a space of experimentation,
                 </AnimatedText>
-                <AnimatedText key={`forge-5-${isDecoded}`} delay={0.4}>
+                <AnimatedText key={`forge-5-${animation}`} delay={0.4}>
                   engineering, and relentless iteration.
                 </AnimatedText>
               </div>
@@ -1153,13 +1159,13 @@ export default function Home() {
               />
             </h1>
             <div className=" mt-[3.758vh] text-[2.685vh] uppercase font-inclusive-sans leading-[3.49vh]">
-              <AnimatedText key={`ritual-1-${isDecoded}`} delay={0}>
+              <AnimatedText key={`ritual-1-${animation}`} delay={0}>
                 The RITUAL is our process of transformation where
               </AnimatedText>
-              <AnimatedText key={`ritual-2-${isDecoded}`} delay={0.2}>
+              <AnimatedText key={`ritual-2-${animation}`} delay={0.2}>
                 abstract ideas, complex technologies, and raw
               </AnimatedText>
-              <AnimatedText key={`ritual-3-${isDecoded}`} delay={0.4}>
+              <AnimatedText key={`ritual-3-${animation}`} delay={0.4}>
                 ambition are fused into powerful digital systems.
               </AnimatedText>
             </div>
@@ -1307,13 +1313,13 @@ export default function Home() {
                 />
               </h1>
               <div className=" mt-[3.758vh] text-[2.685vh] uppercase font-inclusive-sans leading-[3.49vh]">
-                <AnimatedText key={`principles-1-${isDecoded}`} delay={0}>
+                <AnimatedText key={`principles-1-${animation}`} delay={0}>
                   Every product we deliver is shaped by a set of principles
                 </AnimatedText>
-                <AnimatedText key={`principles-2-${isDecoded}`} delay={0.2}>
+                <AnimatedText key={`principles-2-${animation}`} delay={0.2}>
                   that balance vision with precision, value with impact,
                 </AnimatedText>
-                <AnimatedText key={`principles-3-${isDecoded}`} delay={0.4}>
+                <AnimatedText key={`principles-3-${animation}`} delay={0.4}>
                   and innovation with reliability.
                 </AnimatedText>
               </div>
@@ -2197,19 +2203,19 @@ export default function Home() {
                 </h1>
               </div>{" "}
               <div className=" mt-[3.784vh] text-[2.703vh] uppercase font-inclusive-sans leading-[3.514vh]">
-                <AnimatedText key={`artifact-1-${isDecoded}`} delay={0}>
+                <AnimatedText key={`artifact-1-${animation}`} delay={0}>
                   HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR.
                 </AnimatedText>
-                <AnimatedText key={`artifact-2-${isDecoded}`} delay={0.2}>
+                <AnimatedText key={`artifact-2-${animation}`} delay={0.2}>
                   INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD
                 </AnimatedText>
-                <AnimatedText key={`artifact-3-${isDecoded}`} delay={0.4}>
+                <AnimatedText key={`artifact-3-${animation}`} delay={0.4}>
                   BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF
                 </AnimatedText>
-                <AnimatedText key={`artifact-4-${isDecoded}`} delay={0.6}>
+                <AnimatedText key={`artifact-4-${animation}`} delay={0.6}>
                   OUR PROCESS, OUR TECHNOLOGY,
                 </AnimatedText>
-                <AnimatedText key={`artifact-5-${isDecoded}`} delay={0.8}>
+                <AnimatedText key={`artifact-5-${animation}`} delay={0.8}>
                   AND THE PEOPLE WE BUILD FOR.
                 </AnimatedText>
               </div>
