@@ -128,4 +128,4 @@ const SplitText: React.FC<SplitTextProps> = ({
   );
 };
 
-export default SplitText;
+export default React.memo(SplitText);
