@@ -63,12 +63,12 @@ export default function Loading({
               speed={0.3}
             />
           </div>
+
           <TypingAnimation
             duration={50}
-            className="font-silkscreen text-[2.162vh] text-center leading-[2.811vh] uppercase text-[#e0ef29] py-[4.865vh]"
+            className="font-silkscreen text-[2.162vh] text-center leading-[2.811vh] uppercase text-[#e0ef29] py-[4.865vh] h-[15.541vh]"
           >
-            {`Welcome Seeker. we&apos;ve found your Signal.
-            traverse the threshold here.`}
+            {`Welcome Seeker. we&apos;ve found your Signal. \n traverse the threshold here.`}
           </TypingAnimation>
 
           <button
