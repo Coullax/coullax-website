@@ -286,28 +286,28 @@ export default function CareersPage() {
   ];
 
   return (
-    <div className=" w-full pt-[50px] bg-[#fff]">
+    <div className=" w-full pt-[3.378vh] bg-[#fff]">
       <div className="w-full">
-        <div className="w-[90%] max-w-[1550px] mx-auto">
+        <div className="w-[90%] max-w-[104.73vh] mx-auto">
           <HeaderNavBar />
         </div>
       </div>
 
-      <div className="w-[90%] max-w-[1550px] mx-auto flex justify-between lg:mt-[200px] mt-[100px]">
-        <span className="text-[26px] lg:text-[66px] md:text-[46px] uppercase font-special-gothic-expanded-one lg:-tracking-[4.8px]">
+      <div className="w-[90%] max-w-[104.027vh] mx-auto flex justify-between lg:mt-[13.514vh] mt-[6.757vh]">
+        <span className="text-[1.757vh] lg:text-[4.459vh] md:text-[3.108vh] uppercase font-special-gothic-expanded-one lg:-tracking-[0.324vh]">
           The hand of<br></br> entity
         </span>
-        <span className=" lg:text-[36px] text-[16px]  md:text-[26px] uppercase font-special-gothic-expanded-one">
+        <span className="lg:text-[2.432vh] text-[1.081vh]  md:text-[1.757vh] uppercase font-special-gothic-expanded-one">
           careers
         </span>
       </div>
 
-      <div className="w-[90%] max-w-[1550px]  mx-auto mt-[30px] text-left">
-        <div className="lg:text-[15px]  text-[13px]  leading-[20px] uppercase font-silkscreen text-black">
+      <div className="w-[90%] max-w-[104.73vh]  mx-auto mt-[2.027vh] text-left">
+        <div className="lg:text-[1.014vh]  text-[0.878vh]  leading-[1.351vh] uppercase font-silkscreen text-black">
           To build the unbuilt, we gather the rare, the restless, the aligne
         </div>
 
-        <div className="text-[20px] md:text-[40px] mt-[56px] uppercase font-inclusive-sans text-black">
+        <div className="text-[1.351vh] md:text-[2.703vh] mt-[3.784vh] uppercase font-inclusive-sans text-black">
           Coullax seeks thinkers, makers, and system breakers , <br></br>
           individuals drawn to the strange, the powerful, and <br></br>the
           unseen mechanics behind what we build. Whether <br></br>you wield code
@@ -315,17 +315,17 @@ export default function CareersPage() {
           alignment, there is a place for<br></br> you within the Forge.
         </div>
 
-        <button className=" bg-[#e0ef29] max-w-[312px] lg:py-[25px] py-[15px] lg:px-[30px] px-[10px] text-[19px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-dashed border-black mt-[20px] lg:mt-[50px] my-[50px] lg:my-[100px] border-3 hover:bg-transparent hover:text-[#000000] hover:border-[#000000]  cursor-pointer transition-all duration-300 hover:scale-105">
+        <button className=" bg-[#e0ef29] max-w-[21.081vh] lg:py-[1.689vh] py-[1.014vh] lg:px-[2.027vh] px-[0.676vh] text-[1.284vh] text-center leading-[1.351vh] -tracking-[0.068vh] uppercase font-silkscreen text-[#030303] border-dashed border-black mt-[1.351vh] lg:mt-[3.378vh] my-[3.378vh] lg:my-[6.757vh] border-3 hover:bg-transparent hover:text-[#000000] hover:border-[#000000]  cursor-pointer transition-all duration-300 hover:scale-105">
           SEND US YOUR RESUME
         </button>
       </div>
 
       <div className="w-full relative overflow-hidden">
-        <div className="w-[90%] max-w-[1550px]  mx-auto mt-[50px] lg:mt-[100px] ">
-          <h1 className=" text-black text-[35px] lg:text-[45px] font-normal text-left font-special-gothic-expanded-one -tracking-[2.25px]">
+        <div className="w-[90%] max-w-[104.73vh]  mx-auto mt-[3.378vh] lg:mt-[6.757vh] ">
+          <h1 className=" text-black text-[2.365vh] lg:text-[3.041vh] font-normal text-left font-special-gothic-expanded-one -tracking-[0.152vh]">
             AVAILABLE POSITIONS
           </h1>
-          <div className="mt-[24px] lg:mt-[32px]">
+          <div className="mt-[1.622vh] lg:mt-[2.162vh]">
             <Marquee pauseOnHover className="[--duration:20s] p-0">
               {carrouseImageList.map(
                 (image: CarrouseImageItem, index: number) => (
@@ -344,10 +344,10 @@ export default function CareersPage() {
         </div>
       </div>
 
-      <div className="w-[90%] max-w-[1550px] mx-auto lg:mt-[100px] lg:mb-[100px]  mt-[50px] mb-[50px]">
+      <div className="w-[90%] max-w-[104.73vh] mx-auto lg:mt-[6.757vh] lg:mb-[6.757vh] mt-[3.378vh] mb-[3.378vh]">
         {jobListings.length === 0 ? (
           <div className="flex flex-col  border border-black">
-            <div className="font-silkscreen text-[15px] text-center my-[37px]">
+            <div className="font-silkscreen text-[1.014vh] text-center my-[2.5vh]">
               There are no open positions right now <br></br>
               <br></br>
               We kindly ask you to revisit our website at a later date to
@@ -357,33 +357,33 @@ export default function CareersPage() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[50px]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[3.378vh]">
             {jobListings.map((category) =>
               category.jobs.map((job) => (
                 <div
                   key={job.title}
-                  className=" flex flex-col py-[27.7px] px-[28.8px] border border-black relative overflow-hidden hover:text-white justify-between transition-colors duration-300 group"
+                  className=" flex flex-col py-[1.872vh] px-[1.946vh] border border-black relative overflow-hidden hover:text-white justify-between transition-colors duration-300 group"
                 >
                   <div className=" h-[0px] group-hover:h-[201.342vh] transition-all duration-1000 aspect-square rounded-full absolute bottom-0 translate-y-1/2 left-0 -translate-x-1/2 bg-black"></div>
                   <div className=" z-10">
-                    <span className="font-special-gothic-expanded-one text-left lg:text-[40px] text-[20px] group-hover:text-white -leading-[2] uppercase">
+                    <span className="font-special-gothic-expanded-one text-left lg:text-[2.703vh] text-[2.703vh] group-hover:text-white -leading-[2] uppercase">
                       {job.title}
                     </span>
-                    <div className="flex flex-row gap-[11.8px] lg:mt-[30px] mt-[20px]">
-                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans lg:text-[16px] text-[10px] group-hover:border-white group-hover:text-white font-[600] uppercase">
+                    <div className="flex flex-row gap-[0.797vh] lg:mt-[2.027vh] mt-[1.351vh]">
+                      <div className="border-3 border-black px-[0.797vh] py-[0.405vh] font-inclusive-sans lg:text-[1.081vh] text-[0.676vh] group-hover:border-white group-hover:text-white font-[600] uppercase">
                         {job.type}
                       </div>
-                      <div className="border-3 border-black px-[11.8px] py-[6px] font-inclusive-sans lg:text-[16px] text-[10px] group-hover:border-white group-hover:text-white font-[600] uppercase">
+                      <div className="border-3 border-black px-[0.797vh] py-[0.405vh] font-inclusive-sans lg:text-[1.081vh] text-[0.676vh] group-hover:border-white group-hover:text-white font-[600] uppercase">
                         {job.location}
                       </div>
                     </div>
-                    <div className="font-inclusive-sans text-[18px] lg:mt-[30px] mt-[15px] group-hover:text-white uppercase lg:mb-[100px] mb-[50px]">
+                    <div className="font-inclusive-sans text-[1.216vh] lg:mt-[2.027vh] mt-[1.014vh] group-hover:text-white uppercase lg:mb-[6.757vh] mb-[3.378vh]">
                       {job.description}
                     </div>
                   </div>
                   <div className="mt-auto z-10">
                     <button
-                      className="bg-[#e0ef29] lg:py-[25px] py-[15px] lg:px-[30px] px-[15px] lg:text-[20px] text-[15px] text-center -tracking-[1px] uppercase font-silkscreen text-[#030303] border-3 border-dashed border-black group-hover:bg-white group-hover:text-black group-hover:border-black flex items-center gap-2  transition-all duration-300 hover:scale-105 cursor-pointer"
+                      className="bg-[#e0ef29] lg:py-[1.689vh] py-[1.014vh] lg:px-[2.027vh] px-[1.014vh] lg:text-[1.351vh] text-[1.014vh] text-center -tracking-[0.068vh] uppercase font-silkscreen text-[#030303] border-3 border-dashed border-black group-hover:bg-white group-hover:text-black group-hover:border-black flex items-center gap-2  transition-all duration-300 hover:scale-105 cursor-pointer"
                       onClick={() =>
                         job.link && window.open(job.link, "_blank")
                       }
@@ -400,25 +400,25 @@ export default function CareersPage() {
       </div>
 
       <div className="bg-black ">
-        <div className="w-[90%] max-w-[1550px] mx-auto py-[100px]">
+        <div className="w-[90%] max-w-[104.73vh] mx-auto py-[6.757vh]">
           {/* Header section */}
           <div className="flex justify-between ">
-            <span className="lg:text-[96px] md:text-[66px] text-[36px] uppercase font-special-gothic-expanded-one text-white lg:-tracking-[4.8px] -tracking-[0.8px]">
+            <span className="lg:text-[6.486vh] md:text-[4.459vh] text-[2.432vh] uppercase font-special-gothic-expanded-one text-white lg:-tracking-[0.324vh] -tracking-[0.054vh]">
               Rite of Entry
             </span>
-            <span className="lg:text-[36px] text-[20px] uppercase font-special-gothic-expanded-one text-white">
+            <span className="lg:text-[2.432vh] text-[1.351vh] uppercase font-special-gothic-expanded-one text-white">
               hiring process
             </span>
           </div>
 
           {/* Content section */}
-          <div className="mt-[30px] text-left">
-            <div className="lg:text-[15px]  text-[12px] leading-[20px] uppercase font-silkscreen text-white">
+          <div className="mt-[2.027vh] text-left">
+            <div className="lg:text-[1.014vh]  text-[0.811vh] leading-[1.351vh] uppercase font-silkscreen text-white">
               through signal, ritual, and intent — the few become part of the
               whole.
             </div>
 
-            <div className="lg:text-[40px] text-[20px] mt-[36px] lg:mt-[56px] uppercase font-inclusive-sans text-white">
+            <div className="lg:text-[2.703vh] text-[1.351vh] mt-[2.432vh] lg:mt-[3.784vh] uppercase font-inclusive-sans text-white">
               Joining Coullax is not a transaction — it is a<br></br>transition.
               We don&apos;t merely review resumes; we<br></br>decipher intent,
               resonance, and potential. Our<br></br>process is built to uncover
@@ -426,21 +426,21 @@ export default function CareersPage() {
               feel the pulse<br></br> of systems not yet formed.
             </div>
 
-            <button className="bg-[#e0ef29] max-w-[312px]  lg:py-[25px] py-[15px] lg:px-[30px] px-[10px] lg:text-[19px] text-[15px] text-center  -tracking-[1px] uppercase font-silkscreen text-[#030303]  border-dashed border-black mt-[50px] my-[100px] border-2 hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105  transition-all duration-300 cursor-pointer">
+            <button className="bg-[#e0ef29] max-w-[21.081vh] lg:py-[1.689vh] py-[1.014vh] lg:px-[2.027vh] px-[0.676vh] lg:text-[1.284vh] text-[1.014vh] text-center  -tracking-[0.068vh] uppercase font-silkscreen text-[#030303]  border-dashed border-black mt-[3.378vh] my-[6.757vh] border-2 hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105  transition-all duration-300 cursor-pointer">
               SEND US YOUR RESUME
             </button>
           </div>
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[25.4px]">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[1.716vh]">
             {recruitmentSteps.map((step, index) => (
               <div
                 key={index}
-                className="border border-white flex flex-col py-[31.5px] px-[32.8px] hover:bg-[#e0ef29] group"
+                className="border border-white flex flex-col py-[2.128vh] px-[2.216vh] hover:bg-[#e0ef29] group"
               >
-                <span className="font-special-gothic-expanded-one lg:text-[40px] text-[30px] text-white group-hover:text-black lg:-tracking-[2px] -tracking-[1px]">
+                <span className="font-special-gothic-expanded-one lg:text-[2.703vh] text-[2.027vh] text-white group-hover:text-black lg:-tracking-[0.135vh] -tracking-[0.068vh]">
                   {step.title}
                 </span>
-                <span className="font-inclusive-sans text-[24px] text-white mt-[43px] group-hover:text-black uppercase -tracking-[0.2px]">
+                <span className="font-inclusive-sans text-[1.622vh] text-white mt-[2.905vh] group-hover:text-black uppercase -tracking-[0.014vh]">
                   {step.description}
                 </span>
               </div>
