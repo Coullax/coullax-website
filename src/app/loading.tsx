@@ -19,27 +19,17 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
   const handleClickEnter = () => {
     // localStorage.setItem("viewLoadingScreen", "true");
 
-    // Smooth scroll to the main content section
     setTimeout(() => {
         setViewLoading(true);
-      // Scroll to the main content with smooth animation
       window.scrollTo({
         top: window.innerHeight,
         behavior: "smooth",
       });
-    }, 300); // Small delay for visual transition
+    }, 300); 
   };
   return (
     <div className=" w-full">
       <div className=" bg-black h-dvh relative">
-        {/* <FlickeringGrid
-              className="absolute inset-0 z-0"
-              squareSize={4}
-              gridGap={6}
-              color="#6B7280"
-              maxOpacity={0.5}
-              flickerChance={0.1}
-            /> */}
         <Squares
           speed={0.5}
           squareSize={40}
@@ -48,7 +38,7 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
           hoverFillColor="#000000"
         />
         <div className=" z-10 h-[80dvh] w-full absolute top-0 left-0 flex flex-col items-center justify-center">
-          <div className=" h-[25vh] w-full my-[5vh]">
+          <div className=" h-[29.662vh] w-full">
             <MetaBalls
               color="#ffffff"
               cursorBallColor="#ffffff"
@@ -64,7 +54,7 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
           </div>
           <TypingAnimation
             duration={50}
-            className="font-silkscreen text-[1.8vh] text-center leading-[3.5vh] uppercase text-[#e0ef29] py-[5.5vh]"
+            className="font-silkscreen text-[2.162vh] text-center leading-[2.811vh] uppercase text-[#e0ef29] py-[4.865vh]"
           >
             {`Welcome Seeker. we&apos;ve found your Signal.
             traverse the threshold here.`}
@@ -83,7 +73,7 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
           /> */}
           <button
             onClick={handleClickEnter}
-            className=" bg-[#e0ef29] min-w-[6vw] py-[2vh] px-[41px] text-[1.5vh] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black cursor-pointer hover:text-[#e0ef29] hover:bg-transparent hover:border-[#e0ef29] transition-colors duration-300 ease-in-out flex items-center justify-center gap-2"
+            className=" bg-[#e0ef29] min-w-[10.811vh] py-[1.689vh] px-[1.351vh] text-[1.351vh] text-center leading-[1.324vh] -tracking-[0.068vh] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black cursor-pointer hover:text-[#e0ef29] hover:bg-transparent hover:border-[#e0ef29] transition-colors duration-300 ease-in-out flex items-center justify-center gap-2"
           >
             ENTER
           </button>
@@ -99,13 +89,13 @@ export default function Loading({setViewLoading}: { setViewLoading: (loading: bo
                   position: "relative",
                   display: "inline-block",
                 }}
+                className=" "
               >
                 <Image
                   src={`/homepage/ForgeCards/${image}`}
                   alt="cognitionIcon"
                   fill
-                  style={{ objectFit: "contain" }}
-                  sizes="12vh"
+                  className=" w-[14.527vh] h-[11.642vh] object-contain"
                 />
               </div>
             ))}
