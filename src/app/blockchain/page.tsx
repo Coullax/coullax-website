@@ -197,7 +197,7 @@ export default function BlockchainPage() {
         className=" w-full h-dvh bg-[#000000] relative overflow-hidden"
       >
         {/* header */}
-        <HeaderNavBar />
+        <HeaderNavBar navItemsStyles='text-white'/>
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
