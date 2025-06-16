@@ -315,7 +315,7 @@ export default function CareersPage() {
           alignment, there is a place for<br></br> you within the Forge.
         </div>
 
-        <button className=" bg-[#e0ef29] min-w-[312px] lg:py-[25px] py-[15px] lg:px-[30px] px-[10px] text-[20px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-dashed border-black mt-[20px] lg:mt-[50px] my-[50px] lg:my-[100px] border-3 hover:bg-transparent hover:text-[#000000] hover:border-[#000000]  cursor-pointer transition-all duration-300 hover:scale-105">
+        <button className=" bg-[#e0ef29] max-w-[312px] lg:py-[25px] py-[15px] lg:px-[30px] px-[10px] text-[19px] text-center leading-[20px] -tracking-[1px] uppercase font-silkscreen text-[#030303] border-dashed border-black mt-[20px] lg:mt-[50px] my-[50px] lg:my-[100px] border-3 hover:bg-transparent hover:text-[#000000] hover:border-[#000000]  cursor-pointer transition-all duration-300 hover:scale-105">
           SEND US YOUR RESUME
         </button>
       </div>
@@ -426,7 +426,7 @@ export default function CareersPage() {
               feel the pulse<br></br> of systems not yet formed.
             </div>
 
-            <button className="bg-[#e0ef29] min-w-[312px]  lg:py-[25px] py-[15px] lg:px-[30px] px-[10px] lg:text-[20px] text-[15px] text-center  -tracking-[1px] uppercase font-silkscreen text-[#030303]  border-dashed border-black mt-[50px] my-[100px] border-2 hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105  transition-all duration-300 cursor-pointer">
+            <button className="bg-[#e0ef29] max-w-[312px]  lg:py-[25px] py-[15px] lg:px-[30px] px-[10px] lg:text-[19px] text-[15px] text-center  -tracking-[1px] uppercase font-silkscreen text-[#030303]  border-dashed border-black mt-[50px] my-[100px] border-2 hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] hover:scale-105  transition-all duration-300 cursor-pointer">
               SEND US YOUR RESUME
             </button>
           </div>
