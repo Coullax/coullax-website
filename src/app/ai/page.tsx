@@ -203,7 +203,7 @@ export default function AIPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className=" w-[90%] max-w-[104.027vhvh] mx-auto flex flex-col items-center justify-center"
+          className=" w-[90%] max-w-[104.027vh] mx-auto flex flex-col items-center justify-center"
         >
           <div className=" w-full flex flex-col items-center justify-center mt-[13.423vh]">
             <Image
@@ -211,14 +211,14 @@ export default function AIPage() {
               alt="AI Icon"
               width={68.2}
               height={54.4}
-              className=" mb-[1.705vh] w-[3.552vw] h-[3.651vh]"
+              className=" mb-[1.705vh] w-[4.608vh] h-[3.651vh]"
             />
-            <h1 className=" w-full font-special-gothic-expanded-one text-[1.563vw] leading-[2.336vh] -tracking-[0.078vw] uppercase text-center">
+            <h1 className=" w-full font-special-gothic-expanded-one text-[2.027vh] leading-[2.336vh] -tracking-[0.101vh] uppercase text-center">
               ARTIFICIAL INTELLIGENCE
             </h1>
           </div>
           <div className=" w-full flex flex-col items-center justify-center my-[3.356vh]">
-            <h1 className=" font-special-gothic-expanded-one text-[7.383vh] text-center leading-[8.564vh] -tracking-[0.286vw] uppercase">
+            <h1 className=" font-special-gothic-expanded-one text-[7.383vh] text-center leading-[8.564vh] -tracking-[0.372vh] uppercase">
               Systems That Learn,
               <br />
               Minds That Scale
@@ -228,7 +228,7 @@ export default function AIPage() {
             </div>
             <button
               onClick={handleBookCallClick}
-              className="cursor-pointer bg-[#0505cb] mh-[70px] py-[1.678vh] px-[4.479vw] text-white uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
+              className="cursor-pointer bg-[#0505cb] mh-[70px] py-[1.678vh] px-[4.865vh] text-white uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
             >
               book a call
             </button>
