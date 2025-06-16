@@ -7,7 +7,7 @@ import FlowingMenu from "@/components/ui/flowing-menu";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
@@ -28,17 +28,35 @@ export default function AIPage() {
     offset: ["start start", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]); // Calculate responsive vh units
+  const cognitionSplitTextMemo = useMemo(
+    () => (
+      <SplitText
+        text="cognition core"
+        className=" font-special-gothic-expanded-one text-white text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+        delay={10}
+        duration={2}
+        ease="power3.out"
+        splitType="chars"
+        from={{ opacity: 0, y: 40 }}
+        to={{ opacity: 1, y: 0 }}
+        threshold={0.1}
+        rootMargin="-100px"
+        textAlign="center"
+      />
+    ),
+    []
+  );
+
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   useEffect(() => {
     const updateVhUnit = () => {
       setVhUnit(window.innerHeight / 100);
     };
 
-    // Throttle resize events for better performance
     let timeoutId: NodeJS.Timeout;
     const throttledUpdateVhUnit = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateVhUnit, 16); // ~60fps
+      timeoutId = setTimeout(updateVhUnit, 16);
     };
 
     updateVhUnit();
@@ -327,19 +345,7 @@ export default function AIPage() {
         />
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full py-[3.356vh] mt-[5.168vh]">
-            <SplitText
-              text="cognition core"
-              className=" font-special-gothic-expanded-one text-white text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
-              delay={10}
-              duration={2}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-            />
+            {cognitionSplitTextMemo}
             <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-white my-[3.356vh]">
               <TypingEffect
                 text={`The pulse of artificial thought, \n wired with intention and built to evolve.`}
@@ -349,13 +355,22 @@ export default function AIPage() {
               />
             </div>{" "}
             <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-white relative">
-              <AnimatedText key={`cognition-1-${activeCognitionIndex}`} delay={0}>
+              <AnimatedText
+                key={`cognition-1-${activeCognitionIndex}`}
+                delay={0}
+              >
                 the toolkit we use to build intelligent systems.
               </AnimatedText>
-              <AnimatedText key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
+              <AnimatedText
+                key={`cognition-2-${activeCognitionIndex}`}
+                delay={0.2}
+              >
                 from training models to understanding
               </AnimatedText>
-              <AnimatedText key={`cognition-3-${activeCognitionIndex}`} delay={0.4}>
+              <AnimatedText
+                key={`cognition-3-${activeCognitionIndex}`}
+                delay={0.4}
+              >
                 language and deploying AI into the real world.
               </AnimatedText>
             </div>
@@ -480,20 +495,35 @@ export default function AIPage() {
             />
           </div>
           <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase">
-            <AnimatedText key={`constructs-1-${activeCognitionIndex}`} delay={0}>
+            <AnimatedText
+              key={`constructs-1-${activeCognitionIndex}`}
+              delay={0}
+            >
               Our services are known as{" "}
               <span className=" font-bold">Constructs</span>.
             </AnimatedText>
-            <AnimatedText key={`constructs-2-${activeCognitionIndex}`} delay={0.2}>
+            <AnimatedText
+              key={`constructs-2-${activeCognitionIndex}`}
+              delay={0.2}
+            >
               systems born from cognition and shaped by signal.
             </AnimatedText>
-            <AnimatedText key={`constructs-3-${activeCognitionIndex}`} delay={0.4}>
+            <AnimatedText
+              key={`constructs-3-${activeCognitionIndex}`}
+              delay={0.4}
+            >
               Each Construct is built to learn, evolve, and serve
             </AnimatedText>
-            <AnimatedText key={`constructs-4-${activeCognitionIndex}`} delay={0.6}>
+            <AnimatedText
+              key={`constructs-4-${activeCognitionIndex}`}
+              delay={0.6}
+            >
               whether it&apos;s automating decisions, analyzing
             </AnimatedText>
-            <AnimatedText key={`constructs-5-${activeCognitionIndex}`} delay={0.8}>
+            <AnimatedText
+              key={`constructs-5-${activeCognitionIndex}`}
+              delay={0.8}
+            >
               complex data, or powering adaptive experiences.
             </AnimatedText>
           </div>
