@@ -5,25 +5,23 @@ import HeaderNavBar from "@/components/Header";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import FlowingMenu from "@/components/ui/flowing-menu";
 import { cn } from "@/lib/utils";
-import { desc, image } from "framer-motion/client";
 import {
   motion,
   useScroll,
   useTransform,
-  AnimatePresence,
 } from "framer-motion";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
-import { MorphingText } from "@/components/magicui/morphing-text";
 
 export default function AIPage() {
   const [activeCognitionIndex, setActiveCognitionIndex] =
     useState<string>("group_1");
   const [previousCognitionIndex, setPreviousCognitionIndex] =
     useState<string>("group_1");
+  const [vhUnit, setVhUnit] = useState(typeof window !== 'undefined' ? window.innerHeight / 100 : 8);
 
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +30,26 @@ export default function AIPage() {
     offset: ["start start", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);  // Calculate responsive vh units
+  useEffect(() => {
+    const updateVhUnit = () => {
+      setVhUnit(window.innerHeight / 100);
+    };
+
+    // Throttle resize events for better performance
+    let timeoutId: NodeJS.Timeout;
+    const throttledUpdateVhUnit = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(updateVhUnit, 16); // ~60fps
+    };
+
+    updateVhUnit();
+    window.addEventListener('resize', throttledUpdateVhUnit);
+    return () => {
+      window.removeEventListener('resize', throttledUpdateVhUnit);
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   const getActiveIndex = () => {
     return cognitionCoreItems.findIndex(
@@ -45,7 +62,6 @@ export default function AIPage() {
       (item) => item.image === previousCognitionIndex
     );
   };
-
   const handleCognitionClick = (newIndex: string) => {
     setPreviousCognitionIndex(activeCognitionIndex);
     setActiveCognitionIndex(newIndex);
@@ -345,18 +361,16 @@ export default function AIPage() {
                 language and deploying AI into the real world.
               </AnimatedText>
             </div>
-          </div>{" "}
-          <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">
-            <div className=" flex flex-row gap-[6.55vh] items-center relative justify-start">
+          </div>{" "}          <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">            <div className=" flex flex-row gap-[6.55vh] items-center relative justify-start">
               <motion.div
-                key={activeCognitionIndex}
+                key={`${activeCognitionIndex}-${vhUnit}`}
                 initial={{
-                  x: getPreviousIndex() * (130 + 97.6),
+                  x: getPreviousIndex() * (8.725 * vhUnit + 6.55 * vhUnit),
                   opacity: 0,
                   scale: 0.8,
                 }}
                 animate={{
-                  x: getActiveIndex() * (130 + 97.6),
+                  x: getActiveIndex() * (8.725 * vhUnit + 6.55 * vhUnit),
                   opacity: [0, 0.1, 0.1, 0],
                   scale: 1,
                 }}
@@ -466,7 +480,7 @@ export default function AIPage() {
               Each Construct is built to learn, evolve, and serve
             </AnimatedText>
             <AnimatedText delay={0.6}>
-              whether it's automating decisions, analyzing
+              whether it&apos;s automating decisions, analyzing
             </AnimatedText>
             <AnimatedText delay={0.8}>
               complex data, or powering adaptive experiences.
