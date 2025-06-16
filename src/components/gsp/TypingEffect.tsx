@@ -7,7 +7,6 @@ interface TypingEffectProps {
   delay?: number;
   className?: string;
   onComplete?: () => void;
-  autoStart?: boolean; // Add option to start immediately
 }
 
 function TypingEffect({
@@ -16,7 +15,6 @@ function TypingEffect({
   delay = 0,
   className = "",
   onComplete,
-  autoStart = false,
 }: TypingEffectProps) {
   const [displayText, setDisplayText] = useState("");
   const [hasStarted, setHasStarted] = useState(false);
@@ -24,8 +22,9 @@ function TypingEffect({
   const elementRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const startTyping = useCallback(() => {
-    if (hasStarted || isComplete || !text) return;
+    if (hasStarted || isComplete) return;
 
     setHasStarted(true);
 
@@ -46,43 +45,34 @@ function TypingEffect({
         }
       }, speed);
     }, delay);
-  }, [text, speed, delay, hasStarted, isComplete, onComplete]);useEffect(() => {
-    // If autoStart is true, start typing immediately
-    if (autoStart) {
-      startTyping();
-      return;
-    }
+  }, [text, speed, delay, hasStarted, isComplete, onComplete]);
 
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         if (entry.isIntersecting) {
           startTyping();
           // Disconnect observer after first trigger
-          observer.disconnect();
+          if (elementRef.current) {
+            observer.unobserve(elementRef.current);
+          }
         }
       },
       {
-        threshold: 0.1, // Reduced threshold for better triggering
-        rootMargin: "50px", // Add some margin for earlier triggering
+        threshold: 0.5,
+        rootMargin: "0px",
       }
     );
 
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
     }
 
-    // Fallback: start typing after a delay if intersection observer doesn't work
-    const fallbackTimeout = setTimeout(() => {
-      if (!hasStarted) {
-        startTyping();
-      }
-    }, 2000); // Increased fallback delay
-
     return () => {
-      observer.disconnect();
-      clearTimeout(fallbackTimeout);
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
       // Clean up intervals and timeouts
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -91,10 +81,11 @@ function TypingEffect({
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [startTyping, hasStarted, autoStart]);
+  }, [startTyping]);
   const processText = (text: string) => {
     return text.replace(/\n/g, "<br />");
   };
+
   return (
     <div ref={elementRef} className={`inline-block ${className}`}>
       <span
@@ -102,9 +93,7 @@ function TypingEffect({
           __html: processText(displayText),
         }}
       />
-      {!isComplete && (
-        <span className="animate-pulse [animation-duration:1.2s]">|</span>
-      )}
+    <span className="animate-pulse [animation-duration:1.2s]">|</span>
     </div>
   );
 }
