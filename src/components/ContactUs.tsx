@@ -48,7 +48,7 @@ export default function ContactUs() {
           text={`THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. \n YOU'VE REACHED THE EDGE OF THE KNOWN. \n WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
           speed={30}
           delay={500}
-          className="font-silkscreen text-center text-[1.342vh] text-white w-full min-h-[100px]"
+          className="font-silkscreen text-center text-[1.342vh] text-white w-full min-h-[6.757vh]"
         />
 
         {splitTextMemo}

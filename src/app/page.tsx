@@ -1697,9 +1697,7 @@ export default function Home() {
                     "opacity-25 dark:opacity-25 z-0"
                   )}
                 />
-                {/* <span className="font-silkscreen text-[64px] relative">
-              THE SUMMON
-            </span> */}
+
                 {/* THE SUMMON */}
                 <SplitText
                   text="THE SUMMON"
@@ -1716,7 +1714,7 @@ export default function Home() {
                 />
               </div>
 
-              <h1 className="justify-center text-[1.014vh] pt-[2.027vh] leading-[1.318vh] text-center uppercase font-silkscreen text-white">
+              <h1 className="justify-center text-[1.014vh] pt-[2.027vh] leading-[1.318vh] text-center uppercase font-silkscreen text-white min-h-[5.405vh]">
                 <TypingEffect
                   text={` Speak, and the signal will reach us. Across realms of silence and syntax, \n your intent will be felt. This is not a form. it is a calling.`}
                   speed={30}
