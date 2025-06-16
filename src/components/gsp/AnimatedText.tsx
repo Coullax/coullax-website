@@ -13,7 +13,6 @@ function AnimatedText({ children, delay = 0, className = "" }: AnimatedTextProps
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
     const element = text.current;
     if (!element) return;
 
@@ -21,6 +20,13 @@ function AnimatedText({ children, delay = 0, className = "" }: AnimatedTextProps
     gsap.set(element, {
       opacity: 0,
       x: -200,
+    });
+
+    // Kill any previous triggers for this element
+    ScrollTrigger.getAll().forEach(trigger => {
+      if (trigger.trigger === element) {
+        trigger.kill();
+      }
     });
 
     // Create animation with delay
@@ -47,7 +53,7 @@ function AnimatedText({ children, delay = 0, className = "" }: AnimatedTextProps
         }
       });
     };
-  }, [delay]);
+  }, [delay, children]);
 
   return <div className={`block ${className}`} ref={text}>{children}</div>;
 }
