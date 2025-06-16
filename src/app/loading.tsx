@@ -66,6 +66,7 @@ export default function Loading({
 
           <button
             onClick={handleClickEnter}
+            type="button"
             className=" bg-[#e0ef29] min-w-[10.811vh] py-[1.689vh] px-[1.351vh] text-[1.351vh] text-center leading-[1.324vh] -tracking-[0.068vh] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black cursor-pointer hover:text-[#e0ef29] hover:bg-transparent hover:border-[#e0ef29] transition-colors duration-300 ease-in-out flex items-center justify-center gap-2"
           >
             ENTER
