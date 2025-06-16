@@ -5,25 +5,25 @@ import Link from "next/link";
 
 import { XIcon } from "lucide-react";
 
-import React, { useRef, useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import ReviewCard from "@/components/review-card";
 import { AnimatePresence } from "motion/react";
 import Footer from "@/components/Footer";
-import MetaBalls from "@/components/ui/meta-balls";
+// import MetaBalls from "@/components/ui/meta-balls";
 // import FlowingMenu from "@/components/ui/flowing-menu";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 // import { MorphingText } from "@/components/magicui/morphing-text";
 // import DecryptedText from "@/components/reactbits/DecryptedText";
-import ScrollReveal from "@/components/reactbits/ScrollReveal";
-import { TypingAnimation } from "@/components/magicui/typing-animation";
+// import ScrollReveal from "@/components/reactbits/ScrollReveal";
+// import { TypingAnimation } from "@/components/magicui/typing-animation";
 // import { footer } from "framer-motion/client";
 // import { AudioToggle } from "@/components/AudioPlayer";
 import dynamic from "next/dynamic";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import { Marquee } from "@/components/magicui/marquee";
+// import { Marquee } from "@/components/magicui/marquee";
 import SplitText from "../components/reactbits/splitText";
 import DecryptedText from "../components/reactbits/DecryptedText";
-import { view } from "framer-motion/client";
+// import { view } from "framer-motion/client";
 import Loading from "./loading";
 import { cn } from "@/lib/utils";
 import HeaderNavBar from "@/components/Header";
@@ -31,7 +31,8 @@ import ContactUs from "@/components/ContactUs";
 import TypingEffect from "@/components/gsp/TypingEffect";
 import AnimatedText from "@/components/gsp/AnimatedText";
 
-// Dynamically import AudioToggle with no SSR
+// Dynamically import AudioToggle with no SSR to avoid SSR hydration issues
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const AudioToggle = dynamic(
   () => import("@/components/AudioPlayer").then((mod) => mod.AudioToggle),
   { ssr: false }
@@ -50,11 +51,11 @@ export default function Home() {
   // const glowRefs = useRef<HTMLDivElement[]>([]);
   // const contentRefs = useRef<HTMLDivElement[]>([]);
   const [openReviewModal, setOpenReviewModal] = useState<boolean>(false);
-  const container1 = useRef(null);
+  // const container1 = useRef(null);
   // const container2 = useRef(null);
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  // const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeImage, setActiveImage] = useState<PhaseKey>("star");
-  const container2 = useRef(null);
+  // const container2 = useRef(null);
   const [manualIndex, setManualIndex] = useState<number | null>(null);
   const [isDecoded, setIsDecoded] = useState<boolean>(false);
   // const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -74,21 +75,21 @@ export default function Home() {
     }
   }, [manualIndex]);
 
-  const navigationList = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Case Studies", link: "/case-studies" },
-    { name: "Careers", link: "/careers" },
-  ];
+  // const navigationList = [
+  //   { name: "Home", link: "/" },
+  //   { name: "About", link: "/about" },
+  //   { name: "Case Studies", link: "/case-studies" },
+  //   { name: "Careers", link: "/careers" },
+  // ];
 
-  const imageList = [
-    "motilithIcon_yellow.svg",
-    "synthesisIcon_yellow.svg",
-    "cognitionIcon_yellow.svg",
-    "consensusIcon_yellow.svg",
-    "etherIcon_yellow.svg",
-    "weaveIcon_yellow.svg",
-  ];
+  // const imageList = [
+  //   "motilithIcon_yellow.svg",
+  //   "synthesisIcon_yellow.svg",
+  //   "cognitionIcon_yellow.svg",
+  //   "consensusIcon_yellow.svg",
+  //   "etherIcon_yellow.svg",
+  //   "weaveIcon_yellow.svg",
+  // ];
 
   const phases = {
     star: {
@@ -535,31 +536,32 @@ export default function Home() {
   //   },
   // };
 
-  const { scrollYProgress: scrollYProgress1 } = useScroll({
-    target: container1,
-    offset: ["start end", "end start"],
-  });
+  // const { scrollYProgress: scrollYProgress1 } = useScroll({
+  //   target: container1,
+  //   offset: ["start end", "end start"],
+  // });
 
-  const { scrollYProgress: scrollYProgress2 } = useScroll({
-    target: container2,
-    offset: ["start end", "end end"],
-  });
+  // const { scrollYProgress: scrollYProgress2 } = useScroll({
+  //   target: container2,
+  //   offset: ["start end", "end end"],
+  // });
 
-  const handleClickEnter = () => {
-    // localStorage.setItem("viewLoadingScreen", "true");
+  // const handleClickEnter = () => {
+  //   // localStorage.setItem("viewLoadingScreen", "true");
 
-    // Smooth scroll to the main content section
-    setTimeout(() => {
-      setViewLoading(true);
-      // Scroll to the main content with smooth animation
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth",
-      });
-    }, 300); // Small delay for visual transition
-  };
+  //   // Smooth scroll to the main content section
+  //   setTimeout(() => {
+  //     setViewLoading(true);
+  //     // Scroll to the main content with smooth animation
+  //     window.scrollTo({
+  //       top: window.innerHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }, 300); // Small delay for visual transition
+  // };
 
-  const handleBookCallClick = () => {
+  const handleBookCallClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     window.open("https://cal.com/coullax/30min", "_blank");
   };
 
@@ -602,10 +604,10 @@ export default function Home() {
               </div> */}
 
               <div className="w-[90%] max-w-[1550px] h-dvh flex flex-col items-center justify-center mx-auto">
-                <h1 className=" text-[15.436vh] text-center leading-[17.906vh] -tracking-[0.772vh] text-[#000000] font-special-gothic-expanded-one uppercase">
+                <h1 className=" text-[15.456vh] text-center leading-[17.906vh] -tracking-[0.77vh] text-[#000000] font-special-gothic-expanded-one uppercase">
                   BUILD THE
                   <br />{" "}
-                  <span className=" text-[19.195vh] leading-[15.557vh] -tracking-[0.96vh]">
+                  <span className=" text-[18.243vh] leading-[15.557vh] -tracking-[0.966vh]">
                     UNBUILD
                   </span>
                 </h1>
@@ -622,27 +624,29 @@ export default function Home() {
                             </>
                           )}
                         </div>
-                      ))
-                    : missionArray.map((line: any, index) => (
-                        <div key={index}>
-                          <DecryptedText
-                            text={line.text}
-                            speed={100}
-                            maxIterations={20}
-                            characters={line.key}
-                            animateOn="view"
-                            className="revealed !text-[2.148vh]"
-                            parentClassName="all-letters"
-                            encryptedClassName="encrypted"
-                          />
-                          {index === 1 && (
-                            <>
-                              <br />
-                              <br />
-                            </>
-                          )}
-                        </div>
-                      ))}
+                      ))                    : missionArray.map((line, index) => {
+                        if (!line) return null;
+                        return (
+                          <div key={index}>
+                            <DecryptedText
+                              text={line.text}
+                              speed={100}
+                              maxIterations={20}
+                              characters={line.key}
+                              animateOn="view"
+                              className="revealed !text-[2.148vh]"
+                              parentClassName="all-letters"
+                              encryptedClassName="encrypted"
+                            />
+                            {index === 1 && (
+                              <>
+                                <br />
+                                <br />
+                              </>
+                            )}
+                          </div>
+                        );
+                      })}
                 </span>
                 <button
                   onClick={() => setIsDecoded(true)}
@@ -824,7 +828,7 @@ export default function Home() {
               )}
             />
             <div className=" z-20 w-[90%] max-w-[104.027vh] mx-auto">
-              <h1 className=" text-white font-silkscreen text-[1.007vh] leading-[1.309vh]">
+              <h1 className=" text-white font-silkscreen text-[1.007vh] h-[2.703vh] leading-[1.309vh]">
                 <TypingEffect
                   text={`Shaped by glyph, born of will. Created in silence, between signals. \n The crucible of ideas, fueled by intent. This is where we build the unbuilt.`}
                   speed={30}
@@ -1138,7 +1142,7 @@ export default function Home() {
                 process
               </h1>
             </div>
-            <h1 className=" text-black font-silkscreen pt-[2.013vh] text-[2.013vh] leading-[1.309vh] uppercase">
+            <h1 className=" text-black font-silkscreen pt-[2.013vh] h-[4.392vh] text-[2.013vh] leading-[1.309vh] uppercase">
               <TypingEffect
                 text={`It begins in stillness. A glyph. A pulse. A knowing. \n Not all who enter understand, but all who emerge are changed.`}
                 speed={30}
@@ -1292,7 +1296,7 @@ export default function Home() {
                   core values
                 </h1>
               </div>
-              <h1 className=" text-black font-silkscreen pt-[2.013vh] text-[1.007vh] leading-[1.309vh] uppercase">
+              <h1 className=" text-black font-silkscreen pt-[2.013vh] text-[1.007vh] h-[6.081vh] leading-[1.309vh] uppercase">
                 <TypingEffect
                   text={`Before thought had form, they carved meaning into the void. \n The first to build. The first to break silence. \n From their glyphs, all creation followed.`}
                   speed={30}
@@ -1680,7 +1684,7 @@ export default function Home() {
       </div> */}
 
           <div className="w-full relative overflow-hidden bg-[#000] py-[15vh]">
-            <div className="w-[90%] max-w-[1550px] mx-auto ">
+            <div className="w-[90%] max-w-[104.73vh] mx-auto ">
               <div className="w-full flex flex-col items-center">
                 <div
                   className={cn(
@@ -1697,7 +1701,7 @@ export default function Home() {
                 {/* THE SUMMON */}
                 <SplitText
                   text="THE SUMMON"
-                  className=" text-[#fff] font-special-gothic-expanded-one text-[9vh]"
+                  className=" text-[#fff] font-special-gothic-expanded-one text-[6.486vh] leading-[7.527vh] -tracking-[0.324vh] uppercase"
                   delay={10}
                   duration={2}
                   ease="power3.out"
@@ -1710,16 +1714,17 @@ export default function Home() {
                 />
               </div>
 
-              <div className="flex justify-center items-center mt-[30px]  ">
-                <span className="justify-center text-[15px] text-center uppercase font-silkscreen text-white">
-                  Speak, and the signal will reach us. Across realms of silence
-                  and syntax,<br></br>your intent will be felt. This is not a
-                  form. it is a calling.
-                </span>
-              </div>
+              <h1 className="justify-center text-[1.014vh] pt-[2.027vh] leading-[1.318vh] text-center uppercase font-silkscreen text-white">
+                <TypingEffect
+                  text={` Speak, and the signal will reach us. Across realms of silence and syntax, \n your intent will be felt. This is not a form. it is a calling.`}
+                  speed={30}
+                  delay={500}
+                  className="text-[1.014vh] leading-[1.318vh] font-silkscreen"
+                />
+              </h1>
 
-              <div className="flex justify-center items-center mt-[56px]  ">
-                <span className="justify-center text-[4vh] text-center uppercase font-inclusive-sans text-white">
+              <div className="flex justify-center items-center mt-[3.784vh]  ">
+                <span className="justify-center text-[2.703vh] leading-[3.514vh] text-center uppercase font-inclusive-sans text-white">
                   Have a project in mind? Let&apos;s align.<br></br>
                   Book a call to explore how we can bring your vision <br></br>
                   to life through intelligent systems and <br></br>
@@ -1731,11 +1736,11 @@ export default function Home() {
             true, channel it below.The Entity// We listens. The threshold
             responds.
           </div> */}
-              <div className=" z-10 flex flex-col justify-center items-center mt-[50px]">
+              <div className=" z-10 flex flex-col justify-center items-center mt-[3.378vh]">
                 <button
                   type="button"
                   onClick={handleBookCallClick}
-                  className=" z-10 w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-black border-2"
+                  className=" z-10 min-w-[21.081vh] bg-[#e0ef29] leading-[1.324vh] text-black py-[1.689vh] px-[5.811vh] font-silkscreen text-[1.351vh] cursor-pointer hover:bg-transparent hover:text-[#e0ef29] hover:border-[#e0ef29] transition-all duration-300 hover:scale-105 border-dashed border-black border-2"
                 >
                   BOOK A CALL
                 </button>
@@ -2368,17 +2373,21 @@ export default function Home() {
         </div>
       </div> */}
           <div className="bg-[#e0ef29] font-bold">
-            <VelocityScroll fontSize="text-[5vh]" numRows={1}>
+            <VelocityScroll
+              className=" font-special-gothic-expanded-one"
+              fontSize=" py-[2.027vh] text-[4.061vh] leading-[4.709vh] -tracking-[0.203vh] uppercase"
+              numRows={1}
+            >
               JOIN THE BUILD.
             </VelocityScroll>
           </div>
-          <div className="w-full relative  overflow-hidden bg-white">
-            <div className=" w-[90%] max-w-[1550px] mx-auto my-[5vh]">
+          <div className="w-full relative overflow-hidden bg-white">
+            <div className=" w-[90%] max-w-[104.73vh] mx-auto my-[6.757vh]">
               <div className="flex flex-col">
                 <div className="flex justify-between">
                   <SplitText
                     text="artifacts"
-                    className="text-[8vh] font-special-gothic-expanded-one uppercase"
+                    className="text-[6.486vh] leading-[7.527vh] -tracking-[0.324vh] font-special-gothic-expanded-one uppercase"
                     delay={10}
                     duration={2}
                     ease="power3.out"
@@ -2389,51 +2398,62 @@ export default function Home() {
                     rootMargin="-100px"
                     textAlign="center"
                   />
-                  <span className="text-[2.5vh] font-special-gothic-expanded-one uppercase">
+                  <span className="text-[2.432vh] font-special-gothic-expanded-one uppercase leading-[2.824vh] -tracking-[0.122vh]">
                     case stuides
                   </span>
-                </div>
-                <span className="text-[15px] font-silkscreen mt-[30px] mb-[6px]">
-                  Each artifact tells a story.<br></br>a fragment of vision
-                  forged in the fires of creation.<br></br>Born from whispers of
-                  code and pulses of intent,<br></br>these are the echoes of
-                  ideas made real.
-                </span>
+                </div>                <h1 className=" text-black font-silkscreen pt-[2.027vh] text-[1.007vh] h-[7.432vh] leading-[1.309vh] uppercase">
+                  <TypingEffect
+                    key="typing-effect-stories"
+                    text={` Each artifact tells a story. \n a fragment of vision forged in the fires of creation. \n Born from whispers of code and pulses of intent, \n these are the echoes of ideas made real.`}
+                    speed={30}
+                    delay={500}
+                    className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+                  />
+                </h1>
+              </div>              <div className=" mt-[3.784vh] text-[2.703vh] uppercase font-inclusive-sans leading-[3.514vh]">
+                <AnimatedText key="animated-text-1" delay={0}>
+                  HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR.
+                </AnimatedText>
+                <AnimatedText key="animated-text-2" delay={0.2}>
+                  INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD
+                </AnimatedText>
+                <AnimatedText key="animated-text-3" delay={0.4}>
+                  BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF
+                </AnimatedText>
+                <AnimatedText key="animated-text-4" delay={0.6}>
+                  OUR PROCESS, OUR TECHNOLOGY,
+                </AnimatedText>
+                <AnimatedText key="animated-text-5" delay={0.8}>
+                  AND THE PEOPLE WE BUILD FOR.
+                </AnimatedText>
               </div>
-              <p className="text-left text-[3.5vh] font-inclusive-sans text-black leading-[5vh] uppercase my-[6vh]">
-                HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR. <br />
-                INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD <br />
-                BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF <br />
-                OUR PROCESS, OUR TECHNOLOGY, <br />
-                AND THE PEOPLE WE BUILD FOR.
-              </p>
-              <div className=" flex flex-row gap-[30px]">
+              <div className=" flex flex-row gap-[2.027vh] mt-[3.378vh]">
                 <button
                   type="button"
-                  className="w-full max-w-[312px] h-[70px] bg-[black] text-[#e0ef29] py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition-all duration-300 hover:scale-105 border-dashed border-[#e0ef29] border-2"
+                  className=" min-w-[21.081vh] bg-[black] text-[#e0ef29] py-[1.689vh] px-[3.345vh] font-silkscreen text-[1.351vh] leading-[1.324vh] -tracking-[0.068vh] cursor-pointer hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition-all duration-300 hover:scale-105 border-dashed border-[#e0ef29] border-2"
                 >
                   VISIT CASE STUDIES
                 </button>
                 <button
                   type="button"
                   onClick={handleBookCallClick}
-                  className="w-full max-w-[312px] h-[70px] bg-[#e0ef29] text-black py-2 font-silkscreen text-[20px] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black border-2"
+                  className=" min-w-[21.081vh] bg-[#e0ef29] text-black py-[1.689vh] px-[3.345vh] font-silkscreen text-[1.351vh] leading-[1.324vh] cursor-pointer hover:bg-transparent transition-all duration-300 hover:scale-105 border-dashed border-black border-2"
                 >
                   BOOK A CALL
                 </button>
               </div>
 
-              <div className="w-full grid grid-cols-4 gap-[12.7px]  mt-[104px] h-[378px]">
-                <div className="col-span-[378px] bg-[#e8e8e8]">
+              <div className="w-full grid grid-cols-4  gap-[0.858vh] mt-[7.027vh]">
+                <div className="bg-[#e8e8e8] h-[25.541vh] aspect-square">
                   <p>Skillchecker.ai</p>
                 </div>
-                <div className="col-span-[378px] bg-[#e8e8e8]">
+                <div className=" bg-[#e8e8e8] h-[25.541vh] aspect-square">
                   <p>Skillchecker.ai</p>
                 </div>
-                <div className="col-span-[378px] bg-[#e8e8e8]">
+                <div className=" bg-[#e8e8e8] h-[25.541vh] aspect-square">
                   <p>Skillchecker.ai</p>
                 </div>
-                <div className="col-span-[378px] bg-[#e8e8e8]">
+                <div className="bg-[#e8e8e8] h-[25.541vh] aspect-square">
                   <p>Skillchecker.ai</p>
                 </div>
               </div>
