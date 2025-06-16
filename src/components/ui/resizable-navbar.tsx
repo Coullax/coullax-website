@@ -113,7 +113,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-[104.027vh] flex-row items-center justify-between self-start rounded-full bg-transparent px-[10px] py-2 lg:flex dark:bg-transparent",
-        visible && "bg-[#fff] dark:bg-transparent",
+        visible && "bg-[#fff] dark:bg-transparent !text-black",
         className
       )}
     >
@@ -134,7 +134,7 @@ export const NavItems = ({
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden mr-4 flex-1 flex-row items-center justify-end space-x-2 text-sm font-medium text-[#000] transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden mr-4 flex-1 flex-row items-center justify-end space-x-2 text-sm font-medium  transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className
       )}
     >
@@ -143,8 +143,8 @@ export const NavItems = ({
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className={cn(
-            "relative px-4 py-2 text-[#000] font-semibold leading-[1.557vh] font-inclusive-sans -tracking-[0.067vh]",
-            visible ? "text-[1.342vh]" : "text-[1.342vh]" // Font size change
+            "relative px-4 py-2  font-semibold leading-[1.557vh] font-inclusive-sans -tracking-[0.067vh] ",
+            visible ? " text-[1.342vh]" : "text-[1.342vh] " // Font size change
           )}
           key={`link-${idx}`}
           href={item.link}
@@ -190,7 +190,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        visible && "bg-white/80 dark:bg-neutral-950/80 !text-black",
         className
       )}
     >
