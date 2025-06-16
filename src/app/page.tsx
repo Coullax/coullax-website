@@ -237,7 +237,7 @@ export default function Home() {
   //     backGround: "bg-[#c5d7d8]",
   //     textColor: "text-[#1d3633]",
   //     description:
-  //       "We map out the plan. Clear timlelines, smart solutions, and a creative game plan you can vibe with.",
+  //       "We map out the plan. Clear timleines, smart solutions, and a creative game plan you can vibe with.",
   //   },
   //   {
   //     title: "Build",
@@ -624,7 +624,8 @@ export default function Home() {
                             </>
                           )}
                         </div>
-                      ))                    : missionArray.map((line, index) => {
+                      ))
+                    : missionArray.map((line, index) => {
                         if (!line) return null;
                         return (
                           <div key={index}>
@@ -650,6 +651,7 @@ export default function Home() {
                 </span>
                 <button
                   onClick={() => setIsDecoded(true)}
+                  type="button"
                   className={` bg-[#e0ef29] min-w-[20.94vh] cursor-pointer py-[1.678vh] px-[2.752vh] text-[1.342vh] text-center leading-[1.315vh] -tracking-[0.067vh] uppercase font-silkscreen text-[#030303] border-2 border-dashed border-black ${
                     !isDecoded ? "animate-blink" : ""
                   }`}
@@ -850,19 +852,19 @@ export default function Home() {
                 textAlign="center"
               />
               <div className=" text-[2.685vh] font-inclusive-sans text-white leading-[3.49vh] uppercase my-[3.758vh]">
-                <AnimatedText delay={0}>
+                <AnimatedText key={`forge-1-${isDecoded}`} delay={0}>
                   This is where vision meets velocity.
                 </AnimatedText>
-                <AnimatedText delay={0.2}>
+                <AnimatedText key={`forge-2-${isDecoded}`} delay={0.2}>
                   Where raw ideas are melted down, reshaped, and forged
                 </AnimatedText>
-                <AnimatedText delay={0.4}>
+                <AnimatedText key={`forge-3-${isDecoded}`} delay={0.4}>
                   into real, working systems. The Forge is Coullax&apos;s
                 </AnimatedText>
-                <AnimatedText delay={0.4}>
+                <AnimatedText key={`forge-4-${isDecoded}`} delay={0.4}>
                   creative engine. a space of experimentation,
                 </AnimatedText>
-                <AnimatedText delay={0.4}>
+                <AnimatedText key={`forge-5-${isDecoded}`} delay={0.4}>
                   engineering, and relentless iteration.
                 </AnimatedText>
               </div>
@@ -1151,13 +1153,13 @@ export default function Home() {
               />
             </h1>
             <div className=" mt-[3.758vh] text-[2.685vh] uppercase font-inclusive-sans leading-[3.49vh]">
-              <AnimatedText delay={0}>
+              <AnimatedText key={`ritual-1-${isDecoded}`} delay={0}>
                 The RITUAL is our process of transformation where
               </AnimatedText>
-              <AnimatedText delay={0.2}>
+              <AnimatedText key={`ritual-2-${isDecoded}`} delay={0.2}>
                 abstract ideas, complex technologies, and raw
               </AnimatedText>
-              <AnimatedText delay={0.4}>
+              <AnimatedText key={`ritual-3-${isDecoded}`} delay={0.4}>
                 ambition are fused into powerful digital systems.
               </AnimatedText>
             </div>
@@ -1174,22 +1176,22 @@ export default function Home() {
               <div className=" flex flex-row justify-start items-center gap-[2.013vh]">
                 <div
                   className={` rounded-full ${
-                    activeImage === "star" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+                    activeImage === "star" ? "bg-[#0505cb]" : "bg-[#d9d9d9]"
                   } h-[22px] aspect-square`}
                 ></div>
                 <div
                   className={` rounded-full ${
-                    activeImage === "circle" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+                    activeImage === "circle" ? "bg-[#0505cb]" : "bg-[#d9d9d9]"
                   } h-[22px] aspect-square`}
                 ></div>
                 <div
                   className={` rounded-full ${
-                    activeImage === "asterisk" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+                    activeImage === "asterisk" ? "bg-[#0505cb]" : "bg-[#d9d9d9]"
                   } h-[22px] aspect-square`}
                 ></div>
                 <div
                   className={` rounded-full ${
-                    activeImage === "triangle" ? "bg-[#e0ef29]" : "bg-[#d9d9d9]"
+                    activeImage === "triangle" ? "bg-[#0505cb]" : "bg-[#d9d9d9]"
                   } h-[22px] aspect-square`}
                 ></div>
               </div>
@@ -1305,13 +1307,13 @@ export default function Home() {
                 />
               </h1>
               <div className=" mt-[3.758vh] text-[2.685vh] uppercase font-inclusive-sans leading-[3.49vh]">
-                <AnimatedText delay={0}>
+                <AnimatedText key={`principles-1-${isDecoded}`} delay={0}>
                   Every product we deliver is shaped by a set of principles
                 </AnimatedText>
-                <AnimatedText delay={0.2}>
+                <AnimatedText key={`principles-2-${isDecoded}`} delay={0.2}>
                   that balance vision with precision, value with impact,
                 </AnimatedText>
-                <AnimatedText delay={0.4}>
+                <AnimatedText key={`principles-3-${isDecoded}`} delay={0.4}>
                   and innovation with reliability.
                 </AnimatedText>
               </div>
@@ -1879,6 +1881,7 @@ export default function Home() {
             fontSize="text-4xl font-bold md:text-[50px] md:leading-[4.4rem]"
             defaultVelocity={0.2}
             className="text-[#c1c0b0] "
+            numRows={1}
           >
             AI. Machine Learning. Web3. Data science. Software . Research.
             Chatbot. Deep learning. Blockchain. DeFi. Smart contract.
@@ -1900,11 +1903,11 @@ export default function Home() {
                 </span>
               </div>
               <span className="w-full mt-[45px] text-[20px] font-medium leading-[23px] text-left text-[#575757]">
-                Working with us is easy. We follow a clear, no fuss process
+                Working with us is easy We follow a clear no fuss process that
                 <br />
-                that keeps things moving fast and smooth, from first chat to
+                keeps things moving fast and smooth, from first chat to final
                 <br />
-                final delivery.
+                delivery.
               </span>
             </div>
             <Image
@@ -1934,7 +1937,7 @@ export default function Home() {
         </div>
       </div> */}
 
-          {/* <div className="w-full relative overflow-hidden bg-[#e0f1eb]">
+          {/* <div className="w-full relative overflow-hidden bg-[#e0ef29]">
         <div className="w-[90%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
           <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
             <div className="flex flex-row justify-center items-center px-[22px] py-[10px] rounded-[64px] bg-[#171717] text-white mb-[45px]">
@@ -2016,111 +2019,6 @@ export default function Home() {
       </div> */}
 
           {/* <div className="w-full relative  overflow-hidden ">
-        <div className=" w-[90%] max-w-[1200px] mx-auto ">
-          <div className="flex flex-col md:justify-start md:items-start items-center justify-center gap-[45px] md:mt-[140px] mt-[40px] py-[45px]">
-            <div className=" flex flex-row justify-center items-center rounded-full bg-[#171717] py-[10px] px-[22px]">
-              <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff]">
-                Smooth Process, Solid Results
-              </span>
-            </div>
-            <span className="flex-grow-0  not-italic leading-[1.16]  text-[#575757] text-[20px] max-w-[706px]">
-              Our mission is to enhance efficiency, security, and transparency
-              across industries. Making the world a smarter, more connected, and
-              a safer place <br></br>
-              <br></br>
-              To achieve this, we believe in the power of Artificial
-              intelligence&apos;s efficiency and Blockchain technology&apos;s
-              security and transparency.
-            </span>
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] p-0">
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <Users size={37} />
-                </div>
-
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">
-                    Over
-                    <NumberTicker
-                      value={150}
-                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white ml-1"
-                    />
-                  </span>
-                  <span className="text-[16px] font-[600]">
-                    Satisfied clients<br></br>
-                    worldwide
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <Laptop size={37} />
-                </div>
-
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">
-                    {" "}
-                    <NumberTicker
-                      value={400}
-                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
-                    />
-                    +
-                  </span>
-                  <span className="text-[16px] font-[600]">
-                    {" "}
-                    Successfully <br></br> Finished projects
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <Globe size={37} />
-                </div>
-
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">
-                    <NumberTicker
-                      value={7500}
-                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
-                    />
-                    +
-                  </span>
-                  <span className="text-[16px] font-[600]">
-                    {" "}
-                    Hours of saving the world from <br></br>
-                    bad experiences.
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-end   rounded-[20px] bg-[#e2e2fa] p-[15px]">
-                <div className="flex justify-center items-center rounded-full bg-[#fff] w-[64px] aspect-square">
-                  <HandFist size={37} />
-                </div>
-
-                <div className="w-full justify-start items-start flex flex-col mt-[31px]">
-                  <span className="text-[36px] font-[600] mb-[15px]">
-                    <NumberTicker
-                      value={30}
-                      className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-black dark:text-white mr-1"
-                    />
-                    +
-                  </span>
-                  <span className="text-[16px] font-[600]">
-                    Countries across
-                    <br></br>
-                    the globe
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-          {/* <div className="w-full relativeoverflow-hidden">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
           <div className=" flex rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
             <span className="w-full font-bold leading-[23px] text-[20px] text-[#fff] text-center">
@@ -2252,118 +2150,6 @@ export default function Home() {
             [Firstlight / Schema / Construct / Lift.]
           </p>
 
-          <div className="mt-[100px] border border-[#e0ef29]">
-            <div className="w-full">
-              <div className="grid grid-cols-4 gap-0 pt-[50px] pb-[65px] px-[20px]">
-                <div className="flex justify-center items-center col-span-[300px]">
-                  <Image
-                    src={
-                      activeImage === "star"
-                        ? "/HomePage/phase/phase1_image_red.svg"
-                        : "/HomePage/phase/phase1_image_white.svg"
-                    }
-                    width={290}
-                    height={290}
-                    alt="Star"
-                    className=" cursor-pointer"
-                    onClick={() => setActiveImage("star")}
-                  />
-                </div>
-
-                <div className="flex justify-center items-center col-span-[300px]">
-                  <Image
-                    src={
-                      activeImage === "circle"
-                        ? "/HomePage/phase/phase2_image_red.svg"
-                        : "/HomePage/phase/phase2_image_white.svg"
-                    }
-                    width={290}
-                    height={290}
-                    alt="Circle"
-                    className=" cursor-pointer"
-                    onClick={() => setActiveImage("circle")}
-                  />
-                </div>
-
-                <div className="flex justify-center items-center col-span-[300px]">
-                  <Image
-                    src={
-                      activeImage === "asterisk"
-                        ? "/HomePage/phase/phase3_image_red.svg"
-                        : "/HomePage/phase/phase3_image_white.svg"
-                    }
-                    width={290}
-                    height={290}
-                    alt="Asterisk"
-                    className=" cursor-pointer"
-                    onClick={() => setActiveImage("asterisk")}
-                  />
-                </div>
-
-                <div className="flex justify-center items-center col-span-[300px]">
-                  <Image
-                    src={
-                      activeImage === "triangle"
-                        ? "/HomePage/phase/phase4_image_red.svg"
-                        : "/HomePage/phase/phase4_image_white.svg"
-                    }
-                    alt="Triangle"
-                    width={290}
-                    height={290}
-                    className=" cursor-pointer"
-                    onClick={() => setActiveImage("triangle")}
-                  />
-                </div>
-              </div>
-
-
-              <div className="w-full border-t border-[#e0ef29] py-[28px] px-[29px]">
-                <div className="flex justify-between items-center ">
-                  <div className="flex items-center justify-center gap-2">
-                    <Image
-                      src={phases[activeImage].icon}
-                      width={70}
-                      height={70}
-                      alt="Star"
-                      className=" cursor-pointer"
-                      onClick={() => setActiveImage("star")}
-                    />
-                    <h2 className="text-[40px] font-bold text-[#e0ef29] font-silkscreen leading-[1.16] -tracking-[2px] ">
-                      {phases[activeImage].title}
-                    </h2>
-                  </div>
-
-                  <h2 className="text-[48px] font-bold text-white font-inclusive-sans -tracking-[2.4px] leading-[1.16]">
-                    {phases[activeImage].subtitle}
-                  </h2>
-                </div>
-
-                <p className="text-[40px] my-[61px] font-inclusive-sans text-[#fff] leading-[1.19] ">
-                  {phases[activeImage].description}
-                </p>
-                <p className="text-[20px] text-[#e0ef29] uppercase leading-[1.19] font-silkscreen">
-                  {phases[activeImage].footer}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-          {/*
-      <div className="w-full relative  overflow-hidden ">
-        <div className=" w-[90%] max-w-[1550px] mx-auto my-[176px]">
-          <h1 className="text-[250px] font-silkscreen leading-[1.3]  -tracking-[12.5px] text-[#0505cb] text-center ">
-            The Facets
-          </h1>
-          <p className="font-inclusive-sans text-[52px] text-[#000] leading-[1.3] text-left my-[50px]">
-            EVERY [ARTIFACT//PRODUCT] WE DELIVER IS SHAPED BY A SET OF
-            PRINCIPLES THAT BALANCE VISION WITH PRECISION, VALUE WITH IMPACT,
-            AND INNOVATION WITH RELIABILITY.
-          </p>
-          <p className="font-silkscreen text-left text-[15px] text-[#000] leading-[1.3]">
-            [Construct / Reforge / Loop.]
-          </p>
-
           <div
             style={{ height: "600px", position: "relative" }}
             className="mt-[75px]"
@@ -2401,7 +2187,8 @@ export default function Home() {
                   <span className="text-[2.432vh] font-special-gothic-expanded-one uppercase leading-[2.824vh] -tracking-[0.122vh]">
                     case stuides
                   </span>
-                </div>                <h1 className=" text-black font-silkscreen pt-[2.027vh] text-[1.007vh] h-[7.432vh] leading-[1.309vh] uppercase">
+                </div>{" "}
+                <h1 className=" text-black font-silkscreen pt-[2.027vh] text-[1.007vh] h-[7.432vh] leading-[1.309vh] uppercase">
                   <TypingEffect
                     key="typing-effect-stories"
                     text={` Each artifact tells a story. \n a fragment of vision forged in the fires of creation. \n Born from whispers of code and pulses of intent, \n these are the echoes of ideas made real.`}
@@ -2410,20 +2197,21 @@ export default function Home() {
                     className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
                   />
                 </h1>
-              </div>              <div className=" mt-[3.784vh] text-[2.703vh] uppercase font-inclusive-sans leading-[3.514vh]">
-                <AnimatedText key="animated-text-1" delay={0}>
+              </div>{" "}
+              <div className=" mt-[3.784vh] text-[2.703vh] uppercase font-inclusive-sans leading-[3.514vh]">
+                <AnimatedText key={`artifact-1-${isDecoded}`} delay={0}>
                   HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR.
                 </AnimatedText>
-                <AnimatedText key="animated-text-2" delay={0.2}>
+                <AnimatedText key={`artifact-2-${isDecoded}`} delay={0.2}>
                   INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD
                 </AnimatedText>
-                <AnimatedText key="animated-text-3" delay={0.4}>
+                <AnimatedText key={`artifact-3-${isDecoded}`} delay={0.4}>
                   BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF
                 </AnimatedText>
-                <AnimatedText key="animated-text-4" delay={0.6}>
+                <AnimatedText key={`artifact-4-${isDecoded}`} delay={0.6}>
                   OUR PROCESS, OUR TECHNOLOGY,
                 </AnimatedText>
-                <AnimatedText key="animated-text-5" delay={0.8}>
+                <AnimatedText key={`artifact-5-${isDecoded}`} delay={0.8}>
                   AND THE PEOPLE WE BUILD FOR.
                 </AnimatedText>
               </div>
@@ -2442,7 +2230,6 @@ export default function Home() {
                   BOOK A CALL
                 </button>
               </div>
-
               <div className="w-full grid grid-cols-4  gap-[0.858vh] mt-[7.027vh]">
                 <div className="bg-[#e8e8e8] h-[25.541vh] aspect-square">
                   <p>Skillchecker.ai</p>
