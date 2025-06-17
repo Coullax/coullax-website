@@ -7,7 +7,7 @@ interface AnimatedTextProps {
   children: React.ReactNode;
   delay?: number;
   className?: string;
-  refresh?: any;
+  refresh?: string; // Optional prop to trigger re-animation
 }
 
 function AnimatedText({ children, delay = 0, className = "", refresh }: AnimatedTextProps) {
