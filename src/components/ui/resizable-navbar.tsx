@@ -56,6 +56,10 @@ interface MobileNavMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
+interface NavbarLogoProps {
+  logoColor?: "black" | "white";
+  visible?: boolean;
+}
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -253,19 +257,23 @@ export const MobileNavToggle = ({
   );
 };
 
-export const NavbarLogo = () => {
+export const NavbarLogo = ({ logoColor,visible}:NavbarLogoProps) => {
+  // const logoPath = logoColor === "black" ? "/logb.png" : visible ? "/logb.png": "/logw.png"; 
+  
+  
   return (
     <a
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black "
     >
-      <Image
-        src="/logo.png"
+       <Image
+        src={(visible === false && logoColor === "white") ? "/logb.png" : "/logw.png"}
         alt="logo"
         width={226}
         height={24.6}
-        className="cursor-pointer w-[15.235vh] h-[2.349vh]"
+        className="cursor-pointer w-[15.235vh] h-[2.349vh] pl-2"
       />
+
     </a>
   );
 };
