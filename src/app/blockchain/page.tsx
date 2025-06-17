@@ -330,25 +330,25 @@ export default function BlockchainPage() {
             />
           </div>
           <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-white">
-            <AnimatedText delay={0}>
+            <AnimatedText  key={`cognition-1-${activeCognitionIndex}`}  delay={0}>
             Our blockchain process is more than
             </AnimatedText>
-            <AnimatedText delay={0.2}>
+            <AnimatedText  key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
             decentralization. It’s about architecting 
             </AnimatedText>
-            <AnimatedText delay={0.4}>
+            <AnimatedText  key={`cognition-3-${activeCognitionIndex}`}  delay={0.4}>
             systems that self verify, adapt, and persist.
             </AnimatedText>
-            <AnimatedText delay={0.6}>
+            <AnimatedText  key={`cognition-4-${activeCognitionIndex}`}  delay={0.6}>
             From genesis block to scalable
             </AnimatedText>
-            <AnimatedText delay={0.8}>
+            <AnimatedText  key={`cognition-5-${activeCognitionIndex}`}  delay={0.8}>
             infrastructure, we engineer protocols
             </AnimatedText>
-            <AnimatedText delay={1.0}>
+            <AnimatedText  key={`cognition-6-${activeCognitionIndex}`}  delay={1.0}>
             that encode trust, evolve with consensus,
             </AnimatedText>
-            <AnimatedText delay={1.2}>
+            <AnimatedText  key={`cognition-7-${activeCognitionIndex}`}  delay={1.2}>
             and endure with intention.
             </AnimatedText>
           </div>
