@@ -16,7 +16,7 @@ type ThemeConfig = {
   buttonHoverBg: string;
   buttonHoverText: string;
   buttonBorder: string;
-  
+
 };
 
 // Define valid theme names
@@ -72,7 +72,7 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
     () => (
       <SplitText
         text="LIGHT THE SIGNAL"
-        className={`text-[6.443vh] font-special-gothic-expanded-one leading-[7.477vh] ${currentTheme.splitText} text-center py-[4.43vh] w-full`}
+        className={`text-[3.219vh] md:text-[6.443vh] font-special-gothic-expanded-one leading-[3.541vh] md:leading-[7.477vh] -tracking-[0.054vh] md:-tracking-[0.324vh] ${currentTheme.splitText} text-center py-[3.219vh] md:py-[4.43vh] w-full`}
         delay={10}
         duration={2}
         ease="power3.out"
@@ -98,12 +98,12 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
           "opacity-25 dark:opacity-25 z-0"
         )}
       />
-      <div className=" w-[90%] max-w-[104.027vh] mx-auto">
+      <div className=" w-[90%] md:max-w-[104.027vh] mx-auto">
         <TypingEffect
           text={`THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. \n YOU'VE REACHED THE EDGE OF THE KNOWN. \n WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
           speed={30}
           delay={500}
-          className={`font-silkscreen text-center text-[1.342vh] ${currentTheme.typingText} w-full min-h-[6.757vh]`}
+          className={`font-silkscreen text-center text-[0.644vh] md:text-[1.342vh] leading-[1.073vh] md:leading-[1.309vh] ${currentTheme.typingText} w-full md:min-h-[6.757vh]`}
         />
 
         {splitTextMemo}
@@ -118,7 +118,7 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
               id="email"
               name="email"
               placeholder="YOUR EMAIL"
-              className={`w-full h-[6.577vh] p-[1.007vh] text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border-[1.3px] border-[#000]  ${currentTheme.textBoxBg} focus:outline-none`}
+              className={`w-full h-[6.577vh] p-[1.007vh] text-[1.288vh] md:text-[1.342vh]  placeholder:!text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border-[0.139vh] border-[#000] ${currentTheme.textBoxBg} focus:outline-none `}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -133,11 +133,11 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
                 setMessage(e.target.value);
               }}
               value={message}
-              className={`w-full h-[14.362vh] p-[1.007vh] text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border border-[#000] ${currentTheme.textBoxBg} focus:outline-none`}
+              className={`w-full h-[14.362vh] p-[1.007vh] text-[1.288vh] md:text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border border-[#000] ${currentTheme.textBoxBg} focus:outline-none`}
             />
 
             <div className=" flex flex-col justify-center items-center">
-            <p className={`font-silkscreen text-left text-[1.007vh] ${currentTheme.formText} py-[2.685vh]`}>
+              <p className={`font-silkscreen text-left text-[0.644vh] md:text-[1.007vh] ${currentTheme.formText} py-[2.682vh] md:py-[2.685vh]`}>
                 TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
                 SIGNAL...
               </p>
