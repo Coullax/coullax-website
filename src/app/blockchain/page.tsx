@@ -194,7 +194,7 @@ export default function BlockchainPage() {
     <div className=" w-full">
       <div
         ref={heroRef}
-        className=" w-full h-dvh bg-[#000000] relative overflow-hidden"
+        className="w-full h-dvh relative overflow-hidden bg-[radial-gradient(circle_at_50%_102%,#ffbf82,#df730e_11%,#000_57%)]"
       >
         {/* header */}
         <HeaderNavBar
@@ -232,7 +232,7 @@ export default function BlockchainPage() {
             </div>
             <button
               onClick={handleBookCallClick}
-              className="cursor-pointer bg-[#0505cb] mh-[70px] py-[1.678vh] px-[4.479vw] text-white uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
+              className="cursor-pointer bg-[#ff8410] mh-[4.73vh] py-[1.554vh] px-[4.865vh] text-black uppercase text-[1.622vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.081vh] border-1 border-dashed border-black hover:bg-transparent hover:scale-105 hover:text-[#ff8410] hover:border-[#ff8410] transition-all duration-300 ease-in-out"
             >
               book a call
             </button>
