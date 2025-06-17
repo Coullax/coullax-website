@@ -313,7 +313,13 @@ export default function BlockchainPage() {
             </AnimatedText>
           </div>
 
-          <FlowingMenu items={demoItems} />
+          <FlowingMenu
+            items={demoItems}
+            marqueeBackgroundColor="#ff8410"        // Changes marquee background and rounded div text color
+            spanTextColor="#000000"                // Changes span text color
+            roundedDivBackgroundColor="#000000"    // Changes rounded div background color
+            roundedDivTextColor="#ffffff"    // Changes rounded div background color
+          />
         </div>
       </div>
 
