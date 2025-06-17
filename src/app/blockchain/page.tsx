@@ -515,13 +515,13 @@ export default function BlockchainPage() {
         </div>
       </div>
 
-      <div className=" py-[6.711vh] w-full bg-gray-400">
+      <div className=" py-[6.711vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full flex flex-row justify-between items-start">
-            <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase">
+            <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase text-white">
               constructs
             </h1>
-            <h1 className=" font-special-gothic-expanded-one text-[2.416vh] leading-[2.805vh] -tracking-[0.121vh] uppercase">
+            <h1 className=" font-special-gothic-expanded-one text-[2.416vh] leading-[2.805vh] -tracking-[0.121vh] uppercase text-white">
               services
             </h1>
           </div>
@@ -530,10 +530,10 @@ export default function BlockchainPage() {
               text={`Every Construct is a fragment of the Entity, \n thinking on your behalf.`}
               speed={30}
               delay={500}
-              className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+              className="text-[1.007vh] leading-[1.309vh] font-silkscreen text-white"
             />
           </div>
-          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase">
+          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase text-white">
             <AnimatedText delay={0}>
               Our services are known as{" "}
               <span className=" font-bold">Constructs</span>.
@@ -553,7 +553,7 @@ export default function BlockchainPage() {
           </div>
           <button
             onClick={handleBookCallClick}
-            className="cursor-pointer bg-[#0505cb] py-[1.678vh] px-[5.772vh] text-white uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-white hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
+            className="cursor-pointer bg-[#ff8410] py-[1.678vh] px-[5.772vh] text-black uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-black hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
           >
             book a call
           </button>
@@ -561,19 +561,19 @@ export default function BlockchainPage() {
             {constructsItems.map((item, index) => (
               <div
                 key={index}
-                className=" group p-[2.685vh] min-h-[40.268vh] flex flex-col justify-start bg-transparent border border-black overflow-hidden relative"
+                className=" group p-[2.685vh] min-h-[40.268vh] flex flex-col justify-start bg-transparent border border-white overflow-hidden relative"
               >
-                <div className=" h-[0px] group-hover:h-[201.342vh] transition-all duration-800 aspect-square rounded-full absolute bottom-0 translate-y-1/2 left-0 -translate-x-1/2 bg-black"></div>
+                <div className=" h-[0px] group-hover:h-[201.342vh] transition-all duration-800 aspect-square rounded-full absolute bottom-0 translate-y-1/2 left-0 -translate-x-1/2 bg-white"></div>
                 <div className=" z-10">
                   <Image
-                    src={`/ai/construct/${item.image}_black.svg`}
+                    src={`/blockChain/construct/${item.image}_black.svg`}
                     alt={`Construct ${index + 1}`}
                     width={105}
                     height={105}
                     className=" group-hover:hidden block w-[7.047vh] h-[7.047vh] "
                   />
                   <Image
-                    src={`/ai/construct/${item.image}_yellow.svg`}
+                    src={`/blockChain/construct/${item.image}_yellow.svg`}
                     alt={`Construct ${index + 1}`}
                     width={105}
                     height={105}
@@ -581,12 +581,12 @@ export default function BlockchainPage() {
                   />
                 </div>
                 <div className=" mt-[7.785vh] z-10">
-                  <h1 className=" font-special-gothic-expanded-one text-[2.685vh] leading-[3.49vh] uppercase group-hover:text-white">
+                  <h1 className=" font-special-gothic-expanded-one text-[2.685vh] leading-[3.49vh] uppercase group-hover:text-black text-white">
                     {item.title1}
                     <br />
                     {item.title2}
                   </h1>
-                  <div className=" font-inclusive-sans text-[1.611vh] leading-[2.094vh] uppercase group-hover:text-white mt-[2.685vh]">
+                  <div className=" font-inclusive-sans text-[1.611vh] leading-[2.094vh] uppercase group-hover:text-black mt-[2.685vh] text-white">
                     {item.description}
                   </div>
                 </div>
