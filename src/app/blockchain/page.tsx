@@ -573,7 +573,7 @@ export default function BlockchainPage() {
           </div>
           <button
             onClick={handleBookCallClick}
-            className="cursor-pointer bg-[#ff8410] py-[1.678vh] px-[5.772vh] text-black uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-black hover:bg-transparent hover:scale-105 hover:text-[#0505cb] hover:border-[#0505cb] transition-all duration-300 ease-in-out"
+            className="cursor-pointer bg-[#ff8410] py-[1.678vh] px-[5.772vh] text-black uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-black hover:bg-transparent hover:scale-105 hover:text-[#ff8410] hover:border-[#ff8410] transition-all duration-300 ease-in-out"
           >
             book a call
           </button>
@@ -616,7 +616,7 @@ export default function BlockchainPage() {
         </div>
       </div>
 
-      <ContactUs />
+      <ContactUs theme="white" />
 
       <Footer />
     </div>
