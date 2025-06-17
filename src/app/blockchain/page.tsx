@@ -333,7 +333,7 @@ export default function BlockchainPage() {
           </VelocityScroll>
           </div>
 
-      <div className=" py-[6.711vh] relative w-full bg-gray-500">
+      <div className=" py-[6.711vh] relative w-full bg-white">
         <div
           className={cn(
             "absolute inset-0",
@@ -419,7 +419,7 @@ export default function BlockchainPage() {
                     duration: 1.2,
                   },
                 }}
-                className="bg-[#E0EF29] w-[8.725vh] h-[8.725vh] absolute top-0 left-0 rounded-full"
+                className="bg-[#FF8410] w-[8.725vh] h-[8.725vh] absolute top-0 left-0 rounded-full"
                 style={{
                   filter: "blur(2px)",
                   boxShadow: "0 0 20px rgba(224, 239, 41, 0.2)",
@@ -436,7 +436,7 @@ export default function BlockchainPage() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 0.1 }}
-                    className="bg-[#E0EF29] w-full h-full absolute top-0 left-0 rounded-lg"
+                    className="bg-[#FF8410] w-full h-full absolute top-0 left-0 rounded-lg"
                   />
 
                   <motion.div
@@ -451,7 +451,7 @@ export default function BlockchainPage() {
                     }}
                   >
                     <Image
-                      src={`/ai/cognition/${item.image}_${
+                      src={`/blockChain/cognition/${item.image}_${
                         activeCognitionIndex === item.image ? "yellow" : "white"
                       }.svg`}
                       alt={`Cognition Core ${index + 1}`}
@@ -464,14 +464,14 @@ export default function BlockchainPage() {
               ))}
             </div>
             <div className=" mt-[10.336vh]">
-              <h1 className=" text-[#e0ef29] font-special-gothic-expanded-one text-[2.685vh] leading-[3.49vh] uppercase">
+              <h1 className=" text-black font-special-gothic-expanded-one text-[2.685vh] leading-[3.49vh] uppercase">
                 {
                   cognitionCoreItems.find(
                     (item) => item.image === activeCognitionIndex
                   )?.title
                 }
               </h1>
-              <div className=" mt-[2.685vh] min-h-[11.067vh] text-[2.685vh] font-inclusive-sans leading-[3.49vh] uppercase text-white">
+              <div className=" mt-[2.685vh] min-h-[11.067vh] text-[2.685vh] font-inclusive-sans leading-[3.49vh] uppercase text-black">
                 {
                   cognitionCoreItems.find(
                     (item) => item.image === activeCognitionIndex
@@ -483,7 +483,7 @@ export default function BlockchainPage() {
         </div>
       </div>
 
-      <div className=" py-[6.711vh] w-full">
+      <div className=" py-[6.711vh] w-full bg-gray-400">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full flex flex-row justify-between items-start">
             <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase">
