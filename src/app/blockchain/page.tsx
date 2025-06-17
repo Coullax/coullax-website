@@ -263,14 +263,14 @@ export default function BlockchainPage() {
         </div>
       </div>
 
-      <div className=" py-[6.711vh] w-full">
+      <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           {/* <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh]">
             Ritual of Build
           </h1> */}
           <SplitText
             text=" Ritual of Build"
-            className="font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh]"
+            className="font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh] text-white"
             delay={10}
             duration={2}
             ease="power3.out"
@@ -286,10 +286,10 @@ export default function BlockchainPage() {
               text="Fed with data, trained with intent — the mind begins to see beyond the static."
               speed={30}
               delay={500}
-              className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
+              className="text-[1.007vh] leading-[1.309vh] font-silkscreen text-white"
             />
           </div>
-          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase">
+          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-white">
             <AnimatedText delay={0}>
             Our blockchain process is more than
             </AnimatedText>
@@ -322,8 +322,18 @@ export default function BlockchainPage() {
           />
         </div>
       </div>
+      <div className="w-full h-[17.816vh]">
+          <VelocityScroll
+          defaultVelocity={1}
+            className=" font-special-gothic-expanded-one text-[#ff8410] text-center bg-black"
+            fontSize="text-[13.872vh] uppercase -tracking-[0.676vh]"
+            numRows={1}
+          >
+           resilient | autonomous | unstoppable
+          </VelocityScroll>
+          </div>
 
-      <div className=" py-[6.711vh] relative w-full bg-black">
+      <div className=" py-[6.711vh] relative w-full bg-gray-500">
         <div
           className={cn(
             "absolute inset-0",
@@ -336,8 +346,8 @@ export default function BlockchainPage() {
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full py-[3.356vh] mt-[5.168vh]">
             <SplitText
-              text="cognition core"
-              className=" font-special-gothic-expanded-one text-white text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+              text="consensus core"
+              className=" font-special-gothic-expanded-one text-black text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
               delay={10}
               duration={2}
               ease="power3.out"
@@ -348,28 +358,43 @@ export default function BlockchainPage() {
               rootMargin="-100px"
               textAlign="center"
             />
-            <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-white my-[3.356vh]">
+            <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-black my-[3.356vh]">
               <TypingEffect
-                text={`The pulse of artificial thought, \n wired with intention and built to evolve.`}
+                text={`The pulse of decentralized trust, coded with purpose and built to adapt.`}
                 speed={30}
                 delay={500}
                 className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
               />
             </div>{" "}
-            <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-white relative">
+            <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-black relative">
               <AnimatedText delay={0}>
-                the toolkit we use to build intelligent systems.
+                the toolkit we use to build intelligent
               </AnimatedText>
               <AnimatedText delay={0.2}>
-                from training models to understanding
+              blockchain systems spans the full stack
               </AnimatedText>
               <AnimatedText delay={0.4}>
-                language and deploying AI into the real world.
+              from training machine learning models and 
+              </AnimatedText>
+              <AnimatedText delay={0.6}>
+              integrating decentralized data sources,
+              </AnimatedText>
+              <AnimatedText delay={0.8}>
+              to understanding natural language with
+              </AnimatedText>
+              <AnimatedText delay={1.0}>
+              on-chain logic, and deploying AI-driven 
+              </AnimatedText>
+              <AnimatedText delay={1.2}>
+              smart contracts into the real world via 
+              </AnimatedText>
+              <AnimatedText delay={1.4}>
+              decentralized infrastructure.
               </AnimatedText>
             </div>
           </div>{" "}
           <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">
-            <div className=" flex flex-row gap-[6.55vh] items-center relative justify-start">
+            <div className="flex flex-row gap-[6.55vh] items-center relative justify-start">
               <motion.div
                 key={activeCognitionIndex}
                 initial={{
