@@ -12,7 +12,7 @@ import {
   
 } from "framer-motion";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect,useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
@@ -20,10 +20,13 @@ import TypingEffect from "@/components/gsp/TypingEffect";
 
 
 export default function BlockchainPage() {
-    const [activeCognitionIndex, setActiveCognitionIndex] =
+  const [activeCognitionIndex, setActiveCognitionIndex] =
     useState<string>("group_1");
   const [previousCognitionIndex, setPreviousCognitionIndex] =
     useState<string>("group_1");
+  const [vhUnit, setVhUnit] = useState(
+    typeof window !== "undefined" ? window.innerHeight / 100 : 8
+  );
 
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +35,44 @@ export default function BlockchainPage() {
     offset: ["start start", "end start"],
   });
 
+  const cognitionSplitTextMemo = useMemo(
+    () => (
+      <SplitText
+        text="cognition core"
+        className=" font-special-gothic-expanded-one text-black text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+        delay={10}
+        duration={2}
+        ease="power3.out"
+        splitType="chars"
+        from={{ opacity: 0, y: 40 }}
+        to={{ opacity: 1, y: 0 }}
+        threshold={0.1}
+        rootMargin="-100px"
+        textAlign="center"
+      />
+    ),
+    []
+  );
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  useEffect(() => {
+    const updateVhUnit = () => {
+      setVhUnit(window.innerHeight / 100);
+    };
+
+    let timeoutId: NodeJS.Timeout;
+    const throttledUpdateVhUnit = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(updateVhUnit, 16);
+    };
+
+    updateVhUnit();
+    window.addEventListener("resize", throttledUpdateVhUnit);
+    return () => {
+      window.removeEventListener("resize", throttledUpdateVhUnit);
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   const getActiveIndex = () => {
     return cognitionCoreItems.findIndex(
@@ -45,11 +85,11 @@ export default function BlockchainPage() {
       (item) => item.image === previousCognitionIndex
     );
   };
-
   const handleCognitionClick = (newIndex: string) => {
     setPreviousCognitionIndex(activeCognitionIndex);
     setActiveCognitionIndex(newIndex);
   };
+
 
   const demoItems = [
     {
@@ -343,21 +383,9 @@ export default function BlockchainPage() {
             "opacity-25 dark:opacity-25 z-0"
           )}
         />
-        <div className=" w-[90%] max-w-[104.027vh] mx-auto">
+      <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full py-[3.356vh] mt-[5.168vh]">
-            <SplitText
-              text="consensus core"
-              className=" font-special-gothic-expanded-one text-black text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
-              delay={10}
-              duration={2}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-            />
+            {cognitionSplitTextMemo}
             <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-black my-[3.356vh]">
               <TypingEffect
                 text={`The pulse of decentralized trust, coded with purpose and built to adapt.`}
@@ -367,43 +395,47 @@ export default function BlockchainPage() {
               />
             </div>{" "}
             <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-black relative">
-              <AnimatedText delay={0}>
+              <AnimatedText
+                key={`cognition-1-${activeCognitionIndex}`}
+                delay={0}
+              >
                 the toolkit we use to build intelligent
               </AnimatedText>
-              <AnimatedText delay={0.2}>
+              <AnimatedText  key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
               blockchain systems spans the full stack
               </AnimatedText>
-              <AnimatedText delay={0.4}>
+              <AnimatedText key={`cognition-3-${activeCognitionIndex}`} delay={0.4}>
               from training machine learning models and 
               </AnimatedText>
-              <AnimatedText delay={0.6}>
-              integrating decentralized data sources,
+              <AnimatedText key={`cognition-4-${activeCognitionIndex}`} delay={0.6}>
+              integrating decentralized data sources,<br></br> <br></br>
               </AnimatedText>
-              <AnimatedText delay={0.8}>
+              <AnimatedText key={`cognition-5-${activeCognitionIndex}`} delay={0.8}>
               to understanding natural language with
               </AnimatedText>
-              <AnimatedText delay={1.0}>
+              <AnimatedText key={`cognition-6-${activeCognitionIndex}`} delay={1.0}>
               on-chain logic, and deploying AI-driven 
               </AnimatedText>
-              <AnimatedText delay={1.2}>
+              <AnimatedText key={`cognition-7-${activeCognitionIndex}`} delay={1.2}>
               smart contracts into the real world via 
               </AnimatedText>
-              <AnimatedText delay={1.4}>
+              <AnimatedText key={`cognition-8-${activeCognitionIndex}`} delay={1.4}>
               decentralized infrastructure.
               </AnimatedText>
             </div>
           </div>{" "}
           <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">
-            <div className="flex flex-row gap-[6.55vh] items-center relative justify-start">
+            {" "}
+            <div className=" flex flex-row gap-[6.55vh] items-center relative justify-start">
               <motion.div
-                key={activeCognitionIndex}
+                key={`${activeCognitionIndex}-${vhUnit}`}
                 initial={{
-                  x: getPreviousIndex() * (130 + 97.6),
+                  x: getPreviousIndex() * (8.725 * vhUnit + 6.55 * vhUnit),
                   opacity: 0,
                   scale: 0.8,
                 }}
                 animate={{
-                  x: getActiveIndex() * (130 + 97.6),
+                  x: getActiveIndex() * (8.725 * vhUnit + 6.55 * vhUnit),
                   opacity: [0, 0.1, 0.1, 0],
                   scale: 1,
                 }}
@@ -419,7 +451,7 @@ export default function BlockchainPage() {
                     duration: 1.2,
                   },
                 }}
-                className="bg-[#FF8410] w-[8.725vh] h-[8.725vh] absolute top-0 left-0 rounded-full"
+                className="bg-[#E0EF29] w-[8.725vh] h-[8.725vh] absolute top-0 left-0 rounded-full"
                 style={{
                   filter: "blur(2px)",
                   boxShadow: "0 0 20px rgba(224, 239, 41, 0.2)",
@@ -436,7 +468,7 @@ export default function BlockchainPage() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 0.1 }}
-                    className="bg-[#FF8410] w-full h-full absolute top-0 left-0 rounded-lg"
+                    className="bg-[#E0EF29] w-full h-full absolute top-0 left-0 rounded-lg"
                   />
 
                   <motion.div
