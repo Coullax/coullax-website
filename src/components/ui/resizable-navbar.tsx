@@ -48,6 +48,7 @@ interface MobileNavProps {
 interface MobileNavHeaderProps {
   children: React.ReactNode;
   className?: string;
+  visible?: boolean;
 }
 
 interface MobileNavMenuProps {
@@ -83,12 +84,15 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn("fixed inset-x-0 top-5 z-40 w-full", className)}
     >
+      {" "}
       <div className="px-6">
         {React.Children.map(children, (child) =>
           React.isValidElement(child)
             ? React.cloneElement(
                 child as React.ReactElement<{ visible?: boolean }>,
-                { visible }
+                child.type === "div" || typeof child.type === "string"
+                  ? {}
+                  : { visible }
               )
             : child
         )}
@@ -121,7 +125,16 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         className
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              child.type === "div" || typeof child.type === "string"
+                ? {}
+                : { visible }
+            )
+          : child
+      )}
     </motion.div>
   );
 };
@@ -198,7 +211,17 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         className
       )}
     >
-      {children}
+      {" "}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              child.type === "div" || typeof child.type === "string"
+                ? {}
+                : { visible }
+            )
+          : child
+      )}
     </motion.div>
   );
 };
@@ -206,6 +229,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
 export const MobileNavHeader = ({
   children,
   className,
+  visible,
 }: MobileNavHeaderProps) => {
   return (
     <div
@@ -214,7 +238,17 @@ export const MobileNavHeader = ({
         className
       )}
     >
-      {children}
+      {" "}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child)
+          ? React.cloneElement(
+              child as React.ReactElement<{ visible?: boolean }>,
+              child.type === "div" || typeof child.type === "string"
+                ? {}
+                : { visible }
+            )
+          : child
+      )}
     </div>
   );
 };
@@ -257,23 +291,24 @@ export const MobileNavToggle = ({
   );
 };
 
-export const NavbarLogo = ({ logoColor,visible}:NavbarLogoProps) => {
-  // const logoPath = logoColor === "black" ? "/logb.png" : visible ? "/logb.png": "/logw.png"; 
-  
-  
+export const NavbarLogo = ({ logoColor, visible = false }: NavbarLogoProps) => {
   return (
     <a
       href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal text-black "
+      className="relative z-20 mr-4 flex items-center space-x-2 py-1 text-sm font-normal"
     >
-       <Image
-        src={(visible === false && logoColor === "white") ? "/logb.png" : "/logw.png"}
+      {" "}
+      <Image
+        src={
+          logoColor === "white" && !visible ? "/logo-light.png" : "/logo.png"
+        }
         alt="logo"
         width={226}
         height={24.6}
-        className="cursor-pointer w-[15.235vh] h-[2.349vh] pl-2"
+        className="cursor-pointer w-[15.235vh] h-[2.349vh]"
+        priority
+        unoptimized
       />
-
     </a>
   );
 };
