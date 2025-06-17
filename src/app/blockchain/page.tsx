@@ -189,7 +189,7 @@ export default function BlockchainPage() {
   const handleBookCallClick = () => {
     window.open("https://cal.com/coullax/30min", "_blank");
   };
-
+  
   return (
     <div className=" w-full">
       <div
@@ -197,7 +197,10 @@ export default function BlockchainPage() {
         className=" w-full h-dvh bg-[#000000] relative overflow-hidden"
       >
         {/* header */}
-        <HeaderNavBar navItemsStyles="text-white hover:text-white" />
+        <HeaderNavBar
+          navItemsStyles="text-white hover:text-white"
+          logoColor="white"
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
