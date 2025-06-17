@@ -20,7 +20,7 @@ const AudioToggle = dynamic(
   { ssr: false }
 );
 
-export default function HeaderNavBar({ navItemsStyles = "" }: { navItemsStyles?: string }) {
+export default function HeaderNavBar({ navItemsStyles = "",logoColor = "black"  }: { navItemsStyles?: string;logoColor?: "black" | "white"; }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationList = [
@@ -34,7 +34,7 @@ export default function HeaderNavBar({ navItemsStyles = "" }: { navItemsStyles?:
     <Navbar>
       {/* Desktop Navigation */}
       <NavBody  className={`${navItemsStyles}`}>
-        <NavbarLogo />
+      <NavbarLogo logoColor={logoColor} />
         <NavItems items={navigationList}/>
         {/* <div className="flex items-center gap-4"> */}
           {/* <Suspense fallback={<div className="w-5 h-5" />}>
