@@ -3,10 +3,65 @@ import { cn } from "@/lib/utils";
 import React, { useState, useMemo } from "react";
 import SplitText from "./reactbits/splitText";
 import TypingEffect from "./gsp/TypingEffect";
+// Define theme configuration type
+type ThemeConfig = {
+  background: string;
+  typingText: string;
+  splitText: string;
+  formText: string;
+  placeholderText: string;
+  textBoxBg: string;
+  buttonBg: string;
+  buttonText: string;
+  buttonHoverBg: string;
+  buttonHoverText: string;
+  buttonBorder: string;
+  
+};
 
-export default function ContactUs() {
+// Define valid theme names
+type ThemeName = 'black' | 'white';
+
+// Update themes object with proper typing
+const themes: Record<ThemeName, ThemeConfig> = {
+  black: {
+    textBoxBg: "bg-[#242425]",
+    background: "bg-black",
+    typingText: "text-white",
+    splitText: "text-white",
+    formText: "text-white",
+    placeholderText: "placeholder:!text-white",
+    buttonBg: "bg-[#e0ef29]",
+    buttonText: "text-black",
+    buttonHoverBg: "hover:bg-transparent",
+    buttonHoverText: "hover:text-[#e0ef29]",
+    buttonBorder: "border-black hover:border-[#e0ef29]"
+
+  },
+  white: {
+    textBoxBg: "bg-[#fffbf8]",
+    background: "bg-white",
+    typingText: "text-black",
+    splitText: "text-black",
+    formText: "text-black",
+    placeholderText: "placeholder:!text-black",
+    buttonBg: "bg-[#ff8410]",
+    buttonText: "text-black",
+    buttonHoverBg: "hover:bg-transparent",
+    buttonHoverText: "hover:text-[#ff8410]",
+    buttonBorder: "border-black hover:border-[#ff8410]"
+  }
+};
+
+// Update component props typing
+interface ContactUsProps {
+  theme?: ThemeName;
+}
+
+export default function ContactUs({ theme = 'black' }: ContactUsProps) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const currentTheme = themes[theme] || themes.black;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +72,7 @@ export default function ContactUs() {
     () => (
       <SplitText
         text="LIGHT THE SIGNAL"
-        className="text-[6.443vh] font-special-gothic-expanded-one leading-[7.477vh] text-white text-center py-[4.43vh] w-full "
+        className={`text-[6.443vh] font-special-gothic-expanded-one leading-[7.477vh] ${currentTheme.splitText} text-center py-[4.43vh] w-full`}
         delay={10}
         duration={2}
         ease="power3.out"
@@ -33,7 +88,7 @@ export default function ContactUs() {
   );
 
   return (
-    <div className="w-full relative overflow-hidden bg-black py-[16.577vh]">
+    <div className={`w-full relative overflow-hidden ${currentTheme.background} py-[16.577vh]`}>
       <div
         className={cn(
           "absolute inset-0",
@@ -48,7 +103,7 @@ export default function ContactUs() {
           text={`THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. \n YOU'VE REACHED THE EDGE OF THE KNOWN. \n WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
           speed={30}
           delay={500}
-          className="font-silkscreen text-center text-[1.342vh] text-white w-full min-h-[6.757vh]"
+          className={`font-silkscreen text-center text-[1.342vh] ${currentTheme.typingText} w-full min-h-[6.757vh]`}
         />
 
         {splitTextMemo}
@@ -63,7 +118,7 @@ export default function ContactUs() {
               id="email"
               name="email"
               placeholder="YOUR EMAIL"
-              className="w-full h-[6.577vh] p-[1.007vh] text-[1.342vh]  placeholder:!text-[1.342vh] border-[1.3px] border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white text-white"
+              className={`w-full h-[6.577vh] p-[1.007vh] text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border-[1.3px] border-[#000]  ${currentTheme.textBoxBg} focus:outline-none`}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -78,18 +133,18 @@ export default function ContactUs() {
                 setMessage(e.target.value);
               }}
               value={message}
-              className="w-full h-[14.362vh] p-[1.007vh] text-[1.342vh] placeholder:!text-[1.342vh] border border-[#000] bg-[#242425] focus:outline-none placeholder:!text-white text-white"
+              className={`w-full h-[14.362vh] p-[1.007vh] text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border border-[#000] ${currentTheme.textBoxBg} focus:outline-none`}
             />
 
             <div className=" flex flex-col justify-center items-center">
-              <p className="font-silkscreen text-left text-[1.007vh] text-white py-[2.685vh]">
+            <p className={`font-silkscreen text-left text-[1.007vh] ${currentTheme.formText} py-[2.685vh]`}>
                 TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
                 SIGNAL...
               </p>
 
               <button
                 type="submit"
-                className="cursor-pointer bg-[#e0ef29] py-[1.544vh] px-[5.067vh] text-black uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed border-black hover:bg-transparent hover:scale-105 hover:text-[#e0ef29] hover:border-[#e0ef29] transition-all duration-300 ease-in-out"
+                className={`cursor-pointer ${currentTheme.buttonBg} py-[1.544vh] px-[5.067vh] ${currentTheme.buttonText} uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed ${currentTheme.buttonBorder} ${currentTheme.buttonHoverBg} ${currentTheme.buttonHoverText} transition-all duration-300 ease-in-out`}
               >
                 CONTACT US
               </button>
