@@ -8,18 +8,32 @@ interface MenuItemProps {
   text: string;
   image: string;
   ind: string;
+  marqueeBackgroundColor?: string;
+  spanTextColor?: string;
+  roundedDivBackgroundColor?: string;
+  roundedDivTextColor?: string;
 }
 
 interface FlowingMenuProps {
   items?: MenuItemProps[];
+  marqueeBackgroundColor?: string;
+  spanTextColor?: string;
+  roundedDivBackgroundColor?: string;
+  roundedDivTextColor?: string; 
 }
 
-const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
+const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [],  marqueeBackgroundColor,
+  spanTextColor,
+  roundedDivBackgroundColor, roundedDivTextColor}) => {
   return (
     <div className="menu-wrap my-[6.711vh]">
       <nav className="menu">
         {items.map((item, idx) => (
-          <MenuItem key={idx} {...item} />
+          <MenuItem key={idx} {...item} 
+            marqueeBackgroundColor={marqueeBackgroundColor}
+            spanTextColor={spanTextColor}
+            roundedDivBackgroundColor={roundedDivBackgroundColor} 
+            roundedDivTextColor={roundedDivTextColor}/>
         ))}
       </nav>
     </div>
@@ -30,7 +44,11 @@ const MenuItem: React.FC<MenuItemProps> = ({
   link, 
   text, 
   image: _image, // eslint-disable-line @typescript-eslint/no-unused-vars
-  ind 
+  ind,
+  marqueeBackgroundColor,
+  spanTextColor,
+  roundedDivBackgroundColor,
+  roundedDivTextColor
 }) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
@@ -89,15 +107,24 @@ const MenuItem: React.FC<MenuItemProps> = ({
   const repeatedMarqueeContent = React.useMemo(() => {
     return Array.from({ length: 8 }).map((_, idx) => (
       <React.Fragment key={idx}>
-        <span className=" text-[3.221vh] !font-special-gothic-expanded-one leading-[4.174vh] !text-[#e0ef29]">
+        <span
+          className="text-[3.221vh] !font-special-gothic-expanded-one leading-[4.174vh]"
+          style={{ color: spanTextColor || "#e0ef29" }}
+        >
           {text}
         </span>
-        <div className=" text-[3.221vh] min-w-[11.745vh] rounded-full text-center font-special-gothic-expanded-one leading-[4.174vh] bg-[#e0ef29] text-[#0505cb]">
+        <div
+          className="text-[3.221vh] min-w-[11.745vh] rounded-full text-center font-special-gothic-expanded-one leading-[4.174vh]"
+          style={{
+            backgroundColor: roundedDivBackgroundColor || "#e0ef29",
+            color: roundedDivTextColor || "#0505cb",
+          }}
+        >
           {ind.length === 1 ? 0 + ind : ind}
         </div>
       </React.Fragment>
     ));
-  }, [text, ind]);
+  }, [text, ind, spanTextColor, roundedDivBackgroundColor, roundedDivTextColor]);
 
   return (
     <div className="menu__item" ref={itemRef}>
@@ -114,7 +141,22 @@ const MenuItem: React.FC<MenuItemProps> = ({
           <div>{text}</div>
         </div>
       </a>
-      <div className="marquee" ref={marqueeRef}>
+  <div
+        className="marquee"
+        ref={marqueeRef}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          overflow: "hidden",
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+          backgroundColor: marqueeBackgroundColor || "#0505cb",
+          transform: "translate3d(0, 101%, 0)",
+          transition: "transform 0.6s ease-expo",
+        }}
+      >
         <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
           <div className="marquee__inner" aria-hidden="true">
             {repeatedMarqueeContent}
