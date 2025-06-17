@@ -534,21 +534,41 @@ export default function BlockchainPage() {
             />
           </div>
           <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase text-white">
-            <AnimatedText delay={0}>
-              Our services are known as{" "}
-              <span className=" font-bold">Constructs</span>.
+            <AnimatedText
+              key={`constructs-1-${activeCognitionIndex}`}
+              delay={0}
+            >
+              Our services are known as Constructs{" "}
             </AnimatedText>
-            <AnimatedText delay={0.2}>
-              systems born from cognition and shaped by signal.
+            <AnimatedText
+              key={`constructs-2-${activeCognitionIndex}`}
+              delay={0.2}
+            >
+              decentralized systems born from consensus and
             </AnimatedText>
-            <AnimatedText delay={0.4}>
-              Each Construct is built to learn, evolve, and serve
+            <AnimatedText
+              key={`constructs-3-${activeCognitionIndex}`}
+              delay={0.4}
+            >
+              shaped by code. Each Construct is built to evolve,
             </AnimatedText>
-            <AnimatedText delay={0.6}>
-              whether it&apos;s automating decisions, analyzing
+            <AnimatedText
+              key={`constructs-4-${activeCognitionIndex}`}
+              delay={0.6}
+            >
+              govern, and serve, whether automating protocol
             </AnimatedText>
-            <AnimatedText delay={0.8}>
-              complex data, or powering adaptive experiences.
+            <AnimatedText
+              key={`constructs-5-${activeCognitionIndex}`}
+              delay={0.8}
+            >
+              logic, securing data flows, or powering adaptive
+            </AnimatedText>
+            <AnimatedText
+              key={`constructs-6-${activeCognitionIndex}`}
+              delay={0.8}
+            >
+              on-chain experiences.
             </AnimatedText>
           </div>
           <button
