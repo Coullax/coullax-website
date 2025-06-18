@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
@@ -40,13 +40,13 @@ import Artifact from "@/components/landing/Artifact";
 //   { ssr: false }
 // );
 
-type PhaseKey = "star" | "circle" | "asterisk" | "triangle";
-type PrimordialKey =
-  | "primordial1"
-  | "primordial2"
-  | "primordial3"
-  | "primordial4"
-  | "primordial5";
+// type PhaseKey = "star" | "circle" | "asterisk" | "triangle";
+// type PrimordialKey =
+//   | "primordial1"
+//   | "primordial2"
+//   | "primordial3"
+//   | "primordial4"
+//   | "primordial5";
 
 export default function Home() {
   // const cardRefs = useRef<HTMLDivElement[]>([]);
@@ -59,28 +59,28 @@ export default function Home() {
   // const container2 = useRef(null);
   // const [isDecoded, setIsDecoded] = useState<boolean>(false);
   // const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-  const [activeImage, setActiveImage] = useState<PhaseKey>("star");
-  const [manualIndex, setManualIndex] = useState<number | null>(null);
-  const [animation, setAnimation] = useState<boolean>(false);
+  // const [activeImage, setActiveImage] = useState<PhaseKey>("star");
+  // const [manualIndex, setManualIndex] = useState<number | null>(null);
+  // const [animation, setAnimation] = useState<boolean>(false);
   const [viewLoading, setViewLoading] = useState<boolean>(false);
-  const [activePrimordial, setActivePrimordial] =
-    useState<PrimordialKey>("primordial1");
+  // const [activePrimordial, setActivePrimordial] =
+  //   useState<PrimordialKey>("primordial1");
 
   // Handle transition from manual back to automatic morphing
-  useEffect(() => {
-    if (manualIndex !== null) {
-      // After a manual selection, wait a bit then resume automatic morphing
-      const timer = setTimeout(() => {
-        setManualIndex(null);
-      }, 4000); // Resume automatic morphing after 4 seconds
+  // useEffect(() => {
+  //   if (manualIndex !== null) {
+  //     // After a manual selection, wait a bit then resume automatic morphing
+  //     const timer = setTimeout(() => {
+  //       setManualIndex(null);
+  //     }, 4000); // Resume automatic morphing after 4 seconds
 
-      return () => clearTimeout(timer);
-    }
-  }, [manualIndex]);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [manualIndex]);
 
-  useEffect(() => {
-    setAnimation((prev) => !prev);
-  }, [activeImage, activePrimordial]);
+  // useEffect(() => {
+  //   setAnimation((prev) => !prev);
+  // }, [activeImage, activePrimordial]);
 
   // const navigationList = [
   //   { name: "Home", link: "/" },
@@ -585,7 +585,8 @@ export default function Home() {
           {/* Hero Section */}
           <Hero />
 
-          <Forge animation={animation} />
+          {/* Forge Section */}
+          <Forge />
 
           <VelocityScroll
             fontSize="font-normal text-[20px] md:text-[4.034vh] leading-[24px] md:leading-[4.678vh] font-special-gothic-expanded-one uppercase tracking-0 md:-tracking-[0.202vh] text-white py-[15px] md:py-[2.013vh]"
@@ -596,33 +597,33 @@ export default function Home() {
             AI, Machine Learning, Web3, Data science.Software.Research,
             Chatbot,DeFi,Dapp,AI, Machine Learning, Web3, Data science, Software
             , Research, Chatbot,DeFiDeFi
-          </VelocityScroll>          <Ritual 
-            activeImage={activeImage}
-            setActiveImage={setActiveImage}
-          />
+          </VelocityScroll>
 
-          <Primordial 
-            activePrimordial={activePrimordial}
-            setActivePrimordial={setActivePrimordial}
-          />
+          {/* Ritual Section */}
+          <Ritual />
 
+          {/* Primordial Section */}
+          <Primordial />
+
+          {/* Summon Section */}
           <Summon />
-          <div className="bg-[#e0ef29] font-bold">
-            <VelocityScroll
-              className=" font-special-gothic-expanded-one"
-              fontSize=" py-[15px] md:py-[2.027vh] text-[20px] md:text-[4.061vh] leading-[24px] md:leading-[4.709vh] tracking-0 md:-tracking-[0.203vh] uppercase"
-              numRows={1}
-            >
-              JOIN THE BUILD.
-            </VelocityScroll>
-          </div>
 
-          <Artifact animation={animation} />
+          <VelocityScroll
+            className="bg-[#e0ef29] font-bold font-special-gothic-expanded-one"
+            fontSize=" py-[15px] md:py-[2.027vh] text-[20px] md:text-[4.061vh] leading-[24px] md:leading-[4.709vh] tracking-0 md:-tracking-[0.203vh] uppercase"
+            numRows={1}
+          >
+            JOIN THE BUILD.
+          </VelocityScroll>
 
+          {/* Artifact Section */}
+          <Artifact />
+
+          {/* Contact Us Section */}
           <ContactUs />
 
+          {/* Footer */}
           <Footer />
-
           {/* <AnimatePresence>
             {openReviewModal && (
               <motion.div
@@ -670,7 +671,6 @@ export default function Home() {
               </motion.div>
             )}
           </AnimatePresence> */}
-
           {/* <div className="w-[90%] max-w-[1550px] mx-auto ">
         <p className="font-silkscreen text-[16px]  text-[#0505cb] text-right mt-[150px]">
           Node -Sector 01 / Uplink: True
@@ -871,9 +871,7 @@ export default function Home() {
           [Coullax / The Forge / Construct.]
         </span>
       </div> */}
-
           {/* <div className="max-w-full bg-black h-[300px] mt-[50px]"></div> */}
-
           {/* <div className="bg-[#e0ef29]  pt-[83px]">
         <div className="w-[90%] max-w-[1550px] mx-auto ">
           <div className=" flex justify-between items-start">
@@ -909,7 +907,6 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-
           {/* <div className="w-full relative">
         <div className="w-[90%] max-w-[1550px] mx-auto">
           <div className="flex-grow-0 flex flex-col justify-start items-start">
@@ -1034,7 +1031,6 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-
           {/* <div className="w-full relative  overflow-hidden ">
         <div className=" w-full mt-[80px] mb-[140px]">
           <VelocityScroll
@@ -1052,7 +1048,6 @@ export default function Home() {
           </VelocityScroll>
         </div>
       </div> */}
-
           {/* <div className="w-full relative bg-gradient-to-t from-[#d1ecb1] to-[#fff] overflow-hidden mb-[40px] md:mb-[140px] pb-[85px]">
         <div className=" w-[90%] max-w-[1200px] mx-auto  ">
           <div className="flex flex-col justify-start items-start gap-[54px] p-0">
@@ -1096,7 +1091,6 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-
           {/* <div className="w-full relative overflow-hidden bg-[#e0ef29]">
         <div className="w-[90%] md:w-[90%] max-w-[1200px] mx-auto py-[80px]">
           <div className="min-h-[156.1px] w-full flex flex-col justify-between items-start pb-[60px]">
@@ -1177,7 +1171,6 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-
           {/* <div className="w-full relative  overflow-hidden ">
         <div className=" w-[90%] max-w-[1200px] my-[40px] md:my-[140px] mx-auto ">
           <div className=" flex rounded-full w-fit bg-[#171717] py-[10px] px-[22px]">
@@ -1267,7 +1260,6 @@ export default function Home() {
           </button>
         </div>
       </div> */}
-
           {/* <div className="w-full relative  overflow-hidden ">
         <div className=" w-full">
           <div className=" flex flex-row justify-start items-start rounded-full bg-[#171717] py-[10px] px-[22px] w-[90%] sm:w-fit mx-auto">
@@ -1292,7 +1284,6 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-
           {/* <div className="w-full relative  overflow-hidden bg-[#000] py-[200px]">
         <div className=" w-[90%] max-w-[1550px] mx-auto">
           <div className="w-full flex justify-center items-center ">
