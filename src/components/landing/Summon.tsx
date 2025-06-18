@@ -2,11 +2,10 @@
 import React from "react";
 import SplitText from "../reactbits/splitText";
 import { cn } from "@/lib/utils";
-import TypingEffect from "../gsp/TypingEffect";
 import BookCallBtn from "../BookCallBtn";
+import { TypingAnimation } from "../magicui/typing-animation";
 
 export default function Summon() {
-
   return (
     <div className="w-full relative overflow-hidden bg-[#000] py-[15vh]">
       <div className="w-[90%] md:max-w-[104.73vh] mx-auto ">
@@ -21,13 +20,12 @@ export default function Summon() {
             )}
           />
 
-          {/* THE SUMMON */}
           <SplitText
             text="THE SUMMON"
-            className=" text-[#fff] font-special-gothic-expanded-one text-[4.292vh] md:text-[6.486vh] leading-[4.828vh] md:leading-[7.527vh] -tracking-[0.324vh] uppercase"
+            className="text-[#fff] font-special-gothic-expanded-one text-[4.292vh] md:text-[6.486vh] leading-[4.828vh] md:leading-[7.527vh] -tracking-[0.324vh] uppercase"
             delay={10}
             duration={2}
-            ease="power3.out"
+            ease="elastic.out"
             splitType="chars"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
@@ -38,12 +36,16 @@ export default function Summon() {
         </div>
 
         <h1 className="justify-center text-[1.014vh] pt-[2.027vh] leading-[1.318vh] text-center uppercase font-silkscreen text-white min-h-[5.405vh]">
-          <TypingEffect
-            text={` Speak, and the signal will reach us. Across realms of silence and syntax, \n your intent will be felt. This is not a form. it is a calling.`}
-            speed={30}
-            delay={500}
-            className=" text-[0.644vh] md:text-[1.014vh] leading-[1.073vh] md:leading-[1.318vh] font-silkscreen"
-          />
+          <TypingAnimation
+            startOnView
+            supportHTML={true}
+            duration={10}
+            className="text-[0.644vh] md:text-[1.014vh] leading-[1.073vh] md:leading-[1.318vh] font-silkscreen"
+          >
+            {
+              "Speak, and the signal will reach us. Across realms of silence and syntax, <br /> your intent will be felt. This is not a form. it is a calling."
+            }
+          </TypingAnimation>
         </h1>
 
         <div className="flex justify-center items-center mt-[3.219vh] md:mt-[3.784vh]  ">
