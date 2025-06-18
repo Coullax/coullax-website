@@ -11,6 +11,7 @@ interface TypingAnimationProps extends MotionProps {
   delay?: number;
   as?: React.ElementType;
   startOnView?: boolean;
+  supportHTML?: boolean;
 }
 
 export function TypingAnimation({
@@ -20,21 +21,23 @@ export function TypingAnimation({
   delay = 0,
   as: Component = "div",
   startOnView = false,
+  supportHTML = false,
   ...props
 }: TypingAnimationProps) {
   const MotionComponent = motion.create(Component, {
     forwardMotionProps: true,
   });
-
   const [displayedText, setDisplayedText] = useState<string>("");
+  const [displayedHTML, setDisplayedHTML] = useState<React.ReactNode>("");
   const [started, setStarted] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-  const elementRef = useRef<HTMLElement | null>(null);
-
-  // Convert newlines to HTML breaks
+  const elementRef = useRef<HTMLElement | null>(null);  
   const processText = (text: string) => {
-    return text.replace(/\n/g, '<br />');
+    if (!supportHTML) return text;
+    
+    return text.replace(/<br\s*\/?>/gi, '\n');
   };
+
+  const processedText = processText(children);
 
   useEffect(() => {
     if (!startOnView) {
@@ -62,14 +65,22 @@ export function TypingAnimation({
 
     return () => observer.disconnect();
   }, [delay, startOnView]);
-
   useEffect(() => {
     if (!started) return;
 
     let i = 0;
     const typingEffect = setInterval(() => {
-      if (i < children.length) {
-        setDisplayedText(children.substring(0, i + 1));
+      if (i < processedText.length) {
+        const currentText = processedText.substring(0, i + 1);
+        setDisplayedText(currentText);
+        
+        if (supportHTML) {
+          // Convert line breaks back to <br/> tags for display
+          const htmlText = currentText.replace(/\n/g, '<br/>');
+          setDisplayedHTML(
+            <span dangerouslySetInnerHTML={{ __html: htmlText }} />
+          );
+        }
         i++;
       } else {
         clearInterval(typingEffect);
@@ -79,28 +90,17 @@ export function TypingAnimation({
     return () => {
       clearInterval(typingEffect);
     };
-  }, [children, duration, started]);
-
-  // Blinking cursor effect
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
-
-    return () => clearInterval(cursorInterval);
-  }, []);
-
+  }, [processedText, duration, started, supportHTML]);
   return (
     <MotionComponent
       ref={elementRef}
       className={cn(
-        "text-4xl leading-[5rem] tracking-[-0.02em]",
-        className,
+        className
       )}
       {...props}
-      dangerouslySetInnerHTML={{
-        __html: processText(displayedText) + (showCursor ? '<span class="animate-pulse">|</span>' : '<span style="opacity: 0;">|</span>')
-      }}
-    />
+    >
+      {supportHTML ? displayedHTML : displayedText}
+      <span className="animate-pulse">|</span>
+    </MotionComponent>
   );
 }
