@@ -53,8 +53,9 @@ export default function BlockchainPage() {
     ),
     []
   );
-
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  
+  const imageY = useTransform(scrollYProgress, [0, 0.6], [520 ,-70]);
+  
   useEffect(() => {
     const updateVhUnit = () => {
       setVhUnit(window.innerHeight / 100);
@@ -234,7 +235,7 @@ export default function BlockchainPage() {
     <div className=" w-full">
       <div
         ref={heroRef}
-        className="w-full h-dvh relative overflow-hidden bg-[radial-gradient(circle_at_50%_102%,#ffbf82,#df730e_11%,#000_57%)]"
+        className="w-full h-dvh relative overflow-hidden bg-[radial-gradient(circle_at_51%_345%,#ffbf82,#df730e_70%,#000_79%)]"
       >
         {/* header */}
         <HeaderNavBar
@@ -261,7 +262,7 @@ export default function BlockchainPage() {
             </h1>
           </div>
           <div className=" w-full flex flex-col items-center justify-center my-[3.356vh] text-white">
-            <h1 className=" font-special-gothic-expanded-one text-[7.383vh] text-center leading-[8.564vh] -tracking-[0.286vw] uppercase">
+            <h1 className=" font-special-gothic-expanded-one lg:text-[7.383vh] text-[4.383vh] text-center leading-[8.564vh] -tracking-[0.286vw] uppercase">
             The Architecture of 
               <br />
               Decentralized Thought
@@ -281,6 +282,11 @@ export default function BlockchainPage() {
         <motion.div
           style={{ y: imageY }}
           className=" absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[12%] w-[55.168vh] h-[47.584vh] overflow-hidden"
+          // transition={{
+          //   type: "tween",
+          //   ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier for smooth start and end
+          //   duration: 0.8, // Duration of the transition in seconds
+          // }}
         >
           <Image
             src="/blockChain/hero.webp"
@@ -290,7 +296,7 @@ export default function BlockchainPage() {
             className=" h-[47.584vh] w-[55.168vh]"
           />
         </motion.div>
-        <div className=" absolute bottom-0 left-0 w-full">
+        {/* <div className=" absolute bottom-0 left-0 w-full">
           <VelocityScroll
             defaultVelocity={0.2}
             className="bg-white "
@@ -306,8 +312,31 @@ export default function BlockchainPage() {
               />
             </div>
           </VelocityScroll>
-        </div>
+        </div> */}
       </div>
+
+
+      <div className="w-full">
+  <VelocityScroll
+    defaultVelocity={0.2}
+    className="bg-white"
+    numRows={1}
+  >
+    <div className="inline-flex items-center h-[180px]">
+      <Image
+        src="/blockChain/border1.png"
+        alt="Scrolling Image"
+        width={202.8}
+        height={112.7}
+        className="inline-block object-contain"
+      />
+    </div>
+  </VelocityScroll>
+</div>
+
+
+
+      
 
       <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
@@ -316,7 +345,7 @@ export default function BlockchainPage() {
           </h1> */}
           <SplitText
             text=" Ritual of Build"
-            className="font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh] text-white"
+            className="font-special-gothic-expanded-one lg:text-[6.443vh] text-[4.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh] text-white"
             delay={10}
             duration={2}
             ease="power3.out"
@@ -327,15 +356,15 @@ export default function BlockchainPage() {
             rootMargin="-100px"
             textAlign="center"
           />
-          <div className=" my-[3.356vh] text-[1.007vh] leading-[1.309vh] font-silkscreen">
+          <div className=" my-[3.356vh] leading-[1.309vh] font-silkscreen">
             <TypingEffect
               text="Fed with data, trained with intent — the mind begins to see beyond the static."
               speed={30}
               delay={500}
-              className="text-[1.007vh] leading-[1.309vh] font-silkscreen text-white"
+              className="text-[0.878vh] lg:text-[1.007vh] leading-[1.309vh] font-silkscreen text-white"
             />
           </div>
-          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-white">
+          <div className=" font-inclusive-sans text-[1.685vh] lg:text-[2.685vh] leading-[3.49vh] uppercase text-white">
             <AnimatedText  key={`cognition-1-${activeCognitionIndex}`}  delay={0}>
             Our blockchain process is more than
             </AnimatedText>
