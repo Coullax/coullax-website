@@ -2,8 +2,8 @@
 import { cn } from "@/lib/utils";
 import React, { useState, useMemo } from "react";
 import SplitText from "./reactbits/splitText";
-import TypingEffect from "./gsp/TypingEffect";
-// Define theme configuration type
+import { TypingAnimation } from "./magicui/typing-animation";
+
 type ThemeConfig = {
   background: string;
   typingText: string;
@@ -16,11 +16,10 @@ type ThemeConfig = {
   buttonHoverBg: string;
   buttonHoverText: string;
   buttonBorder: string;
-
 };
 
 // Define valid theme names
-type ThemeName = 'black' | 'white';
+type ThemeName = "black" | "white";
 
 // Update themes object with proper typing
 const themes: Record<ThemeName, ThemeConfig> = {
@@ -35,8 +34,7 @@ const themes: Record<ThemeName, ThemeConfig> = {
     buttonText: "text-black",
     buttonHoverBg: "hover:bg-transparent",
     buttonHoverText: "hover:text-[#e0ef29]",
-    buttonBorder: "border-black hover:border-[#e0ef29]"
-
+    buttonBorder: "border-black hover:border-[#e0ef29]",
   },
   white: {
     textBoxBg: "bg-[#fffbf8]",
@@ -49,8 +47,8 @@ const themes: Record<ThemeName, ThemeConfig> = {
     buttonText: "text-black",
     buttonHoverBg: "hover:bg-transparent",
     buttonHoverText: "hover:text-[#ff8410]",
-    buttonBorder: "border-black hover:border-[#ff8410]"
-  }
+    buttonBorder: "border-black hover:border-[#ff8410]",
+  },
 };
 
 // Update component props typing
@@ -58,7 +56,7 @@ interface ContactUsProps {
   theme?: ThemeName;
 }
 
-export default function ContactUs({ theme = 'black' }: ContactUsProps) {
+export default function ContactUs({ theme = "black" }: ContactUsProps) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const currentTheme = themes[theme] || themes.black;
@@ -75,7 +73,7 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
         className={`text-[3.219vh] md:text-[6.443vh] font-special-gothic-expanded-one leading-[3.541vh] md:leading-[7.477vh] -tracking-[0.054vh] md:-tracking-[0.324vh] ${currentTheme.splitText} text-center py-[3.219vh] md:py-[4.43vh] w-full`}
         delay={10}
         duration={2}
-        ease="power3.out"
+        ease="elastic.out"
         splitType="chars"
         from={{ opacity: 0, y: 40 }}
         to={{ opacity: 1, y: 0 }}
@@ -88,7 +86,9 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
   );
 
   return (
-    <div className={`w-full relative overflow-hidden ${currentTheme.background} py-[16.577vh]`}>
+    <div
+      className={`w-full relative overflow-hidden ${currentTheme.background} py-[16.577vh]`}
+    >
       <div
         className={cn(
           "absolute inset-0",
@@ -99,12 +99,16 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
         )}
       />
       <div className=" w-[90%] md:max-w-[104.027vh] mx-auto">
-        <TypingEffect
-          text={`THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. \n YOU'VE REACHED THE EDGE OF THE KNOWN. \n WHEN YOU'RE READY TO BUILD — WE AWAIT.`}
-          speed={30}
-          delay={500}
+        <TypingAnimation
+          startOnView
+          supportHTML={true}
+          duration={10}
           className={`font-silkscreen text-center text-[0.644vh] md:text-[1.342vh] leading-[1.073vh] md:leading-[1.309vh] ${currentTheme.typingText} w-full md:min-h-[6.757vh]`}
-        />
+        >
+          {
+            "THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. <br /> YOU'VE REACHED THE EDGE OF THE KNOWN. <br /> WHEN YOU'RE READY TO BUILD — WE AWAIT."
+          }
+        </TypingAnimation>
 
         {splitTextMemo}
 
@@ -137,7 +141,9 @@ export default function ContactUs({ theme = 'black' }: ContactUsProps) {
             />
 
             <div className=" flex flex-col justify-center items-center">
-              <p className={`font-silkscreen text-left text-[0.644vh] md:text-[1.007vh] ${currentTheme.formText} py-[2.682vh] md:py-[2.685vh]`}>
+              <p
+                className={`font-silkscreen text-left text-[0.644vh] md:text-[1.007vh] ${currentTheme.formText} py-[2.682vh] md:py-[2.685vh]`}
+              >
                 TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
                 SIGNAL...
               </p>
