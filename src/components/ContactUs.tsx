@@ -70,7 +70,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
     () => (
       <SplitText
         text="LIGHT THE SIGNAL"
-        className={`text-[3.219vh] md:text-[6.443vh] font-special-gothic-expanded-one leading-[3.541vh] md:leading-[7.477vh] -tracking-[0.054vh] md:-tracking-[0.324vh] ${currentTheme.splitText} text-center py-[3.219vh] md:py-[4.43vh] w-full`}
+        className={`text-[3.219vh] md:text-[5.932vh] lg:text-[6.443vh] font-special-gothic-expanded-one leading-[3.541vh] md:leading-[7.477vh] -tracking-[0.054vh] md:-tracking-[0.324vh] ${currentTheme.splitText} text-center py-[3.219vh] md:py-[4.43vh] w-full`}
         delay={10}
         duration={2}
         ease="elastic.out"
@@ -103,7 +103,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
           startOnView
           supportHTML={true}
           duration={10}
-          className={`font-silkscreen text-center text-[0.644vh] md:text-[1.342vh] leading-[1.073vh] md:leading-[1.309vh] ${currentTheme.typingText} w-full md:min-h-[6.757vh]`}
+          className={`font-silkscreen text-center text-[0.751vh] md:text-[1.271vh] lg:text-[1.007vh] leading-[1.073vh] md:leading-[1.309vh] ${currentTheme.typingText} w-full lg:min-h-[6.757vh]`}
         >
           {
             "THE SIGNAL FADES, BUT THE CONSTRUCT REMAINS. <br /> YOU'VE REACHED THE EDGE OF THE KNOWN. <br /> WHEN YOU'RE READY TO BUILD — WE AWAIT."
@@ -142,7 +142,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
 
             <div className=" flex flex-col justify-center items-center">
               <p
-                className={`font-silkscreen text-left text-[0.644vh] md:text-[1.007vh] ${currentTheme.formText} py-[2.682vh] md:py-[2.685vh]`}
+                className={`font-silkscreen text-left text-[0.751vh] md:text-[1.271vh] lg:text-[1.007vh] ${currentTheme.formText} py-[1.073vh] lg:py-[2.685vh]`}
               >
                 TRANSMISSION ENDED // SYSTEM STANDBY ACTIVE // AWAITING NEW
                 SIGNAL...
@@ -150,7 +150,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
 
               <button
                 type="submit"
-                className={`cursor-pointer ${currentTheme.buttonBg} py-[1.544vh] px-[5.067vh] ${currentTheme.buttonText} uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed ${currentTheme.buttonBorder} ${currentTheme.buttonHoverBg} ${currentTheme.buttonHoverText} transition-all duration-300 ease-in-out`}
+                className={`cursor-pointer ${currentTheme.buttonBg} mt-[2.146vh] md:mt-[3.39vh] lg:mt-0 py-[1.544vh] px-[5.067vh] ${currentTheme.buttonText} uppercase text-[1.342vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.067vh] border-2 border-dashed ${currentTheme.buttonBorder} ${currentTheme.buttonHoverBg} ${currentTheme.buttonHoverText} transition-all duration-300 ease-in-out`}
               >
                 CONTACT US
               </button>

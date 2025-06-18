@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React from "react";
 import SplitText from "../reactbits/splitText";
 import ScrollAnimatedText from "../framer/ScrollAnimatedText";
 import { cn } from "@/lib/utils";
@@ -9,87 +9,8 @@ import BookCallBtn from "../BookCallBtn";
 import { TypingAnimation } from "../magicui/typing-animation";
 
 export default function Forge() {
-  const containerRef = useRef(null);
-  // const titleRef = useRef(null);
-  // const buttonRef = useRef(null);
-  // const cardsRef = useRef(null);
-  // const footerRef = useRef(null);
-
-  // Container scroll progress
-  // const { scrollYProgress: containerProgress } = useScroll({
-  //   target: containerRef,
-  //   offset: ["start end", "end start"],
-  // });
-  // // Individual element scroll progress
-  // const { scrollYProgress: titleProgress } = useScroll({
-  //   target: titleRef,
-  //   offset: ["start 0.8", "end 0.2"],
-  // });
-
-  // const { scrollYProgress: buttonProgress } = useScroll({
-  //   target: buttonRef,
-  //   offset: ["start 0.8", "end 0.2"],
-  // });
-
-  // const { scrollYProgress: cardsProgress } = useScroll({
-  //   target: cardsRef,
-  //   offset: ["start 0.8", "end 0.2"],
-  // });
-
-  // const { scrollYProgress: footerProgress } = useScroll({
-  //   target: footerRef,
-  //   offset: ["start 0.8", "end 0.2"],
-  // });
-
-  // Transform values for animations
-  // const titleOpacity = useTransform(
-  //   titleProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [0, 1, 1, 0]
-  // );
-  // const titleX = useTransform(
-  //   titleProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [-100, 0, 0, -50]
-  // );
-
-  // const buttonOpacity = useTransform(
-  //   buttonProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [0, 1, 1, 0]
-  // );
-  // const buttonX = useTransform(
-  //   buttonProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [-100, 0, 0, -50]
-  // );
-
-  // const cardsOpacity = useTransform(
-  //   cardsProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [0, 1, 1, 0]
-  // );
-  // const cardsX = useTransform(
-  //   cardsProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [-100, 0, 0, -50]
-  // );
-
-  // const footerOpacity = useTransform(
-  //   footerProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [0, 1, 1, 0]
-  // );
-  // const footerX = useTransform(
-  //   footerProgress,
-  //   [0, 0.3, 0.7, 1],
-  //   [-100, 0, 0, -50]
-  // );
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full bg-[#000000] py-[6.711vh]"
-    >
+    <div className="relative w-full bg-[#000000] py-[6.711vh]">
       <div
         className={cn(
           "absolute inset-0",
@@ -105,7 +26,7 @@ export default function Forge() {
             startOnView
             supportHTML={true}
             duration={10}
-            className="text-[0.644vh] w-full text-center md:text-left md:text-[1.007vh] leading-[1.309vh] font-silkscreen"
+            className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen"
           >
             {
               "Shaped by glyph, born of will. Created in silence, between signals. <br /> The crucible of ideas, fueled by intent. This is where we build the unbuilt."
@@ -114,7 +35,7 @@ export default function Forge() {
         </h1>
         <SplitText
           text="THE FORGE"
-          className="mt-[3.356vh] text-white w-full text-center md:text-left font-special-gothic-expanded-one text-[5.365vh] md:text-[16.289vh] leading-[5.901vh] md:leading-[18.899vh] -tracking-[0.193vh] md:-tracking-[0.815vh] uppercase"
+          className=" mt-[2.146vh] md:mt-[3.356vh] text-white w-full text-center lg:text-left font-special-gothic-expanded-one text-[5.365vh] md:text-[9.322vh] lg:text-[16.289vh] leading-[5.901vh] md:leading-[9.746vh] lg:leading-[18.899vh] -tracking-[0.193vh] md:-tracking-[0.339vh] lg:-tracking-[0.815vh] uppercase"
           delay={10}
           duration={2}
           ease="elastic.out"
@@ -125,7 +46,7 @@ export default function Forge() {
           rootMargin="-100px"
           textAlign="center"
         />
-        <div className=" text-[1.073vh] md:text-[2.685vh] w-full text-center md:text-left font-inclusive-sans text-white leading-[1.609vh] md:leading-[3.49vh] uppercase my-[3.219vh] md:my-[3.758vh]">
+        <div className=" text-[1.288vh] md:text-[1.864vh] lg:text-[2.685vh] w-full text-center lg:text-left font-inclusive-sans text-white leading-[1.609vh] md:leading-[2.288vh] lg:leading-[3.49vh] uppercase my-[2.146vh] md:my-[3.758vh]">
           <ScrollAnimatedText delay={0}>
             This is where vision meets velocity.
           </ScrollAnimatedText>
@@ -142,11 +63,11 @@ export default function Forge() {
             engineering, and relentless iteration.
           </ScrollAnimatedText>
         </div>
-        <div className=" w-full flex justify-center md:justify-start items-center">
+        <div className=" w-full lg:mt-0 flex justify-center lg:justify-start items-center">
           <BookCallBtn />
         </div>
         <div className=" mt-[4.828vh] md:mt-[6.711vh] z-10">
-          <div className=" z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-[1.609vh] md:gap-[3.356vh] mb-[1.609vh] md:mb-[3.356vh]">
+          <div className=" z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-[3.219vh] md:gap-[3.39vh] lg:gap-[3.356vh] mb-[1.609vh] md:mb-[3.356vh]">
             <Link href={"/ai"} className=" z-10 w-full">
               <div
                 className=" z-10 w-full py-[2.054vh] px-[2.624vh] min-h-[24.497vh] md:min-h-[38.926vh] text-white flex flex-col justify-between items-start bg-transparent hover:scale-105 transition-transform duration-300 ease-in-out"
@@ -201,7 +122,7 @@ export default function Forge() {
             </Link>
           </div>
           <div
-            className=" z-10 my-[1.609vh] md:my-[3.356vh] bg-black border border-white py-[1.859vh] px-[1.946vh] min-h-[24.497vh] text-white flex flex-col justify-between items-start"
+            className=" z-10 my-[3.219vh] md:my-[3.39vh] lg:my-[3.356vh] bg-black border border-white py-[1.859vh] px-[1.946vh] min-h-[24.497vh] text-white flex flex-col justify-between items-start"
             style={{ zIndex: 10, position: "relative" }}
           >
             <h1 className=" text-[2.685vh] font-special-gothic-expanded-one leading-[3.114vh] -tracking-[0.134vh] uppercase">
@@ -220,7 +141,7 @@ export default function Forge() {
               />
             </div>
           </div>
-          <div className=" z-10 w-full grid grid-cols-1 md:grid-cols-3 gap-[0vh] mb-[3.356vh]">
+          <div className=" z-10 w-full grid grid-cols-1 lg:grid-cols-3 gap-[0vh] mb-[3.356vh]">
             <div className="  z-10 w-full bg-white border border-white py-[1.859vh] px-[1.946vh] min-h-[24.497vh] text-black flex flex-col justify-between items-start">
               <h1 className=" text-[2.685vh] font-special-gothic-expanded-one leading-[3.114vh] -tracking-[0.134vh] uppercase">
                 Web & <br />
@@ -277,7 +198,7 @@ export default function Forge() {
             </div>
           </div>
         </div>
-        <div className=" text-[1.007vh] leading-[1.309vh] uppercase font-silkscreen text-white">
+        <div className=" text-[0.751vh] md:text-[1.271vh] lg:text-[1.007vh] leading-[1.309vh] uppercase font-silkscreen text-white">
           [Directive / Builds / Main]
         </div>
       </div>

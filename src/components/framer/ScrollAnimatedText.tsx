@@ -17,16 +17,16 @@ function ScrollAnimatedText({ children, delay = 0, className = "" }: ScrollAnima
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 1]);
-  const x = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [-200, 0, 0, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [50, 10, 0, 0]);
 
   return (
     <motion.div
       ref={ref}
       style={{
         opacity,
-        x,
+        y,
       }}
-      initial={{ opacity: 0, x: -200 }}
+      initial={{ opacity: 0, y: 50 }}
       transition={{
         duration: 5,
         delay: delay,

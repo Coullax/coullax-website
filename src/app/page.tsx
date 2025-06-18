@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
@@ -12,6 +12,12 @@ import Forge from "@/components/landing/Forge";
 import Ritual from "@/components/landing/Ritual";
 import Primordial from "@/components/landing/Primordial";
 import Artifact from "@/components/landing/Artifact";
+import dynamic from "next/dynamic";
+
+// Dynamically import 3D components to prevent SSR issues
+const ModelViewer = dynamic(() => import("@/components/reactbits/ModelViewr"), { ssr: false });
+const Model = dynamic(() => import("@/components/car").then(mod => ({ default: mod.Model })), { ssr: false });
+const Gltf = dynamic(() => import("@react-three/drei").then(mod => ({ default: mod.Gltf })), { ssr: false });
 // import ReviewCard from "@/components/review-card";
 // import { AnimatePresence } from "motion/react";
 // import MetaBalls from "@/components/ui/meta-balls";
@@ -62,9 +68,19 @@ export default function Home() {
   // const [activeImage, setActiveImage] = useState<PhaseKey>("star");
   // const [manualIndex, setManualIndex] = useState<number | null>(null);
   // const [animation, setAnimation] = useState<boolean>(false);
-  const [viewLoading, setViewLoading] = useState<boolean>(false);
+  const [viewLoading, setViewLoading] = useState<boolean>(true);
   // const [activePrimordial, setActivePrimordial] =
   //   useState<PrimordialKey>("primordial1");
+
+  useEffect(() => {
+    // Check localStorage to see if the loading screen should be shown
+    const viewLoadingScreen = sessionStorage.getItem("viewLoadingScreen");
+    if (viewLoadingScreen === "true") {
+      setViewLoading(true);
+    } else {
+      setViewLoading(false);
+    }
+  }, []);
 
   // Handle transition from manual back to automatic morphing
   // useEffect(() => {
@@ -618,6 +634,16 @@ export default function Home() {
 
           {/* Artifact Section */}
           <Artifact />
+          {/* <ModelViewer
+            // url="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb"
+            url="/ToyCar.glb"
+            width={400}
+            height={400}
+          /> */}
+
+          {/* <Car */}
+          {/* <Model /> */}
+          {/* <Gltf scale={1.0} position={[0.3, -0.6, 1.1]} src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb" /> */}
 
           {/* Contact Us Section */}
           <ContactUs />

@@ -6,15 +6,15 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div
-      className="relative h-[45.815vh] md:h-[42.905vh] bg-black"
+      className="relative h-[45.815vh] md:h-[52.966vh] lg:h-[42.905vh] bg-black"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="relative h-[calc(100vh+45.815vh)] md:h-[calc(100vh+42.905vh)] -top-[100vh]">
-        <div className="h-[42.905vh] sticky top-[calc(100vh-45.815vh)] md:top-[calc(100vh-42.905vh)]">
+      <div className="relative h-[calc(100vh+45.815vh)] md:h-[calc(100vh+52.966vh)] lg:h-[calc(100vh+42.905vh)] -top-[100vh]">
+        <div className="h-[42.905vh] sticky top-[calc(100vh-45.815vh)] md:top-[calc(100vh-52.966vh)] lg:top-[calc(100vh-42.905vh)]">
           <div className="bg-[#e0ef29] text-black pt-[3.356vh]">
             <div className="w-[90%] max-w-[104.027vh] mx-auto pt-[2.013vh] flex justify-center md:justify-between items-start flex-wrap">
               {/* Mission Statement */}
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <p className=" text-[0.858vh] md:text-[1.007vh] font-silkscreen uppercase text-black">
                   Our Mission Is To Enhance Efficiency,
                   <br /> Security, And Transparency Across
@@ -27,8 +27,8 @@ export default function Footer() {
                   <br /> And Transparency.
                 </p>
               </div>
-              <div className=" md:hidden w-full text-center">
-                <p className="  text-[0.858vh] w-full text-center md:text-left md:text-[1.007vh] text-black font-silkscreen uppercase">
+              <div className=" lg:hidden w-full text-center">
+                <p className="  text-[0.858vh] w-full text-center lg:text-left md:text-[1.007vh] text-black font-silkscreen uppercase">
                   Our Mission Is To Enhance Efficiency, Security, And
                   Transparency
                   <br /> Across Industries. Making The World A Smarter, More
@@ -43,7 +43,7 @@ export default function Footer() {
               </div>
 
               {/* Navigation Columns */}
-              <div className="flex mt-[3.219vh] md:mt-0 flex-col-4 md:flex-row justify-around w-full gap-[2.146vh] md:gap-[4.421vh] md:w-fit">
+              <div className="flex mt-[3.219vh] lg:mt-0 flex-col-4 md:flex-row justify-around w-full gap-[2.146vh] md:gap-[4.421vh] lg:w-fit">
                 {/* Home Column */}
                 <div>
                   <h3 className="font-bold mb-2 font-inclusive-sans text-[1.342vh] underline leading-[1.557vh] -tracking-[0.067vh]">

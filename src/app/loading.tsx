@@ -6,12 +6,12 @@ import MetaBalls from "@/components/ui/meta-balls";
 import Image from "next/image";
 import React from "react";
 
-import synthesisIcon_yellow from "../../public/HomePage/ForgeCards/synthesisIcon_yellow.svg";
-import motilithIcon_yellow from "../../public/HomePage/ForgeCards/motilithIcon_yellow.svg";
-import cognitionIcon_yellow from "../../public/HomePage/ForgeCards/cognitionIcon_yellow.svg";
-import consensusIcon_yellow from "../../public/HomePage/ForgeCards/consensusIcon_yellow.svg";
-import etherIcon_yellow from "../../public/HomePage/ForgeCards/etherIcon_yellow.svg";
-import weaveIcon_yellow from "../../public/HomePage/ForgeCards/weaveIcon_yellow.svg";
+import synthesisIcon_yellow from "../../public/loading/synthesisIcon_yellow.png";
+import motilithIcon_yellow from "../../public/loading/motilithIcon_yellow.png";
+import cognitionIcon_yellow from "../../public/loading/cognitionIcon_yellow.png";
+import consensusIcon_yellow from "../../public/loading/consensusIcon_yellow.png";
+import etherIcon_yellow from "../../public/loading/etherIcon_yellow.png";
+import weaveIcon_yellow from "../../public/loading/weaveIcon_yellow.png";
 
 export default function Loading({
   setViewLoading,
@@ -29,6 +29,7 @@ export default function Loading({
 
   const handleClickEnter = () => {
     // localStorage.setItem("viewLoadingScreen", "true");
+    sessionStorage.setItem("viewLoadingScreen", "true");
 
     setTimeout(() => {
       setViewLoading(true);
@@ -38,9 +39,10 @@ export default function Loading({
       });
     }, 300);
   };
+
   return (
-    <div className=" w-full">
-      <div className=" bg-black h-dvh relative">
+    <div className=" w-full bg-black">
+      <div className=" bg-black h-dvh fixed top-0 left-0 z-20">
         <Squares
           speed={0.5}
           squareSize={40}
@@ -49,7 +51,7 @@ export default function Loading({
           hoverFillColor="#000000"
         />
         <div className=" z-10 h-[80dvh] w-full absolute top-0 left-0 flex flex-col items-center justify-center">
-          <div className=" h-[29.662vh] w-full">
+          <div className=" h-[300px] sm:h-[350px] lg:h-[29.662vh] w-full">
             <MetaBalls
               color="#ffffff"
               cursorBallColor="#ffffff"
@@ -65,10 +67,14 @@ export default function Loading({
           </div>
 
           <TypingAnimation
+            startOnView
+            supportHTML={true}
             duration={50}
-            className="font-silkscreen text-[1.609vh] md:text-[2.162vh] text-center leading-[1.931vh] md:leading-[2.811vh] uppercase text-[#e0ef29] py-[5.579vh] md:py-[4.865vh] h-[15.541vh]"
+            className="font-silkscreen text-[1.609vh] lg:text-[2.162vh] text-center leading-[1.931vh] lg:leading-[2.811vh] uppercase text-[#e0ef29] my-[4.292vh] sm:my-[4.237vh] lg:my-[4.865vh] h-[4.292vh] sm:h-[4.237vh] lg:h-[5.405vh]"
           >
-            {`Welcome Seeker. we&apos;ve found your Signal. \n traverse the threshold here.`}
+            {
+              "Welcome Seeker. we&apos;ve found your Signal. <br /> traverse the threshold here."
+            }
           </TypingAnimation>
 
           <button
@@ -80,25 +86,18 @@ export default function Loading({
           </button>
         </div>
         <div className=" absolute bottom-0 left-0 right-0 z-10 w-[100%] ">
-          <Marquee pauseOnHover className="[--duration:20s]">
+          <Marquee pauseOnHover className="[--duration:20s] my-[30px]">
             {imageList.map((image, index) => (
-              <div
+              <Image
                 key={index}
-                style={{
-                  width: "12vh",
-                  height: "15vh",
-                  position: "relative",
-                  display: "inline-block",
-                }}
-                className=" "
-              >
-                <Image
-                  src={image}
-                  alt={`icon ${index}`}
-                  fill
-                  className=" w-[14.527vh] h-[11.642vh] object-contain"
-                />
-              </div>
+                src={image}
+                alt={`icon ${index}`}
+                priority
+                quality={100}
+                height={592.6}
+                width={592.6}
+                className=" w-auto h-[6.974vh] sm:h-[8.475vh] lg:h-[11.662vh] object-contain mr-[3.219vh] sm:mr-[3.39vh] lg:mr-[5.27vh]"
+              />
             ))}
           </Marquee>
         </div>
