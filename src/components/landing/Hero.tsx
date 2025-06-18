@@ -1,7 +1,8 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import HeaderNavBar from "../Header";
 import DecryptedText from "../reactbits/DecryptedText";
+import SplitText from "../reactbits/splitText";
 
 export default function Hero() {
   const [isDecoded, setIsDecoded] = useState<boolean>(false);
@@ -39,15 +40,34 @@ export default function Hero() {
         <HeaderNavBar />
 
         <div className="w-[90%] max-w-[104.73vh] h-dvh flex flex-col items-center justify-center mx-auto">
-          <h1 className=" text-[4.614vh] md:text-[85px] lg:text-[15.456vh] text-center leading-[4.828vh] lg:leading-[17.906vh] -tracking-[0.193vh] lg:-tracking-[0.77vh] text-[#000000] font-special-gothic-expanded-one uppercase">
-            BUILD THE
-            <br />{" "}
-            <span className=" text-[5.365vh] md:text-[110px] lg:text-[18.243vh] leading-[5.579vh] md:leading-[120px] lg:leading-[15.557vh] -tracking-[0.193vh] md:-tracking-[9.5px] lg:-tracking-[0.966vh]">
-              UNBUILD
-            </span>
-          </h1>
+          <SplitText
+            text="BUILD THE"
+            className=" text-[4.614vh] w-full md:text-[85px] lg:text-[15.456vh] text-center leading-[4.828vh] lg:leading-[17.906vh] -tracking-[0.193vh] lg:-tracking-[0.77vh] text-[#000000] font-special-gothic-expanded-one uppercase"
+            delay={10}
+            duration={2}
+            ease="elastic.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+          <SplitText
+            text="UNBUILD"
+            className="text-[5.365vh] w-full md:text-[110px] lg:text-[18.243vh] leading-[5.579vh] md:leading-[120px] lg:leading-[15.557vh] -tracking-[0.193vh] md:-tracking-[9.5px] lg:-tracking-[0.966vh] text-[#000000] font-special-gothic-expanded-one uppercase"
+            delay={10}
+            duration={2}
+            ease="elastic.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
 
-          <span className="w-full min-h-[9.657vh] lg:min-h-[14.865vh] !font-inclusive-sans !text-[0.858vh] md:!text-[18px] lg:!text-[2.148vh] text-center !leading-[1.609vh] lg:!leading-[2.811vh] !uppercase !text-black my-[3.219vh] md:my-[20px] lg:my-[5vh]">
+          <div className="w-full min-h-[9.657vh] lg:min-h-[14.865vh] !font-inclusive-sans !text-[0.858vh] md:!text-[18px] lg:!text-[2.148vh] text-center !leading-[1.609vh] lg:!leading-[2.811vh] !uppercase !text-black my-[3.219vh] md:my-[20px] lg:my-[5vh]">
             {!isDecoded
               ? greakArray.map((text, index) => (
                   <div key={index}>
@@ -83,7 +103,7 @@ export default function Hero() {
                     </div>
                   );
                 })}
-          </span>
+          </div>
           <button
             onClick={() => setIsDecoded(true)}
             type="button"
