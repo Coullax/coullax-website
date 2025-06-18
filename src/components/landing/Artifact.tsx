@@ -1,15 +1,11 @@
-'use client';
+"use client";
 import React from "react";
 import BookCallBtn from "../BookCallBtn";
-import AnimatedText from "../gsp/AnimatedText";
-import TypingEffect from "../gsp/TypingEffect";
 import SplitText from "../reactbits/splitText";
+import ScrollAnimatedText from "../framer/ScrollAnimatedText";
+import { TypingAnimation } from "../magicui/typing-animation";
 
-interface ArtifactProps {
-  animation?: boolean;
-}
-
-export default function Artifact({ animation }: ArtifactProps) {
+export default function Artifact() {
   return (
     <div className="w-full relative overflow-hidden bg-white">
       <div className=" w-[90%] max-w-[104.73vh] mx-auto my-[6.757vh]">
@@ -17,10 +13,10 @@ export default function Artifact({ animation }: ArtifactProps) {
           <div className="flex w-full flex-col md:flex-row justify-between">
             <SplitText
               text="artifacts"
-              className=" w-full !text-center md:!text-left text-[3.219vh] md:text-[6.486vh] leading-[3.541vh] md:leading-[7.527vh] -tracking-[0.054vh] md:-tracking-[0.324vh] font-special-gothic-expanded-one uppercase"
+              className="w-full !text-center md:!text-left text-[3.219vh] md:text-[6.486vh] leading-[3.541vh] md:leading-[7.527vh] -tracking-[0.054vh] md:-tracking-[0.324vh] font-special-gothic-expanded-one uppercase"
               delay={10}
               duration={2}
-              ease="power3.out"
+              ease="elastic.out"
               splitType="chars"
               from={{ opacity: 0, y: 40 }}
               to={{ opacity: 1, y: 0 }}
@@ -33,26 +29,34 @@ export default function Artifact({ animation }: ArtifactProps) {
             </div>
           </div>{" "}
           <h1 className=" text-black font-silkscreen pt-[2.027vh] text-[1.007vh] h-[7.432vh] leading-[1.309vh] uppercase">
-            <TypingEffect
-              key="typing-effect-stories"
-              text={` Each artifact tells a story. \n a fragment of vision forged in the fires of creation. \n Born from whispers of code and pulses of intent, \n these are the echoes of ideas made real.`}
-              speed={30}
-              delay={500}
-              className=" w-full text-center md:text-left text-[0.644vh] md:text-[1.007vh] leading-[1.073vh] md:leading-[1.309vh] font-silkscreen"
-            />
+            <TypingAnimation
+              startOnView
+              supportHTML={true}
+              duration={10}
+              className="w-full text-center md:text-left text-[0.644vh] md:text-[1.007vh] leading-[1.073vh] md:leading-[1.309vh] font-silkscreen"
+            >
+              {
+                "Each artifact tells a story. <br /> a fragment of vision forged in the fires of creation. <br /> Born from whispers of code and pulses of intent, <br /> these are the echoes of ideas made real."
+              }
+            </TypingAnimation>
           </h1>
-        </div>{" "}        <div className=" mt-[2.146h] md:mt-[3.784vh] w-full text-center md:text-left text-[1.073vh] md:text-[2.703vh] uppercase font-inclusive-sans leading-[1.609vh] md:leading-[3.514vh]">
-          <AnimatedText key={`artifact-1-${animation}`} delay={0}>
+        </div>
+        <div className=" mt-[2.146h] md:mt-[3.784vh] w-full text-center md:text-left text-[1.073vh] md:text-[2.703vh] uppercase font-inclusive-sans leading-[1.609vh] md:leading-[3.514vh]">
+          <ScrollAnimatedText delay={0}>
             HERE&apos;S A LOOK AT WHAT WE&apos;VE CREATED SO FAR.
-          </AnimatedText>
-          <AnimatedText key={`artifact-2-${animation}`} delay={0.2}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.2}>
             INTELLIGENT SYSTEMS, POWERFUL PLATFORMS, AND BOLD
-          </AnimatedText>
-          <AnimatedText key={`artifact-3-${animation}`} delay={0.4}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.4}>
             BRAND EXPERIENCES.EACH PROJECT IS A REFLECTION OF
-          </AnimatedText>
-          <AnimatedText key={`artifact-4-${animation}`} delay={0.6}>OUR PROCESS, OUR TECHNOLOGY,</AnimatedText>
-          <AnimatedText key={`artifact-5-${animation}`} delay={0.8}>AND THE PEOPLE WE BUILD FOR.</AnimatedText>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.6}>
+            OUR PROCESS, OUR TECHNOLOGY,
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.8}>
+            AND THE PEOPLE WE BUILD FOR.
+          </ScrollAnimatedText>
         </div>
         <div className=" flex flex-row md:justify-start justify-center items-center gap-[1.609vh] md:gap-[2.027vh] mt-[3.378vh]">
           <button
