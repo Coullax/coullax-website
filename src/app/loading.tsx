@@ -42,7 +42,7 @@ export default function Loading({
 
   return (
     <div className=" w-full bg-black">
-      <div className=" bg-black h-dvh fixed top-0 left-0 z-20">
+      <div className=" bg-black h-dvh w-full fixed top-0 left-0 z-20">
         <Squares
           speed={0.5}
           squareSize={40}
