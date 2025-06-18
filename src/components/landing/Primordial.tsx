@@ -1,10 +1,10 @@
-'use client';
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import SplitText from "../reactbits/splitText";
-import TypingEffect from "../gsp/TypingEffect";
-import AnimatedText from "../gsp/AnimatedText";
 import BookCallBtn from "../BookCallBtn";
 import Image from "next/image";
+import ScrollAnimatedText from "../framer/ScrollAnimatedText";
+import { TypingAnimation } from "../magicui/typing-animation";
 
 type PrimordialKey =
   | "primordial1"
@@ -13,12 +13,9 @@ type PrimordialKey =
   | "primordial4"
   | "primordial5";
 
-interface PrimordialProps {
-  activePrimordial: PrimordialKey;
-  setActivePrimordial: (primordial: PrimordialKey) => void;
-}
-
-export default function Primordial({ activePrimordial, setActivePrimordial }: PrimordialProps) {
+export default function Primordial() {
+  const [activePrimordial, setActivePrimordial] =
+    useState<PrimordialKey>("primordial1");
   const primordials = {
     primordial1: {
       image: "primordial_img_1.webp",
@@ -62,11 +59,11 @@ export default function Primordial({ activePrimordial, setActivePrimordial }: Pr
       <div className="w-[90%] max-w-[104.027vh] mx-auto">
         <div className=" w-full flex flex-col md:flex-row justify-between items-start">
           <SplitText
-            text="PRIMORDIALs"
+            text="PRIMORDIALS"
             className=" text-[3.219vh] w-full !text-center md:!text-left md:text-[6.443vh] font-special-gothic-expanded-one leading-[3.541vh] md:leading-[7.477vh] -tracking-[0.054vh] md:-tracking-[0.322vh] uppercase"
             delay={10}
             duration={2}
-            ease="power3.out"
+            ease="elastic.out"
             splitType="chars"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
@@ -79,23 +76,27 @@ export default function Primordial({ activePrimordial, setActivePrimordial }: Pr
           </h1>
         </div>
         <h1 className=" text-black font-silkscreen pt-[2.146vh] md:pt-[2.013vh] text-[0.644vh] md:text-[1.007vh] md:h-[6.081vh] leading-[1.309vh] uppercase">
-          <TypingEffect
-            text={`Before thought had form, they carved meaning into the void. \n The first to build. The first to break silence. \n From their glyphs, all creation followed.`}
-            speed={30}
-            delay={500}
+          <TypingAnimation
+            startOnView
+            supportHTML={true}
+            duration={10}
             className="text-[0.644vh] w-full text-center md:text-left md:text-[1.007vh] leading-[1.073vh] md:leading-[1.309vh] font-silkscreen"
-          />
+          >
+            {
+              "Before thought had form, they carved meaning into the void. <br /> The first to build. The first to break silence. <br /> From their glyphs, all creation followed."
+            }
+          </TypingAnimation>
         </h1>
         <div className=" mt-[2.146vh] w-full text-center md:text-left md:mt-[3.758vh] text-[1.073vh] md:text-[2.685vh] uppercase font-inclusive-sans leading-[1.609vh] md:leading-[3.49vh]">
-          <AnimatedText key={`paramordial-1-${activePrimordial}`} delay={0}>
+          <ScrollAnimatedText delay={0}>
             Every product we deliver is shaped by a set of principles
-          </AnimatedText>
-          <AnimatedText key={`paramordial-2-${activePrimordial}`} delay={0.2}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.2}>
             that balance vision with precision, value with impact,
-          </AnimatedText>
-          <AnimatedText key={`paramordial-3-${activePrimordial}`} delay={0.4}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.4}>
             and innovation with reliability.
-          </AnimatedText>
+          </ScrollAnimatedText>
         </div>
         <div className=" my-[2.682vh] w-full text-center md:text-left md:my-[3.356vh] text-[0.644vh] md:text-[1.007vh] font-silkscreen leading-[1.073vh] md:leading-[1.309vh] uppercase">
           [VECTOR / PYLON / VEIL / NEXUS / FLUX.]
