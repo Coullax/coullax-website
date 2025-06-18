@@ -292,13 +292,19 @@ export default function BlockchainPage() {
         </motion.div>
         <div className=" absolute bottom-0 left-0 w-full">
           <VelocityScroll
-            fontSize="font-normal text-white text-[1.611vh] !font-inclusive-sans uppercase leading-[1.745vh] py-[1.745vh]"
             defaultVelocity={0.2}
-            className=" bg-[#0505cb]"
+            className="bg-white "
             numRows={1}
           >
-            72% of global organisations are now using AI — a major leap in
-            adoption |
+            <div className="inline-flex items-center h-[180px]">
+              <Image
+                src="/blockChain/border1.png" // Replace with your image path
+                alt="Scrolling Image"
+                width={202.8}
+                height={112.7}
+                className="inline-block object-contain"
+              />
+            </div>
           </VelocityScroll>
         </div>
       </div>
