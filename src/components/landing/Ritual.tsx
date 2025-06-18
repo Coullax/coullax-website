@@ -1,19 +1,15 @@
-'use client';
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import SplitText from "../reactbits/splitText";
-import TypingEffect from "../gsp/TypingEffect";
-import AnimatedText from "../gsp/AnimatedText";
 import BookCallBtn from "../BookCallBtn";
 import Image from "next/image";
+import ScrollAnimatedText from "../framer/ScrollAnimatedText";
+import { TypingAnimation } from "../magicui/typing-animation";
 
 type PhaseKey = "star" | "circle" | "asterisk" | "triangle";
 
-interface RitualProps {
-  activeImage: PhaseKey;
-  setActiveImage: (image: PhaseKey) => void;
-}
-
-export default function Ritual({ activeImage, setActiveImage }: RitualProps) {
+export default function Ritual() {
+  const [activeImage, setActiveImage] = useState<PhaseKey>("star");
   const phases = {
     star: {
       icon: "/HomePage/phase/phase1_image_yellow.svg",
@@ -60,7 +56,7 @@ export default function Ritual({ activeImage, setActiveImage }: RitualProps) {
           className=" text-[3.219vh] w-full !text-center md:!text-left md:text-[6.443vh] font-special-gothic-expanded-one leading-[3.541vh] md:leading-[7.477vh] -tracking-[0.054vh] md:-tracking-[0.322vh] uppercase"
           delay={10}
           duration={2}
-          ease="power3.out"
+          ease="elastic.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
@@ -73,23 +69,27 @@ export default function Ritual({ activeImage, setActiveImage }: RitualProps) {
         </h1>
       </div>
       <h1 className=" text-black font-silkscreen pt-[2.013vh] h-[4.392vh] text-[2.013vh] leading-[0.858vh] md:leading-[1.309vh] uppercase">
-        <TypingEffect
-          text={`It begins in stillness. A glyph. A pulse. A knowing. \n Not all who enter understand, but all who emerge are changed.`}
-          speed={30}
-          delay={500}
+        <TypingAnimation
+          startOnView
+          supportHTML={true}
+          duration={10}
           className="text-[0.644vh]  md:text-[1.007vh] w-full text-center md:text-left leading-[0.966vh] md:leading-[1.309vh] font-silkscreen"
-        />
+        >
+          {
+            "It begins in stillness. A glyph. A pulse. A knowing. <br /> Not all who enter understand, but all who emerge are changed."
+          }
+        </TypingAnimation>
       </h1>
       <div className=" mt-[2.146vh] md:mt-[3.758vh] w-full text-center md:text-left text-[1.073vh] md:text-[2.685vh] uppercase font-inclusive-sans leading-[1.609vh] md:leading-[3.49vh]">
-        <AnimatedText key={`retual-1-${activeImage}`} delay={0}>
+        <ScrollAnimatedText delay={0}>
           The RITUAL is our process of transformation where
-        </AnimatedText>
-        <AnimatedText key={`retual-2-${activeImage}`} delay={0.2}>
+        </ScrollAnimatedText>
+        <ScrollAnimatedText delay={0.2}>
           abstract ideas, complex technologies, and raw
-        </AnimatedText>
-        <AnimatedText key={`retual-3-${activeImage}`} delay={0.4}>
+        </ScrollAnimatedText>
+        <ScrollAnimatedText delay={0.4}>
           ambition are fused into powerful digital systems.
-        </AnimatedText>
+        </ScrollAnimatedText>
       </div>
       <div className=" my-[3.219vh] md:my-[3.356vh] w-full text-center md:text-left text-[0.644vh] md:text-[1.007vh] font-silkscreen leading-[1.073vh] md:leading-[1.309vh] uppercase">
         [Firstlight / Schema / Construct / Lift.]
