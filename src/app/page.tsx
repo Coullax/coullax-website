@@ -12,12 +12,12 @@ import Forge from "@/components/landing/Forge";
 import Ritual from "@/components/landing/Ritual";
 import Primordial from "@/components/landing/Primordial";
 import Artifact from "@/components/landing/Artifact";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
 // Dynamically import 3D components to prevent SSR issues
-const ModelViewer = dynamic(() => import("@/components/reactbits/ModelViewr"), { ssr: false });
-const Model = dynamic(() => import("@/components/car").then(mod => ({ default: mod.Model })), { ssr: false });
-const Gltf = dynamic(() => import("@react-three/drei").then(mod => ({ default: mod.Gltf })), { ssr: false });
+// const ModelViewer = dynamic(() => import("@/components/reactbits/ModelViewr"), { ssr: false });
+// const Model = dynamic(() => import("@/components/car").then(mod => ({ default: mod.Model })), { ssr: false });
+// const Gltf = dynamic(() => import("@react-three/drei").then(mod => ({ default: mod.Gltf })), { ssr: false });
 // import ReviewCard from "@/components/review-card";
 // import { AnimatePresence } from "motion/react";
 // import MetaBalls from "@/components/ui/meta-balls";

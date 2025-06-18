@@ -46,7 +46,7 @@ function TypingEffect({
       }, speed);
     }, delay);
   }, [text, speed, delay, hasStarted, isComplete, onComplete]);
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -65,13 +65,14 @@ function TypingEffect({
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
       // Clean up intervals and timeouts
       if (intervalRef.current) {

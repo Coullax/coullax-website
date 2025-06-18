@@ -26,7 +26,7 @@ export default function Summon() {
             className="text-[#fff] font-special-gothic-expanded-one text-[40px] md:text-[6.443vh] leading-[4.828vh] md:leading-[7.527vh] -tracking-[0.324vh] uppercase"
             delay={10}
             duration={2}
-            ease="elastic.out"
+            ease="power3.out"
             splitType="chars"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}

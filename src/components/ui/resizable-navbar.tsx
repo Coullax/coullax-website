@@ -313,23 +313,24 @@ export const NavbarLogo = ({ logoColor, visible = false }: NavbarLogoProps) => {
   );
 };
 
+interface NavbarButtonProps {
+  href?: string;
+  children?: React.ReactNode;
+  className?: string;
+  variant?: "primary" | "secondary" | "dark" | "gradient";
+  onClick?: () => void;
+  target?: string;
+}
+
 export const NavbarButton = ({
   href,
-  as: Tag = "a",
   children,
   className,
   variant = "primary",
+  onClick,
+  target,
   ...props
-}: {
-  href?: string;
-  as?: React.ElementType;
-  children: React.ReactNode;
-  className?: string;
-  variant?: "primary" | "secondary" | "dark" | "gradient";
-} & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
-)) => {
+}: NavbarButtonProps) => {
   const baseStyles =
     "px-6 py-2 rounded-full bg-[#000] button bg-black text-white text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
@@ -341,14 +342,29 @@ export const NavbarButton = ({
     gradient:
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
-
+  
+  const combinedClassName = cn(baseStyles, variantStyles[variant], className);
+  
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        className={combinedClassName}
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
+  
   return (
-    <Tag
-      href={href || undefined}
-      className={cn(baseStyles, variantStyles[variant], className)}
+    <button
+      onClick={onClick}
+      className={combinedClassName}
       {...props}
     >
       {children}
-    </Tag>
+    </button>
   );
 };

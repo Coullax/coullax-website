@@ -38,7 +38,7 @@ export default function Forge() {
           className=" mt-[2.146vh] md:mt-[3.356vh] text-white w-full text-center lg:text-left font-special-gothic-expanded-one text-[5.365vh] md:text-[9.322vh] lg:text-[16.289vh] leading-[5.901vh] md:leading-[9.746vh] lg:leading-[18.899vh] -tracking-[0.193vh] md:-tracking-[0.339vh] lg:-tracking-[0.815vh] uppercase"
           delay={10}
           duration={2}
-          ease="elastic.out"
+          ease="power3.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}

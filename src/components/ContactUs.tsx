@@ -64,7 +64,6 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
-
   // Memoize SplitText so it only re-renders if its props change
   const splitTextMemo = useMemo(
     () => (
@@ -73,7 +72,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
         className={`text-[3.219vh] md:text-[5.932vh] lg:text-[6.443vh] font-special-gothic-expanded-one leading-[3.541vh] md:leading-[7.477vh] -tracking-[0.054vh] md:-tracking-[0.324vh] ${currentTheme.splitText} text-center py-[3.219vh] md:py-[4.43vh] w-full`}
         delay={10}
         duration={2}
-        ease="elastic.out"
+        ease="power3.out"
         splitType="chars"
         from={{ opacity: 0, y: 40 }}
         to={{ opacity: 1, y: 0 }}
@@ -82,7 +81,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
         textAlign="center"
       />
     ),
-    []
+    [currentTheme.splitText]
   );
 
   return (

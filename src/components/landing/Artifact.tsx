@@ -16,7 +16,7 @@ export default function Artifact() {
               className="w-full !text-center lg:!text-left text-[5.365vh] md:text-[6.443vh] leading-[5.901vh] md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] font-special-gothic-expanded-one uppercase"
               delay={10}
               duration={2}
-              ease="elastic.out"
+              ease="power3.out"
               splitType="chars"
               from={{ opacity: 0, y: 40 }}
               to={{ opacity: 1, y: 0 }}
