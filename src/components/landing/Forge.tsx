@@ -1,20 +1,95 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import AnimatedText from "../gsp/AnimatedText";
+import React, { useRef } from "react";
 import SplitText from "../reactbits/splitText";
-import TypingEffect from "../gsp/TypingEffect";
+import ScrollAnimatedText from "../framer/ScrollAnimatedText";
 import { cn } from "@/lib/utils";
 import BookCallBtn from "../BookCallBtn";
+import { TypingAnimation } from "../magicui/typing-animation";
 
-interface ForgeProps {
-  animation?: boolean;
-}
+export default function Forge() {
+  const containerRef = useRef(null);
+  // const titleRef = useRef(null);
+  // const buttonRef = useRef(null);
+  // const cardsRef = useRef(null);
+  // const footerRef = useRef(null);
 
-export default function Forge({ animation }: ForgeProps) {
+  // Container scroll progress
+  // const { scrollYProgress: containerProgress } = useScroll({
+  //   target: containerRef,
+  //   offset: ["start end", "end start"],
+  // });
+  // // Individual element scroll progress
+  // const { scrollYProgress: titleProgress } = useScroll({
+  //   target: titleRef,
+  //   offset: ["start 0.8", "end 0.2"],
+  // });
+
+  // const { scrollYProgress: buttonProgress } = useScroll({
+  //   target: buttonRef,
+  //   offset: ["start 0.8", "end 0.2"],
+  // });
+
+  // const { scrollYProgress: cardsProgress } = useScroll({
+  //   target: cardsRef,
+  //   offset: ["start 0.8", "end 0.2"],
+  // });
+
+  // const { scrollYProgress: footerProgress } = useScroll({
+  //   target: footerRef,
+  //   offset: ["start 0.8", "end 0.2"],
+  // });
+
+  // Transform values for animations
+  // const titleOpacity = useTransform(
+  //   titleProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [0, 1, 1, 0]
+  // );
+  // const titleX = useTransform(
+  //   titleProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [-100, 0, 0, -50]
+  // );
+
+  // const buttonOpacity = useTransform(
+  //   buttonProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [0, 1, 1, 0]
+  // );
+  // const buttonX = useTransform(
+  //   buttonProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [-100, 0, 0, -50]
+  // );
+
+  // const cardsOpacity = useTransform(
+  //   cardsProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [0, 1, 1, 0]
+  // );
+  // const cardsX = useTransform(
+  //   cardsProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [-100, 0, 0, -50]
+  // );
+
+  // const footerOpacity = useTransform(
+  //   footerProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [0, 1, 1, 0]
+  // );
+  // const footerX = useTransform(
+  //   footerProgress,
+  //   [0, 0.3, 0.7, 1],
+  //   [-100, 0, 0, -50]
+  // );
   return (
-    <div className="relative w-full bg-[#000000] py-[6.711vh]">
+    <div
+      ref={containerRef}
+      className="relative w-full bg-[#000000] py-[6.711vh]"
+    >
       <div
         className={cn(
           "absolute inset-0",
@@ -26,47 +101,50 @@ export default function Forge({ animation }: ForgeProps) {
       />
       <div className=" z-20 w-[90%] max-w-[104.027vh] mx-auto">
         <h1 className=" text-white font-silkscreen text-[1.073vh] md:text-[1.007vh] h-[2.703vh] leading-[1.309vh]">
-          <TypingEffect
-            text={`Shaped by glyph, born of will. Created in silence, between signals. \n The crucible of ideas, fueled by intent. This is where we build the unbuilt.`}
-            speed={10}
-            delay={100}
+          <TypingAnimation
+            startOnView
+            supportHTML={true}
+            duration={10}
             className="text-[0.644vh] w-full text-center md:text-left md:text-[1.007vh] leading-[1.309vh] font-silkscreen"
-          />
+          >
+            {
+              "Shaped by glyph, born of will. Created in silence, between signals. <br /> The crucible of ideas, fueled by intent. This is where we build the unbuilt."
+            }
+          </TypingAnimation>
         </h1>
         <SplitText
           text="THE FORGE"
-          className=" mt-[3.356vh] text-white w-full text-center md:text-left font-special-gothic-expanded-one text-[5.365vh] md:text-[16.289vh] leading-[5.901vh] md:leading-[18.899vh] -tracking-[0.193vh] md:-tracking-[0.815vh] uppercase"
+          className="mt-[3.356vh] text-white w-full text-center md:text-left font-special-gothic-expanded-one text-[5.365vh] md:text-[16.289vh] leading-[5.901vh] md:leading-[18.899vh] -tracking-[0.193vh] md:-tracking-[0.815vh] uppercase"
           delay={10}
           duration={2}
-          ease="power3.out"
+          ease="elastic.out"
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
           rootMargin="-100px"
           textAlign="center"
-        />        <div className=" text-[1.073vh] md:text-[2.685vh] w-full text-center md:text-left font-inclusive-sans text-white leading-[1.609vh] md:leading-[3.49vh] uppercase my-[3.219vh] md:my-[3.758vh]">
-          <AnimatedText key={`forge-1-${animation}`} delay={0}>
+        />
+        <div className=" text-[1.073vh] md:text-[2.685vh] w-full text-center md:text-left font-inclusive-sans text-white leading-[1.609vh] md:leading-[3.49vh] uppercase my-[3.219vh] md:my-[3.758vh]">
+          <ScrollAnimatedText delay={0}>
             This is where vision meets velocity.
-          </AnimatedText>
-          <AnimatedText key={`forge-2-${animation}`} delay={0.2}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.2}>
             Where raw ideas are melted down, reshaped, and forged
-          </AnimatedText>
-          <AnimatedText key={`forge-3-${animation}`} delay={0.4}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.4}>
             into real, working systems. The Forge is Coullax&apos;s
-          </AnimatedText>
-          <AnimatedText key={`forge-4-${animation}`} delay={0.4}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.6}>
             creative engine. a space of experimentation,
-          </AnimatedText>
-          <AnimatedText key={`forge-5-${animation}`} delay={0.4}>
+          </ScrollAnimatedText>
+          <ScrollAnimatedText delay={0.8}>
             engineering, and relentless iteration.
-          </AnimatedText>
+          </ScrollAnimatedText>
         </div>
-
         <div className=" w-full flex justify-center md:justify-start items-center">
-          <BookCallBtn/>
+          <BookCallBtn />
         </div>
-
         <div className=" mt-[4.828vh] md:mt-[6.711vh] z-10">
           <div className=" z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-[1.609vh] md:gap-[3.356vh] mb-[1.609vh] md:mb-[3.356vh]">
             <Link href={"/ai"} className=" z-10 w-full">
@@ -195,7 +273,7 @@ export default function Forge({ animation }: ForgeProps) {
                   alt="studiosAndLabsIcon"
                   className=" w-[11.208vh] h-[6.644vh]"
                 />
-              </div>
+              </div>{" "}
             </div>
           </div>
         </div>
