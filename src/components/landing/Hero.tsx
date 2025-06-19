@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import HeaderNavBar from "../Header";
+import HeaderNavBar from "../universal/Header";
 import DecryptedText from "../reactbits/DecryptedText";
 import SplitText from "../reactbits/splitText";
 
