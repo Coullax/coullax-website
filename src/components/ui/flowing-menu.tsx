@@ -26,7 +26,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [],  marqueeBackgroun
   spanTextColor,
   roundedDivBackgroundColor, roundedDivTextColor}) => {
   return (
-    <div className="menu-wrap my-[6.711vh]">
+    <div className="menu-wrap lg:my-[6.711vh] md:my-[4.711vh] my-[2.711vh]">
       <nav className="menu">
         {items.map((item, idx) => (
           <MenuItem key={idx} {...item} 
@@ -134,8 +134,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className=" flex flex-row justify-start items-center">
-          <div className=" min-w-[100px] mr-4">
+        <div className=" flex flex-row justify-start items-center lg:text-[48px] md:text-[35px] text-[20px]">
+          <div className="lg:min-w-[100px] md:min-w-[40px] min-w-[10px] mr-4">
             {ind.length === 1 ? 0 + ind : ind}
           </div>
           <div>{text}</div>
