@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React, { useRef } from "react";
-import HeaderNavBar from "../Header";
+
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Spline from "@splinetool/react-spline";
-import BookCallBtn from "../BookCallBtn";
+import BookCallBtn from "../universal/BookCallBtn";
 import { VelocityScroll } from "../magicui/scroll-based-velocity";
 import SplitText from "../reactbits/splitText";
+import HeaderNavBar from "../universal/Header";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
