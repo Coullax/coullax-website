@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Footer from "@/components/Footer";
+import Footer from "@/components/universal/Footer";
 import { motion } from "framer-motion";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import Loading from "./loading";
