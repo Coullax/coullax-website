@@ -17,6 +17,7 @@ import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
 import Spline from '@splinetool/react-spline';
+import Hero from "@/components/blockChain/Hero";
 
 
 
@@ -236,126 +237,8 @@ export default function BlockchainPage() {
 
   return (
     <div className=" w-full">
-      <div
-        ref={heroRef}
-        className="w-full h-dvh relative overflow-hidden bg-[radial-gradient(circle_at_51%_345%,#ffbf82,#df730e_70%,#000_79%)]"
-      >
-        {/* header */}
-        <HeaderNavBar
-          navItemsStyles="text-white hover:text-white"
-          logoColor="white"
-        />
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className=" w-[90%] max-w-[104.027vhvh] mx-auto flex flex-col items-center justify-center"
-        >
-          <div className=" w-full flex flex-col items-center justify-center mt-[13.423vh]">
-            <Image
-              src="/blockChain/blockchain.png"
-              alt="AI Icon"
-              width={68.2}
-              height={54.4}
-              className=" mb-[1.705vh] w-[3.552vw] h-[3.651vh]"
-            />
-            <h1 className=" w-full font-special-gothic-expanded-one text-[1.563vw] leading-[2.336vh] -tracking-[0.078vw] uppercase text-center text-[#ff8410]">
-              BLOCKCHAIN TECHNOLOGY
-            </h1>
-          </div>
-          <div className=" w-full flex flex-col items-center justify-center mb-[18.356vh] text-white">
-            <h1 className=" font-special-gothic-expanded-one lg:text-[7.383vh] text-[4.383vh] text-center leading-[8.564vh] -tracking-[0.286vw] uppercase">
-              The Architecture of
-              <br />
-              Decentralized Thought
-            </h1>
-            <div className=" font-inclusive-sans text-[2.416vh] text-center leading-[3.141vh] uppercase py-[3.154vh]">
-              Blockchain engineered to grow, <br></br>
-              resilient, autonomous, unstoppable.
-            </div>
-            <button
-              onClick={handleBookCallClick}
-              className="cursor-pointer bg-[#ff8410] mh-[4.73vh] py-[1.554vh] px-[4.865vh] text-black uppercase text-[1.622vh] font-silkscreen text-center leading-[1.315vh] -tracking-[0.081vh] border-1 border-dashed border-black hover:bg-transparent hover:scale-105 hover:text-[#ff8410] hover:border-[#ff8410] transition-all duration-300 ease-in-out"
-            >
-              book a call
-            </button>
-          </div>
-          </motion.div>
-
-
-          <div>
-          <motion.div
-            style={{ y: splineY }}
-            className="h-[650px] !bg-transparent -py-[2.5vh] w-full flex items-center"
-          >
-            <Spline
-              scene="https://prod.spline.design/u0qlA7Ea73234oc8/scene.splinecode"
-            />
-          </motion.div>
       
-
-        <motion.div
-          style={{ y: imageY }}
-          className=" absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[12%] w-[55.168vh] h-[47.584vh] overflow-hidden"
-        // transition={{
-        //   type: "tween",
-        //   ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier for smooth start and end
-        //   duration: 0.8, // Duration of the transition in seconds
-        // }}
-        >
-          <Image
-            src="/blockChain/hero1.png"
-            alt="AI Human"
-            width={822}
-            height={709}
-            className=" h-[47.584vh] w-[55.168vh]"
-          />
-        </motion.div>
-        </div>
-
-        
-        {/* <div className=" absolute bottom-0 left-0 w-full">
-          <VelocityScroll
-            defaultVelocity={0.2}
-            className="bg-white "
-            numRows={1}
-          >
-            <div className="inline-flex items-center h-[180px]">
-              <Image
-                src="/blockChain/border1.png" // Replace with your image path
-                alt="Scrolling Image"
-                width={202.8}
-                height={112.7}
-                className="inline-block object-contain"
-              />
-            </div>
-          </VelocityScroll>
-        </div> */}
-      </div>
-
-
-      <div className="w-full">
-        <VelocityScroll
-          defaultVelocity={0.2}
-          className="bg-white"
-          numRows={1}
-        >
-          <div className="inline-flex items-center h-[180px]">
-            <Image
-              src="/blockChain/border1.png"
-              alt="Scrolling Image"
-              width={202.8}
-              height={112.7}
-              className="inline-block object-contain"
-            />
-          </div>
-        </VelocityScroll>
-      </div>
-
-
-
-
+      <Hero />
 
       <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
