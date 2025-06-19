@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import BookCallBtn from "../BookCallBtn";
 import { VelocityScroll } from "../magicui/scroll-based-velocity";
+import SplitText from "../reactbits/splitText";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -48,11 +49,37 @@ const Hero = () => {
             </h1>
           </div>
           <div className=" w-full flex flex-col items-center justify-center my-[2.682vh] md:my-[3.39vh] lg:my-[3.378vh] text-white">
-            <h1 className=" font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase">
+            {/* <h1 className=" font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase">
               The Architecture of
               <br />
               Decentralized Thought
-            </h1>
+            </h1> */}
+            <SplitText
+              text="The Architecture of"
+              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase"
+              delay={10}
+              duration={2}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+            />
+            <SplitText
+              text="Decentralized Thought"
+              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase"
+              delay={10}
+              duration={2}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+            />
             <div className=" font-inclusive-sans text-[1.609vh] md:text-[2.119vh] lg:text-[2.432vh] text-center leading-[1.931vh] md:leading-[2.373vh] lg:leading-[3.162vh] uppercase py-[2.682vh] md:py-[2.966vh] lg:py-[3.176vh]">
               Blockchain engineered to grow, <br></br>
               resilient, autonomous, unstoppable.
@@ -84,7 +111,11 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <VelocityScroll defaultVelocity={1.2} className="bg-white h-[8.584vh] md:h-[10.169vh] lg:h-[12.534vh]" numRows={1}>
+      <VelocityScroll
+        defaultVelocity={1.2}
+        className="bg-white h-[8.584vh] md:h-[10.169vh] lg:h-[12.534vh]"
+        numRows={1}
+      >
         <Image
           src="/blockChain/border1.png"
           alt="Scrolling Image"
