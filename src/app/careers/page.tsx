@@ -1,6 +1,6 @@
 "use client";
-import Footer from "@/components/Footer";
-import HeaderNavBar from "@/components/Header";
+import Footer from "@/components/universal/Footer";
+import HeaderNavBar from "@/components/universal/Header";
 import { Marquee } from "@/components/magicui/marquee";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
