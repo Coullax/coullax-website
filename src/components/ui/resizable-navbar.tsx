@@ -278,16 +278,20 @@ export const MobileNavMenu = ({
 };
 
 export const MobileNavToggle = ({
+  theme,
   isOpen,
+  visible,
   onClick,
 }: {
+  theme?: "dark" | "light";
   isOpen: boolean;
+  visible?: boolean;
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className={`${!visible && theme === 'dark' ? 'text-white' : "text-black"} dark:text-white`} onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className={`${!visible && theme === 'dark' ? 'text-white' : "text-black"} dark:text-white`} onClick={onClick} />
   );
 };
 
