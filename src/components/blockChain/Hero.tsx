@@ -7,6 +7,7 @@ import BookCallBtn from "../universal/BookCallBtn";
 import { VelocityScroll } from "../magicui/scroll-based-velocity";
 import SplitText from "../reactbits/splitText";
 import HeaderNavBar from "../universal/Header";
+import ParallaxStarsBackground from "../ParallaxStarsBackground";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -22,6 +23,11 @@ const Hero = () => {
 
   return (
     <div className="w-full relative overflow-hidden bg-[radial-gradient(circle_at_50%_350%,#ffbf82,#df730e_75%,#000_85%)]">
+      <ParallaxStarsBackground
+        smallStarsCount={1400}
+        mediumStarsCount={400}
+        bigStarsCount={150}
+      />
       <div
         ref={heroRef}
         className=" h-dvh flex flex-col items-center justify-center"
@@ -50,11 +56,6 @@ const Hero = () => {
             </h1>
           </div>
           <div className=" w-full flex flex-col items-center justify-center my-[2.682vh] md:my-[3.39vh] lg:my-[3.378vh] text-white">
-            {/* <h1 className=" font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase">
-              The Architecture of
-              <br />
-              Decentralized Thought
-            </h1> */}
             <SplitText
               text="The Architecture of"
               className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase"
@@ -94,7 +95,7 @@ const Hero = () => {
         {" "}
         <motion.div
           style={{ y: smoothSplineY }}
-          className=" h-[42.918vh] md:h-[46.61vh] lg:h-[43.919vh] !bg-transparent w-[200%] md:w-[140%] -ml-[50%] md:-ml-[20%] lg: flex items-center z-20"
+          className=" h-[42.918vh] md:h-[46.61vh] lg:h-[43.919vh] !bg-transparent w-[200%] -ml-[50%] flex items-center z-20"
         >
           <Spline scene="https://prod.spline.design/u0qlA7Ea73234oc8/scene.splinecode" />
         </motion.div>
