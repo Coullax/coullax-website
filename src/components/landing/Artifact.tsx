@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import BookCallBtn from "../BookCallBtn";
+import BookCallBtn from "../universal/BookCallBtn";
 import SplitText from "../reactbits/splitText";
 import ScrollAnimatedText from "../framer/ScrollAnimatedText";
 import { TypingAnimation } from "../magicui/typing-animation";
