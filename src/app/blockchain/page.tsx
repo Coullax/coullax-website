@@ -1,20 +1,94 @@
 "use client";
 import ContactUs from "@/components/landing/ContactUs";
-import Footer from "@/components/Footer";
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import FlowingMenu from "@/components/ui/flowing-menu";
+import Footer from "@/components/universal/Footer";
+// import HeaderNavBar from "@/components/universal/Header";
+// import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+// import FlowingMenu from "@/components/ui/flowing-menu";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import {
+  motion,
+
+} from "framer-motion";
 import Image from "next/image";
 import React, { useState, useEffect, useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
-import AnimatedText from "@/components/gsp/AnimatedText";
+// import AnimatedText from "@/components/gsp/AnimatedText";
 // import TypingEffect from "@/components/gsp/TypingEffect";
 import Hero from "@/components/blockChain/Hero";
 
-import { TypingAnimation } from "../../components/magicui/typing-animation";
+// import AnimatedText from "@/components/gsp/AnimatedText";
+// import Spline from '@splinetool/react-spline';
+import { TypingAnimation } from "../../components/magicui/typing-animation"
+import RitualBlockchain from "@/components/blockChain/RitualBlockchain";
+import ScrollAnimatedText from "@/components/framer/ScrollAnimatedText";
 
 export default function BlockchainPage() {
+  // const demoItems = [
+  //   {
+  //     link: "#",
+  //     text: "Problem Framing",
+  //     image: "https://picsum.photos/600/400?random=1",
+  //     ind: "1",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Data Discovery",
+  //     image: "https://picsum.photos/600/400?random=2",
+  //     ind: "2",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Model Selection & Design",
+  //     image: "https://picsum.photos/600/400?random=3",
+  //     ind: "3",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Training & Evaluation",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "4",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Fine-Tuning",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "5",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Deployment",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "6",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Monitoring & Support",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "7",
+  //   },
+  // ];
+
+  const consensusText = [
+    { text: "the toolkit we use to build intelligent", delay: 0 },
+    { text: "blockchain systems spans the full stack", delay: 0.2 },
+    { text: "from training machine learning models and", delay: 0.4 },
+    { text: "integrating decentralized data sources,\n\n", delay: 0.6 },
+    { text: "to understanding natural language with", delay: 0.8 },
+    { text: "on-chain logic, and deploying AI-driven", delay: 1.0 },
+    { text: "smart contracts into the real world via", delay: 1.2 },
+    { text: "decentralized infrastructure.", delay: 1.4 },
+  ];
+
+  const constructsText = [
+    { text: "Our services are known as Constructs ", delay: 0 },
+    { text: "decentralized systems born from consensus and", delay: 0.2 },
+    { text: "shaped by code. Each Construct is built to evolve,", delay: 0.4 },
+    { text: "govern, and serve, whether automating protocol", delay: 0.6 },
+    { text: "logic, securing data flows, or powering adaptive", delay: 0.8 },
+    { text: "on-chain experiences.", delay: 0.8 }
+  ];
+
+
   const [activeCognitionIndex, setActiveCognitionIndex] =
     useState<string>("group_1");
   const [previousCognitionIndex, setPreviousCognitionIndex] =
@@ -87,50 +161,8 @@ export default function BlockchainPage() {
     setActiveCognitionIndex(newIndex);
   };
 
-  const demoItems = [
-    {
-      link: "#",
-      text: "Ideation & Use Case Definition",
-      image: "https://picsum.photos/600/400?random=1",
-      ind: "1",
-    },
-    {
-      link: "#",
-      text: "Technical & Economic Design",
-      image: "https://picsum.photos/600/400?random=2",
-      ind: "2",
-    },
-    {
-      link: "#",
-      text: "Model Selection & Design",
-      image: "https://picsum.photos/600/400?random=3",
-      ind: "3",
-    },
-    {
-      link: "#",
-      text: "Training & Evaluation",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "4",
-    },
-    {
-      link: "#",
-      text: "Fine-Tuning",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "5",
-    },
-    {
-      link: "#",
-      text: "Deployment",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "6",
-    },
-    {
-      link: "#",
-      text: "Monitoring & Support",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "7",
-    },
-  ];
+
+
 
   const cognitionCoreItems = [
     {
@@ -230,7 +262,11 @@ export default function BlockchainPage() {
     <div className=" w-full">
       <Hero />
 
-      <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
+
+      <RitualBlockchain/>
+
+      
+      {/* <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <SplitText
             text=" Ritual of Build"
@@ -301,10 +337,10 @@ export default function BlockchainPage() {
 
           <FlowingMenu
             items={demoItems}
-            marqueeBackgroundColor="#ff8410" // Changes marquee background and rounded div text color
-            spanTextColor="#000000" // Changes span text color
-            roundedDivBackgroundColor="#000000" // Changes rounded div background color
-            roundedDivTextColor="#ffffff" // Changes rounded div background color
+            marqueeBackgroundColor="#ff8410"        // Changes marquee background and rounded div text color
+            spanTextColor="#000000"                // Changes span text color
+            roundedDivBackgroundColor="#000000"    // Changes rounded div background color
+            roundedDivTextColor="#ffffff"    // Changes rounded div background color
           />
         </div>
       </div>
@@ -317,7 +353,7 @@ export default function BlockchainPage() {
         >
           resilient | autonomous | unstoppable
         </VelocityScroll>
-      </div>
+       </div> */}
 
       <div className=" py-[6.711vh] relative w-full bg-white">
         <div
@@ -344,55 +380,15 @@ export default function BlockchainPage() {
                 }
               </TypingAnimation>
             </div>{" "}
-            <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-black relative">
-              <AnimatedText
-                key={`cognition-1-${activeCognitionIndex}`}
-                delay={0}
-              >
-                the toolkit we use to build intelligent
-              </AnimatedText>
-              <AnimatedText
-                key={`cognition-2-${activeCognitionIndex}`}
-                delay={0.2}
-              >
-                blockchain systems spans the full stack
-              </AnimatedText>
-              <AnimatedText
-                key={`cognition-3-${activeCognitionIndex}`}
-                delay={0.4}
-              >
-                from training machine learning models and
-              </AnimatedText>
-              <AnimatedText
-                key={`cognition-4-${activeCognitionIndex}`}
-                delay={0.6}
-              >
-                integrating decentralized data sources,<br></br> <br></br>
-              </AnimatedText>
-              <AnimatedText
-                key={`cognition-5-${activeCognitionIndex}`}
-                delay={0.8}
-              >
-                to understanding natural language with
-              </AnimatedText>
-              <AnimatedText
-                key={`cognition-6-${activeCognitionIndex}`}
-                delay={1.0}
-              >
-                on-chain logic, and deploying AI-driven
-              </AnimatedText>
-              <AnimatedText
-                key={`cognition-7-${activeCognitionIndex}`}
-                delay={1.2}
-              >
-                smart contracts into the real world via
-              </AnimatedText>
-              <AnimatedText
-                key={`cognition-8-${activeCognitionIndex}`}
-                delay={1.4}
-              >
-                decentralized infrastructure.
-              </AnimatedText>
+            <div className="font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-black relative">
+              {consensusText.map((item, index) => (
+                <ScrollAnimatedText
+                  key={`cognition-${index + 1}-${activeCognitionIndex}`}
+                  delay={item.delay}
+                >
+                  {item.text}
+                </ScrollAnimatedText>
+              ))}
             </div>
           </div>{" "}
           <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">
@@ -508,43 +504,15 @@ export default function BlockchainPage() {
               }
             </TypingAnimation>
           </div>
-          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase text-white">
-            <AnimatedText
-              key={`constructs-1-${activeCognitionIndex}`}
-              delay={0}
-            >
-              Our services are known as Constructs{" "}
-            </AnimatedText>
-            <AnimatedText
-              key={`constructs-2-${activeCognitionIndex}`}
-              delay={0.2}
-            >
-              decentralized systems born from consensus and
-            </AnimatedText>
-            <AnimatedText
-              key={`constructs-3-${activeCognitionIndex}`}
-              delay={0.4}
-            >
-              shaped by code. Each Construct is built to evolve,
-            </AnimatedText>
-            <AnimatedText
-              key={`constructs-4-${activeCognitionIndex}`}
-              delay={0.6}
-            >
-              govern, and serve, whether automating protocol
-            </AnimatedText>
-            <AnimatedText
-              key={`constructs-5-${activeCognitionIndex}`}
-              delay={0.8}
-            >
-              logic, securing data flows, or powering adaptive
-            </AnimatedText>
-            <AnimatedText
-              key={`constructs-6-${activeCognitionIndex}`}
-              delay={0.8}
-            >
-              on-chain experiences.
-            </AnimatedText>
+          <div className="font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase text-white">
+            {constructsText.map((item, index) => (
+              <ScrollAnimatedText
+                key={`constructs-${index + 1}-${activeCognitionIndex}`}
+                delay={item.delay}
+              >
+                {item.text}
+              </ScrollAnimatedText>
+            ))}
           </div>
           <button
             onClick={handleBookCallClick}
@@ -590,6 +558,7 @@ export default function BlockchainPage() {
           </div>
         </div>
       </div>
+
 
       <ContactUs theme="white" />
 
