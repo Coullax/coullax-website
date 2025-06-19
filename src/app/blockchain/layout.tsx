@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Blockchain Solutions | Coullax',
-  description: "Explore Coullax’s innovative blockchain solutions designed to enhance security, transparency, and efficiency across industries. We specialize in smart contract development, decentralized applications, and Web3 integration.",
+  description: "Explore Coullax's innovative blockchain solutions designed to enhance security, transparency, and efficiency across industries. We specialize in smart contract development, decentralized applications, and Web3 integration.",
   keywords: [
       "Coullax",
       "Blockchain Coullax",
