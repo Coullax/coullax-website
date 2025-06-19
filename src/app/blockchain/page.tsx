@@ -107,8 +107,8 @@ export default function BlockchainPage() {
   const cognitionSplitTextMemo = useMemo(
     () => (
       <SplitText
-        text="cognition core"
-        className=" font-special-gothic-expanded-one text-black text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+        text="consensus core"
+        className=" font-special-gothic-expanded-one text-black lg:text-[6.443vh] text-[3.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
         delay={10}
         duration={2}
         ease="power3.out"
@@ -380,6 +380,7 @@ export default function BlockchainPage() {
                 }
               </TypingAnimation>
             </div>{" "}
+
             <div className="font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-black relative">
               {consensusText.map((item, index) => (
                 <ScrollAnimatedText
@@ -390,6 +391,7 @@ export default function BlockchainPage() {
                 </ScrollAnimatedText>
               ))}
             </div>
+
           </div>{" "}
           <div className=" pt-[6.711vh] py-[2.685vh] pr-[2.083vh] ">
             {" "}
@@ -485,7 +487,7 @@ export default function BlockchainPage() {
       <div className=" py-[6.711vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full flex flex-row justify-between items-start">
-            <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase text-white">
+            <h1 className=" font-special-gothic-expanded-one lg:text-[6.443vh] text-[3.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase text-white">
               constructs
             </h1>
             <h1 className=" font-special-gothic-expanded-one text-[2.416vh] leading-[2.805vh] -tracking-[0.121vh] uppercase text-white">
