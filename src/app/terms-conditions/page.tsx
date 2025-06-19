@@ -1,5 +1,5 @@
-import Footer from '@/components/Footer';
-import HeaderNavBar from '@/components/Header';
+import Footer from '@/components/universal/Footer';
+import HeaderNavBar from '@/components/universal/Header';
 import { Metadata } from 'next';
 import React from 'react';
 
