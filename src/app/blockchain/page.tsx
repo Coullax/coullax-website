@@ -1,26 +1,18 @@
 "use client";
 import ContactUs from "@/components/landing/ContactUs";
 import Footer from "@/components/Footer";
-import HeaderNavBar from "@/components/Header";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import FlowingMenu from "@/components/ui/flowing-menu";
 import { cn } from "@/lib/utils";
-import {
-  motion,
-  useScroll,
-  useTransform,
-
-} from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 // import TypingEffect from "@/components/gsp/TypingEffect";
-import Spline from '@splinetool/react-spline';
 import Hero from "@/components/blockChain/Hero";
 
-import { TypingAnimation } from "../../components/magicui/typing-animation"
-
+import { TypingAnimation } from "../../components/magicui/typing-animation";
 
 export default function BlockchainPage() {
   const [activeCognitionIndex, setActiveCognitionIndex] =
@@ -31,12 +23,12 @@ export default function BlockchainPage() {
     typeof window !== "undefined" ? window.innerHeight / 100 : 8
   );
 
-  const heroRef = useRef<HTMLDivElement>(null);
+  // const heroRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: heroRef,
+  //   offset: ["start start", "end start"],
+  // });
 
   const cognitionSplitTextMemo = useMemo(
     () => (
@@ -57,9 +49,8 @@ export default function BlockchainPage() {
     []
   );
 
-  const imageY = useTransform(scrollYProgress, [0.1, 0.6], [540, 220]);
-  const splineY = useTransform(scrollYProgress, [0.1, 0.6], [540, -370]); 
-
+  // const imageY = useTransform(scrollYProgress, [0.1, 0.6], [540, 220]);
+  // const splineY = useTransform(scrollYProgress, [0.1, 0.6], [540, -370]);
 
   useEffect(() => {
     const updateVhUnit = () => {
@@ -95,7 +86,6 @@ export default function BlockchainPage() {
     setPreviousCognitionIndex(activeCognitionIndex);
     setActiveCognitionIndex(newIndex);
   };
-
 
   const demoItems = [
     {
@@ -238,7 +228,6 @@ export default function BlockchainPage() {
 
   return (
     <div className=" w-full">
-
       <Hero />
 
       <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
@@ -257,47 +246,65 @@ export default function BlockchainPage() {
             textAlign="center"
           />
           <div className=" my-[3.356vh] leading-[1.309vh] font-silkscreen">
-          <TypingAnimation
-            startOnView
-            supportHTML={true}
-            duration={10}
-            className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-white"
-          >
-            {
-              "Fed with data, trained with intent — the mind begins to see beyond the static."
-            }
-          </TypingAnimation>
+            <TypingAnimation
+              startOnView
+              supportHTML={true}
+              duration={10}
+              className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-white"
+            >
+              {
+                "Fed with data, trained with intent — the mind begins to see beyond the static."
+              }
+            </TypingAnimation>
           </div>
           <div className=" font-inclusive-sans text-[1.685vh] lg:text-[2.685vh] leading-[3.49vh] uppercase text-white">
             <AnimatedText key={`cognition-1-${activeCognitionIndex}`} delay={0}>
               Our blockchain process is more than
             </AnimatedText>
-            <AnimatedText key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
+            <AnimatedText
+              key={`cognition-2-${activeCognitionIndex}`}
+              delay={0.2}
+            >
               decentralization. It’s about architecting
             </AnimatedText>
-            <AnimatedText key={`cognition-3-${activeCognitionIndex}`} delay={0.4}>
+            <AnimatedText
+              key={`cognition-3-${activeCognitionIndex}`}
+              delay={0.4}
+            >
               systems that self verify, adapt, and persist.
             </AnimatedText>
-            <AnimatedText key={`cognition-4-${activeCognitionIndex}`} delay={0.6}>
+            <AnimatedText
+              key={`cognition-4-${activeCognitionIndex}`}
+              delay={0.6}
+            >
               From genesis block to scalable
             </AnimatedText>
-            <AnimatedText key={`cognition-5-${activeCognitionIndex}`} delay={0.8}>
+            <AnimatedText
+              key={`cognition-5-${activeCognitionIndex}`}
+              delay={0.8}
+            >
               infrastructure, we engineer protocols
             </AnimatedText>
-            <AnimatedText key={`cognition-6-${activeCognitionIndex}`} delay={1.0}>
+            <AnimatedText
+              key={`cognition-6-${activeCognitionIndex}`}
+              delay={1.0}
+            >
               that encode trust, evolve with consensus,
             </AnimatedText>
-            <AnimatedText key={`cognition-7-${activeCognitionIndex}`} delay={1.2}>
+            <AnimatedText
+              key={`cognition-7-${activeCognitionIndex}`}
+              delay={1.2}
+            >
               and endure with intention.
             </AnimatedText>
           </div>
 
           <FlowingMenu
             items={demoItems}
-            marqueeBackgroundColor="#ff8410"        // Changes marquee background and rounded div text color
-            spanTextColor="#000000"                // Changes span text color
-            roundedDivBackgroundColor="#000000"    // Changes rounded div background color
-            roundedDivTextColor="#ffffff"    // Changes rounded div background color
+            marqueeBackgroundColor="#ff8410" // Changes marquee background and rounded div text color
+            spanTextColor="#000000" // Changes span text color
+            roundedDivBackgroundColor="#000000" // Changes rounded div background color
+            roundedDivTextColor="#ffffff" // Changes rounded div background color
           />
         </div>
       </div>
@@ -326,16 +333,16 @@ export default function BlockchainPage() {
           <div className=" w-full py-[3.356vh] mt-[5.168vh]">
             {cognitionSplitTextMemo}
             <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-black my-[3.356vh]">
-            <TypingAnimation
-            startOnView
-            supportHTML={true}
-            duration={10}
-            className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-black"
-          >
-            {
-              "Fed with data, trained with intent — the mind begins to see beyond the static."
-            }
-          </TypingAnimation>
+              <TypingAnimation
+                startOnView
+                supportHTML={true}
+                duration={10}
+                className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-black"
+              >
+                {
+                  "Fed with data, trained with intent — the mind begins to see beyond the static."
+                }
+              </TypingAnimation>
             </div>{" "}
             <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-black relative">
               <AnimatedText
@@ -344,25 +351,46 @@ export default function BlockchainPage() {
               >
                 the toolkit we use to build intelligent
               </AnimatedText>
-              <AnimatedText key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
+              <AnimatedText
+                key={`cognition-2-${activeCognitionIndex}`}
+                delay={0.2}
+              >
                 blockchain systems spans the full stack
               </AnimatedText>
-              <AnimatedText key={`cognition-3-${activeCognitionIndex}`} delay={0.4}>
+              <AnimatedText
+                key={`cognition-3-${activeCognitionIndex}`}
+                delay={0.4}
+              >
                 from training machine learning models and
               </AnimatedText>
-              <AnimatedText key={`cognition-4-${activeCognitionIndex}`} delay={0.6}>
+              <AnimatedText
+                key={`cognition-4-${activeCognitionIndex}`}
+                delay={0.6}
+              >
                 integrating decentralized data sources,<br></br> <br></br>
               </AnimatedText>
-              <AnimatedText key={`cognition-5-${activeCognitionIndex}`} delay={0.8}>
+              <AnimatedText
+                key={`cognition-5-${activeCognitionIndex}`}
+                delay={0.8}
+              >
                 to understanding natural language with
               </AnimatedText>
-              <AnimatedText key={`cognition-6-${activeCognitionIndex}`} delay={1.0}>
+              <AnimatedText
+                key={`cognition-6-${activeCognitionIndex}`}
+                delay={1.0}
+              >
                 on-chain logic, and deploying AI-driven
               </AnimatedText>
-              <AnimatedText key={`cognition-7-${activeCognitionIndex}`} delay={1.2}>
+              <AnimatedText
+                key={`cognition-7-${activeCognitionIndex}`}
+                delay={1.2}
+              >
                 smart contracts into the real world via
               </AnimatedText>
-              <AnimatedText key={`cognition-8-${activeCognitionIndex}`} delay={1.4}>
+              <AnimatedText
+                key={`cognition-8-${activeCognitionIndex}`}
+                delay={1.4}
+              >
                 decentralized infrastructure.
               </AnimatedText>
             </div>
@@ -426,8 +454,9 @@ export default function BlockchainPage() {
                     }}
                   >
                     <Image
-                      src={`/blockChain/cognition/${item.image}_${activeCognitionIndex === item.image ? "yellow" : "white"
-                        }.svg`}
+                      src={`/blockChain/cognition/${item.image}_${
+                        activeCognitionIndex === item.image ? "yellow" : "white"
+                      }.svg`}
                       alt={`Cognition Core ${index + 1}`}
                       width={130}
                       height={130}
@@ -468,16 +497,16 @@ export default function BlockchainPage() {
             </h1>
           </div>
           <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase mt-[2.013vh]">
-          <TypingAnimation
-            startOnView
-            supportHTML={true}
-            duration={10}
-            className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-white"
-          >
-            {
-              "Fed with data, trained with intent — the mind begins to see beyond the static."
-            }
-          </TypingAnimation>
+            <TypingAnimation
+              startOnView
+              supportHTML={true}
+              duration={10}
+              className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-white"
+            >
+              {
+                "Fed with data, trained with intent — the mind begins to see beyond the static."
+              }
+            </TypingAnimation>
           </div>
           <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase text-white">
             <AnimatedText
@@ -561,7 +590,6 @@ export default function BlockchainPage() {
           </div>
         </div>
       </div>
-
 
       <ContactUs theme="white" />
 

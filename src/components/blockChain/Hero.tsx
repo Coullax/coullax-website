@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import BookCallBtn from "../BookCallBtn";
 import { VelocityScroll } from "../magicui/scroll-based-velocity";
-import { Marquee } from "../magicui/marquee";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -67,7 +66,7 @@ const Hero = () => {
         {" "}
         <motion.div
           style={{ y: smoothSplineY }}
-          className=" h-[400px] md:h-[550px] lg:h-[650px] !bg-transparent w-full flex items-center z-20"
+          className=" h-[400px] md:h-[550px] lg:h-[650px] !bg-transparent w-[120%] -ml-[10%] flex items-center z-20"
         >
           <Spline scene="https://prod.spline.design/u0qlA7Ea73234oc8/scene.splinecode" />
         </motion.div>
