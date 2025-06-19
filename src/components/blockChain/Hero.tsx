@@ -35,25 +35,25 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className=" w-[90%] max-w-[104.027vhvh] mx-auto flex flex-col items-center justify-center"
         >
-          <div className=" w-full flex flex-col items-center justify-center mt-[100px]">
+          <div className=" w-full flex flex-col items-center justify-center mt-[6.757vh]">
             <Image
               src="/blockChain/blockchain.png"
               alt="AI Icon"
               width={104}
               height={62}
-              className=" md:mb-[10px] lg:mb-[25.4px] w-auto h-[45px] md:h-[50px] lg:h-[62px]"
+              className=" md:mb-[0.847vh] lg:mb-[1.716vh] w-auto h-[4.828vh] md:h-[4.237vh] lg:h-[4.189vh]"
             />
-            <h1 className=" w-full font-special-gothic-expanded-one text-[12px] md:text-[20px] lg:text-[30px] leading-[15px] md:leading-[23px] lg:leading-[34.8px] -tracking-[0.5px] lg:-tracking-[1.5px] uppercase text-center text-[#ff8410]">
+            <h1 className=" w-full font-special-gothic-expanded-one text-[1.288vh] md:text-[1.695vh] lg:text-[2.027vh] leading-[1.609vh] md:leading-[1.949vh] lg:leading-[2.351vh] -tracking-[0.042vh] lg:-tracking-[0.101vh] uppercase text-center text-[#ff8410]">
               BLOCKCHAIN TECHNOLOGY
             </h1>
           </div>
-          <div className=" w-full flex flex-col items-center justify-center my-[25px] md:my-[40px] lg:my-[50px] text-white">
-            <h1 className=" font-special-gothic-expanded-one text-[22px] lg:text-[96px] md:text-[45px] text-center leading-[25px] md:leading-[50px] lg:leading-[111.4px] md:-tracking-[2px] lg:-tracking-[4.8px] uppercase">
+          <div className=" w-full flex flex-col items-center justify-center my-[2.682vh] md:my-[3.39vh] lg:my-[3.378vh] text-white">
+            <h1 className=" font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase">
               The Architecture of
               <br />
               Decentralized Thought
             </h1>
-            <div className=" font-inclusive-sans text-[15px] md:text-[25px] lg:text-[36px] text-center leading-[18px] md:leading-[28px] lg:leading-[46.8px] uppercase py-[25px] md:py-[35px] lg:py-[47px]">
+            <div className=" font-inclusive-sans text-[1.609vh] md:text-[2.119vh] lg:text-[2.432vh] text-center leading-[1.931vh] md:leading-[2.373vh] lg:leading-[3.162vh] uppercase py-[2.682vh] md:py-[2.966vh] lg:py-[3.176vh]">
               Blockchain engineered to grow, <br></br>
               resilient, autonomous, unstoppable.
             </div>
@@ -62,35 +62,35 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className=" w-full h-[280px] md:h-[500px] lg:h-[650px] relative ">
+      <div className=" w-full h-[30.043vh] md:h-[42.373vh] lg:h-[43.919vh] relative ">
         {" "}
         <motion.div
           style={{ y: smoothSplineY }}
-          className=" h-[400px] md:h-[550px] lg:h-[650px] !bg-transparent w-[120%] -ml-[10%] flex items-center z-20"
+          className=" h-[42.918vh] md:h-[46.61vh] lg:h-[43.919vh] !bg-transparent w-[200%] md:w-[140%] -ml-[50%] md:-ml-[20%] lg: flex items-center z-20"
         >
           <Spline scene="https://prod.spline.design/u0qlA7Ea73234oc8/scene.splinecode" />
         </motion.div>
         <motion.div
           style={{ y: smoothImageY }}
-          className=" absolute bottom-0 left-1/2 -translate-x-1/2 h-[440px] md:h-[550px] lg:h-[654px] w-[440px] md:w-[550px] lg:w-[654px] overflow-hidden"
+          className=" absolute bottom-0 left-1/2 -translate-x-1/2 h-[47.21vh] md:h-[46.61vh] lg:h-[44.189vh] w-[47.21vh] md:w-[46.61vh] lg:w-[44.189vh] overflow-hidden"
         >
           <Image
             src="/blockChain/hero1.png"
             alt="AI Human"
             width={654}
             height={654}
-            className=" h-[440px] lg:h-[654px] md:h-[550px] w-[440px] md:w-[550px] lg:w-[654px]"
+            className=" h-[47.21vh] lg:h-[44.189vh] md:h-[46.61vh] w-[47.21vh] md:w-[46.61vh] lg:w-[44.189vh]"
           />
         </motion.div>
       </div>
 
-      <VelocityScroll defaultVelocity={1.2} className="bg-white h-[80px] md:h-[120px] lg:h-[185.5px]" numRows={1}>
+      <VelocityScroll defaultVelocity={1.2} className="bg-white h-[8.584vh] md:h-[10.169vh] lg:h-[12.534vh]" numRows={1}>
         <Image
           src="/blockChain/border1.png"
           alt="Scrolling Image"
           width={305}
           height={185.5}
-          className="inline-block object-contain w-auto h-[80px] md:h-[120px] lg:h-[185.5px]"
+          className="inline-block object-contain w-auto h-[8.584vh] md:h-[10.169vh] lg:h-[12.534vh]"
         />
       </VelocityScroll>
     </div>

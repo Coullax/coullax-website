@@ -231,6 +231,29 @@ export const MobileNavHeader = ({
   className,
   visible,
 }: MobileNavHeaderProps) => {
+  const passVisibleProp = (child: React.ReactNode): React.ReactNode => {
+    if (React.isValidElement(child)) {
+      if (
+        child.type === "div" &&
+        child.props &&
+        typeof child.props === "object" &&
+        "children" in child.props
+      ) {
+        // If it's a div with children, recursively pass visible to its children
+        const props = child.props as { children: React.ReactNode };
+        const newChildren = React.Children.map(props.children, passVisibleProp);
+        return React.cloneElement(child, {}, newChildren);
+      } else if (typeof child.type !== "string") {
+        // If it's a React component, pass the visible prop
+        return React.cloneElement(
+          child as React.ReactElement<{ visible?: boolean }>,
+          { visible }
+        );
+      }
+    }
+    return child;
+  };
+
   return (
     <div
       className={cn(
@@ -238,17 +261,7 @@ export const MobileNavHeader = ({
         className
       )}
     >
-      {" "}
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              child.type === "div" || typeof child.type === "string"
-                ? {}
-                : { visible }
-            )
-          : child
-      )}
+      {React.Children.map(children, passVisibleProp)}
     </div>
   );
 };
@@ -283,15 +296,43 @@ export const MobileNavToggle = ({
   visible,
   onClick,
 }: {
-  theme?: "dark" | "light";
+  theme?: "white" | "black";
   isOpen: boolean;
   visible?: boolean;
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className={`${!visible && theme === 'dark' ? 'text-white' : "text-black"} dark:text-white`} onClick={onClick} />
+    <div
+      className={`${
+        !visible && theme === "white" ? "text-white" : "text-black"
+      } dark:text-white flex items-center gap-2`}
+    >
+      <Suspense fallback={<div className="w-5 h-5" />}>
+        <AudioToggle />
+      </Suspense>
+      <IconX
+        className={`${
+          !visible && theme === "white" ? "text-white" : "text-black"
+        } dark:text-white mr-4`}
+        onClick={onClick}
+      />
+    </div>
   ) : (
-    <IconMenu2 className={`${!visible && theme === 'dark' ? 'text-white' : "text-black"} dark:text-white`} onClick={onClick} />
+    <div
+      className={`${
+        !visible && theme === "white" ? "text-white" : "text-black"
+      } dark:text-white flex items-center gap-2`}
+    >
+      <Suspense fallback={<div className="w-5 h-5" />}>
+        <AudioToggle />
+      </Suspense>
+      <IconMenu2
+        className={`${
+          !visible && theme === "white" ? "text-white" : "text-black"
+        } dark:text-white mr-4`}
+        onClick={onClick}
+      />
+    </div>
   );
 };
 
@@ -346,28 +387,19 @@ export const NavbarButton = ({
     gradient:
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
-  
+
   const combinedClassName = cn(baseStyles, variantStyles[variant], className);
-  
+
   if (href) {
     return (
-      <a
-        href={href}
-        target={target}
-        className={combinedClassName}
-        {...props}
-      >
+      <a href={href} target={target} className={combinedClassName} {...props}>
         {children}
       </a>
     );
   }
-  
+
   return (
-    <button
-      onClick={onClick}
-      className={combinedClassName}
-      {...props}
-    >
+    <button onClick={onClick} className={combinedClassName} {...props}>
       {children}
     </button>
   );
