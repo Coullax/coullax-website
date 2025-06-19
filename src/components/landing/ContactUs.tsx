@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React, { useState, useMemo } from "react";
-import SplitText from "./reactbits/splitText";
-import { TypingAnimation } from "./magicui/typing-animation";
+import SplitText from "../reactbits/splitText";
+import { TypingAnimation } from "../magicui/typing-animation";
 
 type ThemeConfig = {
   background: string;
@@ -121,7 +121,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
               id="email"
               name="email"
               placeholder="YOUR EMAIL"
-              className={`w-full h-[6.577vh] p-[1.007vh] text-[1.288vh] md:text-[1.342vh]  placeholder:!text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border-[0.139vh] border-[#000] ${currentTheme.textBoxBg} focus:outline-none `}
+              className={`w-full h-[6.577vh] p-[1.007vh] text-[1.288vh] md:text-[1.342vh] placeholder:!text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border-[0.139vh] border-[#000] ${currentTheme.textBoxBg} focus:outline-none `}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -136,7 +136,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
                 setMessage(e.target.value);
               }}
               value={message}
-              className={`w-full h-[14.362vh] p-[1.007vh] text-[1.288vh] md:text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border border-[#000] ${currentTheme.textBoxBg} focus:outline-none`}
+              className={`w-full h-[14.362vh] p-[1.007vh] text-[1.288vh] md:text-[1.342vh] placeholder:!text-[1.342vh] ${currentTheme.placeholderText} ${currentTheme.formText} border border-[#000] ${currentTheme.textBoxBg} focus:outline-none`}
             />
 
             <div className=" flex flex-col justify-center items-center">

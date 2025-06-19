@@ -1,5 +1,5 @@
 "use client";
-import ContactUs from "@/components/ContactUs";
+import ContactUs from "@/components/landing/ContactUs";
 import Footer from "@/components/Footer";
 import HeaderNavBar from "@/components/Header";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";

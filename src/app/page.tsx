@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import Loading from "./loading";
-import ContactUs from "@/components/ContactUs";
+import ContactUs from "@/components/landing/ContactUs";
 import Hero from "@/components/landing/Hero";
 import Summon from "@/components/landing/Summon";
 import Forge from "@/components/landing/Forge";
