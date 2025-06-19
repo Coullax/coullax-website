@@ -5,7 +5,7 @@ import React from "react";
 import SplitText from "../reactbits/splitText";
 import ScrollAnimatedText from "../framer/ScrollAnimatedText";
 import { cn } from "@/lib/utils";
-import BookCallBtn from "../BookCallBtn";
+import BookCallBtn from "../universal/BookCallBtn";
 import { TypingAnimation } from "../magicui/typing-animation";
 
 export default function Forge() {
