@@ -9,13 +9,14 @@ import {
   motion,
   useScroll,
   useTransform,
-  
+
 } from "framer-motion";
 import Image from "next/image";
-import React, { useState, useRef,useEffect,useMemo } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
+import Spline from '@splinetool/react-spline';
 
 
 
@@ -53,9 +54,11 @@ export default function BlockchainPage() {
     ),
     []
   );
-  
-  const imageY = useTransform(scrollYProgress, [0, 0.6], [520 ,-70]);
-  
+
+  const imageY = useTransform(scrollYProgress, [0.1, 0.6], [540, 220]);
+  const splineY = useTransform(scrollYProgress, [0.1, 0.6], [540, -370]); 
+
+
   useEffect(() => {
     const updateVhUnit = () => {
       setVhUnit(window.innerHeight / 100);
@@ -230,7 +233,7 @@ export default function BlockchainPage() {
   const handleBookCallClick = () => {
     window.open("https://cal.com/coullax/30min", "_blank");
   };
-  
+
   return (
     <div className=" w-full">
       <div
@@ -258,18 +261,18 @@ export default function BlockchainPage() {
               className=" mb-[1.705vh] w-[3.552vw] h-[3.651vh]"
             />
             <h1 className=" w-full font-special-gothic-expanded-one text-[1.563vw] leading-[2.336vh] -tracking-[0.078vw] uppercase text-center text-[#ff8410]">
-            BLOCKCHAIN TECHNOLOGY
+              BLOCKCHAIN TECHNOLOGY
             </h1>
           </div>
-          <div className=" w-full flex flex-col items-center justify-center my-[3.356vh] text-white">
+          <div className=" w-full flex flex-col items-center justify-center mb-[18.356vh] text-white">
             <h1 className=" font-special-gothic-expanded-one lg:text-[7.383vh] text-[4.383vh] text-center leading-[8.564vh] -tracking-[0.286vw] uppercase">
-            The Architecture of 
+              The Architecture of
               <br />
               Decentralized Thought
             </h1>
             <div className=" font-inclusive-sans text-[2.416vh] text-center leading-[3.141vh] uppercase py-[3.154vh]">
-            Blockchain engineered to grow, <br></br>
-            resilient, autonomous, unstoppable.
+              Blockchain engineered to grow, <br></br>
+              resilient, autonomous, unstoppable.
             </div>
             <button
               onClick={handleBookCallClick}
@@ -278,24 +281,40 @@ export default function BlockchainPage() {
               book a call
             </button>
           </div>
-        </motion.div>
+          </motion.div>
+
+
+          <div>
+          <motion.div
+            style={{ y: splineY }}
+            className="h-[650px] !bg-transparent -py-[2.5vh] w-full flex items-center"
+          >
+            <Spline
+              scene="https://prod.spline.design/u0qlA7Ea73234oc8/scene.splinecode"
+            />
+          </motion.div>
+      
+
         <motion.div
           style={{ y: imageY }}
           className=" absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[12%] w-[55.168vh] h-[47.584vh] overflow-hidden"
-          // transition={{
-          //   type: "tween",
-          //   ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier for smooth start and end
-          //   duration: 0.8, // Duration of the transition in seconds
-          // }}
+        // transition={{
+        //   type: "tween",
+        //   ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier for smooth start and end
+        //   duration: 0.8, // Duration of the transition in seconds
+        // }}
         >
           <Image
-            src="/blockChain/hero.webp"
+            src="/blockChain/hero1.png"
             alt="AI Human"
             width={822}
             height={709}
             className=" h-[47.584vh] w-[55.168vh]"
           />
         </motion.div>
+        </div>
+
+        
         {/* <div className=" absolute bottom-0 left-0 w-full">
           <VelocityScroll
             defaultVelocity={0.2}
@@ -317,26 +336,26 @@ export default function BlockchainPage() {
 
 
       <div className="w-full">
-  <VelocityScroll
-    defaultVelocity={0.2}
-    className="bg-white"
-    numRows={1}
-  >
-    <div className="inline-flex items-center h-[180px]">
-      <Image
-        src="/blockChain/border1.png"
-        alt="Scrolling Image"
-        width={202.8}
-        height={112.7}
-        className="inline-block object-contain"
-      />
-    </div>
-  </VelocityScroll>
-</div>
+        <VelocityScroll
+          defaultVelocity={0.2}
+          className="bg-white"
+          numRows={1}
+        >
+          <div className="inline-flex items-center h-[180px]">
+            <Image
+              src="/blockChain/border1.png"
+              alt="Scrolling Image"
+              width={202.8}
+              height={112.7}
+              className="inline-block object-contain"
+            />
+          </div>
+        </VelocityScroll>
+      </div>
 
 
 
-      
+
 
       <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
@@ -365,26 +384,26 @@ export default function BlockchainPage() {
             />
           </div>
           <div className=" font-inclusive-sans text-[1.685vh] lg:text-[2.685vh] leading-[3.49vh] uppercase text-white">
-            <AnimatedText  key={`cognition-1-${activeCognitionIndex}`}  delay={0}>
-            Our blockchain process is more than
+            <AnimatedText key={`cognition-1-${activeCognitionIndex}`} delay={0}>
+              Our blockchain process is more than
             </AnimatedText>
-            <AnimatedText  key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
-            decentralization. It’s about architecting 
+            <AnimatedText key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
+              decentralization. It’s about architecting
             </AnimatedText>
-            <AnimatedText  key={`cognition-3-${activeCognitionIndex}`}  delay={0.4}>
-            systems that self verify, adapt, and persist.
+            <AnimatedText key={`cognition-3-${activeCognitionIndex}`} delay={0.4}>
+              systems that self verify, adapt, and persist.
             </AnimatedText>
-            <AnimatedText  key={`cognition-4-${activeCognitionIndex}`}  delay={0.6}>
-            From genesis block to scalable
+            <AnimatedText key={`cognition-4-${activeCognitionIndex}`} delay={0.6}>
+              From genesis block to scalable
             </AnimatedText>
-            <AnimatedText  key={`cognition-5-${activeCognitionIndex}`}  delay={0.8}>
-            infrastructure, we engineer protocols
+            <AnimatedText key={`cognition-5-${activeCognitionIndex}`} delay={0.8}>
+              infrastructure, we engineer protocols
             </AnimatedText>
-            <AnimatedText  key={`cognition-6-${activeCognitionIndex}`}  delay={1.0}>
-            that encode trust, evolve with consensus,
+            <AnimatedText key={`cognition-6-${activeCognitionIndex}`} delay={1.0}>
+              that encode trust, evolve with consensus,
             </AnimatedText>
-            <AnimatedText  key={`cognition-7-${activeCognitionIndex}`}  delay={1.2}>
-            and endure with intention.
+            <AnimatedText key={`cognition-7-${activeCognitionIndex}`} delay={1.2}>
+              and endure with intention.
             </AnimatedText>
           </div>
 
@@ -398,15 +417,15 @@ export default function BlockchainPage() {
         </div>
       </div>
       <div className="w-full h-[17.816vh]">
-          <VelocityScroll
+        <VelocityScroll
           defaultVelocity={1}
-            className=" font-special-gothic-expanded-one text-[#ff8410] text-center bg-black"
-            fontSize="text-[13.872vh] uppercase -tracking-[0.676vh]"
-            numRows={1}
-          >
-           resilient | autonomous | unstoppable
-          </VelocityScroll>
-          </div>
+          className=" font-special-gothic-expanded-one text-[#ff8410] text-center bg-black"
+          fontSize="text-[13.872vh] uppercase -tracking-[0.676vh]"
+          numRows={1}
+        >
+          resilient | autonomous | unstoppable
+        </VelocityScroll>
+      </div>
 
       <div className=" py-[6.711vh] relative w-full bg-white">
         <div
@@ -418,7 +437,7 @@ export default function BlockchainPage() {
             "opacity-25 dark:opacity-25 z-0"
           )}
         />
-      <div className=" w-[90%] max-w-[104.027vh] mx-auto">
+        <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full py-[3.356vh] mt-[5.168vh]">
             {cognitionSplitTextMemo}
             <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-black my-[3.356vh]">
@@ -436,26 +455,26 @@ export default function BlockchainPage() {
               >
                 the toolkit we use to build intelligent
               </AnimatedText>
-              <AnimatedText  key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
-              blockchain systems spans the full stack
+              <AnimatedText key={`cognition-2-${activeCognitionIndex}`} delay={0.2}>
+                blockchain systems spans the full stack
               </AnimatedText>
               <AnimatedText key={`cognition-3-${activeCognitionIndex}`} delay={0.4}>
-              from training machine learning models and 
+                from training machine learning models and
               </AnimatedText>
               <AnimatedText key={`cognition-4-${activeCognitionIndex}`} delay={0.6}>
-              integrating decentralized data sources,<br></br> <br></br>
+                integrating decentralized data sources,<br></br> <br></br>
               </AnimatedText>
               <AnimatedText key={`cognition-5-${activeCognitionIndex}`} delay={0.8}>
-              to understanding natural language with
+                to understanding natural language with
               </AnimatedText>
               <AnimatedText key={`cognition-6-${activeCognitionIndex}`} delay={1.0}>
-              on-chain logic, and deploying AI-driven 
+                on-chain logic, and deploying AI-driven
               </AnimatedText>
               <AnimatedText key={`cognition-7-${activeCognitionIndex}`} delay={1.2}>
-              smart contracts into the real world via 
+                smart contracts into the real world via
               </AnimatedText>
               <AnimatedText key={`cognition-8-${activeCognitionIndex}`} delay={1.4}>
-              decentralized infrastructure.
+                decentralized infrastructure.
               </AnimatedText>
             </div>
           </div>{" "}
@@ -518,9 +537,8 @@ export default function BlockchainPage() {
                     }}
                   >
                     <Image
-                      src={`/blockChain/cognition/${item.image}_${
-                        activeCognitionIndex === item.image ? "yellow" : "white"
-                      }.svg`}
+                      src={`/blockChain/cognition/${item.image}_${activeCognitionIndex === item.image ? "yellow" : "white"
+                        }.svg`}
                       alt={`Cognition Core ${index + 1}`}
                       width={130}
                       height={130}
@@ -650,6 +668,7 @@ export default function BlockchainPage() {
           </div>
         </div>
       </div>
+
 
       <ContactUs theme="white" />
 
