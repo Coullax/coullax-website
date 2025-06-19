@@ -15,10 +15,11 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
-import TypingEffect from "@/components/gsp/TypingEffect";
+// import TypingEffect from "@/components/gsp/TypingEffect";
 import Spline from '@splinetool/react-spline';
 import Hero from "@/components/blockChain/Hero";
 
+import { TypingAnimation } from "../../components/magicui/typing-animation"
 
 
 export default function BlockchainPage() {
@@ -237,14 +238,11 @@ export default function BlockchainPage() {
 
   return (
     <div className=" w-full">
-      
+
       <Hero />
 
       <div className="pt-[10.135vh] pb-[13.514vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
-          {/* <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh]">
-            Ritual of Build
-          </h1> */}
           <SplitText
             text=" Ritual of Build"
             className="font-special-gothic-expanded-one lg:text-[6.443vh] text-[4.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh] text-white"
@@ -259,12 +257,16 @@ export default function BlockchainPage() {
             textAlign="center"
           />
           <div className=" my-[3.356vh] leading-[1.309vh] font-silkscreen">
-            <TypingEffect
-              text="Fed with data, trained with intent — the mind begins to see beyond the static."
-              speed={30}
-              delay={500}
-              className="text-[0.878vh] lg:text-[1.007vh] leading-[1.309vh] font-silkscreen text-white"
-            />
+          <TypingAnimation
+            startOnView
+            supportHTML={true}
+            duration={10}
+            className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-white"
+          >
+            {
+              "Fed with data, trained with intent — the mind begins to see beyond the static."
+            }
+          </TypingAnimation>
           </div>
           <div className=" font-inclusive-sans text-[1.685vh] lg:text-[2.685vh] leading-[3.49vh] uppercase text-white">
             <AnimatedText key={`cognition-1-${activeCognitionIndex}`} delay={0}>
@@ -324,12 +326,16 @@ export default function BlockchainPage() {
           <div className=" w-full py-[3.356vh] mt-[5.168vh]">
             {cognitionSplitTextMemo}
             <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase text-black my-[3.356vh]">
-              <TypingEffect
-                text={`The pulse of decentralized trust, coded with purpose and built to adapt.`}
-                speed={30}
-                delay={500}
-                className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
-              />
+            <TypingAnimation
+            startOnView
+            supportHTML={true}
+            duration={10}
+            className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-black"
+          >
+            {
+              "Fed with data, trained with intent — the mind begins to see beyond the static."
+            }
+          </TypingAnimation>
             </div>{" "}
             <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase text-black relative">
               <AnimatedText
@@ -462,12 +468,16 @@ export default function BlockchainPage() {
             </h1>
           </div>
           <div className=" font-silkscreen text-[1.007vh] leading-[1.309vh] uppercase mt-[2.013vh]">
-            <TypingEffect
-              text={`Every Construct is a fragment of the Entity, \n thinking on your behalf.`}
-              speed={30}
-              delay={500}
-              className="text-[1.007vh] leading-[1.309vh] font-silkscreen text-white"
-            />
+          <TypingAnimation
+            startOnView
+            supportHTML={true}
+            duration={10}
+            className="text-[0.751vh] w-full text-center lg:text-left md:text-[1.271vh] leading-[1.309vh] font-silkscreen text-white"
+          >
+            {
+              "Fed with data, trained with intent — the mind begins to see beyond the static."
+            }
+          </TypingAnimation>
           </div>
           <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] my-[3.356vh] uppercase text-white">
             <AnimatedText
