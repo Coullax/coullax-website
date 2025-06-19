@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import SplitText from "../reactbits/splitText";
-import BookCallBtn from "../BookCallBtn";
+import BookCallBtn from "../universal/BookCallBtn";
 import Image from "next/image";
 import ScrollAnimatedText from "../framer/ScrollAnimatedText";
 import { TypingAnimation } from "../magicui/typing-animation";
