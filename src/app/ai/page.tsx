@@ -1,89 +1,90 @@
 "use client";
 import ContactUs from "@/components/landing/ContactUs";
 import Footer from "@/components/universal/Footer";
-import HeaderNavBar from "@/components/universal/Header";
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+// import HeaderNavBar from "@/components/universal/Header";
+// import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import FlowingMenu from "@/components/ui/flowing-menu";
-import { cn } from "@/lib/utils";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import React, { useState, useRef, useEffect, useMemo } from "react";
+// import { cn } from "@/lib/utils";
+// import { motion, useScroll, useTransform } from "framer-motion";
+// import Image from "next/image";
+import React from "react";
 import SplitText from "@/components/reactbits/splitText";
-import AnimatedText from "@/components/gsp/AnimatedText";
+// import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
-import Hero from "@/components/ai/Hero";
+// import Hero from "@/components/ai/Hero";
 import Construct from "@/components/ai/Construct";
+import Cognition from "@/components/ai/Cognition";
 
 export default function AIPage() {
-  const [activeCognitionIndex, setActiveCognitionIndex] =
-    useState<string>("group_1");
-  const [previousCognitionIndex, setPreviousCognitionIndex] =
-    useState<string>("group_1");
-  const [vhUnit, setVhUnit] = useState(
-    typeof window !== "undefined" ? window.innerHeight / 100 : 8
-  );
+  // const [activeCognitionIndex, setActiveCognitionIndex] =
+  //   useState<string>("group_1");
+  // const [previousCognitionIndex, setPreviousCognitionIndex] =
+  //   useState<string>("group_1");
+  // const [vhUnit, setVhUnit] = useState(
+  //   typeof window !== "undefined" ? window.innerHeight / 100 : 8
+  // );
 
-  const heroRef = useRef<HTMLDivElement>(null);
+  // const heroRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: heroRef,
+  //   offset: ["start start", "end start"],
+  // });
 
-  const cognitionSplitTextMemo = useMemo(
-    () => (
-      <SplitText
-        text="cognition core"
-        className=" font-special-gothic-expanded-one text-white text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
-        delay={10}
-        duration={2}
-        ease="power3.out"
-        splitType="chars"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-      />
-    ),
-    []
-  );
+  // const cognitionSplitTextMemo = useMemo(
+  //   () => (
+  //     <SplitText
+  //       text="cognition core"
+  //       className=" font-special-gothic-expanded-one text-white text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+  //       delay={10}
+  //       duration={2}
+  //       ease="power3.out"
+  //       splitType="chars"
+  //       from={{ opacity: 0, y: 40 }}
+  //       to={{ opacity: 1, y: 0 }}
+  //       threshold={0.1}
+  //       rootMargin="-100px"
+  //       textAlign="center"
+  //     />
+  //   ),
+  //   []
+  // );
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  useEffect(() => {
-    const updateVhUnit = () => {
-      setVhUnit(window.innerHeight / 100);
-    };
+  // const imageY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  // useEffect(() => {
+  //   const updateVhUnit = () => {
+  //     setVhUnit(window.innerHeight / 100);
+  //   };
 
-    let timeoutId: NodeJS.Timeout;
-    const throttledUpdateVhUnit = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateVhUnit, 16);
-    };
+  //   let timeoutId: NodeJS.Timeout;
+  //   const throttledUpdateVhUnit = () => {
+  //     clearTimeout(timeoutId);
+  //     timeoutId = setTimeout(updateVhUnit, 16);
+  //   };
 
-    updateVhUnit();
-    window.addEventListener("resize", throttledUpdateVhUnit);
-    return () => {
-      window.removeEventListener("resize", throttledUpdateVhUnit);
-      clearTimeout(timeoutId);
-    };
-  }, []);
+  //   updateVhUnit();
+  //   window.addEventListener("resize", throttledUpdateVhUnit);
+  //   return () => {
+  //     window.removeEventListener("resize", throttledUpdateVhUnit);
+  //     clearTimeout(timeoutId);
+  //   };
+  // }, []);
 
-  const getActiveIndex = () => {
-    return cognitionCoreItems.findIndex(
-      (item) => item.image === activeCognitionIndex
-    );
-  };
+  // const getActiveIndex = () => {
+  //   return cognitionCoreItems.findIndex(
+  //     (item) => item.image === activeCognitionIndex
+  //   );
+  // };
 
-  const getPreviousIndex = () => {
-    return cognitionCoreItems.findIndex(
-      (item) => item.image === previousCognitionIndex
-    );
-  };
-  const handleCognitionClick = (newIndex: string) => {
-    setPreviousCognitionIndex(activeCognitionIndex);
-    setActiveCognitionIndex(newIndex);
-  };
+  // const getPreviousIndex = () => {
+  //   return cognitionCoreItems.findIndex(
+  //     (item) => item.image === previousCognitionIndex
+  //   );
+  // };
+  // const handleCognitionClick = (newIndex: string) => {
+  //   setPreviousCognitionIndex(activeCognitionIndex);
+  //   setActiveCognitionIndex(newIndex);
+  // };
 
   const demoItems = [
     {
@@ -130,50 +131,50 @@ export default function AIPage() {
     },
   ];
 
-  const cognitionCoreItems = [
-    {
-      image: "group_1",
-      title: "Deep Learning Frameworks",
-      description:
-        "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
-    },
-    {
-      image: "group_2",
-      title: "Natural Language Processing (NLP) Tools",
-      description:
-        "Tools designed to analyze, understand, and generate human language. They enable applications like chatbots, sentiment analysis, translation, and text summarization.",
-    },
-    {
-      image: "group_3",
-      title: "Data Manipulation and Analysis",
-      description:
-        "Toolkits for cleaning, transforming, and exploring datasets. These are essential for preparing data for machine learning and drawing insights from structured or unstructured information.",
-    },
-    {
-      image: "group_4",
-      title: "Cloud-Based Machine Learning Services",
-      description:
-        "Scalable platforms offered by cloud providers (like AWS, Azure, or Google Cloud) that allow users to build, train, and deploy machine learning models without managing infrastructure.",
-    },
-    {
-      image: "group_5",
-      title: "Model Deployment and Serving Platforms",
-      description:
-        "Systems that host trained AI models and provide APIs or endpoints for real-time inference, ensuring high availability, scalability, and performance in production environments.",
-    },
-    {
-      image: "group_6",
-      title: "AI-Assisted Coding Tools",
-      description:
-        "Intelligent coding assistants that help developers write, debug, and optimize code using machine learning, such as code completion, generation, or review features.",
-    },
-    {
-      image: "group_7",
-      title: "AI Model Fine-Tuning",
-      description:
-        "Techniques and tools used to adapt pre-trained models to specific tasks or datasets, improving accuracy and performance in targeted applications.",
-    },
-  ];
+  // const cognitionCoreItems = [
+  //   {
+  //     image: "group_1",
+  //     title: "Deep Learning Frameworks",
+  //     description:
+  //       "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
+  //   },
+  //   {
+  //     image: "group_2",
+  //     title: "Natural Language Processing (NLP) Tools",
+  //     description:
+  //       "Tools designed to analyze, understand, and generate human language. They enable applications like chatbots, sentiment analysis, translation, and text summarization.",
+  //   },
+  //   {
+  //     image: "group_3",
+  //     title: "Data Manipulation and Analysis",
+  //     description:
+  //       "Toolkits for cleaning, transforming, and exploring datasets. These are essential for preparing data for machine learning and drawing insights from structured or unstructured information.",
+  //   },
+  //   {
+  //     image: "group_4",
+  //     title: "Cloud-Based Machine Learning Services",
+  //     description:
+  //       "Scalable platforms offered by cloud providers (like AWS, Azure, or Google Cloud) that allow users to build, train, and deploy machine learning models without managing infrastructure.",
+  //   },
+  //   {
+  //     image: "group_5",
+  //     title: "Model Deployment and Serving Platforms",
+  //     description:
+  //       "Systems that host trained AI models and provide APIs or endpoints for real-time inference, ensuring high availability, scalability, and performance in production environments.",
+  //   },
+  //   {
+  //     image: "group_6",
+  //     title: "AI-Assisted Coding Tools",
+  //     description:
+  //       "Intelligent coding assistants that help developers write, debug, and optimize code using machine learning, such as code completion, generation, or review features.",
+  //   },
+  //   {
+  //     image: "group_7",
+  //     title: "AI Model Fine-Tuning",
+  //     description:
+  //       "Techniques and tools used to adapt pre-trained models to specific tasks or datasets, improving accuracy and performance in targeted applications.",
+  //   },
+  // ];
 
   // const constructsItems = [
   //   {
@@ -220,9 +221,9 @@ export default function AIPage() {
   //   },
   // ];
 
-  const handleBookCallClick = () => {
-    window.open("https://cal.com/coullax/30min", "_blank");
-  };
+  // const handleBookCallClick = () => {
+  //   window.open("https://cal.com/coullax/30min", "_blank");
+  // };
 
   return (
     <div className=" w-full">
@@ -291,7 +292,7 @@ export default function AIPage() {
           </VelocityScroll>
         </div>
       </div> */}
-      <Hero />
+      {/* <Hero /> */}
 
       <div className=" py-[6.711vh] w-full">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
@@ -319,7 +320,7 @@ export default function AIPage() {
               className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
             />
           </div>
-          <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase">
+          {/* <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase">
             <AnimatedText key={`ritual-1-${activeCognitionIndex}`} delay={0}>
               Working with us is easy. We follow a clear, no
             </AnimatedText>
@@ -329,13 +330,13 @@ export default function AIPage() {
             <AnimatedText key={`ritual-3-${activeCognitionIndex}`} delay={0.4}>
               smooth, from first chat to final delivery.
             </AnimatedText>
-          </div>
+          </div> */}
 
           <FlowingMenu items={demoItems} />
         </div>
       </div>
 
-      <div className=" py-[6.711vh] relative w-full bg-black">
+      {/* <div className=" py-[6.711vh] relative w-full bg-black">
         <div
           className={cn(
             "absolute inset-0",
@@ -466,7 +467,8 @@ export default function AIPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+       <Cognition />
 
       {/* <div className=" py-[6.711vh] w-full">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
