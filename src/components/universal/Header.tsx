@@ -39,12 +39,13 @@ export default function HeaderNavBar({
 
       {/* Mobile Navigation */}
       <MobileNav>
-        <MobileNavHeader>
-          <NavbarLogo />
+        <MobileNavHeader className={`${navItemsStyles}`}>
+          <NavbarLogo logoColor={logoColor} />
           <div className="flex items-center gap-2">
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              theme={logoColor}
             />
           </div>
         </MobileNavHeader>

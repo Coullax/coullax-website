@@ -40,7 +40,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 }) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  // const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
     const el = ref.current;

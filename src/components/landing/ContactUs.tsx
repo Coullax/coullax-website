@@ -86,7 +86,7 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
 
   return (
     <div
-      className={`w-full relative overflow-hidden ${currentTheme.background} py-[16.577vh]`}
+      className={`w-full relative overflow-hidden ${currentTheme.background} py-[9.577vh] lg:py-[16.577vh]`}
     >
       <div
         className={cn(
