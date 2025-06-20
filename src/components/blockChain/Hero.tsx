@@ -30,7 +30,7 @@ const Hero = () => {
       />
       <div
         ref={heroRef}
-        className=" h-dvh flex flex-col items-center justify-center"
+        className=" h-[75dvh] md:h-dvh flex flex-col items-center justify-center"
       >
         <HeaderNavBar
           navItemsStyles="text-white hover:text-white"
@@ -56,34 +56,13 @@ const Hero = () => {
             </h1>
           </div>
           <div className=" w-full z-10 flex flex-col items-center justify-center my-[2.682vh] md:my-[3.39vh] lg:my-[3.378vh] text-white">
-            <h1 className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white">The Architecture of</h1>
-            <h1 className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white">Decentralized Thought</h1>
-            {/* <SplitText
-              text="The Architecture of"
-              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white"
-              delay={10}
-              duration={1.2}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-            />
-            <SplitText
-              text="Decentralized Thought"
-              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white"
-              delay={10}
-              duration={1.2}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-            /> */}
+            <h1 className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white">
+              The Architecture of
+            </h1>
+            <h1 className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white">
+              Decentralized Thought
+            </h1>
+
             <div className=" font-inclusive-sans text-[1.609vh] md:text-[2.119vh] lg:text-[2.432vh] text-center leading-[1.931vh] md:leading-[2.373vh] lg:leading-[3.162vh] uppercase py-[2.682vh] md:py-[2.966vh] lg:py-[3.176vh]">
               Blockchain engineered to grow, <br></br>
               resilient, autonomous, unstoppable.
@@ -93,7 +72,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className=" w-full h-[30.043vh] md:h-[42.373vh] lg:h-[43.919vh] relative ">
+      <div className=" w-full mt-[16.094vh] md:mt-0 h-[30.043vh] md:h-[42.373vh] lg:h-[43.919vh] relative ">
         {" "}
         <motion.div
           style={{ y: smoothSplineY }}
