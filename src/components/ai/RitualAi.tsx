@@ -1,9 +1,23 @@
-import React from 'react'
-import RitualSection from '../universal/RitualSection'
-import { VelocityScroll } from '../magicui/scroll-based-velocity';
+/**
+ * RitualAi Component
+ *
+ * A comprehensive AI services page component that showcases the AI development process.
+ * Features a multi-step process flow, interactive flowing menu, and animated text scrolling.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered AI services page
+ */
+
+import React from "react";
+import RitualSection from "../universal/RitualSection";
+import { VelocityScroll } from "../magicui/scroll-based-velocity";
 import FlowingMenu from "@/components/ui/flowing-menu";
 
 const RitualAi = () => {
+  /**
+   * Demo items representing the AI development process steps
+   * Each item contains navigation link, descriptive text, placeholder image, and step index
+   */
   const demoItems = [
     {
       link: "#",
@@ -48,18 +62,28 @@ const RitualAi = () => {
       ind: "7",
     },
   ];
+
+  /**
+   * Text content for the cognition section
+   * Describes the AI development philosophy and approach
+   */
   const cognitionText = [
     "Our AI process is about more than just",
-    "automation.  it’s about building intelligence",
+    "automation.  it's about building intelligence",
     "that adapts, learns, and grows over time.",
     "From the first idea to the final product, we",
     "train models to understand patterns, make",
     "decisions, and evolve with purpose.",
   ];
-  const velocityText = "Instruct | infer| Integrate";
 
+  /**
+   * Velocity scroll text content
+   * Brief tagline for AI capabilities
+   */
+  const velocityText = "Instruct | infer| Integrate";
   return (
-    <div className='w-full bg-white'>
+    <div className="w-full bg-white">
+      {/* Main ritual section with AI development process steps */}
       <RitualSection
         demoItems={demoItems}
         typingText="Fed with data, trained with intent — the mind begins to see beyond the static."
@@ -68,9 +92,9 @@ const RitualAi = () => {
         TypingTextColor="text-black"
         cognitionTextColor="text-black"
         cognitionText={cognitionText}
-        
       />
 
+      {/* Interactive flowing menu showcasing AI development steps */}
       <div className="w-[90%] max-w-[104.027vh] mx-auto">
         <FlowingMenu
           items={demoItems}
@@ -81,6 +105,7 @@ const RitualAi = () => {
         />
       </div>
 
+      {/* Animated velocity scroll with AI tagline */}
       <div className="w-full">
         <VelocityScroll
           defaultVelocity={1}
@@ -92,7 +117,7 @@ const RitualAi = () => {
         </VelocityScroll>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RitualAi
+export default RitualAi;
