@@ -137,7 +137,7 @@ export default function CognitionCoreTemplate({
         <SplitText
           text={titleText || "Cognition Core"}
           className={cn(
-            " font-special-gothic-expanded-one w-full !text-center lg:!text-left text-[3.814vh] md:text-[6.443vh] leading-[5.901vh] md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase",
+            " font-special-gothic-expanded-one w-full !text-center lg:!text-left text-[3.814vh] md:text-[6.443vh] md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase",
             titleTextClassName
           )}
           delay={10}
@@ -150,7 +150,7 @@ export default function CognitionCoreTemplate({
           rootMargin="-100px"
           textAlign="center"
         />
-        <div className=" font-silkscreen w-[90%] lg:w-full mx-auto text-[1.007vh] leading-[1.309vh] uppercase py-[2.146vh] md:py-[2.966vh] lg:my-[0.676vh]">
+        <div className=" font-silkscreen w-[90%] lg:w-full mx-auto text-[1.007vh] leading-[1.309vh] uppercase py-[20px] md:py-[2.966vh] lg:my-[0.676vh]">
           <TypingAnimation
             startOnView
             supportHTML={true}
@@ -266,7 +266,7 @@ export default function CognitionCoreTemplate({
         <div className=" mt-[1.609vh] md:mt-[4.237vh] lg:mt-[10.336vh]">
           <h1
             className={cn(
-              "w-full text-center lg:text-left text-[1.288vh] md:text-[1.864vh] lg:text-[2.685vh] uppercase font-inclusive-sans leading-[1.609vh] md:leading-[2.288vh] lg:leading-[3.49vh] font-bold",
+              "w-full text-center lg:text-left text-[1.288vh] md:text-[1.864vh] lg:text-[2.685vh] uppercase font-special-gothic-expanded-one leading-[1.609vh] md:leading-[2.288vh] lg:leading-[3.49vh] font-bold",
               cognitionCoreTitleStyle
             )}
           >
