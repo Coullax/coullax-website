@@ -71,7 +71,7 @@ const RitualBlockchain = () => {
         cognitionText={cognitionText}
       />
 
-      <div className="w-[90%] max-w-[104.027vh] mx-auto bg-">
+      <div className="w-[90%] max-w-[104.027vh] mx-auto">
         <FlowingMenu
           items={demoItems}
           marqueeBackgroundColor="#ff8410"

@@ -77,7 +77,7 @@ export default function Cognition() {
         description={description}
         cognitionCoreItems={items}
         titleText="consensus core"
-        titleTextClassName="w-full !text-center lg:!text-left text-[30px] md:text-[6.443vh] font-special-gothic-expanded-one md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase"
+        titleTextClassName="w-full !text-center lg:!text-left text-[3.219vh] md:text-[6.443vh] font-special-gothic-expanded-one md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase"
         typingText="Fed with data, trained with intent — the mind begins to see beyond the static."
         typingTextClassName="text-[0.751vh] md:text-[1.271vh] lg:text-[1.007vh] w-full text-center lg:text-left leading-[0.966vh] md:leading-[1.309vh] font-silkscreen"
         animationColor="#E0EF29"

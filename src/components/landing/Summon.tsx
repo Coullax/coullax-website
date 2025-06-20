@@ -23,7 +23,7 @@ export default function Summon() {
 
           <SplitText
             text="THE SUMMON"
-            className="text-[#fff] font-special-gothic-expanded-one text-[40px] md:text-[6.443vh] leading-[4.828vh] md:leading-[7.527vh] -tracking-[0.324vh] uppercase"
+            className="text-[#fff] font-special-gothic-expanded-one text-[4.292vh] md:text-[6.443vh] leading-[4.828vh] md:leading-[7.527vh] -tracking-[0.324vh] uppercase"
             delay={10}
             duration={2}
             ease="power3.out"

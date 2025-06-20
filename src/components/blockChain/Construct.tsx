@@ -89,7 +89,7 @@ export default function Construct(): JSX.Element {
       <div className=" w-[90%] max-w-[104.027vh] mx-auto">
         {/* Header section with title and services label */}
         <div className="w-full flex flex-col lg:flex-row justify-between lg:items-start items-center">
-          <h1 className=" w-full !text-center lg:!text-left text-[30px] md:text-[6.443vh] font-special-gothic-expanded-one md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase text-white">
+          <h1 className=" w-full !text-center lg:!text-left text-[3.219vh] md:text-[6.443vh] font-special-gothic-expanded-one md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase text-white">
             constructs
           </h1>
           <h1 className=" w-full text-center lg:text-right text-[2.146vh] md:text-[2.416vh] font-special-gothic-expanded-one leading-[2.146vh] lg:leading-[2.805vh] -tracking-[0.043vh] md:-tracking-[0.121vh] uppercase text-white">
@@ -112,7 +112,7 @@ export default function Construct(): JSX.Element {
         </h1>
         
         {/* Scroll-animated description text */}
-        <div className=" mt-[2.146vh] md:mt-[4.237vh] lg:mt-[3.758vh] w-full text-white text-center lg:text-left text-[1.288vh] md:text-[1.864vh] lg:text-[2.685vh] uppercase font-inclusive-sans leading-[1.609vh] md:leading-[2.288vh] lg:leading-[3.49vh]">
+        <div className=" mt-[3.219vh] md:mt-[4.237vh] lg:mt-[3.758vh] w-full text-white text-center lg:text-left text-[1.288vh] md:text-[1.864vh] lg:text-[2.685vh] uppercase font-inclusive-sans leading-[1.609vh] md:leading-[2.288vh] lg:leading-[3.49vh]">
           {constructsText.map((item, index) => (
             <ScrollAnimatedText key={index} delay={item.delay}>
               {item.text}
@@ -121,12 +121,12 @@ export default function Construct(): JSX.Element {
         </div>
         
         {/* Call-to-action button */}
-        <div className="flex justify-center lg:justify-start my-[2.146vh] md:my-[4.237vh] lg:my-[3.356vh]">
+        <div className="flex justify-center lg:justify-start my-[3.219vh] md:my-[4.237vh] lg:my-[3.356vh]">
           <BookCallBtn className="bg-[#ff8410] text-black leading-[1.315vh] -tracking-[0.067vh] border-black hover:bg-transparent hover:scale-105 hover:text-[#ff8410] hover:border-[#ff8410] transition-all duration-300 ease-in-out" />
         </div>
         
         {/* Grid of construct service cards */}
-        <div className=" w-full mt-[2.711vh] md:mt-[4.711vh] lg:mt-[6.711vh] grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-[1.342vh]">
+        <div className=" w-full mt-[2.711vh] md:mt-[4.711vh] lg:mt-[6.711vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2.146vh] md:gap-[1.864vh] lg:gap-[1.342vh]">
           {constructsItems.map((item, index) => (
             <ConstructItemCard
               key={index}
@@ -166,7 +166,7 @@ const ConstructItemCard = ({
   description,
 }: ConstructItem): JSX.Element => {
   return (
-    <div className=" group p-[0.985vh] lg:p-[2.685vh] md:p-[1.685vh] min-h-[20.268vh] md:min-h-[30.268vh] lg:min-h-[40.268vh] flex flex-col justify-start bg-transparent border border-white overflow-hidden relative">
+    <div className=" group p-[1.609vh] lg:p-[2.685vh] md:p-[1.685vh] min-h-[20.268vh] md:min-h-[30.268vh] lg:min-h-[40.268vh] flex flex-col justify-start bg-transparent border border-white overflow-hidden relative">
       {/* Animated background overlay on hover */}
       <div className=" h-[0px] group-hover:h-[201.342vh] transition-all duration-800 absolute bottom-0  left-0  bg-white w-full"></div>
       
@@ -190,11 +190,11 @@ const ConstructItemCard = ({
       
       {/* Service content - title and description */}
       <div className=" mt-[3.785vh] md:mt-[5.785vh] lg:mt-[7.785vh] z-10">
-        <h1 className="flex flex-col font-special-gothic-expanded-one text-[1.685vh] md:text-[2.085vh] lg:text-[2.685vh] leading-[2.09vh] md:leading-[2.49vh] lg:leading-[3.49vh] uppercase group-hover:text-black text-white">
+        <h1 className="flex flex-col font-special-gothic-expanded-one text-[2.146vh] md:text-[2.085vh] lg:text-[2.685vh] leading-[2.575vh] md:leading-[2.49vh] lg:leading-[3.49vh] uppercase group-hover:text-black text-white">
           <span>{title1}</span>
           <span>{title2}</span>
         </h1>
-        <div className=" font-inclusive-sans text-[1.611vh] leading-[2.094vh] uppercase group-hover:text-black mt-[2.685vh] text-white">
+        <div className=" font-inclusive-sans text-[1.395vh] leading-[1.609vh] lg:leading-[2.094vh] uppercase group-hover:text-black mt-[2.685vh] text-white">
           {description}
         </div>
       </div>

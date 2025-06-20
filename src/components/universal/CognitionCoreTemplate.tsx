@@ -150,7 +150,7 @@ export default function CognitionCoreTemplate({
           rootMargin="-100px"
           textAlign="center"
         />
-        <div className=" font-silkscreen w-[90%] lg:w-full mx-auto text-[1.007vh] leading-[1.309vh] uppercase py-[20px] md:py-[2.966vh] lg:my-[0.676vh]">
+        <div className=" font-silkscreen w-[90%] lg:w-full mx-auto text-[1.007vh] leading-[1.309vh] uppercase py-[2.146vh] md:py-[2.966vh] lg:my-[0.676vh]">
           <TypingAnimation
             startOnView
             supportHTML={true}
