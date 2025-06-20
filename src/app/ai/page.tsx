@@ -11,6 +11,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
+import Construct from "@/components/ai/Construct";
 
 export default function AIPage() {
   const [activeCognitionIndex, setActiveCognitionIndex] =
@@ -173,50 +174,50 @@ export default function AIPage() {
     },
   ];
 
-  const constructsItems = [
-    {
-      image: "group_1",
-      title1: "Custom AI ",
-      title2: "Model creation",
-      description:
-        "We craft models from the ground up. trained on your data, tuned to your goals, and designed to think like your domain.",
-    },
-    {
-      image: "group_2",
-      title1: "AI-Powered",
-      title2: "Automation",
-      description:
-        "We design systems that act without asking — automating the routine, accelerating the complex, and adapting to change in real time.",
-    },
-    {
-      image: "group_3",
-      title1: "AI ",
-      title2: "Integration",
-      description:
-        "We embed intelligence into the heart of your existing systems. connecting data, decisions, and users in seamless harmony.",
-    },
-    {
-      image: "group_4",
-      title1: "Conversational",
-      title2: "AI & Chatbots",
-      description:
-        "We design intelligent agents that listen, respond, and learn. interfaces that speak in your voice and understand your users.",
-    },
-    {
-      image: "group_5",
-      title1: "Predictive",
-      title2: "Analytics",
-      description:
-        "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
-    },
-    {
-      image: "group_6",
-      title1: "AI for Business ",
-      title2: "Intelligence",
-      description:
-        "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
-    },
-  ];
+  // const constructsItems = [
+  //   {
+  //     image: "group_1",
+  //     title1: "Custom AI ",
+  //     title2: "Model creation",
+  //     description:
+  //       "We craft models from the ground up. trained on your data, tuned to your goals, and designed to think like your domain.",
+  //   },
+  //   {
+  //     image: "group_2",
+  //     title1: "AI-Powered",
+  //     title2: "Automation",
+  //     description:
+  //       "We design systems that act without asking — automating the routine, accelerating the complex, and adapting to change in real time.",
+  //   },
+  //   {
+  //     image: "group_3",
+  //     title1: "AI ",
+  //     title2: "Integration",
+  //     description:
+  //       "We embed intelligence into the heart of your existing systems. connecting data, decisions, and users in seamless harmony.",
+  //   },
+  //   {
+  //     image: "group_4",
+  //     title1: "Conversational",
+  //     title2: "AI & Chatbots",
+  //     description:
+  //       "We design intelligent agents that listen, respond, and learn. interfaces that speak in your voice and understand your users.",
+  //   },
+  //   {
+  //     image: "group_5",
+  //     title1: "Predictive",
+  //     title2: "Analytics",
+  //     description:
+  //       "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
+  //   },
+  //   {
+  //     image: "group_6",
+  //     title1: "AI for Business ",
+  //     title2: "Intelligence",
+  //     description:
+  //       "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
+  //   },
+  // ];
 
   const handleBookCallClick = () => {
     window.open("https://cal.com/coullax/30min", "_blank");
@@ -466,7 +467,7 @@ export default function AIPage() {
         </div>
       </div>
 
-      <div className=" py-[6.711vh] w-full">
+      {/* <div className=" py-[6.711vh] w-full">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className=" w-full flex flex-row justify-between items-start">
             <SplitText
@@ -570,7 +571,8 @@ export default function AIPage() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+      <Construct />
 
       <ContactUs />
 
