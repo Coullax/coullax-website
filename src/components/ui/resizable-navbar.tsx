@@ -165,9 +165,9 @@ export const NavItems = ({
           )}
           key={`link-${idx}`}
           href={item.link}
-          animate={{
-            fontSize: visible ? "1.342vh" : "1.342vh",
-          }}
+          // animate={{
+          //   fontSize: visible ? "1.342vh" : "1.342vh",
+          // }}
           transition={{ duration: 0.3 }}
         >
           {hovered === idx && (
