@@ -59,7 +59,7 @@ export default function RitualSection({
                     </div>
 
                     {cognitionText.length > 0 && (
-                        <div className={cn("font-inclusive-sans text-[1.685vh] lg:text-[2.685vh] md:text-[2.085vh] leading-[1.89vh] md:leading-[2.89vh] lg:leading-[3.49vh] uppercase text-white lg:text-left text-center", cognitionTextColor)}>
+                        <div className={cn("font-inclusive-sans text-[1.885vh] lg:text-[2.685vh] md:text-[2.085vh] leading-[1.89vh] md:leading-[2.89vh] lg:leading-[3.49vh] uppercase text-white lg:text-left text-center", cognitionTextColor)}>
                             {cognitionText.map((line, index) => (
                                 <ScrollAnimatedText key={`cognition-${index}`} delay={index * 0.2}>
                                     {line}
