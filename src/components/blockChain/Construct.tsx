@@ -116,10 +116,9 @@ export default function Construct() {
                 />
               </div>
               <div className=" mt-[3.785vh] md:mt-[5.785vh] lg:mt-[7.785vh] z-10">
-                <h1 className=" font-special-gothic-expanded-one text-[1.685vh] md:text-[2.085vh] lg:text-[2.685vh] leading-[3.49vh] uppercase group-hover:text-black text-white">
-                  {item.title1}
-                  <br />
-                  {item.title2}
+                <h1 className="flex flex-col font-special-gothic-expanded-one text-[1.685vh] md:text-[2.085vh] lg:text-[2.685vh] leading-[2.09vh] md:leading-[2.49vh] lg:leading-[3.49vh] uppercase group-hover:text-black text-white">
+                  <span>{item.title1}</span>
+                  <span>{item.title2}</span>
                 </h1>
                 <div className=" font-inclusive-sans text-[1.611vh] leading-[2.094vh] uppercase group-hover:text-black mt-[2.685vh] text-white">
                   {item.description}
