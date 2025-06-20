@@ -21,6 +21,7 @@ import Hero from "@/components/blockChain/Hero";
 import { TypingAnimation } from "../../components/magicui/typing-animation"
 import RitualBlockchain from "@/components/blockChain/RitualBlockchain";
 import ScrollAnimatedText from "@/components/framer/ScrollAnimatedText";
+import Cognition from "@/components/blockChain/Cognition";
 
 export default function BlockchainPage() {
   // const demoItems = [
@@ -355,7 +356,7 @@ export default function BlockchainPage() {
         </VelocityScroll>
        </div> */}
 
-      <div className=" py-[6.711vh] relative w-full bg-white">
+      {/* <div className=" py-[6.711vh] relative w-full bg-white">
         <div
           className={cn(
             "absolute inset-0",
@@ -482,7 +483,8 @@ export default function BlockchainPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Cognition />
 
       <div className=" py-[6.711vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
