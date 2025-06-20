@@ -5,6 +5,8 @@ import { Plus_Jakarta_Sans, Kode_Mono, Silkscreen, Inclusive_Sans } from "next/f
 import CookieConsent from "@/components/CookieConsent";
 import { AudioProvider } from "@/components/AudioPlayer";
 import localfont from "next/font/local";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -123,9 +125,12 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <AudioProvider>
+          <Suspense fallback={<Loading/>} >
+         
           {children}
-          <CookieConsent />
+           </Suspense>
         </AudioProvider>
+        <CookieConsent />
       </body>
     </html>
   );
