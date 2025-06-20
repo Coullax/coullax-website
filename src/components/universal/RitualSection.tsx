@@ -33,10 +33,10 @@ export default function RitualSection({
     return (
         <>
             <div className={cn("pt-[10.135vh] lg:pb-[6.757vh] pb-[0.757vh] md:pb-[2.757vh] w-full bg-black", backgroundcolor)}>
-                <div className="w-[90%] max-w-[104.027vh] mx-auto">
+                <div className="w-[90%] max-w-[104.027vh] mx-auto text-center lg:text-left">
                     <SplitText
                         text=" Ritual of Build"
-                        className={cn("font-special-gothic-expanded-one lg:text-[6.486vh] md:text-[5.443vh]  text-[5.043vh] lg:leading-[7.477vh] md:leading-[6.477vh]  leading-[5.477vh] lg:-tracking-[0.322vh] -tracking-[0.122vh] uppercase  text-black", splitTextStyle)}
+                        className={cn("font-special-gothic-expanded-one lg:text-[6.486vh] md:text-[5.443vh]  text-[5.043vh] lg:leading-[7.477vh] md:leading-[6.477vh]  leading-[5.477vh] lg:-tracking-[0.322vh] -tracking-[0.122vh] uppercase  text-black lg:!align-left align-center", splitTextStyle)}
                         delay={10}
                         duration={2}
                         ease="power3.out"
