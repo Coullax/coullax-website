@@ -4,24 +4,25 @@ import Footer from "@/components/universal/Footer";
 // import HeaderNavBar from "@/components/universal/Header";
 // import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 // import FlowingMenu from "@/components/ui/flowing-menu";
-import { cn } from "@/lib/utils";
-import {
-  motion,
+// import { cn } from "@/lib/utils";
+// import {
+//   motion,
 
-} from "framer-motion";
-import Image from "next/image";
-import React, { useState, useEffect, useMemo } from "react";
-import SplitText from "@/components/reactbits/splitText";
+// } from "framer-motion";
+// import Image from "next/image";
+import React from "react";
+// import SplitText from "@/components/reactbits/splitText";
 // import AnimatedText from "@/components/gsp/AnimatedText";
 // import TypingEffect from "@/components/gsp/TypingEffect";
 import Hero from "@/components/blockChain/Hero";
 
 // import AnimatedText from "@/components/gsp/AnimatedText";
 // import Spline from '@splinetool/react-spline';
-import { TypingAnimation } from "../../components/magicui/typing-animation"
+// import { TypingAnimation } from "../../components/magicui/typing-animation"
 import RitualBlockchain from "@/components/blockChain/RitualBlockchain";
-import ScrollAnimatedText from "@/components/framer/ScrollAnimatedText";
+// import ScrollAnimatedText from "@/components/framer/ScrollAnimatedText";
 import Cognition from "@/components/blockChain/Cognition";
+import Construct from "@/components/blockChain/Construct";
 
 export default function BlockchainPage() {
   // const demoItems = [
@@ -69,34 +70,34 @@ export default function BlockchainPage() {
   //   },
   // ];
 
-  const consensusText = [
-    { text: "the toolkit we use to build intelligent", delay: 0 },
-    { text: "blockchain systems spans the full stack", delay: 0.2 },
-    { text: "from training machine learning models and", delay: 0.4 },
-    { text: "integrating decentralized data sources,\n\n", delay: 0.6 },
-    { text: "to understanding natural language with", delay: 0.8 },
-    { text: "on-chain logic, and deploying AI-driven", delay: 1.0 },
-    { text: "smart contracts into the real world via", delay: 1.2 },
-    { text: "decentralized infrastructure.", delay: 1.4 },
-  ];
+  // const consensusText = [
+  //   { text: "the toolkit we use to build intelligent", delay: 0 },
+  //   { text: "blockchain systems spans the full stack", delay: 0.2 },
+  //   { text: "from training machine learning models and", delay: 0.4 },
+  //   { text: "integrating decentralized data sources,\n\n", delay: 0.6 },
+  //   { text: "to understanding natural language with", delay: 0.8 },
+  //   { text: "on-chain logic, and deploying AI-driven", delay: 1.0 },
+  //   { text: "smart contracts into the real world via", delay: 1.2 },
+  //   { text: "decentralized infrastructure.", delay: 1.4 },
+  // ];
 
-  const constructsText = [
-    { text: "Our services are known as Constructs ", delay: 0 },
-    { text: "decentralized systems born from consensus and", delay: 0.2 },
-    { text: "shaped by code. Each Construct is built to evolve,", delay: 0.4 },
-    { text: "govern, and serve, whether automating protocol", delay: 0.6 },
-    { text: "logic, securing data flows, or powering adaptive", delay: 0.8 },
-    { text: "on-chain experiences.", delay: 0.8 }
-  ];
+  // const constructsText = [
+  //   { text: "Our services are known as Constructs ", delay: 0 },
+  //   { text: "decentralized systems born from consensus and", delay: 0.2 },
+  //   { text: "shaped by code. Each Construct is built to evolve,", delay: 0.4 },
+  //   { text: "govern, and serve, whether automating protocol", delay: 0.6 },
+  //   { text: "logic, securing data flows, or powering adaptive", delay: 0.8 },
+  //   { text: "on-chain experiences.", delay: 0.8 }
+  // ];
 
 
-  const [activeCognitionIndex, setActiveCognitionIndex] =
-    useState<string>("group_1");
-  const [previousCognitionIndex, setPreviousCognitionIndex] =
-    useState<string>("group_1");
-  const [vhUnit, setVhUnit] = useState(
-    typeof window !== "undefined" ? window.innerHeight / 100 : 8
-  );
+  // const [activeCognitionIndex, setActiveCognitionIndex] =
+  //   useState<string>("group_1");
+  // const [previousCognitionIndex, setPreviousCognitionIndex] =
+  //   useState<string>("group_1");
+  // const [vhUnit, setVhUnit] = useState(
+  //   typeof window !== "undefined" ? window.innerHeight / 100 : 8
+  // );
 
   // const heroRef = useRef<HTMLDivElement>(null);
 
@@ -105,159 +106,159 @@ export default function BlockchainPage() {
   //   offset: ["start start", "end start"],
   // });
 
-  const cognitionSplitTextMemo = useMemo(
-    () => (
-      <SplitText
-        text="consensus core"
-        className=" font-special-gothic-expanded-one text-black lg:text-[6.443vh] text-[3.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
-        delay={10}
-        duration={2}
-        ease="power3.out"
-        splitType="chars"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-      />
-    ),
-    []
-  );
+  // const cognitionSplitTextMemo = useMemo(
+  //   () => (
+  //     <SplitText
+  //       text="consensus core"
+  //       className=" font-special-gothic-expanded-one text-black lg:text-[6.443vh] text-[3.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase"
+  //       delay={10}
+  //       duration={2}
+  //       ease="power3.out"
+  //       splitType="chars"
+  //       from={{ opacity: 0, y: 40 }}
+  //       to={{ opacity: 1, y: 0 }}
+  //       threshold={0.1}
+  //       rootMargin="-100px"
+  //       textAlign="center"
+  //     />
+  //   ),
+  //   []
+  // );
 
   // const imageY = useTransform(scrollYProgress, [0.1, 0.6], [540, 220]);
   // const splineY = useTransform(scrollYProgress, [0.1, 0.6], [540, -370]);
 
-  useEffect(() => {
-    const updateVhUnit = () => {
-      setVhUnit(window.innerHeight / 100);
-    };
+  // useEffect(() => {
+  //   const updateVhUnit = () => {
+  //     setVhUnit(window.innerHeight / 100);
+  //   };
 
-    let timeoutId: NodeJS.Timeout;
-    const throttledUpdateVhUnit = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateVhUnit, 16);
-    };
+  //   let timeoutId: NodeJS.Timeout;
+  //   const throttledUpdateVhUnit = () => {
+  //     clearTimeout(timeoutId);
+  //     timeoutId = setTimeout(updateVhUnit, 16);
+  //   };
 
-    updateVhUnit();
-    window.addEventListener("resize", throttledUpdateVhUnit);
-    return () => {
-      window.removeEventListener("resize", throttledUpdateVhUnit);
-      clearTimeout(timeoutId);
-    };
-  }, []);
+  //   updateVhUnit();
+  //   window.addEventListener("resize", throttledUpdateVhUnit);
+  //   return () => {
+  //     window.removeEventListener("resize", throttledUpdateVhUnit);
+  //     clearTimeout(timeoutId);
+  //   };
+  // }, []);
 
-  const getActiveIndex = () => {
-    return cognitionCoreItems.findIndex(
-      (item) => item.image === activeCognitionIndex
-    );
-  };
+  // const getActiveIndex = () => {
+  //   return cognitionCoreItems.findIndex(
+  //     (item) => item.image === activeCognitionIndex
+  //   );
+  // };
 
-  const getPreviousIndex = () => {
-    return cognitionCoreItems.findIndex(
-      (item) => item.image === previousCognitionIndex
-    );
-  };
-  const handleCognitionClick = (newIndex: string) => {
-    setPreviousCognitionIndex(activeCognitionIndex);
-    setActiveCognitionIndex(newIndex);
-  };
-
-
+  // const getPreviousIndex = () => {
+  //   return cognitionCoreItems.findIndex(
+  //     (item) => item.image === previousCognitionIndex
+  //   );
+  // };
+  // const handleCognitionClick = (newIndex: string) => {
+  //   setPreviousCognitionIndex(activeCognitionIndex);
+  //   setActiveCognitionIndex(newIndex);
+  // };
 
 
-  const cognitionCoreItems = [
-    {
-      image: "group_1",
-      title: "Deep Learning Frameworks",
-      description:
-        "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
-    },
-    {
-      image: "group_2",
-      title: "Natural Language Processing (NLP) Tools",
-      description:
-        "Tools designed to analyze, understand, and generate human language. They enable applications like chatbots, sentiment analysis, translation, and text summarization.",
-    },
-    {
-      image: "group_3",
-      title: "Data Manipulation and Analysis",
-      description:
-        "Toolkits for cleaning, transforming, and exploring datasets. These are essential for preparing data for machine learning and drawing insights from structured or unstructured information.",
-    },
-    {
-      image: "group_4",
-      title: "Cloud-Based Machine Learning Services",
-      description:
-        "Scalable platforms offered by cloud providers (like AWS, Azure, or Google Cloud) that allow users to build, train, and deploy machine learning models without managing infrastructure.",
-    },
-    {
-      image: "group_5",
-      title: "Model Deployment and Serving Platforms",
-      description:
-        "Systems that host trained AI models and provide APIs or endpoints for real-time inference, ensuring high availability, scalability, and performance in production environments.",
-    },
-    {
-      image: "group_6",
-      title: "AI-Assisted Coding Tools",
-      description:
-        "Intelligent coding assistants that help developers write, debug, and optimize code using machine learning, such as code completion, generation, or review features.",
-    },
-    {
-      image: "group_7",
-      title: "AI Model Fine-Tuning",
-      description:
-        "Techniques and tools used to adapt pre-trained models to specific tasks or datasets, improving accuracy and performance in targeted applications.",
-    },
-  ];
 
-  const constructsItems = [
-    {
-      image: "group_1",
-      title1: "Custom AI ",
-      title2: "Model creation",
-      description:
-        "We craft models from the ground up. trained on your data, tuned to your goals, and designed to think like your domain.",
-    },
-    {
-      image: "group_2",
-      title1: "AI-Powered",
-      title2: "Automation",
-      description:
-        "We design systems that act without asking — automating the routine, accelerating the complex, and adapting to change in real time.",
-    },
-    {
-      image: "group_3",
-      title1: "AI ",
-      title2: "Integration",
-      description:
-        "We embed intelligence into the heart of your existing systems. connecting data, decisions, and users in seamless harmony.",
-    },
-    {
-      image: "group_4",
-      title1: "Conversational",
-      title2: "AI & Chatbots",
-      description:
-        "We design intelligent agents that listen, respond, and learn. interfaces that speak in your voice and understand your users.",
-    },
-    {
-      image: "group_5",
-      title1: "Predictive",
-      title2: "Analytics",
-      description:
-        "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
-    },
-    {
-      image: "group_6",
-      title1: "AI for Business ",
-      title2: "Intelligence",
-      description:
-        "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
-    },
-  ];
 
-  const handleBookCallClick = () => {
-    window.open("https://cal.com/coullax/30min", "_blank");
-  };
+  // const cognitionCoreItems = [
+  //   {
+  //     image: "group_1",
+  //     title: "Deep Learning Frameworks",
+  //     description:
+  //       "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
+  //   },
+  //   {
+  //     image: "group_2",
+  //     title: "Natural Language Processing (NLP) Tools",
+  //     description:
+  //       "Tools designed to analyze, understand, and generate human language. They enable applications like chatbots, sentiment analysis, translation, and text summarization.",
+  //   },
+  //   {
+  //     image: "group_3",
+  //     title: "Data Manipulation and Analysis",
+  //     description:
+  //       "Toolkits for cleaning, transforming, and exploring datasets. These are essential for preparing data for machine learning and drawing insights from structured or unstructured information.",
+  //   },
+  //   {
+  //     image: "group_4",
+  //     title: "Cloud-Based Machine Learning Services",
+  //     description:
+  //       "Scalable platforms offered by cloud providers (like AWS, Azure, or Google Cloud) that allow users to build, train, and deploy machine learning models without managing infrastructure.",
+  //   },
+  //   {
+  //     image: "group_5",
+  //     title: "Model Deployment and Serving Platforms",
+  //     description:
+  //       "Systems that host trained AI models and provide APIs or endpoints for real-time inference, ensuring high availability, scalability, and performance in production environments.",
+  //   },
+  //   {
+  //     image: "group_6",
+  //     title: "AI-Assisted Coding Tools",
+  //     description:
+  //       "Intelligent coding assistants that help developers write, debug, and optimize code using machine learning, such as code completion, generation, or review features.",
+  //   },
+  //   {
+  //     image: "group_7",
+  //     title: "AI Model Fine-Tuning",
+  //     description:
+  //       "Techniques and tools used to adapt pre-trained models to specific tasks or datasets, improving accuracy and performance in targeted applications.",
+  //   },
+  // ];
+
+  // const constructsItems = [
+  //   {
+  //     image: "group_1",
+  //     title1: "Custom AI ",
+  //     title2: "Model creation",
+  //     description:
+  //       "We craft models from the ground up. trained on your data, tuned to your goals, and designed to think like your domain.",
+  //   },
+  //   {
+  //     image: "group_2",
+  //     title1: "AI-Powered",
+  //     title2: "Automation",
+  //     description:
+  //       "We design systems that act without asking — automating the routine, accelerating the complex, and adapting to change in real time.",
+  //   },
+  //   {
+  //     image: "group_3",
+  //     title1: "AI ",
+  //     title2: "Integration",
+  //     description:
+  //       "We embed intelligence into the heart of your existing systems. connecting data, decisions, and users in seamless harmony.",
+  //   },
+  //   {
+  //     image: "group_4",
+  //     title1: "Conversational",
+  //     title2: "AI & Chatbots",
+  //     description:
+  //       "We design intelligent agents that listen, respond, and learn. interfaces that speak in your voice and understand your users.",
+  //   },
+  //   {
+  //     image: "group_5",
+  //     title1: "Predictive",
+  //     title2: "Analytics",
+  //     description:
+  //       "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
+  //   },
+  //   {
+  //     image: "group_6",
+  //     title1: "AI for Business ",
+  //     title2: "Intelligence",
+  //     description:
+  //       "We use advanced frameworks like TensorFlow and PyTorch to build and train powerful AI models.",
+  //   },
+  // ];
+
+  // const handleBookCallClick = () => {
+  //   window.open("https://cal.com/coullax/30min", "_blank");
+  // };
 
   return (
     <div className=" w-full">
@@ -486,7 +487,7 @@ export default function BlockchainPage() {
       </div> */}
       <Cognition />
 
-      <div className=" py-[6.711vh] w-full bg-black">
+      {/* <div className=" py-[6.711vh] w-full bg-black">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
           <div className="w-full flex flex-col lg:flex-row justify-between lg:items-start items-center">
             <h1 className=" font-special-gothic-expanded-one lg:text-[6.443vh] md:text-[5.443vh] text-[2.943vh] lg:leading-[7.477vh] lg:-tracking-[0.322vh] -tracking-[0.122vh] uppercase text-white">
@@ -511,7 +512,7 @@ export default function BlockchainPage() {
           <div className="font-inclusive-sans lg:text-[2.685vh] md:text-[1.685vh] text-[1.085vh]  leading-[1.09vh] md:leading-[2.49vh] lg:leading-[3.49vh] lg:my-[3.356vh] md:my-[3.056vh]  my-[2.356vh] uppercase text-white text-center lg:text-left">
             {constructsText.map((item, index) => (
               <ScrollAnimatedText
-                key={`constructs-${index + 1}-${activeCognitionIndex}`}
+                key={index}
                 delay={item.delay}
               >
                 {item.text}
@@ -563,7 +564,8 @@ export default function BlockchainPage() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
+      <Construct />
 
 
       <ContactUs theme="white" />

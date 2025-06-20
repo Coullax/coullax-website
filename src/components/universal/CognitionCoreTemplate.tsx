@@ -42,8 +42,6 @@ export default function CognitionCoreTemplate({
 }: CognitionCoreTemplateProps) {
   const [activeCognitionIndex, setActiveCognitionIndex] =
     useState<string>("group_1");
-  const [previousCognitionIndex, setPreviousCognitionIndex] =
-    useState<string>("group_1");
   const [vhUnit, setVhUnit] = useState(
     typeof window !== "undefined" ? window.innerHeight / 100 : 8
   );
@@ -129,8 +127,7 @@ export default function CognitionCoreTemplate({
         y: currentRect.top - containerRect.top,
       });
     }
-
-    setPreviousCognitionIndex(activeCognitionIndex);
+    
     setActiveCognitionIndex(newIndex);
   };
 
