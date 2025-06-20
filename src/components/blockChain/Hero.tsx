@@ -73,7 +73,6 @@ const Hero = () => {
       </div>
 
       <div className=" w-full mt-[16.094vh] md:mt-0 h-[30.043vh] md:h-[42.373vh] lg:h-[43.919vh] relative ">
-        {" "}
         <motion.div
           style={{ y: smoothSplineY }}
           className=" h-[42.918vh] md:h-[46.61vh] lg:h-[43.919vh] !bg-transparent w-[200%] -ml-[50%] flex items-center z-20"

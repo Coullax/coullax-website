@@ -11,7 +11,7 @@ import React from "react";
 // import SplitText from "@/components/reactbits/splitText";
 // import AnimatedText from "@/components/gsp/AnimatedText";
 // import TypingEffect from "@/components/gsp/TypingEffect";
-// import Hero from "@/components/ai/Hero";
+import Hero from "@/components/ai/Hero";
 import Construct from "@/components/ai/Construct";
 import Cognition from "@/components/ai/Cognition";
 import RitualAi from "@/components/ai/RitualAi";
@@ -293,7 +293,7 @@ export default function AIPage() {
           </VelocityScroll>
         </div>
       </div> */}
-      {/* <Hero /> */}
+      <Hero />
       <RitualAi/>
 
       {/* <div className=" py-[6.711vh] w-full">
