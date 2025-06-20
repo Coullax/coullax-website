@@ -29,7 +29,7 @@ interface CognitionCoreTemplateProps {
 export default function CognitionCoreTemplate({
   titleText,
   titleTextClassName = "",
-  typingText,
+  typingText="",
   typingTextClassName = "",
   description = [],
   animationColor = "#E0EF29",
@@ -156,12 +156,11 @@ export default function CognitionCoreTemplate({
             supportHTML={true}
             duration={10}
             className={cn(
-              "text-[0.751vh] md:text-[1.271vh] lg:text-[1.007vh] w-full text-center lg:text-left leading-[0.966vh] md:leading-[1.309vh] font-silkscreen",
+              "text-[0.751vh] md:text-[5.932vh] lg:text-[1.007vh] w-full text-center lg:text-left leading-[0.966vh] md:leading-[1.309vh] font-silkscreen",
               typingTextClassName
             )}
           >
-            {typingText ||
-              "Fed with data, trained with intent — the mind begins to see beyond the static."}
+            {typingText}
           </TypingAnimation>
         </div>
         <div

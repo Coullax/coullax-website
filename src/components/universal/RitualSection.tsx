@@ -41,7 +41,7 @@ export default function RitualSection({
           <SplitText
             text=" Ritual of Build"
             className={cn(
-              "w-full !text-center lg:!text-left text-[3.541vh] md:text-[5.593vh] font-special-gothic-expanded-one md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase",
+              "w-full !text-center lg:!text-left text-[3.541vh] md:text-[5.508vh] font-special-gothic-expanded-one md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.212vh] uppercase",
               splitTextStyle
             )}
             delay={10}

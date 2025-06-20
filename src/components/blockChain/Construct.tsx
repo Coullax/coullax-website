@@ -89,7 +89,7 @@ export default function Construct(): JSX.Element {
       <div className=" w-[90%] max-w-[104.027vh] mx-auto">
         {/* Header section with title and services label */}
         <div className="w-full flex flex-col lg:flex-row justify-between lg:items-start items-center">
-          <h1 className=" w-full !text-center lg:!text-left text-[3.219vh] md:text-[6.443vh] font-special-gothic-expanded-one md:leading-[7.477vh] -tracking-[0.215vh] md:-tracking-[0.322vh] uppercase text-white">
+          <h1 className=" w-full !text-center lg:!text-left text-[3.219vh] md:text-[5.508vh] font-special-gothic-expanded-one -tracking-[0.215vh] md:-tracking-[0.085vh] lg:leading-[7.477vh] uppercase text-white">
             constructs
           </h1>
           <h1 className=" w-full text-center lg:text-right text-[2.146vh] md:text-[2.416vh] font-special-gothic-expanded-one leading-[2.146vh] lg:leading-[2.805vh] -tracking-[0.043vh] md:-tracking-[0.121vh] uppercase text-white">
