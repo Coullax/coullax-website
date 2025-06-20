@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Footer from "@/components/universal/Footer";
 import { motion } from "framer-motion";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import Loading from "./loading";
 import ContactUs from "@/components/landing/ContactUs";
 import Hero from "@/components/landing/Hero";
 import Summon from "@/components/landing/Summon";
@@ -12,6 +11,7 @@ import Forge from "@/components/landing/Forge";
 import Ritual from "@/components/landing/Ritual";
 import Primordial from "@/components/landing/Primordial";
 import Artifact from "@/components/landing/Artifact";
+import Landing from "@/components/landing/landing";
 // import dynamic from "next/dynamic";
 
 // Dynamically import 3D components to prevent SSR issues
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className=" w-full bg-[#fff]">
       {!viewLoading ? (
-        <Loading setViewLoading={setViewLoading} />
+        <Landing setViewLoading={setViewLoading} />
       ) : (
         <motion.div
           initial={{ opacity: 0, y: 50 }}

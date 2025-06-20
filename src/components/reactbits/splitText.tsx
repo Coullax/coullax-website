@@ -18,6 +18,8 @@ export interface SplitTextProps {
   rootMargin?: string;
   textAlign?: React.CSSProperties["textAlign"];
   onLetterAnimationComplete?: () => void;
+  id?: string; // Add unique identifier
+  startDelay?: number; // Add start delay for sequential animations
 }
 
 const SplitText: React.FC<SplitTextProps> = ({
@@ -33,9 +35,12 @@ const SplitText: React.FC<SplitTextProps> = ({
   rootMargin = "-100px",
   textAlign = "center",
   onLetterAnimationComplete,
+  id,
+  startDelay = 0,
 }) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -90,11 +95,16 @@ const SplitText: React.FC<SplitTextProps> = ({
           clearProps: "willChange",
           immediateRender: true,
         });
-        onLetterAnimationComplete?.();
-      },
+        onLetterAnimationComplete?.();      },
     });
 
     tl.set(targets, { ...from, immediateRender: false, force3D: true });
+    
+    // Add start delay if specified
+    if (startDelay > 0) {
+      tl.to({}, { duration: startDelay / 1000 }); // Empty tween for delay
+    }
+    
     tl.to(targets, {
       ...to,
       duration,
@@ -105,11 +115,15 @@ const SplitText: React.FC<SplitTextProps> = ({
 
     return () => {
       tl.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      // More specific cleanup - only kill ScrollTriggers associated with this element
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.trigger === el) {
+          trigger.kill();
+        }
+      });
       gsap.killTweensOf(targets);
       splitter.revert();
-    };
-  }, [
+    };  }, [
     text,
     delay,
     duration,
@@ -120,6 +134,8 @@ const SplitText: React.FC<SplitTextProps> = ({
     threshold,
     rootMargin,
     onLetterAnimationComplete,
+    id,
+    startDelay,
   ]);
 
   return (

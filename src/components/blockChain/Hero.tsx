@@ -41,7 +41,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className=" w-[90%] max-w-[104.027vhvh] mx-auto flex flex-col items-center justify-center"
+          className=" w-[90%] max-w-[104.027vhvh] mx-auto flex flex-col items-center justify-center z-10"
         >
           <div className=" w-full flex flex-col items-center justify-center mt-[6.757vh]">
             <Image
@@ -55,12 +55,12 @@ const Hero = () => {
               BLOCKCHAIN TECHNOLOGY
             </h1>
           </div>
-          <div className=" w-full flex flex-col items-center justify-center my-[2.682vh] md:my-[3.39vh] lg:my-[3.378vh] text-white">
+          <div className=" w-full z-10 flex flex-col items-center justify-center my-[2.682vh] md:my-[3.39vh] lg:my-[3.378vh] text-white">
             <SplitText
               text="The Architecture of"
-              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase"
+              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white"
               delay={10}
-              duration={2}
+              duration={1.2}
               ease="power3.out"
               splitType="chars"
               from={{ opacity: 0, y: 40 }}
@@ -71,9 +71,9 @@ const Hero = () => {
             />
             <SplitText
               text="Decentralized Thought"
-              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase"
+              className="font-special-gothic-expanded-one text-[2.682vh] lg:text-[6.486vh] md:text-[3.814vh] text-center leading-[2.682vh] md:leading-[4.237vh] lg:leading-[7.527vh] md:-tracking-[0.169h] lg:-tracking-[0.324vh] uppercase text-white"
               delay={10}
-              duration={2}
+              duration={1.2}
               ease="power3.out"
               splitType="chars"
               from={{ opacity: 0, y: 40 }}

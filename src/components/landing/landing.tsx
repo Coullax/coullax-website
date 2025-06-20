@@ -6,14 +6,14 @@ import MetaBalls from "@/components/ui/meta-balls";
 import Image from "next/image";
 import React from "react";
 
-import synthesisIcon_yellow from "../../public/loading/synthesisIcon_yellow.png";
-import motilithIcon_yellow from "../../public/loading/motilithIcon_yellow.png";
-import cognitionIcon_yellow from "../../public/loading/cognitionIcon_yellow.png";
-import consensusIcon_yellow from "../../public/loading/consensusIcon_yellow.png";
-import etherIcon_yellow from "../../public/loading/etherIcon_yellow.png";
-import weaveIcon_yellow from "../../public/loading/weaveIcon_yellow.png";
+import synthesisIcon_yellow from "../../../public/loading/synthesisIcon_yellow.png";
+import motilithIcon_yellow from "../../../public/loading/motilithIcon_yellow.png";
+import cognitionIcon_yellow from "../../../public/loading/cognitionIcon_yellow.png";
+import consensusIcon_yellow from "../../../public/loading/consensusIcon_yellow.png";
+import etherIcon_yellow from "../../../public/loading/etherIcon_yellow.png";
+import weaveIcon_yellow from "../../../public/loading/weaveIcon_yellow.png";
 
-export default function Loading({
+export default function Landing({
   setViewLoading,
 }: {
   setViewLoading: (loading: boolean) => void;
