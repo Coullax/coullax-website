@@ -108,13 +108,13 @@ const MenuItem: React.FC<MenuItemProps> = ({
     return Array.from({ length: 8 }).map((_, idx) => (
       <React.Fragment key={idx}>
         <span
-          className="text-[3.221vh] !font-special-gothic-expanded-one leading-[4.174vh]"
+          className="lg:!text-[3.221vh] md:!text-[2.821vh] !text-[2.021vh]  !font-special-gothic-expanded-one leading-[4.174vh]"
           style={{ color: spanTextColor || "#e0ef29" }}
         >
           {text}
         </span>
         <div
-          className="text-[3.221vh] min-w-[11.745vh] rounded-full text-center font-special-gothic-expanded-one leading-[4.174vh]"
+          className="lg:!text-[3.221vh] md:!text-[2.821vh] !text-[2.021vh] lg:min-w-[11.745vh] min-w-[7.745vh] md:min-w-[9.745vh] rounded-full text-center font-special-gothic-expanded-one leading-[4.174vh]"
           style={{
             backgroundColor: roundedDivBackgroundColor || "#e0ef29",
             color: roundedDivTextColor || "#0505cb",
