@@ -26,7 +26,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [],  marqueeBackgroun
   spanTextColor,
   roundedDivBackgroundColor, roundedDivTextColor}) => {
   return (
-    <div className="menu-wrap lg:my-[6.711vh] md:my-[4.711vh] my-[2.711vh]">
+    <div className="menu-wrap lg:mb-[6.711vh] md:mb-[4.711vh] mb-[2.711vh]">
       <nav className="menu">
         {items.map((item, idx) => (
           <MenuItem key={idx} {...item} 
