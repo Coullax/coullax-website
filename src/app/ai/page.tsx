@@ -11,6 +11,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react";
 import SplitText from "@/components/reactbits/splitText";
 import AnimatedText from "@/components/gsp/AnimatedText";
 import TypingEffect from "@/components/gsp/TypingEffect";
+import Hero from "@/components/ai/Hero";
 import Construct from "@/components/ai/Construct";
 
 export default function AIPage() {
@@ -225,11 +226,10 @@ export default function AIPage() {
 
   return (
     <div className=" w-full">
-      <div
+      {/* <div
         ref={heroRef}
         className=" w-full h-dvh bg-[#effaff] relative overflow-hidden"
       >
-        {/* header */}
         <HeaderNavBar />
 
         <motion.div
@@ -290,7 +290,8 @@ export default function AIPage() {
             adoption |
           </VelocityScroll>
         </div>
-      </div>
+      </div> */}
+      <Hero />
 
       <div className=" py-[6.711vh] w-full">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">

@@ -63,13 +63,13 @@ export default function Cognition() {
     },
   ];
   return (
-    <div className=" w-full bg-white relative">
+    <div className=" w-full bg-white relative lg:pt-[3.378vh] pt-[1.378vh] pb-[5.168vh]">
       <div
         className={cn(
           "absolute inset-0",
           "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-          "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+          "[background-image:radial-gradient(#676B6E_1px,transparent_1px)]",
+          "dark:[background-image:radial-gradient(#676B6E_1px,transparent_1px)]",
           "opacity-25 dark:opacity-25 z-0"
         )}
       />

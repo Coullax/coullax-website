@@ -92,8 +92,8 @@ export default function ContactUs({ theme = "black" }: ContactUsProps) {
         className={cn(
           "absolute inset-0",
           "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-          "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+          "[background-image:radial-gradient(#676B6E_1px,transparent_1px)]",
+          "dark:[background-image:radial-gradient(#676B6E_1px,transparent_1px)]",
           "opacity-25 dark:opacity-25 z-0"
         )}
       />

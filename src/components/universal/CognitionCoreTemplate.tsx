@@ -29,7 +29,7 @@ interface CognitionCoreTemplateProps {
 export default function CognitionCoreTemplate({
   titleText,
   titleTextClassName = "",
-  typingText="",
+  typingText = "",
   typingTextClassName = "",
   description = [],
   animationColor = "#E0EF29",
@@ -71,8 +71,8 @@ export default function CognitionCoreTemplate({
       window.removeEventListener("resize", throttledUpdateVhUnit);
       clearTimeout(timeoutId);
     };
-  }, []); 
-  
+  }, []);
+
   useEffect(() => {
     const updateCirclePosition = () => {
       const activeIndex = getActiveIndex();
@@ -127,13 +127,25 @@ export default function CognitionCoreTemplate({
         y: currentRect.top - containerRect.top,
       });
     }
-    
+
     setActiveCognitionIndex(newIndex);
   };
 
   return (
+    // <div className=" w-full">
+    //         <div
+    //           className={cn(
+    //             "absolute inset-0",
+    //             "[background-size:20px_20px]",
+    //             "[background-image:radial-gradient(#676B6E_1px,transparent_1px)]",
+    //             "dark:[background-image:radial-gradient(#676B6E_1px,transparent_1px)]",
+    //             "opacity-25 dark:opacity-25 z-0",
+    //           )}
+    //         />
+
+    // </div>
     <div className=" w-[90%] max-w-[104.027vh] mx-auto">
-      <div className=" w-full py-[3.773vh] lg:py-[6.757vh] lg:mt-[3.378vh] mt-[1.378vh]">
+      <div className=" w-full py-[3.773vh] lg:py-[6.757vh] ">
         <SplitText
           text={titleText || "Cognition Core"}
           className={cn(
@@ -182,7 +194,7 @@ export default function CognitionCoreTemplate({
           ))}
         </div>
       </div>
-      <div className=" pt-[3.755vh] md:pt-[3.814vh] lg:pt-[6.711vh] mb-[5.168vh] lg:pr-[2.083vh] ">
+      <div className=" pt-[3.755vh] md:pt-[3.814vh] lg:pt-[6.711vh] lg:pr-[2.083vh] ">
         {" "}
         <div
           ref={containerRef}
@@ -262,11 +274,12 @@ export default function CognitionCoreTemplate({
                 {/* Colored overlay image with animation */}
                 <motion.div
                   className="absolute top-0 left-0 w-full h-full z-30"
-                  initial={{ clipPath: 'inset(100% 0 0 0)' }}
+                  initial={{ clipPath: "inset(100% 0 0 0)" }}
                   animate={{
-                    clipPath: activeCognitionIndex === item.image
-                      ? 'inset(0 0 0 0)'
-                      : 'inset(100% 0 0 0)'
+                    clipPath:
+                      activeCognitionIndex === item.image
+                        ? "inset(0 0 0 0)"
+                        : "inset(100% 0 0 0)",
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
