@@ -133,7 +133,7 @@ export default function CognitionCoreTemplate({
 
   return (
     <div className=" w-[90%] max-w-[104.027vh] mx-auto">
-      <div className=" w-full py-[1.073vh] lg:py-[3.356vh] mt-[5.168vh]">
+      <div className=" w-full py-[3.773vh] lg:py-[6.757vh] lg:mt-[3.378vh] mt-[1.378vh]">
         <SplitText
           text={titleText || "Cognition Core"}
           className={cn(
@@ -241,24 +241,44 @@ export default function CognitionCoreTemplate({
               />
 
               <motion.div
+                className="relative"
                 animate={{
                   scale: activeCognitionIndex === item.image ? 1.1 : 1,
-                  rotate: activeCognitionIndex === item.image ? [0, 5, 0] : 0,
+                  // rotate: activeCognitionIndex === item.image ? [0, 5, 0] : 0,
                 }}
                 transition={{
                   duration: 0.3,
                   ease: "easeInOut",
                 }}
               >
+                {/* Base white image */}
                 <Image
-                  src={`${imagePath}/${item.image}_${
-                    activeCognitionIndex === item.image ? "yellow" : "white"
-                  }.${imageType}`}
+                  src={`${imagePath}/${item.image}_white.${imageType}`}
                   alt={`Cognition Core image ${index + 1}`}
                   width={130}
                   height={130}
                   className="relative z-20 w-[8.725vh] h-[8.725vh]"
                 />
+
+                {/* Colored overlay image with animation */}
+                <motion.div
+                  className="absolute top-0 left-0 w-full h-full z-30"
+                  initial={{ clipPath: 'inset(100% 0 0 0)' }}
+                  animate={{
+                    clipPath: activeCognitionIndex === item.image
+                      ? 'inset(0 0 0 0)'
+                      : 'inset(100% 0 0 0)'
+                  }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <Image
+                    src={`${imagePath}/${item.image}_yellow.${imageType}`}
+                    alt={`Cognition Core colored image ${index + 1}`}
+                    width={130}
+                    height={130}
+                    className="w-[8.725vh] h-[8.725vh]"
+                  />
+                </motion.div>
               </motion.div>
             </motion.div>
           ))}
