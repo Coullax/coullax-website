@@ -3,17 +3,18 @@ import ContactUs from "@/components/landing/ContactUs";
 import Footer from "@/components/universal/Footer";
 // import HeaderNavBar from "@/components/universal/Header";
 // import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import FlowingMenu from "@/components/ui/flowing-menu";
+// import FlowingMenu from "@/components/ui/flowing-menu";
 // import { cn } from "@/lib/utils";
 // import { motion, useScroll, useTransform } from "framer-motion";
 // import Image from "next/image";
 import React from "react";
-import SplitText from "@/components/reactbits/splitText";
+// import SplitText from "@/components/reactbits/splitText";
 // import AnimatedText from "@/components/gsp/AnimatedText";
-import TypingEffect from "@/components/gsp/TypingEffect";
+// import TypingEffect from "@/components/gsp/TypingEffect";
 // import Hero from "@/components/ai/Hero";
 import Construct from "@/components/ai/Construct";
 import Cognition from "@/components/ai/Cognition";
+import RitualAi from "@/components/ai/RitualAi";
 
 export default function AIPage() {
   // const [activeCognitionIndex, setActiveCognitionIndex] =
@@ -86,50 +87,50 @@ export default function AIPage() {
   //   setActiveCognitionIndex(newIndex);
   // };
 
-  const demoItems = [
-    {
-      link: "#",
-      text: "Problem Framing",
-      image: "https://picsum.photos/600/400?random=1",
-      ind: "1",
-    },
-    {
-      link: "#",
-      text: "Data Discovery",
-      image: "https://picsum.photos/600/400?random=2",
-      ind: "2",
-    },
-    {
-      link: "#",
-      text: "Model Selection & Design",
-      image: "https://picsum.photos/600/400?random=3",
-      ind: "3",
-    },
-    {
-      link: "#",
-      text: "Training & Evaluation",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "4",
-    },
-    {
-      link: "#",
-      text: "Fine-Tuning",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "5",
-    },
-    {
-      link: "#",
-      text: "Deployment",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "6",
-    },
-    {
-      link: "#",
-      text: "Monitoring & Support",
-      image: "https://picsum.photos/600/400?random=4",
-      ind: "7",
-    },
-  ];
+  // const demoItems = [
+  //   {
+  //     link: "#",
+  //     text: "Problem Framing",
+  //     image: "https://picsum.photos/600/400?random=1",
+  //     ind: "1",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Data Discovery",
+  //     image: "https://picsum.photos/600/400?random=2",
+  //     ind: "2",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Model Selection & Design",
+  //     image: "https://picsum.photos/600/400?random=3",
+  //     ind: "3",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Training & Evaluation",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "4",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Fine-Tuning",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "5",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Deployment",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "6",
+  //   },
+  //   {
+  //     link: "#",
+  //     text: "Monitoring & Support",
+  //     image: "https://picsum.photos/600/400?random=4",
+  //     ind: "7",
+  //   },
+  // ];
 
   // const cognitionCoreItems = [
   //   {
@@ -293,12 +294,11 @@ export default function AIPage() {
         </div>
       </div> */}
       {/* <Hero /> */}
+      <RitualAi/>
 
-      <div className=" py-[6.711vh] w-full">
+      {/* <div className=" py-[6.711vh] w-full">
         <div className=" w-[90%] max-w-[104.027vh] mx-auto">
-          {/* <h1 className=" font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh]">
-            Ritual of Build
-          </h1> */}
+        
           <SplitText
             text=" Ritual of Build"
             className="font-special-gothic-expanded-one text-[6.443vh] leading-[7.477vh] -tracking-[0.322vh] uppercase mt-[3.356vh]"
@@ -320,21 +320,9 @@ export default function AIPage() {
               className="text-[1.007vh] leading-[1.309vh] font-silkscreen"
             />
           </div>
-          {/* <div className=" font-inclusive-sans text-[2.685vh] leading-[3.49vh] uppercase">
-            <AnimatedText key={`ritual-1-${activeCognitionIndex}`} delay={0}>
-              Working with us is easy. We follow a clear, no
-            </AnimatedText>
-            <AnimatedText key={`ritual-2-${activeCognitionIndex}`} delay={0.2}>
-              fuss process that keeps things moving fast and
-            </AnimatedText>
-            <AnimatedText key={`ritual-3-${activeCognitionIndex}`} delay={0.4}>
-              smooth, from first chat to final delivery.
-            </AnimatedText>
-          </div> */}
-
           <FlowingMenu items={demoItems} />
         </div>
-      </div>
+      </div> */}
 
       {/* <div className=" py-[6.711vh] relative w-full bg-black">
         <div
